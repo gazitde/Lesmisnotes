@@ -19,3 +19,5 @@ No hosting account, mail credential, sender domain, analytics identifier or fina
 ## Hero-stamp correction
 
 The circular Paris/1832 stamp now has explicit city/date/caption lines and a larger safe text area at desktop and narrow widths. Full words remain visible without overflow clipping. Added bilingual circle-boundary browser regression coverage at five viewport widths.
+
+The footer wraps its expanded link list at desktop widths. Added whole-page horizontal-fit checks in both languages at 1365, 1180, 960, 680, 390 and 320 pixels. The selected future domain is documented without activating indexing or modifying DNS.

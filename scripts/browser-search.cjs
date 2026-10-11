@@ -34,7 +34,7 @@ await page.locator('[data-action="spoilers"]').click();await page.locator('[data
 check(!requests.some(url=>url.includes('9430')||url.includes('positivism')||url.includes('sesame')||url.includes('24601')),'No query network transmission');
 check(!(await page.evaluate(()=>JSON.stringify({...localStorage,...sessionStorage}))).match(/24601|positivism|sesame|9430/),'No query storage');
 await page.keyboard.press('Escape');await page.goto(base+'/he/home/');await page.setViewportSize({width:390,height:844});
-check(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),'Mobile header no horizontal overflow');
+check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),'Mobile header no horizontal overflow');
 await page.locator('[data-site-search-open]').click();await search('כּוֹלֵרָה');check((await page.locator('.site-search-list').innerText()).includes('1832'),'Niqqud query matches Hebrew historical body');
 check(await page.locator('.site-search-list a').first().getAttribute('href')==='/he/history/?focus=history%3A1832','Explicit Hebrew choice retained');
 check(await page.locator('#site-search-dialog').evaluate(e=>e.scrollWidth<=e.clientWidth),'Mobile panel no horizontal overflow');
@@ -51,14 +51,15 @@ check(await page.locator('#contact-message').inputValue()==='A local UI test dra
 check(await page.locator('html').getAttribute('lang')==='he','Contact language actually switches to Hebrew');
 for(const width of [390,320]){
  await page.setViewportSize({width,height:844});
- check(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),'Contact/header no overflow at '+width);
+ check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),'Contact/header no overflow at '+width);
  await page.locator('[data-site-search-open]').click();
  check(await page.locator('#site-search-dialog').evaluate(e=>e.scrollWidth<=e.clientWidth&&e.getBoundingClientRect().width<=window.innerWidth),'Search fits '+width);
  await page.keyboard.press('Escape');
 }
 await page.screenshot({path:path.join(artifactDir,'contact-he-narrow.png'),fullPage:false});
-for(const language of ['en','he'])for(const width of [1365,960,680,390,320]){
+for(const language of ['en','he'])for(const width of [1365,1180,960,680,390,320]){
  await page.setViewportSize({width,height:900});await page.goto(base+'/'+language+'/home/');
+ check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),'Whole-page horizontal fit: '+language+' '+width);
  const geometry=await page.locator('.poster-stamp').evaluate(stamp=>{
    const r=stamp.clientWidth/2, first=stamp.firstElementChild,last=stamp.lastElementChild;
    const centerX=first.offsetLeft+first.offsetWidth/2,centerY=(first.offsetTop+last.offsetTop+last.offsetHeight)/2;

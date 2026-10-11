@@ -2,7 +2,7 @@
 
 ## Decisions and configuration
 
-- [ ] Confirm the public display name and final HTTPS domain; update visible branding only after that decision.
+- [ ] Confirm the public display name and connect the selected domain `lesmisnotes.com`; update visible branding only after that decision.
 - [ ] Choose a host supporting static routes and Node server functions. Verify TLS and root-path hosting.
 - [ ] Configure `SITE_ORIGIN` and authorize `PUBLIC_SITE=true` for production only.
 - [ ] Complete the operator identity and contact/retention statements in `dist/policies.js`; verify that the published statements match actual operation.

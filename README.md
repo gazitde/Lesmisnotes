@@ -1,6 +1,6 @@
 # Beyond the Barricade / מעבר לבריקדה
 
-An independent Hebrew/English guide to Victor Hugo’s *Les Misérables* and the stage musical. The code project is LesMisNotes (`gazitde/Lesmisnotes`); a final public name and domain have not been configured.
+An independent Hebrew/English guide to Victor Hugo’s *Les Misérables* and the stage musical. The code project is LesMisNotes (`gazitde/Lesmisnotes`); the selected future domain is `lesmisnotes.com`. Its DNS/host connection and public-indexing configuration still require verification.
 
 ## Run locally
 
