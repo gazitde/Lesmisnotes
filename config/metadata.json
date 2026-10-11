@@ -251,6 +251,26 @@
         "he": "יש תיקון, רעיון או משהו שהייתם רוצים לספר? אפשר לשלוח משוב על המדריך בעברית או באנגלית, בלי לפרסם את ההודעה.",
         "en": "Have a correction, idea or something to share? Send private feedback about the guide in Hebrew or English without publishing your message."
       }
+    },
+    "israel": {
+      "title": {
+        "he": "עלובי החיים בישראל: הקאמרי, הבימה והספר בעברית",
+        "en": "Les Misérables in Israel: Cameri, Habima and Hebrew editions"
+      },
+      "description": {
+        "he": "הפקות עלובי החיים בישראל, מדודו פישר לקאסט הבימה, תרגומי הספר לעברית וביצועים ישראליים עם מקורות וקישורים.",
+        "en": "Explore Les Misérables in Israel, from Dudu Fisher and the Cameri to Habima, Hebrew book translations and Israeli performances with source links."
+      }
+    },
+    "watch": {
+      "title": {
+        "he": "איפה רואים עלובי החיים: הפקות וקישורים רשמיים",
+        "en": "Where to watch Les Misérables: productions and official links"
+      },
+      "description": {
+        "he": "בחרו בין הפקות בימתיות פעילות, הופעות שהוכרזו והקלטות. מידע מתוארך וקישורים למפיקים ולתיאטראות, בעברית ובאנגלית.",
+        "en": "Find current stage productions, announced returns and recorded performances. Dated guidance with direct links to producers and theatres in English and Hebrew."
+      }
     }
   }
 }

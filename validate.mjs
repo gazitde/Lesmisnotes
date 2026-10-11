@@ -274,5 +274,5 @@ for(const abandonment of ['none','navigate','cancel','erase']){
  for(const [id,v]of Object.entries(R.videoReach)){assert.ok(Number.isSafeInteger(v.views)&&v.views>0);assert.equal(v.liveCounter,false);assert.ok(v.sourceUrl.endsWith(id));tests+=3;}
  assert.equal(G.items.find(x=>x.id==='Cn8PiqIXEjQ').embeddable,false);assert.equal(G.items.find(x=>x.id==='YL8gH0yELbk').embeddable,false);tests+=2;
 }
-console.log(`PASS: ${tests+4} assertions; 23 primary routes + 2 aliases × 2 languages × 2 spoiler states, all 29 curated versions, source references, privacy, quizzes and map regressions.`);
+console.log(`PASS: ${tests+4} assertions; 25 primary routes + 2 aliases × 2 languages × 2 spoiler states, all 29 curated versions, source references, privacy, quizzes and map regressions.`);
 console.log('This is source/render QA, not browser playback or mobile interaction QA.');

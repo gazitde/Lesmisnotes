@@ -14,6 +14,7 @@ try{
   if(!ready)throw new Error('Local browser-test server did not start');
   await run(['scripts/browser-analytics.cjs']);
   await run(['scripts/browser-search.cjs']);
+  await run(['scripts/browser-reading.cjs']);
   await run(['scripts/browser-visual.cjs']);
   await run(['--test','test/contact-browser.test.cjs']);
 }finally{server.kill();}
