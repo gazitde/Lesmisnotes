@@ -86,8 +86,9 @@
     for (const item of R.gallery?.items || []) {
       const group = R.gallery.groups?.find(g => g.clipIds.includes(item.id));
       const allowed = spoilers || item.spoilerLevel !== 2;
+      const reading = spoilers || !(group?.reading?.spoilerLevel > 1) ? group?.reading : null;
       add('performance', item.id, 'listening', 'songs', item.title,
-        pair(item.shortLabel, item.label, item.language, allowed ? pair(item.context, group?.hook, group?.question) : ''), [group?.title, ...(item.songIds || [])], !allowed);
+        pair(item.shortLabel, item.label, item.language, allowed ? pair(item.context, group?.hook, group?.question, reading?.title, reading?.scene, reading?.structure, reading?.watchFor) : ''), [group?.title, ...(item.songIds || [])], !allowed);
     }
     for (const p of input.places?.places || []) add('place', p.id, 'places', 'places', p.name, pair(p.shortIntro, p.region, p.statusLabel, p.history, p.mapNote, spoilers ? p.novel : ''), [p.id]);
     for (const p of R.map?.places || []) add('atlas', p.id, 'map', 'places', p.name, pair(p.region, spoilers || p.context?.spoilerLevel === 0 ? p.context?.sentences : '', spoilers ? pair(p.storyRole, p.journey?.event, p.journey?.remember) : ''), [p.id]);

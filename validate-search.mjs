@@ -51,8 +51,10 @@ probe.research.characters[0].summary={he:'סודסודסוד',en:'HIDDENCHARACTE
 probe.extra.musical.spotlight.songs[0].plot={he:'סודהשיר',en:'HIDDENSONGCANARY'};
 probe.places.places[0].novel={he:'סודהמקום',en:'HIDDENPLACECANARY'};
 probe.extra.novel.milestones[0].summary={he:'סודהספר',en:'HIDDENNOVELCANARY'};
+probe.extra.gallery.groups.find(g=>g.id==='stars-pair').reading={title:{he:'סודהקריאה',en:'HIDDENREADINGCANARY'},spoilerLevel:2};
 const protectedIndex=S.buildIndex(probe,{spoiler:false});
-for(const q of ['HIDDENCHARACTERCANARY','HIDDENSONGCANARY','HIDDENPLACECANARY','HIDDENNOVELCANARY'])check(find(protectedIndex,q).total===0,'No hidden canary match '+q);
+for(const q of ['HIDDENCHARACTERCANARY','HIDDENSONGCANARY','HIDDENPLACECANARY','HIDDENNOVELCANARY','HIDDENREADINGCANARY'])check(find(protectedIndex,q).total===0,'No hidden canary match '+q);
+check(find(S.buildIndex(probe,{spoiler:true}),'HIDDENREADINGCANARY').total===2,'Consented reading canary');
 check(find(S.buildIndex(probe,{spoiler:true}),'HIDDENNOVELCANARY').total===0,'Separate novel gate canary');
 check(find(S.buildIndex(probe,{spoiler:true,novelConsent:true}),'HIDDENNOVELCANARY').total===1,'Consented novel canary');
 const doc=safe.find(x=>x.id==='character:valjean');

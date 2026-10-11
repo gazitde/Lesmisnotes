@@ -127,3 +127,16 @@ for(const language of ['he','en']){
  const direct=render(language,'listening',false);direct.ctx.location.search='?clip=d4sPDLqMxDs';direct.callbacks.popstate();assert.ok(direct.app.innerHTML.includes('data-added-media="d4sPDLqMxDs"'));assert.equal((direct.app.innerHTML.match(/<iframe /g)||[]).length,1);lucyChecks+=2;
 }
 console.log(`PASS: ${lucyChecks} Lucy Thomas defaults, three-version preservation, language retention, musical links and deep-link checks.`);
+
+let readingChecks=0;
+for(const language of ['he','en'])for(const group of R.gallery.groups.filter(g=>g.reading)){
+ assert.ok(group.reading.sourceIds.every(id=>R.sources.some(s=>s.id===id)));readingChecks++;
+ for(const id of group.clipIds){const st=render(language,'listening',false);tap(st,{galleryClip:id});const item=R.gallery.items.find(x=>x.id===id),html=st.app.innerHTML;
+  if(item.spoilerLevel===2){assert.ok(!html.includes('id="gallery-reading-title"'));readingChecks++;continue;}
+  const esc=x=>x.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  for(const field of ['title','scene','structure','watchFor']){assert.ok(html.includes(esc(group.reading[field][language])),group.id+' readable '+field);readingChecks++;}
+  assert.equal((html.match(/id="gallery-reading-title"/g)||[]).length,1);assert.ok(!/[?&](?:start|t)=\d/.test(html));readingChecks+=2;
+ }
+}
+assert.equal(R.gallery.groups.filter(g=>g.reading).length,4);readingChecks++;
+console.log(`PASS: ${readingChecks} text-led performance-reading checks: four HE/EN scene notes, existing versions, sourced context, no invented timestamps and spoiler gates.`);
