@@ -24,6 +24,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
    check(Boolean(layout.heading),`${lang}/${route} ${width} main heading`);
    const language=await page.locator('[data-action="language"]').boundingBox();check(language&&language.width>=44&&language.height>=44&&language.x>=0&&language.x+language.width<=width,`${lang}/${route} ${width} visible touch language control`);
    report.push({lang,route,width,...layout});
+   if(route==='about'&&width<681)check(await page.locator('.about-numbers .stats-grid').evaluate(el=>[...el.children].every(card=>card.getBoundingClientRect().width>=el.getBoundingClientRect().width*.9)),`About statistics use full readable width ${lang} ${width}`);
    if(route==='before'&&width<681)check(await page.locator('.family-heading').evaluate(el=>el.querySelector('h2').getBoundingClientRect().width>=el.getBoundingClientRect().width*.8),`Family heading uses readable width ${lang} ${width}`);
    if(width!==320){
     for(const disclosure of await page.locator('.place-secondary-photo:not([open])>summary').all())await disclosure.click();

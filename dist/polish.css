@@ -61,3 +61,5 @@ html[lang=he] .vinyl-label b,html[lang=he] .vinyl-label small{font-family:LesMis
 .about-numbers .stats-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:960px){.about-numbers .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.about-numbers .stats-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:680px){.about-numbers .stat:last-child{grid-column:auto}}
+@media(max-width:360px){.stats-grid .stat:last-child{grid-column:auto}}
