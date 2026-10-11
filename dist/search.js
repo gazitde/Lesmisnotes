@@ -10,8 +10,8 @@
     ideas: { he: 'דילמות', en: 'Dilemmas' }
   };
   const COPY = {
-    he: { open: 'חיפוש באתר', title: 'מה מסקרן אתכם?', label: 'חיפוש במדריך', placeholder: 'דמות, שיר, מקום או שאלה…', close: 'סגירת החיפוש', clear: 'ניקוי החיפוש', filters: 'סינון לפי נושא', local: 'החיפוש פועל כאן בדפדפן. השאילתות אינן נשמרות או נשלחות.', safe: 'ספוילרים מוסתרים. החיפוש אינו משתמש בפרטי עלילה נעולים.', spoilers: 'ספוילרים פתוחים. תקציר הרומן עדיין כפוף לאישור הנפרד שלכם.', start: 'חפשו גם בתוך ההסברים, ההיסטוריה והמתכונים.', examples: 'אפשר להתחיל כאן', empty: 'לא נמצאו תוצאות בבחירה הזאת.', help: 'נסו פחות מילים, איות אחר או נושא אחר. אפשר לחפש בעברית ובאנגלית.', unavailable: 'החיפוש המקומי לא נטען. אפשר להמשיך דרך מפת האתר.', retry: 'לנסות שוב', sitemap: 'למפת האתר', count: n => `${n} תוצאות`, showing: (n, total) => `מוצגות ${n} מתוך ${total} תוצאות`, more: 'עוד תוצאות', locked: 'פרטי העלילה נפתחים רק לפי בחירת הספוילרים שלכם.', titleOnly: 'התאמה בשם. המשיכו לעמוד כדי לקרוא לפי בחירת הספוילרים שלכם.', keyboard: 'Tab למעבר בין האפשרויות. חץ למטה לתוצאות. Escape לסגירה.', otherLanguage: 'התאמה גם בשפה השנייה', noneAvailable: 'אין כרגע תוכן לחיפוש בנושא הזה.', prompt: 'הקלידו מילה או שתיים כדי להתחיל.' },
-    en: { open: 'Search the guide', title: 'What are you curious about?', label: 'Search this guide', placeholder: 'A character, song, place or question…', close: 'Close search', clear: 'Clear search', filters: 'Filter by topic', local: 'Search runs in your browser. Queries are never stored or sent.', safe: 'Spoilers are hidden. Search does not use locked plot details.', spoilers: 'Spoilers are on. The novel recap still follows your separate permission.', start: 'Search inside the explanations, history and recipes, too.', examples: 'Try a starting point', empty: 'No results in this selection.', help: 'Try fewer words, a different spelling or another topic. Hebrew and English both work.', unavailable: 'Local search could not load. You can still use the site map.', retry: 'Try again', sitemap: 'Open the site map', count: n => `${n} results`, showing: (n, total) => `Showing ${n} of ${total} results`, more: 'More results', locked: 'Plot details open only according to your spoiler choice.', titleOnly: 'Name match. Continue to the page to read according to your spoiler choice.', keyboard: 'Tab through the controls. Down arrow moves to results. Escape closes.', otherLanguage: 'Also matched in the other language', noneAvailable: 'There is no searchable content in this topic yet.', prompt: 'Type a word or two to start.' }
+    he: { open: 'חיפוש באתר', title: 'מה מסקרן אתכם?', label: 'חיפוש במדריך', placeholder: 'דמות, שיר, מקום או שאלה…', close: 'סגירת החיפוש', clear: 'ניקוי החיפוש', filters: 'סינון לפי נושא', local: 'החיפוש פועל כאן בדפדפן. השאילתות אינן נשמרות או נשלחות.', safe: 'ספוילרים מוסתרים. החיפוש אינו משתמש בפרטי עלילה נעולים.', spoilers: 'ספוילרים פתוחים. אזורי הקריאה הנפרדים נפתחים לפי הבחירות שלכם.', start: 'חפשו גם בתוך ההסברים, ההיסטוריה והמתכונים.', examples: 'אפשר להתחיל כאן', empty: 'לא נמצאו תוצאות בבחירה הזאת.', help: 'נסו פחות מילים, איות אחר או נושא אחר. אפשר לחפש בעברית ובאנגלית.', unavailable: 'החיפוש המקומי לא נטען. אפשר להמשיך דרך מפת האתר.', retry: 'לנסות שוב', sitemap: 'למפת האתר', count: n => `${n} תוצאות`, showing: (n, total) => `מוצגות ${n} מתוך ${total} תוצאות`, more: 'עוד תוצאות', locked: 'פרטי העלילה נפתחים רק לפי בחירת הספוילרים שלכם.', titleOnly: 'התאמה בשם. המשיכו לעמוד כדי לקרוא לפי בחירת הספוילרים שלכם.', keyboard: 'Tab למעבר בין האפשרויות. חץ למטה לתוצאות. Escape לסגירה.', otherLanguage: 'התאמה גם בשפה השנייה', noneAvailable: 'אין כרגע תוכן לחיפוש בנושא הזה.', prompt: 'הקלידו מילה או שתיים כדי להתחיל.' },
+    en: { open: 'Search the guide', title: 'What are you curious about?', label: 'Search this guide', placeholder: 'A character, song, place or question…', close: 'Close search', clear: 'Clear search', filters: 'Filter by topic', local: 'Search runs in your browser. Queries are never stored or sent.', safe: 'Spoilers are hidden. Search does not use locked plot details.', spoilers: 'Spoilers are on. Separate reading areas still follow your choices.', start: 'Search inside the explanations, history and recipes, too.', examples: 'Try a starting point', empty: 'No results in this selection.', help: 'Try fewer words, a different spelling or another topic. Hebrew and English both work.', unavailable: 'Local search could not load. You can still use the site map.', retry: 'Try again', sitemap: 'Open the site map', count: n => `${n} results`, showing: (n, total) => `Showing ${n} of ${total} results`, more: 'More results', locked: 'Plot details open only according to your spoiler choice.', titleOnly: 'Name match. Continue to the page to read according to your spoiler choice.', keyboard: 'Tab through the controls. Down arrow moves to results. Escape closes.', otherLanguage: 'Also matched in the other language', noneAvailable: 'There is no searchable content in this topic yet.', prompt: 'Type a word or two to start.' }
   };
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   // Geresh/apostrophes join transliterated names; other punctuation separates words.
@@ -43,7 +43,7 @@
     thenardiers: ['Thénardier', 'Thénardiers', 'Thenardier', 'טנארדייה', 'תנרדייה', 'ת׳נרדייה'],
     bishop: ['Bishop of Digne', 'Myriel', 'בישוף', 'דיניה']
   };
-  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch' };
+  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
   function hrefFor(doc, lang) {
     if (doc.kind === 'place') return `/${lang}/places/?place=${encodeURIComponent(doc.key)}`;
     if (doc.kind === 'performance') return `/${lang}/listening/?clip=${encodeURIComponent(doc.key)}`;
@@ -54,7 +54,7 @@
   // they also contain hidden outcomes, quiz answers, editorial notes and credit URLs.
   function buildIndex(input = sourceBundle(), permissions = {}) {
     const R = { ...(input.research || {}), ...(input.extra || {}) }, out = [];
-    const spoilers = permissions.spoiler === true, novel = spoilers && permissions.novelConsent === true;
+    const spoilers = permissions.spoiler === true, novel = spoilers && permissions.novelConsent === true, after = spoilers && permissions.afterConsent === true;
     function add(kind, key, route, category, title, body, aliases = [], locked = false) {
       if (!title || !local(title, 'en')) return;
       const doc = { id: `${kind}:${key}`, kind, key: String(key), route, category, title: pair(title), body: pair(body), aliases: aliases.map(v => local(v, 'en')).join(' '), locked };
@@ -105,6 +105,7 @@
       const allowed = spoilers || s.spoilerLevel < 2;
       add('dilemma', s.id, 'ideas', 'ideas', s.title, allowed ? pair(s.vignette,s.contextParagraphs,spoilers?pair(s.deepening?.title,s.deepening?.paragraphs):'', ...(s.perspectives || []).map(p => pair(p.title, p.argument, p.challenge)), s.askYourself) : '', [], !allowed);
     }
+    if(after)for(const s of R.hugoExtras?.stories||[])add('extra',s.id,'after','story',s.title,pair(s.kicker,s.paragraphs));
     return out;
   }
   function queryTerms(query) { return [...new Set(normalize(String(query).slice(0, 180)).split(' ').filter(Boolean))].slice(0, 16); }
@@ -164,10 +165,10 @@
     return `<ul class="site-search-list">${result.results.map(({ doc, href }) => `<li><a data-site-search-result href="${esc(hrefFor(doc, lang))}" data-result-category="${esc(doc.category)}"><span class="site-search-category">${esc(CATEGORIES[doc.category][lang])}${doc.locked ? ` · ${lang === 'he' ? 'פרטי עלילה באישור' : 'Plot details by consent'}` : ''}</span><h3 dir="auto">${highlight(doc.title[lang], query)}</h3><p dir="auto">${snippet(doc.body[lang] || c.locked, query)}</p><span class="site-search-arrow" aria-hidden="true">${lang === 'he' ? '←' : '→'}</span></a></li>`).join('')}</ul>${result.results.length < result.total ? `<button class="btn secondary site-search-more" data-site-search-more>${c.more}</button>` : ''}`;
   }
   function button(lang = 'he') { return `<button type="button" class="site-search-trigger" data-site-search-open aria-haspopup="dialog" aria-controls="site-search-dialog" aria-label="${COPY[lang].open}"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.8"/></svg><span>${lang === 'he' ? 'חיפוש' : 'Search'}</span></button>`; }
-  let context = { lang: 'he', spoiler: false, novelConsent: false }, panel = null, installed = false;
+  let context = { lang: 'he', spoiler: false, novelConsent: false, afterConsent: false }, panel = null, installed = false;
   let query = '', category = 'all', limit = 12, timer = null, composing = false, returnFocus = null, cached = null, cacheKey = '';
   function getIndex() {
-    const key = `${context.spoiler === true}:${context.novelConsent === true}`;
+    const key = `${context.spoiler === true}:${context.novelConsent === true}:${context.afterConsent === true}`;
     if (!cached || key !== cacheKey) { cached = buildIndex(sourceBundle(), context); cacheKey = key; }
     return cached;
   }
@@ -227,7 +228,7 @@
   }
   function mount(next = {}) {
     const previous = context; context = { ...context, ...next, lang: next.lang === 'en' ? 'en' : 'he' };
-    if (previous.spoiler !== context.spoiler || previous.novelConsent !== context.novelConsent) { cached = null; cacheKey = ''; }
+    if (previous.spoiler !== context.spoiler || previous.novelConsent !== context.novelConsent || previous.afterConsent !== context.afterConsent) { cached = null; cacheKey = ''; }
     // Source-render tests and prerenderers have no DOM. Search remains progressively enhanced.
     const document = root.document; if (!document?.createElement || !document.body?.appendChild) return;
     if (!installed) {
@@ -262,9 +263,9 @@
   }
   function focusTarget(target) {
     if (!target || !root.document?.querySelector) return;
-    const key = target.key, selector = { character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : '#spotlight-title', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]` }[target.kind];
+    const key = target.key, selector = { character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : '#spotlight-title', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
     const element = selector && root.document.querySelector(selector); if (!element) return;
-    if (['story', 'novel', 'history','song','dilemma'].includes(target.kind)) {const readingRoot=target.kind==='song'?(element.closest?.('.show-slide,.spotlight-detail')||element):element;readingRoot.querySelectorAll?.('details').forEach(details => { details.open = true; });}
+    if (['story', 'novel', 'history','song','dilemma'].includes(target.kind)||(target.kind==='extra'&&key!=='collection')) {const readingRoot=target.kind==='song'?(element.closest?.('.show-slide,.spotlight-detail')||element):element;readingRoot.querySelectorAll?.('details').forEach(details => { details.open = true; });}
     if(target.kind==='craft'||target.kind==='israel'){const notebook=element.closest?.('details');if(notebook)notebook.open=true;}
     element.setAttribute?.('tabindex', '-1'); element.focus?.({ preventScroll: true }); element.scrollIntoView?.({ block: 'start' });
   }
