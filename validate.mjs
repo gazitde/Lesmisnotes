@@ -241,15 +241,15 @@ for(const abandonment of ['none','navigate','cancel','erase']){
 // Six editorial music spotlights: safe background, gated plot, exact journey targets.
 {
  const F=R.musical.spotlight,C=R.musical.creationStory,ids=F.songs.map(s=>s.id);
- assert.equal(F.songs.length,6);assert.equal(new Set(ids).size,6);assert.equal(C.panels.length,3);assert.equal(C.craft.length,5);tests+=4;
+ assert.equal(F.songs.length,7);assert.equal(new Set(ids).size,7);assert.equal(C.panels.length,3);assert.equal(C.craft.length,5);tests+=4;
  for(const song of F.songs){assert.ok(R.musical.songentries.some(x=>x.id===song.id));assert.equal(song.spoilerLevel,0);assert.equal(song.plotSpoilerLevel,2);for(const k of ['hook','background','question','plot'])assert.ok(song[k].he&&song[k].en);for(const sid of [...song.sourceIds,...song.plotSourceIds])assert.ok(R.sources.some(s=>s.id===sid));tests+=7+song.sourceIds.length+song.plotSourceIds.length;}
  const escaped=t=>t.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  for(const language of ['he','en']){
   const state=render(language,'musical',false);state.ctx.matchMedia=()=>({matches:true});
   const click=data=>state.callbacks.click({target:{closest:selector=>selector==='a[href]'?null:{dataset:data}}});
-  assert.equal((state.html.match(/data-featured-song=/g)||[]).length,6);assert.ok(state.html.includes('creation-reception'));assert.ok(state.html.includes('composition-notebook'));assert.ok(!state.html.includes('class="spotlight-context"'));assert.ok(!state.html.includes('id="show-slide"'));tests+=5;
+  assert.equal((state.html.match(/data-featured-song=/g)||[]).length,7);assert.ok(state.html.includes('creation-reception'));assert.ok(state.html.includes('composition-notebook'));assert.ok(!state.html.includes('class="spotlight-context"'));assert.ok(!state.html.includes('id="show-slide"'));tests+=5;
   for(const song of F.songs){click({featuredSong:song.id});const detail=state.ctx.document.getElementById('featured-song-detail').innerHTML;assert.ok(detail.includes(escaped(song.background[language])));assert.ok(detail.includes(escaped(song.question[language])));assert.ok(!detail.includes(escaped(song.plot[language])));if(song.connection)assert.ok(!detail.includes(escaped(song.connection[language])));assert.ok(detail.includes(`data-song-journey="${song.id}"`));click({songJourney:song.id});assert.ok(!state.app.innerHTML.includes('id="show-slide"'));tests+=5+(song.connection?1:0);}
-  click({action:'show-open'});assert.ok(state.app.innerHTML.includes('id="show-current-title" dir="auto">'+escaped(R.musical.songentries.find(s=>s.id==='stars').title[language])));assert.ok(state.app.innerHTML.includes('featured-song-badge'));tests+=2;
+  click({action:'show-open'});assert.ok(state.app.innerHTML.includes('id="show-current-title" dir="auto">'+escaped(R.musical.songentries.find(s=>s.id===F.songs.at(-1).id).title[language])));assert.ok(state.app.innerHTML.includes('featured-song-badge'));tests+=2;
   for(const song of F.songs){click({featuredSong:song.id});const detail=state.ctx.document.getElementById('featured-song-detail').innerHTML;assert.ok(detail.includes(escaped(song.plot[language])));if(song.connection)assert.ok(detail.includes(escaped(song.connection[language])));click({songJourney:song.id});const journey=state.ctx.document.getElementById('show-journey').outerHTML;assert.ok(journey.includes('id="show-current-title" dir="auto">'+escaped(R.musical.songentries.find(s=>s.id===song.id).title[language])));assert.ok(journey.includes('featured-song-badge'));tests+=3+(song.connection?1:0);}
   click({action:'hide-spoilers'});assert.ok(!state.app.innerHTML.includes('class="spotlight-context"'));assert.ok(!state.app.innerHTML.includes('id="show-slide"'));tests+=2;
  }
@@ -297,4 +297,32 @@ console.log('PASS: 14 clear-home-entry and opt-in early-resume render checks.');
   }
  }
  console.log(`PASS: ${n} additional relationship-map checks: all people, 6 safe / 19 full pairs, 16 source-backed HE/EN contexts, optional plot layer and visible first entry.`);
+}
+// Substantial bilingual reading, with permission filtering before rendering and indexing.
+{
+ let n=0;const data=R.musical.songAnalysis,ids=Object.keys(data),anchors=ids.filter(id=>data[id].blocks.some(b=>b.spoilerLevel<2));assert.equal(ids.length,38);assert.equal(anchors.length,7);assert.equal(ids.reduce((n,id)=>n+data[id].blocks.length,0),114);n+=3;
+ const escaped=x=>x.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ for(const id of ids){assert.ok(R.musical.songentries.some(s=>s.id===id));for(const b of data[id].blocks){assert.ok(b.title.he&&b.title.en&&b.body.he&&b.body.en);assert.ok(b.body.en.split(/\s+/).length>=35);assert.ok([0,2].includes(b.spoilerLevel));n+=3;}for(const sid of data[id].sourceIds){assert.ok(R.sources.some(s=>s.id===sid));n++;}}
+ for(const lang of ['he','en']){
+  const safe=render(lang,'musical',false),open=render(lang,'musical',true);safe.ctx.matchMedia=open.ctx.matchMedia=()=>({matches:true});
+  const click=(s,data)=>s.callbacks.click({target:{closest:selector=>selector==='a[href]'?null:{dataset:data}}});
+  for(const id of anchors){click(safe,{featuredSong:id});const html=safe.ctx.document.getElementById('featured-song-detail').innerHTML;for(const b of data[id].blocks){assert.equal(html.includes(escaped(b.body[lang])),b.spoilerLevel<2);assert.equal(html.includes(escaped(b.title[lang])),b.spoilerLevel<2);n+=2;}assert.ok(!html.includes('song-reading-related'));assert.ok(!html.includes('song-craft-note'));n+=2;}
+  for(const id of ids){click(open,{songJourney:id});const html=open.ctx.document.getElementById('show-journey').outerHTML;for(const b of data[id].blocks){assert.ok(html.includes(escaped(b.title[lang])));assert.ok(html.includes(escaped(b.body[lang])));n+=2;}}
+  const d=render(lang,'ideas',false),yes=render(lang,'ideas',true);
+  for(const [i,item]of R.philosophy.dilemmas.entries()){click(d,{dilemma:String(i)});click(yes,{dilemma:String(i)});const no=d.ctx.document.getElementById('dilemma-content').innerHTML,full=yes.ctx.document.getElementById('dilemma-content').innerHTML;
+   for(const p of item.contextParagraphs){assert.ok(no.includes(escaped(p[lang]))&&full.includes(escaped(p[lang])));n++;}
+   for(const p of item.deepening.paragraphs){assert.ok(!no.includes(escaped(p[lang]))&&full.includes(escaped(p[lang])));n++;}
+   assert.ok(!no.includes(escaped(item.deepening.title[lang]))&&full.includes(escaped(item.deepening.title[lang])));assert.equal((no.match(/class="perspective"/g)||[]).length,3);n+=2;
+  }
+ }
+ const searchContext={window:{}};vm.runInNewContext(fs.readFileSync('dist/search.js','utf8'),searchContext);const S=searchContext.window.SiteSearch;const safeIndex=S.buildIndex({research:R},{spoiler:false}),fullIndex=S.buildIndex({research:R},{spoiler:true});
+ for(const id of ids)for(const lang of ['he','en']){const no=safeIndex.find(d=>d.id==='song:'+id),yes=fullIndex.find(d=>d.id==='song:'+id);assert.ok(yes);for(const b of data[id].blocks){assert.equal(Boolean(no?.body[lang].includes(b.body[lang])),b.spoilerLevel<2);assert.ok(yes.body[lang].includes(b.body[lang]));n+=2;}}
+ for(const item of R.philosophy.dilemmas)for(const lang of ['he','en']){const no=safeIndex.find(d=>d.id==='dilemma:'+item.id),yes=fullIndex.find(d=>d.id==='dilemma:'+item.id);for(const p of item.contextParagraphs){assert.ok(no.body[lang].includes(p[lang]));n++;}for(const p of item.deepening.paragraphs){assert.ok(!no.body[lang].includes(p[lang])&&yes.body[lang].includes(p[lang]));n++;}}
+ console.log(`PASS: ${n} enriched-reading assertions; 38 song entries, 114 HE/EN blocks, seven safe anchors, five developed dilemmas, exact source IDs and no gated text in safe HTML/search.`);
+}
+{
+ const c={window:{}};vm.runInNewContext(fs.readFileSync('dist/search.js','utf8'),c);const index=c.window.SiteSearch.buildIndex({research:R},{spoiler:true});let n=0;
+ for(const g of R.gallery.groups){const reading=R.musical.songAnalysis[g.songId];if(!reading)continue;for(const id of g.clipIds){const doc=index.find(d=>d.id==='performance:'+id);if(!doc)continue;for(const b of reading.blocks)for(const lang of ['he','en']){assert.equal(doc.body[lang].includes(b.body[lang]),b.kind==='listening');n++;}}}
+ assert.ok(R.musical.songentries.find(s=>s.id==='javert-soliloquy').sourceIds.includes('iconic-aversa-analysis'));n++;
+ console.log(`PASS: ${n} performance-search parity and original-source preservation checks.`);
 }

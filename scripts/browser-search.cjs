@@ -24,9 +24,9 @@ check(await page.locator('.composition-notebook').evaluate(e=>e.open),'Design-no
 check(await page.locator('#craft-hugo-art-onstage').evaluate(e=>document.activeElement===e),'Design-note heading receives focus');
 check((await page.locator('#craft-hugo-art-onstage').innerText()).includes('Matt Kinley'),'Correct source-based design note rendered');
 await page.goBack();check(page.url().endsWith('/en/home/'),'Back restores home after craft reading');
-await page.keyboard.press('Control+k');await search('positivism');await page.locator('.site-search-list a').first().click();
+await page.keyboard.press('Control+k');await search('yellow passport');await page.locator('.site-search-list a').first().click();
 check(page.url().endsWith('/en/ideas/?focus=dilemma%3Alaw-mercy'),'Result deep link');
-check((await page.locator('#dilemma-content').innerText()).includes('Legal positivism'),'Correct argument rendered');
+check((await page.locator('#dilemma-content').innerText()).toLowerCase().includes('yellow passport'),'Correct argument rendered');
 await page.goBack();check(page.url().endsWith('/en/home/'),'Back restores previous route');
 await page.locator('[data-site-search-open]').click();await search('sesame');await page.locator('[data-site-search-category="recipes"]').click();check((await page.locator('.site-search-list').innerText()).includes('Tahini'),'Category and body search');
 await search('<img src=x onerror=alert(123)>');check(await page.locator('#site-search-results img').count()===0,'No query HTML injection');
@@ -37,8 +37,8 @@ await page.keyboard.press('Escape');await page.locator('[data-action="spoilers"]
 await page.locator('[data-site-search-open]').click();await search('9430');check((await page.locator('.site-search-list').innerText()).includes('9430'),'Consented biography searchable');
 await page.locator('.site-search-list a').first().click();check((await page.locator('#character-detail').innerText()).includes('9430'),'Consented result opens correct character');
 await page.locator('[data-action="spoilers"]').click();await page.locator('[data-site-search-open]').click();await search('9430');check(await page.locator('.site-search-list').count()===0,'Revocation removes cached plot');
-check(!requests.some(url=>url.includes('9430')||url.includes('positivism')||url.includes('sesame')||url.includes('24601')),'No query network transmission');
-check(!(await page.evaluate(()=>JSON.stringify({...localStorage,...sessionStorage}))).match(/24601|positivism|sesame|9430/),'No query storage');
+check(!requests.some(url=>url.includes('9430')||url.includes('passport')||url.includes('sesame')||url.includes('24601')),'No query network transmission');
+check(!(await page.evaluate(()=>JSON.stringify({...localStorage,...sessionStorage}))).match(/24601|passport|sesame|9430/),'No query storage');
 await page.keyboard.press('Escape');await page.goto(base+'/he/home/');await page.setViewportSize({width:390,height:844});
 check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),'Mobile header no horizontal overflow');
 await page.locator('[data-site-search-open]').click();await search('כּוֹלֵרָה');check((await page.locator('.site-search-list').innerText()).includes('1832'),'Niqqud query matches Hebrew historical body');

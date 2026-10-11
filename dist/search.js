@@ -77,18 +77,19 @@
     for (const c of R.israel?.novelTranslations?.items || []) add('israel', 'book-'+c.id, 'israel', 'story', c.name, pair(c.edition,c.body), ['Hebrew','עברית']);
     for (const c of R.watch?.cards || []) add('watch', c.id, 'watch', 'songs', c.title, pair(c.paragraphs,c.statusLabel,c.location), [c.id]);
     const spotlight = R.musical?.spotlight?.songs || [], songEntries = R.musical?.songentries || [];
+    const songReading=(id,kind=null)=>{const r=R.musical?.songAnalysis?.[id];return pair((r?.blocks||[]).filter(b=>(spoilers||b.spoilerLevel<2)&&(!kind||b.kind===kind)).map(b=>pair(b.title,b.body)),spoilers?(r?.craftNotes||[]).map(b=>pair(b.title,b.body)):'')};
     for (const s of spotlight) {
       const entry = songEntries.find(x => x.id === s.id);
       add('song', s.id, 'musical', 'songs', entry ? { he: local(entry.title, 'he'), en: s.title } : s.title,
-        pair(s.hook, s.background, s.question, spoilers ? pair(s.plot, s.connection, entry?.scene, entry?.summary, entry?.characters, entry?.question) : ''), [s.id, s.title]);
+        pair(s.hook, s.background, s.question, songReading(s.id), spoilers ? pair(s.plot, s.connection, entry?.scene, entry?.summary, entry?.characters, entry?.question) : ''), [s.id, s.title]);
     }
-    if (spoilers) for (const s of songEntries.filter(s => !spotlight.some(x => x.id === s.id))) add('song', s.id, 'musical', 'songs', s.title, pair(s.scene, s.summary, s.characters, s.mood, s.question), [s.catalogueTitle, s.id]);
+    if (spoilers) for (const s of songEntries.filter(s => !spotlight.some(x => x.id === s.id))) add('song', s.id, 'musical', 'songs', s.title, pair(s.scene, s.summary, s.characters, s.mood, s.question,songReading(s.id)), [s.catalogueTitle, s.id]);
     for (const item of R.gallery?.items || []) {
       const group = R.gallery.groups?.find(g => g.clipIds.includes(item.id));
       const allowed = spoilers || item.spoilerLevel !== 2;
       const reading = spoilers || !(group?.reading?.spoilerLevel > 1) ? group?.reading : null;
       add('performance', item.id, 'listening', 'songs', item.title,
-        pair(item.shortLabel, item.label, item.language, allowed ? pair(item.context, group?.hook, group?.question, reading?.title, reading?.scene, reading?.structure, reading?.watchFor) : ''), [group?.title, ...(item.songIds || [])], !allowed);
+        pair(item.shortLabel, item.label, item.language, allowed ? pair(item.context, group?.hook, group?.question, reading?.title, reading?.scene, reading?.structure, reading?.watchFor,songReading(group?.songId,'listening')) : ''), [group?.title, ...(item.songIds || [])], !allowed);
     }
     for (const p of input.places?.places || []) add('place', p.id, 'places', 'places', p.name, pair(p.shortIntro, p.region, p.statusLabel, p.history, p.mapNote, spoilers ? p.novel : ''), [p.id]);
     for (const p of R.map?.places || []) add('atlas', p.id, 'map', 'places', p.name, pair(p.region, spoilers || p.context?.spoilerLevel === 0 ? p.context?.sentences : '', spoilers ? pair(p.storyRole, p.journey?.event, p.journey?.remember) : ''), [p.id]);
@@ -101,7 +102,7 @@
       pair(s.course, s.modernDishLabel, s.ingredients, s.steps, s.adaptation, s.allergens, s.availability, s.servings, s.timeNote, s.variation), [s.id]);
     for (const s of R.philosophy?.dilemmas || []) {
       const allowed = spoilers || s.spoilerLevel < 2;
-      add('dilemma', s.id, 'ideas', 'ideas', s.title, allowed ? pair(s.vignette, ...(s.perspectives || []).map(p => pair(p.title, p.argument, p.challenge)), s.askYourself) : '', [], !allowed);
+      add('dilemma', s.id, 'ideas', 'ideas', s.title, allowed ? pair(s.vignette,s.contextParagraphs,spoilers?pair(s.deepening?.title,s.deepening?.paragraphs):'', ...(s.perspectives || []).map(p => pair(p.title, p.argument, p.challenge)), s.askYourself) : '', [], !allowed);
     }
     return out;
   }
@@ -262,7 +263,7 @@
     if (!target || !root.document?.querySelector) return;
     const key = target.key, selector = { character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : '#spotlight-title', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]` }[target.kind];
     const element = selector && root.document.querySelector(selector); if (!element) return;
-    if (['story', 'novel', 'history'].includes(target.kind)) element.querySelectorAll?.('details').forEach(details => { details.open = true; });
+    if (['story', 'novel', 'history','song','dilemma'].includes(target.kind)) {const readingRoot=target.kind==='song'?(element.closest?.('.show-slide,.spotlight-detail')||element):element;readingRoot.querySelectorAll?.('details').forEach(details => { details.open = true; });}
     if(target.kind==='craft'||target.kind==='israel'){const notebook=element.closest?.('details');if(notebook)notebook.open=true;}
     element.setAttribute?.('tabindex', '-1'); element.focus?.({ preventScroll: true }); element.scrollIntoView?.({ block: 'start' });
   }
