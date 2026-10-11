@@ -27,7 +27,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
    if(route==='about'&&width<681)check(await page.locator('.about-numbers .stats-grid').evaluate(el=>[...el.children].every(card=>card.getBoundingClientRect().width>=el.getBoundingClientRect().width*.9)),`About statistics use full readable width ${lang} ${width}`);
    if(route==='before'&&width<681)check(await page.locator('.family-heading').evaluate(el=>el.querySelector('h2').getBoundingClientRect().width>=el.getBoundingClientRect().width*.8),`Family heading uses readable width ${lang} ${width}`);
    if(width!==320){
-    for(const disclosure of await page.locator('.place-secondary-photo:not([open])>summary').all())await disclosure.click();
+    for(const disclosure of await page.locator('.place-secondary-photo>summary').all())await disclosure.click();
     for(const img of await page.locator('main img[loading="lazy"]').all()){
       await img.scrollIntoViewIfNeeded();await img.evaluate(el=>el.complete?Promise.resolve():new Promise(resolve=>{el.addEventListener('load',resolve,{once:true});el.addEventListener('error',resolve,{once:true});setTimeout(resolve,6000)}));
       check(await img.evaluate(el=>el.naturalWidth>0),`Local lazy image loaded ${lang}/${route} ${width}`);
