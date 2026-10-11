@@ -27,16 +27,17 @@ function render(lang,route,spoilers){
 }
 
 const R=render('en','home',false).ctx.RESEARCH;
+const coachCount=(clip,spoilers)=>{const songId=R.gallery.groups.find(g=>g.clipIds.includes(clip))?.songId;return (R.coachVideos||[]).filter(v=>v.songId===songId&&v.embeddable&&(spoilers||v.spoilerLevel<2)).length};
 const tap=(st,data)=>st.callbacks.click({target:{closest:selector=>selector==='button'?{dataset:data,hasAttribute:n=>Object.hasOwn(data,n.replace(/^data-/,'').replace(/-([a-z])/g,(_,c)=>c.toUpperCase()))}:null}});
 let checks=0;
 for(const language of ['he','en']){
- for(const spoilerState of [false,true])for(const item of R.gallery.items){const st=render(language,'listening',spoilerState);tap(st,{galleryClip:item.id});const html=st.app.innerHTML,ids=[...html.matchAll(/(?:^|\s)id="([^"]+)"/g)].map(x=>x[1]);assert.equal(new Set(ids).size,ids.length,item.id);assert.equal((html.match(/<iframe /g)||[]).length,item.spoilerLevel===2&&!spoilerState?0:item.embeddable&&!item.externalUrl?1:0);assert.ok(!html.includes('undefined'));assert.equal((html.match(/data-video-shell=/g)||[]).length,item.spoilerLevel===2&&!spoilerState?0:item.embeddable?1:0);assert.ok(html.includes('gallery-detail'));checks+=5;}
+ for(const spoilerState of [false,true])for(const item of R.gallery.items){const st=render(language,'listening',spoilerState);tap(st,{galleryClip:item.id});const html=st.app.innerHTML,ids=[...html.matchAll(/(?:^|\s)id="([^"]+)"/g)].map(x=>x[1]);assert.equal(new Set(ids).size,ids.length,item.id);assert.equal((html.match(/<iframe /g)||[]).length,item.spoilerLevel===2&&!spoilerState?0:(item.embeddable&&!item.externalUrl?1:0)+coachCount(item.id,spoilerState));assert.ok(!html.includes('undefined'));assert.equal((html.match(/data-video-shell=/g)||[]).length,item.spoilerLevel===2&&!spoilerState?0:(item.embeddable?1:0)+coachCount(item.id,spoilerState));assert.ok(html.includes('gallery-detail'));checks+=5;}
  const st=render(language,'listening',false);tap(st,{galleryCategory:'humor'});const first={...st.ctx.location};tap(st,{galleryClip:'wdcS0Nbo7Ng'});const second={...st.ctx.location};assert.ok(st.app.innerHTML.includes('data-added-media="wdcS0Nbo7Ng"'));tap(st,{action:'language'});assert.ok(st.ctx.location.search.includes('wdcS0Nbo7Ng'));assert.ok(st.ctx.location.search.includes('humor'));Object.assign(st.ctx.location,first);st.callbacks.popstate();assert.ok(!st.app.innerHTML.includes('id="gallery-detail"'));assert.equal((st.app.innerHTML.match(/class="gallery-card /g)||[]).length,R.gallery.groups.filter(x=>x.category==='humor').length);Object.assign(st.ctx.location,second);st.callbacks.popstate();assert.ok(st.app.innerHTML.includes('data-added-media="wdcS0Nbo7Ng"'));checks+=6;
  // Exact per-song links target one known gallery version and leave full-story details gated.
  const m=render(language,'musical',false);for(const song of R.musical.spotlight.songs){tap(m,{featuredSong:song.id});const html=m.ctx.document.getElementById('featured-song-detail').innerHTML;const match=html.match(/href="([^"]+)" data-gallery-link="([^"]+)"/);assert.ok(match);const a={dataset:{galleryLink:match[2]},getAttribute:()=>match[1].replace(/&amp;/g,'&')};m.callbacks.click({preventDefault(){},target:{closest:sel=>sel==='a[data-gallery-link]'?a:null}});assert.equal(m.ctx.location.pathname,`/${language}/listening/`);assert.ok(m.ctx.location.search.includes(match[2]));checks+=3;const link={getAttribute:()=>`/${language}/musical/`,dataset:{}};m.callbacks.click({preventDefault(){},target:{closest:sel=>sel==='a[href]'?link:null}});}
  const bad=render(language,'listening',false);bad.ctx.location.search='?clip=unrecognized&category=unknown';bad.callbacks.popstate();assert.ok(!bad.app.innerHTML.includes('id="gallery-detail"'));assert.equal((bad.app.innerHTML.match(/class="gallery-card /g)||[]).length,R.gallery.groups.length);checks+=2;
 }
-console.log(`PASS: ${checks} gallery checks: ${R.gallery.items.length*4} bilingual/spoiler/version render states, unique IDs, one direct player, language, Back/Forward, exact song links and invalid-query fallback.`);
+console.log(`PASS: ${checks} gallery checks: ${R.gallery.items.length*4} bilingual/spoiler/version render states, unique IDs, direct performance and coach players, language, Back/Forward, exact song links and invalid-query fallback.`);
 
 {const st=render('en','listening',false);tap(st,{galleryClip:'_6nTyXcmgLc'});const original=st.ctx.document.getElementById;st.ctx.document.getElementById=id=>['progress-text','progress-fill'].includes(id)?null:original(id);st.callbacks.change({target:{matches:sel=>sel==='[data-check]',dataset:{check:'stars'},checked:true}});assert.ok(st.ctx.SitePrivacy.get('barricade-listening').includes('stars'));console.log('PASS: selected listening checkbox works without legacy progress elements.');}
 
@@ -104,7 +105,7 @@ for(const lang of ['he','en'])for(const legacyMedia of [false,true]){
  tap(st,{galleryClose:''});assert.ok(!st.app.innerHTML.includes('<iframe'));directChecks++;
  const hidden=R.gallery.items.find(x=>x.spoilerLevel===2&&x.embeddable);
  tap(st,{galleryClip:hidden.id});assert.ok(!st.app.innerHTML.includes('<iframe'));
- tap(st,{galleryReveal:''});assert.equal((st.app.innerHTML.match(/<iframe /g)||[]).length,1);
+ tap(st,{galleryReveal:''});assert.equal((st.app.innerHTML.match(/<iframe /g)||[]).length,1+coachCount(hidden.id,true));
  tap(st,{action:'hide-spoilers'});assert.ok(!st.app.innerHTML.includes('<iframe'));directChecks+=3;
 }
 console.log(`PASS: ${directChecks} direct-player, legacy-choice preservation, close and spoiler-removal checks.`);
@@ -124,7 +125,7 @@ for(const language of ['he','en']){
  }
  const song=render(language,'musical',false);tap(song,{featuredSong:'on-my-own'});const links=song.ctx.document.getElementById('featured-song-detail').innerHTML;
  for(const id of g.clipIds){assert.ok(links.includes('data-gallery-link="'+id+'"'));lucyChecks++;}
- const direct=render(language,'listening',false);direct.ctx.location.search='?clip=d4sPDLqMxDs';direct.callbacks.popstate();assert.ok(direct.app.innerHTML.includes('data-added-media="d4sPDLqMxDs"'));assert.equal((direct.app.innerHTML.match(/<iframe /g)||[]).length,1);lucyChecks+=2;
+ const direct=render(language,'listening',false);direct.ctx.location.search='?clip=d4sPDLqMxDs';direct.callbacks.popstate();assert.ok(direct.app.innerHTML.includes('data-added-media="d4sPDLqMxDs"'));assert.equal((direct.app.innerHTML.match(/<iframe /g)||[]).length,1+coachCount('d4sPDLqMxDs',false));lucyChecks+=2;
 }
 console.log(`PASS: ${lucyChecks} Lucy Thomas defaults, three-version preservation, language retention, musical links and deep-link checks.`);
 

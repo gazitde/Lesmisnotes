@@ -172,6 +172,25 @@ await staleStateCase(); checks++;
  state.context.window.YT=state.YT;state.context.window.onYouTubeIframeAPIReady();await again;
  assert.equal(state.instances.length,1);checks+=2;
 }
+// Reusing one analysis alongside a spotlight and journey needs distinct player instances.
+{
+ const state=mediaHarness();const original=state.nodes.get('video-old');
+ state.nodes.set('video-old-copy',{...original,iframe:null,dataset:{videoShell:'old',videoInstance:'old-copy'}});
+ state.nodes.set('video-status-old-copy',{textContent:''});
+ await state.loadPlayer('old');await state.loadPlayer('old','old-copy');
+ assert.equal(state.instances.length,2);assert.notEqual(state.instances[0].iframe.id,state.instances[1].iframe.id);
+ state.instances[1].playEvent();assert.equal(state.instances[0].paused,1);assert.equal(state.instances[1].paused,0);
+ assert.equal(state.tracks[0][1].video_id,'old');state.instances[1].errorEvent();
+ assert.match(state.nodes.get('video-status-old-copy').textContent,/could not load/);assert.equal(state.nodes.get('video-status-old').textContent,'');
+ state.clearPlayers();assert.ok(state.instances.every(p=>p.destroyed===1));checks+=8;
+}
+// Partial song replacement releases detached players before the same slot is reused.
+{
+ const state=mediaHarness();await state.loadPlayer('old');const first=state.instances[0];
+ first.iframe.isConnected=false;await state.mountPlayers();
+ assert.equal(first.destroyed,1);assert.equal(state.instances.length,3);
+ state.clearPlayers();assert.ok(state.instances.every(p=>p.destroyed===1));checks+=3;
+}
 console.log(`PASS: ${checks} isolated media race, coordination, withdrawal, and no-autoplay checks.`);
 
 if (args.includes('--prove-regression')) {
