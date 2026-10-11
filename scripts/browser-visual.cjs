@@ -24,7 +24,14 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
    check(Boolean(layout.heading),`${lang}/${route} ${width} main heading`);
    const language=await page.locator('[data-action="language"]').boundingBox();check(language&&language.width>=44&&language.height>=44&&language.x>=0&&language.x+language.width<=width,`${lang}/${route} ${width} visible touch language control`);
    report.push({lang,route,width,...layout});
-   if(width!==320)await page.screenshot({path:path.join(dir,`${lang}-${route}-${width}.png`),fullPage:true});
+   if(width!==320){
+    for(const img of await page.locator('main img[loading="lazy"]').all()){
+      await img.scrollIntoViewIfNeeded();await img.evaluate(el=>el.complete?Promise.resolve():new Promise(resolve=>{el.addEventListener('load',resolve,{once:true});el.addEventListener('error',resolve,{once:true});setTimeout(resolve,6000)}));
+      check(await img.evaluate(el=>el.naturalWidth>0),`Local lazy image loaded ${lang}/${route} ${width}`);
+    }
+    await page.evaluate(()=>window.scrollTo(0,0));
+    await page.screenshot({path:path.join(dir,`${lang}-${route}-${width}.png`),fullPage:true});
+   }
    if(route==='home'||route==='contact'){
     for(const selector of route==='home'?['.poster-stamp','.vinyl-label']:['.contact-postmark']){
      const circle=await page.locator(selector).evaluate(el=>{
@@ -38,6 +45,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
    }
   }
  }
+ fs.writeFileSync(path.join(dir,'layout-report.json'),JSON.stringify({checks,failures,report},null,2));
  // Review rich gated layouts in their actual rendered state, not just the entry gates.
  for(const lang of ['en','he'])for(const width of [1365,390]){
   await page.setViewportSize({width,height:900});await page.goto(base+'/'+lang+'/story/');
@@ -49,8 +57,10 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
    const markers={story:'.story-chapter',characters:'.relationship-graph',novel:'.novel-event',after:'.curtain-stop'};
    if(markers[route])check(await page.locator(markers[route]).count()>0,`Open ${lang}/${route} actually contains rich content`);
    check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),`Open ${lang}/${route} ${width} fit`);
+   await page.evaluate(()=>window.scrollTo(0,0));
    await page.screenshot({path:path.join(dir,`${lang}-${route}-open-${width}.png`),fullPage:true});
    if(route==='quiz'){
+    if(await page.locator('[data-action="quiz-change"]').count())await page.locator('[data-action="quiz-change"]').first().click();
     await page.locator('[data-quiz-length="5"]').click();await page.locator('[data-action="quiz-start"]').click();
     check(await page.locator('.quiz-question-heading').count()>0,`Quiz question visible ${lang} ${width}`);
     check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),`Quiz question fits ${lang} ${width}`);

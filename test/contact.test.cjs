@@ -189,3 +189,22 @@ test('FormSubmit uncertain outcomes are not automatically retried and private up
     assert.ok(!JSON.stringify(r.body).includes('Private')); assert.ok(!JSON.stringify(r.body).includes('f'.repeat(32)));
   }
 });
+test('FormSubmit production defaults need no secret; explicit disable and preview host still fail closed', async () => {
+  const config = getConfig({ NODE_ENV: 'production' }); assert.equal(config.provider, 'formsubmit');
+  assert.deepEqual(config.origins, ['https://www.lesmisnotes.com', 'https://lesmisnotes.com']);
+  assert.equal(createTicket(config, Date.now()).signature, 'public-form-v1');
+  assert.equal(getConfig({ CONTACT_ENABLED: 'false' }), null);
+  assert.equal(getConfig({ CONTACT_RATE_LIMIT_MODE: 'redis' }), null, 'cross-instance Redis mode still needs explicit private configuration');
+  let calls = 0; const handler = createContactHandler({ env: { NODE_ENV: 'production' }, fetchImpl: async () => { calls++; return response(200, { success: true }); } });
+  const res = { setHeader() {}, end(body) { this.body = JSON.parse(body); } };
+  await handler({ method: 'GET', headers: { host: 'unapproved-preview.vercel.app', 'sec-fetch-site': 'same-origin' } }, res);
+  assert.equal(res.statusCode, 403); assert.equal(calls, 0);
+});
+test('FormSubmit public timing marker retains input-age guards without pretending to be signed authentication', async () => {
+  const h = harness({ env: { ...formsubmitEnv(), CONTACT_SIGNING_SECRET: '' } });
+  const ticket = (await h.request()).body.ticket; assert.equal(ticket.signature, 'public-form-v1');
+  assert.equal((await h.request(valid(ticket))).body.code, 'too_fast'); h.advance(1000);
+  assert.equal((await h.request(valid({ ...ticket, signature: 'different-marker' }))).body.code, 'invalid_ticket');
+  assert.equal((await h.request(valid({ ...ticket, issued: h.now() + 1000 }))).body.code, 'expired_ticket');
+  assert.equal(h.calls.length, 0);
+});

@@ -1,6 +1,6 @@
 # LesMisNotes / מעבר לבריקדה
 
-An independent Hebrew/English guide to Victor Hugo’s *Les Misérables* and the stage musical. The code project is LesMisNotes (`gazitde/Lesmisnotes`); the HTTPS canonical destination is `www.lesmisnotes.com` (the apex redirects there). Public indexing remains deliberately off pending the launch checklist.
+An independent Hebrew/English guide to Victor Hugo’s *Les Misérables* and the stage musical. The code project is LesMisNotes (`gazitde/Lesmisnotes`); the HTTPS canonical destination is `www.lesmisnotes.com` (the apex redirects there). Production indexing is approved; Vercel preview deployments remain noindex.
 
 ## Run locally
 
@@ -39,9 +39,9 @@ npm run test:browser
 
 ## Indexing and deployment
 
-The default build is **noindex** and uses the verified domain in `config/site.json`. An explicit empty `SITE_ORIGIN` omits canonicals for an unconfigured preview. Noindex is not access control: use host authentication for confidential previews.
+The approved production build is **indexable** and uses the verified domain in `config/site.json`. Vercel previews remain noindex; set `PUBLIC_SITE=false` for other private previews. An explicit empty `SITE_ORIGIN` omits canonicals for an unconfigured preview. Noindex is not access control: use host authentication for confidential previews.
 
-For an approved public production build, configure both `SITE_ORIGIN` (the final bare HTTPS origin) and `PUBLIC_SITE=true`. Vercel preview builds remain noindex even if that flag is inherited. A public build without a valid origin fails. Public output adds reciprocal Hebrew/English/x-default URLs, an advertised sitemap, Open Graph/Twitter image metadata and breadcrumb/WebSite/page structured data. Query-selected versions and filters share the canonical route.
+`config/site.json` records the approved public origin and indexing choice; `SITE_ORIGIN` and `PUBLIC_SITE` provide explicit build-time overrides. Vercel preview builds remain noindex even if that flag is inherited. A public build without a valid origin fails. Public output adds reciprocal Hebrew/English/x-default URLs, an advertised sitemap, Open Graph/Twitter image metadata and breadcrumb/WebSite/page structured data. Query-selected versions and filters share the canonical route.
 
 `vercel.json` supplies a static-output plus Node-function deployment preset. This repository does not provision hosting, buy a domain, enable analytics or create email credentials. GitHub Pages alone cannot run the contact backend; root-relative assets also require root-domain hosting rather than a repository subpath.
 
@@ -51,7 +51,7 @@ Read [the launch checklist](docs/LAUNCH_CHECKLIST.md) before enabling public ind
 
 Functional remembering remains optional. Search runs locally and does not transmit queries. Analytics are inactive until separately configured and verified. YouTube privacy-enhanced players load directly for selected performances without autoplay; plot-sensitive clips retain spoiler protection. OpenStreetMap tiles load only on the map route, without requesting device location. These external connections can disclose technical request data; privacy-enhanced embedding is not a no-data-collection guarantee.
 
-The feedback recipient and provider credentials belong only in server environment variables, never in browser code, source-controlled files or public error responses. Visitor submissions are private correspondence, not public comments. Do not enter sensitive information into a public feedback form.
+FormSubmit uses the existing opaque public routing identifier in a server-only module; the recipient email never appears in the repository or browser. Sending is enabled for the approved www/apex origins in `server/contact-route.cjs`, with optional environment overrides. No new mail API key is needed. If the optional Resend adapter is selected later, its recipient and credentials belong only in secure server environment variables. Visitor submissions are private correspondence, not public comments. Do not enter sensitive information into a public feedback form.
 
 ## Rights
 
@@ -59,4 +59,4 @@ This is an unofficial fan project, with no claimed affiliation or endorsement. R
 
 ## Verification limits
 
-Automated rendering/data/security tests do not replace physical-device, screen-reader, live-host, mail-delivery or legal review. Prior browser checks cover desktop and narrow CSS-width reflow, not a physical phone certification. Native YouTube players loaded, but advancing playback was not established in the cloud browser. Native print preview was unavailable there. Contact delivery must be tested after authorized provider configuration.
+Automated rendering/data/security tests do not replace physical-device, screen-reader, live-host, mail-delivery or legal review. Prior browser checks cover desktop and narrow CSS-width reflow, not a physical phone certification. Native YouTube players loaded, but advancing playback was not established in the cloud browser. Native print preview was unavailable there. Contact delivery requires an actual authorized mailbox receipt; a ready form alone is not proof of delivery.

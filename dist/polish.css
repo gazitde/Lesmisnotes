@@ -44,3 +44,10 @@ html[lang=he] .vinyl-label b,html[lang=he] .vinyl-label small{font-family:LesMis
 
 .contact-postmark{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;line-height:1.15}.contact-postmark b{font:700 1.5rem/1.1 Georgia,serif}.contact-postmark span{font-size:.68rem;letter-spacing:.05em}
 @media(max-width:680px){.contact-postmark{width:76px;height:76px;flex-shrink:0}.contact-postmark b{font-size:1.25rem}.contact-postmark span{font-size:.65rem}}
+/* Keep decorative type readable on small screens without tightening the safe area. */
+.vinyl-label{width:62%;gap:2cqw}.vinyl-label small{font-size:clamp(.75rem,2.8cqw,.82rem)}.vinyl-label .vinyl-sides{font-size:clamp(.75rem,2.6cqw,.8rem)}.vinyl-label b{font-size:clamp(1.3rem,6cqw,1.8rem)}
+.feature-copy h2{max-width:none}.poster-stamp-caption,.poster-stamp-city{font-size:.75rem}
+@media(max-width:680px){.poster-stamp-caption,.poster-stamp-city{font-size:.75rem}.contact-postmark span{font-size:.75rem}}
+@media(max-width:680px){.family-heading{flex-direction:column;align-items:stretch;gap:12px}.family-heading>div{width:100%;min-width:0}.family-heading h2{max-width:100%;font-size:1.6rem;margin-block:16px}.family-heading .tag{white-space:normal}.family-heading .age-recommendation{max-width:100%}}
+.story-foot .btn.secondary{color:#fff;border-color:#b2c7e8;background:transparent}.story-foot .btn.secondary:hover{background:#244b7d}
+@media(max-width:680px){.show-art{height:auto;min-height:120px;padding:24px;gap:12px;align-items:center}.show-art>span:last-child{flex:1;max-width:130px;min-width:0;font-size:.75rem;letter-spacing:.04em;line-height:1.5}.show-act-label,.show-stop-number{flex-shrink:0}}

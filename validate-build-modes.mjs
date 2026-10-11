@@ -19,6 +19,14 @@ try{
     assert.equal(fs.readFileSync('dist/robots.txt','utf8').includes('Sitemap:'),publicMode);
     const schema=spawnSync(process.execPath,['validate-seo.mjs'],{encoding:'utf8'});assert.equal(schema.status,0,schema.stderr);checks+=6;
   }
+  const configured=JSON.parse(fs.readFileSync('config/site.json','utf8'));
+  for(const stage of ['production','preview']){
+    const r=run({SITE_ORIGIN:undefined,PUBLIC_SITE:undefined,VERCEL_ENV:stage});assert.equal(r.status,0,r.stderr);
+    const html=fs.readFileSync('dist/en/home/index.html','utf8');
+    assert.ok(html.includes(`href="${configured.origin}/en/home/"`));
+    assert.equal(html.includes('content="index, follow, max-image-preview:large"'),configured.indexable===true&&stage==='production');
+    assert.equal(html.includes('content="noindex, follow"'),!(configured.indexable===true&&stage==='production'));checks+=4;
+  }
   for(const origin of ['http://example.org','https://example.org/path','https://user:pass@example.org','https://example.org/?a=1','https://localhost']){assert.notEqual(run({SITE_ORIGIN:origin,PUBLIC_SITE:'true'}).status,0);checks++;}
   assert.notEqual(run({PUBLIC_SITE:'true'}).status,0);checks++;
 }finally{const r=run();assert.equal(r.status,0,r.stderr);}

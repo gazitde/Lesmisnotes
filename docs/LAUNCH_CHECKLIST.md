@@ -3,10 +3,11 @@
 ## Decisions and configuration
 
 - [x] LesMisNotes display name and HTTPS domain verified: `lesmisnotes.com` redirects to `www.lesmisnotes.com`.
-- [ ] Choose a host supporting static routes and Node server functions. Verify TLS and root-path hosting.
-- [ ] Configure `SITE_ORIGIN` and authorize `PUBLIC_SITE=true` for production only.
+- [x] Vercel serves static routes and the Node contact API over verified HTTPS.
+- [x] Public origin/indexing authorized in code configuration; Vercel preview noindex protection retained.
 - [ ] Complete the operator identity and contact/retention statements in `dist/policies.js`; verify that the published statements match actual operation.
-- [ ] Choose and approve the mail provider, verified sender and server-only recipient settings. Never commit their values.
+- [x] FormSubmit selected using the existing opaque routing alias, held server-side with exact approved origins.
+- [ ] Verify one authorized technical message reaches the intended inbox.
 - [ ] Configure production-grade abuse controls and a retention policy for provider logs and received correspondence.
 - [ ] Keep analytics disabled unless a separate measurement configuration and consent review have been completed.
 

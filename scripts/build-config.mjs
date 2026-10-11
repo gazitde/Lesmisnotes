@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 const site = JSON.parse(fs.readFileSync('config/site.json','utf8'));
 const originInput = (process.env.SITE_ORIGIN ?? site.origin ?? '').trim();
-const wantsPublic = process.env.PUBLIC_SITE === 'true';
+const wantsPublic = process.env.PUBLIC_SITE === undefined ? site.indexable === true : process.env.PUBLIC_SITE === 'true';
 let origin = '';
 if (originInput) {
   const url = new URL(originInput);

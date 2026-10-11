@@ -1,5 +1,6 @@
 {
   "origin": "https://www.lesmisnotes.com",
   "brand": "LesMisNotes",
-  "defaultLanguage": "en"
+  "defaultLanguage": "en",
+  "indexable": true
 }

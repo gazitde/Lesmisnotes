@@ -1,8 +1,10 @@
 'use strict';
 
-const { createHmac, randomUUID, timingSafeEqual } = require('node:crypto');
+const { createHmac, randomUUID, randomBytes, timingSafeEqual } = require('node:crypto');
 const { isIP } = require('node:net');
-const { formsubmitAlias: defaultFormsubmitAlias } = require('./contact-route.cjs');
+const serverRoute = require('./contact-route.cjs');
+// Ephemeral privacy salt, not a credential or an authentication gate. It is never persisted.
+const instanceSalt = randomBytes(32).toString('hex');
 
 const MAX_BODY_BYTES = 16_384;
 const TICKET_LIFETIME_MS = 23 * 60 * 60 * 1000;
@@ -26,21 +28,26 @@ function getConfig(env) {
   const recipient = (env.CONTACT_RECIPIENT || '').trim();
   const sender = (env.CONTACT_FROM || '').trim();
   const apiKey = env.RESEND_API_KEY || '';
-  const secret = env.CONTACT_SIGNING_SECRET || '';
+  const configuredSecret = env.CONTACT_SIGNING_SECRET || '';
+  const secret = configuredSecret || instanceSalt;
   const mode = env.CONTACT_RATE_LIMIT_MODE || 'memory';
   let origins = [];
   try {
-    origins = (env.CONTACT_ALLOWED_ORIGINS || '').split(',').map(x => x.trim()).filter(Boolean).map(value => {
+    const allowedOrigins = env.CONTACT_ALLOWED_ORIGINS === undefined ? serverRoute.allowedOrigins.join(',') : env.CONTACT_ALLOWED_ORIGINS;
+    origins = allowedOrigins.split(',').map(x => x.trim()).filter(Boolean).map(value => {
       const url = new URL(value);
       const local = env.NODE_ENV !== 'production' && ['localhost', '127.0.0.1', '[::1]'].includes(url.hostname);
       if (url.origin !== value || (url.protocol !== 'https:' && !(local && url.protocol === 'http:'))) throw Error();
       return value;
     });
   } catch { return null; }
-  if (env.CONTACT_ENABLED !== 'true' || !['formsubmit', 'resend'].includes(provider) || secret.length < 32 || !origins.length || !['memory', 'redis'].includes(mode)) return null;
+  const enabled = env.CONTACT_ENABLED === undefined ? serverRoute.enabled === true : env.CONTACT_ENABLED === 'true';
+  if (!enabled || !['formsubmit', 'resend'].includes(provider) || !origins.length || !['memory', 'redis'].includes(mode)) return null;
+  // Only signed Resend tickets and the optional cross-instance Redis hashes need a persistent key.
+  if ((provider === 'resend' || mode === 'redis') && configuredSecret.length < 32) return null;
   // This is a provider-issued public form-routing alias, not an archive API key.
   // Keep it server-only anyway; never accept a raw recipient address as a fallback.
-  const formsubmitAlias = env.FORMSUBMIT_ALIAS === undefined ? defaultFormsubmitAlias : env.FORMSUBMIT_ALIAS;
+  const formsubmitAlias = env.FORMSUBMIT_ALIAS === undefined ? serverRoute.formsubmitAlias : env.FORMSUBMIT_ALIAS;
   if (provider === 'formsubmit' && !/^[a-f0-9]{32}$/i.test(formsubmitAlias)) return null;
   if (provider === 'resend' && (!validEmail(recipient) || !validEmail(sender) || !apiKey || SINGLE_LINE_CONTROL.test(apiKey))) return null;
   const redisUrl = env.UPSTASH_REDIS_REST_URL || '';
@@ -59,7 +66,10 @@ function sameOrigin(req, config, method) {
   const fetchSite = header(req, 'sec-fetch-site');
   if (fetchSite && fetchSite !== 'same-origin') throw error(403, 'origin_rejected');
   // GET may omit Origin in browsers. Its signed ticket is not an authentication credential.
-  if (!origin && method === 'GET') return;
+  if (!origin && method === 'GET') {
+    if (!config.origins.some(value => new URL(value).host === header(req, 'host'))) throw error(403, 'origin_rejected');
+    return;
+  }
   if (!config.origins.includes(origin)) throw error(403, 'origin_rejected');
   const host = header(req, 'host');
   if (!host || new URL(origin).host !== host) throw error(403, 'origin_rejected');
@@ -67,13 +77,21 @@ function sameOrigin(req, config, method) {
 
 function createTicket(config, now, id = randomUUID()) {
   const issued = now;
+  // FormSubmit has no privileged browser capability here. This public timing marker and nonce
+  // support UX and best-effort duplicate tracking; they are not proof of humanity or authentication.
+  if (config.provider === 'formsubmit') return { id, issued, signature: 'public-form-v1' };
   return { id, issued, signature: hmac(config.secret, `contact:v1:${id}:${issued}`) };
 }
 
 function validateTicket(ticket, config, now) {
-  if (!ticket || typeof ticket !== 'object' || Array.isArray(ticket) || !/^[a-f0-9-]{36}$/.test(ticket.id || '') || !Number.isSafeInteger(ticket.issued) || typeof ticket.signature !== 'string' || !/^[a-f0-9]{64}$/.test(ticket.signature)) throw error(400, 'invalid_ticket');
-  const expected = hmac(config.secret, `contact:v1:${ticket.id}:${ticket.issued}`);
-  if (!timingSafeEqual(Buffer.from(ticket.signature, 'hex'), Buffer.from(expected, 'hex'))) throw error(400, 'invalid_ticket');
+  if (!ticket || typeof ticket !== 'object' || Array.isArray(ticket) || !/^[a-f0-9-]{36}$/.test(ticket.id || '') || !Number.isSafeInteger(ticket.issued) || typeof ticket.signature !== 'string') throw error(400, 'invalid_ticket');
+  if (config.provider === 'formsubmit') {
+    if (ticket.signature !== 'public-form-v1') throw error(400, 'invalid_ticket');
+  } else {
+    if (!/^[a-f0-9]{64}$/.test(ticket.signature)) throw error(400, 'invalid_ticket');
+    const expected = hmac(config.secret, `contact:v1:${ticket.id}:${ticket.issued}`);
+    if (!timingSafeEqual(Buffer.from(ticket.signature, 'hex'), Buffer.from(expected, 'hex'))) throw error(400, 'invalid_ticket');
+  }
   const age = now - ticket.issued;
   if (age < 0 || age > TICKET_LIFETIME_MS) throw error(409, 'expired_ticket');
   if (age < 800) throw error(429, 'too_fast', undefined, 2);

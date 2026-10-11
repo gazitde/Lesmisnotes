@@ -15,27 +15,27 @@ Load contact.js before app.js; include contact.css. Add `contact` to labels, pag
 
 Do not apply a catch-all SPA rewrite to `/api/contact`. The function must run at that path; the status probe treats HTML/404 as unavailable. The local static server may keep contact disabled, or explicitly route `/api/contact` to the handler for integration tests. Never expose `server/`, `.env` files, or the repository root as a public static directory. Set a Vercel function maxDuration of at least 30 seconds if adding an override; remote calls have their own shorter deadlines.
 
-## Activation: intentionally not performed
+## Activation status and server configuration
 
-`GET /api/contact` returns `503 {available:false, code:"not_configured"}` until configuration is complete. The form keeps Send disabled and offers draft copying. A safe build/deployment does not mean mail delivery is active. No account, credential, sender verification, infrastructure setting, or real email was created or tested while preparing this module.
+The approved default FormSubmit route is enabled for the exact production origins in `server/contact-route.cjs`: `https://www.lesmisnotes.com` and `https://lesmisnotes.com`. It needs no environment variables or signing secret. GET/POST on an unapproved preview host is rejected. `CONTACT_ENABLED=false` explicitly disables the service; invalid overrides fail closed. Configuration readiness does not prove provider activation or actual email delivery. No real submission has been made during module preparation; the one approved deployment test must be verified separately.
 
-Add only server-side environment variables in the authorized hosting project, scoped to the intended environment. Never use a public prefix, commit values, echo values into a command/log, or put the live recipient in examples/tests/README:
+The non-secret production enable flag, exact origin allowlist and public provider-routing alias are server source configuration. Optional environment overrides below must stay server-side and be scoped to the intended environment. Never use a public prefix, commit values, echo values into a command/log, or put the live recipient in examples/tests/README:
 
 | Variable | Required value |
 | --- | --- |
-| CONTACT_ENABLED | `true` only after the delivery and abuse configuration is approved |
+| CONTACT_ENABLED | Optional override; `false` disables the already-approved default FormSubmit route |
 | CONTACT_PROVIDER | `formsubmit` by default; `resend` is an optional explicit alternative |
 | FORMSUBMIT_ALIAS | Optional override of the existing server-only public routing alias; 32 hexadecimal characters, never an email/address fallback or archive API key |
 | CONTACT_RECIPIENT | Resend only: the operator's private destination, entered securely on the server only |
 | CONTACT_FROM | Resend only: a bare sender email at an authorized, verified sending domain |
 | RESEND_API_KEY | Resend only: an authorized sending credential, entered through a secure setup flow |
-| CONTACT_SIGNING_SECRET | A stable, private, random value of at least 32 characters, entered securely |
-| CONTACT_ALLOWED_ORIGINS | Comma-separated exact HTTPS origins, without paths or trailing slashes; no wildcards |
+| CONTACT_SIGNING_SECRET | Required only for optional Resend or Redis modes; at least 32 private random characters. Default FormSubmit/memory mode uses only an ephemeral privacy salt, not a persistent credential |
+| CONTACT_ALLOWED_ORIGINS | Optional replacement of the server-source origin allowlist; comma-separated exact HTTPS origins without paths, trailing slashes or wildcards |
 | CONTACT_RATE_LIMIT_MODE | `memory` by default; `redis` optionally enables shared limits |
 | UPSTASH_REDIS_REST_URL | Required only in Redis mode, an HTTPS `*.upstash.io` REST endpoint |
 | UPSTASH_REDIS_REST_TOKEN | Required only in Redis mode; authorized REST credential |
 
-Local HTTP origins are allowed only for localhost/loopback when NODE_ENV is not production. Leave mail disabled on unapproved previews. This implementation expects Vercel's overwritten client-IP header on Vercel; on another host it uses the socket IP, so a trusted proxy integration must be reviewed separately.
+Local HTTP origins are allowed only for localhost/loopback when NODE_ENV is not production. Unapproved preview hosts are rejected by the server-source origin allowlist. Do not add them casually. This implementation expects Vercel's overwritten client-IP header on Vercel; on another host it uses the socket IP, so a trusted proxy integration must be reviewed separately.
 
 The default uses FormSubmit, the same service as the related sites, with the existing verified opaque routing alias kept server-side. No new FormSubmit account, archive API key, verified sender domain, Resend credential or Redis account is needed for this route. The new production domain may require its own one-time FormSubmit activation even though the destination worked on other sites. The provider confirmation link must only be used with the appropriate authorization. No activation/test message has been sent for this site during preparation.
 
@@ -46,7 +46,7 @@ Resend remains an optional explicit adapter. It requires an existing authorized 
 ## Abuse and retry behavior
 
 - JSON POST only; exact same-origin checks, no CORS, 16 KiB body maximum, allowlisted fields/categories, 10–4,000 message characters, 80-character optional name, validated optional reply email, and header/control-character rejection.
-- Honeypot plus signed server-issued ticket, a short minimum fill time, and a 23-hour ticket lifetime. Expired attempts cannot be automatically resent past Resend's 24-hour idempotency window in Resend mode.
+- Honeypot, short minimum fill time, random submission nonce and a 23-hour submission lifetime. The FormSubmit timing marker is deliberately public and is not authentication or proof of humanity; bots can forge timing, so do not treat it as strong anti-bot protection. Resend mode retains a signed ticket, whose 23-hour lifetime stays within Resend's 24-hour idempotency window.
 - Fixed server-controlled provider destination. FormSubmit receives only the allowlisted named fields; Resend sends a plain-text email. User data never controls recipient, sender, custom headers or subject structure. No auto-response is sent to unverified visitor addresses.
 - Per-IP 5 attempts/15 minutes; per-instance 60/hour and 200/day; bounded in-memory storage; provider timeouts. **Memory counters and accepted-state caching are best effort and reset on cold start or deployment. They are not a distributed rate limit or a guarantee of a total spending cap.**
 - Before broad production launch, configure and verify a Vercel edge/WAF rate-limit rule for POST `/api/contact` and suitable provider spending limits, or select Redis mode. This preparation has not configured those controls. The optional REST Redis adapter has atomic shared limits and no package dependency. If chosen but unavailable, it fails closed rather than falling back to memory.
@@ -65,10 +65,10 @@ Suggested privacy policy copy is in `contact-privacy-copy.json`. Review actual h
 
 ## Verification and launch checklist
 
-1. Run `node --test test/contact*.test.cjs` and existing regression/build checks. All test addresses and credentials are synthetic; mock fetch prevents real mail.
-2. Deploy without config: GET and POST must fail closed; form must show unavailable, preserve entered text and offer copy.
+1. Run `node --test test/contact*.test.cjs` and existing regression/build checks. All test addresses/overridden routing aliases/credentials are synthetic; mock fetch prevents real mail.
+2. Test explicit disabled/invalid configuration and unapproved preview origins: requests must fail closed; the form must preserve entered text and offer copy. Confirm only the approved production origins can enable the default route.
 3. Confirm server files are not downloadable and private values are absent from built assets, HTML, source maps, repository history, API response/error bodies and public logs.
-4. Configure only after approval. Canonical origin is `https://www.lesmisnotes.com`; the apex `https://lesmisnotes.com` currently redirects there. Confirm exact origin checks, FormSubmit domain activation, abuse controls and any provider spending bounds. In Resend mode, also confirm sender verification.
+4. The approved source configuration uses canonical origin `https://www.lesmisnotes.com`; the apex `https://lesmisnotes.com` redirects there. Confirm exact origin checks, FormSubmit domain activation and reasonable abuse monitoring. Strong distributed protection is an optional operator decision, not a guarantee of warm-memory limits. In Resend mode, separately configure credentials and sender verification after approval.
 5. With explicit authorization, send one clearly labelled test and verify actual receipt in the intended mailbox. A 202 alone is insufficient. For an accepted same-ticket retry, check that the local/shared accepted-state path does not send again. Do not claim provider-level deduplication for FormSubmit, and do not retry an uncertain live test without reviewing the inbox first.
 6. Exercise keyboard/RTL/LTR, mobile, anonymous/no-reply submissions, malformed email, empty/long text, rate limits, offline and timeout, double-click, navigation/language change while sending, retry and new-note reset.
 

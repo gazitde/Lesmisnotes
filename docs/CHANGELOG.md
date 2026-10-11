@@ -3,8 +3,9 @@
 - LesMisNotes branding, locally hosted Hebrew type, balanced hero/navigation and prominent language choice.
 - English first-visit root; saved consented Hebrew and explicit language links still take priority.
 - Both circular compositions use deliberate safe-area line breaks and responsive sizes.
-- Verified www canonical destination; indexing remains off.
-- FormSubmit server adapter prepared; delivery remains controlled by server activation settings.
+- Verified www canonical destination, approved production indexing and full46-URL sitemap; Vercel previews retain noindex.
+- FormSubmit enabled for the approved domain through the existing opaque server-side route, with no new credential setup; actual delivery is verified separately.
+- Removed or rewrote195 defensive copy passages in Hebrew and English, retaining sources, useful scene context, food safety and specific experimental guidance.
 - Added full bilingual route visual/reflow coverage and screenshot artifacts.
 
 # Migration release
