@@ -13,7 +13,7 @@ for(const lang of ['he','en'])for(const width of [1365,390,320]){
    check((await page.locator('#gallery-reading-title').innerText())===group.title[lang],'Translated reading title '+id+lang);
    check((await page.locator('.gallery-reading').innerText()).includes(group.scene[lang]),'Full scene is readable '+id+lang);
    check(await page.locator('.gallery-versions button').count()===group.clipIds.length,'All existing versions retained '+id+lang);
-   check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),'Reading page fits '+id+lang+width);
+   const fits=await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth);if(!fits){console.error('Reading overflow',await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,items:[...document.querySelectorAll('main *')].map(e=>({tag:e.tagName,cls:e.className,text:e.textContent.slice(0,70),rect:e.getBoundingClientRect().toJSON()})).filter(x=>x.rect.width>0&&(x.rect.left< -1||x.rect.right>innerWidth+1)).slice(0,20)})));await page.screenshot({path:path.join(dir,'reading-overflow-'+lang+'-'+width+'.png'),fullPage:true})}check(fits,'Reading page fits '+id+lang+width);
   }
   const first=page.locator('.gallery-versions button').first();await first.focus();await first.press('Enter');check(await first.getAttribute('aria-pressed')==='true','Keyboard selects first version '+group.id+lang);check(new URL(page.url()).searchParams.get('clip')===await first.getAttribute('data-gallery-clip'),'Keyboard keeps clip deep link '+group.id+lang);
   if(await page.locator('[data-gallery-reveal]').count())await page.locator('[data-gallery-reveal]').click();
