@@ -29,7 +29,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
    if(width!==320){
     for(const disclosure of await page.locator('.place-secondary-photo>summary').all())await disclosure.click();
     for(const img of await page.locator('main img').all()){
-      if(!await img.isVisible())continue;
+      if(!await img.isVisible()||!await img.evaluate(el=>new URL(el.currentSrc||el.src,location.href).origin===location.origin))continue;
       await img.scrollIntoViewIfNeeded();await img.evaluate(el=>el.complete?Promise.resolve():new Promise(resolve=>{el.addEventListener('load',resolve,{once:true});el.addEventListener('error',resolve,{once:true});setTimeout(resolve,6000)}));
       check(await img.evaluate(el=>el.naturalWidth>0),`Local image loaded ${lang}/${route} ${width}`);
       check(await img.evaluate(async el=>{try{await el.decode();return true}catch{return false}}),`Local image decoded ${lang}/${route} ${width}`);
