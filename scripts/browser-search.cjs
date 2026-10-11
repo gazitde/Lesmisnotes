@@ -48,6 +48,7 @@ check(await page.locator('#contact-send').isDisabled(),'Unconfigured contact rem
 await page.locator('#contact-message').fill('A local UI test draft, never submitted.');
 await page.locator('[data-action="language"]').click();
 check(await page.locator('#contact-message').inputValue()==='A local UI test draft, never submitted.','Contact draft survives language change');
+check(await page.locator('html').getAttribute('lang')==='he','Contact language actually switches to Hebrew');
 for(const width of [390,320]){
  await page.setViewportSize({width,height:844});
  check(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),'Contact/header no overflow at '+width);
@@ -56,6 +57,19 @@ for(const width of [390,320]){
  await page.keyboard.press('Escape');
 }
 await page.screenshot({path:path.join(artifactDir,'contact-he-narrow.png'),fullPage:false});
+for(const language of ['en','he'])for(const width of [1365,960,680,390,320]){
+ await page.setViewportSize({width,height:900});await page.goto(base+'/'+language+'/home/');
+ const geometry=await page.locator('.poster-stamp').evaluate(stamp=>{
+   const r=stamp.clientWidth/2;
+   return {overflow:stamp.scrollWidth>stamp.clientWidth||stamp.scrollHeight>stamp.clientHeight,children:[...stamp.children].map(e=>({text:e.textContent,width:e.offsetWidth,height:e.offsetHeight,left:e.offsetLeft,top:e.offsetTop})),radius:r};
+ });
+ check(!geometry.overflow,'Stamp does not overflow '+language+' '+width);
+ for(const child of geometry.children){
+   const farX=Math.max(Math.abs(child.left-geometry.radius),Math.abs(child.left+child.width-geometry.radius));
+   const farY=Math.max(Math.abs(child.top-geometry.radius),Math.abs(child.top+child.height-geometry.radius));
+   check(Math.hypot(farX,farY)<=geometry.radius-2,'Stamp text inside circle: '+language+' '+width+' '+child.text);
+ }
+}
 check(errors.length===0,'No browser runtime errors: '+errors.join('; '));
 console.log(`Browser search: ${checks} checks passed, desktop + 390px mobile, bilingual, keyboard, history, content/permission/security.`);
 await browser.close();

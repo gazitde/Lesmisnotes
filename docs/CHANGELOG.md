@@ -12,6 +12,10 @@
 
 The final source passes core rendering/content (7,332 assertions), static SEO (2,984 checks), build-mode validation (30), search engine (49), search interaction harness (19), contact/server-client (29; one opt-in native-browser test skipped), and all About, gallery, media, map, places, recipes and source-label regression suites. An independent fresh-copy build/test/export scan also passed.
 
-Browser checks are included in CI for keyboard behavior, Hebrew/English layouts, 390px/320px reflow, deep links, history, spoiler revocation and mocked contact retry states. Their actual CI result, actual host deployment and real email receipt must be verified separately. The development cloud browser could not reach the local executor server; no local browser pass is claimed.
+Browser checks are included in CI for keyboard behavior, Hebrew/English layouts, 390px/320px reflow, deep links, history, spoiler revocation and mocked contact retry states. The initial migration CI passed all 33 browser checks and the separate real-Chromium mocked contact test. The Vercel deployment served the root and localized pages successfully; actual email receipt still requires authorized configuration. The development cloud browser could not reach the local executor server, but hosted search, contact availability, language switching and narrow reflow were checked separately.
 
 No hosting account, mail credential, sender domain, analytics identifier or final public canonical domain was created or activated by the source migration.
+
+## Hero-stamp correction
+
+The circular Paris/1832 stamp now has explicit city/date/caption lines and a larger safe text area at desktop and narrow widths. Full words remain visible without overflow clipping. Added bilingual circle-boundary browser regression coverage at five viewport widths.

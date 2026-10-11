@@ -206,3 +206,7 @@
 @media screen{.menu-btn{min-width:44px;flex-shrink:0}}
 
 @media screen{.filter{min-width:44px}}
+
+/* Keep every stamp line within the circular safe area; no clipping or ellipsis. */
+@media screen{.home-opening .poster-stamp{box-sizing:border-box;width:120px;height:120px;padding:14px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;line-height:1.12;font-size:.8rem;overflow:visible}.home-opening .poster-stamp strong{display:block;font-size:1.5rem;line-height:1.1}.poster-stamp-city,.poster-stamp-caption{display:block;max-width:100%;white-space:nowrap}}
+@media screen and (max-width:680px){.home-opening .poster-stamp{width:116px;height:116px;padding:14px;font-size:.75rem;top:16px;inset-inline-end:16px}.home-opening .poster-stamp strong{font-size:1.375rem}}
