@@ -67,7 +67,7 @@
       add('page', route, route, 'pages', input.labels?.[route] || page.title, input.pageHints?.[route] || page.description);
     }
     for (const c of R.characters || []) add('character', c.id, 'characters', 'characters', c.name,
-      spoilers ? pair(c.role, c.summary, c.question, c.context?.sentences, (c.canonNotes||[]).map(n=>pair(n.title,n.paragraphs)), (c.connections || []).map(x => x.label)) : pair(c.safeIntro,c.id==='valjean'?R.safe24601?.body:''),
+      spoilers ? pair(c.role, c.summary, c.question, c.context?.sentences, (c.canonNotes||[]).map(n=>pair(n.title,n.paragraphs)), (c.connections || []).map(x => x.label), (R.relationships||[]).filter(e=>e.from===c.id||e.to===c.id).map(e=>pair(e.label,e.context,e.canonNote))) : pair(c.safeIntro,c.id==='valjean'?R.safe24601?.body:'',(R.relationships||[]).filter(e=>e.spoilerLevel===0&&(e.from===c.id||e.to===c.id)).map(e=>pair(e.safeLabel,e.safeContext))),
       [c.id, ...(CHARACTER_ALIASES[c.id] || [])], false);
     if (spoilers) for (const s of R.story || []) add('story', s.id, 'story', 'story', s.title, pair(s.period, s.summary, s.detail, s.songs));
     if (novel) for (const s of R.novel?.milestones || []) add('novel', s.id, 'novel', 'story', s.title, pair(s.dateLabel, s.summary, s.details, s.remember));

@@ -17,7 +17,7 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=process.env.
     check(!/9430|firing squad|כיתת יורים/.test(await page.locator('main').innerText()),'No protected character outcomes '+lang);
     await page.locator('.safe-character-index a[href="#character-intro-javert"]').click();
     check(page.url().endsWith('#character-intro-javert'),'Native character fragment works '+lang);
-    check(await page.locator('.char-detail,.graph-node').count()===0,'Full relationship explorer stays gated '+lang);
+    check(await page.locator('.char-detail').count()===0&&await page.locator('.graph-node').count()>0,'Safe relationship explorer visible; full biographies gated '+lang);
    }
    if(route==='watch'){
     check(await page.locator('.reading-card').count()===6,'Six static viewing destinations '+lang);
