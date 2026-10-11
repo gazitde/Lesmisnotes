@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-10-11",
+  "additions": [
+    {
+      "id": "javert-prison-origin",
+      "route": "characters",
+      "recordId": "javert",
+      "sourceIds": [
+        "canon-javert-origin"
+      ]
+    },
+    {
+      "id": "bishop-unknown-light",
+      "route": "characters",
+      "recordId": "bishop",
+      "sourceIds": [
+        "canon-bishop-convention"
+      ]
+    },
+    {
+      "id": "fantine-delegated-authority",
+      "route": "characters",
+      "recordId": "fantine",
+      "sourceIds": [
+        "canon-fantine-dismissal",
+        "canon-fantine-authority",
+        "canon-mti-factory"
+      ]
+    },
+    {
+      "id": "abc-school-and-republic",
+      "route": "characters",
+      "recordId": "enjolras",
+      "sourceIds": [
+        "canon-abc-education"
+      ]
+    },
+    {
+      "id": "grantaire-chosen-solidarity",
+      "route": "characters",
+      "recordId": "enjolras",
+      "sourceIds": [
+        "canon-grantaire-attachment",
+        "canon-grantaire-choice"
+      ]
+    },
+    {
+      "id": "hugo-art-onstage",
+      "route": "musical",
+      "recordId": "creationStory.craft",
+      "sourceIds": [
+        "canon-kinley-hugo-art",
+        "canon-kinley-production"
+      ]
+    }
+  ],
+  "rights": {
+    "novel": "Victor Hugo, Les Misérables (1862), Isabel F. Hapgood translation (1887), public-domain text. All added prose is original paraphrase and analysis.",
+    "stage": "No lyrics or script quotations. Only a brief paraphrase of the MTI synopsis is used.",
+    "design": "No image reuse requested. The bilingual design note paraphrases the credited designer’s first-person account, with a combined body length below 200 words.",
+    "quotationCount": 0
+  }
+}

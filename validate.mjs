@@ -26,6 +26,24 @@ function render(lang,route,spoilers){
  return {html:app.innerHTML,ctx:context,app,callbacks};
 }
 const {ctx}=render('en','home',false);const R=ctx.RESEARCH;
+// Six sourced additions: five gated character close readings and one safe design note.
+{
+ const enriched=R.characters.filter(c=>c.canonNotes?.length),notes=enriched.flatMap(c=>c.canonNotes);
+ assert.equal(R.characters.length,10);assert.equal(notes.length,5);assert.equal(new Set(notes.map(n=>n.id)).size,5);tests+=3;
+ const escape=v=>v.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ for(const n of notes){assert.equal(n.paragraphs.length,2);assert.ok(n.sourceIds.length);tests+=2;for(const sid of n.sourceIds){const ref=R.sources.find(s=>s.id===sid);assert.ok(ref?.url.startsWith('https://'));assert.ok(ref.label.he&&ref.label.en);tests+=2;}}
+ for(const language of ['he','en']){
+  const hidden=render(language,'characters',false);assert.ok(!hidden.html.includes('character-canon-note'));tests++;
+  const topline=hidden.html.split('<header class="header">')[0];assert.ok(!topline.includes('ENGLISH +'));assert.ok(!topline.includes('עברית +'));assert.ok(hidden.html.includes('data-action="language"'));tests+=3;
+  const state=render(language,'characters',true);
+  for(const c of enriched){state.callbacks.click({target:{closest:selector=>selector==='a[href]'?null:{dataset:{character:c.id},classList:{contains:()=>false}}}});const html=state.ctx.document.getElementById('character-panel').innerHTML;
+   assert.equal((html.match(/class="character-canon-note"/g)||[]).length,c.canonNotes.length);tests++;
+   for(const n of c.canonNotes){assert.ok(html.includes(escape(n.title[language])));tests++;for(const text of n.paragraphs){assert.ok(html.includes(escape(text[language])));assert.ok(!hidden.html.includes(escape(text[language])));tests+=2;}}
+  }
+  const musical=render(language,'musical',false).html,craft=R.musical.creationStory.craft.find(c=>c.id==='hugo-art-onstage');assert.ok(musical.includes('id="craft-hugo-art-onstage"'));assert.ok(musical.includes(escape(craft.title[language])));assert.ok(musical.includes(escape(craft.body[language].split('\n\n')[0])));tests+=3;
+ }
+}
+
 for(const k of ['story','characters','differences','adaptations']) for(const record of R[k]){
  for(const [key,value] of Object.entries(record)) if(value&&typeof value==='object'&&!Array.isArray(value)&&('he'in value||'en'in value)){assert.ok(value.he&&value.en,`${k}.${record.id}.${key} must be fully bilingual`);tests++}
  for(const sid of record.sourceIds||[]){assert.ok(R.sources.some(s=>s.id===sid),`Missing source ${sid}`);tests++}
@@ -223,7 +241,7 @@ for(const abandonment of ['none','navigate','cancel','erase']){
 // Six editorial music spotlights: safe background, gated plot, exact journey targets.
 {
  const F=R.musical.spotlight,C=R.musical.creationStory,ids=F.songs.map(s=>s.id);
- assert.equal(F.songs.length,6);assert.equal(new Set(ids).size,6);assert.equal(C.panels.length,3);assert.equal(C.craft.length,4);tests+=4;
+ assert.equal(F.songs.length,6);assert.equal(new Set(ids).size,6);assert.equal(C.panels.length,3);assert.equal(C.craft.length,5);tests+=4;
  for(const song of F.songs){assert.ok(R.musical.songentries.some(x=>x.id===song.id));assert.equal(song.spoilerLevel,0);assert.equal(song.plotSpoilerLevel,2);for(const k of ['hook','background','question','plot'])assert.ok(song[k].he&&song[k].en);for(const sid of [...song.sourceIds,...song.plotSourceIds])assert.ok(R.sources.some(s=>s.id===sid));tests+=7+song.sourceIds.length+song.plotSourceIds.length;}
  const escaped=t=>t.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  for(const language of ['he','en']){

@@ -29,7 +29,7 @@ function render(lang,route,spoilers){
 let checks=0;
 for(const lang of ['he','en']){
  const state=render(lang,'about',false),tap=data=>state.callbacks.click({target:{closest:()=>({dataset:data})}}),input=value=>state.callbacks.input({target:{matches:()=>true,value}});
- const total=new Set(state.ctx.RESEARCH.sources.map(x=>x.url)).size;assert.equal(total,204);checks++;
+ const total=new Set(state.ctx.RESEARCH.sources.map(x=>x.url)).size;assert.equal(total,212);checks++;
  const count=html=>(html.match(/class="source-result-topics"/g)||[]).length;
  assert.equal(count(state.html),24);checks++;
  for(const id of ['about-guide','about-history','about-numbers','privacy','about-sources']){assert.ok(state.html.includes('id="'+id+'"'));assert.ok(state.html.includes('data-jump="'+id+'"'));checks+=2;}
@@ -48,4 +48,4 @@ for(const lang of ['he','en']){
  const chars=render(lang,'characters',true).html;assert.ok(chars.includes('24601'));checks++;
  const policy=render(lang,'privacy',false).html;assert.ok(policy.includes(lang==='he'?'פועל רק לאחר אישור מפורש למדידה':'runs only after an explicit analytics opt-in'));checks++;
 }
-console.log(`PASS: ${checks} About and polish checks: all204 sources, 24-entry reveal, every source search, topics/reset, no-JS fallback, privacy controls, printed recipe status and24601.`);
+console.log(`PASS: ${checks} About and polish checks: all212 sources, 24-entry reveal, every source search, topics/reset, no-JS fallback, privacy controls, printed recipe status and24601.`);

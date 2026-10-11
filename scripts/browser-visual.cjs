@@ -60,6 +60,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
    await page.goto(base+'/'+lang+'/'+route+'/');
    for(const action of ['novel-open','after-open','show-open','director-open']){const e=page.locator(`[data-action="${action}"]`);if(await e.count())await e.first().click();}
    await page.evaluate(()=>document.fonts.ready);
+   if(route==='musical')await page.locator('.composition-notebook > summary').click();
    if(route==='story')check(await page.locator('.story-foot .btn.secondary').evaluate(el=>{
      const linear=c=>{c/=255;return c<=.04045?c/12.92:((c+.055)/1.055)**2.4};
      const luminance=css=>{const c=css.match(/[0-9.]+/g).slice(0,3).map(Number);return .2126*linear(c[0])+.7152*linear(c[1])+.0722*linear(c[2])};
@@ -71,6 +72,15 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
    check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),`Open ${lang}/${route} ${width} fit`);
    await page.evaluate(()=>window.scrollTo(0,0));
    await page.screenshot({path:path.join(dir,`${lang}-${route}-open-${width}.png`),fullPage:true});
+   if(route==='characters'){
+    for(const id of ['javert','bishop','fantine','enjolras']){
+     await page.locator(`.char-button[data-character="${id}"]`).click();
+     check(await page.locator('.character-canon-note').count()===(id==='enjolras'?2:1),`Canon notes visible ${lang} ${id} ${width}`);
+     check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),`Canon notes fit ${lang} ${id} ${width}`);
+     await page.evaluate(()=>window.scrollTo(0,0));
+     await page.screenshot({path:path.join(dir,`${lang}-characters-${id}-${width}.png`),fullPage:true});
+    }
+   }
    if(route==='quiz'){
     if(await page.locator('[data-action="quiz-change"]').count())await page.locator('[data-action="quiz-change"]').first().click();
     await page.locator('[data-quiz-length="5"]').click();await page.locator('[data-action="quiz-start"]').click();

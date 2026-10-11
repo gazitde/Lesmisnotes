@@ -34,6 +34,12 @@ check(S.highlight('זָ׳אן וַלְזָ׳אן',"ולז'אן").includes('<mark
 check(!JSON.stringify(safe.find(x=>x.id==='character:valjean')).includes('9430'),'Locked character body absent from index');
 check(!ids(safe,'9430').includes('character:valjean'),'Hidden content not used for matching');
 check(ids(on,'9430').includes('character:valjean'),'Character depth available after explicit opt-in');
+check(ids(on,'Combeferre').includes('character:enjolras'),'New novel close reading is searchable after consent');
+check(!ids(safe,'Combeferre').includes('character:enjolras'),'New character note cannot leak through safe search');
+check(ids(on,'קומבפר','he').includes('character:enjolras'),'New Hebrew close reading is searchable');
+check(ids(safe,'Matt Kinley').includes('craft:hugo-art-onstage'),'Spoiler-safe production design note is searchable');
+check(S.readTarget('?focus=craft%3Ahugo-art-onstage','musical')?.key==='hugo-art-onstage','Craft note has a localized safe deep link');
+
 check(!safe.some(x=>x.kind==='story'||x.kind==='novel'),'Hidden story and novel titles absent');
 check(!on.some(x=>x.kind==='novel'),'General spoiler setting does not bypass separate novel consent');
 check(all.some(x=>x.kind==='novel'),'Explicit novel consent opens novel index');

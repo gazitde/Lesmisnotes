@@ -18,6 +18,12 @@ check(!(await page.locator('#site-search-results').innerText()).includes('guardi
 await page.keyboard.press('ArrowDown');check(await page.locator('.site-search-list a').first().evaluate(e=>document.activeElement===e),'ArrowDown focuses first result');
 await page.keyboard.press('ArrowUp');check(await page.locator('#site-search-input').evaluate(e=>document.activeElement===e),'ArrowUp returns to input');
 await page.keyboard.press('Escape');check(!await page.locator('#site-search-dialog').evaluate(e=>e.open),'Escape closes');check(await page.locator('[data-site-search-open]').evaluate(e=>document.activeElement===e),'Focus restored');
+await page.locator('[data-site-search-open]').click();await search('Matt Kinley');await page.locator('.site-search-list a').first().click();
+check(page.url().endsWith('/en/musical/?focus=craft%3Ahugo-art-onstage'),'Design-note result deep link');
+check(await page.locator('.composition-notebook').evaluate(e=>e.open),'Design-note search opens its notebook');
+check(await page.locator('#craft-hugo-art-onstage').evaluate(e=>document.activeElement===e),'Design-note heading receives focus');
+check((await page.locator('#craft-hugo-art-onstage').innerText()).includes('Matt Kinley'),'Correct source-based design note rendered');
+await page.goBack();check(page.url().endsWith('/en/home/'),'Back restores home after craft reading');
 await page.keyboard.press('Control+k');await search('positivism');await page.locator('.site-search-list a').first().click();
 check(page.url().endsWith('/en/ideas/?focus=dilemma%3Alaw-mercy'),'Result deep link');
 check((await page.locator('#dilemma-content').innerText()).includes('Legal positivism'),'Correct argument rendered');

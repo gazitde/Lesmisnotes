@@ -43,7 +43,7 @@
     thenardiers: ['Thénardier', 'Thénardiers', 'Thenardier', 'טנארדייה', 'תנרדייה', 'ת׳נרדייה'],
     bishop: ['Bishop of Digne', 'Myriel', 'בישוף', 'דיניה']
   };
-  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo' };
+  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical' };
   function hrefFor(doc, lang) {
     if (doc.kind === 'place') return `/${lang}/places/?place=${encodeURIComponent(doc.key)}`;
     if (doc.kind === 'performance') return `/${lang}/listening/?clip=${encodeURIComponent(doc.key)}`;
@@ -67,10 +67,11 @@
       add('page', route, route, 'pages', input.labels?.[route] || page.title, input.pageHints?.[route] || page.description);
     }
     for (const c of R.characters || []) add('character', c.id, 'characters', 'characters', c.name,
-      spoilers ? pair(c.role, c.summary, c.question, c.context?.sentences, (c.connections || []).map(x => x.label)) : '',
+      spoilers ? pair(c.role, c.summary, c.question, c.context?.sentences, (c.canonNotes||[]).map(n=>pair(n.title,n.paragraphs)), (c.connections || []).map(x => x.label)) : '',
       [c.id, ...(CHARACTER_ALIASES[c.id] || [])], !spoilers);
     if (spoilers) for (const s of R.story || []) add('story', s.id, 'story', 'story', s.title, pair(s.period, s.summary, s.detail, s.songs));
     if (novel) for (const s of R.novel?.milestones || []) add('novel', s.id, 'novel', 'story', s.title, pair(s.dateLabel, s.summary, s.details, s.remember));
+    for (const c of R.musical?.creationStory?.craft || []) add('craft', c.id, 'musical', 'songs', c.title, c.body, [c.id]);
     const spotlight = R.musical?.spotlight?.songs || [], songEntries = R.musical?.songentries || [];
     for (const s of spotlight) {
       const entry = songEntries.find(x => x.id === s.id);
@@ -254,9 +255,10 @@
   }
   function focusTarget(target) {
     if (!target || !root.document?.querySelector) return;
-    const key = target.key, selector = { character: '#character-detail', story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : '#spotlight-title', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]` }[target.kind];
+    const key = target.key, selector = { character: '#character-detail', story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : '#spotlight-title', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]` }[target.kind];
     const element = selector && root.document.querySelector(selector); if (!element) return;
     if (['story', 'novel', 'history'].includes(target.kind)) element.querySelectorAll?.('details').forEach(details => { details.open = true; });
+    if(target.kind==='craft'){const notebook=element.closest?.('details');if(notebook)notebook.open=true;}
     element.setAttribute?.('tabindex', '-1'); element.focus?.({ preventScroll: true }); element.scrollIntoView?.({ block: 'start' });
   }
   root.SiteSearch = { normalize, buildIndex, search, highlight, snippet, resultsHTML, hrefFor, button, mount, open, close, readTarget, focusTarget, categories: CATEGORIES };

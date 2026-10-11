@@ -63,3 +63,6 @@ html[lang=he] .vinyl-label b,html[lang=he] .vinyl-label small{font-family:LesMis
 @media(max-width:680px){.about-numbers .stats-grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:680px){.about-numbers .stat:last-child{grid-column:auto}}
 @media(max-width:360px){.stats-grid .stat:last-child{grid-column:auto}}
+
+/* Canon close readings stay within the character page’s existing spoiler gate. */
+.character-canon-note{margin-block:26px;padding-block:24px;border-top:1px solid #ccd6e5}.character-canon-note h3{font-size:1.3rem;line-height:1.45;margin:12px 0}.character-canon-note p{font-size:1rem;line-height:1.85;margin:12px 0}.character-canon-note .source-links{margin-top:18px;line-height:1.7;overflow-wrap:anywhere}.composition-notebook [data-craft-id]{scroll-margin-top:110px}
