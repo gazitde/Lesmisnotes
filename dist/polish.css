@@ -100,7 +100,7 @@ html[lang=he] .vinyl-label b,html[lang=he] .vinyl-label small{font-family:LesMis
 .curator-credit{font-size:1.05rem;line-height:1.9;margin:0 0 28px}.curator-credit a{display:inline-flex;align-items:center;gap:8px;padding-block:8px}.production-doorways>.text-link{align-self:center}
 @media(max-width:680px){.home-opening>.hero{gap:20px;padding-top:24px}.home-opening .hero-art{max-width:280px}.home-opening .hero-copy .micro{margin-top:12px}.home-opening .hero-copy h1{margin-bottom:16px}.home-entry-choices{margin-top:20px}.feature-split{gap:26px}}
 
-.path-kind{display:block;font-size:.88rem;font-weight:700;line-height:1.6;margin-block:10px 12px;color:var(--navy)}
+.path-kind{display:block;font-size:.88rem;font-weight:700;line-height:1.6;margin-block:10px 12px;color:inherit}
 /* A text-led sidebar must shrink with its grid track at phone widths. */
 .gallery-detail-grid{grid-template-columns:minmax(0,1.8fr) minmax(0,1fr)}.gallery-detail-grid>*{min-width:0}.gallery-reading{min-width:0;overflow-wrap:anywhere}.gallery-reading .eyebrow{white-space:normal}.gallery-detail-top>div{min-width:0}.gallery-detail-top h2{overflow-wrap:anywhere}
 @media(max-width:1000px){.gallery-detail-grid{grid-template-columns:minmax(0,1fr)}}
