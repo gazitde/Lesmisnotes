@@ -38,10 +38,11 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=process.env.
   await page.locator('[data-action="privacy-close"]').click();await page.locator('.privacy-banner [data-action="privacy-reject"]').click();
   check(await page.evaluate(()=>{const c=window.SitePrivacy.choice();return !c.functional&&!c.analytics}),'Reject disables both options '+lang);
   check(await page.locator('.safe-character-card').count()===10,'Ten hydrated safe cards '+lang);
-  await page.locator('.safe-character-index a[href="#character-intro-javert"]').click();await page.waitForTimeout(100);
+  await page.locator('.safe-character-index a[href="#character-intro-javert"]').click();
+  await page.waitForFunction(()=>{const r=document.getElementById('character-intro-javert').getBoundingClientRect();return r.top>=0&&r.top<200},null,{timeout:4000}).catch(async error=>{console.error('Anchor geometry',await page.locator('#character-intro-javert').evaluate(e=>({top:e.getBoundingClientRect().top,y:scrollY,hash:location.hash})));await page.screenshot({path:path.join(dir,'fragment-failure-'+lang+'.png'),fullPage:false});throw error});
   check(page.url().endsWith('#character-intro-javert'),'Hydrated native fragment URL '+lang);
   check(await page.locator('#character-intro-javert').evaluate(e=>e.getBoundingClientRect().top>=0&&e.getBoundingClientRect().top<200),'Hydrated anchor does not reset to page top '+lang);
-  await page.goBack();await page.goForward();await page.waitForTimeout(100);
+  await page.goBack();await page.goForward();await page.waitForFunction(()=>location.hash==='#character-intro-javert'&&scrollY>300,null,{timeout:4000});
   check(page.url().endsWith('#character-intro-javert')&&await page.evaluate(()=>scrollY>300),'Native fragment Back/Forward keeps its landing '+lang);
   await page.goto(base+'/'+lang+'/characters/?focus=character%3Avaljean');
   check(await page.locator('#character-intro-valjean').evaluate(e=>document.activeElement===e),'Safe search target receives focus '+lang);
