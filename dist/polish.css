@@ -52,3 +52,12 @@ html[lang=he] .vinyl-label b,html[lang=he] .vinyl-label small{font-family:LesMis
 .story-foot .btn.secondary{color:#fff;border-color:#b2c7e8;background:transparent}.story-foot .btn.secondary:hover{background:#244b7d}
 @media(max-width:680px){.show-art{height:auto;min-height:120px;padding:24px;gap:12px;align-items:center}.show-art>span:last-child{flex:1;max-width:130px;min-width:0;font-size:.75rem;letter-spacing:.04em;line-height:1.5}.show-act-label,.show-stop-number{flex-shrink:0}}
 @media(max-width:680px){.home-opening .poster-stamp{width:120px;height:120px;padding:20px}}
+
+/* Let narrow grid items shrink instead of deriving width from the atlas aspect ratio. */
+.atlas-canvas{width:100%;min-width:0}.stats-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.stats-grid .stat{min-width:0;overflow-wrap:anywhere}
+@media(max-width:980px){.stats-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:680px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:360px){.stats-grid{grid-template-columns:1fr}}
+.about-numbers .stats-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:960px){.about-numbers .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.about-numbers .stats-grid{grid-template-columns:minmax(0,1fr)}}

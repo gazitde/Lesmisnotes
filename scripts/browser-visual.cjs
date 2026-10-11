@@ -19,13 +19,14 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
   await page.setViewportSize({width,height:900});
   for(const route of routes){
    await page.goto(base+'/'+lang+'/'+route+'/',{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(120);
-   const layout=await page.evaluate(()=>({width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,heading:document.querySelector('h1')?.textContent,overflow:[...document.querySelectorAll('main *')].filter(e=>{const r=e.getBoundingClientRect();return r.width>0&&(r.right>document.documentElement.clientWidth+1||r.left< -1)&&!e.closest('svg,.vinyl,.hero-art,.graph-full,.atlas-canvas,.leaflet-container')}).slice(0,12).map(e=>({tag:e.tagName,cls:e.className,text:e.textContent?.slice(0,80)}))}));
+   const layout=await page.evaluate(()=>({width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,heading:document.querySelector('h1')?.textContent,overflow:[...document.querySelectorAll('main *')].filter(e=>{const r=e.getBoundingClientRect();return r.width>0&&(r.right>document.documentElement.clientWidth+1||r.left< -1)&&!e.closest('svg,.vinyl,.hero-art,.graph-full,.leaflet-container')}).slice(0,12).map(e=>({tag:e.tagName,cls:e.className,text:e.textContent?.slice(0,80)}))}));
    check(layout.scroll<=layout.width,`${lang}/${route} ${width} whole page fit`,layout);
    check(Boolean(layout.heading),`${lang}/${route} ${width} main heading`);
    const language=await page.locator('[data-action="language"]').boundingBox();check(language&&language.width>=44&&language.height>=44&&language.x>=0&&language.x+language.width<=width,`${lang}/${route} ${width} visible touch language control`);
    report.push({lang,route,width,...layout});
    if(route==='before'&&width<681)check(await page.locator('.family-heading').evaluate(el=>el.querySelector('h2').getBoundingClientRect().width>=el.getBoundingClientRect().width*.8),`Family heading uses readable width ${lang} ${width}`);
    if(width!==320){
+    for(const disclosure of await page.locator('.place-secondary-photo:not([open])>summary').all())await disclosure.click();
     for(const img of await page.locator('main img[loading="lazy"]').all()){
       await img.scrollIntoViewIfNeeded();await img.evaluate(el=>el.complete?Promise.resolve():new Promise(resolve=>{el.addEventListener('load',resolve,{once:true});el.addEventListener('error',resolve,{once:true});setTimeout(resolve,6000)}));
       check(await img.evaluate(el=>el.naturalWidth>0),`Local lazy image loaded ${lang}/${route} ${width}`);
