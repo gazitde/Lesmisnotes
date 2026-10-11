@@ -60,14 +60,15 @@ await page.screenshot({path:path.join(artifactDir,'contact-he-narrow.png'),fullP
 for(const language of ['en','he'])for(const width of [1365,960,680,390,320]){
  await page.setViewportSize({width,height:900});await page.goto(base+'/'+language+'/home/');
  const geometry=await page.locator('.poster-stamp').evaluate(stamp=>{
-   const r=stamp.clientWidth/2;
-   return {overflow:stamp.scrollWidth>stamp.clientWidth||stamp.scrollHeight>stamp.clientHeight,children:[...stamp.children].map(e=>({text:e.textContent,width:e.offsetWidth,height:e.offsetHeight,left:e.offsetLeft,top:e.offsetTop})),radius:r};
+   const r=stamp.clientWidth/2, first=stamp.firstElementChild,last=stamp.lastElementChild;
+   const centerX=first.offsetLeft+first.offsetWidth/2,centerY=(first.offsetTop+last.offsetTop+last.offsetHeight)/2;
+   return {centerX,centerY,overflow:stamp.scrollWidth>stamp.clientWidth||stamp.scrollHeight>stamp.clientHeight,children:[...stamp.children].map(e=>({text:e.textContent,width:e.offsetWidth,height:e.offsetHeight,left:e.offsetLeft,top:e.offsetTop})),radius:r};
  });
  check(!geometry.overflow,'Stamp does not overflow '+language+' '+width);
  for(const child of geometry.children){
-   const farX=Math.max(Math.abs(child.left-geometry.radius),Math.abs(child.left+child.width-geometry.radius));
-   const farY=Math.max(Math.abs(child.top-geometry.radius),Math.abs(child.top+child.height-geometry.radius));
-   check(Math.hypot(farX,farY)<=geometry.radius-2,'Stamp text inside circle: '+language+' '+width+' '+child.text);
+   const farX=Math.max(Math.abs(child.left-geometry.centerX),Math.abs(child.left+child.width-geometry.centerX));
+   const farY=Math.max(Math.abs(child.top-geometry.centerY),Math.abs(child.top+child.height-geometry.centerY));
+   check(Math.hypot(farX,farY)<=geometry.radius-2,'Stamp text inside circle: '+language+' '+width+' '+child.text+' '+JSON.stringify(geometry));
  }
 }
 check(errors.length===0,'No browser runtime errors: '+errors.join('; '));
