@@ -5,7 +5,7 @@ const { Readable } = require('node:stream');
 const { createContactHandler, createMemoryStore, createRedisStore, getConfig, createTicket, clientIdentity, TICKET_LIFETIME_MS } = require('../server/contact-service.cjs');
 
 // Synthetic addresses only. Never copy the live destination or provider credential into tests.
-const fixture = () => ({ CONTACT_ENABLED: 'true', CONTACT_RECIPIENT: 'recipient@example.test', CONTACT_FROM: 'sender@example.test', RESEND_API_KEY: 'unit-test-only', CONTACT_SIGNING_SECRET: 'a-unit-test-key-that-is-not-a-real-secret', CONTACT_ALLOWED_ORIGINS: 'https://guide.example.test', NODE_ENV: 'production', VERCEL: '1' });
+const fixture = () => ({ CONTACT_ENABLED: 'true', CONTACT_PROVIDER: 'resend', CONTACT_RECIPIENT: 'recipient@example.test', CONTACT_FROM: 'sender@example.test', RESEND_API_KEY: 'unit-test-only', CONTACT_SIGNING_SECRET: 'a-unit-test-key-that-is-not-a-real-secret', CONTACT_ALLOWED_ORIGINS: 'https://guide.example.test', NODE_ENV: 'production', VERCEL: '1' });
 const valid = ticket => ({ category: 'correction', lang: 'he', name: '', email: '', message: 'This is a useful factual correction.', website: '', ticket });
 function response(status = 200, body = { id: 'provider-test-message' }) { return { ok: status >= 200 && status < 300, status, json: async () => body }; }
 function harness(options = {}) {
@@ -39,7 +39,7 @@ test('bad origins, newline config, non-HTTPS production and incomplete Redis con
 });
 test('GET reports availability and opaque ticket only; every response is uncacheable', async () => {
   const h = harness(), r = await h.request(); assert.equal(r.statusCode, 200); assert.equal(r.body.available, true);
-  assert.equal(r.body.ticket.signature.length, 64); assert.deepEqual(Object.keys(r.body).sort(), ['available', 'ok', 'ticket']);
+  assert.equal(r.body.ticket.signature.length, 64); assert.deepEqual(Object.keys(r.body).sort(), ['available', 'ok', 'provider', 'ticket']);
   assert.match(r.headers['Cache-Control'], /no-store/); assert.equal(r.headers['X-Content-Type-Options'], 'nosniff');
   for (const value of [h.env.CONTACT_FROM, h.env.CONTACT_RECIPIENT, h.env.RESEND_API_KEY, h.env.CONTACT_SIGNING_SECRET]) assert.ok(!JSON.stringify(r.body).includes(value));
 });
@@ -152,4 +152,40 @@ test('Redis adapter uses atomic EVAL and transmits only hashes, counts and rando
 test('a confirmed provider acceptance survives a state-store write failure without exposing details', async () => {
   const h = harness({ store: { begin: async () => ({ state: 'started' }), finish: async () => { throw Error('private storage error'); } } });
   assert.deepEqual((await h.request(valid(await h.ticket()))).body, { ok: true, code: 'accepted' });
+});
+
+const formsubmitEnv = () => ({ CONTACT_PROVIDER: 'formsubmit', FORMSUBMIT_ALIAS: 'f'.repeat(32), CONTACT_RECIPIENT: '', CONTACT_FROM: '', RESEND_API_KEY: '' });
+test('FormSubmit needs no Resend credential, sender or recipient; raw email aliases and unknown providers fail closed', () => {
+  const config = getConfig({ ...fixture(), ...formsubmitEnv() }); assert.equal(config.provider, 'formsubmit');
+  for (const bad of ['recipient@example.test', 'https://formsubmit.co/alias', '../route', '', 'not-an-archive-key']) assert.equal(getConfig({ ...fixture(), ...formsubmitEnv(), FORMSUBMIT_ALIAS: bad }), null);
+  assert.equal(getConfig({ ...fixture(), CONTACT_PROVIDER: 'unsupported' }), null);
+  assert.equal(getConfig({ ...fixture(), ...formsubmitEnv(), CONTACT_PROVIDER: undefined }).provider, 'formsubmit');
+});
+test('FormSubmit stays server-only and forwards allowlisted fields to opaque route with no invented idempotency guarantee', async () => {
+  const calls = []; const h = harness({ env: formsubmitEnv(), fetchImpl: async (url, init) => { calls.push({ url, init }); return response(200, { success: 'true', message: 'Form submitted successfully.' }); } });
+  const status = await h.request(); assert.equal(status.body.provider, 'formsubmit'); assert.ok(!JSON.stringify(status.body).includes('f'.repeat(32)));
+  h.advance(1000); const data = { ...valid(status.body.ticket), name: 'Reader', email: 'reader@example.test' };
+  const sent = await h.request(data); assert.equal(sent.statusCode, 202); assert.deepEqual(sent.body, { ok: true, code: 'accepted' });
+  assert.equal(calls[0].url, 'https://formsubmit.co/ajax/' + 'f'.repeat(32));
+  const payload = JSON.parse(calls[0].init.body);
+  assert.deepEqual(Object.keys(payload).sort(), ['_captcha', '_replyto', '_subject', '_template', '_url', 'email', 'language', 'message', 'name', 'topic'].sort());
+  assert.equal(payload._url, 'https://guide.example.test/he/contact/'); assert.equal(payload._replyto, data.email); assert.equal(payload._captcha, 'false');
+  assert.equal(calls[0].init.headers.Origin, 'https://guide.example.test'); assert.equal(calls[0].init.headers.Referer, payload._url);
+  assert.equal(calls[0].init.headers.Authorization, undefined); assert.equal(calls[0].init.headers['Idempotency-Key'], undefined);
+  assert.equal((await h.request(data)).statusCode, 200); assert.equal(calls.length, 1, 'known acceptance is cached in warm instance');
+});
+test('FormSubmit activation, CAPTCHA or verification messages never produce fake success regardless of HTTP success', async () => {
+  for (const status of [200, 400, 503]) {
+    for (const message of ['Activate Form to continue', 'Please confirm your form', 'Verification required', 'CAPTCHA required', 'This form is inactive']) {
+      const h = harness({ env: formsubmitEnv(), fetchImpl: async () => response(status, { success: true, message }) });
+      const r = await h.request(valid(await h.ticket())); assert.equal(r.statusCode, 503); assert.deepEqual(r.body, { ok: false, code: 'activation_required' });
+    }
+  }
+});
+test('FormSubmit uncertain outcomes are not automatically retried and private upstream errors are suppressed', async () => {
+  for (const upstream of [response(200, { success: false, message: 'Private route error' }), response(200, {}), response(502, { success: true }), { ok: true, status: 200, json: async () => { throw Error('HTML with private details'); } }]) {
+    let calls = 0; const h = harness({ env: formsubmitEnv(), fetchImpl: async () => { calls++; return upstream; } });
+    const r = await h.request(valid(await h.ticket())); assert.equal(r.body.ok, false); assert.equal(r.body.code, 'delivery_unconfirmed'); assert.equal(calls, 1);
+    assert.ok(!JSON.stringify(r.body).includes('Private')); assert.ok(!JSON.stringify(r.body).includes('f'.repeat(32)));
+  }
 });

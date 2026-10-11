@@ -9,3 +9,6 @@ The locally hosted photographs and historical images carry their individual Crea
 The recipe instructions are original adaptations, not copied publisher instructions or photographs. Linked source ratings belong only to the original recipes, not the adaptations in this guide. The core novel’s public-domain status does not automatically cover every translation or later adaptation.
 
 The site’s operator should settle the desired licence for their own original code and writing before describing the whole repository as open source. No blanket licence is applied here.
+
+## Local Hebrew type
+Noto Sans Hebrew (regular and bold), © Google, is locally bundled under SIL OFL 1.1. Full notice: `dist/assets/fonts/OFL.txt`. WOFF container conversion only; no third-party font requests.

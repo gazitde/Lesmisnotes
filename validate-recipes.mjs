@@ -15,7 +15,7 @@ const esc=s=>s.replaceAll('&','&amp;').replaceAll('’','’').replaceAll("'",'&
 for(const lang of ['he','en']){
  const html=context.InnKitchen.page(lang),prerender=fs.readFileSync(`dist/${lang}/recipes/index.html`,'utf8');
  ok(!html.includes('undefined'),'No undefined strings');ok(html.includes(esc(data.intro[lang])),'Complete intro');
- ok(html.includes(esc(data.accuracyNote[lang])),'Imagined menu, source rating and untested notice');
+ ok(html.includes(esc(data.accuracyNote[lang])),'Modern menu and source-only rating context');
  ok(html.includes(esc(data.timingNote[lang])),'Honest timing');ok(html.includes(data.inn.reference),'Inn source');
  ok((html.match(/data-recipe-card=/g)||[]).length===data.recipes.length,'All rendered recipes');
  ok((html.match(/class="inn-food-art"/g)||[]).length===data.recipes.length,'Original illustrations');
@@ -33,7 +33,7 @@ for(const lang of ['he','en']){
   ok(prerender.includes(esc(r.title[lang])),'Static content');
  }
  ok(html.includes(lang==='he'?'63 מעלות':'63°C'),'Fish temperature');
- ok(html.includes(lang==='he'?'טרם נוסתה':'not been kitchen-tested'),'Per-recipe test disclosure');
+ ok(html.includes(lang==='he'?'עדיין לא נוסה במטבח':'has not been kitchen-tested'),'Specific experimental soup-variation note');
  ok(prerender.includes('recipes.js?v='),'Versioned module');ok(prerender.includes('recipes.css?v='),'Versioned CSS');
 }
 for(const r of data.recipes){

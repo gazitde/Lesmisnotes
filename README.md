@@ -1,6 +1,6 @@
-# Beyond the Barricade / מעבר לבריקדה
+# LesMisNotes / מעבר לבריקדה
 
-An independent Hebrew/English guide to Victor Hugo’s *Les Misérables* and the stage musical. The code project is LesMisNotes (`gazitde/Lesmisnotes`); the selected future domain is `lesmisnotes.com`. Its DNS/host connection and public-indexing configuration still require verification.
+An independent Hebrew/English guide to Victor Hugo’s *Les Misérables* and the stage musical. The code project is LesMisNotes (`gazitde/Lesmisnotes`); the HTTPS canonical destination is `www.lesmisnotes.com` (the apex redirects there). Public indexing remains deliberately off pending the launch checklist.
 
 ## Run locally
 
@@ -39,7 +39,7 @@ npm run test:browser
 
 ## Indexing and deployment
 
-The default build is a **noindex preview** with no invented canonical domain. Noindex is not access control: use host authentication for confidential previews.
+The default build is **noindex** and uses the verified domain in `config/site.json`. An explicit empty `SITE_ORIGIN` omits canonicals for an unconfigured preview. Noindex is not access control: use host authentication for confidential previews.
 
 For an approved public production build, configure both `SITE_ORIGIN` (the final bare HTTPS origin) and `PUBLIC_SITE=true`. Vercel preview builds remain noindex even if that flag is inherited. A public build without a valid origin fails. Public output adds reciprocal Hebrew/English/x-default URLs, an advertised sitemap, Open Graph/Twitter image metadata and breadcrumb/WebSite/page structured data. Query-selected versions and filters share the canonical route.
 
@@ -55,7 +55,7 @@ The feedback recipient and provider credentials belong only in server environmen
 
 ## Rights
 
-This is an unofficial fan project, with no claimed affiliation or endorsement. Recordings remain on their original platforms. Image creators, exact licence versions and source links are preserved in the guide and `docs/places-image-*.json`; self-hosted Leaflet includes its BSD licence. Publisher recipes are linked sources, not openly licensed copies; original adaptations are identified, with source-only ratings and an untested notice. No blanket open-source or Creative Commons licence is asserted over third-party works. See [rights notes](docs/RIGHTS.md).
+This is an unofficial fan project, with no claimed affiliation or endorsement. Recordings remain on their original platforms. Image creators, exact licence versions and source links are preserved in the guide and `docs/places-image-*.json`; self-hosted Leaflet includes its BSD licence. Publisher recipes are linked sources, not openly licensed copies; original adaptations are identified, with source-only ratings and relevant cooking guidance. No blanket open-source or Creative Commons licence is asserted over third-party works. See [rights notes](docs/RIGHTS.md).
 
 ## Verification limits
 

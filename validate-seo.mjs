@@ -8,7 +8,7 @@ for(const [route,meta] of Object.entries(M.pages))for(const lang of ['he','en'])
  assert.ok(html.includes(`<html lang="${lang}" dir="${lang==='he'?'rtl':'ltr'}">`));
  assert.equal((html.match(/<title>/g)||[]).length,1);assert.ok(html.includes(meta.title[lang]));
  assert.equal((html.match(/rel="canonical"/g)||[]).length,M.origin?1:0);if(M.origin)assert.ok(html.includes(`rel="canonical" href="${M.origin}/${lang}/${canonicalRoute}/"`));
- for(const locale of (M.origin?['he','en','x-default']:[])){assert.ok(html.includes(`hreflang="${locale}" href="${M.origin}/${locale==='x-default'?'he':locale}/${canonicalRoute}/"`));checks++}
+ for(const locale of (M.origin?['he','en','x-default']:[])){assert.ok(html.includes(`hreflang="${locale}" href="${M.origin}/${locale==='x-default'?'en':locale}/${canonicalRoute}/"`));checks++}
  assert.ok(html.includes(`<meta name="robots" content="${M.private?'noindex, follow':'index, follow, max-image-preview:large'}">`));assert.ok(html.includes('<main id="main"'));assert.ok(html.includes('<h1>'));assert.ok(!html.includes('<iframe'));
  assert.ok(!html.includes('src="scene.svg"'));assert.ok(html.includes('src="/app.js?v='));assert.ok(html.includes('href="/style.css?v='));assert.ok(!html.includes('href="#/'));
  for(const match of html.matchAll(/(?:src|href)="(\/(?:he|en)\/[^"#?]+\/|\/[^"#?]+\.(?:js|css|svg))(?:\?v=[a-f0-9]+)?"/g)){const asset='dist'+match[1]+(match[1].endsWith('/')?'index.html':'');assert.ok(fs.existsSync(asset),`Missing ${asset}`);checks++}

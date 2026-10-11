@@ -2,7 +2,7 @@
 
 ## Decisions and configuration
 
-- [ ] Confirm the public display name and connect the selected domain `lesmisnotes.com`; update visible branding only after that decision.
+- [x] LesMisNotes display name and HTTPS domain verified: `lesmisnotes.com` redirects to `www.lesmisnotes.com`.
 - [ ] Choose a host supporting static routes and Node server functions. Verify TLS and root-path hosting.
 - [ ] Configure `SITE_ORIGIN` and authorize `PUBLIC_SITE=true` for production only.
 - [ ] Complete the operator identity and contact/retention statements in `dist/policies.js`; verify that the published statements match actual operation.
@@ -24,7 +24,7 @@
 
 ## SEO design notes
 
-Content is prerendered into normal links and localized pages, with distinct titles and descriptions. The default preview omits canonical links when no origin is set. Public builds use one HTTPS origin, self-language canonicals, reciprocal alternates, a canonical-only sitemap, and simple WebSite/WebPage/CollectionPage/BreadcrumbList data reflecting visible content. Spoiler-protected narrative content remains protected in static HTML and metadata.
+Content is prerendered into normal links and localized pages, with distinct titles and descriptions. The verified origin is in `config/site.json`; an explicit empty `SITE_ORIGIN` omits canonical links. Public builds use one HTTPS origin, self-language canonicals, reciprocal alternates, a canonical-only sitemap, and simple WebSite/WebPage/CollectionPage/BreadcrumbList data reflecting visible content. Spoiler-protected narrative content remains protected in static HTML and metadata.
 
 No ranking promise, copied aggregate ratings, fabricated author identity, misleading video availability or search-engine-only content is used.
 

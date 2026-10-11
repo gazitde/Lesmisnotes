@@ -1,3 +1,12 @@
+# Visual and language refresh
+
+- LesMisNotes branding, locally hosted Hebrew type, balanced hero/navigation and prominent language choice.
+- English first-visit root; saved consented Hebrew and explicit language links still take priority.
+- Both circular compositions use deliberate safe-area line breaks and responsive sizes.
+- Verified www canonical destination; indexing remains off.
+- FormSubmit server adapter prepared; delivery remains controlled by server activation settings.
+- Added full bilingual route visual/reflow coverage and screenshot artifacts.
+
 # Migration release
 
 ## Included

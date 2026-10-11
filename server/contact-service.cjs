@@ -2,6 +2,7 @@
 
 const { createHmac, randomUUID, timingSafeEqual } = require('node:crypto');
 const { isIP } = require('node:net');
+const { formsubmitAlias: defaultFormsubmitAlias } = require('./contact-route.cjs');
 
 const MAX_BODY_BYTES = 16_384;
 const TICKET_LIFETIME_MS = 23 * 60 * 60 * 1000;
@@ -21,6 +22,7 @@ const header = (req, name) => { const value = req.headers?.[name]; return typeof
 const validEmail = value => typeof value === 'string' && value.length <= 254 && !SINGLE_LINE_CONTROL.test(value) && EMAIL.test(value);
 
 function getConfig(env) {
+  const provider = env.CONTACT_PROVIDER || 'formsubmit';
   const recipient = (env.CONTACT_RECIPIENT || '').trim();
   const sender = (env.CONTACT_FROM || '').trim();
   const apiKey = env.RESEND_API_KEY || '';
@@ -35,7 +37,12 @@ function getConfig(env) {
       return value;
     });
   } catch { return null; }
-  if (env.CONTACT_ENABLED !== 'true' || !validEmail(recipient) || !validEmail(sender) || !apiKey || SINGLE_LINE_CONTROL.test(apiKey) || secret.length < 32 || !origins.length || !['memory', 'redis'].includes(mode)) return null;
+  if (env.CONTACT_ENABLED !== 'true' || !['formsubmit', 'resend'].includes(provider) || secret.length < 32 || !origins.length || !['memory', 'redis'].includes(mode)) return null;
+  // This is a provider-issued public form-routing alias, not an archive API key.
+  // Keep it server-only anyway; never accept a raw recipient address as a fallback.
+  const formsubmitAlias = env.FORMSUBMIT_ALIAS === undefined ? defaultFormsubmitAlias : env.FORMSUBMIT_ALIAS;
+  if (provider === 'formsubmit' && !/^[a-f0-9]{32}$/i.test(formsubmitAlias)) return null;
+  if (provider === 'resend' && (!validEmail(recipient) || !validEmail(sender) || !apiKey || SINGLE_LINE_CONTROL.test(apiKey))) return null;
   const redisUrl = env.UPSTASH_REDIS_REST_URL || '';
   const redisToken = env.UPSTASH_REDIS_REST_TOKEN || '';
   if (mode === 'redis') {
@@ -44,7 +51,7 @@ function getConfig(env) {
       if (url.protocol !== 'https:' || url.username || url.password || url.search || url.hash || !/^[a-zA-Z0-9.-]+\.upstash\.io$/.test(url.hostname) || (url.pathname !== '/' && url.pathname !== '') || !redisToken || SINGLE_LINE_CONTROL.test(redisToken)) return null;
     } catch { return null; }
   }
-  return { recipient, sender, apiKey, secret, origins, mode, redisUrl: redisUrl.replace(/\/$/, ''), redisToken };
+  return { provider, formsubmitAlias, recipient, sender, apiKey, secret, origins, mode, redisUrl: redisUrl.replace(/\/$/, ''), redisToken };
 }
 
 function sameOrigin(req, config, method) {
@@ -225,6 +232,16 @@ function emailPayload(data, config) {
   };
 }
 
+function formsubmitPayload(data, origin) {
+  return {
+    name: data.name || '(not provided)',
+    ...(data.email ? { email: data.email, _replyto: data.email } : {}),
+    message: data.message, topic: CATEGORIES[data.category], language: data.lang,
+    _subject: `Beyond the Barricade: ${CATEGORIES[data.category]}`,
+    _url: `${origin}/${data.lang}/contact/`, _template: 'table', _captcha: 'false'
+  };
+}
+
 function createContactHandler({ env = process.env, fetchImpl = globalThis.fetch, now = Date.now, store } = {}) {
   const memory = createMemoryStore({ now });
   return async function contact(req, res) {
@@ -238,14 +255,14 @@ function createContactHandler({ env = process.env, fetchImpl = globalThis.fetch,
       const method = req.method || 'GET';
       if (!['GET', 'POST'].includes(method)) { res.setHeader('Allow', 'GET, POST'); throw error(405, 'method_not_allowed'); }
       const config = getConfig(env);
-      if (!config) return respond(503, { ok: false, available: false, code: 'not_configured' });
+      if (!config) return respond(503, { ok: false, available: false, code: 'not_configured', ...(method === 'GET' ? { provider: env.CONTACT_PROVIDER === 'resend' ? 'resend' : 'formsubmit' } : {}) });
       sameOrigin(req, config, method);
-      if (method === 'GET') return respond(200, { ok: true, available: true, ticket: createTicket(config, now()) });
+      if (method === 'GET') return respond(200, { ok: true, available: true, provider: config.provider, ticket: createTicket(config, now()) });
       const body = await readBody(req);
       const data = validatePayload(body);
       const ticket = validateTicket(body.ticket, config, now());
       const client = getClientKey(req, env, config.secret);
-      const payload = emailPayload(data, config);
+      const payload = config.provider === 'formsubmit' ? formsubmitPayload(data, header(req, 'origin')) : emailPayload(data, config);
       const digest = hmac(config.secret, JSON.stringify(payload));
       const stateStore = store || (config.mode === 'redis' ? createRedisStore(config, fetchImpl) : memory);
       const result = await stateStore.begin(ticket.id, digest, client);
@@ -256,20 +273,29 @@ function createContactHandler({ env = process.env, fetchImpl = globalThis.fetch,
       if (result.state !== 'started') throw error(503, 'temporarily_unavailable');
       let accepted = false;
       try {
-        const response = await fetchImpl('https://api.resend.com/emails', {
-          method: 'POST', headers: { Authorization: `Bearer ${config.apiKey}`, 'Content-Type': 'application/json', 'Idempotency-Key': `lesmis-contact/${ticket.id}` },
+        const isFormSubmit = config.provider === 'formsubmit';
+        const endpoint = isFormSubmit ? `https://formsubmit.co/ajax/${config.formsubmitAlias}` : 'https://api.resend.com/emails';
+        const headers = isFormSubmit
+          ? { 'Content-Type': 'application/json', Accept: 'application/json', Origin: header(req, 'origin'), Referer: payload._url }
+          : { Authorization: `Bearer ${config.apiKey}`, 'Content-Type': 'application/json', 'Idempotency-Key': `lesmis-contact/${ticket.id}` };
+        const response = await fetchImpl(endpoint, {
+          method: 'POST', headers,
           body: JSON.stringify(payload), signal: AbortSignal.timeout(8000), redirect: 'error'
         });
         // Provider errors are deliberately not echoed or logged: they may include private addresses.
+        const result = await response.json().catch(() => null);
+        if (isFormSubmit && /activat|confirm|verif|disabled|inactive|captcha/i.test(typeof result?.message === 'string' ? result.message : '')) throw error(503, 'activation_required');
         if (!response.ok) throw error(response.status === 429 ? 429 : 502, response.status === 429 ? 'rate_limited' : 'delivery_unconfirmed', undefined, response.status === 429 ? 60 : undefined);
-        const result = await response.json();
-        if (typeof result.id !== 'string' || !result.id) throw error(502, 'delivery_unconfirmed');
+        if (isFormSubmit) {
+          if (result?.success !== true && result?.success !== 'true') throw error(502, 'delivery_unconfirmed');
+        } else if (typeof result?.id !== 'string' || !result.id) throw error(502, 'delivery_unconfirmed');
         accepted = true;
       } catch (problem) {
         if (problem instanceof ContactError) throw problem;
         throw error(502, 'delivery_unconfirmed');
       } finally {
-        // Resend's same-key deduplication protects retries even if this state update fails.
+        // Resend has provider-side deduplication. FormSubmit does not document it;
+        // its uncertain outcomes are never retried automatically and may duplicate on manual retry.
         try { await stateStore.finish(ticket.id, digest, accepted); } catch { /* Never log message data or credentials. */ }
       }
       return respond(202, { ok: true, code: 'accepted' });
@@ -281,4 +307,4 @@ function createContactHandler({ env = process.env, fetchImpl = globalThis.fetch,
   };
 }
 
-module.exports = { createContactHandler, createMemoryStore, createRedisStore, createTicket, getConfig, validatePayload, validateTicket, emailPayload, clientIdentity, MAX_BODY_BYTES, TICKET_LIFETIME_MS };
+module.exports = { createContactHandler, createMemoryStore, createRedisStore, createTicket, getConfig, validatePayload, validateTicket, emailPayload, formsubmitPayload, clientIdentity, MAX_BODY_BYTES, TICKET_LIFETIME_MS };

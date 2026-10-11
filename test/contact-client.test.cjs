@@ -131,7 +131,7 @@ test('client: editing after a rate-limited uncertain attempt retains the duplica
 test('integration: client fresh-ticket wait satisfies the real handler on initial and edited retry submissions', async () => {
   const { createContactHandler } = require('../server/contact-service.cjs');
   const responses = [], providerCalls = [];
-  const env = { CONTACT_ENABLED: 'true', CONTACT_RECIPIENT: 'recipient@example.test', CONTACT_FROM: 'sender@example.test', RESEND_API_KEY: 'test-only', CONTACT_SIGNING_SECRET: 'not-a-real-secret-only-an-integration-fixture', CONTACT_ALLOWED_ORIGINS: 'https://guide.example.test', NODE_ENV: 'production' };
+  const env = { CONTACT_ENABLED: 'true', CONTACT_PROVIDER: 'resend', CONTACT_RECIPIENT: 'recipient@example.test', CONTACT_FROM: 'sender@example.test', RESEND_API_KEY: 'test-only', CONTACT_SIGNING_SECRET: 'not-a-real-secret-only-an-integration-fixture', CONTACT_ALLOWED_ORIGINS: 'https://guide.example.test', NODE_ENV: 'production' };
   const handler = createContactHandler({ env, fetchImpl: async (url, init) => { providerCalls.push(init); return providerCalls.length === 1 ? result({}, 500) : result({ id: 'synthetic-provider-id' }, 200); } });
   const h = harness({ realDelays: true, fetchImpl: async (url, init) => {
     const req = { method: init.method || 'GET', headers: { host: 'guide.example.test', origin: 'https://guide.example.test', 'sec-fetch-site': 'same-origin', 'content-type': 'application/json' }, socket: { remoteAddress: '127.0.0.1' }, ...(init.body ? { body: init.body } : {}) };
@@ -142,4 +142,22 @@ test('integration: client fresh-ticket wait satisfies the real handler on initia
   assert.match(h.get('status').textContent, /could not confirm/);
   h.fill('message', 'An edited note receives a newly issued ticket and must wait.'); await h.submit();
   assert.equal(h.get('success').hidden, false); assert.equal(providerCalls.length, 2); assert.ok(responses.every(body => body.code !== 'too_fast'));
+});
+test('client: FormSubmit activation failure keeps draft and disables sending; privacy identifies selected provider', async () => {
+  const h = harness(); const ready = h.available(); ready.json = async () => ({ available: true, provider: 'formsubmit', ticket: { id: 'a', signature: 'fixture' } });
+  h.replies.push(ready); h.render('en'); await turn(); assert.match(h.get('privacy-copy').textContent, /FormSubmit/);
+  h.fill('message', 'Keep this note while the new domain awaits activation.'); h.replies.push(result({ ok: false, code: 'activation_required' }, 503)); await h.submit();
+  assert.equal(h.get('send').disabled, true); assert.match(h.get('message').value, /awaits activation/); assert.equal(h.get('success').hidden, true);
+  assert.match(h.get('status').textContent, /not available/);
+});
+test('client: uncertain FormSubmit failure explicitly warns that manual retry may duplicate a message', async () => {
+  const h = harness(); h.replies.push(h.available()); h.render('en'); await turn(); h.fill('message', 'This message may already have been accepted.');
+  h.replies.push(result({ ok: false, code: 'delivery_unconfirmed' }, 502)); await h.submit();
+  assert.match(h.get('status').textContent, /manually/); assert.match(h.get('status').textContent, /duplicate/);
+});
+test('client: availability recheck and later rate limit cannot erase uncertain-submission duplicate warning', async () => {
+  const h = harness(); h.replies.push(h.available()); h.render('en'); await turn(); h.fill('message', 'Keep uncertainty visible for this attempted note.');
+  h.replies.push(result({ ok: false, code: 'delivery_unconfirmed' }, 502)); await h.submit();
+  h.replies.push(h.available()); await h.click('check'); assert.match(h.get('status').textContent, /duplicate/); assert.equal(h.get('send').disabled, false);
+  h.replies.push(result({ ok: false, code: 'rate_limited' }, 429, '30')); await h.submit(); assert.match(h.get('status').textContent, /too many/); assert.match(h.get('status').textContent, /duplicate/);
 });

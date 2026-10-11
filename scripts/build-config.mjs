@@ -1,5 +1,6 @@
 import fs from 'node:fs';
-const originInput = (process.env.SITE_ORIGIN || '').trim();
+const site = JSON.parse(fs.readFileSync('config/site.json','utf8'));
+const originInput = (process.env.SITE_ORIGIN ?? site.origin ?? '').trim();
 const wantsPublic = process.env.PUBLIC_SITE === 'true';
 let origin = '';
 if (originInput) {

@@ -14,8 +14,8 @@
     "en": "Welcome to the Thénardiers’ inn. Pull up a chair, save room for dessert and check the bill carefully. Tonight: four dishes inspired by foods mentioned in Les Misérables, plus an optional contemporary tahini-walnut loaf."
   },
   "accuracyNote": {
-    "he": "זהו תפריט דמיוני לפונדק, בהשראת מאכלים מסצנות שונות ברומן. אין כאן טענה שהמנות הוגשו אצל טנארדייה. הדירוגים שייכים למתכוני המקור המקושרים; ההתאמות שלנו טרם נוסו במטבח.",
-    "en": "This imagined inn menu draws on foods from different scenes in the novel; it does not claim these dishes were served by the Thénardiers. Ratings belong to the linked originals; our adaptations have not been kitchen-tested."
+    "he": "עיבודים עכשוויים למאכלים מסצנות שונות ברומן, שנפגשים כאן לארוחה אחת. הדירוגים מוצגים לצד מתכוני המקור.",
+    "en": "Modern adaptations of foods from different scenes in the novel, brought together for one meal. Ratings appear alongside the original recipes."
   },
   "carbNote": {
     "he": "משאירים למאכלים את האופי שלהם: לחם רגיל במרק, ברי בלי מעטפת בצק, דג בלי ציפוי וקינוח קטן. כיכר הטחינה הנוספת נאפית ללא קמח או סוכר מוסף.",
@@ -46,14 +46,14 @@
         "kind": "literary"
       },
       "ratingNote": {
-        "he": "מתכון עכשווי מקורי בהשראת התיאור בספר; אין לו דירוג קוראים.",
-        "en": "An original contemporary recipe inspired by the novel’s description; no reader rating."
+        "he": "בהשראת תיאור המרק אצל הוגו.",
+        "en": "Inspired by Hugo’s description of the soup."
       },
       "book": {
         "reference": "I.II.III",
         "url": "https://www.gutenberg.org/cache/epub/17489/pg17489-images.html#Chapitre_IIIb",
-        "he": "בארוחת הבישוף מוגש מרק העשוי מים, שמן, לחם ומלח. הוגו אינו נותן כמויות, אינו מציין שמן זית ואינו מזכיר כאן בצל.",
-        "en": "At the bishop’s supper, the soup contains water, oil, bread and salt. Hugo gives no quantities, does not identify the oil as olive oil, and mentions no onion here."
+        "he": "בארוחת הבישוף מוגש מרק העשוי מים, שמן, לחם ומלח.",
+        "en": "At the bishop’s supper, the soup contains water, oil, bread and salt."
       },
       "servings": {
         "he": "4 מנות פתיחה קטנות",
@@ -117,8 +117,8 @@
           "he": "אפשרות למנה אחת: קוביות לחם טחינה מטוגנות",
           "en": "A one-bowl option: pan-fried tahini-bread cubes"
         },
-        "he": "חותכים 30 גרם מכיכר הטחינה האפויה והמצוננת לקוביות. מחממים כפית שמן במחבת על אש בינונית־נמוכה; מטגנים כמה דקות עד הזהבה, והופכים בעדינות. לפני הוספת הלחם למרק שומרים בצד כ־190 מ״ל מהנוזל החם; ליתר הסיר מוסיפים רק 90 גרם לחם רגיל. מוסיפים לקערת הניסיון את קוביות הטחינה ממש לפני האכילה. התוצאה היא ציר עם קוביות, לא אותה הסמכה של לחם רגיל. זמן הכנת הכיכר נוסף לזמן המרק.",
-        "en": "Cube 30 g of the baked, cooled tahini loaf. Warm 1 tsp oil in a pan over medium-low heat; fry a few minutes until golden, turning gently. Before adding bread to the soup, reserve about 190 ml hot liquid; use just 90 g ordinary bread in the remaining pot. Add the tahini cubes to the trial bowl immediately before eating. The result is broth with cubes, rather than ordinary bread’s thickening. Loaf preparation takes additional time.",
+        "he": "השילוב עם לחם הטחינה עדיין לא נוסה במטבח, לכן התחילו בקערה אחת. חותכים 30 גרם מכיכר הטחינה האפויה והמצוננת לקוביות. מחממים כפית שמן במחבת על אש בינונית־נמוכה; מטגנים כמה דקות עד הזהבה, והופכים בעדינות. לפני הוספת הלחם למרק שומרים בצד כ־190 מ״ל מהנוזל החם; ליתר הסיר מוסיפים רק 90 גרם לחם רגיל. מוסיפים לקערת הניסיון את קוביות הטחינה ממש לפני האכילה. התוצאה היא ציר עם קוביות, לא אותה הסמכה של לחם רגיל. זמן הכנת הכיכר נוסף לזמן המרק.",
+        "en": "The tahini-bread combination has not been kitchen-tested, so start with one bowl. Cube 30 g of the baked, cooled tahini loaf. Warm 1 tsp oil in a pan over medium-low heat; fry a few minutes until golden, turning gently. Before adding bread to the soup, reserve about 190 ml hot liquid; use just 90 g ordinary bread in the remaining pot. Add the tahini cubes to the trial bowl immediately before eating. The result is broth with cubes, rather than ordinary bread’s thickening. Loaf preparation takes additional time.",
         "recipeId": "tahini-walnut-loaf",
         "tested": false,
         "linkLabel": {
