@@ -1,0 +1,24 @@
+{
+  "he": {
+    "title": "פניות דרך האתר",
+    "paragraphs": [
+      "כאשר שירות השליחה פעיל ואתם לוחצים על שליחה, תוכן ההודעה, הנושא, שפת הטופס והשם וכתובת החזרה, אם בחרתם להוסיף אותם, עוברים לשרת האתר ולשירות הדואר Resend לצורך העברתם לעורך האתר וטיפול בפנייה. שם וכתובת חזרה אינם חובה. הפנייה אינה מתפרסמת באתר, ואינה מצרפת אתכם לרשימת דיוור.",
+      "הטיוטה נשמרת בזיכרון הלשונית בלבד, כולל בזמן מעבר בין עמודי האתר או החלפת שפה. היא אינה נשמרת ב־localStorage או ב־sessionStorage, נמחקת ברענון או בסגירת הלשונית, ומנוקה לאחר אישור קבלה לשילוח. תוכן הטופס וכתובת החזרה אינם נשלחים לכלי המדידה של האתר.",
+      "למניעת שימוש לרעה וכפילויות, הקוד מחזיק מונים, מזהה אקראי לפנייה, גיבובים עם מפתח של כתובת הרשת ושל תוכן הבקשה, ומצב שליחה. הוא אינו שומר את תוכן ההודעה או כתובת רשת גלויה ברשומות ההגנה האלה. לרשומות מוגדר תוקף קצר, עד 25 שעות; במצב זיכרון הן מוסרות בניקוי הבא או בסיום התהליך. אם הופעלה הגנה משותפת דרך Upstash, רשומות אלה מעובדות שם עם תוקף תפוגה.",
+      "שירות הדואר ותיבת הדואר המקבלת עשויים לשמור את ההודעה לפי המדיניות וההגדרות שלהם. ספקי האחסון והדואר עשויים לשמור גם יומני תפעול ורשת, לרבות כתובת IP, לפי מדיניותם. הקוד אינו קובע את תקופות השמירה האלה. אישור קבלה לשילוח אינו אישור מסירה או קריאה. אל תכללו בפנייה מידע רגיש או פרטים אישיים של אחרים."
+    ],
+    "providerLinkLabel": "מדיניות הפרטיות של Resend",
+    "providerLink": "https://resend.com/legal/privacy-policy"
+  },
+  "en": {
+    "title": "Contacting us through the site",
+    "paragraphs": [
+      "When sending is enabled and you press Send, your message, topic, form language and any name or reply address you choose to include go to the site server and the Resend email service to reach the site editor and handle your note. Your name and reply address are optional. Your note is not published on the site and does not subscribe you to a mailing list.",
+      "Your draft stays only in this tab’s memory, including when you navigate within the site or switch languages. It is not saved in localStorage or sessionStorage, disappears when you reload or close the tab, and is cleared after acceptance for sending. The site does not send form text or your reply address to its analytics tools.",
+      "To limit abuse and duplicates, the code keeps counters, a random submission ID, keyed hashes of the network address and request content, and sending status. These protection records contain neither message text nor a plain network address. Their configured lifetimes are short, up to 25 hours; in memory mode they are removed on the next cleanup or when the process ends. If shared protection through Upstash is enabled, it processes these records with expiry times.",
+      "The email service and receiving mailbox may retain the message under their policies and settings. Hosting and email providers may also keep operational and network logs, including IP addresses, under their policies. This code does not determine those retention periods. Acceptance for sending does not confirm delivery or reading. Please do not include sensitive information or other people’s personal details."
+    ],
+    "providerLinkLabel": "Resend’s privacy policy",
+    "providerLink": "https://resend.com/legal/privacy-policy"
+  }
+}

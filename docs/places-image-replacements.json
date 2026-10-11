@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-10",
+  "assetCount": 2,
+  "assets": [
+    {
+      "placeId": "bastille",
+      "filename": "bastille-modern.webp",
+      "fileTitle": "Place de la Bastille, avril 2021.jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:Place_de_la_Bastille%2C_avril_2021.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Place_de_la_Bastille%2C_avril_2021.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Place_de_la_Bastille%2C_avril_2021.jpg/1920px-Place_de_la_Bastille%2C_avril_2021.jpg",
+      "author": "Guillaume Flament",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Mododie",
+      "sourceCollection": "Wikimedia Commons",
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Place_de_la_Bastille%2C_avril_2021.jpg"
+      ],
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attributionText": "Guillaume Flament / Wikimedia Commons / CC BY-SA 4.0",
+      "date": "2021-04-25",
+      "imageType": "modern photograph",
+      "caption": {
+        "en": "Place de la Bastille in April 2021, with the July Column. A modern photograph of the square; the vanished elephant is not shown.",
+        "he": "כיכר הבסטיליה באפריל 2021, עם עמוד יולי. תצלום בן זמננו של הכיכר; הפיל שנעלם אינו נראה בו."
+      },
+      "alt": {
+        "en": "The July Column rises above the broad paved Place de la Bastille, framed by trees and Parisian buildings.",
+        "he": "עמוד יולי מעל הרחבה המרוצפת של כיכר הבסטיליה, בין עצים ובניינים פריזאיים."
+      },
+      "width": 1600,
+      "height": 1067,
+      "originalWidth": 5869,
+      "originalHeight": 3913,
+      "bytes": 535244,
+      "sha256": "1a575aa8f8bc2a0cca6182000c97e0e31c0b76f16c9d0a8bd8f4a1e455f01e97",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC BY-SA 4.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain",
+      "use": "primary place photograph"
+    },
+    {
+      "placeId": "montfermeil",
+      "filename": "montfermeil-town.webp",
+      "fileTitle": "Hôtel Ville - Montfermeil (FR93) - 2022-10-23 - 2.jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_Ville_-_Montfermeil_(FR93)_-_2022-10-23_-_2.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/H%C3%B4tel_Ville_-_Montfermeil_%28FR93%29_-_2022-10-23_-_2.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/H%C3%B4tel_Ville_-_Montfermeil_%28FR93%29_-_2022-10-23_-_2.jpg/1920px-H%C3%B4tel_Ville_-_Montfermeil_%28FR93%29_-_2022-10-23_-_2.jpg",
+      "author": "Chabe01",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Chabe01",
+      "sourceCollection": "Wikimedia Commons",
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_Ville_-_Montfermeil_(FR93)_-_2022-10-23_-_2.jpg"
+      ],
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attributionText": "Chabe01 / Wikimedia Commons / CC BY-SA 4.0",
+      "date": "2022-10-23",
+      "imageType": "modern town context photograph",
+      "caption": {
+        "en": "Montfermeil’s town hall in October 2022. A modern view within the town explicitly named in the novel; the building is not presented as a location of a fictional scene.",
+        "he": "בית העירייה של מונפרמיי באוקטובר 2022. מבט בן זמננו בתוך העיירה ששמה נקוב במפורש ברומן; הבניין אינו מוצג כאתר של סצנה בדיונית."
+      },
+      "alt": {
+        "en": "The pale façade of Montfermeil town hall, with French flags, a central entrance and planted beds beneath a cloudy blue sky.",
+        "he": "חזיתו הבהירה של בית העירייה במונפרמיי, דגלי צרפת, כניסה מרכזית וערוגות תחת שמיים כחולים מעוננים."
+      },
+      "width": 1600,
+      "height": 1200,
+      "originalWidth": 4032,
+      "originalHeight": 3024,
+      "bytes": 446328,
+      "sha256": "0825dc28aef08807474131a9639a88df2721a780025bdab8689a01289229262a",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC BY-SA 4.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain",
+      "use": "primary place photograph"
+    }
+  ]
+}

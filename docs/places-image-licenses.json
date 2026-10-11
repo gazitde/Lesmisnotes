@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-10",
+  "assetCount": 9,
+  "assets": [
+    {
+      "placeId": "luxembourg",
+      "filename": "luxembourg.webp",
+      "fileTitle": "Paris 75006 Jardin du Luxembourg Bassin 20170527.jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:Paris_75006_Jardin_du_Luxembourg_Bassin_20170527.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Paris_75006_Jardin_du_Luxembourg_Bassin_20170527.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Paris_75006_Jardin_du_Luxembourg_Bassin_20170527.jpg/1920px-Paris_75006_Jardin_du_Luxembourg_Bassin_20170527.jpg",
+      "author": "xiquinhosilva",
+      "authorUrl": "https://www.flickr.com/people/7138083@N04",
+      "sourceCollection": "Wikimedia Commons",
+      "sourceUrls": [
+        "https://www.flickr.com/photos/xiquinho/36641227965/"
+      ],
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "attributionText": "xiquinhosilva / Wikimedia Commons / CC BY 2.0",
+      "date": "2017-05-27",
+      "imageType": "modern photograph",
+      "caption": {
+        "en": "The Luxembourg Gardens in 2017, looking toward the Panthéon. A present-day view of a garden named in the novel.",
+        "he": "גני לוקסמבורג בשנת 2017, במבט לעבר הפנתאון. מבט בן זמננו על גן המוזכר ברומן."
+      },
+      "alt": {
+        "en": "Green chairs, palms and garden terraces at the Luxembourg Gardens, with the Panthéon in the distance.",
+        "he": "כיסאות ירוקים, דקלים וטרסות בגני לוקסמבורג, והפנתאון ברקע."
+      },
+      "width": 1600,
+      "height": 1068,
+      "originalWidth": 5438,
+      "originalHeight": 3630,
+      "bytes": 478936,
+      "sha256": "22a625d2ae89a6ff7a949208bdf0ded6b5b5488416f8c4c08a62c64c4285bcba",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC BY 2.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain"
+    },
+    {
+      "placeId": "rue-plumet",
+      "filename": "rue-plumet.webp",
+      "fileTitle": "Paris rue oudinot2.jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:Paris_rue_oudinot2.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Paris_rue_oudinot2.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Paris_rue_oudinot2.jpg/1920px-Paris_rue_oudinot2.jpg",
+      "author": "Ralf.treinen",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Ralf.treinen",
+      "sourceCollection": "Wikimedia Commons",
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Paris_rue_oudinot2.jpg"
+      ],
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "attributionText": "Ralf.treinen / Wikimedia Commons / CC BY-SA 3.0",
+      "date": "2012-03-11",
+      "imageType": "modern photograph",
+      "caption": {
+        "en": "Rue Oudinot in 2012, photographed eastward from Rue Monsieur. This is the historical Rue Plumet; the photograph does not identify Cosette’s fictional house.",
+        "he": "רחוב אודינו בשנת 2012, במבט מזרחה מרחוב מסייה. זהו רחוב פלומה ההיסטורי; התצלום אינו מזהה את ביתה הבדיוני של קוזט."
+      },
+      "alt": {
+        "en": "A narrow Paris street lined with pale façades, shutters and parked cars.",
+        "he": "רחוב פריזאי צר, חזיתות בהירות, תריסים ומכוניות חונות."
+      },
+      "width": 1600,
+      "height": 1200,
+      "originalWidth": 4884,
+      "originalHeight": 3662,
+      "bytes": 308490,
+      "sha256": "1ec3a6a8ff7d653b261f711ba3f06df5ca877c08df99cf0fe3b7f90411111c05",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC BY-SA 3.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain"
+    },
+    {
+      "placeId": "chanvrerie",
+      "filename": "chanvrerie.webp",
+      "fileTitle": "Rue Mondétour - Paris I (FR75) - 2021-06-05 - 1.jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:Rue_Mond%C3%A9tour_-_Paris_I_(FR75)_-_2021-06-05_-_1.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Rue_Mond%C3%A9tour_-_Paris_I_%28FR75%29_-_2021-06-05_-_1.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Rue_Mond%C3%A9tour_-_Paris_I_%28FR75%29_-_2021-06-05_-_1.jpg/1920px-Rue_Mond%C3%A9tour_-_Paris_I_%28FR75%29_-_2021-06-05_-_1.jpg",
+      "author": "Chabe01",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Chabe01",
+      "sourceCollection": "Wikimedia Commons",
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Rue_Mond%C3%A9tour_-_Paris_I_(FR75)_-_2021-06-05_-_1.jpg"
+      ],
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attributionText": "Chabe01 / Wikimedia Commons / CC BY-SA 4.0",
+      "date": "2021-06-05",
+      "imageType": "modern photograph",
+      "caption": {
+        "en": "Rue Mondétour in 2021, a modern view in the vicinity of the vanished Rue de la Chanvrerie. The buildings and streetscape shown are not the novel’s barricade.",
+        "he": "רחוב מונדטור בשנת 2021, בסביבת רחוב שאנבררי שנעלם. הבניינים והרחוב שבתצלום אינם הבריקדה של הרומן."
+      },
+      "alt": {
+        "en": "A pedestrian street with café terraces on Rue Mondétour in present-day Paris.",
+        "he": "רחוב להולכי רגל עם שולחנות בתי קפה ברחוב מונדטור בפריז של ימינו."
+      },
+      "width": 1600,
+      "height": 1200,
+      "originalWidth": 4032,
+      "originalHeight": 3024,
+      "bytes": 444818,
+      "sha256": "4eb42ebc1b8af0c222dc5ff7f9ea9795242a935e60e1f061660f2895a9796e1c",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC BY-SA 4.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain"
+    },
+    {
+      "placeId": "bastille",
+      "filename": "bastille.webp",
+      "fileTitle": "La fontaine de l'éléphant, place de la Bastille, D.8274(2).jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:La_fontaine_de_l'%C3%A9l%C3%A9phant%2C_place_de_la_Bastille%2C_D.8274(2).jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/La_fontaine_de_l%27%C3%A9l%C3%A9phant%2C_place_de_la_Bastille%2C_D.8274%282%29.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/La_fontaine_de_l%27%C3%A9l%C3%A9phant%2C_place_de_la_Bastille%2C_D.8274%282%29.jpg/1920px-La_fontaine_de_l%27%C3%A9l%C3%A9phant%2C_place_de_la_Bastille%2C_D.8274%282%29.jpg",
+      "author": "Jean-Antoine Alavoine",
+      "authorUrl": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/la-fontaine-de-l-elephant-place-de-la-bastille",
+      "sourceCollection": "Paris Musées, Musée Carnavalet",
+      "sourceUrls": [
+        "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/la-fontaine-de-l-elephant-place-de-la-bastille#infos-principales"
+      ],
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attributionText": "Jean-Antoine Alavoine / Paris Musées, Musée Carnavalet / CC0 1.0",
+      "date": "1814",
+      "imageType": "historical design watercolor",
+      "caption": {
+        "en": "Jean-Antoine Alavoine’s 1814 design for the elephant fountain at the Bastille. A period architectural watercolor, not a photograph of the deteriorating plaster model that shelters Gavroche.",
+        "he": "תכנון מזרקת הפיל בבסטיליה, בצבעי מים מאת ז׳אן־אנטואן אלאבואן, 1814. זהו ציור אדריכלי מן התקופה, ולא תצלום של דגם הגבס המתפורר שבו גברוש מוצא מחסה."
+      },
+      "alt": {
+        "en": "A period watercolor of a monumental elephant fountain with a howdah, basin, pedestrians and canal boats.",
+        "he": "ציור תקופתי של מזרקה בצורת פיל עצום, עם אפריון, בריכה, הולכי רגל וסירות בתעלה."
+      },
+      "width": 1600,
+      "height": 1182,
+      "originalWidth": 6038,
+      "originalHeight": 4458,
+      "bytes": 400198,
+      "sha256": "de0484179061a4f7b8f43c980a516df4a48c4029a04ac8a0754add9b73af50b1",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC0 1.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain"
+    },
+    {
+      "placeId": "pont-au-change",
+      "filename": "pont-au-change.webp",
+      "fileTitle": "Pont au Change and Conciergerie, Paris 2 April 2014.jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:Pont_au_Change_and_Conciergerie%2C_Paris_2_April_2014.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Pont_au_Change_and_Conciergerie%2C_Paris_2_April_2014.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Pont_au_Change_and_Conciergerie%2C_Paris_2_April_2014.jpg/1920px-Pont_au_Change_and_Conciergerie%2C_Paris_2_April_2014.jpg",
+      "author": "DXR",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:DXR",
+      "sourceCollection": "Wikimedia Commons",
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Pont_au_Change_and_Conciergerie%2C_Paris_2_April_2014.jpg"
+      ],
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attributionText": "DXR / Wikimedia Commons / CC BY-SA 4.0",
+      "date": "2014-04-02",
+      "imageType": "modern photograph",
+      "caption": {
+        "en": "Pont au Change and the Conciergerie in 2014. The visible bridge is the later replacement, not the structure standing during the events of the novel.",
+        "he": "פון־או־שאנז׳ והקונסיירז׳רי בשנת 2014. הגשר הנראה כאן הוא הגשר המאוחר שהחליף את זה שעמד בזמן עלילת הרומן."
+      },
+      "alt": {
+        "en": "Pont au Change crossing the Seine beside the Conciergerie, viewed from Pont Neuf.",
+        "he": "פון־או־שאנז׳ חוצה את הסן לצד הקונסיירז׳רי, במבט מפון נף."
+      },
+      "width": 1600,
+      "height": 900,
+      "originalWidth": 4923,
+      "originalHeight": 2769,
+      "bytes": 235162,
+      "sha256": "8930f60af2e5915cf20870f0590c2a5a621ba2e7e746fb44b2eb9abbf87408a5",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC BY-SA 4.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain"
+    },
+    {
+      "placeId": "saint-paul-saint-louis",
+      "filename": "saint-paul-saint-louis.webp",
+      "fileTitle": "Paris Saint-Paul-Saint-Louis 2023-04-04.jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:Paris_Saint-Paul-Saint-Louis_2023-04-04.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Paris_Saint-Paul-Saint-Louis_2023-04-04.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Paris_Saint-Paul-Saint-Louis_2023-04-04.jpg/1280px-Paris_Saint-Paul-Saint-Louis_2023-04-04.jpg",
+      "author": "Drycker",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Drycker",
+      "sourceCollection": "Wikimedia Commons",
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:Paris_Saint-Paul-Saint-Louis_2023-04-04.jpg"
+      ],
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attributionText": "Drycker / Wikimedia Commons / CC BY-SA 4.0",
+      "date": "2023-04-04",
+      "imageType": "modern photograph",
+      "caption": {
+        "en": "The façade of Saint-Paul-Saint-Louis in 2023. The church is a surviving location explicitly named in the novel; this photograph shows its present-day appearance.",
+        "he": "חזית כנסיית סן־פול־סן־לואי בשנת 2023. הכנסייה היא מקום קיים הנקוב במפורש ברומן; התצלום מציג את מראהּ בן זמננו."
+      },
+      "alt": {
+        "en": "The pale stone Baroque façade and red doors of Saint-Paul-Saint-Louis beneath a blue sky.",
+        "he": "חזית האבן הבארוקית הבהירה ודלתותיה האדומות של כנסיית סן־פול־סן־לואי תחת שמיים כחולים."
+      },
+      "width": 1280,
+      "height": 1706,
+      "originalWidth": 2675,
+      "originalHeight": 3565,
+      "bytes": 320746,
+      "sha256": "35aa8ae81dc854c999bd41ee2094d9470fb4991e3c93f6d546e053aec50cf038",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC BY-SA 4.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain"
+    },
+    {
+      "placeId": "pont-austerlitz",
+      "filename": "pont-austerlitz.webp",
+      "fileTitle": "P1210920 Paris V-XII-XIII pont Austerlitz rwk.jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:P1210920_Paris_V-XII-XIII_pont_Austerlitz_rwk.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/P1210920_Paris_V-XII-XIII_pont_Austerlitz_rwk.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/P1210920_Paris_V-XII-XIII_pont_Austerlitz_rwk.jpg/1920px-P1210920_Paris_V-XII-XIII_pont_Austerlitz_rwk.jpg",
+      "author": "Mbzt",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Mbzt",
+      "sourceCollection": "Wikimedia Commons",
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:P1210920_Paris_V-XII-XIII_pont_Austerlitz_rwk.jpg"
+      ],
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "attributionText": "Mbzt / Wikimedia Commons / CC BY-SA 3.0",
+      "date": "2013-11-19",
+      "imageType": "modern photograph",
+      "caption": {
+        "en": "Pont d’Austerlitz in 2013. This later stone bridge occupies the crossing associated with Valjean and Cosette’s flight; it is not the earlier bridge of the novel’s period.",
+        "he": "פון ד׳אוסטרליץ בשנת 2013. גשר האבן המאוחר נמצא במעבר הקשור למנוסתם של ולז׳אן וקוזט; אין זה הגשר המוקדם מתקופת העלילה."
+      },
+      "alt": {
+        "en": "An oblique view of the stone arches and roadway of Pont d’Austerlitz across the Seine.",
+        "he": "מבט אלכסוני על קשתות האבן והכביש של פון ד׳אוסטרליץ מעל הסן."
+      },
+      "width": 1600,
+      "height": 1200,
+      "originalWidth": 2000,
+      "originalHeight": 1500,
+      "bytes": 271824,
+      "sha256": "648b8378737e10b55d5fed2ac6aa0058b90d107a319d0595291347ee4e47e532",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC BY-SA 3.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain"
+    },
+    {
+      "placeId": "montfermeil",
+      "filename": "montfermeil.webp",
+      "fileTitle": "Forêt Régionale Bondy - Clichy-sous-Bois (FR93) - 2020-12-12 - 8.jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:For%C3%AAt_R%C3%A9gionale_Bondy_-_Clichy-sous-Bois_(FR93)_-_2020-12-12_-_8.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/For%C3%AAt_R%C3%A9gionale_Bondy_-_Clichy-sous-Bois_%28FR93%29_-_2020-12-12_-_8.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/For%C3%AAt_R%C3%A9gionale_Bondy_-_Clichy-sous-Bois_%28FR93%29_-_2020-12-12_-_8.jpg/1280px-For%C3%AAt_R%C3%A9gionale_Bondy_-_Clichy-sous-Bois_%28FR93%29_-_2020-12-12_-_8.jpg",
+      "author": "Chabe01",
+      "authorUrl": "https://commons.wikimedia.org/wiki/User:Chabe01",
+      "sourceCollection": "Wikimedia Commons",
+      "sourceUrls": [
+        "https://commons.wikimedia.org/wiki/File:For%C3%AAt_R%C3%A9gionale_Bondy_-_Clichy-sous-Bois_(FR93)_-_2020-12-12_-_8.jpg"
+      ],
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attributionText": "Chabe01 / Wikimedia Commons / CC BY-SA 4.0",
+      "date": "2020-12-12",
+      "imageType": "modern regional context photograph",
+      "caption": {
+        "en": "Bondy Forest in 2020, photographed in neighboring Clichy-sous-Bois. Regional landscape context for Montfermeil, not an identified location of Cosette’s meeting with Valjean.",
+        "he": "יער בונדי בשנת 2020, מצולם בקלישי־סו־בואה השכנה. נוף אזורי המעניק הקשר למונפרמיי, ולא זיהוי של המקום שבו קוזט פגשה את ולז׳אן."
+      },
+      "alt": {
+        "en": "A curving woodland path beneath tall trees and late-autumn leaves in Bondy Forest.",
+        "he": "שביל מתעקל ביער בונדי, בין עצים גבוהים ועלי סוף הסתיו."
+      },
+      "width": 1280,
+      "height": 960,
+      "originalWidth": 4032,
+      "originalHeight": 3024,
+      "bytes": 735648,
+      "sha256": "0c65da6a8da64e5824b2350617ab7779f44613eaf3efa82c0037c7dcb8605d20",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC BY-SA 4.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain"
+    },
+    {
+      "placeId": "sewers",
+      "filename": "sewers.webp",
+      "fileTitle": "Les égouts de Paris (1897), PH37307 (1 of 2).jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:Les_%C3%A9gouts_de_Paris_(1897)%2C_PH37307_(1_of_2).jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Les_%C3%A9gouts_de_Paris_%281897%29%2C_PH37307_%281_of_2%29.jpg",
+      "downloadedRenditionUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Les_%C3%A9gouts_de_Paris_%281897%29%2C_PH37307_%281_of_2%29.jpg/1920px-Les_%C3%A9gouts_de_Paris_%281897%29%2C_PH37307_%281_of_2%29.jpg",
+      "author": "Albert Brichaut",
+      "authorUrl": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/les-egouts-de-paris-1897",
+      "sourceCollection": "Paris Musées, Musée Carnavalet",
+      "sourceUrls": [
+        "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/les-egouts-de-paris-1897"
+      ],
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attributionText": "Albert Brichaut / Paris Musées, Musée Carnavalet / CC0 1.0",
+      "date": "1897",
+      "imageType": "historical photograph, later than the novel’s action",
+      "caption": {
+        "en": "Paris sewers photographed by Albert Brichaut in 1897, 65 years after the novel’s June 1832 events. Historical infrastructure context, not documentation of Valjean’s exact escape route.",
+        "he": "תעלות הביוב של פריז בתצלום של אלבר ברישו משנת 1897, 65 שנה אחרי אירועי יוני 1832 ברומן. זהו תיעוד היסטורי מאוחר של התשתית, ולא של מסלול בריחתו המדויק של ולז׳אן."
+      },
+      "alt": {
+        "en": "A mounted sepia photograph showing men, pipes and cables inside a Paris sewer tunnel.",
+        "he": "תצלום חום־צהבהב על קרטון, ובו אנשים, צינורות וכבלים בתוך תעלת ביוב פריזאית."
+      },
+      "width": 1517,
+      "height": 2000,
+      "originalWidth": 2276,
+      "originalHeight": 3000,
+      "bytes": 757566,
+      "sha256": "84145b5e4c999e0942994cf763e38f0b39d3b577521b86c44ec9dbdb18914170",
+      "transformations": "Whole frame retained; resized and converted to WebP for web delivery. No content editing, colorization, reconstruction, retouching, or cropping.",
+      "cropPolicy": "Display uncropped with object-fit: contain. Any additional crop must be disclosed and retain author and license credit.",
+      "derivativeLicense": "CC0 1.0",
+      "visualVerification": "Visually reviewed for subject, framing, date/context qualifications and attribution.",
+      "recommendedObjectFit": "contain"
+    }
+  ]
+}

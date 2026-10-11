@@ -1,0 +1,62 @@
+import './scripts/build-config.mjs';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import path from 'node:path';
+import crypto from 'node:crypto';
+const assetRevision=crypto.createHash('sha256').update(fs.readdirSync('dist').filter(n=>/\.(js|css)$/.test(n)).sort().map(n=>fs.readFileSync('dist/'+n,'utf8')).join('\n')).digest('hex').slice(0,12);
+const research=fs.readFileSync('dist/research.js','utf8');
+const extras=fs.readFileSync('dist/extras.js','utf8');
+const placesCode=fs.readFileSync('dist/places.js','utf8');
+const placesData=fs.readFileSync('dist/places-data.js','utf8');
+const recipeCode=fs.readFileSync('dist/recipes.js','utf8');
+const recipeData=fs.readFileSync('dist/recipes-data.js','utf8');
+const engine=fs.readFileSync('dist/quiz-engine.js','utf8');
+const seo=fs.readFileSync('dist/seo.js','utf8');
+const appCode=fs.readFileSync('dist/app.js','utf8');
+const searchCode=fs.readFileSync('dist/search.js','utf8');
+const privacyCode=fs.readFileSync('dist/privacy.js','utf8');
+const configCode=fs.readFileSync('dist/site-config.js','utf8');
+const analyticsCode=fs.readFileSync('dist/analytics.js','utf8');
+const contactCode=fs.existsSync('dist/contact.js')?fs.readFileSync('dist/contact.js','utf8'):'';
+const policiesCode=fs.readFileSync('dist/policies.js','utf8');
+function render(lang,route,spoilers){
+ const map=new Map([['barricade-spoilers',spoilers?'on':'off']]);
+ const storage={getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)};
+ const callbacks={};
+ const app={innerHTML:'',addEventListener(type,fn){callbacks[type]=fn}};
+ const nodes=new Map();
+ const node=id=>{if(!nodes.has(id))nodes.set(id,{classList:{add(){},remove(){}},focus(){},scrollIntoView(){},style:{}});return nodes.get(id)};
+ const context={console,URLSearchParams,document:{addEventListener(type,fn){callbacks['document-'+type]=fn},querySelectorAll:()=>[],querySelector:()=>({focus(){},addEventListener(type,fn){callbacks['skip-'+type]=fn}}),getElementById:id=>id==='app'?app:node(id),documentElement:{},title:''},localStorage:storage,sessionStorage:storage,location:{hash:`#/${lang}/${route}`,pathname:'/'},history:{},setTimeout:()=>1,clearTimeout:()=>{}};
+ context.history.replaceState=context.history.pushState=(a,b,path)=>{context.history.state=a;const u=new URL(path,'https://example.test');context.location.pathname=u.pathname;context.location.search=u.search;context.location.hash=''};
+ context.window=context;context.window.scrollTo=()=>{};context.window.addEventListener=(type,fn)=>callbacks[type]=fn;
+ vm.createContext(context);vm.runInContext(research,context);vm.runInContext(extras,context);vm.runInContext(engine,context);vm.runInContext(seo,context);vm.runInContext(policiesCode,context);vm.runInContext(privacyCode,context);vm.runInContext(configCode,context);vm.runInContext(analyticsCode,context);vm.runInContext(placesData,context);vm.runInContext(placesCode,context);vm.runInContext(recipeData,context);vm.runInContext(recipeCode,context);if(contactCode)vm.runInContext(contactCode,context);vm.runInContext(searchCode,context);vm.runInContext(appCode,context);
+ return {html:app.innerHTML,ctx:context,app,callbacks};
+}
+
+const metaContext={window:{}};vm.runInNewContext(seo,metaContext);const M=metaContext.window.SITE_METADATA;
+const E=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const urls=[];
+function htmlFor(lang,route,root=false){
+const r=render(lang,route,false),p=M.pages[route],canonicalRoute=p.canonicalRoute||route;
+const canonical=M.origin?M.origin+'/'+lang+'/'+canonicalRoute+'/':'';
+const alternates=M.origin?['he','en','x-default'].map(l=>`<link rel="alternate" hreflang="${l}" href="${M.origin}/${l==='x-default'?'he':l}/${canonicalRoute}/">`).join('\n'):'';
+const robots=M.private?'noindex, follow':'index, follow, max-image-preview:large';
+const structured=r.ctx.SiteSEO.structured(lang,route);
+const imageAlt=lang==='he'?'מעבר לבריקדה: איור מקורי של דגל אדום מעל פריז':'Beyond the Barricade: original red-flag illustration above Paris';
+return `<!doctype html>
+<html lang="${lang}" dir="${lang==='he'?'rtl':'ltr'}"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#002395">
+<title>${E(p.title[lang])}</title><meta name="description" content="${E(p.description[lang])}"><meta name="robots" content="${robots}">
+${canonical?`<link rel="canonical" href="${canonical}">${alternates}`:''}
+<meta property="og:type" content="website"><meta property="og:title" content="${E(p.title[lang])}"><meta property="og:description" content="${E(p.description[lang])}">${canonical?`<meta property="og:url" content="${canonical}"><meta property="og:image" content="${M.origin}/assets/social-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${imageAlt}"><meta name="twitter:image" content="${M.origin}/assets/social-card.png"><meta name="twitter:image:alt" content="${imageAlt}">`:''}<meta property="og:locale" content="${lang==='he'?'he_IL':'en_GB'}"><meta property="og:locale:alternate" content="${lang==='he'?'en_GB':'he_IL'}"><meta property="og:site_name" content="Beyond the Barricade">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${E(p.title[lang])}"><meta name="twitter:description" content="${E(p.description[lang])}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css?v=${assetRevision}"><link rel="stylesheet" href="/vendor/leaflet/leaflet.css?v=${assetRevision}"><link rel="stylesheet" href="/places.css?v=${assetRevision}"><link rel="stylesheet" href="/recipes.css?v=${assetRevision}"><link rel="stylesheet" href="/search.css?v=${assetRevision}"><link rel="stylesheet" href="/contact.css?v=${assetRevision}">
+<script id="page-structured-data" type="application/ld+json">${JSON.stringify(structured).replace(/</g,'\\u003c')}</script>
+<script src="/research.js?v=${assetRevision}" defer></script><script src="/extras.js?v=${assetRevision}" defer></script><script src="/quiz-engine.js?v=${assetRevision}" defer></script><script src="/seo.js?v=${assetRevision}" defer></script><script src="/policies.js?v=${assetRevision}" defer></script><script src="/privacy.js?v=${assetRevision}" defer></script><script src="/site-config.js?v=${assetRevision}" defer></script><script src="/analytics.js?v=${assetRevision}" defer></script><script src="/places-data.js?v=${assetRevision}" defer></script><script src="/places.js?v=${assetRevision}" defer></script><script src="/recipes-data.js?v=${assetRevision}" defer></script><script src="/recipes.js?v=${assetRevision}" defer></script><script src="/contact.js?v=${assetRevision}" defer></script><script src="/search.js?v=${assetRevision}" defer></script><script src="/app.js?v=${assetRevision}" defer></script>
+</head><body><a class="skip" href="#main">דלגו לתוכן / Skip to content</a><div id="app">${r.html}</div><div id="toast" class="toast" role="status" aria-live="polite"></div><noscript><p>${lang==='he'?'אפשר לקרוא ולנווט. לפתיחת ספוילרים, סינון והפעלת הכלים דרוש JavaScript.':'Reading and page links work here. Spoiler controls, filters and interactive tools need JavaScript.'}</p></noscript></body></html>`;}
+for(const route of Object.keys(M.pages))for(const lang of ['he','en']){const dir=path.join('dist',lang,route);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),htmlFor(lang,route));if(!M.pages[route].canonicalRoute)urls.push({route,lang,url:M.origin+'/'+lang+'/'+route+'/'});}
+fs.writeFileSync('dist/index.html',htmlFor('he','home',true));
+fs.writeFileSync('dist/robots.txt', '# Indexing is controlled by the build environment.\nUser-agent: *\nAllow: /\n'+(!M.private&&M.origin?'Sitemap: '+M.origin+'/sitemap.xml\n':'# Preview build: HTML is noindex; sitemap is not advertised.\n'));
+fs.writeFileSync('dist/sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'+(M.origin&&!M.private?urls.map(({route,url})=>`<url><loc>${E(url)}</loc>${['he','en','x-default'].map(l=>`<xhtml:link rel="alternate" hreflang="${l}" href="${M.origin}/${l==='x-default'?'he':l}/${route}/"/>`).join('')}</url>`).join('\n'):'')+'\n</urlset>\n');
+fs.writeFileSync('dist/404.html',`<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>הדף לא נמצא / Page not found</title><link rel="stylesheet" href="/style.css?v=${assetRevision}"><link rel="stylesheet" href="/vendor/leaflet/leaflet.css?v=${assetRevision}"><link rel="stylesheet" href="/places.css?v=${assetRevision}"><link rel="stylesheet" href="/recipes.css?v=${assetRevision}"><link rel="stylesheet" href="/search.css?v=${assetRevision}"><link rel="stylesheet" href="/contact.css?v=${assetRevision}"></head><body><main class="wrap section"><h1>הדף לא נמצא.<br>Page not found.</h1><p>אפשר לחזור למפת האתר. You can return to the site map.</p><div class="button-row"><a class="btn" href="/he/sitemap/">מפת האתר</a><a class="btn secondary" href="/en/sitemap/">Site map</a></div></main></body></html>`);
+console.log(`Prerendered ${urls.length} localized pages, a root landing page and a 404. ${M.private?'Preview/noindex':'Public/indexable'}; canonical origin: ${M.origin||'not configured'}.`);

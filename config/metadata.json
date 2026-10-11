@@ -1,0 +1,256 @@
+{
+  "pages": {
+    "home": {
+      "title": {
+        "he": "עלובי החיים: מדריך אינטראקטיבי לספר ולמחזמר",
+        "en": "Les Misérables: an interactive guide to the novel and musical"
+      },
+      "description": {
+        "he": "חמישה מסעות, מפות, ביצועים, היסטוריה וחידונים. מדריך מעריצים עצמאי בעברית ובאנגלית, עם ספוילרים לבחירה.",
+        "en": "Five journeys through the novel and musical, with maps, performances, history and quizzes. An independent bilingual fan guide with optional spoilers."
+      }
+    },
+    "before": {
+      "title": {
+        "he": "לפני שרואים עלובי החיים: הכנה למחזמר ולביקור",
+        "en": "Before seeing Les Misérables: a spoiler-safe theatre guide"
+      },
+      "description": {
+        "he": "היכרות חמה עם הסיפור והדמויות, טיפים להקשבה, משך ההצגה ושיקולים לילדים ולמושבים. מידע לונדון מסומן עם מקורות.",
+        "en": "A welcoming introduction to the story, listening tips, family content guidance and seat considerations. London-specific visitor information is clearly sourced."
+      }
+    },
+    "after": {
+      "title": {
+        "he": "אחרי עלובי החיים: שאלות ושיחה בעקבות הצפייה",
+        "en": "After Les Misérables: reflections and conversations"
+      },
+      "description": {
+        "he": "מסלול אישי לחזור לרגעים, להקשיב שוב ולבחון דילמות. פרטי העלילה והסיום נפתחים רק לאחר אישור ספוילרים.",
+        "en": "Revisit moments, listen again and explore dilemmas after watching. Plot details and endings open only after explicit spoiler consent."
+      }
+    },
+    "hugo": {
+      "title": {
+        "he": "ויקטור הוגו ועלובי החיים: הספר, הסופר וההשפעה",
+        "en": "Victor Hugo and Les Misérables: the author and the novel"
+      },
+      "description": {
+        "he": "הכירו את ויקטור הוגו, שנות כתיבת עלובי החיים, הגלות, הפרסום והרעיונות שמאחורי הספר. סקירה מקורית עם מקורות.",
+        "en": "Meet Victor Hugo through the writing, exile, publication and ideas behind Les Misérables. Original introductory writing with source links."
+      }
+    },
+    "novel": {
+      "title": {
+        "he": "עלובי החיים בקצרה: חמשת חלקי הרומן וציר זמן",
+        "en": "Les Misérables novel recap: five parts and a timeline"
+      },
+      "description": {
+        "he": "חמשת החלקים המקוריים של הוגו ו־14 תחנות זיכרון כרונולוגיות. תקציר דו־לשוני מלא, רק לאחר אישור ספוילרים.",
+        "en": "Hugo’s five original parts and fourteen chronological memory milestones. A complete bilingual recap protected by explicit full-novel spoiler consent."
+      }
+    },
+    "musical": {
+      "title": {
+        "he": "המחזמר עלובי החיים: היוצרים ומסע משיר לשיר",
+        "en": "The Les Misérables musical: creators and a song-by-song guide"
+      },
+      "description": {
+        "he": "סיפור יצירת המחזמר, היוצרים, הפקות נבחרות ושתי המערכות. מסע מוזיקלי אינטראקטיבי עם הפסקה ופרטי עלילה לבחירה.",
+        "en": "Explore the musical’s origins, creators, selected productions and two acts. An interactive song journey with interval guidance and opt-in plot details."
+      }
+    },
+    "story": {
+      "title": {
+        "he": "סיפור המחזמר עלובי החיים: מדריך עלילה",
+        "en": "The story of Les Misérables: a musical plot guide"
+      },
+      "description": {
+        "he": "מסלול ברור בשמונה תחנות של עלילת המחזמר, עם דמויות, שאלות וקישורי מקורות. פרטי העלילה מוסתרים עד לבחירתכם.",
+        "en": "Follow the stage musical in eight story chapters with characters, questions and sources. Detailed plot content remains hidden until you choose to reveal it."
+      }
+    },
+    "characters": {
+      "title": {
+        "he": "דמויות עלובי החיים: מפת קשרים אינטראקטיבית",
+        "en": "Les Misérables characters: an interactive relationship map"
+      },
+      "description": {
+        "he": "בחרו דמות ועקבו אחרי משפחה, אהבה, חוק וחמלה. מפת קשרים דו־לשונית עם חלופה טקסטואלית ושליטה בספוילרים.",
+        "en": "Choose a character and trace family, love, law and mercy. A bilingual relationship explorer with text alternatives and spoiler controls."
+      }
+    },
+    "map": {
+      "title": {
+        "he": "מפת המסע של עלובי החיים: צרפת ופריז",
+        "en": "Les Misérables story map: France and Paris"
+      },
+      "description": {
+        "he": "מפה גאוגרפית של תשעה מקומות אמיתיים מן הרומן, לצד אטלס סיפור מאויר של צרפת ופריז. תצלומים, הקשר היסטורי וספוילרים לבחירה.",
+        "en": "Explore nine real places named in the novel on a geographic map, alongside an illustrated France and Paris story atlas. Photographs, historical context and optional spoilers."
+      }
+    },
+    "history": {
+      "title": {
+        "he": "ההיסטוריה של עלובי החיים: פריז ומרד יוני 1832",
+        "en": "Les Misérables history: Paris and the June 1832 uprising"
+      },
+      "description": {
+        "he": "שישה רגעים היסטוריים מ־1789 ועד פרסום הרומן, עם מקורות והפרדה בין המציאות לבדיון. תוצאות ההתקוממות מאחורי אזהרה.",
+        "en": "Six historical milestones from 1789 to the novel’s publication, with sources and clear distinctions between history and fiction. Outcomes are spoiler-protected."
+      }
+    },
+    "ideas": {
+      "title": {
+        "he": "הדילמות של עלובי החיים: חוק, חמלה ואחריות",
+        "en": "Les Misérables dilemmas: law, mercy and responsibility"
+      },
+      "description": {
+        "he": "חמש דילמות, עמדות שונות ומעבדת בימוי אינטראקטיבית. שאלות מקוריות לחשיבה על הספר והמחזמר, ללא תשובה מוכתבת.",
+        "en": "Explore five dilemmas, contrasting perspectives and an interactive directing lab. Original questions about the novel and musical, without prescribed answers."
+      }
+    },
+    "quiz": {
+      "title": {
+        "he": "חידוני עלובי החיים: הספר, הסיפור והמחזמר",
+        "en": "Les Misérables quizzes: story and musical knowledge"
+      },
+      "description": {
+        "he": "שני מסלולים של 25 שאלות, וגם מקצים של 5 או 10. הסברים, מקורות ותגים אישיים, עם שמירה מקומית ושליטה בספוילרים.",
+        "en": "Two 25-question tracks, plus rounds of five or ten. Explanations, sources and achievement badges with local progress and spoiler consent."
+      }
+    },
+    "listening": {
+      "title": {
+        "he": "ביצועים ששווה לראות | עלובי החיים",
+        "en": "Les Misérables performances worth watching"
+      },
+      "description": {
+        "he": "20 בחירות בארבע קטגוריות: במה, ביצועים מפתיעים, שירה משותפת והומור. רקע, קרדיטים, ביצועים בעברית והשוואות הקשבה.",
+        "en": "20 selections across stage, unexpected performances, singing together and humor. Context, credits, Hebrew performances and guided comparisons."
+      }
+    },
+    "compare": {
+      "title": {
+        "he": "עלובי החיים: הבדלים בין הרומן למחזמר",
+        "en": "Les Misérables: differences between the novel and musical"
+      },
+      "description": {
+        "he": "שש בחירות עיבוד מוצגות זו לצד זו: מה השתנה, דוגמאות ופרשנות. השוואה לרומן ולמחזמר הבימתי, באישור ספוילרים.",
+        "en": "Six adaptation choices shown side by side, with examples and interpretation. Compare Hugo’s novel with the stage musical after spoiler consent."
+      }
+    },
+    "screen": {
+      "title": {
+        "he": "עלובי החיים בקולנוע ובטלוויזיה: עיבודים נבחרים",
+        "en": "Les Misérables on screen: selected film and TV adaptations"
+      },
+      "description": {
+        "he": "ציר זמן של עיבודים נבחרים, סרטונים רשמיים והקשר לכל גרסה. הבדלה ברורה בין המחזמר לבין עיבודים דרמטיים של הרומן.",
+        "en": "A curated timeline of film and television versions, official videos and context. Clearly distinguishes the musical from dramatic adaptations of the novel."
+      }
+    },
+    "tribute": {
+      "title": {
+        "he": "מחוות לעלובי החיים: חתונות וביצועים מיוחדים",
+        "en": "Les Misérables tributes: weddings and creative performances"
+      },
+      "description": {
+        "he": "מחוות נבחרות בחתונות, בקניון ובאולפני יוצרים. קטגוריות, קרדיטים וקישורים למקורות, בלי להעתיק הקלטות.",
+        "en": "Selected wedding, mall and creator performances, grouped by setting. Credits and traceable original links without copying recordings."
+      },
+      "canonicalRoute": "listening"
+    },
+    "resources": {
+      "title": {
+        "he": "קישורים לאוהבי עלובי החיים: אוסף מקורות נבחר",
+        "en": "Les Misérables resources: a curated discovery collection"
+      },
+      "description": {
+        "he": "אתרי הפקות, הספר המקורי, מוזיאונים וקהילות, וגם מופע מחווה ועיבודים מפתיעים. לכל קישור הסבר ואיפה להתחיל.",
+        "en": "Production sites, the original novel, museums and communities, plus a concert tribute and unusual adaptations. Every link explains why to visit and where to start."
+      }
+    },
+    "about": {
+      "title": {
+        "he": "על המדריך: מקורות, קרדיטים ופרטיות",
+        "en": "About this Les Misérables guide: sources and privacy"
+      },
+      "description": {
+        "he": "הקרדיטים, המקורות והבחירות העריכתיות של מדריך מעריצים עצמאי לעלובי החיים. פרטי פרטיות, זכויות ונגישות.",
+        "en": "Credits, sources and editorial choices behind an independent Les Misérables fan guide, with privacy, rights and accessibility information."
+      }
+    },
+    "sitemap": {
+      "title": {
+        "he": "מפת האתר: כל מסעות עלובי החיים",
+        "en": "Site map: all the Les Misérables journeys"
+      },
+      "description": {
+        "he": "כל חלקי המדריך במקום אחד: הספר, המחזמר, הדמויות, המפה, ההיסטוריה והחידונים. ניווט לפי עניין וסימוני ספוילרים.",
+        "en": "Find every part of the guide: novel, musical, characters, map, history and quizzes. Browse by interest with clear spoiler labels."
+      }
+    },
+    "privacy": {
+      "title": {
+        "he": "פרטיות ובחירות: מדריך עלובי החיים",
+        "en": "Privacy and choices: the Les Misérables guide"
+      },
+      "description": {
+        "he": "מה נשמר בדפדפן, איך מדיה חיצונית וטופס הפנייה פועלים, וכיצד בוחרים מדידה ומשנים העדפות פרטיות.",
+        "en": "What stays in your browser, how external media and the feedback form work, and how to manage optional measurement and privacy choices."
+      }
+    },
+    "terms": {
+      "title": {
+        "he": "תנאי שימוש: מדריך עלובי החיים",
+        "en": "Terms of use: the Les Misérables guide"
+      },
+      "description": {
+        "he": "תנאי השימוש במדריך מעריצים עצמאי: תוכן, זכויות, קישורים, ספוילרים ומגבלות השירות.",
+        "en": "Terms for an independent fan guide: content, rights, links, spoilers and service limitations."
+      }
+    },
+    "humor": {
+      "title": {
+        "he": "עלובי החיים בחיוך: פרודיות וסאטירה | מדריך עצמאי",
+        "en": "Les Misérables with a twist: parody and satire | Independent guide"
+      },
+      "description": {
+        "he": "ארבעה קטעי קומדיה ממקורות מקוריים, עם קרדיטים, הקשר ושאלות להאזנה. כולל תוכן בעברית ובאנגלית, והערות צפייה לפני טעינת הסרטונים.",
+        "en": "Four comedy clips from original publishers, with credits, context and listening questions. Hebrew and English selections, with viewing notes before videos load."
+      },
+      "canonicalRoute": "listening"
+    },
+    "places": {
+      "title": {
+        "he": "המקומות האמיתיים בעלובי החיים: מסע מצולם ומפה",
+        "en": "Real places in Les Misérables: a photo essay and map"
+      },
+      "description": {
+        "he": "תשעה מקומות ששמם מופיע ברומן של הוגו, עם תצלומים, היסטוריה, הפניות מדויקות לפרקים ומפה גאוגרפית. פרטי העלילה לבחירה.",
+        "en": "Nine places named in Hugo’s novel, with photographs, historical context, exact chapter references and a geographic map. Plot details are optional."
+      }
+    },
+    "recipes": {
+      "title": {
+        "he": "ארוחת ערב אצל טנארדייה: מתכונים בהשראת עלובי החיים",
+        "en": "Dinner at the Thénardiers’ Inn: recipes inspired by Les Misérables"
+      },
+      "description": {
+        "he": "תפריט דמיוני בהשראת הוגו: מרק לחם, ברי, דג, מאפה תפוחים וכיכר טחינה לבחירה. פרקים מדויקים, מקורות והוראות מקוריות בעברית ובאנגלית.",
+        "en": "An imagined Hugo-inspired menu: bread soup, Brie, fish, apple pastry and an optional tahini loaf. Exact chapters, sources and original bilingual instructions."
+      }
+    },
+    "contact": {
+      "title": {
+        "he": "צור קשר: הערות ותגובות על מדריך עלובי החיים",
+        "en": "Contact: feedback on the Les Misérables guide"
+      },
+      "description": {
+        "he": "יש תיקון, רעיון או משהו שהייתם רוצים לספר? אפשר לשלוח משוב על המדריך בעברית או באנגלית, בלי לפרסם את ההודעה.",
+        "en": "Have a correction, idea or something to share? Send private feedback about the guide in Hebrew or English without publishing your message."
+      }
+    }
+  }
+}
