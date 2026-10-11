@@ -46,6 +46,6 @@ for(const lang of ['he','en']){
  const h=render(lang,'home',false).html;assert.ok(!h.includes('data-action="privacy-accept"'));assert.ok(h.includes('data-action="privacy-open"'));assert.ok(h.includes('stats-review-note'));checks+=3;
  const recipes=render(lang,'recipes',false).html;assert.equal((recipes.match(/class="recipe-test-note"/g)||[]).length,5);assert.equal((recipes.match(/class="recipe-source-rating"/g)||[]).length,5);assert.ok(recipes.includes('recipe-tahini-walnut-loaf'));assert.ok(recipes.includes('recipe-bishops-bread-soup'));checks+=4;
  const chars=render(lang,'characters',true).html;assert.ok(chars.includes('24601'));checks++;
- const policy=render(lang,'privacy',false).html;assert.ok(policy.includes(lang==='he'?'עדיין אינו פעיל':'is not active'));checks++;
+ const policy=render(lang,'privacy',false).html;assert.ok(policy.includes(lang==='he'?'פועל רק לאחר אישור מפורש למדידה':'runs only after an explicit analytics opt-in'));checks++;
 }
 console.log(`PASS: ${checks} About and polish checks: all204 sources, 24-entry reveal, every source search, topics/reset, no-JS fallback, privacy controls, printed recipe status and24601.`);

@@ -18,7 +18,7 @@
       inProgress: 'הבקשה הקודמת עדיין בטיפול. המתינו כמה שניות ונסו שוב עם אותה הודעה.', expired: 'פג תוקף הניסיון הקודם. בדקו שוב את הזמינות. אם השליחה נקטעה בעבר, ייתכן שההודעה כבר התקבלה.',
       rejected: 'לא הצלחנו לאמת את הבקשה. הטיוטה נשארת כאן. בדקו שוב את הזמינות ונסו שוב.', invalid: 'יש לתקן את השדות המסומנים לפני השליחה.', invalidName: 'עד 80 תווים, בלי ירידות שורה.', invalidEmail: 'נא לבדוק את כתובת הדואר.', invalidMessage: 'כתבו בין 10 ל־4,000 תווים.', invalidCategory: 'בחרו נושא מהרשימה.',
       success: 'תודה, הפנייה התקבלה לשילוח.', successDetail: 'שירות הדואר אישר שקיבל אותה. זהו אישור קבלה לשילוח, ולא אישור קריאה או מסירה לתיבה.', another: 'כתיבת פנייה נוספת',
-      privacy: 'בלחיצה על שליחה, ההודעה והפרטים שבחרתם להוסיף יועברו לעורך האתר דרך {provider}. הטיוטה נשמרת בזיכרון הלשונית בלבד, ללא שמירה בדפדפן, ותימחק ברענון. לא נשלח את הטקסט לכלי מדידה.', privacyLink: 'עוד על פרטיות', noscript: 'לשליחה פרטית דרך האתר דרוש JavaScript. כרגע לא נשלחת שום הודעה.', remaining: n => `${n} / ${MAX} תווים`, changed: 'ערכתם את ההודעה אחרי ניסיון שליחה. השליחה הבאה תיחשב פנייה חדשה; ייתכן שהניסיון הקודם התקבל.'
+      privacy: 'בלחיצה על שליחה, ההודעה והפרטים שבחרתם להוסיף יועברו לעורך האתר דרך {provider}. הטיוטה נשמרת בזיכרון הלשונית בלבד, ללא שמירה בדפדפן, ותימחק ברענון. בהסכמתכם למדידה נספרים רק ניסיונות שליחה ותוצאותיהם. שמות, כתובות ותוכן ההודעה אינם נשלחים לכלי המדידה.', privacyLink: 'עוד על פרטיות', noscript: 'לשליחה פרטית דרך האתר דרוש JavaScript. כרגע לא נשלחת שום הודעה.', remaining: n => `${n} / ${MAX} תווים`, changed: 'ערכתם את ההודעה אחרי ניסיון שליחה. השליחה הבאה תיחשב פנייה חדשה; ייתכן שהניסיון הקודם התקבל.'
     },
     en: {
       eyebrow: 'A note behind the scenes', title: 'Something to add?', intro: 'A small observation, an important correction, a thought that stayed after the song. We would love to read it.',
@@ -31,7 +31,7 @@
       inProgress: 'Your earlier request is still being processed. Wait a few seconds and retry the same message.', expired: 'The earlier submission has expired. Check availability again. If sending was previously interrupted, that message may already have been accepted.',
       rejected: 'We could not verify the request. Your draft is still here. Check availability and try again.', invalid: 'Please fix the marked fields before sending.', invalidName: 'Use up to 80 characters, without line breaks.', invalidEmail: 'Please check the email address.', invalidMessage: 'Write between 10 and 4,000 characters.', invalidCategory: 'Choose one of the listed topics.',
       success: 'Thank you. Your note was accepted for sending.', successDetail: 'The email service confirmed acceptance. This does not confirm delivery to an inbox or that the note has been read.', another: 'Write another note',
-      privacy: 'When you press Send, your message and any details you choose to add go to the site editor through {provider}. Your draft stays only in this tab’s memory, is not saved in browser storage, and disappears on reload. We do not send its text to analytics.', privacyLink: 'More about privacy', noscript: 'JavaScript is needed to send a private message through this site. No message is being sent now.', remaining: n => `${n} / ${MAX} characters`, changed: 'You edited the message after a sending attempt. Sending again will create a new note; the earlier attempt may have been accepted.'
+      privacy: 'When you press Send, your message and any details you choose to add go to the site editor through {provider}. Your draft stays only in this tab’s memory, is not saved in browser storage, and disappears on reload. With analytics consent, only submission attempts and outcomes are counted. Names, addresses and message text are never sent to analytics.', privacyLink: 'More about privacy', noscript: 'JavaScript is needed to send a private message through this site. No message is being sent now.', remaining: n => `${n} / ${MAX} characters`, changed: 'You edited the message after a sending attempt. Sending again will create a new note; the earlier attempt may have been accepted.'
     }
   };
   const language = lang => lang === 'en' ? 'en' : 'he';
@@ -44,6 +44,17 @@
     return `<div class="wrap contact-page"><header class="page-intro"><div class="eyebrow">${w.eyebrow}</div><h1>${w.title}</h1><p class="lede">${w.intro}</p></header><div class="contact-layout"><aside class="contact-aside"><div class="contact-postmark" aria-hidden="true"><b>1832</b><span>PARIS</span></div><h2>${w.sideTitle}</h2><p>${w.sideText}</p><p class="contact-private">${w.private}</p></aside><section class="contact-panel" aria-label="${escape(w.title)}"><div id="contact-success" class="contact-success" ${state.phase === 'sent' ? '' : 'hidden'}><h2 tabindex="-1" id="contact-success-title">${w.success}</h2><p>${w.successDetail}</p><button type="button" class="btn secondary" id="contact-another">${w.another}</button></div><form id="contact-form" class="contact-form" novalidate aria-describedby="contact-privacy" ${state.phase === 'sent' ? 'hidden' : ''}><div class="contact-field"><label for="contact-category">${w.category} <span aria-hidden="true">*</span></label><select id="contact-category" name="category" required aria-describedby="contact-category-error">${['comment', 'correction', 'feedback', 'other'].map(key => `<option value="${key}"${d.category === key ? ' selected' : ''}>${w[key]}</option>`).join('')}</select><p class="contact-error" id="contact-category-error" hidden></p></div><div class="contact-field"><label for="contact-name">${w.name} <small>${w.optional}</small></label><input id="contact-name" name="name" maxlength="80" autocomplete="name" value="${escape(d.name)}" aria-describedby="contact-name-error"><p class="contact-error" id="contact-name-error" hidden></p></div><div class="contact-field"><label for="contact-email">${w.email} <small>${w.optional}</small></label><input id="contact-email" name="email" type="email" inputmode="email" dir="ltr" maxlength="254" autocomplete="email" value="${escape(d.email)}" aria-describedby="contact-email-hint contact-email-error"><p class="contact-hint" id="contact-email-hint">${w.emailHint}</p><p class="contact-error" id="contact-email-error" hidden></p></div><div class="contact-field contact-full"><label for="contact-message">${w.message} <span aria-hidden="true">*</span></label><textarea id="contact-message" name="message" rows="8" required minlength="10" maxlength="4000" aria-describedby="contact-message-hint contact-count contact-message-error">${escape(d.message)}</textarea><p class="contact-count" id="contact-count">${w.remaining(d.message.length)}</p><p class="contact-hint" id="contact-message-hint">${w.messageHint}</p><p class="contact-error" id="contact-message-error" hidden></p></div><div class="contact-trap" aria-hidden="true"><label for="contact-website">Website</label><input id="contact-website" name="website" maxlength="200" tabindex="-1" autocomplete="off" value=""></div><div class="contact-actions contact-full"><button class="btn" id="contact-send" type="submit" disabled>${w.send}</button><button class="text-button" type="button" id="contact-check">${w.check}</button><button class="text-button" type="button" id="contact-copy">${w.copy}</button></div><p id="contact-status" class="contact-status contact-full" role="status" aria-live="polite" aria-atomic="true">${w.checking}</p><p id="contact-copy-status" class="contact-hint contact-full" role="status" aria-live="polite"></p></form><p id="contact-privacy" class="contact-privacy"><span id="contact-privacy-copy">${privacyText(w)}</span> <a href="/${language(lang)}/privacy/">${w.privacyLink}</a></p><noscript><p>${w.noscript}</p></noscript></section></div></div>`;
   }
 
+  // Never pass draft/payload/response/error text into analytics; telemetry cannot break sending.
+  function measure(name, lang, errorCategory) {
+    try { window.SiteAnalytics?.track(name, { form_language: language(lang), ...(errorCategory ? { error_category: errorCategory } : {}) }); } catch {}
+  }
+  function errorCategory(code) {
+    if (code === 'validation_failed') return 'validation';
+    if (['not_configured', 'activation_required'].includes(code)) return 'unavailable';
+    if (['rate_limited', 'too_fast', 'in_progress'].includes(code)) return 'rate_limited';
+    if (['origin_rejected', 'invalid_ticket', 'expired_ticket', 'submission_changed', 'submission_rejected', 'body_too_large'].includes(code)) return 'rejected';
+    return 'unconfirmed';
+  }
   function capture() {
     if (!active?.form || state.phase === 'sent') return;
     for (const key of Object.keys(state.draft)) {
@@ -123,14 +134,15 @@
     event.preventDefault();
     if (state.busy || state.phase === 'checking' || !active) return;
     capture();
-    if (!validate() || !state.available || state.retryUntil > Date.now()) return;
+    if (!validate()) { measure('contact_error', active.lang, 'validation'); return; }
+    if (!state.available || state.retryUntil > Date.now()) return;
     let signature = fingerprint();
     if (state.fingerprint && state.fingerprint !== signature) { state.ticket = null; state.fingerprint = ''; }
     if (!state.ticket && !await checkAvailability({ preserveAttempt: false })) return;
     if (!active) return;
     // Fields may change while the availability request is pending. Validate and fingerprint
     // the exact draft we will send, not the earlier draft that started that request.
-    capture(); if (!validate()) return; signature = fingerprint();
+    capture(); if (!validate()) { measure('contact_error', active.lang, 'validation'); return; } signature = fingerprint();
     const payload = { ...state.draft, lang: active.lang, ticket: state.ticket };
     // Freeze the actual payload language across retries, including a later language switch.
     if (state.fingerprint === signature && state.attemptLanguage) payload.lang = state.attemptLanguage;
@@ -141,13 +153,16 @@
     const ticketWait = Math.min(900, Math.max(0, (state.ticketReadyAt || 0) - Date.now()));
     if (ticketWait) await new Promise(resolve => setTimeout(resolve, ticketWait));
     const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 25000);
+    measure('contact_submit', payload.lang);
     try {
       const response = await fetch('/api/contact', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload), signal: controller.signal });
       const body = await response.json();
       if (response.ok && body.ok === true && body.code === 'accepted') {
+        measure('contact_success', payload.lang);
         state.phase = 'sent'; state.uncertain = false; state.draft = blank(); state.ticket = null; state.fingerprint = ''; state.errors = []; state.code = ''; state.retryUntil = 0;
       } else {
         state.phase = 'failed'; state.code = typeof body.code === 'string' ? body.code : 'delivery_unconfirmed';
+        measure('contact_error', payload.lang, errorCategory(state.code));
         if (['delivery_unconfirmed', 'activation_required'].includes(state.code)) state.uncertain = true;
         state.errors = Array.isArray(body.fields) ? body.fields.filter(x => ['category', 'name', 'email', 'message'].includes(x)) : [];
         if (['not_configured', 'activation_required'].includes(state.code)) state.available = false;
@@ -156,7 +171,7 @@
         state.retryUntil = Date.now() + retry * 1000;
         if (active && retry) { clearTimeout(active.retryTimer); active.retryTimer = setTimeout(update, retry * 1000 + 10); }
       }
-    } catch { state.phase = 'failed'; state.code = 'delivery_unconfirmed'; state.uncertain = true; }
+    } catch { measure('contact_error', payload.lang, 'network'); state.phase = 'failed'; state.code = 'delivery_unconfirmed'; state.uncertain = true; }
     finally {
       clearTimeout(timer); state.busy = false; update();
       if (active && state.phase === 'sent') { active.form.reset(); for (const key of Object.keys(state.draft)) active.form.elements.namedItem(key).value = state.draft[key]; document.getElementById('contact-success-title').focus(); }

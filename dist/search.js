@@ -1,4 +1,4 @@
-/* Local bilingual content search. No requests, storage, analytics or query URLs. */
+/* Local bilingual content search. Queries never leave this module or enter URLs/storage. Optional analytics receives only fixed categories and result counts. */
 (function (root) {
   'use strict';
   const LANGS = ['he', 'en'];
@@ -153,7 +153,7 @@
   function resultsHTML(result, query, lang) {
     const c = COPY[lang];
     if (!result.total) return `<div class="site-search-empty"><h3>${c.empty}</h3><p>${c.help}</p></div>`;
-    return `<ul class="site-search-list">${result.results.map(({ doc, href }) => `<li><a data-site-search-result href="${esc(hrefFor(doc, lang))}"><span class="site-search-category">${esc(CATEGORIES[doc.category][lang])}${doc.locked ? ` · ${lang === 'he' ? 'פרטי עלילה באישור' : 'Plot details by consent'}` : ''}</span><h3 dir="auto">${highlight(doc.title[lang], query)}</h3><p dir="auto">${snippet(doc.body[lang] || c.locked, query)}</p><span class="site-search-arrow" aria-hidden="true">${lang === 'he' ? '←' : '→'}</span></a></li>`).join('')}</ul>${result.results.length < result.total ? `<button class="btn secondary site-search-more" data-site-search-more>${c.more}</button>` : ''}`;
+    return `<ul class="site-search-list">${result.results.map(({ doc, href }) => `<li><a data-site-search-result href="${esc(hrefFor(doc, lang))}" data-result-category="${esc(doc.category)}"><span class="site-search-category">${esc(CATEGORIES[doc.category][lang])}${doc.locked ? ` · ${lang === 'he' ? 'פרטי עלילה באישור' : 'Plot details by consent'}` : ''}</span><h3 dir="auto">${highlight(doc.title[lang], query)}</h3><p dir="auto">${snippet(doc.body[lang] || c.locked, query)}</p><span class="site-search-arrow" aria-hidden="true">${lang === 'he' ? '←' : '→'}</span></a></li>`).join('')}</ul>${result.results.length < result.total ? `<button class="btn secondary site-search-more" data-site-search-more>${c.more}</button>` : ''}`;
   }
   function button(lang = 'he') { return `<button type="button" class="site-search-trigger" data-site-search-open aria-haspopup="dialog" aria-controls="site-search-dialog" aria-label="${COPY[lang].open}"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.8"/></svg><span>${lang === 'he' ? 'חיפוש' : 'Search'}</span></button>`; }
   let context = { lang: 'he', spoiler: false, novelConsent: false }, panel = null, installed = false;
@@ -168,6 +168,8 @@
     return `<div class="site-search-head"><div><span class="eyebrow">${lang === 'he' ? 'מילה אחת יכולה לפתוח דלת' : 'ONE WORD CAN OPEN A DOOR'}</span><h2 id="site-search-title">${c.title}</h2></div><button type="button" data-site-search-close aria-label="${c.close}">×</button></div><form role="search" aria-label="${c.label}" autocomplete="off"><label for="site-search-input">${c.label}</label><div class="site-search-field"><input id="site-search-input" type="search" maxlength="180" placeholder="${c.placeholder}" value="${esc(query)}" dir="auto" autocomplete="off" spellcheck="false" aria-controls="site-search-results" aria-describedby="site-search-privacy site-search-spoilers"><button type="button" data-site-search-clear>${c.clear}</button></div></form><p id="site-search-privacy" class="site-search-privacy">${c.local}</p><div class="site-search-filters" role="group" aria-label="${c.filters}">${Object.entries(CATEGORIES).map(([id, label]) => `<button type="button" data-site-search-category="${id}" aria-pressed="${category === id}">${label[lang]}</button>`).join('')}</div><p id="site-search-spoilers" class="site-search-spoilers">${context.spoiler ? c.spoilers : c.safe}</p><p class="site-search-status" id="site-search-status" role="status" aria-live="polite" aria-atomic="true"></p><div id="site-search-results" aria-busy="false"></div><p class="site-search-keyboard">${c.keyboard}</p>`;
   }
   function input() { return panel?.querySelector('#site-search-input'); }
+  let searchRevision = 0, measuredRevision = -1;
+  function measure(name, values = {}) { try { return root.SiteAnalytics?.track(name, values); } catch { return false; } }
   function renderResults() {
     if (!panel?.open) return;
     clearTimeout(timer); timer = null; const lang = context.lang, c = COPY[lang], target = panel.querySelector('#site-search-results'), status = panel.querySelector('#site-search-status');
@@ -179,6 +181,7 @@
         status.textContent = ''; return;
       }
       const result = search(index, query, { lang, category, limit });
+      if (measuredRevision !== searchRevision && measure('search_results', { search_category: category, result_count: Math.min(1000, result.total) })) measuredRevision = searchRevision;
       target.innerHTML = resultsHTML(result, query, lang);
       status.textContent = result.results.length === result.total ? c.count(result.total) : c.showing(result.results.length, result.total);
     } catch (_) {
@@ -186,12 +189,12 @@
       status.textContent = c.unavailable;
     } finally { target.setAttribute('aria-busy', 'false'); }
   }
-  function schedule() { clearTimeout(timer); limit = 12; panel?.querySelector('#site-search-results')?.setAttribute('aria-busy', 'true'); timer = setTimeout(renderResults, 140); }
+  function schedule() { searchRevision++; clearTimeout(timer); limit = 12; panel?.querySelector('#site-search-results')?.setAttribute('aria-busy', 'true'); timer = setTimeout(renderResults, 140); }
   function open(opener) {
     if (!panel || root.document.querySelector('dialog[open]') && !panel.open) return;
     returnFocus = opener || root.document.activeElement;
     panel.innerHTML = panelHTML(); panel.lang = context.lang; panel.dir = context.lang === 'he' ? 'rtl' : 'ltr';
-    if (!panel.open) panel.showModal(); renderResults(); input()?.focus();
+    if (!panel.open) { panel.showModal(); measure('search_open'); } renderResults(); input()?.focus();
   }
   function close(restore = true) {
     clearTimeout(timer); if (!panel?.open) return;
@@ -233,12 +236,12 @@
         const opener = e.target.closest?.('[data-site-search-open]'); if (opener) { e.preventDefault(); open(opener); return; }
         if (!panel.open || !panel.contains(e.target)) return;
         const button = e.target.closest('button'), link = e.target.closest('a[data-site-search-result]');
-        if (link && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && (!e.button || e.button === 0)) { if (context.onNavigate) { e.preventDefault(); const href = link.getAttribute('href'); close(false); context.onNavigate(href); } return; }
+        if (link && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && (!e.button || e.button === 0)) { if (context.onNavigate) { e.preventDefault(); const href = link.getAttribute('href'); if (link.dataset.resultCategory) measure('search_select', { search_category: category, result_category: link.dataset.resultCategory }); close(false); context.onNavigate(href); } return; }
         if (!button) return;
         if (button.hasAttribute('data-site-search-close')) close();
-        else if (button.hasAttribute('data-site-search-clear')) { query = ''; limit = 12; input().value = ''; renderResults(); input().focus(); }
-        else if (button.hasAttribute('data-site-search-category')) { category = button.dataset.siteSearchCategory; limit = 12; panel.querySelectorAll('[data-site-search-category]').forEach(b => b.setAttribute('aria-pressed', b.dataset.siteSearchCategory === category)); renderResults(); }
-        else if (button.hasAttribute('data-site-search-example')) { query = button.dataset.siteSearchExample; input().value = query; limit = 12; renderResults(); input().focus(); }
+        else if (button.hasAttribute('data-site-search-clear')) { query = ''; searchRevision++; limit = 12; input().value = ''; renderResults(); input().focus(); }
+        else if (button.hasAttribute('data-site-search-category')) { category = button.dataset.siteSearchCategory; searchRevision++; limit = 12; panel.querySelectorAll('[data-site-search-category]').forEach(b => b.setAttribute('aria-pressed', b.dataset.siteSearchCategory === category)); renderResults(); }
+        else if (button.hasAttribute('data-site-search-example')) { query = button.dataset.siteSearchExample; searchRevision++; input().value = query; limit = 12; renderResults(); input().focus(); }
         else if (button.hasAttribute('data-site-search-more')) { const oldCount = panel.querySelectorAll('.site-search-list a').length; limit += 12; renderResults(); panel.querySelectorAll('.site-search-list a')[oldCount]?.focus(); }
         else if (button.hasAttribute('data-site-search-retry')) { cached = null; renderResults(); }
       });

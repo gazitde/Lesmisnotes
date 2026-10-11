@@ -10,7 +10,7 @@ const turn = () => new Promise(resolve => setImmediate(resolve));
 const result = (body, status = 200, retry = '') => ({ ok: status >= 200 && status < 300, status, json: async () => body, headers: { get: () => retry } });
 
 function harness({ fetchImpl, realDelays = false } = {}) {
-  let nodes = new Map(), serial = 0; const calls = [], replies = [], timers = new Map();
+  let nodes = new Map(), serial = 0; const calls = [], replies = [], analytics = [], timers = new Map();
   class Node {
     constructor(id) { this.id = id; this.value = ''; this.defaultValue = ''; this.textContent = ''; this.hidden = false; this.disabled = false; this.attrs = {}; this.listeners = {}; this.classList = { toggle() {} }; }
     setAttribute(key, value) { this.attrs[key] = value; }
@@ -20,7 +20,7 @@ function harness({ fetchImpl, realDelays = false } = {}) {
     checkValidity() { return !this.value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value); }
   }
   const document = { activeElement: null, getElementById: id => nodes.get(id) };
-  const context = { document, console, AbortController, Date, navigator: { clipboard: { writeText: async () => { throw Error('Clipboard blocked'); } } },
+  const context = { document, console, AbortController, Date, SiteAnalytics: { track(name, values) { analytics.push({name, values}); return true; } }, navigator: { clipboard: { writeText: async () => { throw Error('Clipboard blocked'); } } },
     setTimeout(fn, delay) { const id = ++serial; const timer = { fn, delay }; timers.set(id, timer); if (delay <= 1000) { if (realDelays) timer.real = setTimeout(fn, delay); else setImmediate(fn); } return id; }, clearTimeout(id) { const timer = timers.get(id); if (timer?.real) clearTimeout(timer.real); timers.delete(id); },
     async fetch(url, init = {}) { calls.push({ url, init }); if (fetchImpl) return fetchImpl(url, init); const next = replies.shift(); return typeof next === 'function' ? next() : next || result({ available: false, code: 'not_configured' }, 503); }
   };
@@ -47,7 +47,7 @@ function harness({ fetchImpl, realDelays = false } = {}) {
     context.SiteContact.mount({ lang, route: 'contact' }); return html;
   }
   function fill(key, value) { get(key).value = value; get('form').emit('input'); }
-  return { get, context, document, calls, replies, available, render, fill, timers, submit: () => get('form').emit('submit'), click: id => get(id).emit('click') };
+  return { get, context, document, calls, replies, analytics, available, render, fill, timers, submit: () => get('form').emit('submit'), click: id => get(id).emit('click') };
 }
 
 test('client: unconfigured service is honest, Send stays disabled, optional identity and ARIA are present', async () => {
@@ -99,7 +99,9 @@ test('client: rate limit keeps draft and temporarily disables retry; unsupported
 test('client: network rejection leaves draft, no personal storage or external provider request occurs', async () => {
   const h = harness(); h.replies.push(h.available()); h.render('en'); await turn(); h.fill('message', 'Network interruptions must never erase this draft.');
   h.replies.push(() => Promise.reject(Error('offline'))); await h.submit(); assert.match(h.get('status').textContent, /could not confirm/); assert.match(h.get('message').value, /never erase/);
-  assert.ok(h.calls.every(x => x.url === '/api/contact')); assert.ok(!/localStorage|sessionStorage|SiteAnalytics|gtag\(/.test(code));
+  assert.ok(h.calls.every(x => x.url === '/api/contact')); assert.ok(!/localStorage|sessionStorage|gtag\(/.test(code));
+  assert.deepEqual(h.analytics.map(x => ({name:x.name, values:JSON.parse(JSON.stringify(x.values))})), [{name:'contact_submit',values:{form_language:'en'}},{name:'contact_error',values:{form_language:'en',error_category:'network'}}]);
+  assert.ok(!JSON.stringify(h.analytics).includes('Network interruptions'));
 });
 test('client: changes made during replacement-ticket GET are revalidated and retries keep their exact identity', async () => {
   const h = harness(); h.replies.push(h.available()); h.render('en'); await turn(); h.fill('message', 'Message A has an uncertain earlier result.');
@@ -160,4 +162,18 @@ test('client: availability recheck and later rate limit cannot erase uncertain-s
   h.replies.push(result({ ok: false, code: 'delivery_unconfirmed' }, 502)); await h.submit();
   h.replies.push(h.available()); await h.click('check'); assert.match(h.get('status').textContent, /duplicate/); assert.equal(h.get('send').disabled, false);
   h.replies.push(result({ ok: false, code: 'rate_limited' }, 429, '30')); await h.submit(); assert.match(h.get('status').textContent, /too many/); assert.match(h.get('status').textContent, /duplicate/);
+});
+
+test('client: safe provider diagnostics do not change unknown-outcome warnings or trigger a retry', async () => {
+  for (const diagnostic of ['provider_timeout', 'provider_network', 'provider_http', 'provider_html_response', 'provider_invalid_response', 'provider_declined']) {
+    const h = harness(); h.replies.push(h.available()); h.render('en'); await turn();
+    h.fill('message', 'Preserve the note while provider acceptance is unknown.');
+    h.replies.push(result({ ok: false, code: 'delivery_unconfirmed', diagnostic, upstreamStatus: 503 }, 502));
+    await h.submit();
+    assert.match(h.get('status').textContent, /could not confirm/);
+    assert.match(h.get('status').textContent, /duplicate/);
+    assert.equal(h.get('message').value, 'Preserve the note while provider acceptance is unknown.');
+    assert.equal(h.get('success').hidden, true);
+    assert.equal(h.calls.filter(call => call.init.method === 'POST').length, 1);
+  }
 });

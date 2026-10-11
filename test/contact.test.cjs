@@ -101,7 +101,8 @@ test('provider timeout/failure preserves retry idempotency and hides all provide
     return response();
   } });
   const data = valid(await h.ticket());
-  for (let i = 0; i < 2; i++) assert.deepEqual((await h.request(data)).body, { ok: false, code: 'delivery_unconfirmed' });
+  assert.deepEqual((await h.request(data)).body, { ok: false, code: 'delivery_unconfirmed', diagnostic: 'provider_network' });
+  assert.deepEqual((await h.request(data)).body, { ok: false, code: 'delivery_unconfirmed', diagnostic: 'provider_http', upstreamStatus: 500 });
   assert.equal((await h.request(data)).statusCode, 202);
   assert.equal(new Set(calls.map(x => x.headers['Idempotency-Key'])).size, 1);
   assert.equal(new Set(calls.map(x => x.body)).size, 1);
@@ -178,7 +179,7 @@ test('FormSubmit activation, CAPTCHA or verification messages never produce fake
   for (const status of [200, 400, 503]) {
     for (const message of ['Activate Form to continue', 'Please confirm your form', 'Verification required', 'CAPTCHA required', 'This form is inactive']) {
       const h = harness({ env: formsubmitEnv(), fetchImpl: async () => response(status, { success: true, message }) });
-      const r = await h.request(valid(await h.ticket())); assert.equal(r.statusCode, 503); assert.deepEqual(r.body, { ok: false, code: 'activation_required' });
+      const r = await h.request(valid(await h.ticket())); assert.equal(r.statusCode, 503); assert.deepEqual(r.body, { ok: false, code: 'activation_required', diagnostic: 'provider_activation', upstreamStatus: status });
     }
   }
 });
@@ -207,4 +208,53 @@ test('FormSubmit public timing marker retains input-age guards without pretendin
   assert.equal((await h.request(valid({ ...ticket, signature: 'different-marker' }))).body.code, 'invalid_ticket');
   assert.equal((await h.request(valid({ ...ticket, issued: h.now() + 1000 }))).body.code, 'expired_ticket');
   assert.equal(h.calls.length, 0);
+});
+
+test('provider diagnostics are fixed categories and numeric status only, never upstream content or fields', async () => {
+  const privateText = 'private-provider@example.test private-message private-route private-header';
+  const html = status => ({ ok: status < 400, status, headers: { get: () => 'text/html; private-header' }, json: async () => { throw Error(privateText); } });
+  const cases = [
+    [response(503, { message: privateText }), 'provider_http', 503],
+    [html(403), 'provider_html_response', 403],
+    [html(200), 'provider_html_response', 200],
+    [response(200, {}), 'provider_invalid_response', 200],
+    [response(200, { success: false, message: privateText }), 'provider_declined', 200],
+    [response(429, { message: privateText }), 'provider_rate_limited', 429],
+    [response(999, { message: privateText }), 'provider_http', undefined],
+    [response('private-status', { message: privateText }), 'provider_http', undefined]
+  ];
+  for (const [upstream, diagnostic, upstreamStatus] of cases) {
+    let calls = 0;
+    const h = harness({ env: formsubmitEnv(), fetchImpl: async () => { calls++; return upstream; } });
+    const r = await h.request({ ...valid(await h.ticket()), name: 'private-name', email: 'private-reader@example.test', message: privateText });
+    assert.equal(calls, 1, 'diagnosis must not trigger a second send');
+    assert.deepEqual(r.body, { ok: false, code: upstreamStatus === 429 ? 'rate_limited' : 'delivery_unconfirmed', diagnostic, ...(upstreamStatus !== undefined ? { upstreamStatus } : {}) });
+    assert.ok(!JSON.stringify(r).includes('private-'));
+    assert.ok(!JSON.stringify(r).includes('f'.repeat(32)));
+  }
+});
+
+test('provider deadline is 15 seconds and timeout at fetch or body read stays unconfirmed without automatic retry', async t => {
+  const controllers = [], requestedTimeouts = [];
+  t.mock.method(AbortSignal, 'timeout', ms => { requestedTimeouts.push(ms); const controller = new AbortController(); controllers.push(controller); return controller.signal; });
+  for (const phase of ['fetch', 'body']) {
+    let calls = 0;
+    const h = harness({ env: formsubmitEnv(), fetchImpl: async (_url, init) => {
+      calls++; assert.equal(init.signal, controllers.at(-1).signal);
+      const abort = () => { const problem = new DOMException('private timeout details', 'TimeoutError'); controllers.at(-1).abort(problem); throw problem; };
+      if (phase === 'fetch') return abort();
+      return { ok: true, status: 200, json: async () => abort() };
+    } });
+    const r = await h.request(valid(await h.ticket()));
+    assert.equal(calls, 1);
+    assert.deepEqual(r.body, { ok: false, code: 'delivery_unconfirmed', diagnostic: 'provider_timeout' });
+    assert.ok(!JSON.stringify(r).includes('private timeout details'));
+  }
+  assert.deepEqual(requestedTimeouts, [15_000, 15_000]);
+});
+
+test('provider exception names and messages never become diagnostic values', async () => {
+  const h = harness({ env: formsubmitEnv(), fetchImpl: async () => { const problem = Error('private message'); problem.name = 'private-provider@example.test'; throw problem; } });
+  const r = await h.request(valid(await h.ticket()));
+  assert.deepEqual(r.body, { ok: false, code: 'delivery_unconfirmed', diagnostic: 'provider_network' });
 });

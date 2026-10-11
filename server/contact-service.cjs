@@ -7,6 +7,7 @@ const serverRoute = require('./contact-route.cjs');
 const instanceSalt = randomBytes(32).toString('hex');
 
 const MAX_BODY_BYTES = 16_384;
+const PROVIDER_TIMEOUT_MS = 15_000;
 const TICKET_LIFETIME_MS = 23 * 60 * 60 * 1000;
 const RETENTION_MS = 25 * 60 * 60 * 1000;
 const CATEGORIES = Object.freeze({ comment: 'Comment', correction: 'Correction', feedback: 'Feedback', other: 'Other' });
@@ -19,6 +20,15 @@ class ContactError extends Error {
   constructor(status, code, fields, retryAfter) { super(code); this.status = status; this.code = code; this.fields = fields; this.retryAfter = retryAfter; }
 }
 const error = (status, code, fields, retryAfter) => new ContactError(status, code, fields, retryAfter);
+const PROVIDER_DIAGNOSTICS = new Set(['provider_timeout', 'provider_network', 'provider_http', 'provider_html_response', 'provider_invalid_response', 'provider_declined', 'provider_activation', 'provider_rate_limited']);
+function providerError(status, code, diagnostic, upstreamStatus, retryAfter) {
+  const problem = error(status, code, undefined, retryAfter);
+  // Only static categories and a bounded numeric HTTP status may leave this function.
+  // Never attach provider text, URLs, headers, error messages, or visitor fields.
+  if (PROVIDER_DIAGNOSTICS.has(diagnostic)) problem.diagnostic = diagnostic;
+  if (Number.isInteger(upstreamStatus) && upstreamStatus >= 100 && upstreamStatus <= 599) problem.upstreamStatus = upstreamStatus;
+  return problem;
+}
 const hmac = (secret, value) => createHmac('sha256', secret).update(value).digest('hex');
 const header = (req, name) => { const value = req.headers?.[name]; return typeof value === 'string' ? value : ''; };
 const validEmail = value => typeof value === 'string' && value.length <= 254 && !SINGLE_LINE_CONTROL.test(value) && EMAIL.test(value);
@@ -290,6 +300,7 @@ function createContactHandler({ env = process.env, fetchImpl = globalThis.fetch,
       if (result.state === 'limited') throw error(429, 'rate_limited', undefined, result.retryAfter);
       if (result.state !== 'started') throw error(503, 'temporarily_unavailable');
       let accepted = false;
+      const signal = AbortSignal.timeout(PROVIDER_TIMEOUT_MS);
       try {
         const isFormSubmit = config.provider === 'formsubmit';
         const endpoint = isFormSubmit ? `https://formsubmit.co/ajax/${config.formsubmitAlias}` : 'https://api.resend.com/emails';
@@ -298,19 +309,25 @@ function createContactHandler({ env = process.env, fetchImpl = globalThis.fetch,
           : { Authorization: `Bearer ${config.apiKey}`, 'Content-Type': 'application/json', 'Idempotency-Key': `lesmis-contact/${ticket.id}` };
         const response = await fetchImpl(endpoint, {
           method: 'POST', headers,
-          body: JSON.stringify(payload), signal: AbortSignal.timeout(8000), redirect: 'error'
+          body: JSON.stringify(payload), signal, redirect: 'error'
         });
         // Provider errors are deliberately not echoed or logged: they may include private addresses.
-        const result = await response.json().catch(() => null);
-        if (isFormSubmit && /activat|confirm|verif|disabled|inactive|captcha/i.test(typeof result?.message === 'string' ? result.message : '')) throw error(503, 'activation_required');
-        if (!response.ok) throw error(response.status === 429 ? 429 : 502, response.status === 429 ? 'rate_limited' : 'delivery_unconfirmed', undefined, response.status === 429 ? 60 : undefined);
+        let result;
+        try { result = await response.json(); }
+        catch (problem) { if (signal.aborted) throw problem; result = null; }
+        const invalidResponse = /\btext\/html\b/i.test(response.headers?.get?.('content-type') || '') ? 'provider_html_response' : 'provider_invalid_response';
+        if (isFormSubmit && /activat|confirm|verif|disabled|inactive|captcha/i.test(typeof result?.message === 'string' ? result.message : '')) throw providerError(503, 'activation_required', 'provider_activation', response.status);
+        if (!response.ok) {
+          if (response.status === 429) throw providerError(429, 'rate_limited', 'provider_rate_limited', response.status, 60);
+          throw providerError(502, 'delivery_unconfirmed', result === null && invalidResponse === 'provider_html_response' ? invalidResponse : 'provider_http', response.status);
+        }
         if (isFormSubmit) {
-          if (result?.success !== true && result?.success !== 'true') throw error(502, 'delivery_unconfirmed');
-        } else if (typeof result?.id !== 'string' || !result.id) throw error(502, 'delivery_unconfirmed');
+          if (result?.success !== true && result?.success !== 'true') throw providerError(502, 'delivery_unconfirmed', result?.success === false || result?.success === 'false' ? 'provider_declined' : invalidResponse, response.status);
+        } else if (typeof result?.id !== 'string' || !result.id) throw providerError(502, 'delivery_unconfirmed', invalidResponse, response.status);
         accepted = true;
       } catch (problem) {
         if (problem instanceof ContactError) throw problem;
-        throw error(502, 'delivery_unconfirmed');
+        throw providerError(502, 'delivery_unconfirmed', signal.aborted || problem?.name === 'TimeoutError' ? 'provider_timeout' : 'provider_network');
       } finally {
         // Resend has provider-side deduplication. FormSubmit does not document it;
         // its uncertain outcomes are never retried automatically and may duplicate on manual retry.
@@ -320,9 +337,9 @@ function createContactHandler({ env = process.env, fetchImpl = globalThis.fetch,
     } catch (problem) {
       const safe = problem instanceof ContactError ? problem : error(503, 'temporarily_unavailable');
       if (safe.retryAfter) res.setHeader('Retry-After', String(safe.retryAfter));
-      return respond(safe.status, { ok: false, code: safe.code, ...(safe.fields ? { fields: safe.fields } : {}) });
+      return respond(safe.status, { ok: false, code: safe.code, ...(safe.fields ? { fields: safe.fields } : {}), ...(PROVIDER_DIAGNOSTICS.has(safe.diagnostic) ? { diagnostic: safe.diagnostic } : {}), ...(Number.isInteger(safe.upstreamStatus) && safe.upstreamStatus >= 100 && safe.upstreamStatus <= 599 ? { upstreamStatus: safe.upstreamStatus } : {}) });
     }
   };
 }
 
-module.exports = { createContactHandler, createMemoryStore, createRedisStore, createTicket, getConfig, validatePayload, validateTicket, emailPayload, formsubmitPayload, clientIdentity, MAX_BODY_BYTES, TICKET_LIFETIME_MS };
+module.exports = { createContactHandler, createMemoryStore, createRedisStore, createTicket, getConfig, validatePayload, validateTicket, emailPayload, formsubmitPayload, clientIdentity, MAX_BODY_BYTES, PROVIDER_TIMEOUT_MS, TICKET_LIFETIME_MS };

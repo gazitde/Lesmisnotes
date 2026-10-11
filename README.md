@@ -60,3 +60,7 @@ This is an unofficial fan project, with no claimed affiliation or endorsement. R
 ## Verification limits
 
 Automated rendering/data/security tests do not replace physical-device, screen-reader, live-host, mail-delivery or legal review. Prior browser checks cover desktop and narrow CSS-width reflow, not a physical phone certification. Native YouTube players loaded, but advancing playback was not established in the cloud browser. Native print preview was unavailable there. Contact delivery requires an actual authorized mailbox receipt; a ready form alone is not proof of delivery.
+
+## Optional analytics
+
+GA4 measurement ID `G-FWWTDG9CHN` is configured. Enhanced Measurement was verified disabled in GA Admin on 11 October 2026. Analytics requires a separate visitor opt-in. See [the activation checklist, privacy controls, tests and event taxonomy](docs/ANALYTICS.md). Never paste an unconditional tag into the page.

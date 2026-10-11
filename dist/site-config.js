@@ -1,3 +1,4 @@
 'use strict';
-// Activation requires the owner's public Measurement ID and a verified web-stream configuration.
-window.SITE_CONFIG=Object.freeze({gaMeasurementId:'',gaEnhancedMeasurementDisabled:false});
+// Enhanced Measurement was verified OFF in GA Admin on 11 October 2026.
+// Collection still requires analytics-specific visitor consent. See docs/ANALYTICS.md.
+window.SITE_CONFIG=Object.freeze({gaMeasurementId:'G-FWWTDG9CHN',gaEnhancedMeasurementDisabled:true});
