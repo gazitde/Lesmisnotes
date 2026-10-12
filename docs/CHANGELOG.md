@@ -1,5 +1,11 @@
 # Visual and language refresh
 
+## 2026-10-12 — Tara Simon joins the vocal-coach collection
+
+- Added the requested original Tara Simon Studios analysis of Lea Salonga’s On My Own as the tenth coach entry; all nine previous analyses and all performance selections remain unchanged.
+- Added paired Hebrew/English background, scene context and three specific listening prompts. Verified the original upload, coach biography, 12:18 duration and caption-based entry points at 2:03, 7:02 and 10:16. These are editorial listening links, not a claim of creator-authored chapters or full playback verification.
+- Preserved the existing single-player flow, source fallback, song grouping, language filters and deep links. Added source/search checks and dedicated desktop/390px/320px screenshots for the new entry.
+
 ## 2026-10-12 — Chapter-level editorial review and concrete close readings
 
 - Read all 365 chapters and their supporting notes in Hebrew and English. Applied 352 paired passage revisions, including 103 chapter summaries, with reciprocal editorial review and targeted primary-text checks. All five Parts, 48 Books, chapter ordering, source anchors and prior-event boundaries remain intact.

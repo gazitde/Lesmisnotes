@@ -261,8 +261,8 @@ for(const abandonment of ['none','navigate','cancel','erase']){
 }
 // Single curated gallery: source integrity, progressive details, aliases and navigation.
 {
- const G=R.gallery;assert.equal(G.groups.length,36);assert.equal(G.items.length,51);assert.equal(G.categories.length,6);tests+=3;
- const ids=new Set(G.items.map(x=>x.id));assert.equal(ids.size,51);for(const removed of ['GyYZfSmwH3c','__d2FMCtgi4','KPpkTgMbhRU'])assert.ok(!ids.has(removed));tests+=4;
+ const G=R.gallery;assert.equal(G.groups.length,37);assert.equal(G.items.length,52);assert.equal(G.categories.length,6);tests+=3;
+ const ids=new Set(G.items.map(x=>x.id));assert.equal(ids.size,52);for(const removed of ['GyYZfSmwH3c','__d2FMCtgi4','KPpkTgMbhRU'])assert.ok(!ids.has(removed));tests+=4;
  for(const x of G.items){if(x.externalUrl){assert.ok(x.id.startsWith('external-'));assert.ok(x.externalUrl.startsWith('https://'));assert.equal(x.embeddable,false);assert.ok(x.provider.he&&x.provider.en)}else assert.match(x.id,/^[A-Za-z0-9_-]{11}$/);for(const f of ['title','label','context','notice','language']){assert.ok(x[f]?.he&&x[f]?.en,`${x.id}/${f}`);tests++;}assert.ok(x.sourceIds.length||x.existingCredits);for(const sid of x.sourceIds)assert.ok(R.sources.some(s=>s.id===sid),sid);if(!x.existingCredits){assert.ok(x.credits.length);for(const c of x.credits){assert.ok(c.name.he&&c.name.en&&c.role.he&&c.role.en&&c.url);if(c.bio)assert.ok(c.bio.he&&c.bio.en);}}tests+=3;}
  for(const g of G.groups){for(const id of g.clipIds)assert.ok(ids.has(id));if(g.songId)assert.ok(R.musical.songentries.some(x=>x.id===g.songId));for(const f of ['title','hook','format','question'])assert.ok(g[f].he&&g[f].en);tests+=5;}
  for(const language of ['he','en']){
@@ -332,7 +332,7 @@ console.log('PASS: 14 clear-home-entry and opt-in early-resume render checks.');
 }
 // Original coach commentaries remain separate from curated performances and share safe player plumbing.
 {
- let n=0;const list=R.coachVideos;assert.equal(list.length,9);assert.equal(new Set(list.map(v=>v.id)).size,list.length);n+=2;
+ let n=0;const list=R.coachVideos;assert.equal(list.length,10);assert.equal(new Set(list.map(v=>v.id)).size,list.length);n+=2;
  const escaped=x=>x.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  for(const v of list){assert.match(v.id,/^[\w-]{11}$/);assert.ok(R.musical.spotlight.songs.some(s=>s.id===v.songId));assert.ok(R.gallery.items.some(x=>x.id===v.id&&x.kind==='coach'));assert.ok(v.coach.url.startsWith('https://'));assert.equal(v.language,'en');assert.equal(v.embeddable,true);if(v.durationSeconds){assert.ok(v.durationSeconds>0);assert.match(v.durationLabel,/^\d+:\d{2}$/)}else{assert.ok(!v.durationLabel)}assert.ok(!('verification'in v));n+=9;for(const sid of v.sourceIds){assert.ok(R.sources.some(s=>s.id===sid));n++;}for(const field of [v.title,v.body,v.watchFor,v.coach.credential])for(const l of ['he','en']){assert.ok(field[l]?.length>15);n++;}if(v.suggestedChapter){assert.ok(v.suggestedChapter.seconds<v.durationSeconds);assert.ok(v.suggestedChapter.url.startsWith('https://www.youtube.com/watch?v='+v.id+'&t='))}n+=2;}
  for(const language of ['he','en'])for(const spoilers of [false,true]){
