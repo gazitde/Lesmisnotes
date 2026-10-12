@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+  "outputDirectory": "public-dist",
   "trailingSlash": true,
   "headers": [
     {
@@ -34,8 +34,23 @@
   "rewrites": [
     {
       "source": "/:lang(he|en)/novel/",
-      "has": [{ "type": "query", "key": "focus" }],
+      "has": [
+        {
+          "type": "query",
+          "key": "focus"
+        }
+      ],
       "destination": "/reading-shells/:lang.html"
+    },
+    {
+      "source": "/:lang(he|en)/novel/",
+      "missing": [
+        {
+          "type": "query",
+          "key": "focus"
+        }
+      ],
+      "destination": "/route-pages/:lang/novel.html"
     }
   ],
   "redirects": [

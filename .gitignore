@@ -17,3 +17,4 @@ dist/reading-shells/
 dist/seo.js
 test-results/
 playwright-report/
+public-dist/

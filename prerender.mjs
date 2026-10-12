@@ -1,5 +1,6 @@
 import './scripts/build-config.mjs';
 import fs from 'node:fs';
+import {publishStatic} from './scripts/publish-static.mjs';
 import vm from 'node:vm';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -60,4 +61,5 @@ fs.writeFileSync('dist/index.html',htmlFor('en','home',true));
 fs.writeFileSync('dist/robots.txt', '# Indexing is controlled by the build environment.\nUser-agent: *\nAllow: /\n'+(!M.private&&M.origin?'Sitemap: '+M.origin+'/sitemap.xml\n':'# Preview build: HTML is noindex; sitemap is not advertised.\n'));
 fs.writeFileSync('dist/sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'+(M.origin&&!M.private?urls.map(({route,url})=>`<url><loc>${E(url)}</loc>${['he','en','x-default'].map(l=>`<xhtml:link rel="alternate" hreflang="${l}" href="${M.origin}/${l==='x-default'?'en':l}/${route}/"/>`).join('')}</url>`).join('\n'):'')+'\n</urlset>\n');
 fs.writeFileSync('dist/404.html',`<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>הדף לא נמצא / Page not found</title><link rel="stylesheet" href="/style.css?v=${assetRevision}"><link rel="stylesheet" href="/vendor/leaflet/leaflet.css?v=${assetRevision}"><link rel="stylesheet" href="/places.css?v=${assetRevision}"><link rel="stylesheet" href="/recipes.css?v=${assetRevision}"><link rel="stylesheet" href="/search.css?v=${assetRevision}"><link rel="stylesheet" href="/contact.css?v=${assetRevision}"><link rel="stylesheet" href="/polish.css?v=${assetRevision}"></head><body><main class="wrap section"><h1>הדף לא נמצא.<br>Page not found.</h1><p>אפשר לחזור למפת האתר. You can return to the site map.</p><div class="button-row"><a class="btn" href="/he/sitemap/">מפת האתר</a><a class="btn secondary" href="/en/sitemap/">Site map</a></div></main></body></html>`);
+publishStatic(Object.keys(M.pages));
 console.log(`Prerendered ${urls.length} localized pages, a root landing page and a 404. ${M.private?'Preview/noindex':'Public/indexable'}; canonical origin: ${M.origin||'not configured'}.`);

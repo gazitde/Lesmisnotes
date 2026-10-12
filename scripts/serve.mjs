@@ -1,23 +1,22 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
+import {resolvePublishedRequest} from './static-routing.mjs';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
-const root=path.resolve('dist');
+const root=path.resolve('public-dist');
 const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8'};
 http.createServer(async(req,res)=>{
   try {
     const url=new URL(req.url,'http://localhost');
-    const readingQuery=url.pathname.match(/^\/(he|en)\/novel\/?$/);
-    if(readingQuery&&url.searchParams.has('focus'))url.pathname='/reading-shells/'+readingQuery[1]+'.html';
     const alias=url.pathname.match(/^\/(he|en)\/(tribute|humor)\/?$/);
     if(alias){url.pathname='/'+alias[1]+'/listening/';url.searchParams.set('category',alias[2]==='tribute'?'together':'humor');res.writeHead(308,{Location:url.pathname+url.search});res.end();return;}
     if(url.pathname.replace(/\/$/,'')==='/api/contact'&&fs.existsSync('api/contact.js'))return await require('../api/contact.js')(req,res);
     let filename=path.resolve(root,'.'+decodeURIComponent(url.pathname));
     if(!filename.startsWith(root+path.sep)&&filename!==root){res.writeHead(403);res.end();return;}
-    if(fs.existsSync(filename)&&fs.statSync(filename).isDirectory())filename=path.join(filename,'index.html');
-    const exists=fs.existsSync(filename)&&fs.statSync(filename).isFile();
-    if(!exists)filename=path.join(root,'404.html');
+    const resolved=resolvePublishedRequest(url,{root});
+    const exists=Boolean(resolved);
+    filename=resolved?.file||path.join(root,'404.html');
     res.writeHead(exists?200:404,{'Content-Type':types[path.extname(filename)]||'application/octet-stream','X-Content-Type-Options':'nosniff'});
     if(req.method==='HEAD')res.end();else fs.createReadStream(filename).pipe(res);
   }catch {res.writeHead(500);res.end('Server error');}
