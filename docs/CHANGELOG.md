@@ -1,5 +1,13 @@
 # Visual and language refresh
 
+## 2026-10-12 — Chapter-level editorial review and concrete close readings
+
+- Read all 365 chapters and their supporting notes in Hebrew and English. Applied 352 paired passage revisions, including 103 chapter summaries, with reciprocal editorial review and targeted primary-text checks. All five Parts, 48 Books, chapter ordering, source anchors and prior-event boundaries remain intact.
+- Reworked six comparison-card observations, six philosophical perspectives and seven quiz fields. Replaced broad moral conclusions and process explanations with the action or question the reader can actually examine.
+- Reconciled explicit Hebrew profile-name tokens after prose edits. Hebrew prepositions can precede reviewed names without breaking their links; identity and chapter-boundary checks still apply. Removed two obsolete name tokens where the revised summaries no longer mention that person.
+- Edited 147 paired gallery/place passages and 89 contextual-page passages after independent source, bilingual and spoiler review. Preserved 51 videos in 36 groups, nine coaches, nine place essays and all recording offers/credits. The full-novel recap now accurately says the bishop secures Valjean’s release after arrest.
+- Updated About and screen prompts. Browser gallery captures preserve the real phone viewport; close/teardown assertions remain strict and now retain a trace on failure.
+
 ## 2026-10-12 — Character, story, history and dilemma editorial revision
 
 - Reviewed all ten full profiles and brief character introductions, the historical timeline/context, all five developed dilemmas and eight stage-story sections. Applied 110 bilingual passage revisions while preserving substantial arguments, source links and spoiler gates.

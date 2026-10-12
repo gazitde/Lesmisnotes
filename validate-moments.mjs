@@ -10,6 +10,7 @@ const privacyCode=fs.readFileSync('dist/privacy.js','utf8');
 const configCode=fs.readFileSync('dist/site-config.js','utf8');
 const analyticsCode=fs.readFileSync('dist/analytics.js','utf8');
 const policiesCode=fs.readFileSync('dist/policies.js','utf8');
+const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let tests=0;
 const routes=['humor','home','story','characters','listening','compare','screen','tribute','resources','about','map','history','ideas','quiz','musical','novel','hugo','before','after','sitemap','terms','privacy'];
 function render(lang,route,spoilers){
@@ -36,8 +37,8 @@ for(const locale of ['he','en']){
  const hidden=render(locale,'ideas',false);assert.ok(hidden.html.includes('id="another-view"'));assert.ok(!hidden.html.includes('class="moment-reading"'));assert.ok(!hidden.html.includes('data-moment-view='));for(const m of R.moments.moments)assert.ok(!hidden.html.includes(m.scene[locale]));checks+=6;
  tap(hidden,{momentOpen:''});assert.ok(hidden.app.innerHTML.includes('class="moment-reading"'));assert.equal((hidden.app.innerHTML.match(/data-moment="/g)||[]).length,3);checks+=2;
  for(let i=0;i<3;i++){
-  tap(hidden,{moment:String(i)});const m=R.moments.moments[i];const body=hidden.ctx.document.getElementById('moment-body').innerHTML;assert.ok(body.includes(m.scene[locale].replace(/&/g,'&amp;')));assert.ok(body.includes('aria-pressed="true"'));assert.equal((body.match(/data-moment-view=/g)||[]).length,2);checks+=3;
-  for(let v=0;v<2;v++){tap(hidden,{momentView:String(v)});const panel=hidden.ctx.document.getElementById('moment-view-panel').innerHTML;assert.ok(panel.includes(m.views[v].title[locale]));assert.ok(panel.includes(m.views[v].body[locale].replace(/&/g,'&amp;')));assert.ok(body.includes('aria-live="polite"'));assert.ok(body.includes('data-gallery-song="'+m.links.songId+'"'));assert.ok(!panel.includes('<iframe'));assert.ok(!panel.includes('undefined'));checks+=6;}
+  tap(hidden,{moment:String(i)});const m=R.moments.moments[i];const body=hidden.ctx.document.getElementById('moment-body').innerHTML;assert.ok(body.includes(esc(m.scene[locale])));assert.ok(body.includes('aria-pressed="true"'));assert.equal((body.match(/data-moment-view=/g)||[]).length,2);checks+=3;
+  for(let v=0;v<2;v++){tap(hidden,{momentView:String(v)});const panel=hidden.ctx.document.getElementById('moment-view-panel').innerHTML;assert.ok(panel.includes(m.views[v].title[locale]));assert.ok(panel.includes(esc(m.views[v].body[locale])));assert.ok(body.includes('aria-live="polite"'));assert.ok(body.includes('data-gallery-song="'+m.links.songId+'"'));assert.ok(!panel.includes('<iframe'));assert.ok(!panel.includes('undefined'));checks+=6;}
  }
  // UI-language change keeps selected moment/view, but still requires the existing session spoiler consent.
  tap(hidden,{moment:'2'});tap(hidden,{momentView:'1'});tap(hidden,{action:'language'});assert.ok(hidden.app.innerHTML.includes(R.moments.moments[2].views[1].title[locale==='he'?'en':'he']));checks++;

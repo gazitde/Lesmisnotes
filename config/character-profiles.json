@@ -2040,7 +2040,7 @@
       {
         "id": "valjean",
         "name": {
-          "he": "ולז'אן",
+          "he": "ולז׳אן",
           "en": "Valjean"
         }
       },
@@ -2252,7 +2252,7 @@
       {
         "id": "valjean",
         "name": {
-          "he": "ולז'אן",
+          "he": "ולז׳אן",
           "en": "Valjean"
         }
       },
@@ -2284,7 +2284,7 @@
       {
         "id": "valjean",
         "name": {
-          "he": "ולז'אן",
+          "he": "ולז׳אן",
           "en": "Valjean"
         }
       },
@@ -2300,14 +2300,14 @@
       {
         "id": "valjean",
         "name": {
-          "he": "ולז'אן",
+          "he": "ולז׳אן",
           "en": "Valjean"
         }
       },
       {
         "id": "javert",
         "name": {
-          "he": "ז'אבר",
+          "he": "ז׳אבר",
           "en": "Javert"
         }
       },
@@ -2339,7 +2339,7 @@
       {
         "id": "valjean",
         "name": {
-          "he": "ולז'אן",
+          "he": "ולז׳אן",
           "en": "Valjean"
         }
       }
@@ -2394,7 +2394,7 @@
       {
         "id": "valjean",
         "name": {
-          "he": "ולז'אן",
+          "he": "ולז׳אן",
           "en": "Valjean"
         }
       }
@@ -2442,7 +2442,7 @@
       {
         "id": "valjean",
         "name": {
-          "he": "ולז'אן",
+          "he": "ולז׳אן",
           "en": "Valjean"
         }
       },
@@ -2458,15 +2458,8 @@
       {
         "id": "javert",
         "name": {
-          "he": "ז'אבר",
+          "he": "ז׳אבר",
           "en": "Javert"
-        }
-      },
-      {
-        "id": "cosette",
-        "name": {
-          "he": "קוזט",
-          "en": "Cosette"
         }
       }
     ],
@@ -2499,7 +2492,7 @@
       {
         "id": "valjean",
         "name": {
-          "he": "ולז'אן",
+          "he": "ולז׳אן",
           "en": "Valjean"
         }
       }
@@ -4246,13 +4239,6 @@
         "name": {
           "he": "ולז׳אן",
           "en": "Valjean"
-        }
-      },
-      {
-        "id": "cosette",
-        "name": {
-          "he": "קוזט",
-          "en": "Cosette"
         }
       }
     ],

@@ -42,7 +42,10 @@
       let start=value.indexOf(item.name);
       while(start!==-1){
         const before=value.slice(0,start).at(-1)||'',after=value.slice(start+item.name.length)[0]||'';
-        if(!/[\p{L}\p{N}]/u.test(before)&&!/[\p{L}\p{N}]/u.test(after)&&!segments.some(s=>start<s.end&&start+item.name.length>s.start))break;
+        // Hebrew prepositions attach to reviewed names; keep the prefix outside the link.
+        const prefix=lang==='he'?(value.slice(0,start).match(/[\p{L}]+$/u)?.[0]||''):'';
+        const boundary=!/[\p{L}\p{N}]/u.test(before)||(lang==='he'&&!/[\p{L}\p{N}]/u.test(value.slice(0,start-prefix.length).at(-1)||'')&&['ו','ב','ל','כ','מ','ש','ה','וב','ול','וכ','ומ','וש','וה','שה','של','כש','שב','שמ'].includes(prefix));
+        if(boundary&&!/[\p{L}\p{N}]/u.test(after)&&!segments.some(s=>start<s.end&&start+item.name.length>s.start))break;
         start=value.indexOf(item.name,start+item.name.length);
       }
       if(start<0)continue;

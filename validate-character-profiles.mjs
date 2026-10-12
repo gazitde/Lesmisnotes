@@ -42,7 +42,7 @@ for(const p of D.profiles){
   }
  }
 }
-check(Object.keys(D.chapterMentions).length===241&&Object.values(D.chapterMentions).reduce((n,a)=>n+a.length,0)===393,'Reviewed full-novel mention coverage preserved');
+check(Object.keys(D.chapterMentions).length===241&&Object.values(D.chapterMentions).reduce((n,a)=>n+a.length,0)===391,'Reviewed full-novel mention coverage preserved');
 for(const [chapter,id] of [['p1-b6-c2','valjean'],['p1-b7-c10','valjean'],['p2-b3-c7','thenardiers'],['p2-b4-c5','javert']])check(!(D.chapterMentions[chapter]||[]).some(m=>m.id===id),'Ambiguous identity or family context excluded '+chapter);
 // Only reviewed tokens and explicit contexts may turn into links. Original text is preserved.
 for(const [chapter,mentions]of Object.entries(D.chapterMentions))for(const lang of ['he','en']){
@@ -55,6 +55,9 @@ check(P.inlineNames('Valjean',{mentions:[]})==='Valjean','No implicit auto-linki
 check(!P.inlineNames('Madeleine',{reader:'p1-b5-c1',mentions:[{id:'valjean',name:'Madeleine'}]}).includes('<a'),'No early alias-to-canonical URL');
 check(!P.inlineNames('Madeleine',{reader:'p1-b7-c3',mentions:[{id:'valjean',name:'Madeleine'}]}).includes('<a'),'Unreviewed aliases stay plain even after revelation');
 check(!P.inlineNames('Cosette',{reader:'p1-b1-c1',mentions:[{id:'cosette',name:'Cosette'}]}).includes('<a'),'Future character remains plain text');
+check(P.inlineNames('ולמיריאל',{lang:'he',reader:'p1-b1-c12',mentions:[{id:'bishop',name:'מיריאל'}]}).includes('/character-bishop/'),'Hebrew name remains linked after a preposition');
+check(P.inlineNames('שאֵפונין אפוניני',{lang:'he',reader:'p4-b14-c7',mentions:[{id:'eponine',name:'אפונין'}]})==='שאֵפונין אפוניני','No unreviewed embedded or suffixed name matching');
+check(!P.inlineNames('5למיריאל',{lang:'he',reader:'p1-b1-c12',mentions:[{id:'bishop',name:'מיריאל'}]}).includes('<a'),'Attached Hebrew prefix cannot follow a numeric token');
 check(P.href('unknown')===null&&P.href('cosette',{reader:'bad'})===null,'Unknown IDs and invalid reader values rejected');
 for(const p of D.profiles){
  check(P.retainedHref('character-'+p.id,'?reader=p1-b1-c2','he')===`/he/character-${p.id}/?reader=p1-b1-c2`,'Language retains exact reader bound');
