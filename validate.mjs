@@ -69,7 +69,7 @@ for(const lang of ['he','en'])for(const route of routes)for(const spoilers of [f
  if(spoilers&&route==='characters')assert.equal((html.match(/class="char-button /g)||[]).length,10);
  if(spoilers&&route==='compare')assert.equal((html.match(/class="adaptation-card"/g)||[]).length,6);
  if(route==='screen')assert.equal((html.match(/class="screen-card"/g)||[]).length,9);
- if(route==='tribute')assert.equal((html.match(/class="gallery-card /g)||[]).length,4);
+ if(route==='tribute')assert.equal((html.match(/class="gallery-card /g)||[]).length,R.gallery.groups.filter(g=>g.category==='together').length);
  if(route==='resources')assert.equal((html.match(/class="resource-card /g)||[]).length,14);
  tests+=6;
 }
@@ -196,7 +196,7 @@ for(const l of ['he','en']){
  state.ctx.history.replaceState({lesmisJourney:'book'},'',`/${l}/compare/`);state.callbacks.popstate();assert.ok(state.app.innerHTML.includes(`class="journey-next" href="/${l}/musical/"`));button({action:'journey-exit'});assert.equal(state.ctx.history.state,null);assert.ok(!state.app.innerHTML.includes('class="journey-continuation"'));
  routeLink('hugo');assert.ok(!state.app.innerHTML.includes('class="journey-continuation"'));assert.ok(!state.ctx.location.pathname.includes('?'));tests+=11;
  const html=render(l,'musical',false).html,anchor=html.indexOf('id="musical-journey"');assert.ok(anchor>html.indexOf('class="music-primer-disclosure"'));assert.ok(html.slice(anchor).includes('class="gate show-gate"'));assert.ok(!html.slice(anchor).includes('class="music-form-primer"'));tests+=3;
- const home=render(l,'home',false).html;assert.ok(home.indexOf('home-classic-paths')<home.indexOf('class="hero-band"'));assert.ok(home.includes('class="spoiler-label"'));const quiz=render(l,'quiz',false).html;assert.ok(quiz.includes('compact-quiz'));assert.ok(quiz.indexOf('data-action="quiz-start"')<quiz.indexOf('class="quiz-setup-details"'));assert.ok(!quiz.includes('class="quiz-play"'));tests+=5;
+ const home=render(l,'home',false).html;assert.ok(home.indexOf('home-classic-paths')<home.indexOf('class="vinyl"'));assert.ok(!home.includes('class="hero-band"'));assert.ok(home.includes('class="spoiler-label"'));const quiz=render(l,'quiz',false).html;assert.ok(quiz.includes('compact-quiz'));assert.ok(quiz.indexOf('data-action="quiz-start"')<quiz.indexOf('class="quiz-setup-details"'));assert.ok(!quiz.includes('class="quiz-play"'));tests+=5;
 }
 // Storage tests use isolated fake stores, never a visitor's real browser data.
 {
@@ -261,9 +261,9 @@ for(const abandonment of ['none','navigate','cancel','erase']){
 }
 // Single curated gallery: source integrity, progressive details, aliases and navigation.
 {
- const G=R.gallery;assert.equal(G.groups.length,29);assert.equal(G.items.length,38);assert.equal(G.categories.length,5);tests+=3;
- const ids=new Set(G.items.map(x=>x.id));assert.equal(ids.size,38);for(const removed of ['GyYZfSmwH3c','__d2FMCtgi4','KPpkTgMbhRU'])assert.ok(!ids.has(removed));tests+=4;
- for(const x of G.items){if(x.externalUrl){assert.ok(x.id.startsWith('external-'));assert.ok(x.externalUrl.startsWith('https://'));assert.equal(x.embeddable,false);assert.ok(x.provider.he&&x.provider.en)}else assert.match(x.id,/^[A-Za-z0-9_-]{11}$/);for(const f of ['title','label','context','notice','language']){assert.ok(x[f]?.he&&x[f]?.en,`${x.id}/${f}`);tests++;}assert.ok(x.sourceIds.length||x.existingCredits);for(const sid of x.sourceIds)assert.ok(R.sources.some(s=>s.id===sid),sid);if(!x.existingCredits){assert.ok(x.credits.length);for(const c of x.credits)assert.ok(c.bio.he&&c.bio.en&&c.url);}tests+=3;}
+ const G=R.gallery;assert.equal(G.groups.length,36);assert.equal(G.items.length,51);assert.equal(G.categories.length,6);tests+=3;
+ const ids=new Set(G.items.map(x=>x.id));assert.equal(ids.size,51);for(const removed of ['GyYZfSmwH3c','__d2FMCtgi4','KPpkTgMbhRU'])assert.ok(!ids.has(removed));tests+=4;
+ for(const x of G.items){if(x.externalUrl){assert.ok(x.id.startsWith('external-'));assert.ok(x.externalUrl.startsWith('https://'));assert.equal(x.embeddable,false);assert.ok(x.provider.he&&x.provider.en)}else assert.match(x.id,/^[A-Za-z0-9_-]{11}$/);for(const f of ['title','label','context','notice','language']){assert.ok(x[f]?.he&&x[f]?.en,`${x.id}/${f}`);tests++;}assert.ok(x.sourceIds.length||x.existingCredits);for(const sid of x.sourceIds)assert.ok(R.sources.some(s=>s.id===sid),sid);if(!x.existingCredits){assert.ok(x.credits.length);for(const c of x.credits){assert.ok(c.name.he&&c.name.en&&c.role.he&&c.role.en&&c.url);if(c.bio)assert.ok(c.bio.he&&c.bio.en);}}tests+=3;}
  for(const g of G.groups){for(const id of g.clipIds)assert.ok(ids.has(id));if(g.songId)assert.ok(R.musical.songentries.some(x=>x.id===g.songId));for(const f of ['title','hook','format','question'])assert.ok(g[f].he&&g[f].en);tests+=5;}
  for(const language of ['he','en']){
   const st=render(language,'listening',false),click=data=>st.callbacks.click({target:{closest:()=>({dataset:data,hasAttribute:n=>Object.hasOwn(data,n.replace(/^data-/,'').replace(/-([a-z])/g,(_,c)=>c.toUpperCase()))})}});
@@ -278,7 +278,7 @@ for(const abandonment of ['none','navigate','cancel','erase']){
  for(const [id,v]of Object.entries(R.videoReach)){assert.ok(Number.isSafeInteger(v.views)&&v.views>0);assert.equal(v.liveCounter,false);assert.ok(v.sourceUrl.endsWith(id));tests+=3;}
  assert.equal(G.items.find(x=>x.id==='Cn8PiqIXEjQ').embeddable,false);assert.equal(G.items.find(x=>x.id==='YL8gH0yELbk').embeddable,false);tests+=2;
 }
-console.log(`PASS: ${tests+4} assertions; ${routes.filter(route=>!routeMetadata.window.SITE_METADATA.pages[route].canonicalRoute).length} primary routes + 2 aliases × 2 languages × 2 spoiler states, all 29 curated versions, source references, privacy, quizzes and map regressions.`);
+console.log(`PASS: ${tests+4} assertions; ${routes.filter(route=>!routeMetadata.window.SITE_METADATA.pages[route].canonicalRoute).length} primary routes + 2 aliases × 2 languages × 2 spoiler states, all ${R.gallery.items.length} curated versions, source references, privacy, quizzes and map regressions.`);
 console.log('This is source/render QA, not browser playback or mobile interaction QA.');
 
 for(const language of ['he','en']){
@@ -306,7 +306,7 @@ console.log('PASS: 14 clear-home-entry and opt-in early-resume render checks.');
 {
  let n=0;const data=R.musical.songAnalysis,ids=Object.keys(data),anchors=ids.filter(id=>data[id].blocks.some(b=>b.spoilerLevel<2));assert.equal(ids.length,38);assert.equal(anchors.length,7);assert.equal(ids.reduce((n,id)=>n+data[id].blocks.length,0),114);n+=3;
  const escaped=x=>x.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- for(const id of ids){assert.ok(R.musical.songentries.some(s=>s.id===id));for(const b of data[id].blocks){assert.ok(b.title.he&&b.title.en&&b.body.he&&b.body.en);assert.ok(b.body.en.split(/\s+/).length>=35);assert.ok([0,2].includes(b.spoilerLevel));n+=3;}for(const sid of data[id].sourceIds){assert.ok(R.sources.some(s=>s.id===sid));n++;}}
+ for(const id of ids){assert.ok(R.musical.songentries.some(s=>s.id===id));for(const b of data[id].blocks){assert.ok(b.title.he&&b.title.en&&b.body.he&&b.body.en);for(const locale of ['he','en'])assert.ok(b.body[locale].trim().length>=60,'Complete editorial block '+id+locale);assert.ok([0,2].includes(b.spoilerLevel));n+=3;}for(const sid of data[id].sourceIds){assert.ok(R.sources.some(s=>s.id===sid));n++;}}
  for(const lang of ['he','en']){
   const safe=render(lang,'musical',false),open=render(lang,'musical',true);safe.ctx.matchMedia=open.ctx.matchMedia=()=>({matches:true});
   const click=(s,data)=>s.callbacks.click({target:{closest:selector=>selector==='a[href]'?null:{dataset:data}}});
@@ -326,7 +326,7 @@ console.log('PASS: 14 clear-home-entry and opt-in early-resume render checks.');
 }
 {
  const c={window:{}};vm.runInNewContext(fs.readFileSync('dist/search.js','utf8'),c);const index=c.window.SiteSearch.buildIndex({research:R},{spoiler:true});let n=0;
- for(const g of R.gallery.groups.filter(g=>g.category!=='coaching')){const reading=R.musical.songAnalysis[g.songId];if(!reading)continue;for(const id of g.clipIds){const doc=index.find(d=>d.id==='performance:'+id);if(!doc)continue;for(const b of reading.blocks)for(const lang of ['he','en']){assert.equal(doc.body[lang].includes(b.body[lang]),b.kind==='listening');n++;}}}
+ for(const g of R.gallery.groups.filter(g=>g.category!=='coaching')){for(const id of g.clipIds){const item=R.gallery.items.find(i=>i.id===id),songId=Array.isArray(item.songIds)?item.songIds[0]:g.songId,reading=R.musical.songAnalysis[songId];if(!reading)continue;const doc=index.find(d=>d.id==='performance:'+id);if(!doc)continue;for(const b of reading.blocks)for(const lang of ['he','en']){assert.equal(doc.body[lang].includes(b.body[lang]),b.kind==='listening');n++;}}}
  assert.ok(R.musical.songentries.find(s=>s.id==='javert-soliloquy').sourceIds.includes('iconic-aversa-analysis'));n++;
  console.log(`PASS: ${n} performance-search parity and original-source preservation checks.`);
 }

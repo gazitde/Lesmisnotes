@@ -174,10 +174,11 @@
     for (const item of R.gallery?.items || []) {
       const group = R.gallery.groups?.find(g => g.clipIds.includes(item.id));
       const allowed = spoilers || item.spoilerLevel !== 2;
+      const songId=Array.isArray(item.songIds)?item.songIds[0]:group?.songId;
       const reading = spoilers || !(group?.reading?.spoilerLevel > 1) ? group?.reading : null;
       if(group?.category==='coaching'){const v=(R.coachVideos||[]).find(v=>v.id===item.id);add('performance',item.id,'listening','songs',item.title,pair(v?.coach?.name,v?.coach?.credential,allowed?pair(v?.introParagraphs,v?.body,v?.watchFor,group.hook):''),['vocal coach','vocal coaching','voice teacher','מורה לפיתוח קול','ניתוח ביצוע'],!allowed);continue;}
       add('performance', item.id, 'listening', 'songs', item.title,
-        pair(item.shortLabel, item.label, item.language, allowed ? pair(item.context, group?.hook, group?.question, reading?.title, reading?.scene, reading?.structure, reading?.watchFor,songReading(group?.songId,'listening'),coachReading(group?.songId)) : ''), [group?.title, ...(item.songIds || [])], !allowed);
+        pair(item.shortLabel, item.label, item.language, allowed ? pair(item.context, item.editorialParagraphs, item.question, group?.hook, group?.question, reading?.title, reading?.scene, reading?.structure, reading?.watchFor,songReading(songId,'listening'),coachReading(songId)) : ''), [group?.title, ...(item.songIds || [])], !allowed);
     }
     for (const p of input.places?.places || []) add('place', p.id, 'places', 'places', p.name, pair(p.shortIntro, p.region, p.statusLabel, p.history, p.mapNote, spoilers ? p.novel : ''), [p.id]);
     for (const p of R.map?.places || []) add('atlas', p.id, 'map', 'places', p.name, pair(p.region, spoilers || p.context?.spoilerLevel === 0 ? p.context?.sentences : '', spoilers ? pair(p.storyRole, p.journey?.event, p.journey?.remember) : ''), [p.id]);
@@ -219,6 +220,8 @@
       if (chosen.title === phrase || other.title === phrase) score += 95;
       else if (chosen.title.includes(phrase) || other.title.includes(phrase)) score += 40;
       if (doc.aliasSearch.split(' ').includes(phrase)) score += 70;
+      // A bare song name leads to its guide before individual performance choices.
+      if(doc.kind==='song'&&(SAFE_SONG_NAMES[doc.key]||[]).some(title=>title.split(/[·/]/).some(part=>normalize(part)===phrase)))score+=110;
       if (doc.category === 'pages') score -= 10;
       hits.push({ doc, score, href: hrefFor(doc, lang) });
     }

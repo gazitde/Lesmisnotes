@@ -29,7 +29,7 @@ npm run test:browser
 - Substantive spoiler-safe story and character HTML, semantic introductory relationships and a sourced explanation of 24601, readable without JavaScript
 - Israeli productions, verified casts, Hebrew book translations and official performance links
 - A dated viewing guide distinguishing current productions, future announcements, completed tours and home-viewing editions
-- Twenty curated viewing cards with 29 versions, including Lucy Thomas’s English “On My Own” and Roni Dalumi’s Hebrew version
+- Thirty-six curated viewing selections with 51 performance/analysis sources, including stage and screen, a cappella, weddings, flashmobs, dance and nine vocal-coach analyses
 - Two original vocal-coach analyses alongside On My Own and Bring Him Home, with bilingual context, professional credits and normal no-autoplay players
 - Nine real named places, geographic OpenStreetMap exploration, an illustrated story atlas and a locally hosted licensed photo essay
 - Five literary food cards, including bread soup, optional tahini loaf and their reciprocal variation links

@@ -1,5 +1,23 @@
 # Visual and language refresh
 
+## 2026-10-12 — Concrete entry copy and complete song-analysis revision
+
+- Reworked the homepage and principal entry copy to describe what readers can find. Removed the redundant slogan strip while retaining the three main cards. Made the five-edition recording comparison and nine screen versions easier to discover.
+- Rewrote all 38 song analyses: 114 blocks in English and Hebrew, with identifiable scene actions, musical structures and specific listening questions. Replaced all 38 short scene summaries and revised the seven spotlight introductions. Preserved source references, narrative sequence and spoiler boundaries.
+- Reviewed the two acts independently across writers and checked the homepage and scene summaries separately. Preserved distinctions between Hugo’s novel, the stage musical, filmed concerts and the 2012 film.
+- Added desktop, 390px and 320px browser checks for the revised entry copy, direct recording/screen destinations, song selection and spoiler boundaries. The wider character/history/dilemma/reader editorial review continues in later batches.
+
+
+## 2026-10-12 — Curated performances beyond the theatre
+
+- Expanded the existing gallery to 36 editorial selections and 51 sources while retaining every previous card, clip and all nine vocal-coach analyses. Added an a cappella/ensemble category and separated wedding/public-space surprises from other reinventions.
+- Added the Maccabeats, Zero8, West End LIVE 2026, the staged-concert opening, Susan Boyle’s 2023 return, two wedding surprises, Adelaide and two additional original-source flashmobs, Strictly’s Tom Fletcher/Amy Dowden dance, and the King’s Academy’s Master of the House. Enriched Copenhagen in place and renewed its native player. School-production excerpts retain original-source links; Orlando remains link-only because embedding is disabled.
+- Added TUNE’s 2010 One Day More as the main English concert option; kept Habima and the Stage to Screen comparison with their existing deep links. The 2010 three-solo compilation is represented by verified contextual chapter links rather than a duplicate card.
+- Omitted the supplied secondary Carpool upload: its original official upload is now private and the broadcaster alternative returned 404. Existing official Corden selections remain.
+- Added two substantial original Hebrew/English paragraphs for each new or enriched performance, accurate performer/presenter credits and per-video song connections. Corrected exact-song search ranking so a bare song title still leads to its guide before individual recordings.
+- Added HE/EN desktop, 390px and 320px browser coverage for filters, rich context, distinct event choices, spoilers, source links, language/history, keyboard return focus and player teardown. Source/embed metadata is separate from actual playback; external media are mocked in browser CI.
+
+
 - LesMisNotes branding, locally hosted Hebrew type, balanced hero/navigation and prominent language choice.
 - English first-visit root; saved consented Hebrew and explicit language links still take priority.
 - Both circular compositions use deliberate safe-area line breaks and responsive sizes.
