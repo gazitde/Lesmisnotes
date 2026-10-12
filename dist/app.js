@@ -164,7 +164,7 @@ function performanceDoorways(compact=false){const groups=['on-my-own','one-day-m
 let galleryCategory='all';
 let galleryClip=null;
 let galleryAudio='all';
-const audioFilters=['all','en','he','other','zxx'];
+const audioFilters=['all','en','he','zxx','other'];
 function galleryItem(id){return R.gallery?.items.find(x=>x.id===id)}
 function galleryGroup(id){return R.gallery?.groups.find(g=>g.clipIds.includes(id))}
 function galleryAudioMatch(item,audio=galleryAudio){return audio==='all'||(audio==='other'?!['en','he','zxx'].includes(item.languageCode):item.languageCode===audio)}

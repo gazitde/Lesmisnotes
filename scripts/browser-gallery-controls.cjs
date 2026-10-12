@@ -4,7 +4,7 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=process.env.
 for(const lang of ['he','en'])for(const width of [1365,390,320]){
  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});await context.route('**/*',r=>new URL(r.request().url()).origin===new URL(base).origin?r.continue():r.abort());const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto(base+'/'+lang+'/listening/');
- check(await page.locator('.gallery-categories button').count()===6,'One integrated all/category selector');
+ check(await page.locator('.gallery-categories button').count()===6,'One integrated all/category selector');check(JSON.stringify(await page.locator('[data-gallery-audio]').evaluateAll(es=>es.map(e=>e.dataset.galleryAudio)))===JSON.stringify(['all','en','he','zxx','other']),'Audio visual order and keyboard order agree');
  check(await page.locator('.gallery-categories [aria-pressed=true]').getAttribute('data-gallery-category')==='all','All is clearly selected on entry');
  check(await page.locator('.gallery-card').count()===29,'All existing performances and analyses preserved');
  check(await page.locator('.hebrew-performance-doorways').count()===1,'Language comparison remains on the full collection');
