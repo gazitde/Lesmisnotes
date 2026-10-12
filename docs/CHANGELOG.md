@@ -56,3 +56,12 @@ The footer wraps its expanded link list at desktop widths. Added whole-page hori
 - Added narrow, chapter-specific geographic views for two early locations, excluding later novel paragraphs and the full-story atlas.
 - Replaced Zoe Stibi’s On My Own selection with the requested Beth Roars analysis, retaining four curated coaches. Each now has three substantial bilingual context paragraphs and three focused listening prompts. Beth’s unverified duration and chapter timestamps are omitted.
 - Extended source/data and actual-browser CI coverage for every chapter in both languages, narrow layouts, loading failures, exact resume links, scoped geography, coach filters and player teardown. External-player playback and contact delivery remain separate verification limits.
+
+## 2026-10-12 — Compact mobile browsing and precise discovery
+
+- Tightened the hero, three familiar entry cards and section spacing while retaining readable prose, the original artwork and full-size touch controls. Removed duplicated opening reassurance and the decorative phone top strip.
+- Kept mobile search results closer to the input with a compact heading and native topic-filter disclosure, retaining the visible local-search and spoiler status.
+- Added exact lookup for all 365 chapters through English, Hebrew, identifier and dotted coordinates, using neutral labels only. Invalid coordinates return no invented or loosely numeric matches.
+- Added 37 safe song-name entries, including Master of the House, while preserving scene gates and exact song selection. Added bounded Cosette spelling aliases.
+- Replaced legacy tribute/humor internal links with direct gallery-category destinations. Permanent bilingual server redirects preserve older bookmarks, and normal in-site category clicks retain visit-memory state and keyboard focus.
+- Retained 50 canonical localized sitemap destinations and production/preview indexing separation. Chapter positions are navigation states on the novel page, not 365 separately indexed landing pages.

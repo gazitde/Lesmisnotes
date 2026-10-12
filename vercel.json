@@ -4,11 +4,73 @@
   "outputDirectory": "dist",
   "trailingSlash": true,
   "headers": [
-    { "source": "/(.*)", "headers": [
-      { "key": "X-Content-Type-Options", "value": "nosniff" },
-      { "key": "Referrer-Policy", "value": "no-referrer" },
-      { "key": "Permissions-Policy", "value": "geolocation=(), camera=(), microphone=()" }
-    ]},
-    { "source": "/api/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }]}
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), camera=(), microphone=()"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/he/tribute",
+      "destination": "/he/listening/?category=together",
+      "permanent": true
+    },
+    {
+      "source": "/he/tribute/",
+      "destination": "/he/listening/?category=together",
+      "permanent": true
+    },
+    {
+      "source": "/he/humor",
+      "destination": "/he/listening/?category=humor",
+      "permanent": true
+    },
+    {
+      "source": "/he/humor/",
+      "destination": "/he/listening/?category=humor",
+      "permanent": true
+    },
+    {
+      "source": "/en/tribute",
+      "destination": "/en/listening/?category=together",
+      "permanent": true
+    },
+    {
+      "source": "/en/tribute/",
+      "destination": "/en/listening/?category=together",
+      "permanent": true
+    },
+    {
+      "source": "/en/humor",
+      "destination": "/en/listening/?category=humor",
+      "permanent": true
+    },
+    {
+      "source": "/en/humor/",
+      "destination": "/en/listening/?category=humor",
+      "permanent": true
+    }
   ]
 }

@@ -41,8 +41,77 @@
     valjean: ['24601', 'Jean Valjean', 'Valjean', 'ז׳אן ולז׳אן', 'ולזאן'],
     javert: ['Javert', 'ז׳אבר', 'זאבר'], eponine: ['Éponine', 'Eponine', 'אפונין'],
     thenardiers: ['Thénardier', 'Thénardiers', 'Thenardier', 'טנארדייה', 'תנרדייה', 'ת׳נרדייה'],
-    bishop: ['Bishop of Digne', 'Myriel', 'בישוף', 'דיניה']
+    bishop: ['Bishop of Digne', 'Myriel', 'בישוף', 'דיניה'],
+    cosette: ['Cosette', 'Cosset', 'Cossette', 'קוזט', 'קוסט']
   };
+  // Editorially reviewed song names only. Do not derive safe titles or aliases
+  // from scene headings: some combine a song name with an arrest, death or outcome.
+  // Unknown/new song IDs fail closed until their bilingual names are reviewed.
+  const SAFE_SONG_NAMES = {
+    'work-song': ['Prologue: Overture / Work Song', 'פרולוג: פתיחה ושיר העבודה'],
+    'what-have-i-done': ['What Have I Done? · Valjean’s Soliloquy', 'מה עשיתי? · המונולוג של ולז׳אן'],
+    'end-of-day': ['At the End of the Day', 'בסוף היום'],
+    'dreamed-dream': ['I Dreamed a Dream', 'חלמתי חלום'],
+    'docks': ['The Docks · Lovely Ladies', 'הרציפים · Lovely Ladies'],
+    'who-am-i': ['Who Am I?', 'מי אני?'],
+    'come-to-me': ['Come to Me', 'בואי אליי'],
+    'confrontation': ['The Confrontation', 'העימות'],
+    'castle-cloud': ['Little Cosette · Castle on a Cloud', 'קוזט הקטנה · טירה על ענן'],
+    'master-house': ['The Innkeeper’s Song · Master of the House', 'שיר הפונדקאי · אדון הבית'],
+    'bargain': ['The Bargain · Thénardier Waltz of Treachery', 'העסקה · הוואלס של בני הזוג תנרדייה'],
+    'beggars': ['The Beggars · Look Down', 'הקבצנים · Look Down'],
+    'stars': ['Stars', 'כוכבים'],
+    'red-black': ['The ABC Café · Red and Black', 'קפה ABC · אדום ושחור'],
+    'people-sing': ['The People’s Song · Do You Hear the People Sing?', 'שיר העם · האם אתם שומעים את העם שר?'],
+    'in-my-life': ['Rue Plumet · In My Life', 'רחוב פלומה · בחיי'],
+    'heart-love': ['A Heart Full of Love', 'לב מלא אהבה'],
+    'attack-rue-plumet': ['Attack on Rue Plumet', 'ההתקפה ברחוב פלומה'],
+    'one-day-more': ['One Day More', 'עוד יום אחד'],
+    'building-barricade': ['Building the Barricade · Upon These Stones', 'בניית המתרס · על האבנים האלה'],
+    'on-my-own': ['On My Own', 'לבדי'],
+    'javert-barricade': ['Little People', 'Little People'],
+    'little-fall-rain': ['A Little Fall of Rain', 'מעט גשם'],
+    'first-attack': ['The First Attack', 'ההתקפה הראשונה'],
+    'drink-with-me': ['Drink With Me', 'שתו איתי'],
+    'bring-him-home': ['Bring Him Home', 'השב אותו הביתה'],
+    'second-attack': ['Dawn / The Second Attack', 'שחר וההתקפה השנייה'],
+    'final-battle': ['The Final Battle', 'הקרב האחרון'],
+    'sewers': ['The Sewers · Dog Eats Dog', 'הביוב · Dog Eats Dog'],
+    'javert-soliloquy': ['Javert’s Soliloquy', 'המונולוג של ז׳אבר'],
+    'turning': ['Turning', 'מסתובב שוב'],
+    'empty-chairs': ['The Café Song · Empty Chairs at Empty Tables', 'שיר בית הקפה · כיסאות ריקים ליד שולחנות ריקים'],
+    'every-day': ['Every Day / A Heart Full of Love · Reprise', 'מדי יום / לב מלא אהבה · חזרה'],
+    'valjean-confession': ['Valjean’s Confession', 'וידויו של ולז׳אן'],
+    'wedding': ['Wedding Chorale · The Wedding', 'מקהלת החתונה · החתונה'],
+    'beggars-feast': ['Beggars at the Feast', 'קבצנים במשתה'],
+    'epilogue': ['Epilogue / Finale', 'אפילוג וסיום']
+  };
+  function safeSongTitle(song) {
+    const names = song && Object.hasOwn(SAFE_SONG_NAMES, song.id) ? SAFE_SONG_NAMES[song.id] : null;
+    return names ? { en: names[0], he: names[1] } : null;
+  }
+  // Coordinates have a separate exact-match path. A malformed/out-of-range
+  // coordinate must never degrade into unrelated numeric substring results.
+  function chapterQuery(query) {
+    const raw = String(query ?? '').normalize('NFKC').toLowerCase().replace(/[\u0591-\u05bd\u05bf-\u05c7\u200e\u200f\u202a-\u202e\u2066-\u2069]/g, '').trim();
+    const patterns = [
+      /^p(\d+)\s*-\s*b(\d+)\s*-\s*c(\d+)$/,
+      /^part\s+(\d+)\s*[,·]?\s+book\s+(\d+)\s*[,·]?\s+chapter\s+(\d+)$/,
+      /^חלק\s+(\d+)\s*[,·]?\s+ספר\s+(\d+)\s*[,·]?\s+פרק\s+(\d+)$/,
+      /^(\d+)\s*\.\s*(\d+)\s*\.\s*(\d+)$/
+    ];
+    for (const pattern of patterns) {
+      const match = raw.length <= 180 && raw.match(pattern);
+      if (match) {
+        const [part, book, chapter] = match.slice(1).map(Number);
+        return { key: [part, book, chapter].every(n => Number.isSafeInteger(n) && n > 0) ? `p${part}-b${book}-c${chapter}` : null };
+      }
+    }
+    const looksLikeCoordinate = /^p\s*[+-]?\d.*-\s*b/.test(raw)
+      || /^(?:part|חלק)(?:\s|:).*(?:book|ספר)(?:\s|:).*(?:chapter|פרק)(?:\s|:)/.test(raw)
+      || /^[+-]?\d[\d\s.+-]*\.[\d\s.+-]*\./.test(raw);
+    return looksLikeCoordinate ? { key: null } : null;
+  }
   const routeKinds = { character: 'characters', story: 'story', novel: 'novel', book: 'novel', chapter:'novel', recording:'musical', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
   function hrefFor(doc, lang) {
     if (doc.kind === 'place') return `/${lang}/places/?place=${encodeURIComponent(doc.key)}`;
@@ -55,9 +124,9 @@
   function buildIndex(input = sourceBundle(), permissions = {}) {
     const R = { ...(input.research || {}), ...(input.extra || {}) }, out = [];
     const spoilers = permissions.spoiler === true, novel = spoilers && permissions.novelConsent === true, after = spoilers && permissions.afterConsent === true;
-    function add(kind, key, route, category, title, body, aliases = [], locked = false) {
+    function add(kind, key, route, category, title, body, aliases = [], locked = false, titleOnly = false) {
       if (!title || !local(title, 'en')) return;
-      const doc = { id: `${kind}:${key}`, kind, key: String(key), route, category, title: pair(title), body: pair(body), aliases: aliases.map(v => local(v, 'en')).join(' '), locked };
+      const doc = { id: `${kind}:${key}`, kind, key: String(key), route, category, title: pair(title), body: pair(body), aliases: aliases.map(v => local(v, 'en')).join(' '), locked, titleOnly };
       doc.search = Object.fromEntries(LANGS.map(lang => [lang, { title: normalize(doc.title[lang]), body: normalize(doc.body[lang]) }]));
       doc.aliasSearch = normalize(doc.aliases);
       out.push(doc);
@@ -71,6 +140,11 @@
       [c.id, ...(CHARACTER_ALIASES[c.id] || [])], false);
     if (spoilers) for (const s of R.story || []) add('story', s.id, 'story', 'story', s.title, pair(s.period, s.summary, s.detail, s.songs));
     for(const p of R.readingLocator?.parts||[])for(const b of p.books)add('book',b.id,'novel','story',b.label,b.prompt,['reading alongside','מלווה קריאה']);
+    for (const c of R.chapterCompanion?.chapters || []) {
+      if (![c.part, c.book, c.chapter].every(n => Number.isSafeInteger(n) && n > 0) || c.id !== `p${c.part}-b${c.book}-c${c.chapter}`) continue;
+      add('chapter', c.id, 'novel', 'story', { en: `Part ${c.part} · Book ${c.book} · Chapter ${c.chapter}`, he: `חלק ${c.part} · ספר ${c.book} · פרק ${c.chapter}` },
+        { en: 'Choose what to reveal in the chapter companion.', he: 'בחרו מה לפתוח במלווה הקריאה לפרק.' }, [], true);
+    }
     if (novel) for (const s of R.novel?.milestones || []) add('novel', s.id, 'novel', 'story', s.title, pair(s.dateLabel, s.summary, s.details, s.remember));
     for(const c of R.recordingChooser?.cards||[])add('recording',c.id,'musical','songs',c.title,pair(c.year,c.format,c.cast,c.paragraphs||c.reason,c.prompt,(c.options||[]).map(o=>pair(o.format,o.access,o.storefront,o.note))),[c.id]);
     for (const c of R.musical?.creationStory?.craft || []) add('craft', c.id, 'musical', 'songs', c.title, c.body, [c.id]);
@@ -83,10 +157,13 @@
     const songReading=(id,kind=null)=>{const r=R.musical?.songAnalysis?.[id];return pair((r?.blocks||[]).filter(b=>(spoilers||b.spoilerLevel<2)&&(!kind||b.kind===kind)).map(b=>pair(b.title,b.body)),spoilers?(r?.craftNotes||[]).map(b=>pair(b.title,b.body)):'')};
     for (const s of spotlight) {
       const entry = songEntries.find(x => x.id === s.id);
-      add('song', s.id, 'musical', 'songs', entry ? { he: local(entry.title, 'he'), en: s.title } : s.title,
+      add('song', s.id, 'musical', 'songs', entry ? { he: local(!spoilers ? safeSongTitle(entry) || entry.title : entry.title, 'he'), en: s.title } : s.title,
         pair(s.hook, s.background, s.question, songReading(s.id),coachReading(s.id), spoilers ? pair(s.plot, s.connection, entry?.scene, entry?.summary, entry?.characters, entry?.question) : ''), [s.id, s.title]);
     }
-    if (spoilers) for (const s of songEntries.filter(s => !spotlight.some(x => x.id === s.id))) add('song', s.id, 'musical', 'songs', s.title, pair(s.scene, s.summary, s.characters, s.mood, s.question,songReading(s.id),coachReading(s.id)), [s.catalogueTitle, s.id]);
+    for (const s of songEntries.filter(s => !spotlight.some(x => x.id === s.id))) {
+      if (spoilers) add('song', s.id, 'musical', 'songs', s.title, pair(s.scene, s.summary, s.characters, s.mood, s.question,songReading(s.id),coachReading(s.id)), [s.catalogueTitle, s.id]);
+      else if (safeSongTitle(s)) add('song', s.id, 'musical', 'songs', safeSongTitle(s), '', [s.id], true, true);
+    }
     for (const item of R.gallery?.items || []) {
       const group = R.gallery.groups?.find(g => g.clipIds.includes(item.id));
       const allowed = spoilers || item.spoilerLevel !== 2;
@@ -113,11 +190,16 @@
   }
   function queryTerms(query) { return [...new Set(normalize(String(query).slice(0, 180)).split(' ').filter(Boolean))].slice(0, 16); }
   function search(index, query, { lang = 'he', category = 'all', limit = 12 } = {}) {
+    const coordinate = chapterQuery(query);
+    if (coordinate) {
+      const doc = coordinate.key && (category === 'all' || category === 'story') && index.find(d => d.kind === 'chapter' && d.key === coordinate.key);
+      return doc ? { results: limit > 0 ? [{ doc, score: 1000, href: hrefFor(doc, lang) }] : [], total: 1 } : { results: [], total: 0 };
+    }
     const terms = queryTerms(query), phrase = normalize(query).slice(0, 180);
     if (!terms.length) return { results: [], total: 0 };
     const hits = [];
     for (const doc of index) {
-      if (category !== 'all' && doc.category !== category) continue;
+      if (doc.kind === 'chapter' || category !== 'all' && doc.category !== category) continue;
       const chosen = doc.search[lang], other = doc.search[lang === 'he' ? 'en' : 'he'];
       let score = 0, matched = true;
       for (const term of terms) {
@@ -165,7 +247,7 @@
   function resultsHTML(result, query, lang) {
     const c = COPY[lang];
     if (!result.total) return `<div class="site-search-empty"><h3>${c.empty}</h3><p>${c.help}</p></div>`;
-    return `<ul class="site-search-list">${result.results.map(({ doc, href }) => `<li><a data-site-search-result href="${esc(hrefFor(doc, lang))}" data-result-category="${esc(doc.category)}"><span class="site-search-category">${esc(CATEGORIES[doc.category][lang])}${doc.locked ? ` · ${lang === 'he' ? 'פרטי עלילה באישור' : 'Plot details by consent'}` : ''}</span><h3 dir="auto">${highlight(doc.title[lang], query)}</h3><p dir="auto">${snippet(doc.body[lang] || c.locked, query)}</p><span class="site-search-arrow" aria-hidden="true">${lang === 'he' ? '←' : '→'}</span></a></li>`).join('')}</ul>${result.results.length < result.total ? `<button class="btn secondary site-search-more" data-site-search-more>${c.more}</button>` : ''}`;
+    return `<ul class="site-search-list">${result.results.map(({ doc, href }) => `<li><a data-site-search-result href="${esc(hrefFor(doc, lang))}" data-result-category="${esc(doc.category)}"><span class="site-search-category">${esc(CATEGORIES[doc.category][lang])}${doc.locked ? ` · ${lang === 'he' ? 'פרטי עלילה באישור' : 'Plot details by consent'}` : ''}</span><h3 dir="auto">${highlight(doc.title[lang], query)}</h3><p dir="auto">${snippet(doc.body[lang] || (doc.titleOnly ? c.titleOnly : c.locked), query)}</p><span class="site-search-arrow" aria-hidden="true">${lang === 'he' ? '←' : '→'}</span></a></li>`).join('')}</ul>${result.results.length < result.total ? `<button class="btn secondary site-search-more" data-site-search-more>${c.more}</button>` : ''}`;
   }
   function button(lang = 'he') { return `<button type="button" class="site-search-trigger" data-site-search-open aria-haspopup="dialog" aria-controls="site-search-dialog" aria-label="${COPY[lang].open}"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.8"/></svg><span>${lang === 'he' ? 'חיפוש' : 'Search'}</span></button>`; }
   let context = { lang: 'he', spoiler: false, novelConsent: false, afterConsent: false }, panel = null, installed = false;
@@ -177,7 +259,7 @@
   }
   function panelHTML() {
     const lang = context.lang, c = COPY[lang];
-    return `<div class="site-search-head"><div><span class="eyebrow">${lang === 'he' ? 'מילה אחת יכולה לפתוח דלת' : 'ONE WORD CAN OPEN A DOOR'}</span><h2 id="site-search-title">${c.title}</h2></div><button type="button" data-site-search-close aria-label="${c.close}">×</button></div><form role="search" aria-label="${c.label}" autocomplete="off"><label for="site-search-input">${c.label}</label><div class="site-search-field"><input id="site-search-input" type="search" maxlength="180" placeholder="${c.placeholder}" value="${esc(query)}" dir="auto" autocomplete="off" spellcheck="false" aria-controls="site-search-results" aria-describedby="site-search-privacy site-search-spoilers"><button type="button" data-site-search-clear>${c.clear}</button></div></form><p id="site-search-privacy" class="site-search-privacy">${c.local}</p><div class="site-search-filters" role="group" aria-label="${c.filters}">${Object.entries(CATEGORIES).map(([id, label]) => `<button type="button" data-site-search-category="${id}" aria-pressed="${category === id}">${label[lang]}</button>`).join('')}</div><p id="site-search-spoilers" class="site-search-spoilers">${context.spoiler ? c.spoilers : c.safe}</p><p class="site-search-status" id="site-search-status" role="status" aria-live="polite" aria-atomic="true"></p><div id="site-search-results" aria-busy="false"></div><p class="site-search-keyboard">${c.keyboard}</p>`;
+    return `<div class="site-search-head"><div><span class="eyebrow">${lang === 'he' ? 'מילה אחת יכולה לפתוח דלת' : 'ONE WORD CAN OPEN A DOOR'}</span><h2 id="site-search-title">${c.title}</h2></div><button type="button" data-site-search-close aria-label="${c.close}">×</button></div><form role="search" aria-label="${c.label}" autocomplete="off"><label for="site-search-input">${c.label}</label><div class="site-search-field"><input id="site-search-input" type="search" maxlength="180" placeholder="${c.placeholder}" value="${esc(query)}" dir="auto" autocomplete="off" spellcheck="false" aria-controls="site-search-results" aria-describedby="site-search-privacy site-search-spoilers"><button type="button" data-site-search-clear>${c.clear}</button></div></form><p id="site-search-privacy" class="site-search-privacy">${c.local}</p><details class="site-search-filter-disclosure" ${root.matchMedia?.('(max-width:600px)').matches?'':'open'}><summary>${c.filters}<span data-site-search-filter-label>${CATEGORIES[category][lang]}</span></summary><div class="site-search-filters" role="group" aria-label="${c.filters}">${Object.entries(CATEGORIES).map(([id, label]) => `<button type="button" data-site-search-category="${id}" aria-pressed="${category === id}">${label[lang]}</button>`).join('')}</div></details><p id="site-search-spoilers" class="site-search-spoilers">${context.spoiler ? c.spoilers : c.safe}</p><p class="site-search-status" id="site-search-status" role="status" aria-live="polite" aria-atomic="true"></p><div id="site-search-results" aria-busy="false"></div><p class="site-search-keyboard">${c.keyboard}</p>`;
   }
   function input() { return panel?.querySelector('#site-search-input'); }
   let searchRevision = 0, measuredRevision = -1;
@@ -252,7 +334,7 @@
         if (!button) return;
         if (button.hasAttribute('data-site-search-close')) close();
         else if (button.hasAttribute('data-site-search-clear')) { query = ''; searchRevision++; limit = 12; input().value = ''; renderResults(); input().focus(); }
-        else if (button.hasAttribute('data-site-search-category')) { category = button.dataset.siteSearchCategory; searchRevision++; limit = 12; panel.querySelectorAll('[data-site-search-category]').forEach(b => b.setAttribute('aria-pressed', b.dataset.siteSearchCategory === category)); renderResults(); }
+        else if (button.hasAttribute('data-site-search-category')) { category = button.dataset.siteSearchCategory; const filterLabel=panel.querySelector('[data-site-search-filter-label]');if(filterLabel)filterLabel.textContent=CATEGORIES[category][context.lang];searchRevision++; limit = 12; panel.querySelectorAll('[data-site-search-category]').forEach(b => b.setAttribute('aria-pressed', b.dataset.siteSearchCategory === category)); renderResults(); }
         else if (button.hasAttribute('data-site-search-example')) { query = button.dataset.siteSearchExample; searchRevision++; input().value = query; limit = 12; renderResults(); input().focus(); }
         else if (button.hasAttribute('data-site-search-more')) { const oldCount = panel.querySelectorAll('.site-search-list a').length; limit += 12; renderResults(); panel.querySelectorAll('.site-search-list a')[oldCount]?.focus(); }
         else if (button.hasAttribute('data-site-search-retry')) { cached = null; renderResults(); }
@@ -266,11 +348,12 @@
   }
   function focusTarget(target) {
     if (!target || !root.document?.querySelector) return;
-    const key = target.key, selector = { chapter:'#reading-book-panel', book: '#reading-book-panel', recording: '#recording-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : '#spotlight-title', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
+    const featuredSong = (root.EXTRA_CONTENT?.musical || root.RESEARCH?.musical)?.spotlight?.songs?.some(s => s.id === target.key);
+    const key = target.key, selector = { chapter:'#reading-book-panel', book: '#reading-book-panel', recording: '#recording-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : featuredSong ? '#spotlight-title' : '#musical-journey', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
     const element = selector && root.document.querySelector(selector); if (!element) return;
     if (['story', 'novel', 'history','song','dilemma'].includes(target.kind)||(target.kind==='extra'&&key!=='collection')) {const readingRoot=target.kind==='song'?(element.closest?.('.show-slide,.spotlight-detail')||element):element;readingRoot.querySelectorAll?.('details').forEach(details => { details.open = true; });}
     if(target.kind==='craft'||target.kind==='israel'){const notebook=element.closest?.('details');if(notebook)notebook.open=true;}
     element.setAttribute?.('tabindex', '-1'); element.focus?.({ preventScroll: true }); element.scrollIntoView?.({ block: 'start' });
   }
-  root.SiteSearch = { normalize, buildIndex, search, highlight, snippet, resultsHTML, hrefFor, button, mount, open, close, readTarget, focusTarget, categories: CATEGORIES };
+  root.SiteSearch = { normalize, safeSongTitle, buildIndex, search, highlight, snippet, resultsHTML, hrefFor, button, mount, open, close, readTarget, focusTarget, categories: CATEGORIES };
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -8,6 +8,8 @@ const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=
 http.createServer(async(req,res)=>{
   try {
     const url=new URL(req.url,'http://localhost');
+    const alias=url.pathname.match(/^\/(he|en)\/(tribute|humor)\/?$/);
+    if(alias){url.pathname='/'+alias[1]+'/listening/';url.searchParams.set('category',alias[2]==='tribute'?'together':'humor');res.writeHead(308,{Location:url.pathname+url.search});res.end();return;}
     if(url.pathname.replace(/\/$/,'')==='/api/contact'&&fs.existsSync('api/contact.js'))return await require('../api/contact.js')(req,res);
     let filename=path.resolve(root,'.'+decodeURIComponent(url.pathname));
     if(!filename.startsWith(root+path.sep)&&filename!==root){res.writeHead(403);res.end();return;}
