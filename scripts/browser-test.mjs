@@ -13,6 +13,8 @@ try{
   let ready=false;
   for(let i=0;i<40;i++){try{const r=await fetch(base+'/en/home/');if(r.ok){ready=true;break;}}catch{}await new Promise(r=>setTimeout(r,100));}
   if(!ready)throw new Error('Local browser-test server did not start');
+  await run(['scripts/browser-insight-paths.cjs']);
+  if(failures.length)throw new Error('Contextual-navigation regression: '+failures.join('; '));
   await run(['scripts/browser-navigation-clarity.cjs']);
   await run(['scripts/browser-reading-query-shell.cjs']);
   await run(['scripts/browser-character-profiles.cjs']);
@@ -25,7 +27,6 @@ try{
   await run(['scripts/browser-chapter-companion.cjs']);
   await run(['scripts/browser-history-recordings.cjs']);
   await run(['scripts/browser-reading-companion.cjs']);
-  await run(['scripts/browser-insight-paths.cjs']);
   await run(['scripts/browser-hugo-stories.cjs']);
   await run(['scripts/browser-coach-videos.cjs']);
   await run(['scripts/browser-act-transitions.cjs']);
