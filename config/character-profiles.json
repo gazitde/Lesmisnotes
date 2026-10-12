@@ -16,10 +16,6 @@
       },
       "paragraphs": [
         {
-          "en": "His original offense was stealing bread for his sister’s hungry family; attempted escapes extended five years of punishment to nineteen. Bishop Myriel’s response to the theft of his silver offers a different judgment of the same man. Soon afterward, Valjean keeps a coin that rolls from Petit-Gervais’s hand and drives the child away. His horror at what he has done comes only after the boy has gone; the bishop’s gift has not brought an effortless change.",
-          "he": "העבירה שבגללה נאסר הייתה גנבת לחם למשפחת אחותו הרעבה; ניסיונות בריחה האריכו עונש של חמש שנים לתשע־עשרה. תגובתו של הבישוף מיריאל לגנבת כלי הכסף שלו מציעה שיפוט אחר של אותו אדם. זמן קצר אחר כך ולז׳אן משאיר ברשותו מטבע שהתגלגל מידו של פטי־ז׳רווה ומגרש את הילד. הזעזוע ממה שעשה מגיע רק לאחר שהילד נעלם; מתנת הבישוף לא חוללה בו שינוי קל ומיידי."
-        },
-        {
           "he": "כבעל המפעל וכראש העיר מדלן, הוא מספק עבודה אך אינו מצליח להגן על כל מי שחי בתוך המערכת שבניהולו. הידרדרותה של פנטין חושפת את הגבול הזה. משפטו של שאנמתייה מאלץ אותו לבחור בין שמירת חייו הציבוריים המועילים לבין הנחתו של אדם חף מפשע לשאת את זהותו. בחלק הראשון, בספר השביעי, בפרק י״א, הוא מזדהה בבית המשפט ומוותר על ההגנה הזאת.",
           "en": "As the manufacturer and mayor Madeleine, he provides employment but cannot protect everyone within the system he runs. Fantine’s ruin exposes that limit. The Champmathieu trial then forces him to choose between preserving his useful public life and letting an innocent man bear his identity. In Part I, Book VII, Chapter XI, he identifies himself before the court and gives up that protection."
         },
@@ -160,6 +156,160 @@
           "ולז׳אן",
           "ולז'אן"
         ]
+      },
+      "novelAdds": {
+        "title": {
+          "en": "What the novel adds",
+          "he": "מה הספר מוסיף"
+        },
+        "paragraphs": [
+          {
+            "text": {
+              "en": "His original offense was stealing bread for his sister’s hungry family; attempted escapes extended five years of punishment to nineteen. Bishop Myriel’s response to the theft of his silver offers a different judgment of the same man. Soon afterward, Valjean keeps a coin that rolls from Petit-Gervais’s hand and drives the child away. His horror at what he has done comes only after the boy has gone; the bishop’s gift has not brought an effortless change.",
+              "he": "העבירה שבגללה נאסר הייתה גנבת לחם למשפחת אחותו הרעבה; ניסיונות בריחה האריכו עונש של חמש שנים לתשע־עשרה. תגובתו של הבישוף מיריאל לגנבת כלי הכסף שלו מציעה שיפוט אחר של אותו אדם. זמן קצר אחר כך ולז׳אן משאיר ברשותו מטבע שהתגלגל מידו של פטי־ז׳רווה ומגרש את הילד. הזעזוע ממה שעשה מגיע רק לאחר שהילד נעלם; מתנת הבישוף לא חוללה בו שינוי קל ומיידי."
+            },
+            "referenceChapterIds": [
+              "p1-b2-c6",
+              "p1-b2-c12",
+              "p1-b2-c13"
+            ]
+          },
+          {
+            "text": {
+              "en": "The long escape into Petit-Picpus also gives Valjean a chance to receive the care he has offered someone else. Fauchelevent, the man he rescued from beneath the cart, is now the convent’s gardener and hides him and Cosette. To become an accepted resident, Valjean must first get outside and return through the proper entrance. He leaves concealed in a coffin, loses consciousness as earth blocks a breathing hole, and is rescued by Fauchelevent. He can then enter as the gardener’s brother, Ultime Fauchelevent, while Cosette becomes a pupil. This strange mixture of suspense, institutional rules and ordinary gratitude makes their years of refuge depend on another person’s ingenuity. Valjean’s strength is no longer enough: the man he once saved must save him in return.",
+              "he": "הבריחה הארוכה אל פטי־פיקפוס מעניקה לוולז׳אן גם הזדמנות לקבל את העזרה שהעניק לאחר. פושלוון, האיש שחילץ מתחת לעגלה, הוא כעת גנן המנזר, והוא מסתיר את ולז׳אן ואת קוזט. כדי להתקבל כדייר מן המניין, ולז׳אן חייב תחילה לצאת ולשוב דרך הכניסה הרשמית. הוא יוצא חבוי בארון מתים, מאבד את הכרתו כשעפר סותם חור נשימה וניצל בידי פושלוון. כעת הוא יכול להיכנס כאחיו של הגנן, אולטים פושלוון, וקוזט מתקבלת כתלמידה. השילוב המוזר של מתח, כללי מוסד והכרת טובה יומיומית תולה את שנות המקלט שלהם בתושייתו של אדם אחר. כוחו של ולז׳אן לבדו כבר אינו מספיק: האיש שהציל צריך כעת להציל אותו."
+            },
+            "referenceChapterIds": [
+              "p2-b5-c9",
+              "p2-b8-c4",
+              "p2-b8-c6",
+              "p2-b8-c7",
+              "p2-b8-c8"
+            ]
+          }
+        ],
+        "references": [
+          {
+            "chapterId": "p1-b2-c6",
+            "part": 1,
+            "book": 2,
+            "chapter": 6,
+            "label": {
+              "en": "Hugo · Part 1, Book 2, Chapter 6",
+              "he": "הוגו · חלק 1, ספר 2, פרק 6"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b2-c6",
+              "he": "/he/novel/?focus=chapter:p1-b2-c6"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0020"
+          },
+          {
+            "chapterId": "p1-b2-c12",
+            "part": 1,
+            "book": 2,
+            "chapter": 12,
+            "label": {
+              "en": "Hugo · Part 1, Book 2, Chapter 12",
+              "he": "הוגו · חלק 1, ספר 2, פרק 12"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b2-c12",
+              "he": "/he/novel/?focus=chapter:p1-b2-c12"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0026"
+          },
+          {
+            "chapterId": "p1-b2-c13",
+            "part": 1,
+            "book": 2,
+            "chapter": 13,
+            "label": {
+              "en": "Hugo · Part 1, Book 2, Chapter 13",
+              "he": "הוגו · חלק 1, ספר 2, פרק 13"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b2-c13",
+              "he": "/he/novel/?focus=chapter:p1-b2-c13"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0027"
+          },
+          {
+            "chapterId": "p2-b5-c9",
+            "part": 2,
+            "book": 5,
+            "chapter": 9,
+            "label": {
+              "en": "Hugo · Part 2, Book 5, Chapter 9",
+              "he": "הוגו · חלק 2, ספר 5, פרק 9"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p2-b5-c9",
+              "he": "/he/novel/?focus=chapter:p2-b5-c9"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0117"
+          },
+          {
+            "chapterId": "p2-b8-c4",
+            "part": 2,
+            "book": 8,
+            "chapter": 4,
+            "label": {
+              "en": "Hugo · Part 2, Book 8, Chapter 4",
+              "he": "הוגו · חלק 2, ספר 8, פרק 4"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p2-b8-c4",
+              "he": "/he/novel/?focus=chapter:p2-b8-c4"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0141"
+          },
+          {
+            "chapterId": "p2-b8-c6",
+            "part": 2,
+            "book": 8,
+            "chapter": 6,
+            "label": {
+              "en": "Hugo · Part 2, Book 8, Chapter 6",
+              "he": "הוגו · חלק 2, ספר 8, פרק 6"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p2-b8-c6",
+              "he": "/he/novel/?focus=chapter:p2-b8-c6"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0143"
+          },
+          {
+            "chapterId": "p2-b8-c7",
+            "part": 2,
+            "book": 8,
+            "chapter": 7,
+            "label": {
+              "en": "Hugo · Part 2, Book 8, Chapter 7",
+              "he": "הוגו · חלק 2, ספר 8, פרק 7"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p2-b8-c7",
+              "he": "/he/novel/?focus=chapter:p2-b8-c7"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0144"
+          },
+          {
+            "chapterId": "p2-b8-c8",
+            "part": 2,
+            "book": 8,
+            "chapter": 8,
+            "label": {
+              "en": "Hugo · Part 2, Book 8, Chapter 8",
+              "he": "הוגו · חלק 2, ספר 8, פרק 8"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p2-b8-c8",
+              "he": "/he/novel/?focus=chapter:p2-b8-c8"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0145"
+          }
+        ]
       }
     },
     {
@@ -177,10 +327,6 @@
         "en": "Javert is a police inspector whose sense of identity rests on service, obedience and the authority of the law. In the novel he enters the action in Montreuil-sur-Mer, where the prosperous mayor attracts his scrutiny. He is disciplined and personally incorruptible, but his judgments allow little uncertainty: social respectability and criminality appear to him as opposing conditions rather than circumstances that can change."
       },
       "paragraphs": [
-        {
-          "en": "Hugo roots that rigidity in an uneasy social origin: Javert was born in prison to parents associated with the world he later polices. He chooses authority as an escape from exclusion. He applies its severity to himself, too: when he believes he has wrongly accused Madeleine, he asks to be dismissed from the police.",
-          "he": "הוגו קושר את הנוקשות הזאת למוצא חברתי טעון: ז׳אבר נולד בכלא להורים הקשורים לעולם שעליו יופקד בהמשך. הוא בוחר בסמכות כדרך לצאת מן השוליים. הוא מחיל את חומרתה גם על עצמו: כשהוא מאמין שהאשים את מדלן לשווא, הוא מבקש שיפטרו אותו מן המשטרה."
-        },
         {
           "en": "In the street incident involving Fantine, Javert takes the respectable man’s side and orders her imprisonment. Madeleine intervenes to have her released, disputing both Javert’s account and his judgment. The disagreement concerns a particular woman’s freedom before it becomes a larger conflict between the two men. At the barricade, Gavroche exposes Javert as a police agent, and the inspector becomes the prisoner of those he came to observe.",
           "he": "בתקרית הרחוב עם פנטין, ז׳אבר מצדד בגבר המכובד ומורה לאסור אותה. מדלן מתערב כדי לשחררה וחולק הן על תיאורו של ז׳אבר והן על שיפוטו. המחלוקת נוגעת לחירותה של אישה מסוימת עוד לפני שהיא נעשית עימות רחב יותר בין שני הגברים. במתרס גברוש חושף את ז׳אבר כאיש משטרה, והמפקח נעשה לשבוי של האנשים שבא לעקוב אחריהם."
@@ -276,6 +422,80 @@
           "ז׳אבר",
           "ז'אבר"
         ]
+      },
+      "novelAdds": {
+        "title": {
+          "en": "What the novel adds",
+          "he": "מה הספר מוסיף"
+        },
+        "paragraphs": [
+          {
+            "text": {
+              "en": "Hugo roots that rigidity in an uneasy social origin: Javert was born in prison to parents associated with the world he later polices. He chooses authority as an escape from exclusion. He applies its severity to himself, too: when he believes he has wrongly accused Madeleine, he asks to be dismissed from the police.",
+              "he": "הוגו קושר את הנוקשות הזאת למוצא חברתי טעון: ז׳אבר נולד בכלא להורים הקשורים לעולם שעליו יופקד בהמשך. הוא בוחר בסמכות כדרך לצאת מן השוליים. הוא מחיל את חומרתה גם על עצמו: כשהוא מאמין שהאשים את מדלן לשווא, הוא מבקש שיפטרו אותו מן המשטרה."
+            },
+            "referenceChapterIds": [
+              "p1-b5-c5",
+              "p1-b6-c2"
+            ]
+          },
+          {
+            "text": {
+              "en": "Hugo gives Javert one last piece of police work before his death. At the Place du Châtelet station he writes and signs a memorandum objecting to prisoners being searched barefoot on cold flagstones, to money demanded for calling their names, and to unfair deductions from their weaving wages. The same document also asks for tighter surveillance and stricter administrative discipline. It is therefore no simple declaration that he has become a reformer: concern about prisoners, institutional economy and his old professional habits remain entangled. The novel lets his mind continue working through rules even as his certainty about justice collapses. His final written response to a moral crisis is still an official report.",
+              "he": "לפני מותו הוגו נותן לז׳אבר עוד משימה משטרתית אחת. בתחנה שבכיכר שאטלה הוא כותב וחותם על תזכיר: הוא מתנגד לחיפוש שבו אסירים עומדים יחפים על אבנים קרות, לתשלום שנגבה תמורת קריאה בשמותיהם ולניכויים בלתי הוגנים משכר האריגה שלהם. אותו מסמך מבקש גם להגביר את הפיקוח ולהקפיד על המשמעת המנהלית. אין כאן הכרזה פשוטה על הפיכתו למתקן חברתי: הדאגה לאסירים, החיסכון למוסד והרגליו המקצועיים עדיין כרוכים זה בזה. הרומן מאפשר למחשבתו להמשיך לפעול באמצעות כללים גם כאשר ביטחונו בצדק קורס. תגובתו הכתובה האחרונה למשבר מוסרי עודנה דוח רשמי."
+            },
+            "referenceChapterIds": [
+              "p5-b4-c1"
+            ]
+          }
+        ],
+        "references": [
+          {
+            "chapterId": "p1-b5-c5",
+            "part": 1,
+            "book": 5,
+            "chapter": 5,
+            "label": {
+              "en": "Hugo · Part 1, Book 5, Chapter 5",
+              "he": "הוגו · חלק 1, ספר 5, פרק 5"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b5-c5",
+              "he": "/he/novel/?focus=chapter:p1-b5-c5"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0044"
+          },
+          {
+            "chapterId": "p1-b6-c2",
+            "part": 1,
+            "book": 6,
+            "chapter": 2,
+            "label": {
+              "en": "Hugo · Part 1, Book 6, Chapter 2",
+              "he": "הוגו · חלק 1, ספר 6, פרק 2"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b6-c2",
+              "he": "/he/novel/?focus=chapter:p1-b6-c2"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0054"
+          },
+          {
+            "chapterId": "p5-b4-c1",
+            "part": 5,
+            "book": 4,
+            "chapter": 1,
+            "label": {
+              "en": "Hugo · Part 5, Book 4, Chapter 1",
+              "he": "הוגו · חלק 5, ספר 4, פרק 1"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p5-b4-c1",
+              "he": "/he/novel/?focus=chapter:p5-b4-c1"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0341"
+          }
+        ]
       }
     },
     {
@@ -296,10 +516,6 @@
         {
           "he": "תולומייס נוטש אותה ואת בתם, קוזט. בחיפושיה אחר עבודה פנטין משאירה את הילדה אצל בני הזוג תנרדייה, לאחר שהיא מפרשת את חיבתה של גברת תנרדייה לבנותיה כהוכחה לטוב לב כללי. התשלומים בעבור הטיפול נעשים אמצעי סחיטה. מרחוק אין היא יכולה לבחון את היחס לילדה, ותלותה בכותב מכתבים מוסיפה פגיעוּת להסדר שנועד להגן על קוזט.",
           "en": "Tholomyès abandons her and their daughter, Cosette. Seeking employment, Fantine leaves the child with the Thénardiers after mistaking Madame Thénardier’s tenderness toward her own daughters for evidence of general kindness. Payments for care become a means of extortion. Fantine cannot inspect the child’s treatment from a distance, and her dependence on a letter-writer adds another vulnerability to the arrangements intended to protect Cosette."
-        },
-        {
-          "en": "In the novel, a female superintendent dismisses her from Madeleine’s factory after fellow workers discover her unmarried motherhood; Madeleine himself does not know. Sewing cannot meet mounting demands. Fantine sells her hair and teeth, then turns to prostitution. The Thénardiers’ demands increase as her sewing wages fall and her health deteriorates. Each attempted solution leaves her with fewer resources for the next demand.",
-          "he": "ברומן, מנהלת העבודה מפטרת אותה ממפעלו של מדלן לאחר שעובדות אחרות מגלות שהיא אם לא־נשואה; מדלן עצמו אינו יודע על הפיטורים. עבודת תפירה אינה מספיקה לדרישות הכספיות הגוברות. פנטין מוכרת את שערה ואת שיניה, ולבסוף פונה לזנות. דרישותיהם של בני הזוג תנרדייה גדלות בזמן ששכר התפירה שלה יורד ובריאותה מידרדרת. כל פתרון שהיא מנסה מותיר לה פחות משאבים מול הדרישה הבאה."
         },
         {
           "he": "לאחר שבמטבואה מתגרה בה ברחוב, ז׳אבר מורה לאסור אותה. מדלן מביא לשחרורה ומבטיח עזרה, אך גילוי זהותו מנפץ את תקוותה לשוב ולראות את קוזט; היא מתה במרפאה. ההבטחה שניתנה לה מוסיפה לעצב את אחריותו של ולז׳אן זמן רב לאחר שסיפורה שלה מסתיים. I Dreamed a Dream חוזר לתקוות שאבדו; Fantine’s Death מתמקד בבתה.",
@@ -399,6 +615,82 @@
         "he": [
           "פנטין"
         ]
+      },
+      "novelAdds": {
+        "title": {
+          "en": "What the novel adds",
+          "he": "מה הספר מוסיף"
+        },
+        "paragraphs": [
+          {
+            "text": {
+              "en": "In the novel, a female superintendent dismisses her from Madeleine’s factory after fellow workers discover her unmarried motherhood; Madeleine himself does not know. Sewing cannot meet mounting demands. Fantine sells her hair and teeth, then turns to prostitution. The Thénardiers’ demands increase as her sewing wages fall and her health deteriorates. Each attempted solution leaves her with fewer resources for the next demand.",
+              "he": "ברומן, מנהלת העבודה מפטרת אותה ממפעלו של מדלן לאחר שעובדות אחרות מגלות שהיא אם לא־נשואה; מדלן עצמו אינו יודע על הפיטורים. עבודת תפירה אינה מספיקה לדרישות הכספיות הגוברות. פנטין מוכרת את שערה ואת שיניה, ולבסוף פונה לזנות. דרישותיהם של בני הזוג תנרדייה גדלות בזמן ששכר התפירה שלה יורד ובריאותה מידרדרת. כל פתרון שהיא מנסה מותיר לה פחות משאבים מול הדרישה הבאה."
+            },
+            "referenceChapterIds": [
+              "p1-b5-c8",
+              "p1-b5-c9",
+              "p1-b5-c10"
+            ]
+          },
+          {
+            "text": {
+              "en": "The dismissal has a longer history of surveillance than a single workplace quarrel. Fantine can sign her name but needs a public letter-writer to correspond with the Thénardiers; gossipers get him to disclose her secret, and Madame Victurnien travels to Montfermeil to confirm that the child exists. The superintendent dismisses Fantine in Madeleine’s name and pays her from his charitable fund. Fantine therefore believes the mayor himself has judged her and is too ashamed to appeal. Afterward, the poor neighbor Marguerite teaches her how to stretch food, light and clothing. Beside the respectable people who investigate and punish, Hugo places a woman with almost nothing who offers practical help. That contrast makes the machinery of Fantine’s ruin painfully specific.",
+              "he": "לפיטורים יש היסטוריה של מעקב ורכילות, הרבה מעבר למריבה אחת במקום העבודה. פנטין יודעת לחתום את שמה אך נזקקת לכותב מכתבים כדי להתכתב עם בני הזוג תנרדייה; רכילאים מוציאים ממנו את סודה, וגברת ויקטורניין נוסעת למונפרמיי כדי לוודא שהילדה קיימת. הממונה מפטרת את פנטין בשמו של מדלן ומשלמת לה מתוך קרן הצדקה שלו. לכן פנטין מאמינה שראש העיר עצמו שפט אותה ומתביישת מכדי לפנות אליו. לאחר מכן מלמדת אותה שכנתה הענייה מרגריט כיצד להסתפק בפחות מזון, אור ובגדים. לצד האנשים המכובדים שחוקרים ומענישים, הוגו מציב אישה שכמעט אין לה דבר ובכל זאת מעניקה עזרה מעשית. הניגוד הזה מבהיר בדיוק כיצד נבנית הידרדרותה של פנטין."
+            },
+            "referenceChapterIds": [
+              "p1-b5-c8",
+              "p1-b5-c9"
+            ]
+          }
+        ],
+        "references": [
+          {
+            "chapterId": "p1-b5-c8",
+            "part": 1,
+            "book": 5,
+            "chapter": 8,
+            "label": {
+              "en": "Hugo · Part 1, Book 5, Chapter 8",
+              "he": "הוגו · חלק 1, ספר 5, פרק 8"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b5-c8",
+              "he": "/he/novel/?focus=chapter:p1-b5-c8"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0047"
+          },
+          {
+            "chapterId": "p1-b5-c9",
+            "part": 1,
+            "book": 5,
+            "chapter": 9,
+            "label": {
+              "en": "Hugo · Part 1, Book 5, Chapter 9",
+              "he": "הוגו · חלק 1, ספר 5, פרק 9"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b5-c9",
+              "he": "/he/novel/?focus=chapter:p1-b5-c9"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0048"
+          },
+          {
+            "chapterId": "p1-b5-c10",
+            "part": 1,
+            "book": 5,
+            "chapter": 10,
+            "label": {
+              "en": "Hugo · Part 1, Book 5, Chapter 10",
+              "he": "הוגו · חלק 1, ספר 5, פרק 10"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b5-c10",
+              "he": "/he/novel/?focus=chapter:p1-b5-c10"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0049"
+          }
+        ]
       }
     },
     {
@@ -419,10 +711,6 @@
         {
           "he": "בפונדק במונפרמיי בני הזוג תנרדייה משתמשים בכסף שנשלח בעבורה לצורכיהם, ומכריחים אותה לעבוד בזמן שבנותיהם משחקות. השליחות להבאת מים בלילה מפגישה אותה עם ולז׳אן. עזרתו בנשיאת הדלי ומתנת הבובה משמעותיות משום שהן עונות על חסכים מסוימים: עבודה מתישה, פחד מעונש והדרה מהנאות רגילות של ילדות.",
           "en": "At the Montfermeil inn, the Thénardiers turn the money sent for her upkeep to their own purposes and make her work while their daughters play. The nighttime errand for water brings her into contact with Valjean. His help with the bucket and gift of a doll matter because they answer specific forms of deprivation: exhausting labor, fear of punishment and exclusion from ordinary childhood pleasures."
-        },
-        {
-          "he": "ולז׳אן מוציא אותה מן הפונדק ונעשה לאביה במעשי היומיום. המקלט בפטי־פיקפוס מעניק לה לימודים, חברה והגנה, והקשר ביניהם משנה גם אותו. אולם כשהיא גדלה ונעשית לצעירה, סודיותו מותירה חלקים חשובים בתולדותיה בלי הסבר. השינויים בלבושה ובביטחונה, ומשיכתה למריוס, מעידים שחייה מתרחבים מעבר לקשר המוגן שאביה המגדל מקווה לשמר.",
-          "en": "Valjean takes her away and becomes her father in daily practice. Their refuge at Petit-Picpus gives her schooling, companionship and protection, while their attachment also transforms him. As she grows into a young woman, however, his secrecy leaves important parts of her own history unexplained. Her changing clothes, confidence and attraction to Marius mark a life extending beyond the sheltered relationship her guardian hopes to preserve."
         },
         {
           "en": "Her mutual love with Marius develops through observation, a written declaration and meetings in the Rue Plumet garden. Marriage does not initially give her the knowledge needed to understand Valjean’s withdrawal; Marius’s mistaken suspicions help keep them apart. Only after Marius learns that Valjean rescued him do they return together to his bedside. In the musical, Castle on a Cloud imagines safety, while In My Life gives the grown Cosette questions about her past and her father’s secrecy.",
@@ -530,6 +818,96 @@
         "he": [
           "קוזט"
         ]
+      },
+      "novelAdds": {
+        "title": {
+          "en": "What the novel adds",
+          "he": "מה הספר מוסיף"
+        },
+        "paragraphs": [
+          {
+            "text": {
+              "he": "ולז׳אן מוציא אותה מן הפונדק ונעשה לאביה במעשי היומיום. המקלט בפטי־פיקפוס מעניק לה לימודים, חברה והגנה, והקשר ביניהם משנה גם אותו. אולם כשהיא גדלה ונעשית לצעירה, סודיותו מותירה חלקים חשובים בתולדותיה בלי הסבר. השינויים בלבושה ובביטחונה, ומשיכתה למריוס, מעידים שחייה מתרחבים מעבר לקשר המוגן שאביה המגדל מקווה לשמר.",
+              "en": "Valjean takes her away and becomes her father in daily practice. Their refuge at Petit-Picpus gives her schooling, companionship and protection, while their attachment also transforms him. As she grows into a young woman, however, his secrecy leaves important parts of her own history unexplained. Her changing clothes, confidence and attraction to Marius mark a life extending beyond the sheltered relationship her guardian hopes to preserve."
+            },
+            "referenceChapterIds": [
+              "p2-b8-c9",
+              "p4-b3-c5"
+            ]
+          },
+          {
+            "text": {
+              "en": "One encounter makes the cost of Valjean’s secrecy especially clear. Walking together, Cosette and her father see a convoy of chained prisoners. She is terrified and asks whether these figures are still human; at home she says that meeting one close by would frighten her to death. Valjean tries to distract her with public festivities, but she later returns to the question of what the galleys are like. When he confesses his past to Marius, he remembers that scene and fears what the truth would do to her. Cosette has not recognized him or uncovered his history. Her frightened ignorance becomes part of the explanation for his silence, while the reader knows the gulf between the prisoners she fears and the father she loves is artificial.",
+              "he": "מפגש אחד מבהיר במיוחד את מחיר סודיותו של ולז׳אן. בטיול משותף קוזט ואביה רואים שיירת אסירים כבולים. היא נבהלת ושואלת אם הדמויות האלה עודן בני אדם; בבית היא אומרת שמפגש קרוב עם אחד מהם היה מפחיד אותה עד מוות. ולז׳אן מנסה להסיח את דעתה בחגיגות ציבוריות, אך בהמשך היא חוזרת ושואלת על חיי האסירים. כשהוא מתוודה על עברו בפני מריוס, הוא נזכר במראה ההוא וחושש מהשפעת האמת עליה. קוזט לא זיהתה אותו ולא גילתה את עברו. דווקא אי־ידיעתה המבוהלת נעשית חלק מן ההסבר לשתיקתו, בעוד הקורא יודע שהתהום בין האסירים שמהם היא פוחדת לבין האב שהיא אוהבת היא תהום מדומה."
+            },
+            "referenceChapterIds": [
+              "p4-b3-c8",
+              "p5-b7-c1"
+            ]
+          }
+        ],
+        "references": [
+          {
+            "chapterId": "p2-b8-c9",
+            "part": 2,
+            "book": 8,
+            "chapter": 9,
+            "label": {
+              "en": "Hugo · Part 2, Book 8, Chapter 9",
+              "he": "הוגו · חלק 2, ספר 8, פרק 9"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p2-b8-c9",
+              "he": "/he/novel/?focus=chapter:p2-b8-c9"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0146"
+          },
+          {
+            "chapterId": "p4-b3-c5",
+            "part": 4,
+            "book": 3,
+            "chapter": 5,
+            "label": {
+              "en": "Hugo · Part 4, Book 3, Chapter 5",
+              "he": "הוגו · חלק 4, ספר 3, פרק 5"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p4-b3-c5",
+              "he": "/he/novel/?focus=chapter:p4-b3-c5"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0237"
+          },
+          {
+            "chapterId": "p4-b3-c8",
+            "part": 4,
+            "book": 3,
+            "chapter": 8,
+            "label": {
+              "en": "Hugo · Part 4, Book 3, Chapter 8",
+              "he": "הוגו · חלק 4, ספר 3, פרק 8"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p4-b3-c8",
+              "he": "/he/novel/?focus=chapter:p4-b3-c8"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0240"
+          },
+          {
+            "chapterId": "p5-b7-c1",
+            "part": 5,
+            "book": 7,
+            "chapter": 1,
+            "label": {
+              "en": "Hugo · Part 5, Book 7, Chapter 1",
+              "he": "הוגו · חלק 5, ספר 7, פרק 1"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p5-b7-c1",
+              "he": "/he/novel/?focus=chapter:p5-b7-c1"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0354"
+          }
+        ]
       }
     },
     {
@@ -547,10 +925,6 @@
         "he": "מריוס פונמרסי הוא צעיר פריזאי שבני משפחתו וחבריו חלוקים בחריפות על עברה ועל עתידה הפוליטי של צרפת. העוני והאהבה הרומנטית מפגישים אותו עם חיים שחינוכו הכין אותו אליהם מעט מאוד. הוגו מציג את שמו תחילה כדייר עני בבית גורבו, ואז חוזר לילדותו כדי להסביר כיצד הגיע לחיים עצמאיים."
       },
       "paragraphs": [
-        {
-          "he": "מריוס גדל אצל ז׳ילנורמן המלוכני, ובתחילה מקבל את התיאור העוין של אביו הנעדר, הקצין הנפוליאוני ז׳ורז׳ פונמרסי. הגילוי שאביו נהג לצפות בו בסתר בכנסייה מערער את התיאור הזה. הוא מאמץ את זכר אביו ואת נאמנותו לקיסרות, רב עם סבו ועוזב את הבית. גם הכרת התודה שלו לתנרדייה נשענת על סיפור חלקי: הצלתו כביכול של האב בווטרלו.",
-          "en": "Raised by the royalist Gillenormand, Marius initially accepts a hostile account of his absent father, the Napoleonic officer Georges Pontmercy. Learning that his father secretly watched him at church overturns that account. He embraces his father’s memory and imperial loyalties, quarrels with his grandfather and leaves home. His gratitude to Thénardier rests on another incomplete story: the supposed rescue of his father at Waterloo."
-        },
         {
           "he": "קורפראק מקרב אותו לחוג ידידי האב״ג, אך הוגו אינו הופך אותו לדובר מובהק של הרפובליקניות שלהם. הגנתו על נפוליאון נתקלת בדרישתו של קומבפר לחירות. עבודות תרגום מפרנסות את עצמאותו הצנועה. המפגש עם קוזט משנה את מוקד תשומת לבו, ועזרתה של אפונין מחברת את תקוותיו הרומנטיות לעוני ולבית העברייני שראה מעבר לקיר.",
           "en": "Courfeyrac brings him into the Friends of the ABC’s circle, but Hugo does not make him an uncomplicated spokesman for their republican politics. His defense of Napoleon meets Combeferre’s demand for liberty. Translation work supports his austere independence. Meeting Cosette redirects his attention, while Éponine’s assistance connects his romantic hopes to the poverty and criminal household he has observed next door."
@@ -663,6 +1037,144 @@
           "מריוס פונמרסי",
           "מריוס"
         ]
+      },
+      "novelAdds": {
+        "title": {
+          "en": "What the novel adds",
+          "he": "מה הספר מוסיף"
+        },
+        "paragraphs": [
+          {
+            "text": {
+              "he": "מריוס גדל אצל ז׳ילנורמן המלוכני, ובתחילה מקבל את התיאור העוין של אביו הנעדר, הקצין הנפוליאוני ז׳ורז׳ פונמרסי. הגילוי שאביו נהג לצפות בו בסתר בכנסייה מערער את התיאור הזה. הוא מאמץ את זכר אביו ואת נאמנותו לקיסרות, רב עם סבו ועוזב את הבית. גם הכרת התודה שלו לתנרדייה נשענת על סיפור חלקי: הצלתו כביכול של האב בווטרלו.",
+              "en": "Raised by the royalist Gillenormand, Marius initially accepts a hostile account of his absent father, the Napoleonic officer Georges Pontmercy. Learning that his father secretly watched him at church overturns that account. He embraces his father’s memory and imperial loyalties, quarrels with his grandfather and leaves home. His gratitude to Thénardier rests on another incomplete story: the supposed rescue of his father at Waterloo."
+            },
+            "referenceChapterIds": [
+              "p3-b3-c4",
+              "p3-b3-c5",
+              "p3-b3-c8",
+              "p2-b1-c19"
+            ]
+          },
+          {
+            "text": {
+              "en": "The debt to Thénardier becomes a practical moral trap long before the final revelation. Watching the Jondrette household prepare an ambush, Marius seeks help from Javert, who gives him pistols and tells him to fire a signal when intervention is needed. Then he hears Jondrette identify himself as Thénardier. Protecting the captive now seems to require betraying the man his father ordered him to help. Marius eventually throws in an old note in Éponine’s handwriting warning that the police are there, hoping to stop the crime without condemning the criminal. Javert enters on his own initiative. The episode shows how sincere loyalty, built on a false account of the past, can delay urgently needed action in the present.",
+              "he": "החוב לתנרדייה נעשה מלכודת מוסרית מעשית זמן רב לפני הגילוי האחרון. מריוס צופה בבני בית ז׳ונדרט מכינים מארב ופונה לעזרת ז׳אבר, שנותן לו אקדחים ומורה לו לירות לאות כאשר תידרש התערבות. אז הוא שומע את ז׳ונדרט מזדהה כתנרדייה. הגנה על השבוי נראית כעת כבגידה באיש שאביו ציווה עליו לעזור לו. לבסוף מריוס משליך פנימה פתק ישן בכתב ידה של אפונין המזהיר שהמשטרה נמצאת במקום, בתקווה לעצור את הפשע בלי להסגיר את הפושע. ז׳אבר נכנס ביוזמתו. הפרשה מראה כיצד נאמנות כנה, הנשענת על תיאור מוטעה של העבר, עלולה לעכב פעולה דחופה בהווה."
+            },
+            "referenceChapterIds": [
+              "p3-b8-c14",
+              "p3-b8-c20",
+              "p3-b8-c21"
+            ]
+          }
+        ],
+        "references": [
+          {
+            "chapterId": "p3-b3-c4",
+            "part": 3,
+            "book": 3,
+            "chapter": 4,
+            "label": {
+              "en": "Hugo · Part 3, Book 3, Chapter 4",
+              "he": "הוגו · חלק 3, ספר 3, פרק 4"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p3-b3-c4",
+              "he": "/he/novel/?focus=chapter:p3-b3-c4"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0171"
+          },
+          {
+            "chapterId": "p3-b3-c5",
+            "part": 3,
+            "book": 3,
+            "chapter": 5,
+            "label": {
+              "en": "Hugo · Part 3, Book 3, Chapter 5",
+              "he": "הוגו · חלק 3, ספר 3, פרק 5"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p3-b3-c5",
+              "he": "/he/novel/?focus=chapter:p3-b3-c5"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0172"
+          },
+          {
+            "chapterId": "p3-b3-c8",
+            "part": 3,
+            "book": 3,
+            "chapter": 8,
+            "label": {
+              "en": "Hugo · Part 3, Book 3, Chapter 8",
+              "he": "הוגו · חלק 3, ספר 3, פרק 8"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p3-b3-c8",
+              "he": "/he/novel/?focus=chapter:p3-b3-c8"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0175"
+          },
+          {
+            "chapterId": "p2-b1-c19",
+            "part": 2,
+            "book": 1,
+            "chapter": 19,
+            "label": {
+              "en": "Hugo · Part 2, Book 1, Chapter 19",
+              "he": "הוגו · חלק 2, ספר 1, פרק 19"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p2-b1-c19",
+              "he": "/he/novel/?focus=chapter:p2-b1-c19"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0089"
+          },
+          {
+            "chapterId": "p3-b8-c14",
+            "part": 3,
+            "book": 8,
+            "chapter": 14,
+            "label": {
+              "en": "Hugo · Part 3, Book 8, Chapter 14",
+              "he": "הוגו · חלק 3, ספר 8, פרק 14"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p3-b8-c14",
+              "he": "/he/novel/?focus=chapter:p3-b8-c14"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0214"
+          },
+          {
+            "chapterId": "p3-b8-c20",
+            "part": 3,
+            "book": 8,
+            "chapter": 20,
+            "label": {
+              "en": "Hugo · Part 3, Book 8, Chapter 20",
+              "he": "הוגו · חלק 3, ספר 8, פרק 20"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p3-b8-c20",
+              "he": "/he/novel/?focus=chapter:p3-b8-c20"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0220"
+          },
+          {
+            "chapterId": "p3-b8-c21",
+            "part": 3,
+            "book": 8,
+            "chapter": 21,
+            "label": {
+              "en": "Hugo · Part 3, Book 8, Chapter 21",
+              "he": "הוגו · חלק 3, ספר 8, פרק 21"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p3-b8-c21",
+              "he": "/he/novel/?focus=chapter:p3-b8-c21"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0221"
+          }
+        ]
       }
     },
     {
@@ -683,10 +1195,6 @@
         {
           "he": "הילדה המועדפת בפונדק חוזרת כמתבגרת ענייה בפריז, הנושאת מכתבי בקשת נדבות בעבור אביה. שיחתה הממושכת הראשונה עם מריוס משלבת התרברבות, רעב וגאווה ביכולתה לקרוא ולכתוב. הוגו מציג יחד את תבונתה ואת בריאותה הפגועה. משיכתה לשכן שמתייחס אליה בטוב לב מעניקה למפגש משמעות החורגת מתוכניותיה של משפחתה.",
           "en": "The favored child of the inn returns as an impoverished adolescent in Paris, carrying begging letters for her father. Her first extended conversation with Marius combines bravado, hunger and pride in being able to read and write. Hugo allows her intelligence and damaged health to appear together. Her attraction to a neighbor who treats her kindly gives that meeting significance beyond the family’s schemes."
-        },
-        {
-          "he": "היא מוצאת למריוס את כתובתה של קוזט, ובהמשך ניצבת מול חבורתו של אביה בשער הבית ברחוב פלומה. המעשים האלה מסייעים לקשר שהיא נשארת מחוצה לו. עם זאת, הרומן שומר על סתירה מטרידה: היא מסתירה את מכתבה של קוזט ומושכת את מריוס אל המתרס, מתוך רצון שימותו יחד. התנגדותה לאלימות המשפחתית אינה מוחקת את הרכושנות שבתשוקתה שלה.",
-          "en": "She finds Cosette’s address for Marius and later stands against her father’s gang at the Rue Plumet gate. These acts help a relationship that excludes her. Yet the novel preserves a troubling contradiction: she withholds Cosette’s letter and draws Marius toward the barricade, wanting them to die together. Her resistance to family violence does not erase the possessiveness of her own desire."
         },
         {
           "en": "At the barricade she intercepts a shot meant for Marius and is mortally wounded. In Part IV, Book XIV, Chapter VI, she gives him the withheld letter, admits that she had wanted them to die together, and finally tells him she loves him. The confession leaves her jealousy visible alongside the act that saved him. In the musical, On My Own foregrounds her unreturned love; A Little Fall of Rain accompanies her death.",
@@ -772,6 +1280,97 @@
         "he": [
           "אפונין"
         ]
+      },
+      "novelAdds": {
+        "title": {
+          "en": "What the novel adds",
+          "he": "מה הספר מוסיף"
+        },
+        "paragraphs": [
+          {
+            "text": {
+              "he": "היא מוצאת למריוס את כתובתה של קוזט, ובהמשך ניצבת מול חבורתו של אביה בשער הבית ברחוב פלומה. המעשים האלה מסייעים לקשר שהיא נשארת מחוצה לו. עם זאת, הרומן שומר על סתירה מטרידה: היא מסתירה את מכתבה של קוזט ומושכת את מריוס אל המתרס, מתוך רצון שימותו יחד. התנגדותה לאלימות המשפחתית אינה מוחקת את הרכושנות שבתשוקתה שלה.",
+              "en": "She finds Cosette’s address for Marius and later stands against her father’s gang at the Rue Plumet gate. These acts help a relationship that excludes her. Yet the novel preserves a troubling contradiction: she withholds Cosette’s letter and draws Marius toward the barricade, wanting them to die together. Her resistance to family violence does not erase the possessiveness of her own desire."
+            },
+            "referenceChapterIds": [
+              "p4-b2-c4",
+              "p4-b8-c4",
+              "p4-b14-c6"
+            ]
+          },
+          {
+            "text": {
+              "en": "A quieter episode complicates any attempt to reduce Éponine to either a criminal’s daughter or a suffering lover. The elderly botanist Mabeuf is too exhausted to draw water for his failing garden. A ragged girl appears, lifts bucket after bucket and waters it for him. When he calls her an angel, she answers that she is the devil. Her request afterward is concrete: she wants to know where to find Marius. The scene gives her useful strength and a capacity to relieve someone else’s distress, without pretending her longing has disappeared. Mabeuf’s grateful description and her harsh self-description both fail to contain her. Hugo lets an act of care and a personal motive occupy the same small encounter.",
+              "he": "אפיזודה שקטה יותר מסבכת כל ניסיון לצמצם את אפונין לבתו של פושע או לאוהבת סובלת. הבוטנאי הקשיש מאבף מותש מכדי לשאוב מים לגינתו המתייבשת. נערה לבושה סחבות מופיעה, מעלה דלי אחר דלי ומשקה אותה בשבילו. כשהוא מכנה אותה מלאך, היא משיבה שהיא השטן. בקשתה לאחר מכן מעשית: היא רוצה לדעת היכן למצוא את מריוס. הסצנה מעניקה לה כוח מועיל ויכולת להקל על מצוקתו של אדם אחר, בלי להעמיד פנים שכמיהתה נעלמה. לא תיאורו מלא התודה של מאבף ולא תיאורה העצמי הקשה ממצים אותה. הוגו מאפשר למעשה של דאגה לזולת ולמניע אישי להתקיים בתוך אותו מפגש קטן."
+            },
+            "referenceChapterIds": [
+              "p4-b2-c3",
+              "p4-b2-c4"
+            ]
+          }
+        ],
+        "references": [
+          {
+            "chapterId": "p4-b2-c4",
+            "part": 4,
+            "book": 2,
+            "chapter": 4,
+            "label": {
+              "en": "Hugo · Part 4, Book 2, Chapter 4",
+              "he": "הוגו · חלק 4, ספר 2, פרק 4"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p4-b2-c4",
+              "he": "/he/novel/?focus=chapter:p4-b2-c4"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0232"
+          },
+          {
+            "chapterId": "p4-b8-c4",
+            "part": 4,
+            "book": 8,
+            "chapter": 4,
+            "label": {
+              "en": "Hugo · Part 4, Book 8, Chapter 4",
+              "he": "הוגו · חלק 4, ספר 8, פרק 4"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p4-b8-c4",
+              "he": "/he/novel/?focus=chapter:p4-b8-c4"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0259"
+          },
+          {
+            "chapterId": "p4-b14-c6",
+            "part": 4,
+            "book": 14,
+            "chapter": 6,
+            "label": {
+              "en": "Hugo · Part 4, Book 14, Chapter 6",
+              "he": "הוגו · חלק 4, ספר 14, פרק 6"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p4-b14-c6",
+              "he": "/he/novel/?focus=chapter:p4-b14-c6"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0293"
+          },
+          {
+            "chapterId": "p4-b2-c3",
+            "part": 4,
+            "book": 2,
+            "chapter": 3,
+            "label": {
+              "en": "Hugo · Part 4, Book 2, Chapter 3",
+              "he": "הוגו · חלק 4, ספר 2, פרק 3"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p4-b2-c3",
+              "he": "/he/novel/?focus=chapter:p4-b2-c3"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0231"
+          }
+        ]
       }
     },
     {
@@ -792,10 +1391,6 @@
         {
           "en": "His relationship with Grantaire exposes a different kind of attachment. Grantaire doubts the group’s ideals yet admires the conviction Enjolras embodies, while Enjolras finds his skepticism and drinking exasperating. Marius’s admiration for Napoleon also meets resistance: Enjolras identifies his own allegiance with the Republic.",
           "he": "יחסיו עם גרנטֵר חושפים סוג אחר של קשר. גרנטֵר מטיל ספק באידיאלים של החבורה, אך מעריץ את האמונה שאנז׳ולרא מגלם; אנז׳ולרא, מצדו, מתקשה לשאת את ספקנותו ואת שתייתו. גם הערצתו של מריוס לנפוליאון נתקלת בהתנגדות: אנז׳ולרא מזהה את נאמנותו שלו עם הרפובליקה."
-        },
-        {
-          "he": "בהתקוממות של יוני 1832 הוא מארגן את המתרס ברחוב שאנווררי ודורש משמעת. לאחר שלה־קאבוק הורג שוער לא־חמוש, אנז׳ולרא מוציא אותו להורג ומכיר בזוועת המעשה. חזונו המאוחר יותר, הכולל חינוך, שוויון ואחווה בין עמים, מחדד את הסתירה: הוא פועל באמצעות אלימות בהווה למען עתיד שבו האלימות לא תשלוט עוד ביחסים בין בני אדם.",
-          "en": "During the June 1832 uprising, he organizes the Rue de la Chanvrerie barricade and insists on discipline. After Le Cabuc kills an unarmed porter, Enjolras executes him and acknowledges the horror of doing so. His subsequent vision of education, equality and international fellowship sharpens the contradiction: he fights through present violence for a future in which violence should no longer govern human relations."
         },
         {
           "en": "When the barricade falls, he accepts execution in the upper room of the wine-shop. Grantaire wakes, declares himself a republican and asks to stand beside him; Enjolras answers with a smile and a handclasp. The man whose disbelief he had rejected is beside him when they are shot. In the musical, Red and Black sets his urgency against Marius’s absorption in love; Do You Hear the People Sing? turns the call to action into a chorus.",
@@ -871,6 +1466,112 @@
         "he": [
           "אנז׳ולרא"
         ]
+      },
+      "novelAdds": {
+        "title": {
+          "en": "What the novel adds",
+          "he": "מה הספר מוסיף"
+        },
+        "paragraphs": [
+          {
+            "text": {
+              "he": "בהתקוממות של יוני 1832 הוא מארגן את המתרס ברחוב שאנווררי ודורש משמעת. לאחר שלה־קאבוק הורג שוער לא־חמוש, אנז׳ולרא מוציא אותו להורג ומכיר בזוועת המעשה. חזונו המאוחר יותר, הכולל חינוך, שוויון ואחווה בין עמים, מחדד את הסתירה: הוא פועל באמצעות אלימות בהווה למען עתיד שבו האלימות לא תשלוט עוד ביחסים בין בני אדם.",
+              "en": "During the June 1832 uprising, he organizes the Rue de la Chanvrerie barricade and insists on discipline. After Le Cabuc kills an unarmed porter, Enjolras executes him and acknowledges the horror of doing so. His subsequent vision of education, equality and international fellowship sharpens the contradiction: he fights through present violence for a future in which violence should no longer govern human relations."
+            },
+            "referenceChapterIds": [
+              "p4-b12-c8",
+              "p5-b1-c5"
+            ]
+          },
+          {
+            "text": {
+              "en": "His leadership also includes an effort to save people who can still be sent away. With the barricade facing defeat, he makes clear that useless deaths add nothing to courage. Combeferre develops the appeal on behalf of wives, children and dependent mothers, and the defenders select five men to leave. Enjolras has set aside four National Guard uniforms taken from dead guardsmen as disguises, leaving one man without a way out. Valjean arrives wearing a uniform and silently contributes his own coat, making the fifth departure possible. The exchange gives Enjolras’s discipline a protective dimension: commitment to the uprising does not release the men from responsibilities beyond it, and accepting survival can itself require persuasion.",
+              "he": "מנהיגותו כוללת גם ניסיון להציל את מי שעדיין אפשר לשלוח החוצה. כשהתבוסה במתרס מתקרבת, הוא מבהיר שמוות מיותר אינו מוסיף דבר לאומץ. קומבפר מרחיב את הפנייה בשם נשים, ילדים ואימהות התלויות בלוחמים, והמגינים בוחרים חמישה אנשים שיעזבו. אנז׳ולרא שמר ארבע מערכות מדים של המשמר הלאומי שנלקחו מאנשי המשמר שנהרגו, כדי שישמשו תחפושות, ולכן לאחד החמישה עדיין אין דרך לצאת. ולז׳אן מגיע במדים ומוסר בשתיקה את מעילו שלו, וכך מאפשר גם לאיש החמישי לעזוב. המהלך מעניק למשמעת של אנז׳ולרא צד מגונן: המחויבות להתקוממות אינה מבטלת אחריות לחיים שמחוצה לה, ולעיתים גם ההסכמה להינצל דורשת שכנוע."
+            },
+            "referenceChapterIds": [
+              "p5-b1-c2",
+              "p5-b1-c4",
+              "p5-b1-c6"
+            ]
+          }
+        ],
+        "references": [
+          {
+            "chapterId": "p4-b12-c8",
+            "part": 4,
+            "book": 12,
+            "chapter": 8,
+            "label": {
+              "en": "Hugo · Part 4, Book 12, Chapter 8",
+              "he": "הוגו · חלק 4, ספר 12, פרק 8"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p4-b12-c8",
+              "he": "/he/novel/?focus=chapter:p4-b12-c8"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0284"
+          },
+          {
+            "chapterId": "p5-b1-c5",
+            "part": 5,
+            "book": 1,
+            "chapter": 5,
+            "label": {
+              "en": "Hugo · Part 5, Book 1, Chapter 5",
+              "he": "הוגו · חלק 5, ספר 1, פרק 5"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p5-b1-c5",
+              "he": "/he/novel/?focus=chapter:p5-b1-c5"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0303"
+          },
+          {
+            "chapterId": "p5-b1-c2",
+            "part": 5,
+            "book": 1,
+            "chapter": 2,
+            "label": {
+              "en": "Hugo · Part 5, Book 1, Chapter 2",
+              "he": "הוגו · חלק 5, ספר 1, פרק 2"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p5-b1-c2",
+              "he": "/he/novel/?focus=chapter:p5-b1-c2"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0300"
+          },
+          {
+            "chapterId": "p5-b1-c4",
+            "part": 5,
+            "book": 1,
+            "chapter": 4,
+            "label": {
+              "en": "Hugo · Part 5, Book 1, Chapter 4",
+              "he": "הוגו · חלק 5, ספר 1, פרק 4"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p5-b1-c4",
+              "he": "/he/novel/?focus=chapter:p5-b1-c4"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0302"
+          },
+          {
+            "chapterId": "p5-b1-c6",
+            "part": 5,
+            "book": 1,
+            "chapter": 6,
+            "label": {
+              "en": "Hugo · Part 5, Book 1, Chapter 6",
+              "he": "הוגו · חלק 5, ספר 1, פרק 6"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p5-b1-c6",
+              "he": "/he/novel/?focus=chapter:p5-b1-c6"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0304"
+          }
+        ]
       }
     },
     {
@@ -888,10 +1589,6 @@
         "he": "גברוש הוא ילד רחוב פריזאי שנאלץ לדאוג במידה רבה לעצמו. הוא חד־לשון ונמצא תמיד בתנועה, ומרגיש שייך למרחבים הציבוריים של העיר יותר מאשר לבית משפחתי. הבדיחות וההתרברבויות שלו עשויות ליצור רושם שהוא מסתדר בכוחות עצמו, אף שמציאת מזון, מחסה וחום נשארת משימה יומיומית."
       },
       "paragraphs": [
-        {
-          "en": "He is a son of the Thénardiers, neglected by parents whose affection is unevenly distributed among their children. When he encounters two lost boys, he shares bread and shelters them inside the hollow elephant monument at the Bastille. They are his younger brothers, although none of the three knows it. Gavroche takes care of the children his own parents have abandoned.",
-          "he": "הוא בנם של בני הזוג תנרדייה, מוזנח בידי הורים שחיבתם אינה מתחלקת בשווה בין ילדיהם. כשהוא פוגש שני ילדים שאבדו, הוא חולק איתם לחם ומלין אותם בתוך פסל הפיל החלול בבסטיליה. אלה אחיו הצעירים, אך איש מן השלושה אינו יודע זאת. גברוש דואג לילדים שהוריו שלו נטשו."
-        },
         {
           "he": "היכרותו עם הרחוב מועילה גם במתרס, שם הוא מזהה את ז׳אבר מבעד לתחפושתו. מריוס שולח אותו עם מכתב לקוזט בתקווה להרחיקו מהסכנה, אך גברוש מוסר אותו לוולז׳אן וחוזר. תנועתו מחברת אנשים ומקומות שהיו מנותקים זה מזה, וניסיונות המבוגרים להגן עליו אינם גוברים על נחישותו להשתתף.",
           "en": "His knowledge of the streets also makes him useful at the barricade, where he recognizes Javert beneath the policeman’s disguise. Marius sends him away with a letter for Cosette, hoping to remove him from danger, but Gavroche delivers it to Valjean and returns. His movements connect otherwise separated people and places, while the adults’ attempts to protect him cannot contain his determination to participate."
@@ -983,6 +1680,96 @@
         "he": [
           "גברוש"
         ]
+      },
+      "novelAdds": {
+        "title": {
+          "en": "What the novel adds",
+          "he": "מה הספר מוסיף"
+        },
+        "paragraphs": [
+          {
+            "text": {
+              "en": "He is a son of the Thénardiers, neglected by parents whose affection is unevenly distributed among their children. When he encounters two lost boys, he shares bread and shelters them inside the hollow elephant monument at the Bastille. They are his younger brothers, although none of the three knows it. Gavroche takes care of the children his own parents have abandoned.",
+              "he": "הוא בנם של בני הזוג תנרדייה, מוזנח בידי הורים שחיבתם אינה מתחלקת בשווה בין ילדיהם. כשהוא פוגש שני ילדים שאבדו, הוא חולק איתם לחם ומלין אותם בתוך פסל הפיל החלול בבסטיליה. אלה אחיו הצעירים, אך איש מן השלושה אינו יודע זאת. גברוש דואג לילדים שהוריו שלו נטשו."
+            },
+            "referenceChapterIds": [
+              "p3-b1-c13",
+              "p4-b6-c1",
+              "p4-b6-c2"
+            ]
+          },
+          {
+            "text": {
+              "en": "The same night brings a harsher test of family ties. Criminals summon Gavroche to help a fugitive stranded above the street, and he recognizes the man as his father before making the dangerous climb. He threads his way up a narrow flue and secures the rope that allows Thénardier to descend. Once safe, his father turns to the prospect of another robbery instead of acknowledging the child who rescued him. Gavroche waits briefly, then leaves to wake the two boys he has sheltered. Only afterward does Babet suggest to Thénardier that the rescuer was his son. The recognition is painfully one-sided: Gavroche knows whom he is saving, while the care that receives no answer from his father is freely given to the younger children.",
+              "he": "אותו לילה מזמן מבחן קשה יותר לקשרי משפחה. פושעים מזעיקים את גברוש לעזור לנמלט שנתקע גבוה מעל הרחוב, והוא מזהה את האיש כאביו עוד לפני הטיפוס המסוכן. הוא מטפס במעבר צר של ארובה ומקבע את החבל שמאפשר לתנרדייה לרדת. לאחר שהגיע למקום מבטחים, אביו פונה לתכנון שוד נוסף במקום להכיר בילד שהציל אותו. גברוש ממתין מעט, ואז הולך להעיר את שני הילדים שהלין. רק אחר כך מציע באבה לתנרדייה שהמציל היה בנו. ההכרה כאן חד־צדדית באופן מכאיב: גברוש יודע את מי הוא מציל, והדאגה שאינה זוכה למענה מאביו ניתנת בידו בנדיבות לילדים הצעירים."
+            },
+            "referenceChapterIds": [
+              "p4-b6-c3"
+            ]
+          }
+        ],
+        "references": [
+          {
+            "chapterId": "p3-b1-c13",
+            "part": 3,
+            "book": 1,
+            "chapter": 13,
+            "label": {
+              "en": "Hugo · Part 3, Book 1, Chapter 13",
+              "he": "הוגו · חלק 3, ספר 1, פרק 13"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p3-b1-c13",
+              "he": "/he/novel/?focus=chapter:p3-b1-c13"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0159"
+          },
+          {
+            "chapterId": "p4-b6-c1",
+            "part": 4,
+            "book": 6,
+            "chapter": 1,
+            "label": {
+              "en": "Hugo · Part 4, Book 6, Chapter 1",
+              "he": "הוגו · חלק 4, ספר 6, פרק 1"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p4-b6-c1",
+              "he": "/he/novel/?focus=chapter:p4-b6-c1"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0249"
+          },
+          {
+            "chapterId": "p4-b6-c2",
+            "part": 4,
+            "book": 6,
+            "chapter": 2,
+            "label": {
+              "en": "Hugo · Part 4, Book 6, Chapter 2",
+              "he": "הוגו · חלק 4, ספר 6, פרק 2"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p4-b6-c2",
+              "he": "/he/novel/?focus=chapter:p4-b6-c2"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0250"
+          },
+          {
+            "chapterId": "p4-b6-c3",
+            "part": 4,
+            "book": 6,
+            "chapter": 3,
+            "label": {
+              "en": "Hugo · Part 4, Book 6, Chapter 3",
+              "he": "הוגו · חלק 4, ספר 6, פרק 3"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p4-b6-c3",
+              "he": "/he/novel/?focus=chapter:p4-b6-c3"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0251"
+          }
+        ]
       }
     },
     {
@@ -1005,12 +1792,8 @@
           "en": "Fantine entrusts Cosette to them and sends payments for her care. They divert the money, invent new needs and make the child work, while Madame Thénardier enforces the household’s inequality through intimidation. When Valjean arrives, Thénardier tries to increase the price of parting with Cosette. Their partnership turns dependency into income: the mother’s distance and the child’s powerlessness are assets to be exploited."
         },
         {
-          "he": "לאחר אובדן הפונדק המשפחה מופיעה בפריז בשם ז׳ונדרט ונקשרת לחבורת גנבים. אמונתו של מריוס שתנרדייה הציל את אביו בווטרלו מסבכת את תגובתו לאלימותם. הוגו כבר הראה את האירוניה: בחיפוש אחר חפצי ערך בשדה הקרב, תנרדייה חילץ במקרה את הקצין הפצוע. המוניטין של מיטיב צומח ממעשה שמטרתו הייתה ביזה.",
-          "en": "After losing the inn, the family appears in Paris under the name Jondrette and becomes involved with organized thieves. Marius’s belief that Thénardier saved his father at Waterloo complicates his response to their violence. Hugo has already shown the irony: searching the battlefield for valuables, Thénardier accidentally freed the wounded officer. The reputation of a benefactor grows from an act whose intention was robbery."
-        },
-        {
-          "en": "Éponine and Gavroche do not simply follow their parents: she defies the gang, while he cares for children the couple abandoned. Later Thénardier tries to sell damaging information about Valjean, only to establish that Valjean saved Marius. The novel eventually sends him to America, where he becomes a slave trader. In the musical, Master of the House presents the couple’s cheating of their customers as a comic duet.",
-          "he": "אפונין וגברוש אינם הולכים בפשטות בדרכם של הוריהם: היא מתנגדת לחבורה, והוא דואג לילדים שבני הזוג נטשו. בהמשך תנרדייה מנסה למכור מידע מפליל על ולז׳אן, אך דווקא מוכיח שוולז׳אן הציל את מריוס. בסופו של דבר הרומן שולח אותו לאמריקה, שם הוא נעשה לסוחר עבדים. במחזמר, Master of the House מציג את הונאת הלקוחות של בני הזוג כדואט קומי."
+          "en": "Éponine and Gavroche do not simply follow their parents: she defies the gang, while he cares for children the couple abandoned. Later Thénardier tries to sell damaging information about Valjean, only to establish that Valjean saved Marius. In the musical, Master of the House presents the couple’s cheating of their customers as a comic duet.",
+          "he": "אפונין וגברוש אינם הולכים בפשטות בדרכם של הוריהם: היא מתנגדת לחבורה, והוא דואג לילדים שבני הזוג נטשו. בהמשך תנרדייה מנסה למכור מידע מפליל על ולז׳אן, אך דווקא מוכיח שוולז׳אן הציל את מריוס. במחזמר, Master of the House מציג את הונאת הלקוחות של בני הזוג כדואט קומי."
         }
       ],
       "references": [
@@ -1122,6 +1905,112 @@
           "מר תנרדייה",
           "תנרדייה"
         ]
+      },
+      "novelAdds": {
+        "title": {
+          "en": "What the novel adds",
+          "he": "מה הספר מוסיף"
+        },
+        "paragraphs": [
+          {
+            "text": {
+              "he": "לאחר אובדן הפונדק המשפחה מופיעה בפריז בשם ז׳ונדרט ונקשרת לחבורת גנבים. אמונתו של מריוס שתנרדייה הציל את אביו בווטרלו מסבכת את תגובתו לאלימותם. הוגו כבר הראה את האירוניה: בחיפוש אחר חפצי ערך בשדה הקרב, תנרדייה חילץ במקרה את הקצין הפצוע. המוניטין של מיטיב צומח ממעשה שמטרתו הייתה ביזה.",
+              "en": "After losing the inn, the family appears in Paris under the name Jondrette and becomes involved with organized thieves. Marius’s belief that Thénardier saved his father at Waterloo complicates his response to their violence. Hugo has already shown the irony: searching the battlefield for valuables, Thénardier accidentally freed the wounded officer. The reputation of a benefactor grows from an act whose intention was robbery."
+            },
+            "referenceChapterIds": [
+              "p2-b1-c19",
+              "p3-b8-c20"
+            ]
+          },
+          {
+            "text": {
+              "en": "Their final family arrangement is darker than the continuing comic partnership familiar from the musical. Madame Thénardier dies in prison while awaiting trial, so her husband’s later schemes proceed without her. Azelma, the surviving daughter still with him, is drawn into his work: he tells her to follow the wedding party and learn where it goes. His later inquiries and her information help bring him to Marius for the attempted sale of Valjean’s secrets. Father and daughter eventually leave for America, where Thénardier becomes a slave trader. Hugo assigns that trade to the father, not to Azelma. The family story thus continues through the exploitation of a child’s usefulness and then into a larger, more brutal commerce in other people.",
+              "he": "מצב המשפחה בסיום אפל מן השותפות הקומית המתמשכת המוכרת מן המחזמר. גברת תנרדייה מתה בכלא בזמן שהיא ממתינה למשפט, ולכן מזימותיו המאוחרות של בעלה מתנהלות בלעדיה. אזלמה, הבת שנותרה לצדו, מגויסת לעבודתו: הוא מורה לה לעקוב אחר חבורת החתונה ולברר לאן היא נוסעת. חקירותיו והמידע שאספה מסייעים להביא אותו אל מריוס כדי לנסות למכור את סודותיו של ולז׳אן. האב ובתו נוסעים לבסוף לאמריקה, ושם תנרדייה נעשה סוחר עבדים. הוגו מייחס את העיסוק הזה לאב, לא לאזלמה. סיפור המשפחה נמשך אפוא בניצול תועלתה של הבת, ומשם אל מסחר רחב ואכזרי יותר בבני אדם."
+            },
+            "referenceChapterIds": [
+              "p5-b5-c8",
+              "p5-b6-c1",
+              "p5-b9-c4"
+            ]
+          }
+        ],
+        "references": [
+          {
+            "chapterId": "p2-b1-c19",
+            "part": 2,
+            "book": 1,
+            "chapter": 19,
+            "label": {
+              "en": "Hugo · Part 2, Book 1, Chapter 19",
+              "he": "הוגו · חלק 2, ספר 1, פרק 19"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p2-b1-c19",
+              "he": "/he/novel/?focus=chapter:p2-b1-c19"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0089"
+          },
+          {
+            "chapterId": "p3-b8-c20",
+            "part": 3,
+            "book": 8,
+            "chapter": 20,
+            "label": {
+              "en": "Hugo · Part 3, Book 8, Chapter 20",
+              "he": "הוגו · חלק 3, ספר 8, פרק 20"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p3-b8-c20",
+              "he": "/he/novel/?focus=chapter:p3-b8-c20"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0220"
+          },
+          {
+            "chapterId": "p5-b5-c8",
+            "part": 5,
+            "book": 5,
+            "chapter": 8,
+            "label": {
+              "en": "Hugo · Part 5, Book 5, Chapter 8",
+              "he": "הוגו · חלק 5, ספר 5, פרק 8"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p5-b5-c8",
+              "he": "/he/novel/?focus=chapter:p5-b5-c8"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0349"
+          },
+          {
+            "chapterId": "p5-b6-c1",
+            "part": 5,
+            "book": 6,
+            "chapter": 1,
+            "label": {
+              "en": "Hugo · Part 5, Book 6, Chapter 1",
+              "he": "הוגו · חלק 5, ספר 6, פרק 1"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p5-b6-c1",
+              "he": "/he/novel/?focus=chapter:p5-b6-c1"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0350"
+          },
+          {
+            "chapterId": "p5-b9-c4",
+            "part": 5,
+            "book": 9,
+            "chapter": 4,
+            "label": {
+              "en": "Hugo · Part 5, Book 9, Chapter 4",
+              "he": "הוגו · חלק 5, ספר 9, פרק 4"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p5-b9-c4",
+              "he": "/he/novel/?focus=chapter:p5-b9-c4"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0363"
+          }
+        ]
       }
     },
     {
@@ -1139,10 +2028,6 @@
         "he": "שארל־פרנסואה־ביאנוונו מיריאל, הבישוף של דיניה, הוא האדם הראשון שהוגו מציג בעלובי החיים. ב־1815 הוא כבן שבעים וחמש וחי עם אחותו בפטיסטין ועם מנהלת משק הבית, גברת מגלואר. לפני הופעתו של ולז׳אן, הרומן מקדיש ספר שלם לביתו של הבישוף, לשימושו בכסף ולמפגשיו עם תושבי הבישופות."
       },
       "paragraphs": [
-        {
-          "he": "מיריאל מחליף את ארמון הבישוף בבניין הצפוף של בית החולים הסמוך ומקדיש את מרבית הכנסתו לסיוע. דלתו הפתוחה הופכת את הכנסת האורחים לחלק מחלוקת המשאבים הזאת, ולא למחווה טקסית. עם זאת, הוגו אינו מציג אותו כחסין מטעות פוליטית. ביקור אצל ז׳, חבר הקונוונט לשעבר הנוטה למות, מערער את שיפוטיו המוקדמים על המהפכה ומסתיים בבקשתו של הבישוף לקבל ברכה.",
-          "en": "Myriel exchanges the episcopal palace for the adjoining hospital’s cramped building and devotes most of his income to relief. His open door makes hospitality part of that redistribution rather than a ceremonial gesture. Nevertheless, Hugo does not present him as politically infallible. A visit to the dying former Convention member G. challenges his inherited judgments of the Revolution and ends with the bishop asking for a blessing."
-        },
         {
           "en": "He welcomes Valjean after other doors have closed, addressing him as a guest rather than reducing him to his criminal record. When police return with the stolen silver, Myriel says he gave it away and adds the candlesticks. His statement secures Valjean’s release. Once the police leave, he asks Valjean to use the money to become an honest man, treating a promise Valjean does not remember making as already binding.",
           "he": "הוא מקבל את ולז׳אן לאחר שדלתות אחרות נסגרו בפניו, ופונה אליו כאורח במקום לצמצם אותו לעברו הפלילי. כשהשוטרים חוזרים עם כלי הכסף הגנובים, מיריאל אומר שנתן אותם במתנה ומוסיף את הפמוטים. הצהרתו מביאה לשחרורו של ולז׳אן. לאחר שהשוטרים יוצאים, הוא מבקש מוולז׳אן להשתמש בכסף כדי להיות לאדם ישר, ומתייחס להבטחה שוולז׳אן אינו זוכר שנתן כאילו היא כבר מחייבת אותו."
@@ -1236,6 +2121,96 @@
           "הבישוף מיריאל",
           "הבישוף של דיניה",
           "מיריאל"
+        ]
+      },
+      "novelAdds": {
+        "title": {
+          "en": "What the novel adds",
+          "he": "מה הספר מוסיף"
+        },
+        "paragraphs": [
+          {
+            "text": {
+              "he": "מיריאל מחליף את ארמון הבישוף בבניין הצפוף של בית החולים הסמוך ומקדיש את מרבית הכנסתו לסיוע. דלתו הפתוחה הופכת את הכנסת האורחים לחלק מחלוקת המשאבים הזאת, ולא למחווה טקסית. עם זאת, הוגו אינו מציג אותו כחסין מטעות פוליטית. ביקור אצל ז׳, חבר הקונוונט לשעבר הנוטה למות, מערער את שיפוטיו המוקדמים על המהפכה ומסתיים בבקשתו של הבישוף לקבל ברכה.",
+              "en": "Myriel exchanges the episcopal palace for the adjoining hospital’s cramped building and devotes most of his income to relief. His open door makes hospitality part of that redistribution rather than a ceremonial gesture. Nevertheless, Hugo does not present him as politically infallible. A visit to the dying former Convention member G. challenges his inherited judgments of the Revolution and ends with the bishop asking for a blessing."
+            },
+            "referenceChapterIds": [
+              "p1-b1-c2",
+              "p1-b1-c6",
+              "p1-b1-c10"
+            ]
+          },
+          {
+            "text": {
+              "en": "Before Valjean ever reaches his door, Myriel accompanies a condemned murderer to execution. When another priest refuses the task, he spends the day with the prisoner, holds his hand and goes with him onto the scaffold. The encounter does not end as a reassuring demonstration of the bishop’s goodness. Seeing the guillotine leaves him shaken for days; he questions the human claim to take a life and afterward avoids the place of execution. This earlier episode gives weight to his later welcome of a former convict. His mercy is a practiced willingness to stand beside someone publicly rejected, and his understanding of justice can be altered by what that closeness makes him see.",
+              "he": "עוד לפני שוולז׳אן מגיע אל דלתו, מיריאל מלווה רוצח שנידון למוות אל הוצאתו להורג. כשכומר אחר מסרב למשימה, הוא מבלה את היום עם האסיר, אוחז בידו ועולה עמו אל הגרדום. המפגש אינו מסתיים בהדגמה מרגיעה של טוב לבו של הבישוף. מראה הגיליוטינה מזעזע אותו במשך ימים; הוא מטיל ספק בזכות האנושית ליטול חיים, ובהמשך נמנע מלעבור במקום ההוצאה להורג. האפיזודה המוקדמת הזאת מעניקה משקל לקבלת הפנים שיערוך לאסיר המשוחרר. רחמיו הם נכונות שכבר נוסתה לעמוד לצד אדם שהציבור דוחה, והקרבה הזאת יכולה לשנות גם את הבנתו שלו את הצדק."
+            },
+            "referenceChapterIds": [
+              "p1-b1-c4"
+            ]
+          }
+        ],
+        "references": [
+          {
+            "chapterId": "p1-b1-c2",
+            "part": 1,
+            "book": 1,
+            "chapter": 2,
+            "label": {
+              "en": "Hugo · Part 1, Book 1, Chapter 2",
+              "he": "הוגו · חלק 1, ספר 1, פרק 2"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b1-c2",
+              "he": "/he/novel/?focus=chapter:p1-b1-c2"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0002"
+          },
+          {
+            "chapterId": "p1-b1-c6",
+            "part": 1,
+            "book": 1,
+            "chapter": 6,
+            "label": {
+              "en": "Hugo · Part 1, Book 1, Chapter 6",
+              "he": "הוגו · חלק 1, ספר 1, פרק 6"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b1-c6",
+              "he": "/he/novel/?focus=chapter:p1-b1-c6"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0006"
+          },
+          {
+            "chapterId": "p1-b1-c10",
+            "part": 1,
+            "book": 1,
+            "chapter": 10,
+            "label": {
+              "en": "Hugo · Part 1, Book 1, Chapter 10",
+              "he": "הוגו · חלק 1, ספר 1, פרק 10"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b1-c10",
+              "he": "/he/novel/?focus=chapter:p1-b1-c10"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0010"
+          },
+          {
+            "chapterId": "p1-b1-c4",
+            "part": 1,
+            "book": 1,
+            "chapter": 4,
+            "label": {
+              "en": "Hugo · Part 1, Book 1, Chapter 4",
+              "he": "הוגו · חלק 1, ספר 1, פרק 4"
+            },
+            "href": {
+              "en": "/en/novel/?focus=chapter:p1-b1-c4",
+              "he": "/he/novel/?focus=chapter:p1-b1-c4"
+            },
+            "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0004"
+          }
         ]
       }
     }

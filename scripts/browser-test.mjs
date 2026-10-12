@@ -18,6 +18,7 @@ try{
   await run(['scripts/browser-navigation-clarity.cjs']);
   await run(['scripts/browser-reading-query-shell.cjs']);
   await run(['scripts/browser-character-profiles.cjs']);
+  await run(['scripts/browser-profile-novel-additions.cjs']);
   await run(['scripts/browser-coach-gallery.cjs']);
   await run(['scripts/browser-gallery-controls.cjs']);
   await run(['scripts/browser-gallery-expansion.cjs']);

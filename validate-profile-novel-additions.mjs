@@ -1,0 +1,20 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+let checks=0;const check=(v,m)=>{assert.ok(v,m);checks++},C={window:{},URLSearchParams};
+for(const f of ['research','extras','character-profiles-data','character-profiles','seo','search'])vm.runInNewContext(fs.readFileSync('dist/'+f+'.js','utf8'),C);
+const W=C.window,P=W.CharacterProfiles,D=W.CHARACTER_PROFILES,R={...W.RESEARCH,...W.EXTRA_CONTENT},chapters=R.chapterCompanion.chapters,esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+check(JSON.stringify(D)===JSON.stringify(JSON.parse(fs.readFileSync('config/character-profiles.json'))),'Generated profile data matches source exactly');
+const safeIndex=W.SiteSearch.buildIndex({research:R,metadata:W.SITE_METADATA},{spoiler:false}),fullIndex=W.SiteSearch.buildIndex({research:R,metadata:W.SITE_METADATA},{spoiler:true});let refs=0;
+for(const p of D.profiles){const n=p.novelAdds;check(n&&n.paragraphs.length===2,'Two substantive novel paragraphs '+p.id);refs+=n.references.length;
+ for(const ref of n.references){const c=chapters.find(c=>c.id===ref.chapterId);check(c&&c.part===ref.part&&c.book===ref.book&&c.chapter===ref.chapter,'Exact existing chapter '+ref.chapterId);check(c.url===ref.sourceUrl,'Exact primary chapter anchor '+ref.chapterId);for(const lang of ['he','en'])check(ref.href[lang]===`/${lang}/novel/?focus=chapter:${ref.chapterId}`,'Exact localized reader link');}
+ for(const para of n.paragraphs)check(para.referenceChapterIds.length&&para.referenceChapterIds.every(id=>n.references.some(r=>r.chapterId===id)),'Every paragraph has supporting chapters');
+ for(const lang of ['he','en']){const base={id:p.id,lang},safe=P.page(base),full=P.page({...base,search:'?view=full'}),global=P.page({...base,spoiler:true}),bodies=n.paragraphs.map(x=>x.text[lang]);
+ check(!safe.includes('profile-novel-adds')&&!safe.includes(n.title[lang]),'Entire section absent before choice');check(full.includes('profile-novel-adds')&&global.includes('profile-novel-adds'),'Explicit and global choices reveal section');
+ for(const body of bodies){check(body.split(/\s+/).length>=35,'Substantive bilingual paragraph');check(full.split(esc(body)).length===2,'Novel paragraph appears exactly once');check(!safe.includes(esc(body)),'No default prose leak');check(!p.paragraphs.some(x=>x[lang]===body),'Moved paragraph no longer duplicated in main prose');check(!safeIndex.find(d=>d.id==='character:'+p.id).body[lang].includes(body),'Spoiler-off search excludes addition');check(fullIndex.find(d=>d.id==='character:'+p.id).body[lang].includes(body),'Spoiler-on search includes addition');}
+ for(const q of [...chapters.map(c=>'reader='+c.id),'reader=bad','reader=','reader=p1-b1-c1&reader=p5-b9-c6']){const html=P.page({...base,search:'?'+q+'&view=full',spoiler:true});check(!html.includes('profile-novel-adds')&&!html.includes(n.title[lang])&&bodies.every(x=>!html.includes(esc(x))),'Reader context overrides all full-story choices '+p.id+q+lang);}
+ const html=fs.readFileSync(`dist/${lang}/character-${p.id}/index.html`,'utf8'),shell=fs.readFileSync(`dist/profile-readers/${lang}/${p.id}.html`,'utf8');check(!html.includes('profile-novel-adds')&&!shell.includes('profile-novel-adds')&&bodies.every(x=>!html.includes(esc(x))&&!shell.includes(esc(x))),'No prerender or reader-shell spoiler leak');
+ for(const ref of n.references)check(full.includes(esc(ref.href[lang])),'Visible chapter navigation preserved');
+ }
+}
+check(refs===47,'All 47 reviewed chapter references preserved');
+const publicData=fs.readFileSync('dist/character-profiles-data.js','utf8');for(const privateField of ['internalEvidence','bodyParagraphsAfterRelocation','new-original','sourceJsonPointer'])check(!publicData.includes(privateField),'Internal editorial metadata excluded');
+console.log(`PASS: ${checks} novel-addition checks: ten HE/EN profiles, 47 exact links, all 365 reader boundaries, search/prerender safety and no duplicated prose.`);

@@ -1,3 +1,10 @@
+## 2026-10-12 — Novel context on character pages and a direct musical viewing entrance
+- Reorganized ten HE/EN profiles with a clearly titled “What the novel adds” section: one existing paragraph moved intact and one new, independently checked paragraph per character. The Thénardiers’ final-fate sentence was also relocated without losing its substance.
+- Added 47 exact reading-companion links covering 45 unique Hugo chapters, with the original text available in a compact source disclosure.
+- Full-profile choice governs the entire addition. Every chapter-bounded, malformed or duplicated reader query still suppresses later-story material, regardless of the global spoiler toggle or an extra full-view parameter.
+- Musical interest now offers a direct first-stop viewing action, labelled as selected clips in story order; the separate four-stop introductory guide remains available.
+- Added source/search/prerender checks and responsive browser coverage for all ten profiles, exact chapter navigation, hide/reopen/history, keyboard and HE/EN switching.
+
 # Paragraph spacing in contextual readings · 12 October 2026
 
 - Give adjacent Hugo, creative-history, ABC and after-show paragraphs a modest reading gap inside their existing cards.

@@ -242,3 +242,5 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 
 /* Keep visit-path progress unambiguous in RTL and separate the exit mark. */
 .journey-options .text-button{gap:6px}.journey-current>bdi,.journey-current>span>bdi{direction:ltr;unicode-bidi:isolate}
+
+.interest-watch{display:flex;align-items:center;gap:1.25rem;margin-block:0 1.25rem;padding-block:1rem;border-block:1px solid #cbd4e6}.interest-watch p{margin:0;font-size:1rem;line-height:1.6}.interest-watch .btn{white-space:normal;text-align:start;line-height:1.5}.interest-watch-start{gap:.65rem}@media(max-width:650px){.interest-watch{display:block}.interest-watch .btn{width:100%;justify-content:space-between}.interest-watch p{margin-block-start:.65rem}}

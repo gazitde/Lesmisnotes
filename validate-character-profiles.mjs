@@ -10,14 +10,14 @@ const W=context.window,P=W.CharacterProfiles,D=W.CHARACTER_PROFILES,R={...W.RESE
 const expected=['valjean','javert','fantine','cosette','marius','eponine','enjolras','gavroche','thenardiers','bishop'];
 check(D.profiles.length===10&&expected.every(id=>P.get(id)),'Exactly ten principal profiles');
 for(const p of D.profiles){
- check(p.paragraphs.length===3,'Three substantial later paragraphs '+p.id);
+ check(p.paragraphs.length===2&&p.novelAdds?.paragraphs.length===2,'Two retained and two novel-specific paragraphs '+p.id);
  check(catalog.some(c=>c.id===p.firstAppearance.chapterId&&c.url===p.firstAppearance.url),'Verified first-identity primary chapter '+p.id);
  check(p.songIds.every(id=>R.musical.songentries.some(s=>s.id===id)),'Existing song IDs '+p.id);
  check(p.relationshipIds.every(id=>R.relationships.some(r=>r.id===id)),'Existing relationship IDs '+p.id);
  check(p.references.length>=3&&p.references.every(r=>/^https:\/\//.test(r.url)&&r.label.he&&r.label.en),'Bilingual primary references '+p.id);
  for(const lang of ['he','en']){
-  for(const field of [p.name,p.role,p.safeIntro,p.readerIdentity,...p.paragraphs])check(typeof field[lang]==='string'&&field[lang].trim().length>0,'Complete bilingual field');
-  check([p.safeIntro,...p.paragraphs].every(x=>x[lang].split(/\s+/).length>=35),'Substantial original paragraphs '+p.id+lang);
+  for(const field of [p.name,p.role,p.safeIntro,p.readerIdentity,...p.paragraphs,...p.novelAdds.paragraphs.map(x=>x.text)])check(typeof field[lang]==='string'&&field[lang].trim().length>0,'Complete bilingual field');
+  check([p.safeIntro,...p.paragraphs,...p.novelAdds.paragraphs.map(x=>x.text)].every(x=>x[lang].split(/\s+/).length>=35),'Substantial original paragraphs '+p.id+lang);
   const base={id:p.id,lang,songs:R.musical.songentries,relationships:R.relationships},safe=P.page(base),full=P.page({...base,search:'?view=full'});
   check(safe.includes(esc(p.safeIntro[lang]))&&!safe.includes('profile-full-prose'),'Safe intro plus closed later detail '+p.id+lang);
   check(full.includes('profile-full-prose')&&full.includes('profile-references'),'Explicit full link opens all sections '+p.id+lang);
