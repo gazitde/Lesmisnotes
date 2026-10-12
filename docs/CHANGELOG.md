@@ -1,3 +1,8 @@
+# Paragraph spacing in contextual readings · 12 October 2026
+
+- Give adjacent Hugo, creative-history, ABC and after-show paragraphs a modest reading gap inside their existing cards.
+- Add responsive computed-spacing checks for both languages; no prose or source changes.
+
 # Richer Hugo and stage context · 12 October 2026
 
 - Replaced six thin passages with reviewed two-paragraph readings in Hebrew and English: the bishop’s household, Petit-Gervais, Javert’s memorandum, Marius and his father, English lyric-writing, and the ABC circle.

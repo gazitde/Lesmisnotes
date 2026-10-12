@@ -219,3 +219,6 @@ html[lang=he] .vinyl-label b,html[lang=he] .vinyl-label small{font-family:LesMis
 
 .gallery-versions.many-versions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.gallery-versions.many-versions button{padding:10px 12px;min-height:54px;gap:9px}.gallery-versions.many-versions button>span{font-size:1rem}.gallery-versions.many-versions small{font-size:.8rem;line-height:1.5}.gallery-versions.many-versions b{font-size:.9rem}@media(max-width:650px){.gallery-versions.many-versions{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-versions.many-versions button{display:block;padding:10px}.gallery-versions.many-versions button>span{display:none}.gallery-versions.many-versions small{font-size:.8rem}}
 .gallery-related-performances{padding-top:16px;margin-top:20px;border-top:1px solid #bac8df}.gallery-related-performances h3{font-size:1.1rem;line-height:1.4;margin:0 0 10px}.gallery-related-performances p{font-size:1rem;line-height:1.7;margin:0 0 8px}.gallery-related-performances a{min-height:44px;display:inline-flex;align-items:center;line-height:1.5}
+
+/* Keep the reviewed multi-paragraph readings distinct within their existing cards. */
+.hugo-sections article>div>p+p,.composition-notebook article>p+p,.people-context-grid>article>p+p,.curtain-stop-content>p+p{margin-block-start:1em}
