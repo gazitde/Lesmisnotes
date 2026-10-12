@@ -140,6 +140,8 @@ async function stop(page,lang,interest,index,{screenshot=false,width}={}){
   equal(await stateId(page),journeyId(interest),'the guided journey survives navigation');
   equal(await page.locator('.journey-continuation').count(),1,'one continuation is rendered');
   const continuation=page.locator('.journey-continuation');
+  equal(await continuation.locator('.journey-current > span > bdi').getAttribute('dir'),'ltr','progress fraction keeps its canonical visual order in RTL');
+  equal(await continuation.locator('.journey-current > span > bdi').innerText(),`${index+1} / 4`,'isolated progress identifies the actual stop');
   check(new RegExp(`\\b${index+1}\\s*/\\s*4\\b`).test(await continuation.innerText()),
     `continuation identifies stop ${index+1} of 4`);
   equal(await continuation.locator('.journey-switch').getAttribute('href'),
