@@ -22,3 +22,9 @@ Mode buttons are native controls with `aria-pressed`; scoped updates retain keyb
 ## Verification
 
 `test/watch-path.test.cjs` checks all 152 localized mode/stop renderings, source IDs, source-link-only school delivery, ending order and escaping. `scripts/browser-watch-path.cjs` is part of the full CI browser suite: HE/EN at 1365, 390 and 320 pixels, all stops/modes, exact links, focus, history, language, no-JS gates, teardown and consent-bound resume. Third-party requests are blocked in those browser tests; actual external playback is a separate limitation.
+
+## Consistent station transitions
+
+A compact sticky navigation bar shows the canonical song number out of 38 (the interval is separately named). Discrete Next, Previous and outline jumps focus and instantly align the new heading below the bar. Range and select changes preserve control focus for repeated keyboard operation. Both embedded performances and external school sources occupy the same viewing region; external cards explicitly say they open YouTube in a new tab. Shared-source notes identify longer recordings without inventing scene timestamps or restarting a player.
+
+The browser suite reproduces opening stops 1–4 in both modes, HE/EN at 1365/390/320 pixels, captures the first three, and asserts viewport landing, numbered state, bottom navigation and repeated range-key interaction.

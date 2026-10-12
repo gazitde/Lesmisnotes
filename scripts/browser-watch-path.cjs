@@ -23,6 +23,26 @@ for(const lang of ['en','he'])for(const width of [1365,390,320]){
   check(professionalStops===(mode==='ourPicks'?6:0),'Six professional stop choices or all school links');
   await page.locator('#show-watch-stop').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(dir,`watch-ending-${mode}-${lang}-${width}.png`)});
  }
+
+ // Reproduce the reported mobile transition, including the taller embedded first stop.
+ const opening=base+'/'+lang+'/musical/?focus=song%3Awork-song&view=journey';
+ for(const mode of ['ourPicks','sameProduction']){
+  await page.goto(opening+(mode==='sameProduction'?'&watch=sameProduction':''));
+  const stepNext=page.locator('.show-station-nav [data-show-move="next"]');
+  for(let n=1;n<=4;n++){
+   if(n>1)await stepNext.click();
+   const state=await page.evaluate(()=>{const t=document.getElementById('show-current-title'),nav=document.querySelector('.show-station-nav'),media=document.querySelector('#show-watch-stop .watch-path-media'),r=t.getBoundingClientRect(),nr=nav.getBoundingClientRect();return {top:r.top,bottom:r.bottom,navTop:nr.top,navBottom:nr.bottom,focused:document.activeElement===t,position:document.getElementById('show-position').innerText,media:!!media,overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth}});
+   check(state.position.includes(n+' / 38'),'Stable canonical station number '+n);
+   check(state.media&&!state.overflow,'Same media area and no overflow at opening stop '+n);
+   const frame=await page.locator('#show-watch-stop .video-shell,#show-watch-stop .watch-path-external-frame').first().boundingBox();check(Math.abs(frame.height-frame.width*9/16)<2,'Identical 16:9 viewing frame at opening stop '+n);
+   if(n>1){check(state.focused,'Discrete next focuses the new title');check(state.top>=state.navBottom-1&&state.bottom<900,'New title lands visibly below compact navigation');check(state.navTop>=-1&&state.navBottom<180,'Compact navigation remains in view')}
+   if(n<=3)await page.screenshot({path:path.join(dir,`watch-transition-${mode}-${n}-${lang}-${width}.png`)});
+  }
+  await page.locator('.show-bottom-nav [data-show-move="prev"]').click();check(await page.locator('#show-current-title').evaluate(e=>document.activeElement===e),'Bottom navigation returns focus to the new stop');
+  check(await page.locator('#show-position').innerText().then(s=>s.includes('3 / 38')),'Previous returns to correct numbered stop');
+  await page.locator('[data-show-select]').focus();await page.locator('[data-show-select]').selectOption('1');check(await page.locator('[data-show-select]').evaluate(e=>document.activeElement===e),'Direct selector retains focus');
+  const range=page.locator('[data-show-range]');await range.focus();await page.keyboard.press('ArrowRight');await page.keyboard.press('ArrowRight');check(await range.evaluate(e=>document.activeElement===e),'Range preserves continuous keyboard adjustment');check(await range.inputValue()==='3','Repeated arrows move two stops');
+ }
  await page.goto(entry);await page.locator('#show-watch-options').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(dir,`watch-controls-${lang}-${width}.png`)});await page.locator('#show-current-title').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(dir,`watch-professional-${lang}-${width}.png`)});
  await page.locator('[data-watch-mode="sameProduction"]').click();await page.locator('#show-current-title').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(dir,`watch-school-${lang}-${width}.png`)});
  await page.evaluate(()=>window.SitePrivacy.choose({functional:true,analytics:false,media:false}));await page.goto(entry+'&watch=sameProduction');check(await page.evaluate(()=>JSON.parse(localStorage.getItem('barricade-last-reading')).watch)==='sameProduction','Opt-in resume stores mode');await page.goto(base+'/'+lang+'/home/');const resume=page.locator('.home-memory a[href*="song%3Astars"]');check(await resume.getAttribute('href').then(s=>new URL(s,base).searchParams.get('watch')==='sameProduction'),'Home continuation preserves mode');await resume.click();check(await page.locator('[data-watch-mode="sameProduction"]').getAttribute('aria-pressed')==='true','Resume restores mode');

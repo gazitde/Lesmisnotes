@@ -1,3 +1,11 @@
+# Consistent watch-journey transitions — 2026-10-12
+
+- Keep the numbered current stop and compact Previous/Next controls visible while reading.
+- Discrete station changes focus and align the new title; range/select controls preserve keyboard operation.
+- Show external original recordings in the same 16:9 viewing region as embedded performances, with a prominent YouTube action and accurate shared-source context.
+- Canonical 1–38 song numbering is consistent across the selector, range label, outline and current stop; the interval is named separately.
+- Add opening-sequence viewport, focus and repeated-key regression coverage in both languages at desktop, 390 and 320 pixels.
+
 # Song-by-song watch path · 12 October 2026
 
 - Added Our picks and Same production modes to the existing 38-stop musical journey, with six professional/publisher-backed choices and 32 original school-source fallbacks.

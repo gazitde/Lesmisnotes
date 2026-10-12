@@ -57,9 +57,9 @@ for (const lang of ['en', 'he']) {
       assert.ok(selected.clips.every(c => Object.isFrozen(c)));
       for (const clip of selected.clips) assert.ok(html.includes(`https://www.youtube.com/watch?v=${clip.id}`));
       if (selected.kind === 'curated') { curatedStops++; assert.equal(calls.length, before + 1); }
-      else { assert.equal(calls.length, before); assert.ok(!html.includes('watch-path-media')); }
+      else { assert.equal(calls.length, before); assert.ok(html.includes('watch-path-media')); assert.ok(html.includes('watch-path-external-frame')); }
       if (selected.relatedLargerClip) assert.ok(html.includes(lang === 'en' ? 'Related larger clip' : 'קטע רחב יותר הקשור לתחנה'));
-      if (selected.sharedWithPrevious) assert.ok(html.includes(lang === 'en' ? 'Same source link as the previous stop.' : 'אותו קישור מקור כמו בתחנה הקודמת.'));
+      if (selected.sharedWithPrevious) assert.ok(html.includes(lang === 'en' ? 'This stop uses the same original recording' : 'התחנה משתמשת באותה הקלטה'));
     }
     assert.equal(curatedStops, mode === 'ourPicks' ? 6 : 0);
   }
@@ -91,7 +91,7 @@ for (const [id, expected] of [['one-day-more', 'HKRzlaQcfUI'], ['on-my-own', 'Me
 for (const id of ['dreamed-dream', 'people-sing', 'epilogue']) assert.equal(api.getSelection({ songId: id }).kind, 'same-production');
 const fallbackHtml = api.renderStop({ songId: 'stars' });
 assert.ok(fallbackHtml.includes('https://www.youtube.com/watch?v=_6nTyXcmgLc'));
-assert.ok(!fallbackHtml.includes('watch-path-media'));
+assert.ok(fallbackHtml.includes('watch-path-media')); assert.ok(fallbackHtml.includes('watch-path-external-frame'));
 assert.throws(() => api.renderStop({ songId: 'stars', renderVideo: () => ({}) }), /HTML string/);
 const malicious = JSON.parse(JSON.stringify(data));
 malicious.clips.find(c => c.id === 'MfVlDf6iFss').title.en = '<script>bad()</script> & "quote"';
