@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const ctx={window:{}};vm.runInNewContext(fs.readFileSync('dist/seo.js','utf8'),ctx);const M=ctx.window.SITE_METADATA;
-vm.runInNewContext(fs.readFileSync('dist/extras.js','utf8'),ctx);const defaultCoaches=(ctx.window.EXTRA_CONTENT.coachVideos||[]).filter(v=>v.songId==='on-my-own'&&v.embeddable&&v.spoilerLevel<2);
+vm.runInNewContext(fs.readFileSync('dist/extras.js','utf8'),ctx);const defaultCoaches=(ctx.window.EXTRA_CONTENT.coachVideos||[]).filter(v=>v.songId==='on-my-own'&&v.showWithSong!==false&&v.embeddable&&v.spoilerLevel<2);
 let checks=0;const titles=new Set(),descriptions=new Set();
 for(const [route,meta] of Object.entries(M.pages))for(const lang of ['he','en']){
  const canonicalRoute=meta.canonicalRoute||route;const file=`dist/${lang}/${route}/index.html`,html=fs.readFileSync(file,'utf8');

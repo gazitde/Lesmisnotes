@@ -77,7 +77,7 @@
     for (const c of R.israel?.novelTranslations?.items || []) add('israel', 'book-'+c.id, 'israel', 'story', c.name, pair(c.edition,c.body), ['Hebrew','עברית']);
     for (const c of R.watch?.cards || []) add('watch', c.id, 'watch', 'songs', c.title, pair(c.paragraphs,c.statusLabel,c.location), [c.id]);
     const spotlight = R.musical?.spotlight?.songs || [], songEntries = R.musical?.songentries || [];
-    const coachReading=id=>pair((R.coachVideos||[]).filter(v=>v.songId===id).map(v=>pair(v.title,v.coach.name,v.coach.credential,spoilers||v.spoilerLevel<2?pair(v.body,v.watchFor):'')));
+    const coachReading=id=>pair((R.coachVideos||[]).filter(v=>v.songId===id&&v.showWithSong!==false).map(v=>pair(v.title,v.coach.name,v.coach.credential,spoilers||v.spoilerLevel<2?pair(v.body,v.watchFor):'')));
     const songReading=(id,kind=null)=>{const r=R.musical?.songAnalysis?.[id];return pair((r?.blocks||[]).filter(b=>(spoilers||b.spoilerLevel<2)&&(!kind||b.kind===kind)).map(b=>pair(b.title,b.body)),spoilers?(r?.craftNotes||[]).map(b=>pair(b.title,b.body)):'')};
     for (const s of spotlight) {
       const entry = songEntries.find(x => x.id === s.id);
@@ -89,6 +89,7 @@
       const group = R.gallery.groups?.find(g => g.clipIds.includes(item.id));
       const allowed = spoilers || item.spoilerLevel !== 2;
       const reading = spoilers || !(group?.reading?.spoilerLevel > 1) ? group?.reading : null;
+      if(group?.category==='coaching'){const v=(R.coachVideos||[]).find(v=>v.id===item.id);add('performance',item.id,'listening','songs',item.title,pair(v?.coach?.name,v?.coach?.credential,allowed?pair(v?.introParagraphs,v?.body,v?.watchFor,group.hook):''),['vocal coach','vocal coaching','voice teacher','מורה לפיתוח קול','ניתוח ביצוע'],!allowed);continue;}
       add('performance', item.id, 'listening', 'songs', item.title,
         pair(item.shortLabel, item.label, item.language, allowed ? pair(item.context, group?.hook, group?.question, reading?.title, reading?.scene, reading?.structure, reading?.watchFor,songReading(group?.songId,'listening'),coachReading(group?.songId)) : ''), [group?.title, ...(item.songIds || [])], !allowed);
     }

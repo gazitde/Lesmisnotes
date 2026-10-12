@@ -27,7 +27,7 @@ function render(lang,route,spoilers){
 }
 
 const R=render('en','home',false).ctx.RESEARCH;
-const coachCount=(clip,spoilers)=>{const songId=R.gallery.groups.find(g=>g.clipIds.includes(clip))?.songId;return (R.coachVideos||[]).filter(v=>v.songId===songId&&v.embeddable&&(spoilers||v.spoilerLevel<2)).length};
+const coachCount=(clip,spoilers)=>{if(R.gallery.groups.find(g=>g.clipIds.includes(clip))?.category==='coaching')return 0;const songId=R.gallery.groups.find(g=>g.clipIds.includes(clip))?.songId;return (R.coachVideos||[]).filter(v=>v.songId===songId&&v.showWithSong!==false&&v.embeddable&&(spoilers||v.spoilerLevel<2)).length};
 const tap=(st,data)=>st.callbacks.click({target:{closest:selector=>selector==='button'?{dataset:data,hasAttribute:n=>Object.hasOwn(data,n.replace(/^data-/,'').replace(/-([a-z])/g,(_,c)=>c.toUpperCase()))}:null}});
 let checks=0;
 for(const language of ['he','en']){
@@ -73,7 +73,7 @@ for(const language of ['he','en']){
    languageChecks+=4+links.length;
   }
  }
- tap(st,{galleryReset:''});assert.equal(st.ctx.location.search,'');assert.equal((st.app.innerHTML.match(/class="gallery-card /g)||[]).length,20);languageChecks+=2;
+ tap(st,{galleryReset:''});assert.equal(st.ctx.location.search,'');assert.equal((st.app.innerHTML.match(/class="gallery-card /g)||[]).length,R.gallery.groups.length);languageChecks+=2;
  for(const song of ['on-my-own','one-day-more','bring-home']){
   const g=G.groups.find(g=>g.id===song),expected=g.clipIds.find(id=>G.items.find(i=>i.id===id).languageCode===language);
   assert.ok(expected,'counterpart '+song+' '+language);
@@ -141,3 +141,14 @@ for(const language of ['he','en'])for(const group of R.gallery.groups.filter(g=>
 }
 assert.equal(R.gallery.groups.filter(g=>g.reading).length,4);readingChecks++;
 console.log(`PASS: ${readingChecks} text-led performance-reading checks: four HE/EN scene notes, existing versions, sourced context, no invented timestamps and spoiler gates.`);
+// The dedicated coach shelf contains exactly four analyses, not four more performances.
+{
+ let n=0;assert.equal(R.coachVideos.length,4);assert.equal(R.gallery.groups.filter(g=>g.category==='coaching').length,4);assert.equal(R.gallery.groups.filter(g=>g.category!=='coaching').length,20);assert.equal(R.gallery.items.filter(x=>x.kind!=='coach').length,29);assert.equal(R.coachVideos.filter(x=>x.showWithSong).length,2);n+=5;
+ for(const v of R.coachVideos){assert.equal(v.introParagraphs.length,2);assert.equal(v.chapters.length,3);assert.ok(!('verification'in v)&&!('verifiedChapters'in v));n+=3;for(const l of ['he','en'])for(const p of v.introParagraphs){assert.ok(p[l].split(/\s+/).length>=35);n++;}for(const chapter of v.chapters){assert.ok(chapter.seconds>0&&chapter.seconds<v.durationSeconds);assert.ok(chapter.url.startsWith('https://www.youtube.com/watch?v='+v.id+'&t='));n+=2;}}
+ for(const l of ['he','en']){const st=render(l,'listening',false);tap(st,{galleryCategory:'coaching'});assert.equal((st.app.innerHTML.match(/class="gallery-card /g)||[]).length,4);assert.ok(st.app.innerHTML.includes('gallery-coach-introduction'));assert.ok(!st.app.innerHTML.includes('hebrew-performance-doorways'));n+=3;
+  for(const v of R.coachVideos){tap(st,{galleryClip:v.id});const html=st.app.innerHTML;assert.equal((html.match(/<iframe /g)||[]).length,1);assert.equal((html.match(/data-coach-analysis=/g)||[]).length,1);assert.ok(html.includes('data-video-instance="coach-collection-'+v.id+'"'));assert.ok(html.includes(v.coach.name));assert.ok(html.includes('gallery-coach-intro'));n+=5;tap(st,{galleryClose:''});assert.ok(!st.app.innerHTML.includes('<iframe'));n++;}
+  tap(st,{galleryAudio:'he'});assert.ok(st.app.innerHTML.includes('gallery-empty'));assert.equal((st.app.innerHTML.match(/class="gallery-card /g)||[]).length,0);n+=2;tap(st,{galleryAudio:'en'});assert.equal((st.app.innerHTML.match(/class="gallery-card /g)||[]).length,4);n++;
+ }
+ const c={window:{}};vm.runInNewContext(fs.readFileSync('dist/search.js','utf8'),c);const idx=c.window.SiteSearch.buildIndex({research:R},{spoiler:false});for(const v of R.coachVideos){const doc=idx.find(x=>x.id==='performance:'+v.id);assert.ok(doc);for(const l of ['he','en']){assert.ok(doc.body[l].includes(v.introParagraphs[1][l]));assert.ok(doc.body[l].includes(v.coach.name));n+=2;}}
+ console.log(`PASS: ${n} dedicated coach-gallery checks: four analyses, 20 original performance cards, rich HE/EN context, verified chapters, separate song placements, filters, single players and search.`);
+}
