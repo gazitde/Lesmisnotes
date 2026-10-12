@@ -79,7 +79,7 @@ for(const lang of ['he','en'])for(const route of routes)for(const spoilers of [f
  const click=action=>state.callbacks.click({target:{closest:()=>({dataset:{action}})}});
  click('enable-spoilers'); assert.equal((state.app.innerHTML.match(/class="story-chapter"/g)||[]).length,8);
  click('hide-spoilers'); assert.ok(state.app.innerHTML.includes('class="gate"')); assert.ok(!state.app.innerHTML.includes('class="story-chapter"'));
- click('language'); assert.equal(state.ctx.location.pathname,'/en/story/');state.callbacks.hashchange(); assert.equal(state.ctx.document.documentElement.lang,'en');assert.ok(state.app.innerHTML.includes('The long road'));
+ click('language'); assert.equal(state.ctx.location.pathname,'/en/story/');state.callbacks.hashchange(); assert.equal(state.ctx.document.documentElement.lang,'en');assert.ok(state.app.innerHTML.includes('Follow the musical'));
  let prevented=false;const previousHash=state.ctx.location.hash;state.callbacks['skip-click']({preventDefault(){prevented=true}});assert.ok(prevented);assert.equal(state.ctx.location.hash,previousHash);
  tests+=8;
 }

@@ -35,7 +35,8 @@ check(!JSON.stringify(safe.find(x=>x.id==='character:valjean')).includes('9430')
 check(!ids(safe,'9430').includes('character:valjean'),'Hidden content not used for matching');
 check(ids(on,'9430').includes('character:valjean'),'Character depth available after explicit opt-in');
 check(ids(on,'Combeferre').includes('character:enjolras'),'New novel close reading is searchable after consent');
-check(!ids(safe,'Combeferre').includes('character:enjolras'),'New character note cannot leak through safe search');
+check(ids(safe,'Combeferre').includes('character:enjolras'),'Named colleague in safe character introduction is searchable');
+check(!ids(safe,'abaissé').includes('character:enjolras'),'Protected ABC close reading stays absent from safe search');
 check(ids(on,'קומבפר','he').includes('character:enjolras'),'New Hebrew close reading is searchable');
 check(ids(safe,'Matt Kinley').includes('craft:hugo-art-onstage'),'Spoiler-safe production design note is searchable');
 check(S.readTarget('?focus=craft%3Ahugo-art-onstage','musical')?.key==='hugo-art-onstage','Craft note has a localized safe deep link');

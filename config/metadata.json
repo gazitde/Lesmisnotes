@@ -6,8 +6,8 @@
         "en": "Les Misérables: an interactive guide to the novel and musical"
       },
       "description": {
-        "he": "חמישה מסעות, מפות, ביצועים, היסטוריה וחידונים. מדריך מעריצים עצמאי בעברית ובאנגלית, עם ספוילרים לבחירה.",
-        "en": "Five journeys through the novel and musical, with maps, performances, history and quizzes. An independent bilingual fan guide with optional spoilers."
+        "en": "Read Hugo chapter by chapter, explore character relationships and compare musical performances, concerts and films. An independent English and Hebrew guide.",
+        "he": "קראו את הוגו פרק אחר פרק, הכירו את קשרי הדמויות והשוו ביצועי מחזמר, קונצרטים וסרטים. מדריך עצמאי בעברית ובאנגלית."
       }
     },
     "before": {
@@ -46,8 +46,8 @@
         "en": "Read Les Misérables: a reading companion and novel recap"
       },
       "description": {
-        "he": "מלווה קריאה לכל 365 הפרקים של עלובי החיים: תקצירים לבחירה, תזכורות מאירועים קודמים, פרטים מן הרומן וקישורים למפה ולמקורות.",
-        "en": "A companion to all 365 chapters of Les Misérables: optional summaries, earlier-event reminders, details from the novel and links to maps and primary sources."
+        "he": "מלווה קריאה לכל 365 הפרקים של עלובי החיים: תקצירי פרקים, תזכורות מאירועים קודמים, פרטים מן הרומן וקישורים למפה ולמקורות.",
+        "en": "A companion to all 365 chapters of Les Misérables: chapter summaries, earlier-event reminders, details from the novel and links to maps and primary sources."
       }
     },
     "musical": {
@@ -56,8 +56,8 @@
         "en": "The Les Misérables musical: creators and a song-by-song guide"
       },
       "description": {
-        "he": "סיפור יצירת המחזמר, היוצרים, הפקות נבחרות ושתי המערכות. מסע מוזיקלי אינטראקטיבי עם הפסקה ופרטי עלילה לבחירה.",
-        "en": "Explore the musical’s origins, creators, selected productions and two acts. An interactive song journey with interval guidance and opt-in plot details."
+        "en": "Follow all 38 song entries, explore the musical’s creation and compare five major recordings and films, with cast details and listening or viewing options.",
+        "he": "עקבו אחר 38 קטעי המחזמר, קראו על יצירתו והשוו חמש הקלטות וגרסאות מצולמות, עם פרטי מבצעים ואפשרויות האזנה וצפייה."
       }
     },
     "story": {

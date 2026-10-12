@@ -1,5 +1,14 @@
 # Visual and language refresh
 
+## 2026-10-12 — Character, story, history and dilemma editorial revision
+
+- Reviewed all ten full profiles and brief character introductions, the historical timeline/context, all five developed dilemmas and eight stage-story sections. Applied 110 bilingual passage revisions while preserving substantial arguments, source links and spoiler gates.
+- Replaced broad moral summaries with specific actions and circumstances. Kept the novel’s female factory supervisor distinct from the stage foreman, and clarified the 1830 charter’s voting-age change versus the April 1831 tax-qualification change.
+- Retained strong existing passages rather than rewriting for volume. Updated the canonical profile source so build output and static pages receive the same revised prose.
+- Revised secondary-page introductions and headings for clearer expectations. Search still excludes protected close readings; a colleague named in the safe Enjolras introduction can now be found without opening the protected material.
+- Shortened gallery category/audio labels for narrow screens and corrected the displayed category count. Browser teardown checks now wait for the completed close state and report the exact clip, viewport and remaining frames on failure.
+
+
 ## 2026-10-12 — Concrete entry copy and complete song-analysis revision
 
 - Reworked the homepage and principal entry copy to describe what readers can find. Removed the redundant slogan strip while retaining the three main cards. Made the five-edition recording comparison and nine screen versions easier to discover.
