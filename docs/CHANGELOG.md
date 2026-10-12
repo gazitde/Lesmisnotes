@@ -40,3 +40,10 @@ The footer wraps its expanded link list at desktop widths. Added whole-page hori
 - The Hebrew-edition guide is directly accessible from the novel entrance. Five recordings can be compared by concert, film or audio format, with official sources and no claim of universal streaming availability.
 - One locally hosted CC0 Hugo drawing enriches the existing sourced stage-design story. Full-frame viewing, bilingual description, collection credit and license are provided.
 - Added HE/EN desktop, 390px and 320px browser checks for exact URLs, history/language, reading boundaries, all 48 source links, keyboard filters, no-JS fallback and opt-in resume. External video and analytics requests remain blocked in automated QA; actual YouTube playback and contact delivery remain separate verification items.
+
+## Distinct history and usable recording editions · 12 October 2026
+
+- Rebuilt the history hierarchy around the clear difference between the French Revolution of 1789 and the June 1832 uprising, retaining the novel's 1815 starting point and wider historical reach.
+- Eight dated stations distinguish revolution, empire, Restoration monarchy, battle, uprising and publication through text, symbols and layout. Added independently sourced 1804/1814 context, keyboard/native anchor navigation and a prominent 1832 marker. Existing historical detail and optional aftermath remain.
+- Every recording now has two original HE/EN paragraphs. Six direct edition options explicitly label audio/video, subscription/rental/purchase, and storefront. Four Israeli Apple offers are verified; the 2010 DVD requires Region 1 playback and ships only to the US/US territories. Qobuz's complete-album option is labelled UK. Offer verification is dated; no price or guaranteed future availability claim is made.
+- Added source grouping, search coverage, static assertions and real-browser HE/EN desktop/390/320/no-JS checks. These checks do not perform purchases or play external media.

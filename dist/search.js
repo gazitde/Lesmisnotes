@@ -72,7 +72,7 @@
     if (spoilers) for (const s of R.story || []) add('story', s.id, 'story', 'story', s.title, pair(s.period, s.summary, s.detail, s.songs));
     for(const p of R.readingLocator?.parts||[])for(const b of p.books)add('book',b.id,'novel','story',b.label,b.prompt,['reading alongside','מלווה קריאה']);
     if (novel) for (const s of R.novel?.milestones || []) add('novel', s.id, 'novel', 'story', s.title, pair(s.dateLabel, s.summary, s.details, s.remember));
-    for(const c of R.recordingChooser?.cards||[])add('recording',c.id,'musical','songs',c.title,pair(c.year,c.format,c.cast,c.reason,c.prompt),[c.id]);
+    for(const c of R.recordingChooser?.cards||[])add('recording',c.id,'musical','songs',c.title,pair(c.year,c.format,c.cast,c.paragraphs||c.reason,c.prompt,(c.options||[]).map(o=>pair(o.format,o.access,o.storefront,o.note))),[c.id]);
     for (const c of R.musical?.creationStory?.craft || []) add('craft', c.id, 'musical', 'songs', c.title, c.body, [c.id]);
     for (const c of R.israel?.sections || []) add('israel', c.id, 'israel', 'songs', c.title, c.paragraphs, ['Israel','ישראל']);
     for (const g of R.israel?.castGroups || []) for (const c of g.cards) add('israel', 'cast-'+c.id, 'israel', 'songs', c.name, pair(c.role,g.title), ['Israel','ישראל']);
