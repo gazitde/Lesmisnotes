@@ -65,3 +65,10 @@ The footer wraps its expanded link list at desktop widths. Added whole-page hori
 - Added 37 safe song-name entries, including Master of the House, while preserving scene gates and exact song selection. Added bounded Cosette spelling aliases.
 - Replaced legacy tribute/humor internal links with direct gallery-category destinations. Permanent bilingual server redirects preserve older bookmarks, and normal in-site category clicks retain visit-memory state and keyboard focus.
 - Retained 50 canonical localized sitemap destinations and production/preview indexing separation. Chapter positions are navigation states on the novel page, not 365 separately indexed landing pages.
+
+## 2026-10-12 · Nine guided vocal analyses
+- Restored Zoe Stibi alongside Beth Roars and retained Nick Higgs, Freya Casey and The Fairy Voice Mother.
+- Added four original-channel analyses covering Anne Hathaway and Lea Salonga’s I Dreamed a Dream, Eddie Redmayne’s Empty Chairs at Empty Tables, and an ensemble One Day More.
+- The nine-analysis shelf is grouped by six songs, with keyboard song jumps, three bilingual context paragraphs and three listening prompts per selection. Existing 20 performance cards and 29 performance versions remain intact.
+- Song-context links lead to the relevant analysis without stacking additional song-page players. Later-story Empty Chairs context stays behind the existing spoiler choice; unsupported durations and timestamps are omitted.
+- Extended source/render and browser tests cover all nine, grouped navigation, exact links, languages, narrow layouts and player teardown. Actual third-party playback is separate from the mocked browser suite.
