@@ -12,3 +12,7 @@ The site’s operator should settle the desired licence for their own original c
 
 ## Local Hebrew type
 Noto Sans Hebrew (regular and bold), © Google, is locally bundled under SIL OFL 1.1. Full notice: `dist/assets/fonts/OFL.txt`. WOFF container conversion only; no third-party font requests.
+
+## Victor Hugo: Le burg à l’ange
+
+`dist/assets/hugo-castle-with-angel.jpg` is the full-frame3448×2160 image of Victor Hugo’s drawing, c.1863, supplied by Paris Musées / Maisons de Victor Hugo Paris-Guernesey under CC0 1.0. The official IIIF manifest identifies the exact image and license; see `docs/hugo-art-license.json`. The page preserves credit, collection link and license link. The drawing illustrates Hugo’s visual vocabulary; the site does not identify it as a drawing used in the stage projections. The observation paragraph is original commentary.
