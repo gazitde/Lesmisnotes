@@ -26,7 +26,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
    report.push({lang,route,width,...layout});
    if(route==='about'&&width<681)check(await page.locator('.about-numbers .stats-grid').evaluate(el=>[...el.children].every(card=>card.getBoundingClientRect().width>=el.getBoundingClientRect().width*.9)),`About statistics use full readable width ${lang} ${width}`);
    if(route==='before'&&width<681)check(await page.locator('.family-heading').evaluate(el=>el.querySelector('h2').getBoundingClientRect().width>=el.getBoundingClientRect().width*.8),`Family heading uses readable width ${lang} ${width}`);
-   if(width!==320){
+   if(width!==320||['home','musical','listening','novel','characters','about','ideas','history','recipes','places'].includes(route)){
     for(const disclosure of await page.locator('.place-secondary-photo>summary').all())await disclosure.click();
     for(const img of await page.locator('main img').all()){
       if(!await img.isVisible()||!await img.evaluate(el=>new URL(el.currentSrc||el.src,location.href).origin===location.origin))continue;
@@ -67,6 +67,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
      const luminance=css=>{const c=css.match(/[0-9.]+/g).slice(0,3).map(Number);return .2126*linear(c[0])+.7152*linear(c[1])+.0722*linear(c[2])};
      const f=luminance(getComputedStyle(el).color),b=luminance(getComputedStyle(el.closest('.story-foot')).backgroundColor);return (Math.max(f,b)+.05)/(Math.min(f,b)+.05)>=4.5;
     }),`Story closing button contrast ${lang} ${width}`);
+   if(route==='novel')check(await page.locator('.novel-event-actions').count()===await page.locator('.novel-event-card').count(),`Every recap milestone has compact adjacent actions ${lang} ${width}`);
    if(route==='musical')check(await page.locator('.show-art').evaluate(el=>{const outer=el.getBoundingClientRect(),label=el.lastElementChild.getBoundingClientRect();return label.top>=outer.top+12&&label.bottom<=outer.bottom-12&&label.left>=outer.left+12&&label.right<=outer.right-12}),`Musical caption inside inset border ${lang} ${width}`);
    const markers={story:'.story-chapter',characters:'.relationship-graph',novel:'.novel-event',after:'.curtain-stop'};
    if(markers[route])check(await page.locator(markers[route]).count()>0,`Open ${lang}/${route} actually contains rich content`);

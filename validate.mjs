@@ -12,7 +12,9 @@ const analyticsCode=fs.readFileSync('dist/analytics.js','utf8');
 const policiesCode=fs.readFileSync('dist/policies.js','utf8');
 let tests=0;
 const routeMetadata={window:{}};vm.runInNewContext(seo,routeMetadata);const routes=Object.keys(routeMetadata.window.SITE_METADATA.pages);
+const renderScripts=[research,extras,...['character-profiles-data','character-profiles'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),engine,seo,policiesCode,privacyCode,configCode,analyticsCode,...['places-data','places','recipes-data','recipes'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),appCode].map(code=>new vm.Script(code));
 function render(lang,route,spoilers){
+ global.gc?.();
  const map=new Map([['barricade-spoilers',spoilers?'on':'off']]);
  const storage={getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)};
  const callbacks={};
@@ -22,7 +24,7 @@ function render(lang,route,spoilers){
  const context={console,URLSearchParams,document:{cookie:'',createElement:()=>({remove(){}}),head:{appendChild(){}},addEventListener(type,fn){callbacks['document-'+type]=fn},querySelectorAll:()=>[],querySelector:()=>({focus(){},select(){},addEventListener(type,fn){callbacks['skip-'+type]=fn}}),getElementById:id=>id==='app'?app:node(id),documentElement:{},title:''},localStorage:storage,sessionStorage:storage,location:{hash:`#/${lang}/${route}`,pathname:'/'},history:{},setTimeout:()=>1,clearTimeout:()=>{}};
  context.history.replaceState=context.history.pushState=(a,b,path)=>{context.history.state=a;const u=new URL(path,'https://example.test');context.location.pathname=u.pathname;context.location.search=u.search;context.location.hash=''};
  context.window=context;context.window.scrollTo=()=>{};context.window.addEventListener=(type,fn)=>callbacks[type]=fn;
- vm.createContext(context);vm.runInContext(research,context);vm.runInContext(extras,context);vm.runInContext(engine,context);vm.runInContext(seo,context);vm.runInContext(policiesCode,context);vm.runInContext(privacyCode,context);vm.runInContext(configCode,context);vm.runInContext(analyticsCode,context);vm.runInContext(fs.readFileSync('dist/places-data.js','utf8'),context);vm.runInContext(fs.readFileSync('dist/places.js','utf8'),context);vm.runInContext(fs.readFileSync('dist/recipes-data.js','utf8'),context);vm.runInContext(fs.readFileSync('dist/recipes.js','utf8'),context);vm.runInContext(appCode,context);
+ vm.createContext(context);for(const script of renderScripts)script.runInContext(context);
  return {html:app.innerHTML,ctx:context,app,callbacks};
 }
 const {ctx}=render('en','home',false);const R=ctx.RESEARCH;
@@ -250,7 +252,7 @@ for(const abandonment of ['none','navigate','cancel','erase']){
   const state=render(language,'musical',false);state.ctx.matchMedia=()=>({matches:true});
   const click=data=>state.callbacks.click({target:{closest:selector=>selector==='a[href]'?null:{dataset:data}}});
   assert.equal((state.html.match(/data-featured-song=/g)||[]).length,7);assert.ok(state.html.includes('creation-reception'));assert.ok(state.html.includes('composition-notebook'));assert.ok(!state.html.includes('class="spotlight-context"'));assert.ok(!state.html.includes('id="show-slide"'));tests+=5;
-  for(const song of F.songs){click({featuredSong:song.id});const detail=state.ctx.document.getElementById('featured-song-detail').innerHTML;assert.ok(detail.includes(escaped(song.background[language])));assert.ok(detail.includes(escaped(song.question[language])));assert.ok(!detail.includes(escaped(song.plot[language])));if(song.connection)assert.ok(!detail.includes(escaped(song.connection[language])));assert.ok(detail.includes(`data-song-journey="${song.id}"`));click({songJourney:song.id});assert.ok(!state.app.innerHTML.includes('id="show-slide"'));tests+=5+(song.connection?1:0);}
+  for(const song of F.songs){click({featuredSong:song.id});const detail=state.ctx.document.getElementById('featured-song-detail').innerHTML;assert.ok(detail.replace(/<[^>]*>/g,'').includes(escaped(song.background[language])));assert.ok(detail.includes(escaped(song.question[language])));assert.ok(!detail.includes(escaped(song.plot[language])));if(song.connection)assert.ok(!detail.includes(escaped(song.connection[language])));assert.ok(detail.includes(`data-song-journey="${song.id}"`));click({songJourney:song.id});assert.ok(!state.app.innerHTML.includes('id="show-slide"'));tests+=5+(song.connection?1:0);}
   click({action:'show-open'});assert.ok(state.app.innerHTML.includes('id="show-current-title" dir="auto">'+escaped(R.musical.songentries.find(s=>s.id===F.songs.at(-1).id).title[language])));assert.ok(state.app.innerHTML.includes('featured-song-badge'));tests+=2;
   for(const song of F.songs){click({featuredSong:song.id});const detail=state.ctx.document.getElementById('featured-song-detail').innerHTML;assert.ok(detail.includes(escaped(song.plot[language])));if(song.connection)assert.ok(detail.includes(escaped(song.connection[language])));click({songJourney:song.id});const journey=state.ctx.document.getElementById('show-journey').outerHTML;assert.ok(journey.includes('id="show-current-title" dir="auto">'+escaped(R.musical.songentries.find(s=>s.id===song.id).title[language])));assert.ok(journey.includes('featured-song-badge'));tests+=3+(song.connection?1:0);}
   click({action:'hide-spoilers'});assert.ok(!state.app.innerHTML.includes('class="spotlight-context"'));assert.ok(!state.app.innerHTML.includes('id="show-slide"'));tests+=2;
@@ -276,7 +278,7 @@ for(const abandonment of ['none','navigate','cancel','erase']){
  for(const [id,v]of Object.entries(R.videoReach)){assert.ok(Number.isSafeInteger(v.views)&&v.views>0);assert.equal(v.liveCounter,false);assert.ok(v.sourceUrl.endsWith(id));tests+=3;}
  assert.equal(G.items.find(x=>x.id==='Cn8PiqIXEjQ').embeddable,false);assert.equal(G.items.find(x=>x.id==='YL8gH0yELbk').embeddable,false);tests+=2;
 }
-console.log(`PASS: ${tests+4} assertions; 25 primary routes + 2 aliases × 2 languages × 2 spoiler states, all 29 curated versions, source references, privacy, quizzes and map regressions.`);
+console.log(`PASS: ${tests+4} assertions; ${routes.filter(route=>!routeMetadata.window.SITE_METADATA.pages[route].canonicalRoute).length} primary routes + 2 aliases × 2 languages × 2 spoiler states, all 29 curated versions, source references, privacy, quizzes and map regressions.`);
 console.log('This is source/render QA, not browser playback or mobile interaction QA.');
 
 for(const language of ['he','en']){

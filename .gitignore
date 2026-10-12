@@ -15,6 +15,8 @@ dist/robots.txt
 dist/sitemap.xml
 dist/reading-shells/
 dist/seo.js
+dist/character-profiles-data.js
+dist/profile-readers/
 test-results/
 playwright-report/
 public-dist/

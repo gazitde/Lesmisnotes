@@ -81,3 +81,10 @@ The footer wraps its expanded link list at desktop widths. Added whole-page hori
 - Rebuilt coaching cards around teacher, language, listening cue and immediate action; removed oversized repeated headings and empty desktop columns. Converted the long song sidebar into a compact horizontal selector, reduced small fact/navigation panels, and stopped short character/About/source cards stretching to their neighbors.
 - Clarified40 localized first-mention role descriptions and corrected a legacy Marius/Jondrette causal summary against Hugo III.VIII.V.
 - Added hierarchical reader, source-action, menu-state and compact-card browser regression coverage in both languages at desktop,390px and320px. Live-media playback remains a separate verification limit.
+
+## Character profiles and contextual reading ·12 October2026
+
+- Ten dedicated bilingual character pages provide an original introduction and three substantial deeper paragraphs, exact Hugo references, songs and relationships. Normal pages have static introductions, unique metadata, reciprocal language links and sitemap entries.
+- First contextual character mentions lead to the relevant profile. Chapter links use a separate role-only reader view that cannot inherit broad spoiler permission or expose future aliases. Both profile modes have semantic parent trails.
+- Tightened internal page mastheads, reflection/quotation panels, performance cards and recipe context. Removed equal-height blank space in relationship cards and nested mobile reader padding. Rich prose, local art, photographs and accessible interaction targets remain intact.
+- Reviewed all ten profiles,80 primary anchors and all365 chapter summaries;393 reviewed name links across241 chapters independently. Corrected the ambiguous Thenardier rescue pronoun in both languages.

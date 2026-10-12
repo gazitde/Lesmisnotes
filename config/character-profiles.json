@@ -1,0 +1,4478 @@
+{
+  "profiles": [
+    {
+      "id": "valjean",
+      "name": {
+        "en": "Jean Valjean",
+        "he": "ז׳אן ולז׳אן"
+      },
+      "role": {
+        "en": "A released prisoner",
+        "he": "אסיר משוחרר"
+      },
+      "safeIntro": {
+        "he": "ז׳אן ולז׳אן הוא הדמות המרכזית בעלובי החיים, פועל ששחרורו מן הכלא אינו מחזיר לו את מקומו בחברה. כשהוא מגיע לדיניה ב־1815, אפילו כסף אינו מבטיח לו ארוחה או מיטה לאחר שעברו נודע. הוגו מציג אותו דרך שורת הדחיות האלה, והצורך הפשוט במחסה נעשה מבחן ראשון ליחסה של קהילה לאדם הבא מבחוץ.",
+        "en": "Jean Valjean is the central figure of Les Misérables, a laborer whose release from prison does not restore his place in society. When he reaches Digne in 1815, money cannot buy him a meal or a bed once his record is known. Hugo introduces him through these refusals, making the ordinary need for shelter the first test of how a community treats an outsider."
+      },
+      "paragraphs": [
+        {
+          "he": "העבירה שבגללה נאסר הייתה גנבת לחם למשפחת אחותו הרעבה; ניסיונות בריחה האריכו עונש של חמש שנים לתשע־עשרה. תגובתו של הבישוף מיריאל לגנבת כלי הכסף שלו מציעה שיפוט אחר של אותו אדם. עם זאת, המפגש הבא עם הילד פטי־ז׳רווה מונע סיפור פשוט של חזרה למוטב: גם ההכרה בפגיעה שהוא עצמו עוד גורם היא חלק מן השינוי.",
+          "en": "His original offense was stealing bread for his sister’s hungry family; attempted escapes extended five years of punishment to nineteen. Bishop Myriel’s response to the theft of his silver offers a different judgment of the same man. Yet Valjean’s encounter with the child Petit-Gervais immediately afterward prevents an easy conversion story: recognizing the harm he still causes is part of his change."
+        },
+        {
+          "he": "כבעל המפעל וכראש העיר מדלן, הוא מספק עבודה אך אינו מצליח להגן על כל מי שחי בתוך המערכת שבניהולו. הידרדרותה של פנטין חושפת את הגבול הזה. משפטו של שאנמתייה מאלץ אותו לבחור בין שמירת חייו הציבוריים המועילים לבין הנחתו של אדם חף מפשע לשאת את זהותו. בחלק הראשון, בספר השביעי, בפרק י״א, הוא מזדהה בבית המשפט ומוותר על ההגנה הזאת.",
+          "en": "As the manufacturer and mayor Madeleine, he provides employment but cannot protect everyone within the system he runs. Fantine’s ruin exposes that limit. The Champmathieu trial then forces him to choose between preserving his useful public life and letting an innocent man bear his identity. In Part I, Book VII, Chapter XI, he identifies himself before the court and gives up that protection."
+        },
+        {
+          "he": "גידולה של קוזט מעניק לו משפחה; קבלת אהבתה למריוס דורשת אבהות שאינה נאחזת בה כרכוש. הוא משחרר את ז׳אבר, נושא את מריוס הפצוע דרך הביוב, ובהמשך מתוודה על עברו במקום להסתירו בתוך המשפחה החדשה. המפגש האחרון עם בני הזוג משיב את הקשר שנסיגתו סיכנה. Who Am I? מציג את ההכרעה במשפט; Bring Him Home הוא תפילתו למען מריוס.",
+          "en": "Raising Cosette gives him a family; accepting her love for Marius demands a less possessive form of fatherhood. He releases Javert, carries the wounded Marius through the sewers, and later admits his past rather than conceal it within the new household. His final reunion with the couple restores the connection his withdrawal endangered. Who Am I? stages the trial decision; Bring Him Home is his prayer for Marius."
+        }
+      ],
+      "references": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0015",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 2, פרק 1: ההגעה לדיניה",
+            "en": "Hugo · Part 1, Book 2, Chapter 1: arrival in Digne"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0020",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 2, פרק 6: הלחם, המאסר וניסיונות הבריחה",
+            "en": "Hugo · Part 1, Book 2, Chapter 6: bread, imprisonment and escape attempts"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0026",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 2, פרק 12: מתנת הבישוף",
+            "en": "Hugo · Part 1, Book 2, Chapter 12: the bishop’s gift"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0027",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 2, פרק 13: פטי־ז׳רווה",
+            "en": "Hugo · Part 1, Book 2, Chapter 13: Petit-Gervais"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0048",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 5, פרק 9: גבולותיה של אחריות מואצלת",
+            "en": "Hugo · Part 1, Book 5, Chapter 9: the limits of delegated responsibility"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0106",
+          "label": {
+            "he": "הוגו · חלק 2, ספר 4, פרק 3: הקשר עם קוזט",
+            "en": "Hugo · Part 2, Book 4, Chapter 3: the bond with Cosette"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0295",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 15, פרק 1: אהבה ורכושנות",
+            "en": "Hugo · Part 4, Book 15, Chapter 1: love and possessiveness"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0057",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 7, פרק 3: זהותו ומצפונו של מדלן",
+            "en": "Hugo · Part 1, Book 7, Chapter 3: Madeleine’s identity and conscience"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0065",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 7, פרק 11: ההצהרה בבית המשפט",
+            "en": "Hugo · Part 1, Book 7, Chapter 11: the courtroom declaration"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0317",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 1, פרק 19: שחרור ז׳אבר",
+            "en": "Hugo · Part 5, Book 1, Chapter 19: Javert released"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0329",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 3, פרק 1: נשיאת מריוס",
+            "en": "Hugo · Part 5, Book 3, Chapter 1: carrying Marius"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0354",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 7, פרק 1: הווידוי בפני מריוס",
+            "en": "Hugo · Part 5, Book 7, Chapter 1: the confession to Marius"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0364",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 9, פרק 5: המפגש האחרון",
+            "en": "Hugo · Part 5, Book 9, Chapter 5: the final reunion"
+          }
+        },
+        {
+          "url": "https://www.mtishows.co.uk/print/node/1293",
+          "label": {
+            "he": "MTI: תקציר הבמה והקטעים המוזיקליים",
+            "en": "MTI: stage synopsis and musical numbers"
+          }
+        }
+      ],
+      "songIds": [
+        "what-have-i-done",
+        "who-am-i",
+        "bring-him-home",
+        "valjean-confession",
+        "epilogue"
+      ],
+      "relationshipIds": [
+        "bishop-valjean",
+        "javert-valjean",
+        "valjean-cosette",
+        "valjean-marius",
+        "valjean-fantine"
+      ],
+      "firstAppearance": {
+        "chapterId": "p1-b2-c1",
+        "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0015"
+      },
+      "readerIdentity": {
+        "he": "נוסע המחפש אוכל ומקום לינה בדיניה.",
+        "en": "A traveler looking for food and shelter in Digne."
+      },
+      "nameTokens": {
+        "en": [
+          "Jean Valjean",
+          "Valjean"
+        ],
+        "he": [
+          "ז׳אן ולז׳אן",
+          "ולז׳אן",
+          "ולז'אן"
+        ]
+      }
+    },
+    {
+      "id": "javert",
+      "name": {
+        "en": "Javert",
+        "he": "ז׳אבר"
+      },
+      "role": {
+        "en": "Police inspector",
+        "he": "מפקח משטרה"
+      },
+      "safeIntro": {
+        "he": "ז׳אבר הוא מפקח משטרה שזהותו נשענת על שירות, ציות וסמכות החוק. ברומן הוא נכנס לעלילה במונטריי־סור־מר, שם ראש העיר המשגשג מעורר את חשדו. הוא ממושמע ואינו מושחת, אך בשיפוטיו כמעט אין מקום לספק: בעיניו, מכובדות חברתית ופשע הם מצבים מנוגדים, ולא נסיבות העשויות להשתנות.",
+        "en": "Javert is a police inspector whose sense of identity rests on service, obedience and the authority of the law. In the novel he enters the action in Montreuil-sur-Mer, where the prosperous mayor attracts his scrutiny. He is disciplined and personally incorruptible, but his judgments allow little uncertainty: social respectability and criminality appear to him as opposing conditions rather than circumstances that can change."
+      },
+      "paragraphs": [
+        {
+          "he": "הוגו קושר את הנוקשות הזאת למוצא חברתי טעון: ז׳אבר נולד בכלא להורים הקשורים לעולם שעליו יופקד בהמשך. הוא בוחר בסמכות כדרך לצאת מן השוליים. דרישתו שיפטרו אותו לאחר שסבר שהאשים את מדלן לשווא מראה שאותה חומרה מופנית גם כלפי עצמו. הוא אינו רק משתמש בכללים נגד אחרים; הוא מאמין שגם עליו להיכנע להם.",
+          "en": "Hugo roots that rigidity in an uneasy social origin: Javert was born in prison to parents associated with the world he later polices. He chooses authority as an escape from exclusion. His demand to be dismissed after apparently accusing Madeleine wrongly shows that the same severity can turn inward. He does not merely use rules against others; he believes that he too must submit to them."
+        },
+        {
+          "he": "יחסו לפנטין חושף את מחירה של הוודאות הזאת. הוא מקבל את עמדתו של הגבר המכובד בתקרית ברחוב ורואה באישה הפגיעה בעיקר עבריינית. התערבויותיו של ולז׳אן מציבות שוב ושוב את סמכות החוק לצד החובה להגן על אדם מסוים. במתרס גברוש חושף את ז׳אבר כאיש משטרה, והמפקח נעשה לשבוי של האנשים שבא לעקוב אחריהם.",
+          "en": "His treatment of Fantine reveals the cost of that certainty. He accepts the respectable man’s position in their street quarrel and regards the vulnerable woman chiefly as an offender. Valjean’s interventions repeatedly place lawful authority beside an obligation to protect a particular person. At the barricade, Gavroche exposes Javert as a police agent, and the inspector becomes the prisoner of those he came to observe."
+        },
+        {
+          "he": "ולז׳אן משחרר אותו בלי לדרוש תמורה. בהמשך ז׳אבר מאפשר לו להביא את מריוס הפצוע לביתו, וניצב מול סתירה שהקטגוריות שלו אינן מסוגלות לפתור: אדם מורשע נהג בנדיבות, ואילו מעצרו ישיב לנדיבות בפגיעה. חלק חמישי, ספר רביעי, פרק א׳ עוקב אחר המשבר עד להתאבדותו של ז׳אבר. Stars מבטא את ודאותו; המונולוג המאוחר שלו מלווה את קריסתה.",
+          "en": "Valjean releases him without a bargain. Later Javert allows Valjean to take the injured Marius home, then confronts a conflict his categories cannot resolve: a convicted man has acted generously, while arresting him would answer generosity with harm. Part V, Book IV, Chapter I follows this crisis through to Javert’s suicide. Stars voices his certainty; his later soliloquy follows its collapse."
+        }
+      ],
+      "references": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0044",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 5, פרק 5: מוצא וסמכות משטרתית",
+            "en": "Hugo · Part 1, Book 5, Chapter 5: origins and police authority"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0054",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 6, פרק 2: הבקשה לפיטורים",
+            "en": "Hugo · Part 1, Book 6, Chapter 2: the request for dismissal"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0052",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 5, פרק 13: פנטין בתחנת המשטרה",
+            "en": "Hugo · Part 1, Book 5, Chapter 13: Fantine at the police station"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0283",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 12, פרק 7: חשיפת איש המשטרה",
+            "en": "Hugo · Part 4, Book 12, Chapter 7: the exposed police agent"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0317",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 1, פרק 19: חסדו של ולז׳אן",
+            "en": "Hugo · Part 5, Book 1, Chapter 19: Valjean’s mercy"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0339",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 3, פרק 11: הנסיעה עם מריוס",
+            "en": "Hugo · Part 5, Book 3, Chapter 11: the journey with Marius"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0341",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 4, פרק 1: משבר המצפון",
+            "en": "Hugo · Part 5, Book 4, Chapter 1: the crisis of conscience"
+          }
+        },
+        {
+          "url": "https://www.mtishows.co.uk/print/node/1293",
+          "label": {
+            "he": "MTI: תקציר הבמה והקטעים המוזיקליים",
+            "en": "MTI: stage synopsis and musical numbers"
+          }
+        }
+      ],
+      "songIds": [
+        "work-song",
+        "confrontation",
+        "stars",
+        "javert-barricade",
+        "javert-soliloquy"
+      ],
+      "relationshipIds": [
+        "javert-valjean",
+        "javert-fantine",
+        "gavroche-javert"
+      ],
+      "firstAppearance": {
+        "chapterId": "p1-b5-c5",
+        "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0044"
+      },
+      "readerIdentity": {
+        "he": "מפקח משטרה במונטריי־סור־מר.",
+        "en": "A police inspector in Montreuil-sur-Mer."
+      },
+      "nameTokens": {
+        "en": [
+          "Javert"
+        ],
+        "he": [
+          "ז׳אבר",
+          "ז'אבר"
+        ]
+      }
+    },
+    {
+      "id": "fantine",
+      "name": {
+        "en": "Fantine",
+        "he": "פנטין"
+      },
+      "role": {
+        "en": "Working mother",
+        "he": "אם עובדת"
+      },
+      "safeIntro": {
+        "he": "פנטין היא אישה עובדת ממונטריי־סור־מר, שסיפורה מחבר בין יחסים אישיים לבין תנאי הקיום הכלכליים. הוגו מציג אותה לראשונה בין ארבע צעירות המבלות יום ראשון עם אהוביהן בפריז. היא יתומה ללא שם משפחה ידוע, ויחסה לסטודנט תולומייס רציני ומסור. מיעוט משאביה מעניק משמעות מיוחדת לפערי הציפיות בתוך החבורה הנראית חסרת דאגות.",
+        "en": "Fantine is a working woman from Montreuil-sur-Mer whose story connects intimate relationships with the economics of survival. Hugo first presents her among four young women spending a Sunday with their lovers in Paris. She is an orphan without a known family name, and her attachment to the student Tholomyès is serious. Her limited resources make the unequal expectations within that apparently carefree company especially consequential."
+      },
+      "paragraphs": [
+        {
+          "he": "תולומייס נוטש אותה ואת בתם, קוזט. בחיפושיה אחר עבודה פנטין משאירה את הילדה אצל בני הזוג תנרדייה, לאחר שהיא מפרשת את חיבתה של גברת תנרדייה לבנותיה כהוכחה לטוב לב כללי. התשלומים בעבור הטיפול נעשים אמצעי סחיטה. מרחוק אין היא יכולה לבחון את היחס לילדה, ותלותה בכותב מכתבים מוסיפה פגיעוּת להסדר שנועד להגן על קוזט.",
+          "en": "Tholomyès abandons her and their daughter, Cosette. Seeking employment, Fantine leaves the child with the Thénardiers after mistaking Madame Thénardier’s tenderness toward her own daughters for evidence of general kindness. Payments for care become a means of extortion. Fantine cannot inspect the child’s treatment from a distance, and her dependence on a letter-writer adds another vulnerability to the arrangements intended to protect Cosette."
+        },
+        {
+          "he": "ברומן, מנהלת העבודה מפטרת אותה ממפעלו של מדלן לאחר שעובדות אחרות מגלות שהיא אם לא־נשואה; מדלן עצמו אינו יודע על הפיטורים. עבודת תפירה אינה מספיקה לדרישות הכספיות הגוברות. פנטין מוכרת את שערה ואת שיניה, ולבסוף פונה לזנות. הוגו מציג הידרדרות מצטברת: רכילות מכובדת, טיפול נצלני בילדה, ירידת שכר ומחלה שאינה מטופלת מצמצמים יחד את אפשרויותיה, ולא טעות אחת המסבירה הכול.",
+          "en": "In the novel, a female superintendent dismisses her from Madeleine’s factory after fellow workers discover her unmarried motherhood; Madeleine himself does not know. Sewing cannot meet mounting demands. Fantine sells her hair and teeth, then turns to prostitution. Hugo makes this decline cumulative: respectable gossip, exploitative childcare, falling wages and untreated illness narrow her choices together, rather than a single mistake explaining everything."
+        },
+        {
+          "he": "לאחר שבמטבואה מתגרה בה ברחוב, ז׳אבר מורה לאסור אותה. מדלן מביא לשחרורה ומבטיח עזרה, אך גילוי זהותו מנפץ את תקוותה לשוב ולראות את קוזט; היא מתה במרפאה. ההבטחה שניתנה לה מוסיפה לעצב את אחריותו של ולז׳אן זמן רב לאחר שסיפורה שלה מסתיים. I Dreamed a Dream חוזר לתקוות שאבדו; Fantine’s Death מתמקד בבתה.",
+          "en": "After Bamatabois provokes her in the street, Javert orders her imprisonment. Madeleine secures her release and promises help, but the discovery of his identity destroys her hope of seeing Cosette again; she dies in the infirmary. The promise to her continues to shape Valjean’s responsibilities long after her own narrative ends. I Dreamed a Dream recalls lost hopes; Fantine’s Death centers her daughter."
+        }
+      ],
+      "references": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0029",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 3, פרק 2: פנטין ותולומייס",
+            "en": "Hugo · Part 1, Book 3, Chapter 2: Fantine and Tholomyès"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0036",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 3, פרק 9: הנטישה והאימהות",
+            "en": "Hugo · Part 1, Book 3, Chapter 9: abandonment and motherhood"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0037",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 4, פרק 1: מסירת קוזט לפונדקאים",
+            "en": "Hugo · Part 1, Book 4, Chapter 1: entrusting Cosette to the innkeepers"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0047",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 5, פרק 8: הפיטורים",
+            "en": "Hugo · Part 1, Book 5, Chapter 8: the dismissal"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0048",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 5, פרק 9: אי־ידיעתו של מדלן ושכר התפירה",
+            "en": "Hugo · Part 1, Book 5, Chapter 9: Madeleine’s ignorance and sewing wages"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0049",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 5, פרק 10: הדרישות והאובדנים הגוברים",
+            "en": "Hugo · Part 1, Book 5, Chapter 10: escalating demands and losses"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0052",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 5, פרק 13: המעצר והשחרור",
+            "en": "Hugo · Part 1, Book 5, Chapter 13: the arrest and release"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0069",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 8, פרק 4: המרפאה",
+            "en": "Hugo · Part 1, Book 8, Chapter 4: the infirmary"
+          }
+        },
+        {
+          "url": "https://www.broadwayspokane.com/assets/doc/Les-Mis-Guide-for-Tour_FINAL-995a5dcc56.pdf",
+          "label": {
+            "he": "מדריך הבמה הרשמי: קשרי דמויות ושירים",
+            "en": "Official stage guide: song and character connections"
+          }
+        }
+      ],
+      "songIds": [
+        "end-of-day",
+        "dreamed-dream",
+        "docks",
+        "come-to-me",
+        "epilogue"
+      ],
+      "relationshipIds": [
+        "fantine-cosette",
+        "fantine-thenardiers",
+        "javert-fantine",
+        "valjean-fantine"
+      ],
+      "firstAppearance": {
+        "chapterId": "p1-b3-c2",
+        "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0029"
+      },
+      "readerIdentity": {
+        "he": "צעירה עובדת בפריז, במקור ממונטריי־סור־מר.",
+        "en": "A young working woman in Paris, originally from Montreuil-sur-Mer."
+      },
+      "nameTokens": {
+        "en": [
+          "Fantine"
+        ],
+        "he": [
+          "פנטין"
+        ]
+      }
+    },
+    {
+      "id": "cosette",
+      "name": {
+        "en": "Cosette",
+        "he": "קוזט"
+      },
+      "role": {
+        "en": "Fantine’s daughter",
+        "he": "בתה של פנטין"
+      },
+      "safeIntro": {
+        "he": "קוזט היא בתה של פנטין, והיא מופיעה לראשונה כילדה קטנה הנוסעת עם אמה. שמה הרשמי הוא אפרזי; קוזט הוא שם החיבה שבו פנטין מכנה אותה. המתח בין תלותה של ילדה לבין ההחלטות שמבוגרים מקבלים סביבה מעניק לסיפורה המוקדם את עוצמתו. מזון, בגדים, משחק ובית שאפשר לבטוח בו אינם פרטי רקע בלבד, אלא אמות מידה לטיפול ממשי.",
+        "en": "Cosette is Fantine’s daughter, first encountered as a small child traveling with her mother. Her formal name is Euphrasie; Cosette is the familiar name Fantine uses. The contrast between a child’s dependence and the decisions adults make around her gives her early story its force. Food, clothing, play and a reliable home are not background details here, but measures of whether care is real."
+      },
+      "paragraphs": [
+        {
+          "he": "בפונדק במונפרמיי בני הזוג תנרדייה משתמשים בכסף שנשלח בעבורה לצורכיהם, ומכריחים אותה לעבוד בזמן שבנותיהם משחקות. השליחות להבאת מים בלילה מפגישה אותה עם ולז׳אן. עזרתו בנשיאת הדלי ומתנת הבובה משמעותיות משום שהן עונות על חסכים מסוימים: עבודה מתישה, פחד מעונש והדרה מהנאות רגילות של ילדות.",
+          "en": "At the Montfermeil inn, the Thénardiers turn the money sent for her upkeep to their own purposes and make her work while their daughters play. The nighttime errand for water brings her into contact with Valjean. His help with the bucket and gift of a doll matter because they answer specific forms of deprivation: exhausting labor, fear of punishment and exclusion from ordinary childhood pleasures."
+        },
+        {
+          "he": "ולז׳אן מוציא אותה מן הפונדק ונעשה לאביה במעשי היומיום. המקלט בפטי־פיקפוס מעניק לה לימודים, חברה והגנה, והקשר ביניהם משנה גם אותו. אולם כשהיא גדלה ונעשית לצעירה, סודיותו מותירה חלקים חשובים בתולדותיה בלי הסבר. השינויים בלבושה ובביטחונה, ומשיכתה למריוס, מעידים שחייה מתרחבים מעבר לקשר המוגן שאביה המגדל מקווה לשמר.",
+          "en": "Valjean takes her away and becomes her father in daily practice. Their refuge at Petit-Picpus gives her schooling, companionship and protection, while their attachment also transforms him. As she grows into a young woman, however, his secrecy leaves important parts of her own history unexplained. Her changing clothes, confidence and attraction to Marius mark a life extending beyond the sheltered relationship her guardian hopes to preserve."
+        },
+        {
+          "he": "אהבתה ההדדית למריוס מתפתחת דרך מבטים, הצהרה כתובה ומפגשים בגן שברחוב פלומה. הנישואים אינם מעניקים לה מיד את המידע הדרוש להבנת התרחקותו של ולז׳אן; חשדותיו המוטעים של מריוס מסייעים להפריד ביניהם. החזרה אל מיטתו מחברת לבסוף את אושרה הבוגר לטיפול שאפשר אותו. Castle on a Cloud מדמיין ביטחון; In My Life מעניק לקוזט הבוגרת שאלות משלה.",
+          "en": "Her mutual love with Marius develops through observation, a written declaration and meetings in the Rue Plumet garden. Marriage does not initially give her the knowledge needed to understand Valjean’s withdrawal; Marius’s mistaken suspicions help keep them apart. Their return to his bedside finally reconnects her adult happiness with the care that made it possible. Castle on a Cloud imagines safety; In My Life gives the grown Cosette questions of her own."
+        }
+      ],
+      "references": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0037",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 4, פרק 1: שמה של קוזט ואמה",
+            "en": "Hugo · Part 1, Book 4, Chapter 1: Cosette’s name and mother"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0039",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 4, פרק 3: היחס לילדה",
+            "en": "Hugo · Part 1, Book 4, Chapter 3: the child’s treatment"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0099",
+          "label": {
+            "he": "הוגו · חלק 2, ספר 3, פרק 7: הדלי והזר",
+            "en": "Hugo · Part 2, Book 3, Chapter 7: the bucket and the stranger"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0100",
+          "label": {
+            "he": "הוגו · חלק 2, ספר 3, פרק 8: הבובה",
+            "en": "Hugo · Part 2, Book 3, Chapter 8: the doll"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0146",
+          "label": {
+            "he": "הוגו · חלק 2, ספר 8, פרק 9: החיים במנזר",
+            "en": "Hugo · Part 2, Book 8, Chapter 9: life at the convent"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0237",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 3, פרק 5: הביטחון המתפתח",
+            "en": "Hugo · Part 4, Book 3, Chapter 5: growing confidence"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0248",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 5, פרק 6: המפגש בגן",
+            "en": "Hugo · Part 4, Book 5, Chapter 6: the garden meeting"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0358",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 8, פרק 3: ביקוריו ההולכים ומתמעטים של ולז׳אן",
+            "en": "Hugo · Part 5, Book 8, Chapter 3: Valjean’s diminishing visits"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0364",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 9, פרק 5: המפגש המחודש",
+            "en": "Hugo · Part 5, Book 9, Chapter 5: reunion"
+          }
+        },
+        {
+          "url": "https://www.mtishows.co.uk/print/node/1293",
+          "label": {
+            "he": "MTI: תקציר הבמה והקטעים המוזיקליים",
+            "en": "MTI: stage synopsis and musical numbers"
+          }
+        }
+      ],
+      "songIds": [
+        "castle-cloud",
+        "in-my-life",
+        "heart-love",
+        "every-day",
+        "epilogue"
+      ],
+      "relationshipIds": [
+        "fantine-cosette",
+        "thenardiers-cosette",
+        "valjean-cosette",
+        "marius-cosette",
+        "eponine-cosette"
+      ],
+      "firstAppearance": {
+        "chapterId": "p1-b4-c1",
+        "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0037"
+      },
+      "readerIdentity": {
+        "he": "בתה הקטנה של פנטין.",
+        "en": "Fantine’s young daughter."
+      },
+      "nameTokens": {
+        "en": [
+          "Cosette"
+        ],
+        "he": [
+          "קוזט"
+        ]
+      }
+    },
+    {
+      "id": "marius",
+      "name": {
+        "he": "מריוס",
+        "en": "Marius"
+      },
+      "role": {
+        "en": "A young Parisian student",
+        "he": "סטודנט צעיר בפריז"
+      },
+      "safeIntro": {
+        "he": "מריוס פונמרסי הוא צעיר פריזאי שהשכלתו נרכשת הן בספרים והן במפגשים עם אנשים שחינוכו לימד אותו להבין באופן מוטעה. סיפורו מחבר נאמנויות משפחתיות, ויכוח פוליטי, עוני ואהבה רומנטית. הוגו מציג את שמו כדייר עני בבית גורבו, ואז חוזר לילדותו ומסביר כיצד הגיע לחיים עצמאיים.",
+        "en": "Marius Pontmercy is a young Parisian whose education takes place both in books and in encounters with people his upbringing has taught him to misunderstand. His story joins family loyalties, political argument, poverty and romantic love. Hugo introduces his name as that of a poor tenant in the Gorbeau house before returning to his childhood and explaining how he came to live independently."
+      },
+      "paragraphs": [
+        {
+          "he": "מריוס גדל אצל ז׳ילנורמן המלוכני, ובתחילה מקבל את התיאור העוין של אביו הנעדר, הקצין הנפוליאוני ז׳ורז׳ פונמרסי. הגילוי שאביו נהג לצפות בו בסתר בכנסייה מערער את התיאור הזה. הוא מאמץ את זכר אביו ואת נאמנותו לקיסרות, רב עם סבו ועוזב את הבית. גם הכרת התודה שלו לתנרדייה נשענת על סיפור חלקי: הצלתו כביכול של האב בווטרלו.",
+          "en": "Raised by the royalist Gillenormand, Marius initially accepts a hostile account of his absent father, the Napoleonic officer Georges Pontmercy. Learning that his father secretly watched him at church overturns that account. He embraces his father’s memory and imperial loyalties, quarrels with his grandfather and leaves home. His gratitude to Thénardier rests on another incomplete story: the supposed rescue of his father at Waterloo."
+        },
+        {
+          "he": "קורפראק מקרב אותו לחוג ידידי האב״ג, אך הוגו אינו הופך אותו לדובר מובהק של הרפובליקניות שלהם. הגנתו על נפוליאון נתקלת בדרישתו של קומבפר לחירות. עבודות תרגום מפרנסות את עצמאותו הצנועה. המפגש עם קוזט משנה את מוקד תשומת לבו, ועזרתה של אפונין מחברת את תקוותיו הרומנטיות לעוני ולבית העברייני שראה מעבר לקיר.",
+          "en": "Courfeyrac brings him into the Friends of the ABC’s circle, but Hugo does not make him an uncomplicated spokesman for their republican politics. His defense of Napoleon meets Combeferre’s demand for liberty. Translation work supports his austere independence. Meeting Cosette redirects his attention, while Éponine’s assistance connects his romantic hopes to the poverty and criminal household he has observed next door."
+        },
+        {
+          "he": "כשהוא מאמין שאיבד את קוזט, הוא מגיע למתרס מתוך ייאוש וניצל בזכות התערבותו של ולז׳אן. לאחר נישואיו הוא שופט באופן מוטעה את עברו של מצילו ומסייע להרחיקו מן המשפחה. ניסיון הסחיטה של תנרדייה מגלה לבסוף מי נשא אותו דרך הביוב. מסע הלימוד שלו מסתיים בהכרה ובהכרת תודה יותר מאשר בוודאות פוליטית. Empty Chairs at Empty Tables הוא חשבון נפשו עם הישרדותו ועם החברים שאינם.",
+          "en": "Believing Cosette lost to him, he reaches the barricade in despair and survives through Valjean’s intervention. After marrying her, he misjudges that rescuer’s past and helps estrange him from the family. Thénardier’s attempted blackmail finally reveals who carried him through the sewers. His education ends in acknowledgment and gratitude rather than political certainty. Empty Chairs at Empty Tables is his reckoning with survival and absent friends."
+        }
+      ],
+      "references": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0159",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 1, פרק 13: ההצגה הראשונה בשמו",
+            "en": "Hugo · Part 3, Book 1, Chapter 13: the first named introduction"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0171",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 3, פרק 4: בקשתו האחרונה של אביו",
+            "en": "Hugo · Part 3, Book 3, Chapter 4: his father’s last request"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0172",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 3, פרק 5: עדותו של מבף על האב",
+            "en": "Hugo · Part 3, Book 3, Chapter 5: Mabeuf’s account of his father"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0175",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 3, פרק 8: הקרע עם ז׳ילנורמן",
+            "en": "Hugo · Part 3, Book 3, Chapter 8: the break with Gillenormand"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0180",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 4, פרק 5: נפוליאון והחירות הרפובליקנית",
+            "en": "Hugo · Part 3, Book 4, Chapter 5: Napoleon and republican freedom"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0183",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 5, פרק 2: עבודה ועצמאות",
+            "en": "Hugo · Part 3, Book 5, Chapter 2: work and independence"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0290",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 14, פרק 3: ההגעה למתרס",
+            "en": "Hugo · Part 4, Book 14, Chapter 3: arrival at the barricade"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0355",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 7, פרק 2: שיפוטו של מריוס",
+            "en": "Hugo · Part 5, Book 7, Chapter 2: Marius’s judgment"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0363",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 9, פרק 4: זיהוי מצילו",
+            "en": "Hugo · Part 5, Book 9, Chapter 4: recognizing his rescuer"
+          }
+        },
+        {
+          "url": "https://www.broadwayspokane.com/assets/doc/Les-Mis-Guide-for-Tour_FINAL-995a5dcc56.pdf",
+          "label": {
+            "he": "מדריך הבמה הרשמי: קשרי דמויות ושירים",
+            "en": "Official stage guide: song and character connections"
+          }
+        }
+      ],
+      "songIds": [
+        "red-black",
+        "heart-love",
+        "one-day-more",
+        "little-fall-rain",
+        "empty-chairs",
+        "every-day"
+      ],
+      "relationshipIds": [
+        "marius-enjolras",
+        "valjean-marius",
+        "marius-cosette",
+        "eponine-marius"
+      ],
+      "firstAppearance": {
+        "chapterId": "p3-b1-c13",
+        "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0159"
+      },
+      "readerIdentity": {
+        "he": "דייר צעיר ועני בבית גורבו.",
+        "en": "A poor young tenant in the Gorbeau house."
+      },
+      "nameTokens": {
+        "en": [
+          "Marius Pontmercy",
+          "Marius"
+        ],
+        "he": [
+          "מריוס פונמרסי",
+          "מריוס"
+        ]
+      }
+    },
+    {
+      "id": "eponine",
+      "name": {
+        "en": "Éponine",
+        "he": "אפונין"
+      },
+      "role": {
+        "en": "A young woman on Paris’s margins",
+        "he": "צעירה בשולי החברה בפריז"
+      },
+      "safeIntro": {
+        "he": "אפונין שייכת לדור הצעיר שבאמצעותו הוגו בוחן כיצד תנאי הילדות מעצבים חיים, בלי לקבוע אותם לחלוטין. בתם הבכורה של בני הזוג תנרדייה מופיעה תחילה במסגרת המשפחה המנהלת את הפונדק במונפרמיי. מקומה לצד אחותה אזלמה והילדה שנמסרה להוריה הופך אותה לחלק חשוב מן החלוקה הלא־שוויונית של נוחות, תשומת לב והגנה ברומן.",
+        "en": "Éponine belongs to the younger generation through whom Hugo examines how childhood conditions shape, but do not wholly determine, a life. The elder Thénardier daughter first appears within the family that keeps the Montfermeil inn. Her position beside her sister Azelma and the child entrusted to their parents makes her an important part of the novel’s unequal distribution of comfort, attention and protection."
+      },
+      "paragraphs": [
+        {
+          "he": "הילדה המועדפת בפונדק חוזרת כמתבגרת ענייה בפריז, הנושאת מכתבי בקשת נדבות בעבור אביה. שיחתה הממושכת הראשונה עם מריוס משלבת התרברבות, רעב וגאווה ביכולתה לקרוא ולכתוב. הוגו מציג יחד את תבונתה ואת בריאותה הפגועה. משיכתה לשכן שמתייחס אליה בטוב לב מעניקה למפגש משמעות החורגת מתוכניותיה של משפחתה.",
+          "en": "The favored child of the inn returns as an impoverished adolescent in Paris, carrying begging letters for her father. Her first extended conversation with Marius combines bravado, hunger and pride in being able to read and write. Hugo allows her intelligence and damaged health to appear together. Her attraction to a neighbor who treats her kindly gives that meeting significance beyond the family’s schemes."
+        },
+        {
+          "he": "היא מוצאת למריוס את כתובתה של קוזט, ובהמשך ניצבת מול חבורתו של אביה בשער הבית ברחוב פלומה. המעשים האלה מסייעים לקשר שהיא נשארת מחוצה לו. עם זאת, הרומן שומר על סתירה מטרידה: היא מסתירה את מכתבה של קוזט ומושכת את מריוס אל המתרס, מתוך רצון שימותו יחד. התנגדותה לאלימות המשפחתית אינה מוחקת את הרכושנות שבתשוקתה שלה.",
+          "en": "She finds Cosette’s address for Marius and later stands against her father’s gang at the Rue Plumet gate. These acts help a relationship that excludes her. Yet the novel preserves a troubling contradiction: she withholds Cosette’s letter and draws Marius toward the barricade, wanting them to die together. Her resistance to family violence does not erase the possessiveness of her own desire."
+        },
+        {
+          "he": "במתרס היא חוסמת בגופה ירייה שנועדה למריוס ונפצעת אנושות. בחלק הרביעי, בספר הארבעה־עשר, בפרק ו׳, היא מוסרת לו את המכתב שהסתירה, מודה במניעיה ולבסוף מבטאת את אהבתה. קריאת הווידוי לצד ההטעיה שקדמה לו משמרת דמות מורכבת יותר מאוהבת המקריבה את עצמה ללא סייג. On My Own מציב במרכז את אהבתה שאינה נענית; A Little Fall of Rain מלווה את מותה.",
+          "en": "At the barricade she intercepts a shot meant for Marius and is mortally wounded. In Part IV, Book XIV, Chapter VI, she gives him the withheld letter, admits her motives and finally names her love. Reading that confession beside the earlier deception keeps her more complex than a purely self-sacrificing lover. On My Own foregrounds her unreturned love; A Little Fall of Rain accompanies her death."
+        }
+      ],
+      "references": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0038",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 4, פרק 2: שמותיהן של אפונין ואזלמה",
+            "en": "Hugo · Part 1, Book 4, Chapter 2: Éponine and Azelma named"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0100",
+          "label": {
+            "he": "הוגו · חלק 2, ספר 3, פרק 8: הילדות בפונדק",
+            "en": "Hugo · Part 2, Book 3, Chapter 8: the children at the inn"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0204",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 8, פרק 4: הביקור אצל מריוס",
+            "en": "Hugo · Part 3, Book 8, Chapter 4: the visit to Marius"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0232",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 2, פרק 4: מציאת הכתובת",
+            "en": "Hugo · Part 4, Book 2, Chapter 4: finding the address"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0259",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 8, פרק 4: ההגנה על שער הבית ברחוב פלומה",
+            "en": "Hugo · Part 4, Book 8, Chapter 4: defending the Rue Plumet gate"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0293",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 14, פרק 6: הפציעה, המכתב והווידוי",
+            "en": "Hugo · Part 4, Book 14, Chapter 6: wound, letter and confession"
+          }
+        },
+        {
+          "url": "https://www.broadwayspokane.com/assets/doc/Les-Mis-Guide-for-Tour_FINAL-995a5dcc56.pdf",
+          "label": {
+            "he": "מדריך הבמה הרשמי: קשרי דמויות ושירים",
+            "en": "Official stage guide: song and character connections"
+          }
+        }
+      ],
+      "songIds": [
+        "heart-love",
+        "attack-rue-plumet",
+        "on-my-own",
+        "little-fall-rain",
+        "epilogue"
+      ],
+      "relationshipIds": [
+        "eponine-cosette",
+        "eponine-marius",
+        "thenardiers-eponine"
+      ],
+      "firstAppearance": {
+        "chapterId": "p1-b4-c2",
+        "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0038"
+      },
+      "readerIdentity": {
+        "he": "בתם הבכורה של בני הזוג תנרדייה.",
+        "en": "The Thénardiers’ elder daughter."
+      },
+      "nameTokens": {
+        "en": [
+          "Éponine",
+          "Eponine"
+        ],
+        "he": [
+          "אפונין"
+        ]
+      }
+    },
+    {
+      "id": "enjolras",
+      "name": {
+        "en": "Enjolras",
+        "he": "אנז׳ולרא"
+      },
+      "role": {
+        "en": "Republican student leader",
+        "he": "מנהיג הסטודנטים הרפובליקנים"
+      },
+      "safeIntro": {
+        "he": "אנז׳ולרא הוא הדמות הפוליטית הבלתי מתפשרת ביותר בחוג ידידי האב״ג, הקבוצה הרפובליקנית הקטנה המוצגת בחלק השלישי. כצעיר ממשפחה אמידה, הוא מפנה את מרצו לחירות הציבור יותר מאשר לאהבה רומנטית או לקידום אישי. בחבורה מאזנים את חומרתו רוחב המחשבה של קומבפר והחברותיות של קורפראק; המחויבות המשותפת אינה מוחקת את ההבדלים ביניהם.",
+        "en": "Enjolras is the most uncompromising political presence among the Friends of the ABC, the small republican circle introduced in Part III. A young man from a wealthy family, he directs his energies toward public freedom rather than romance or personal advancement. His severity is balanced within the group by Combeferre’s intellectual generosity and Courfeyrac’s sociability; their shared commitments do not make them interchangeable."
+      },
+      "paragraphs": [
+        {
+          "he": "יחסיו עם גרנטֵר חושפים סוג אחר של קשר. גרנטֵר מטיל ספק באידיאלים של החבורה, אך מעריץ את האמונה שאנז׳ולרא מגלם; אנז׳ולרא, מצדו, מתקשה לשאת את ספקנותו ואת שתייתו. גם הערצתו של מריוס לנפוליאון נתקלת בהתנגדות: אנז׳ולרא מזהה את נאמנותו שלו עם הרפובליקה. המחלוקות הופכות את החוג לזירה של מתחים פוליטיים ואישיים, ולא למקהלה אחידה של התלהבות.",
+          "en": "His relationship with Grantaire exposes a different kind of attachment. Grantaire doubts the group’s ideals yet admires the conviction Enjolras embodies, while Enjolras finds his skepticism and drinking exasperating. Marius’s admiration for Napoleon also meets resistance: Enjolras identifies his own allegiance with the Republic. These disagreements make the circle a field of political and personal tensions rather than a uniformly enthusiastic chorus."
+        },
+        {
+          "he": "בהתקוממות של יוני 1832 הוא מארגן את המתרס ברחוב שאנווררי ודורש משמעת. לאחר שלה־קאבוק הורג שוער לא־חמוש, אנז׳ולרא מוציא אותו להורג ומכיר בזוועת המעשה. חזונו המאוחר יותר, הכולל חינוך, שוויון ואחווה בין עמים, מחדד את הסתירה: הוא פועל באמצעות אלימות בהווה למען עתיד שבו האלימות לא תשלוט עוד ביחסים בין בני אדם.",
+          "en": "During the June 1832 uprising, he organizes the Rue de la Chanvrerie barricade and insists on discipline. After Le Cabuc kills an unarmed porter, Enjolras executes him and acknowledges the horror of doing so. His subsequent vision of education, equality and international fellowship sharpens the contradiction: he fights through present violence for a future in which violence should no longer govern human relations."
+        },
+        {
+          "he": "כשהמתרס נופל הוא מקבל את הוצאתו להורג בחדר העליון של בית המרזח. גרנטֵר מתעורר, מכריז שהוא רפובליקן ומבקש לעמוד לצדו; אנז׳ולרא משיב בחיוך ובלחיצת יד. מותם מחבר בין מחויבות רעיונית להכרה אישית, בלי למחוק את ההבדלים שהתקיימו ביניהם. Red and Black מציג את דחיפותו הפוליטית; Do You Hear the People Sing? מפיץ את קריאתו החוצה.",
+          "en": "When the barricade falls, he accepts execution in the upper room of the wine-shop. Grantaire wakes, declares himself a republican and asks to stand beside him; Enjolras answers with a smile and a handclasp. Their deaths bring ideological commitment and personal recognition together without erasing their earlier differences. Red and Black frames his political urgency; Do You Hear the People Sing? carries his call outward."
+        }
+      ],
+      "references": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0176",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 4, פרק 1: ידידי האב״ג וגרנטֵר",
+            "en": "Hugo · Part 3, Book 4, Chapter 1: the Friends of the ABC and Grantaire"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0180",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 4, פרק 5: הרפובליקה ומריוס",
+            "en": "Hugo · Part 3, Book 4, Chapter 5: the Republic and Marius"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0284",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 12, פרק 8: לה־קאבוק והמשמעת המהפכנית",
+            "en": "Hugo · Part 4, Book 12, Chapter 8: Le Cabuc and revolutionary discipline"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0303",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 1, פרק 5: העתיד שמעבר למתרס",
+            "en": "Hugo · Part 5, Book 1, Chapter 5: the future beyond the barricade"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0321",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 1, פרק 23: אנז׳ולרא וגרנטֵר יחד",
+            "en": "Hugo · Part 5, Book 1, Chapter 23: Enjolras and Grantaire together"
+          }
+        },
+        {
+          "url": "https://www.broadwayspokane.com/assets/doc/Les-Mis-Guide-for-Tour_FINAL-995a5dcc56.pdf",
+          "label": {
+            "he": "מדריך הבמה הרשמי: קשרי דמויות ושירים",
+            "en": "Official stage guide: song and character connections"
+          }
+        }
+      ],
+      "songIds": [
+        "red-black",
+        "people-sing",
+        "one-day-more",
+        "building-barricade",
+        "final-battle"
+      ],
+      "relationshipIds": [
+        "marius-enjolras"
+      ],
+      "firstAppearance": {
+        "chapterId": "p3-b4-c1",
+        "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0176"
+      },
+      "readerIdentity": {
+        "he": "דמות מובילה בחוג הרפובליקני ידידי האב״ג.",
+        "en": "A leading member of the republican Friends of the ABC."
+      },
+      "nameTokens": {
+        "en": [
+          "Enjolras"
+        ],
+        "he": [
+          "אנז׳ולרא"
+        ]
+      }
+    },
+    {
+      "id": "gavroche",
+      "name": {
+        "en": "Gavroche",
+        "he": "גברוש"
+      },
+      "role": {
+        "en": "Parisian street child",
+        "he": "ילד רחוב בפריז"
+      },
+      "safeIntro": {
+        "he": "גברוש הוא הילד שבאמצעותו הופך דיוקנו הרחב של ילד הרחוב הפריזאי אצל הוגו לחיים מסוימים. הוא חד־לשון, נייד ואחראי במידה רבה לעצמו, ושייכותו למרחבים הציבוריים של העיר בטוחה יותר משייכותו לבית. בדיחותיו מבטאות תושייה וביטחון, אך הסיפור אינו מעלים את המחסור: מתחת להתרברבות, מציאת מזון, מחסה וחום נשארת משימה יומיומית.",
+        "en": "Gavroche is the child through whom Hugo’s broad portrait of the Parisian street boy becomes an individual life. Quick-witted, mobile and largely responsible for himself, he belongs to the city’s public spaces more securely than to a home. His jokes express skill and confidence, but the narrative keeps material need in view: finding food, shelter and warmth remains a daily task beneath the bravado."
+      },
+      "paragraphs": [
+        {
+          "he": "הוא בנם של בני הזוג תנרדייה, מוזנח בידי הורים שחיבתם אינה מתחלקת בשווה בין ילדיהם. התנהגותו כלפי אחרים מציעה חלופה לביתם. כשהוא פוגש שני ילדים שאבדו, הוא חולק איתם לחם ומלין אותם בתוך פסל הפיל החלול בבסטיליה. לא הוא ולא הילדים יודעים שהם אחיו הצעירים; טוב הלב המעשי אינו תלוי כאן בהכרה בקרבת דם.",
+          "en": "He is a son of the Thénardiers, neglected by parents whose affection is unevenly distributed among their children. His conduct toward others offers an alternative to their household. When he encounters two lost boys, he shares bread and shelters them inside the hollow elephant monument at the Bastille. Neither he nor the boys knows that they are his younger brothers, making practical kindness independent of recognized kinship."
+        },
+        {
+          "he": "היכרותו עם הרחוב מועילה גם במתרס, שם הוא מזהה את ז׳אבר מבעד לתחפושתו. מריוס שולח אותו עם מכתב לקוזט בתקווה להרחיקו מהסכנה, אך גברוש מוסר אותו לוולז׳אן וחוזר. תנועתו מחברת אנשים ומקומות שהיו מנותקים זה מזה, וניסיונות המבוגרים להגן עליו אינם גוברים על נחישותו להשתתף.",
+          "en": "His knowledge of the streets also makes him useful at the barricade, where he recognizes Javert beneath the policeman’s disguise. Marius sends him away with a letter for Cosette, hoping to remove him from danger, but Gavroche delivers it to Valjean and returns. His movements connect otherwise separated people and places, while the adults’ attempts to protect him cannot contain his determination to participate."
+        },
+        {
+          "he": "במהלך הלחימה הוא יוצא מעבר למתרס כדי לאסוף תחמושת מחיילים שנפלו. הוא ממשיך להתבדח ולשיר תחת אש עד שהוא נהרג. הוגו הופך את התושייה שקיימה אותו למעשה של עזרה לאחרים, אך אינו מעניק לילד חסינות כגמול על אומץ. המורדים נותרים להתאבל על ילד שיכלו להיעזר במרצו, אך שעליו לא הצליחו לשמור. Little People ממחיז את חשיפת ז׳אבר בידיו.",
+          "en": "During the fighting he goes beyond the barricade to gather ammunition from fallen soldiers. He continues joking and singing under fire until he is killed. Hugo turns the resourcefulness that sustained him into an act of collective assistance, while refusing to make childhood immunity a reward for courage. His death leaves the rebels mourning a child whose energy they could use but could not safeguard. Little People dramatizes his exposure of Javert."
+        }
+      ],
+      "references": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0159",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 1, פרק 13: דיוקנו הראשון של גברוש",
+            "en": "Hugo · Part 3, Book 1, Chapter 13: Gavroche’s first portrait"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0249",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 6, פרק 1: האחים הצעירים",
+            "en": "Hugo · Part 4, Book 6, Chapter 1: the younger brothers"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0250",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 6, פרק 2: לחם והפיל בבסטיליה",
+            "en": "Hugo · Part 4, Book 6, Chapter 2: bread and the Bastille elephant"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0283",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 12, פרק 7: זיהוי ז׳אבר",
+            "en": "Hugo · Part 4, Book 12, Chapter 7: identifying Javert"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0294",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 14, פרק 7: מריוס שולח את המכתב",
+            "en": "Hugo · Part 4, Book 14, Chapter 7: Marius sends the letter"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0296",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 15, פרק 2: מסירת המכתב",
+            "en": "Hugo · Part 4, Book 15, Chapter 2: delivering the letter"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0313",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 1, פרק 15: איסוף התחמושת",
+            "en": "Hugo · Part 5, Book 1, Chapter 15: collecting ammunition"
+          }
+        },
+        {
+          "url": "https://www.mtishows.co.uk/print/node/1293",
+          "label": {
+            "he": "MTI: תקציר הבמה והקטעים המוזיקליים",
+            "en": "MTI: stage synopsis and musical numbers"
+          }
+        }
+      ],
+      "songIds": [
+        "beggars",
+        "javert-barricade",
+        "second-attack"
+      ],
+      "relationshipIds": [
+        "gavroche-javert",
+        "thenardiers-gavroche"
+      ],
+      "firstAppearance": {
+        "chapterId": "p3-b1-c13",
+        "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0159"
+      },
+      "readerIdentity": {
+        "he": "ילד רחוב פריזאי המבקר לעיתים אצל משפחתו בבית גורבו.",
+        "en": "A Parisian street child who sometimes visits his family in the Gorbeau house."
+      },
+      "nameTokens": {
+        "en": [
+          "Gavroche"
+        ],
+        "he": [
+          "גברוש"
+        ]
+      }
+    },
+    {
+      "id": "thenardiers",
+      "name": {
+        "en": "The Thénardiers",
+        "he": "בני הזוג תנרדייה"
+      },
+      "role": {
+        "en": "Montfermeil innkeepers",
+        "he": "פונדקאים במונפרמיי"
+      },
+      "safeIntro": {
+        "he": "מר וגברת תנרדייה מנהלים את הפונדק במונפרמיי, שבו לשון הכנסת האורחים מתקיימת לצד חשבונות רווח. הוגו מציג אותם כמשק בית עם בנות קטנות וחובות דוחקים, ובהמשך מפרט את דרכי הפעלת הכוח השונות שלהם. חיבתה הגלויה של גברת תנרדייה לילדותיה עשויה לשכנע זרה שמדובר בבית בטוח; בעלה ממהר לחשב את האפשרויות הכספיות הטמונות בכל מפגש.",
+        "en": "Monsieur and Madame Thénardier run the Montfermeil inn where the language of hospitality sits beside calculations of profit. Hugo introduces them as a household with young daughters and pressing debts, then develops their distinct habits of power. Madame Thénardier’s visible warmth toward her own children can suggest a trustworthy home to a stranger; her husband is quick to work out the financial possibilities of an encounter."
+      },
+      "paragraphs": [
+        {
+          "he": "פנטין מפקידה בידיהם את קוזט ושולחת כסף בעבור הטיפול בה. הם משתמשים בכסף לצרכים אחרים, ממציאים דרישות חדשות ומעבידים את הילדה, וגברת תנרדייה אוכפת את אי־השוויון בבית באמצעות הפחדה. כשולז׳אן מגיע, תנרדייה מנסה להעלות את מחיר הפרידה מקוזט. השותפות ביניהם הופכת תלות להכנסה: מרחקה של האם וחוסר האונים של הילדה הם משאבים לניצול.",
+          "en": "Fantine entrusts Cosette to them and sends payments for her care. They divert the money, invent new needs and make the child work, while Madame Thénardier enforces the household’s inequality through intimidation. When Valjean arrives, Thénardier tries to increase the price of parting with Cosette. Their partnership turns dependency into income: the mother’s distance and the child’s powerlessness are assets to be exploited."
+        },
+        {
+          "he": "לאחר אובדן הפונדק המשפחה מופיעה בפריז בשם ז׳ונדרט ונקשרת לחבורת גנבים. אמונתו של מריוס שתנרדייה הציל את אביו בווטרלו מסבכת את תגובתו לאלימותם. הוגו כבר הראה את האירוניה: בחיפוש אחר חפצי ערך בשדה הקרב, תנרדייה חילץ במקרה את הקצין הפצוע. המוניטין של מיטיב צומח ממעשה שמטרתו הייתה ביזה.",
+          "en": "After losing the inn, the family appears in Paris under the name Jondrette and becomes involved with organized thieves. Marius’s belief that Thénardier saved his father at Waterloo complicates his response to their violence. Hugo has already shown the irony: searching the battlefield for valuables, Thénardier accidentally freed the wounded officer. The reputation of a benefactor grows from an act whose intention was robbery."
+        },
+        {
+          "he": "תגובותיהם השונות של הילדים מונעות מן המשפחה להפוך לטיפוס מוסרי אחיד: אפונין מתנגדת לחבורה, ואילו גברוש דואג לילדים שהוריו נטשו. בהמשך תנרדייה מנסה למכור מידע מפליל על ולז׳אן, אך דווקא מוכיח שוולז׳אן הציל את מריוס. הרומן מסיים את דרכו של תנרדייה בסחר בעבדים, ומותיר את הניצול על כנו גם לאחר ההצלחה הכלכלית. Master of the House הופך את הרווח הנצלני של בני הזוג לדואט קומי.",
+          "en": "The children’s different responses prevent the family from becoming a single moral type: Éponine defies the gang, while Gavroche cares for children his parents abandoned. Later Thénardier tries to sell damaging information about Valjean, only to establish that Valjean saved Marius. The novel ends Thénardier’s career in the slave trade, preserving his exploitation even after apparent good fortune. Master of the House turns the couple’s profiteering into a comic duet."
+        }
+      ],
+      "references": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0037",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 4, פרק 1: משק הבית של הפונדקאים",
+            "en": "Hugo · Part 1, Book 4, Chapter 1: the innkeeping household"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0038",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 4, פרק 2: הדיוקן הזוגי",
+            "en": "Hugo · Part 1, Book 4, Chapter 2: the paired portraits"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0039",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 4, פרק 3: ניצולה של קוזט",
+            "en": "Hugo · Part 1, Book 4, Chapter 3: Cosette’s exploitation"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0089",
+          "label": {
+            "he": "הוגו · חלק 2, ספר 1, פרק 19: תנרדייה בווטרלו",
+            "en": "Hugo · Part 2, Book 1, Chapter 19: Thénardier at Waterloo"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0101",
+          "label": {
+            "he": "הוגו · חלק 2, ספר 3, פרק 9: המיקוח על קוזט",
+            "en": "Hugo · Part 2, Book 3, Chapter 9: the bargaining over Cosette"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0220",
+          "label": {
+            "he": "הוגו · חלק 3, ספר 8, פרק 20: זהותו של ז׳ונדרט וההתקפה",
+            "en": "Hugo · Part 3, Book 8, Chapter 20: Jondrette’s identity and the attack"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0249",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 6, פרק 1: הילדים שננטשו",
+            "en": "Hugo · Part 4, Book 6, Chapter 1: the abandoned children"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0259",
+          "label": {
+            "he": "הוגו · חלק 4, ספר 8, פרק 4: התנגדותה של אפונין",
+            "en": "Hugo · Part 4, Book 8, Chapter 4: Éponine’s resistance"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0363",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 9, פרק 4: סחיטה וסחר בעבדים",
+            "en": "Hugo · Part 5, Book 9, Chapter 4: blackmail and the slave trade"
+          }
+        },
+        {
+          "url": "https://www.broadwayspokane.com/assets/doc/Les-Mis-Guide-for-Tour_FINAL-995a5dcc56.pdf",
+          "label": {
+            "he": "מדריך הבמה הרשמי: קשרי דמויות ושירים",
+            "en": "Official stage guide: song and character connections"
+          }
+        }
+      ],
+      "songIds": [
+        "master-house",
+        "bargain",
+        "attack-rue-plumet",
+        "sewers",
+        "beggars-feast"
+      ],
+      "relationshipIds": [
+        "fantine-thenardiers",
+        "thenardiers-cosette",
+        "thenardiers-eponine",
+        "thenardiers-gavroche"
+      ],
+      "firstAppearance": {
+        "chapterId": "p1-b4-c1",
+        "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0037"
+      },
+      "readerIdentity": {
+        "he": "בני הזוג המנהלים פונדק במונפרמיי.",
+        "en": "The couple who keep an inn in Montfermeil."
+      },
+      "nameTokens": {
+        "en": [
+          "Madame Thénardier",
+          "Monsieur Thénardier",
+          "The Thénardiers",
+          "the Thénardiers",
+          "Thénardiers",
+          "Thénardier"
+        ],
+        "he": [
+          "בני הזוג תנרדייה",
+          "גברת תנרדייה",
+          "מאדאם תנרדייה",
+          "מר תנרדייה",
+          "תנרדייה"
+        ]
+      }
+    },
+    {
+      "id": "bishop",
+      "name": {
+        "he": "הבישוף מיריאל",
+        "en": "Bishop Myriel"
+      },
+      "role": {
+        "en": "Bishop of Digne",
+        "he": "הבישוף של דיניה"
+      },
+      "safeIntro": {
+        "he": "שארל־פרנסואה־ביאנוונו מיריאל, הבישוף של דיניה, הוא האדם הראשון שהוגו מציג בעלובי החיים. ב־1815 הוא כבן שבעים וחמש וחי עם אחותו בפטיסטין ועם מנהלת משק הבית, גברת מגלואר. מקומו בפתיחה מציג את המשרה הדתית כאחריות מעשית כלפי בני אדם. עוד לפני התפתחות העלילה המרכזית, הוגו מקדיש מקום נרחב לאופן חיי הבית ולערכים של הבישוף.",
+        "en": "Charles-François-Bienvenu Myriel, the bishop of Digne, is the first person Hugo introduces in Les Misérables. In 1815 he is about seventy-five and lives with his sister Baptistine and their housekeeper, Madame Magloire. His place at the beginning establishes religious office as a practical responsibility toward other people. Before the central plot unfolds, Hugo gives unusual space to how this household lives and what its bishop values."
+      },
+      "paragraphs": [
+        {
+          "he": "מיריאל מחליף את ארמון הבישוף בבניין הצפוף של בית החולים הסמוך ומקדיש את מרבית הכנסתו לסיוע. דלתו הפתוחה הופכת את הכנסת האורחים לחלק מחלוקת המשאבים הזאת, ולא למחווה טקסית. עם זאת, הוגו אינו מציג אותו כחסין מטעות פוליטית. ביקור אצל ז׳, חבר הקונוונט לשעבר הנוטה למות, מערער את שיפוטיו המוקדמים על המהפכה ומסתיים בבקשתו של הבישוף לקבל ברכה.",
+          "en": "Myriel exchanges the episcopal palace for the adjoining hospital’s cramped building and devotes most of his income to relief. His open door makes hospitality part of that redistribution rather than a ceremonial gesture. Nevertheless, Hugo does not present him as politically infallible. A visit to the dying former Convention member G. challenges his inherited judgments of the Revolution and ends with the bishop asking for a blessing."
+        },
+        {
+          "he": "הוא מקבל את ולז׳אן לאחר שדלתות אחרות נסגרו בפניו, ופונה אליו כאורח במקום לצמצם אותו לעברו הפלילי. כשהשוטרים חוזרים עם כלי הכסף הגנובים, מיריאל אומר שנתן אותם במתנה ומוסיף את הפמוטים. המתנה החומרית מבטיחה את חירותו המיידית של ולז׳אן; הפנייה הנלווית מבקשת ממנו להשתמש בחירות אחרת. החסד יוצר כאן מחויבות בלי לאכוף אותה באמצעות כליאה או עונש.",
+          "en": "He welcomes Valjean after other doors have closed, addressing him as a guest rather than reducing him to his criminal record. When police return with the stolen silver, Myriel says he gave it away and adds the candlesticks. The material gift secures Valjean’s immediate freedom; the accompanying appeal asks him to use that freedom differently. Mercy here creates an obligation without enforcing it through custody or punishment."
+        },
+        {
+          "he": "תפקידו הישיר קצר, אך דוגמתו מוסיפה לפעול במצפונו של ולז׳אן. הפמוטים הנשמרים מחברים את המתנה הראשונה להכרעות מאוחרות, ולבסוף למיטת מותו. חשיבותו של מיריאל חורגת אפוא מזו של מסייע הפותח מסע: הוא מציב אמת מידה של דאגה לאחר, שהגיבור נדרש לפרש שוב ושוב בנסיבות סוערות יותר. המחזמר מרכז את התערבותו ב־Valjean Arrested / Valjean Forgiven.",
+          "en": "His direct role is brief, but his example remains active in Valjean’s conscience. The kept candlesticks connect the original gift with later choices and finally with Valjean’s deathbed. Myriel therefore matters as more than the helper who begins an adventure: he supplies a standard of care that the protagonist must repeatedly interpret under less peaceful conditions. The musical concentrates his intervention in Valjean Arrested / Valjean Forgiven."
+        }
+      ],
+      "references": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0001",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 1, פרק 1: מיריאל ובני ביתו",
+            "en": "Hugo · Part 1, Book 1, Chapter 1: Myriel and his household"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0002",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 1, פרק 2: הארמון, בית החולים והתקציב",
+            "en": "Hugo · Part 1, Book 1, Chapter 2: the palace, hospital and budget"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0006",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 1, פרק 6: הדלת הפתוחה",
+            "en": "Hugo · Part 1, Book 1, Chapter 6: the open door"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0010",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 1, פרק 10: חבר הקונוונט לשעבר",
+            "en": "Hugo · Part 1, Book 1, Chapter 10: the former Convention member"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0017",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 2, פרק 3: קבלת ולז׳אן",
+            "en": "Hugo · Part 1, Book 2, Chapter 3: receiving Valjean"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0026",
+          "label": {
+            "he": "הוגו · חלק 1, ספר 2, פרק 12: כלי הכסף והפמוטים",
+            "en": "Hugo · Part 1, Book 2, Chapter 12: the silver and candlesticks"
+          }
+        },
+        {
+          "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0364",
+          "label": {
+            "he": "הוגו · חלק 5, ספר 9, פרק 5: הפמוטים בסיום",
+            "en": "Hugo · Part 5, Book 9, Chapter 5: the candlesticks at the end"
+          }
+        },
+        {
+          "url": "https://www.mtishows.co.uk/print/node/1293",
+          "label": {
+            "he": "MTI: תקציר הבמה והקטעים המוזיקליים",
+            "en": "MTI: stage synopsis and musical numbers"
+          }
+        }
+      ],
+      "songIds": [
+        "valjean-forgiven"
+      ],
+      "relationshipIds": [
+        "bishop-valjean"
+      ],
+      "firstAppearance": {
+        "chapterId": "p1-b1-c1",
+        "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0001"
+      },
+      "readerIdentity": {
+        "he": "שארל־פרנסואה־ביאנוונו מיריאל, הבישוף של דיניה.",
+        "en": "Charles-François-Bienvenu Myriel, the bishop of Digne."
+      },
+      "nameTokens": {
+        "en": [
+          "Charles-François-Bienvenu Myriel",
+          "Bishop Myriel",
+          "Bishop of Digne",
+          "Myriel"
+        ],
+        "he": [
+          "שארל־פרנסואה־ביאנוונו מיריאל",
+          "הבישוף מיריאל",
+          "הבישוף של דיניה",
+          "מיריאל"
+        ]
+      }
+    }
+  ],
+  "chapterMentions": {
+    "p1-b2-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b2-c6": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b5-c5": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p1-b5-c6": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p1-b3-c2": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b3-c3": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b4-c1": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b4-c3": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "בני הזוג תנרדייה",
+          "en": "The Thénardiers"
+        }
+      }
+    ],
+    "p3-b1-c13": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p3-b3-c2": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b2-c4": [
+      {
+        "id": "eponine",
+        "name": {
+          "he": "אפונין",
+          "en": "Éponine"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b8-c4": [
+      {
+        "id": "eponine",
+        "name": {
+          "he": "אפונין",
+          "en": "Éponine"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b4-c1": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p3-b4-c5": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c22": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p1-b4-c2": [
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardiers"
+        }
+      }
+    ],
+    "p1-b1-c1": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b1-c2": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b1-c4": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b1-c5": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b1-c6": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b1-c7": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b1-c8": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b1-c10": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b1-c11": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b1-c12": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b1-c13": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b2-c2": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b2-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b2-c5": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b2-c7": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b2-c8": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b2-c9": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b2-c10": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b2-c11": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b2-c12": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "bishop",
+        "name": {
+          "he": "מיריאל",
+          "en": "Myriel"
+        }
+      }
+    ],
+    "p1-b2-c13": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b3-c4": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b3-c7": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b3-c8": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b5-c4": [
+      {
+        "id": "bishop",
+        "name": {
+          "he": "הבישוף מיריאל",
+          "en": "Bishop Myriel"
+        }
+      }
+    ],
+    "p1-b5-c7": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b5-c8": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p1-b5-c9": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b5-c10": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "the Thénardiers"
+        }
+      }
+    ],
+    "p1-b5-c11": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b5-c12": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b5-c13": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p1-b6-c1": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "בני הזוג תנרדייה",
+          "en": "the Thénardiers"
+        }
+      }
+    ],
+    "p1-b6-c2": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p1-b7-c1": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p1-b7-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ז׳אן ולז׳אן",
+          "en": "Jean Valjean"
+        }
+      }
+    ],
+    "p1-b7-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b7-c5": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b7-c6": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p1-b7-c7": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b7-c8": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b7-c9": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p1-b7-c11": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ז׳אן ולז׳אן",
+          "en": "Jean Valjean"
+        }
+      }
+    ],
+    "p1-b8-c1": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p1-b8-c2": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p1-b8-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ז׳אן ולז׳אן",
+          "en": "Jean Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p1-b8-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p1-b8-c5": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p2-b1-c19": [
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p2-b2-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      }
+    ],
+    "p2-b2-c2": [
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p2-b2-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Jean Valjean"
+        }
+      }
+    ],
+    "p2-b3-c1": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "the Thénardiers"
+        }
+      }
+    ],
+    "p2-b3-c2": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "the Thénardiers"
+        }
+      }
+    ],
+    "p2-b3-c3": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "גברת תנרדייה",
+          "en": "Madame Thénardier"
+        }
+      }
+    ],
+    "p2-b3-c4": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "גברת תנרדייה",
+          "en": "Madame Thénardier"
+        }
+      }
+    ],
+    "p2-b3-c5": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Madame Thénardier"
+        }
+      }
+    ],
+    "p2-b3-c6": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b3-c7": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b3-c8": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "the Thénardiers"
+        }
+      }
+    ],
+    "p2-b3-c9": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p2-b3-c10": [
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p2-b3-c11": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Jean Valjean"
+        }
+      }
+    ],
+    "p2-b4-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b4-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b4-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p2-b4-c5": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b5-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז'אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b5-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b5-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p2-b5-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b5-c5": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז'אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Madame Thénardier"
+        }
+      }
+    ],
+    "p2-b5-c6": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p2-b5-c7": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Madame Thénardier"
+        }
+      }
+    ],
+    "p2-b5-c8": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b5-c9": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b5-c10": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז'אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b6-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p2-b8-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b8-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p2-b8-c6": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p2-b8-c8": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p2-b8-c9": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז'אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p3-b3-c3": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b3-c4": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b3-c5": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b3-c6": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b3-c7": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b3-c8": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b4-c2": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b4-c6": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b5-c1": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b5-c2": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b5-c3": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b5-c4": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b5-c5": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b5-c6": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b6-c1": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b6-c3": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b6-c4": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b6-c5": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b6-c6": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b6-c7": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b6-c9": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c2": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c3": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c4": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c5": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c6": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c8": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c10": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c11": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c12": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c13": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c14": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז'אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p3-b8-c15": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c16": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c17": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c18": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p3-b8-c20": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז'אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p3-b8-c21": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז'אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p4-b1-c6": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p4-b2-c1": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p4-b2-c2": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p4-b2-c3": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b3-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p4-b3-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p4-b3-c5": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b3-c6": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p4-b3-c7": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b3-c8": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p4-b4-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p4-b4-c2": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b5-c1": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b5-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p4-b5-c3": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p4-b5-c5": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b5-c6": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b6-c1": [
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "בני הזוג תנרדייה",
+          "en": "the Thénardiers"
+        }
+      }
+    ],
+    "p4-b6-c2": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b6-c3": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p4-b8-c1": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b8-c2": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b8-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b8-c5": [
+      {
+        "id": "eponine",
+        "name": {
+          "he": "אפונין",
+          "en": "Éponine"
+        }
+      }
+    ],
+    "p4-b8-c6": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b8-c7": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b9-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p4-b9-c2": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b11-c1": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b11-c2": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b11-c3": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b11-c4": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      },
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b11-c6": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b12-c3": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p4-b12-c4": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b12-c7": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      },
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b12-c8": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p4-b13-c1": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b13-c3": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b14-c1": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      },
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b14-c2": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p4-b14-c3": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b14-c4": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b14-c5": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b14-c6": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "eponine",
+        "name": {
+          "he": "אפונין",
+          "en": "Éponine"
+        }
+      }
+    ],
+    "p4-b14-c7": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "eponine",
+        "name": {
+          "he": "אפונין",
+          "en": "Éponine"
+        }
+      },
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b15-c1": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p4-b15-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p4-b15-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p4-b15-c4": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p5-b1-c3": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p5-b1-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p5-b1-c5": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p5-b1-c6": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p5-b1-c7": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p5-b1-c8": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      },
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p5-b1-c9": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p5-b1-c10": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p5-b1-c11": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p5-b1-c12": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p5-b1-c13": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p5-b1-c14": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      },
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p5-b1-c15": [
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p5-b1-c17": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "gavroche",
+        "name": {
+          "he": "גברוש",
+          "en": "Gavroche"
+        }
+      }
+    ],
+    "p5-b1-c18": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p5-b1-c19": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b1-c21": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p5-b1-c22": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p5-b1-c23": [
+      {
+        "id": "enjolras",
+        "name": {
+          "he": "אנז׳ולרא",
+          "en": "Enjolras"
+        }
+      }
+    ],
+    "p5-b1-c24": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b3-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b3-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p5-b3-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b3-c5": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p5-b3-c6": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b3-c7": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b3-c8": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p5-b3-c9": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p5-b3-c10": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p5-b3-c11": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p5-b3-c12": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b4-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      }
+    ],
+    "p5-b5-c2": [
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b5-c3": [
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b5-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p5-b5-c5": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p5-b5-c6": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p5-b5-c7": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b5-c8": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p5-b6-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p5-b6-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b6-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p5-b6-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p5-b7-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b7-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b8-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p5-b8-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b8-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p5-b8-c4": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p5-b9-c1": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ],
+    "p5-b9-c2": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      }
+    ],
+    "p5-b9-c3": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      }
+    ],
+    "p5-b9-c4": [
+      {
+        "id": "javert",
+        "name": {
+          "he": "ז׳אבר",
+          "en": "Javert"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      },
+      {
+        "id": "thenardiers",
+        "name": {
+          "he": "תנרדייה",
+          "en": "Thénardier"
+        }
+      }
+    ],
+    "p5-b9-c5": [
+      {
+        "id": "valjean",
+        "name": {
+          "he": "ולז׳אן",
+          "en": "Valjean"
+        }
+      },
+      {
+        "id": "fantine",
+        "name": {
+          "he": "פנטין",
+          "en": "Fantine"
+        }
+      },
+      {
+        "id": "cosette",
+        "name": {
+          "he": "קוזט",
+          "en": "Cosette"
+        }
+      },
+      {
+        "id": "marius",
+        "name": {
+          "he": "מריוס",
+          "en": "Marius"
+        }
+      }
+    ]
+  }
+}

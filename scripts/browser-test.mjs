@@ -14,6 +14,7 @@ try{
   if(!ready)throw new Error('Local browser-test server did not start');
   await run(['scripts/browser-navigation-clarity.cjs']);
   await run(['scripts/browser-reading-query-shell.cjs']);
+  await run(['scripts/browser-character-profiles.cjs']);
   await run(['scripts/browser-coach-gallery.cjs']);
   await run(['scripts/browser-mobile-polish.cjs']);
   await run(['scripts/browser-search-polish.cjs']);

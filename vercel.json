@@ -33,6 +33,16 @@
   ],
   "rewrites": [
     {
+      "source": "/:lang(he|en)/character-:id/",
+      "has": [
+        {
+          "type": "query",
+          "key": "reader"
+        }
+      ],
+      "destination": "/profile-readers/:lang/:id.html"
+    },
+    {
       "source": "/:lang(he|en)/novel/",
       "has": [
         {
@@ -51,6 +61,16 @@
         }
       ],
       "destination": "/route-pages/:lang/novel.html"
+    },
+    {
+      "source": "/:lang(he|en)/character-:id/",
+      "missing": [
+        {
+          "type": "query",
+          "key": "reader"
+        }
+      ],
+      "destination": "/route-pages/:lang/character-:id.html"
     }
   ],
   "redirects": [

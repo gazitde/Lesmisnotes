@@ -12,7 +12,9 @@ const analyticsCode=fs.readFileSync('dist/analytics.js','utf8');
 const policiesCode=fs.readFileSync('dist/policies.js','utf8');
 let tests=0;
 const routes=['humor','home','story','characters','listening','compare','screen','tribute','resources','about','map','history','ideas','quiz','musical','novel','hugo','before','after','sitemap','terms','privacy'];
+const renderScripts=[research,extras,engine,seo,policiesCode,privacyCode,configCode,analyticsCode,...['places-data','places','recipes-data','recipes'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),appCode].map(code=>new vm.Script(code));
 function render(lang,route,spoilers){
+ global.gc?.();
  const map=new Map([['barricade-spoilers',spoilers?'on':'off']]);
  const storage={getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)};
  const callbacks={};
@@ -22,7 +24,7 @@ function render(lang,route,spoilers){
  const context={console,URLSearchParams,document:{addEventListener(type,fn){callbacks['document-'+type]=fn},querySelectorAll:()=>[],querySelector:()=>({focus(){},select(){},setAttribute(){},addEventListener(type,fn){callbacks['skip-'+type]=fn}}),getElementById:id=>id==='app'?app:node(id),documentElement:{},title:''},localStorage:storage,sessionStorage:storage,location:{hash:`#/${lang}/${route}`,pathname:'/'},history:{},setTimeout:()=>1,clearTimeout:()=>{}};
  context.history.replaceState=context.history.pushState=(a,b,path)=>{context.history.state=a;const u=new URL(path,'https://example.test');context.location.pathname=u.pathname;context.location.search=u.search;context.location.hash=''};
  context.window=context;context.window.scrollTo=()=>{};context.window.addEventListener=(type,fn)=>callbacks[type]=fn;
- vm.createContext(context);vm.runInContext(research,context);vm.runInContext(extras,context);vm.runInContext(engine,context);vm.runInContext(seo,context);vm.runInContext(policiesCode,context);vm.runInContext(privacyCode,context);vm.runInContext(configCode,context);vm.runInContext(analyticsCode,context);vm.runInContext(fs.readFileSync('dist/places-data.js','utf8'),context);vm.runInContext(fs.readFileSync('dist/places.js','utf8'),context);vm.runInContext(fs.readFileSync('dist/recipes-data.js','utf8'),context);vm.runInContext(fs.readFileSync('dist/recipes.js','utf8'),context);vm.runInContext(appCode,context);
+ vm.createContext(context);for(const script of renderScripts)script.runInContext(context);
  return {html:app.innerHTML,ctx:context,app,callbacks};
 }
 
