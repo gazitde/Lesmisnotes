@@ -8,7 +8,7 @@ for(const lang of ['he','en'])for(const width of [1365,390,320]){
  check(await page.locator('.gallery-categories [aria-pressed=true]').getAttribute('data-gallery-category')==='all','All is clearly selected on entry');
  check(await page.locator('.gallery-card').count()===29,'All existing performances and analyses preserved');
  check(await page.locator('.hebrew-performance-doorways').count()===1,'Language comparison remains on the full collection');
- const panel=await page.locator('.gallery-controls').boundingBox();check(panel.height<(width>650?350:640),'Compact controls retain usable space');
+ const panel=await page.locator('.gallery-controls').boundingBox();await page.locator('.gallery-controls').screenshot({path:path.join(dir,`gallery-controls-${lang}-${width}.png`)});check(panel.height<(width>650?350:640),'Compact controls retain usable space '+lang+' '+width+' '+panel.height);
  for(const b of await page.locator('.gallery-controls button').all()){const r=await b.boundingBox();check(r.width>=44&&r.height>=44,'Control meets touch target');}
  await page.locator('.gallery-controls').screenshot({path:path.join(dir,`gallery-controls-${lang}-${width}.png`)});
  for(const category of ['humor','unexpected','together','onstage','coaching']){
