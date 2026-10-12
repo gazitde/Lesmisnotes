@@ -12,7 +12,7 @@ const analyticsCode=fs.readFileSync('dist/analytics.js','utf8');
 const policiesCode=fs.readFileSync('dist/policies.js','utf8');
 let tests=0;
 const routeMetadata={window:{}};vm.runInNewContext(seo,routeMetadata);const routes=Object.keys(routeMetadata.window.SITE_METADATA.pages);
-const renderScripts=[research,extras,...['character-profiles-data','character-profiles'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),engine,seo,policiesCode,privacyCode,configCode,analyticsCode,...['places-data','places','recipes-data','recipes'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),appCode].map(code=>new vm.Script(code));
+const renderScripts=[research,extras,...['character-profiles-data','character-profiles'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),engine,seo,policiesCode,privacyCode,configCode,analyticsCode,...['places-data','places','recipes-data','recipes','watch-path-data','watch-path'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),appCode].map(code=>new vm.Script(code));
 function render(lang,route,spoilers){
  global.gc?.();
  const map=new Map([['barricade-spoilers',spoilers?'on':'off']]);
@@ -28,7 +28,7 @@ function render(lang,route,spoilers){
  return {html:app.innerHTML,ctx:context,app,callbacks};
 }
 const {ctx}=render('en','home',false);const R=ctx.RESEARCH;
-const baseCoachCount=(page,spoilers)=>(page==='musical'?(R.coachVideos||[]).filter(v=>v.songId==='on-my-own'&&v.showWithSong!==false&&v.embeddable&&(spoilers||v.spoilerLevel<2)).length:0);
+const baseCoachCount=(page,spoilers)=>(page==='musical'?(R.coachVideos||[]).filter(v=>v.songId==='on-my-own'&&v.showWithSong!==false&&v.embeddable&&(spoilers||v.spoilerLevel<2)).length+(spoilers?1:0):0);
 const coachCount=(clip,spoilers)=>{if(R.gallery.groups.find(g=>g.clipIds.includes(clip))?.category==='coaching')return 0;const songId=R.gallery.groups.find(g=>g.clipIds.includes(clip))?.songId;return (R.coachVideos||[]).filter(v=>v.songId===songId&&v.showWithSong!==false&&v.embeddable&&(spoilers||v.spoilerLevel<2)).length};
 // Six sourced additions: five gated character close readings and one safe design note.
 {
@@ -61,7 +61,7 @@ for(const lang of ['he','en'])for(const route of routes)for(const spoilers of [f
  for(const ref of html.matchAll(/\saria-(?:labelledby|describedby|controls)="([^"]+)"/g))for(const id of ref[1].split(/\s+/)){assert.ok(ids.includes(id),`${lang}/${route}: missing ARIA target ${id}`);tests++;}
  for(const anchor of html.matchAll(/href="#([^"]+)"/g)){assert.ok(ids.includes(anchor[1]),`${lang}/${route}: missing anchor ${anchor[1]}`);tests++;}
  tests++;
- assert.ok(!html.includes('undefined'));assert.equal((html.match(/<iframe /g)||[]).length,baseCoachCount(route,spoilers),`Only the currently displayed song may contain a coach player`);
+ assert.ok(!html.includes('undefined'));assert.equal((html.match(/<iframe /g)||[]).length,baseCoachCount(route,spoilers),`Only displayed song coaches and the current journey selection may contain players`);
  if(!spoilers&&['story','characters','compare'].includes(route)){
  assert.ok(html.includes(route==='characters'?'data-action="relationship-reveal"':'class="gate"'));assert.ok(!html.includes('class="story-chapter"'));assert.ok(!html.includes('class="char-detail"'));assert.ok(!html.includes('class="adaptation-card"'));
  }

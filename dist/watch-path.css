@@ -1,0 +1,41 @@
+/* Scoped to the existing opted-in song journey. No fixed-height source panels. */
+.watch-path-intro,.watch-path-stop{color:var(--ink,#101f43);text-align:start;min-width:0}
+.watch-path-intro{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 30px;align-items:center;padding:22px 0;margin:24px 0;border-block:1px solid var(--line,#d7e0f0)}
+.watch-path-intro h3{font:700 1.15rem/1.4 Arial,"Noto Sans Hebrew",sans-serif;letter-spacing:0;margin:0 0 9px;color:var(--navy,#00265e)}
+.watch-path-intro p{font-size:1rem;line-height:1.75;max-width:76ch;margin:0;color:var(--muted,#4d5c76)}
+.watch-path-modes{display:flex;gap:6px;align-self:start;padding:5px;background:#eef3fb;border:1px solid #c5d3e9}
+.watch-path-modes button{min-height:48px;padding:10px 13px;border:1px solid transparent;background:transparent;color:var(--navy,#00265e);text-align:start;line-height:1.45}
+.watch-path-modes button>span{display:block;font-size:.88rem;font-weight:700}
+.watch-path-modes button>small{display:block;font-size:.75rem;margin-top:3px;line-height:1.5}
+.watch-path-modes button[aria-pressed=true]{color:#fff;background:var(--navy,#00265e);border-color:var(--navy,#00265e)}
+.watch-path-modes button:hover:not([aria-pressed=true]){background:#dce7f8}
+.watch-path-modes button:focus-visible,.watch-path-stop a:focus-visible{outline:3px solid var(--red,#d91e36);outline-offset:3px}
+.watch-path-stop{margin:24px 0 28px;padding-top:22px;border-top:3px solid var(--navy,#00265e)}
+.watch-path-stop .watch-path-stop-label{font:700 .83rem/1.5 Arial,"Noto Sans Hebrew",sans-serif;letter-spacing:.025em;margin:0 0 13px;color:var(--navy,#00265e)}
+.watch-path-clips{display:grid;gap:12px;min-width:0}
+.watch-path-clip{min-width:0;border:1px solid var(--line,#d7e0f0);background:#f6f8fd;padding:18px 20px}
+.watch-path-clip--embedded{padding:0;border:0;background:transparent}
+.watch-path-clip-head{display:flex;align-items:start;gap:13px}
+.watch-path-clip-heading{min-width:0;flex:1}
+.watch-path-meta{display:flex;align-items:center;flex-wrap:wrap;gap:5px 12px;font-size:.76rem;line-height:1.5;color:var(--muted,#4d5c76);margin-bottom:7px}
+.watch-path-meta>span:first-child{font-weight:bold;color:var(--red,#d91e36)}
+.watch-path-clip h4{font-size:1.05rem;line-height:1.5;letter-spacing:0;margin:0 0 7px;overflow-wrap:anywhere;color:var(--navy,#00265e)}
+.watch-path-credit{font-size:1rem;line-height:1.75;margin:0;max-width:78ch;color:var(--muted,#4d5c76);unicode-bidi:plaintext}
+.watch-path-media{margin-top:17px;min-width:0}
+.watch-path-media .video-wrap{margin:0}
+.watch-path-media .video-shell{aspect-ratio:16/9}
+.watch-path-source-link{display:inline-flex;align-items:center;gap:9px;min-height:44px;margin-top:10px;color:var(--navy,#00265e);font-size:.86rem;font-weight:700;text-underline-offset:4px}
+.watch-path-source-link svg{flex:none}
+.watch-path-uploader{font-size:.76rem;line-height:1.6;margin:2px 0 0;color:var(--muted,#4d5c76)}
+.watch-path-note,.watch-path-shared,.watch-path-ending{font-size:1rem;line-height:1.75;margin:0 0 14px;max-width:76ch;color:var(--muted,#4d5c76)}
+.watch-path-shared{border-inline-start:3px solid #96afd7;padding-inline-start:11px;color:var(--navy,#00265e)}
+.watch-path-ending{font-weight:700;color:var(--navy,#00265e)}
+.watch-path-stop>.watch-path-note:last-child{margin:14px 0 0}
+.watch-path-part{display:grid;place-items:center;flex:none;width:30px;height:30px;border:1px solid #b6c6e0;color:var(--navy,#00265e);font:1.1rem Georgia,serif}
+.watch-path-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* Optional host layout modifier: retain scene copy, replace the tall decorative flag. */
+.show-slide.show-slide--watch{display:block;min-height:0}
+@media(max-width:1050px){.watch-path-intro{grid-template-columns:minmax(0,1fr)}.watch-path-modes{justify-self:start}}
+@media(max-width:560px){.watch-path-intro{padding-block:18px;gap:18px}.watch-path-modes{width:100%;display:grid;grid-template-columns:1fr 1fr}.watch-path-modes button{padding:9px}.watch-path-clip{padding:16px}.watch-path-clip--embedded{padding:0}.watch-path-stop{margin-block:22px}.watch-path-clip h4{font-size:1rem}.watch-path-source-link{font-size:.82rem}.watch-path-modes small{overflow-wrap:anywhere}}
+
+.show-slide--watch .show-slide-copy{max-width:900px;margin-inline:auto;width:100%;box-sizing:border-box}.watch-path-media{max-width:800px}

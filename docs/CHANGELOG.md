@@ -1,3 +1,10 @@
+# Song-by-song watch path · 12 October 2026
+
+- Added Our picks and Same production modes to the existing 38-stop musical journey, with six professional/publisher-backed choices and 32 original school-source fallbacks.
+- Preserved all song readings, both acts and the interval; replaced the tall decorative journey column with a compact full-width reading/player layout.
+- Added exact mode-aware links, language/history restoration and consent-bound continuation, with school recordings opening at their original source.
+- Added full bilingual responsive browser coverage and isolated rendering tests. See WATCH-PATH.md for source coverage and playback limits.
+
 # Visual and language refresh
 
 ## 2026-10-12 — Tara Simon joins the vocal-coach collection

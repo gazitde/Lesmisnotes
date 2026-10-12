@@ -29,6 +29,7 @@ try{
   await run(['scripts/browser-hugo-stories.cjs']);
   await run(['scripts/browser-coach-videos.cjs']);
   await run(['scripts/browser-act-transitions.cjs']);
+  await run(['scripts/browser-watch-path.cjs']);
   await run(['scripts/browser-analytics.cjs']);
   await run(['scripts/browser-search.cjs']);
   await run(['scripts/browser-reading.cjs']);
