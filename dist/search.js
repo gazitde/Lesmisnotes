@@ -114,6 +114,7 @@
   }
   const routeKinds = { character: 'characters', story: 'story', novel: 'novel', part: 'novel', book: 'novel', chapter:'novel', recording:'musical', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
   function hrefFor(doc, lang) {
+    if (doc.kind === 'characterdetail') return `/${lang}/characters/?focus=${encodeURIComponent('character:'+doc.key)}`;
     if (doc.kind === 'character' && doc.route === 'character-'+doc.key) return `/${lang}/character-${encodeURIComponent(doc.key)}/`;
     if (doc.kind === 'place') return `/${lang}/places/?place=${encodeURIComponent(doc.key)}`;
     if (doc.kind === 'performance') return `/${lang}/listening/?clip=${encodeURIComponent(doc.key)}`;
@@ -137,9 +138,13 @@
       add('page', route, route, 'pages', input.labels?.[route] || page.title, input.pageHints?.[route] || page.description);
     }
     const characterProfile=id=>R.characterProfiles?.profiles?.find(p=>p.id===id);
-    for (const c of R.characters || []) add('character', c.id, characterProfile(c.id)?'character-'+c.id:'characters', 'characters', c.name,
-      spoilers ? pair(characterProfile(c.id)?.paragraphs,c.role, c.summary, c.question, c.context?.sentences, (c.canonNotes||[]).map(n=>pair(n.title,n.paragraphs)), (c.connections || []).map(x => x.label), (R.relationships||[]).filter(e=>e.from===c.id||e.to===c.id).map(e=>pair(e.label,e.context,e.canonNote))) : pair(characterProfile(c.id)?.safeIntro,c.safeIntro,c.id==='valjean'?R.safe24601?.body:'',(R.relationships||[]).filter(e=>e.spoilerLevel===0&&(e.from===c.id||e.to===c.id)).map(e=>pair(e.safeLabel,e.safeContext))),
-      [c.id, ...(CHARACTER_ALIASES[c.id] || []),...(characterProfile(c.id)?.nameTokens?.en||[]),...(characterProfile(c.id)?.nameTokens?.he||[])], false);
+    for (const c of R.characters || []) {
+      const profile=characterProfile(c.id), details=pair(c.role,c.summary,c.question,c.context?.sentences,(c.canonNotes||[]).map(n=>pair(n.title,n.paragraphs)),(c.connections||[]).map(x=>x.label),(R.relationships||[]).filter(e=>e.from===c.id||e.to===c.id).map(e=>pair(e.label,e.context,e.canonNote)));
+      add('character',c.id,profile?'character-'+c.id:'characters','characters',c.name,
+        profile ? pair(profile.safeIntro,spoilers?profile.paragraphs:[]) : spoilers ? details : pair(c.safeIntro,c.id==='valjean'?R.safe24601?.body:'',(R.relationships||[]).filter(e=>e.spoilerLevel===0&&(e.from===c.id||e.to===c.id)).map(e=>pair(e.safeLabel,e.safeContext))),
+        [c.id,...(CHARACTER_ALIASES[c.id]||[]),...(profile?.nameTokens?.en||[]),...(profile?.nameTokens?.he||[])],false);
+      if(profile&&spoilers)add('characterdetail',c.id,'characters','characters',{en:local(c.name,'en')+' · Connections and context',he:local(c.name,'he')+' · קשרים והקשר'},details);
+    }
     if (spoilers) for (const s of R.story || []) add('story', s.id, 'story', 'story', s.title, pair(s.period, s.summary, s.detail, s.songs));
     for(const p of R.readingLocator?.parts||[])for(const b of p.books)add('book',b.id,'novel','story',b.label,b.prompt,['reading alongside','מלווה קריאה']);
     for (const c of R.chapterCompanion?.chapters || []) {

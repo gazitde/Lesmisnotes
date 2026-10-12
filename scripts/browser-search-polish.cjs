@@ -65,7 +65,7 @@ const check = (value, message) => { assert.ok(value, message); checks++; };
     await openSearch('1.1.999');
     check(await page.locator('.site-search-list a').count() === 0, 'Invalid numeric coordinate has honest empty state');
     await page.locator('#site-search-input').fill('Cossette'); await page.waitForTimeout(200);
-    check((await page.locator('.site-search-list a').first().getAttribute('href')).endsWith('focus=character%3Acosette'), 'Bounded typo ranks Cosette first');
+    check((await page.locator('.site-search-list a').first().getAttribute('href'))===`/${lang}/character-cosette/`, 'Bounded typo ranks Cosette first');
     await page.keyboard.press('Escape');
     await page.goto(base + `/${lang}/about/`);
     const finder = page.locator('[data-source-search]');

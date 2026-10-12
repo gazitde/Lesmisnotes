@@ -69,6 +69,14 @@ for(const p of D.profiles){
  for(const paragraph of p.paragraphs){check(!safe.body.en.includes(paragraph.en),'Safe search excludes full prose');check(full.body.en.includes(paragraph.en),'Consented search includes full prose');}
 }
 check(W.SiteSearch.search(safeIndex,'24601',{lang:'en'}).results[0]?.doc.id==='character:valjean','Existing character alias ranking retained');
+for(const lang of ['he','en']){
+ const typo=W.SiteSearch.search(safeIndex,'Cossette',{lang}).results[0]?.doc;
+ check(W.SiteSearch.hrefFor(typo,lang)===`/${lang}/character-cosette/`,'Curated typo reaches dedicated profile');
+ const oldNote=W.SiteSearch.search(fullIndex,'9430',{lang}).results[0]?.doc;
+ check(oldNote?.id==='characterdetail:valjean'&&W.SiteSearch.hrefFor(oldNote,lang)===`/${lang}/characters/?focus=character%3Avaljean`,'Detailed old biography search reaches exact map content');
+ check(!safeIndex.some(d=>d.kind==='characterdetail'),'Detailed relationship notes stay absent before permission');
+ check(!fullIndex.find(d=>d.id==='character:valjean').body[lang].includes('9430'),'Profile index contains only its actual biography');
+}
 // Exercise actual app routing and language handling in one reusable runtime.
 const nodes=new Map(),events={},app={innerHTML:'',addEventListener:(k,fn)=>events[k]=fn};
 const node=id=>{if(!nodes.has(id))nodes.set(id,{style:{},classList:{add(){},remove(){},toggle(){}},setAttribute(){},focus(){},scrollIntoView(){},addEventListener(){}});return nodes.get(id)};
