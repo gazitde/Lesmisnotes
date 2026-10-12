@@ -95,7 +95,7 @@ for (const category of ['together', 'humor']) {
     equal(plain(x.api.visit()), before, 'All memory-only visit state preserved');
     equal(x.activeId(), 'gallery-choices', 'Gallery choices receive focus');
   }
-  equal(x.transitions.filter(t => t.method === 'pushState').length, 2, 'Exactly one history push per click');
+  equal(x.transitions.filter(t => t.method === 'pushState').length, 1, 'Repeated current-category link does not add an invisible history step');
   equal(x.localValues.has('barricade-quiz-run'), false, 'No persistent quiz storage introduced');
   equal(x.localValues.has('barricade-listening'), false, 'No persistent checkmark storage introduced');
 }
@@ -126,7 +126,7 @@ for (const [journey, from, remains] of [['voices', 'screen', true], ['after', 'c
   ['first', 'before', false], ['play', 'history', false]]) {
   const x = boot('en', from); x.ctx.history.state = { lesmisJourney: journey };
   equal(click(x, '/en/listening/?category=together'), true, 'Journey category click intercepted');
-  equal(plain(x.ctx.history.state), remains ? { lesmisJourney: journey } : null, 'Journey membership retained correctly');
+  equal(plain(x.ctx.history.state), { ...(remains ? {lesmisJourney:journey} : {}), lesmisGalleryFocus:{kind:'choices'} }, 'Journey membership and bounded focus state retained correctly');
   equal(x.analytics.filter(e => e.event === 'journey_step').length, remains ? 1 : 0, 'Valid journey arrival tracked exactly once');
   equal(x.analytics.filter(e => e.event === 'journey_offroute').length, remains ? 0 : 1, 'Off-route exit tracked exactly once');
   equal(x.activeId(), 'gallery-choices', 'Journey tracking preserves destination focus');

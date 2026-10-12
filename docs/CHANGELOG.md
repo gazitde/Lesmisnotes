@@ -93,3 +93,10 @@ The footer wraps its expanded link list at desktop widths. Added whole-page hori
 
 - Removed the redundant standalone overview/question/quiz paragraph beside the home page’s three-card heading in Hebrew and English. The section title and all three entry cards stay intact.
 - Added explicit browser checks and component screenshots at1365px,390px and320px for the clean heading, compact spacing and preserved cards.
+
+## Gallery control and navigation refinement ·12 October2026
+
+- Combined all/category choices, original-audio filters, result count and reset in a compact responsive control panel. Kept the English/Hebrew comparison doorway in the full and stage collections; its useful song links remain intact.
+- Filter changes retain the selected control’s focus. Closing a performance or analysis returns to its exact card, including after changing versions or entering by deep link. Back/Forward restores the relevant detail or card.
+- Repeated active gallery/relationship selections no longer add invisible history entries. Escape fully dismisses mobile navigation and returns to its button without interfering with an open dialog.
+- Added dedicated HE/EN desktop/390px/320px browser regressions and screenshots; all29 gallery cards and9analyses remain.

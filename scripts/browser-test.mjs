@@ -17,6 +17,7 @@ try{
   await run(['scripts/browser-reading-query-shell.cjs']);
   await run(['scripts/browser-character-profiles.cjs']);
   await run(['scripts/browser-coach-gallery.cjs']);
+  await run(['scripts/browser-gallery-controls.cjs']);
   await run(['scripts/browser-mobile-polish.cjs']);
   await run(['scripts/browser-search-polish.cjs']);
   await run(['scripts/browser-chapter-companion.cjs']);
