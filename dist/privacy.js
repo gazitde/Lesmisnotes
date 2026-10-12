@@ -1,7 +1,7 @@
 'use strict';
 (() => {
  const KEY='barricade-consent-v1',VERSION=3,DAYS=180;
- const OPTIONAL=['barricade-lang','barricade-listening','barricade-quiz-run','barricade-bookmarks','barricade-last-journey'];
+ const OPTIONAL=['barricade-lang','barricade-listening','barricade-quiz-run','barricade-bookmarks','barricade-last-journey','barricade-last-reading'];
  const SESSION=['barricade-spoilers','barricade-after-consent','barricade-novel-consent','barricade-quiz-consent'];
  const memory=new Map(),subscribers=[];
  const raw=(key,session=false)=>{try{return (session?sessionStorage:localStorage).getItem(key)}catch{return null}};

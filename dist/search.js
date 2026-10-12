@@ -43,7 +43,7 @@
     thenardiers: ['Thénardier', 'Thénardiers', 'Thenardier', 'טנארדייה', 'תנרדייה', 'ת׳נרדייה'],
     bishop: ['Bishop of Digne', 'Myriel', 'בישוף', 'דיניה']
   };
-  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
+  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', book: 'novel', recording:'musical', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
   function hrefFor(doc, lang) {
     if (doc.kind === 'place') return `/${lang}/places/?place=${encodeURIComponent(doc.key)}`;
     if (doc.kind === 'performance') return `/${lang}/listening/?clip=${encodeURIComponent(doc.key)}`;
@@ -70,7 +70,9 @@
       spoilers ? pair(c.role, c.summary, c.question, c.context?.sentences, (c.canonNotes||[]).map(n=>pair(n.title,n.paragraphs)), (c.connections || []).map(x => x.label), (R.relationships||[]).filter(e=>e.from===c.id||e.to===c.id).map(e=>pair(e.label,e.context,e.canonNote))) : pair(c.safeIntro,c.id==='valjean'?R.safe24601?.body:'',(R.relationships||[]).filter(e=>e.spoilerLevel===0&&(e.from===c.id||e.to===c.id)).map(e=>pair(e.safeLabel,e.safeContext))),
       [c.id, ...(CHARACTER_ALIASES[c.id] || [])], false);
     if (spoilers) for (const s of R.story || []) add('story', s.id, 'story', 'story', s.title, pair(s.period, s.summary, s.detail, s.songs));
+    for(const p of R.readingLocator?.parts||[])for(const b of p.books)add('book',b.id,'novel','story',b.label,b.prompt,['reading alongside','מלווה קריאה']);
     if (novel) for (const s of R.novel?.milestones || []) add('novel', s.id, 'novel', 'story', s.title, pair(s.dateLabel, s.summary, s.details, s.remember));
+    for(const c of R.recordingChooser?.cards||[])add('recording',c.id,'musical','songs',c.title,pair(c.year,c.format,c.cast,c.reason,c.prompt),[c.id]);
     for (const c of R.musical?.creationStory?.craft || []) add('craft', c.id, 'musical', 'songs', c.title, c.body, [c.id]);
     for (const c of R.israel?.sections || []) add('israel', c.id, 'israel', 'songs', c.title, c.paragraphs, ['Israel','ישראל']);
     for (const g of R.israel?.castGroups || []) for (const c of g.cards) add('israel', 'cast-'+c.id, 'israel', 'songs', c.name, pair(c.role,g.title), ['Israel','ישראל']);
@@ -264,7 +266,7 @@
   }
   function focusTarget(target) {
     if (!target || !root.document?.querySelector) return;
-    const key = target.key, selector = { character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : '#spotlight-title', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
+    const key = target.key, selector = { book: '#reading-book-panel', recording: '#recording-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : '#spotlight-title', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
     const element = selector && root.document.querySelector(selector); if (!element) return;
     if (['story', 'novel', 'history','song','dilemma'].includes(target.kind)||(target.kind==='extra'&&key!=='collection')) {const readingRoot=target.kind==='song'?(element.closest?.('.show-slide,.spotlight-detail')||element):element;readingRoot.querySelectorAll?.('details').forEach(details => { details.open = true; });}
     if(target.kind==='craft'||target.kind==='israel'){const notebook=element.closest?.('details');if(notebook)notebook.open=true;}

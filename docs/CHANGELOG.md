@@ -31,3 +31,12 @@ No hosting account, mail credential, sender domain, analytics identifier or fina
 The circular Paris/1832 stamp now has explicit city/date/caption lines and a larger safe text area at desktop and narrow widths. Full words remain visible without overflow clipping. Added bilingual circle-boundary browser regression coverage at five viewport widths.
 
 The footer wraps its expanded link list at desktop widths. Added whole-page horizontal-fit checks in both languages at 1365, 1180, 960, 680, 390 and 320 pixels. The selected future domain is documented without activating indexing or modifying DNS.
+
+## Connected reading and listening ·12 October2026
+
+- Six curated question paths connect specific songs, relationships, dilemmas and exact Hugo passages. Song links distinguish performances from vocal-coach analysis; source catalogue entries link back to selected insights.
+- Song/spotlight and dilemma choices retain exact reloadable URLs. Copy-link controls and a home continuation use curated content IDs; saved reading positions require existing functional consent and are included in the privacy inventory/erase flow.
+- The novel entrance now includes48 Part/Book positions with original HE/EN pre-book questions and exact primary-text anchors. Six character reminders unlock only after their introductory book. Original book headings and full-novel synopsis are excluded from this mode; the existing full recap retains its separate consent.
+- The Hebrew-edition guide is directly accessible from the novel entrance. Five recordings can be compared by concert, film or audio format, with official sources and no claim of universal streaming availability.
+- One locally hosted CC0 Hugo drawing enriches the existing sourced stage-design story. Full-frame viewing, bilingual description, collection credit and license are provided.
+- Added HE/EN desktop,390px and320px browser checks for exact URLs, history/language, reading boundaries, all48 source links, keyboard filters, no-JS fallback and opt-in resume. External video and analytics requests remain blocked in automated QA; actual YouTube playback and contact delivery remain separate verification items.
