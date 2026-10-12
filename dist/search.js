@@ -43,7 +43,7 @@
     thenardiers: ['Thénardier', 'Thénardiers', 'Thenardier', 'טנארדייה', 'תנרדייה', 'ת׳נרדייה'],
     bishop: ['Bishop of Digne', 'Myriel', 'בישוף', 'דיניה']
   };
-  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', book: 'novel', recording:'musical', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
+  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', book: 'novel', chapter:'novel', recording:'musical', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
   function hrefFor(doc, lang) {
     if (doc.kind === 'place') return `/${lang}/places/?place=${encodeURIComponent(doc.key)}`;
     if (doc.kind === 'performance') return `/${lang}/listening/?clip=${encodeURIComponent(doc.key)}`;
@@ -266,7 +266,7 @@
   }
   function focusTarget(target) {
     if (!target || !root.document?.querySelector) return;
-    const key = target.key, selector = { book: '#reading-book-panel', recording: '#recording-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : '#spotlight-title', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
+    const key = target.key, selector = { chapter:'#reading-book-panel', book: '#reading-book-panel', recording: '#recording-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : '#spotlight-title', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
     const element = selector && root.document.querySelector(selector); if (!element) return;
     if (['story', 'novel', 'history','song','dilemma'].includes(target.kind)||(target.kind==='extra'&&key!=='collection')) {const readingRoot=target.kind==='song'?(element.closest?.('.show-slide,.spotlight-detail')||element):element;readingRoot.querySelectorAll?.('details').forEach(details => { details.open = true; });}
     if(target.kind==='craft'||target.kind==='israel'){const notebook=element.closest?.('details');if(notebook)notebook.open=true;}

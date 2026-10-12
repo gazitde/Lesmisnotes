@@ -47,3 +47,12 @@ The footer wraps its expanded link list at desktop widths. Added whole-page hori
 - Eight dated stations distinguish revolution, empire, Restoration monarchy, battle, uprising and publication through text, symbols and layout. Added independently sourced 1804/1814 context, keyboard/native anchor navigation and a prominent 1832 marker. Existing historical detail and optional aftermath remain.
 - Every recording now has two original HE/EN paragraphs. Six direct edition options explicitly label audio/video, subscription/rental/purchase, and storefront. Four Israeli Apple offers are verified; the 2010 DVD requires Region 1 playback and ships only to the US/US territories. Qobuz's complete-album option is labelled UK. Offer verification is dated; no price or guaranteed future availability claim is made.
 - Added source grouping, search coverage, static assertions and real-browser HE/EN desktop/390/320/no-JS checks. These checks do not perform purchases or play external media.
+
+## 2026-10-12 — Chapter-by-chapter companion and richer vocal coaching
+
+- Expanded the reading companion to the novel’s actual five Parts, 48 Books and 365 chapters, with matched Hebrew/English chapter summaries and separate whole-Book overviews.
+- Added specific before-reading prompts, prior-event reminders with exact earlier chapter links, primary-text details and relevant contextual routes. A chapter summary opens only by choice; changing chapter closes it. Whole-Book summaries have a separate explicit control.
+- Added exact chapter URLs, previous/next chapter navigation across Books and Parts, optional consented resume, and no-JavaScript links to all 365 source chapters. Detailed notes load locally one Part at a time, with retry and stale-response protection.
+- Added narrow, chapter-specific geographic views for two early locations, excluding later novel paragraphs and the full-story atlas.
+- Replaced Zoe Stibi’s On My Own selection with the requested Beth Roars analysis, retaining four curated coaches. Each now has three substantial bilingual context paragraphs and three focused listening prompts. Beth’s unverified duration and chapter timestamps are omitted.
+- Extended source/data and actual-browser CI coverage for every chapter in both languages, narrow layouts, loading failures, exact resume links, scoped geography, coach filters and player teardown. External-player playback and contact delivery remain separate verification limits.
