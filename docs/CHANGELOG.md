@@ -1,3 +1,10 @@
+# Clear watch-journey landing — 2026-10-12
+
+- Remove the redundant transient song-name overlay from station changes, first entry and the Act II transition.
+- Align the complete station header below compact navigation, including the date/scene line.
+- Place detailed shared/larger-source context after the viewing frame, retaining a same-recording label in the frame.
+- Add explicit no-overlay checks alongside viewport and media-frame assertions.
+
 # Consistent watch-journey transitions — 2026-10-12
 
 - Keep the numbered current stop and compact Previous/Next controls visible while reading.

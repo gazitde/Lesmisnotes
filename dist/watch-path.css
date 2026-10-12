@@ -56,3 +56,5 @@
 .watch-path-external-frame .watch-path-source-link{display:inline-flex;justify-content:center;margin:0;padding:12px 18px;min-height:48px;background:var(--navy,#00265e);color:white;font-size:1rem;text-decoration:none;line-height:1.5}
 .watch-path-external-hint{display:block;margin:9px 0 0;font-size:.85rem;line-height:1.6;max-width:34ch}
 @media(max-width:560px){.show-station-nav{gap:9px;padding:8px}.show-station-nav button{font-size:.83rem;padding:8px;overflow-wrap:anywhere}.show-navigator.show-selector{padding:14px 16px}.watch-path-external-frame{padding:16px;gap:10px}.watch-path-external-frame .watch-path-source-link{padding:10px 13px;font-size:.95rem}.show-slide--watch .show-slide-copy{padding:22px 18px}#show-current-title{scroll-margin-top:110px}}
+
+#show-slide{scroll-margin-top:90px}.watch-path-clips + .watch-path-shared,.watch-path-clips + .watch-path-note{margin-top:14px}

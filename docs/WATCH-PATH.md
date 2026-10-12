@@ -28,3 +28,5 @@ Mode buttons are native controls with `aria-pressed`; scoped updates retain keyb
 A compact sticky navigation bar shows the canonical song number out of 38 (the interval is separately named). Discrete Next, Previous and outline jumps focus and instantly align the new heading below the bar. Range and select changes preserve control focus for repeated keyboard operation. Both embedded performances and external school sources occupy the same viewing region; external cards explicitly say they open YouTube in a new tab. Shared-source notes identify longer recordings without inventing scene timestamps or restarting a player.
 
 The browser suite reproduces opening stops 1–4 in both modes, HE/EN at 1365/390/320 pixels, captures the first three, and asserts viewport landing, numbered state, bottom navigation and repeated range-key interaction.
+
+Screenshot follow-up: station changes no longer show a redundant overlay toast. The complete station header aligns below the navigation bar, and detailed shared/larger-source notes follow the viewing frame. Shared external cards identify the common recording within the frame.
