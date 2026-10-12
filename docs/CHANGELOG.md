@@ -88,3 +88,8 @@ The footer wraps its expanded link list at desktop widths. Added whole-page hori
 - First contextual character mentions lead to the relevant profile. Chapter links use a separate role-only reader view that cannot inherit broad spoiler permission or expose future aliases. Both profile modes have semantic parent trails.
 - Tightened internal page mastheads, reflection/quotation panels, performance cards and recipe context. Removed equal-height blank space in relationship cards and nested mobile reader padding. Rich prose, local art, photographs and accessible interaction targets remain intact.
 - Reviewed all ten profiles,80 primary anchors and all365 chapter summaries;393 reviewed name links across241 chapters independently. Corrected the ambiguous Thenardier rescue pronoun in both languages.
+
+## Home three-card heading ·12 October2026
+
+- Removed the redundant standalone overview/question/quiz paragraph beside the home page’s three-card heading in Hebrew and English. The section title and all three entry cards stay intact.
+- Added explicit browser checks and component screenshots at1365px,390px and320px for the clean heading, compact spacing and preserved cards.
