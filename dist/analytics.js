@@ -5,7 +5,7 @@
   const id = /^G-[A-Z0-9]+$/.test(C.gaMeasurementId || '') ? C.gaMeasurementId : '';
   // This flag records a verified GA Admin setting; send_page_view:false alone is insufficient.
   const configured = Boolean(id && C.gaEnhancedMeasurementDisabled === true);
-  const routes = Object.keys(M.pages || {}), journeys = ['first', 'after', 'book', 'voices', 'play'];
+  const routes = Object.keys(M.pages || {}), journeys = ['first', 'after', 'book', 'voices', 'play', 'interest-novel', 'interest-musical', 'interest-both'];
   const steps = [1, 2, 3, 4], lengths = [5, 10, 25], tracks = ['story', 'musical'];
   const categories = ['all', 'pages', 'story', 'characters', 'songs', 'places', 'history', 'recipes', 'ideas'];
   const count = max => value => Number.isInteger(value) && value >= 0 && value <= max;

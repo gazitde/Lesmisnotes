@@ -84,3 +84,7 @@ Local VM/source tests were run during implementation. The restricted local execu
 - [Google: consent default/update](https://developers.google.com/tag-platform/security/guides/consent)
 - [Google: disabling the Google tag](https://developers.google.com/tag-platform/security/guides/privacy)
 - [Google: GA4 configuration reference](https://developers.google.com/analytics/devguides/collection/ga4/reference/config)
+
+### Interest-led paths and legacy renewal
+
+The three fixed journey identifiers `interest-novel`, `interest-musical`, and `interest-both` use the same four-stop event schema. No free-text interests or URL query values are sent. Valid version-2 analytics grants require one renewed choice for the expanded version-3 scope; prior refusals remain refused, and saved functional preferences are retained. The renewal marker is in memory until a new explicit choice replaces the consent record.

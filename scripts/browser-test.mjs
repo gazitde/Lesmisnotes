@@ -38,6 +38,7 @@ try{
   await run(['scripts/browser-relationships.cjs']);
   await run(['scripts/browser-enriched-reading.cjs']);
   await run(['scripts/browser-home-entry.cjs']);
+  await run(['scripts/browser-interest-paths.cjs']);
   await run(['scripts/browser-quiz-achievement.cjs']);
   await run(['scripts/browser-quiz-site.cjs']);
   await run(['scripts/browser-listening-reading.cjs']);

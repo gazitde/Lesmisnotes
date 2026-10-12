@@ -175,3 +175,13 @@ The footer wraps its expanded link list at desktop widths. Added whole-page hori
 - Filter changes retain the selected control’s focus. Closing a performance or analysis returns to its exact card, including after changing versions or entering by deep link. Back/Forward restores the relevant detail or card.
 - Repeated active gallery/relationship selections no longer add invisible history entries. Escape fully dismisses mobile navigation and returns to its button without interfering with an open dialog.
 - Added dedicated HE/EN desktop/390px/320px browser regressions and screenshots; all29 gallery cards and9analyses remain.
+
+## 2026-10-12 — Interest-led home and quieter source presentation
+
+- Replaced competing home entry cards with three tailored directions: the novel, the musical, or both. Each opens a four-stop plan with direct destinations, an explicit Start action, and optional switching/free browsing throughout.
+- Kept the five specialist journeys in a secondary native disclosure. The three-card cream/navy/red visual language now carries the main decision, with compact original illustrations and a shorter mobile introduction.
+- Kept navigation and progress in the visit/history state; existing functional consent is required for saved resume. No new storage key or free-text analytics field was added.
+- Removed repeated MTI branding, licensing CTAs and technical source links from visitor reading and viewing panels. The full primary-source records remain searchable in About, alongside all performer, image and software credits.
+- Added bilingual desktop/390/320 browser coverage for all three paths, history, locale, switching, no-JS links, consent and resume; expanded source-render checks to protect source retention and reader-facing cleanup.
+
+- Returning visitors whose older consent covered a narrower inactive analytics scope now receive one renewed choice. Analytics stays off until that choice; prior refusals and valid current choices remain remembered, and saved reading progress is preserved.

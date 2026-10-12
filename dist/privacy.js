@@ -6,7 +6,7 @@
  const memory=new Map(),subscribers=[];
  const raw=(key,session=false)=>{try{return (session?sessionStorage:localStorage).getItem(key)}catch{return null}};
  const write=(key,value,session=false)=>{try{(session?sessionStorage:localStorage).setItem(key,value)}catch{}};
- function readConsent(){try{const c=JSON.parse(raw(KEY)||'null');if(c&&(c.version===VERSION||c.version===2)&&Number.isFinite(c.savedAt)&&Number.isFinite(c.expiresAt)&&c.savedAt<=Date.now()&&c.expiresAt>Date.now()&&c.expiresAt-c.savedAt===DAYS*86400000&&['functional','analytics','media'].every(k=>typeof c[k]==='boolean'))return c.version===2?{...c,version:VERSION,analytics:false}:c}catch{}return null}
+ function readConsent(){try{const c=JSON.parse(raw(KEY)||'null');if(c&&(c.version===VERSION||c.version===2)&&Number.isFinite(c.savedAt)&&Number.isFinite(c.expiresAt)&&c.savedAt<=Date.now()&&c.expiresAt>Date.now()&&c.expiresAt-c.savedAt===DAYS*86400000&&['functional','analytics','media'].every(k=>typeof c[k]==='boolean'))return c.version===2?{...c,version:VERSION,analytics:false,analyticsChoiceRequired:c.analytics===true}:c}catch{}return null}
  let consent=readConsent(),timer;
  const allowed=purpose=>Boolean(consent&&consent.expiresAt>Date.now()&&consent[purpose]);
  function flush(){if(!allowed('functional'))return;for(const [k,value]of memory){let v=value;if(k==='barricade-listening'){try{const prior=JSON.parse(raw(k)||'[]'),next=JSON.parse(value);if(Array.isArray(prior)&&Array.isArray(next))v=JSON.stringify([...new Set([...prior,...next].filter(x=>['stars','prayer','ensemble'].includes(x)))])}catch{}}memory.set(k,v);write(k,v)}}

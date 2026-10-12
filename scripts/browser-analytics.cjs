@@ -39,16 +39,24 @@ const equal=(actual,expected,message)=>{assert.deepEqual(actual,expected,message
   const consent=async enabled=>{await page.locator('[data-action="privacy-open"]').last().click();await page.locator('#privacy-analytics').setChecked(enabled);await page.locator('#privacy-functional').setChecked(true);await page.locator('[data-action="privacy-save"]').click()};
   await page.goto(base+'/en/home/?q=reader%40example.com#private-message');await page.waitForFunction(()=>window.SiteAnalytics);
   equal(tagRequests,0,'No Google tag before choice');ok(await page.evaluate(()=>!window.dataLayer),'No pre-consent queue');
-  await page.locator('[data-home-journey="first"]').click();await page.locator('[data-enter-journey="first"]').first().click();equal(tagRequests,0,'Navigation without consent remains silent');
+  await page.locator('.home-more-paths > summary').click();await page.locator('[data-home-journey="first"]').click();await page.locator('[data-enter-journey="first"]').first().click();equal(tagRequests,0,'Navigation without consent remains silent');
   await consent(true);await page.waitForFunction(()=>window.SiteAnalytics.active());equal(tagRequests,1,'Exactly one post-consent tag');equal(await count('page_view'),1,'One pageview on initial consent');equal(await count('journey_start'),0,'No replay of pre-consent journey');
   let before=await count('page_view');await page.evaluate(()=>SiteAnalytics.context('before','en','first'));equal(await count('page_view'),before,'Rerender same route does not duplicate pageview');
   const paths={first:['before','story','map','musical'],after:['after','listening','compare','ideas'],book:['hugo','novel','compare','musical'],voices:['listening','musical','screen','after'],play:['quiz','characters','map','history']};
   for(const [id,path]of Object.entries(paths)){
-    await go('home');await page.locator('[data-home-journey="'+id+'"]').click();
+    await go('home');await page.locator('.home-more-paths > summary').click();await page.locator('[data-home-journey="'+id+'"]').click();
     const starts=await count('journey_start'),steps=await count('journey_step'),complete=await count('journey_complete');
     await page.locator('[data-enter-journey="'+id+'"]').first().click();
     for(let i=0;i<path.length;i++){ok((await page.url()).includes('/'+path[i]+'/'),'Journey '+id+' step '+(i+1));if(i<3)await page.locator('.journey-next').click()}
     equal(await count('journey_start'),starts+1,id+' start');equal(await count('journey_step'),steps+4,id+' four steps');equal(await count('journey_complete'),complete+1,id+' final-stop completion');
+  }
+  for(const [interest,pages] of Object.entries({novel:['novel','characters','map','hugo'],musical:['before','musical','listening','screen'],both:['hugo','story','compare','musical']})){
+    await go('home');await page.locator('[data-interest="'+interest+'"]').click();
+    const starts=await count('journey_start'),steps=await count('journey_step'),complete=await count('journey_complete');
+    await page.locator('.interest-start').click();
+    for(let i=0;i<4;i++){ok(page.url().endsWith('/'+pages[i]+'/'),'Interest '+interest+' step '+(i+1));if(i<3)await page.locator('.journey-next').click()}
+    equal(await count('journey_start'),starts+1,interest+' start');equal(await count('journey_step'),steps+4,interest+' steps');equal(await count('journey_complete'),complete+1,interest+' completion');
+    ok((await named('journey_start')).some(e=>e.journey_id==='interest-'+interest),'Fixed interest identifier');
   }
   // Query/fragment-only state changes are content selections, not additional pages.
   await go('map');before=await count('page_view');await page.locator('[data-geo-place="rue-plumet"]').click();equal(await count('page_view'),before,'Map state does not double-count pageview');ok((await named('map_selection')).some(e=>e.place_id==='rue-plumet'),'Geographic map selection');
