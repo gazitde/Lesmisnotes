@@ -185,3 +185,5 @@ The footer wraps its expanded link list at desktop widths. Added whole-page hori
 - Added bilingual desktop/390/320 browser coverage for all three paths, history, locale, switching, no-JS links, consent and resume; expanded source-render checks to protect source retention and reader-facing cleanup.
 
 - Returning visitors whose older consent covered a narrower inactive analytics scope now receive one renewed choice. Analytics stays off until that choice; prior refusals and valid current choices remain remembered, and saved reading progress is preserved.
+
+- Browser QA correction: updated two legacy checks for the intentionally removed MTI-only disclosure and hidden home stamp. All 9,396 new interest-path checks passed in the initial run; the complete suite is rerun after these expectation changes.

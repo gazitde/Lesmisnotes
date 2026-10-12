@@ -66,6 +66,7 @@ await page.screenshot({path:path.join(artifactDir,'contact-he-narrow.png'),fullP
 for(const language of ['en','he'])for(const width of [1365,1180,960,680,390,320]){
  await page.setViewportSize({width,height:900});await page.goto(base+'/'+language+'/home/');
  check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),'Whole-page horizontal fit: '+language+' '+width);
+ if(!await page.locator('.poster-stamp').isVisible()){check(await page.locator('.interest-home [data-interest]').count()===3,'Interest entrance replaces the decorative stamp '+language+' '+width);continue;}
  const geometry=await page.locator('.poster-stamp').evaluate(stamp=>{
    const r=stamp.clientWidth/2, first=stamp.firstElementChild,last=stamp.lastElementChild;
    const centerX=first.offsetLeft+first.offsetWidth/2,centerY=(first.offsetTop+last.offsetTop+last.offsetHeight)/2;
