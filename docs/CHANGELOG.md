@@ -1,3 +1,10 @@
+# Richer Hugo and stage context · 12 October 2026
+
+- Replaced six thin passages with reviewed two-paragraph readings in Hebrew and English: the bishop’s household, Petit-Gervais, Javert’s memorandum, Marius and his father, English lyric-writing, and the ABC circle.
+- Added exact primary chapter links and Kretzmer’s first-person PRS interview; globally visible chapter labels remain spoiler-neutral.
+- Removed a redundant viewing-prompt qualification and repeated rights/process notices from visitor routes; rights policies and meaningful source, safety and spoiler information remain.
+- Added focused render/search/source checks and full responsive browser coverage.
+
 # Clear watch-journey landing — 2026-10-12
 
 - Remove the redundant transient song-name overlay from station changes, first entry and the Act II transition.

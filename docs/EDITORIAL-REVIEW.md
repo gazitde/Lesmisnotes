@@ -20,3 +20,12 @@ This pass replaces vague commentary with actions, choices and details that can b
 Revisions undergo bilingual and source-context review. Changes to factual detail are checked against the relevant primary passage or production record. Commentary does not claim firsthand viewing of a recording unless that viewing was actually established. No song lyrics are added.
 
 Automated checks verify data shape, source identifiers, exact chapter ordering, name-link boundaries, spoiler-protected output, search, static pages and routing. Browser checks cover navigation and rendering in both languages at desktop, 390px and 320px widths. These checks support an editorial review; they do not assign a literary-quality score or establish third-party video playback.
+
+
+## 12 October: six contextual close readings
+
+A subsequent bounded pass enriches six existing fields rather than adding routes: Hugo’s opening household, the after-show mercy and Javert readings, Marius’s political family history, the French-to-English creative note, and the ABC group’s setting. Each has two matched paragraphs in English and Hebrew. An independent reader checked the primary chapters, stage distinctions, language parity and neighboring content.
+
+Eight exact public-domain chapter sources and one previously unused PRS interview support the additions. The PRS-derived material totals158 words across both languages. New Caird and Bouchet-derived expansions were removed after reviewing retained source usage. Original interpretation remains distinct through its concrete arguments rather than repeated process qualifications. Global source labels give neutral chapter coordinates; later-story paragraphs remain behind existing comparison/after-show choices.
+
+This is a review of these six replacements, not a new claim that every existing source attribution or every sentence on the site has been re-audited in this batch.
