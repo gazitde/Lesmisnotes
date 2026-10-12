@@ -8,6 +8,8 @@ const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=
 http.createServer(async(req,res)=>{
   try {
     const url=new URL(req.url,'http://localhost');
+    const readingQuery=url.pathname.match(/^\/(he|en)\/novel\/?$/);
+    if(readingQuery&&url.searchParams.has('focus'))url.pathname='/reading-shells/'+readingQuery[1]+'.html';
     const alias=url.pathname.match(/^\/(he|en)\/(tribute|humor)\/?$/);
     if(alias){url.pathname='/'+alias[1]+'/listening/';url.searchParams.set('category',alias[2]==='tribute'?'together':'humor');res.writeHead(308,{Location:url.pathname+url.search});res.end();return;}
     if(url.pathname.replace(/\/$/,'')==='/api/contact'&&fs.existsSync('api/contact.js'))return await require('../api/contact.js')(req,res);

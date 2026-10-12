@@ -72,3 +72,12 @@ The footer wraps its expanded link list at desktop widths. Added whole-page hori
 - The nine-analysis shelf is grouped by six songs, with keyboard song jumps, three bilingual context paragraphs and three listening prompts per selection. Existing 20 performance cards and 29 performance versions remain intact.
 - Song-context links lead to the relevant analysis without stacking additional song-page players. Later-story Empty Chairs context stays behind the existing spoiler choice; unsupported durations and timestamps are omitted.
 - Extended source/render and browser tests cover all nine, grouped navigation, exact links, languages, narrow layouts and player teardown. Actual third-party playback is separate from the mocked browser suite.
+
+## Hierarchical reader and navigation clarity ·12 October2026
+
+- Reorganized the reading companion as five Parts,48 Books and365 chapters, with53 independently reviewed bilingual two-paragraph overviews. Every chapter summary appears directly within the selected Book; previous-event reminders and separate wider-story consent remain intact.
+- Added semantic, keyboard-accessible reading breadcrumbs and clear current-page trails. The main-menu underline follows the expanded menu, then returns to the current page group on dismissal.
+- Put exact performance and coaching actions before song analysis. Technical billing and synopsis citations now live in optional source/credit disclosures.
+- Rebuilt coaching cards around teacher, language, listening cue and immediate action; removed oversized repeated headings and empty desktop columns. Converted the long song sidebar into a compact horizontal selector, reduced small fact/navigation panels, and stopped short character/About/source cards stretching to their neighbors.
+- Clarified40 localized first-mention role descriptions and corrected a legacy Marius/Jondrette causal summary against Hugo III.VIII.V.
+- Added hierarchical reader, source-action, menu-state and compact-card browser regression coverage in both languages at desktop,390px and320px. Live-media playback remains a separate verification limit.

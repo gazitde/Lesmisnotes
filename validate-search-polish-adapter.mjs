@@ -45,8 +45,8 @@ for (const lang of ['en', 'he']) {
   api.navigateSearchResult(`/${lang}/novel/?focus=chapter%3Ap1-b1-c2`);
   check(api.getState().readingChapter === 'p1-b1-c2' && api.getState().readingBook === 'p1-b1', 'Existing adapter selects actual coordinate and parent Book');
   check(!api.getState().spoiler && !api.getState().novelConsent, 'Chapter navigation does not broaden spoiler or novel consent');
-  check(x.activeId() === 'reading-book-panel', 'Exact chapter focuses reading companion');
-  check(!app.innerHTML.includes('class="chapter-summary-text"'), 'Chapter summary is not exposed by search navigation');
+  check(x.activeId() === 'reader-chapter-p1-b1-c2', 'Exact chapter focuses its own article when available');
+  check(!app.innerHTML.includes('class="chapter-summary-text"'), 'Unloaded chapter content stays absent until its Part payload arrives');
   const plain = boot(lang, 'about'); plain.api.setSourceFilter('gutenberg');
   const before = plain.api.sourceResults(), beforeIds = JSON.stringify(plain.api.sourceMatches().map(s => s.url));
   check(plain.api.sourceMatches().length > 0, 'Existing source catalogue returns Gutenberg results');

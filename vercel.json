@@ -31,6 +31,13 @@
       ]
     }
   ],
+  "rewrites": [
+    {
+      "source": "/:lang(he|en)/novel/",
+      "has": [{ "type": "query", "key": "focus" }],
+      "destination": "/reading-shells/:lang.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/he/tribute",

@@ -112,7 +112,7 @@
       || /^[+-]?\d[\d\s.+-]*\.[\d\s.+-]*\./.test(raw);
     return looksLikeCoordinate ? { key: null } : null;
   }
-  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', book: 'novel', chapter:'novel', recording:'musical', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
+  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', part: 'novel', book: 'novel', chapter:'novel', recording:'musical', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
   function hrefFor(doc, lang) {
     if (doc.kind === 'place') return `/${lang}/places/?place=${encodeURIComponent(doc.key)}`;
     if (doc.kind === 'performance') return `/${lang}/listening/?clip=${encodeURIComponent(doc.key)}`;
@@ -143,7 +143,7 @@
     for (const c of R.chapterCompanion?.chapters || []) {
       if (![c.part, c.book, c.chapter].every(n => Number.isSafeInteger(n) && n > 0) || c.id !== `p${c.part}-b${c.book}-c${c.chapter}`) continue;
       add('chapter', c.id, 'novel', 'story', { en: `Part ${c.part} · Book ${c.book} · Chapter ${c.chapter}`, he: `חלק ${c.part} · ספר ${c.book} · פרק ${c.chapter}` },
-        { en: 'Choose what to reveal in the chapter companion.', he: 'בחרו מה לפתוח במלווה הקריאה לפרק.' }, [], true);
+        { en: 'Open the reading companion at this chapter.', he: 'עברו למלווה הקריאה בפרק הזה.' });
     }
     if (novel) for (const s of R.novel?.milestones || []) add('novel', s.id, 'novel', 'story', s.title, pair(s.dateLabel, s.summary, s.details, s.remember));
     for(const c of R.recordingChooser?.cards||[])add('recording',c.id,'musical','songs',c.title,pair(c.year,c.format,c.cast,c.paragraphs||c.reason,c.prompt,(c.options||[]).map(o=>pair(o.format,o.access,o.storefront,o.note))),[c.id]);
@@ -349,8 +349,8 @@
   function focusTarget(target) {
     if (!target || !root.document?.querySelector) return;
     const featuredSong = (root.EXTRA_CONTENT?.musical || root.RESEARCH?.musical)?.spotlight?.songs?.some(s => s.id === target.key);
-    const key = target.key, selector = { chapter:'#reading-book-panel', book: '#reading-book-panel', recording: '#recording-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : featuredSong ? '#spotlight-title' : '#musical-journey', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
-    const element = selector && root.document.querySelector(selector); if (!element) return;
+    const key = target.key, selector = { part:'#reader-part-panel', chapter:'#reader-chapter-'+key, book: '#reading-book-panel', recording: '#recording-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : featuredSong ? '#spotlight-title' : '#musical-journey', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
+    const element = selector && (root.document.querySelector(selector)||(target.kind==='chapter'?root.document.querySelector('#reading-book-panel'):null)); if (!element) return;
     if (['story', 'novel', 'history','song','dilemma'].includes(target.kind)||(target.kind==='extra'&&key!=='collection')) {const readingRoot=target.kind==='song'?(element.closest?.('.show-slide,.spotlight-detail')||element):element;readingRoot.querySelectorAll?.('details').forEach(details => { details.open = true; });}
     if(target.kind==='craft'||target.kind==='israel'){const notebook=element.closest?.('details');if(notebook)notebook.open=true;}
     element.setAttribute?.('tabindex', '-1'); element.focus?.({ preventScroll: true }); element.scrollIntoView?.({ block: 'start' });

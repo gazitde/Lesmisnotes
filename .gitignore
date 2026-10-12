@@ -13,6 +13,7 @@ dist/index.html
 dist/404.html
 dist/robots.txt
 dist/sitemap.xml
+dist/reading-shells/
 dist/seo.js
 test-results/
 playwright-report/

@@ -58,7 +58,8 @@ for (const q of ['HIDDENCHAPTERTITLE', 'סודכותרתפרק', 'HIDDENCHAPTERS
 check(results('Master of the House', 'en', protectedIndex).results[0]?.doc.id === 'song:master-house', 'Safe catalogue names do not derive from later changed outcome headings');
 for (let part = 1; part <= 5; part++) for (const c of JSON.parse(fs.readFileSync(`dist/reading/part-${part}.json`)).chapters) for (const lang of ['en', 'he']) check(!JSON.stringify(full).includes(c.summary[lang]), 'No full chapter summary in any permission partition');
 check(S.resultsHTML(results('Master of the House'), 'Master of the House', 'en').replace(/<[^>]+>/g, '').includes('Name match. Continue to the page'), 'Title-only result explains consent');
-check(S.resultsHTML(results('1.1.2'), '1.1.2', 'en').includes('Choose what to reveal in the chapter companion.'), 'Chapter result uses only generic disclosure guidance');
+check(S.resultsHTML(results('1.1.2'), '1.1.2', 'en').includes('Open the reading companion at this chapter.'), 'Chapter result uses only a neutral reading invitation');
+check(!S.resultsHTML(results('1.1.2'), '1.1.2', 'en').includes('Plot details by consent'), 'Chapter result does not advertise an obsolete reveal gate');
 // This must remain a pure local feature; chapter payloads are never fetched by search.
 const code = fs.readFileSync('dist/search.js', 'utf8');
 check(!/\b(?:fetch|XMLHttpRequest|sendBeacon|localStorage|sessionStorage|gtag)\s*[.(]/.test(code), 'No query networking, storage, analytics or chapter fetches');
