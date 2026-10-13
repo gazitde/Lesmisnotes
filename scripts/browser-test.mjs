@@ -18,7 +18,7 @@ try{
   await run(['scripts/browser-review-gaps.cjs']);
   await run(['scripts/browser-interest-paths.cjs']);
   await run(['scripts/browser-insight-paths.cjs']);
-  if(failures.length)throw new Error('Contextual-navigation regression: '+failures.join('; '));
+  // Keep collecting independent visual/behavior evidence; report every failure at the end.
   await run(['scripts/browser-navigation-clarity.cjs']);
   await run(['scripts/browser-reading-query-shell.cjs']);
   await run(['scripts/browser-character-profiles.cjs']);

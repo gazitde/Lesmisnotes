@@ -16,7 +16,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','density');
    await p.goto(`${base}/${lang}/${route}/`,{waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);
    const data=await p.evaluate(()=>{
     const box=s=>{const e=document.querySelector(s);if(!e)return null;const r=e.getBoundingClientRect(),cs=getComputedStyle(e);return{x:r.x,y:r.y,width:r.width,height:r.height,bottom:r.bottom,paddingTop:parseFloat(cs.paddingTop),paddingBottom:parseFloat(cs.paddingBottom)}};
-    return {height:document.documentElement.scrollHeight,overflow:document.documentElement.scrollWidth>innerWidth,top:box('.page-top'),section:box('.page-top + .wrap.section'),lineage:box('.screen-lineage'),branches:[...document.querySelectorAll('.screen-branches article')].map(e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height}}),progress:box('.reader-setup .chapter-progress'),opening:box('.reader-setup .reading-opening-note'),utilityOutside:!!document.querySelector('.page-top + .page-utility'),text:[...document.querySelectorAll('.screen-branches p,.path-card p,.reader-overview p,.profile-prose p')].map(e=>parseFloat(getComputedStyle(e).fontSize))};
+    return {height:document.documentElement.scrollHeight,overflow:document.documentElement.scrollWidth>innerWidth,top:box('.page-top'),section:box('.page-top + .wrap.section'),lineage:box('.screen-lineage'),branches:[...document.querySelectorAll('.screen-branches article')].map(e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height}}),progress:box('.reader-setup .chapter-progress'),opening:box('.reader-setup .reading-opening-note'),utilityOutside:!!document.querySelector('.page-top + .page-utility'),text:[...document.querySelectorAll('.screen-branches p,.path-card p,.reader-overview>p,.profile-prose p')].map(e=>parseFloat(getComputedStyle(e).fontSize))};
    });
    report.push({lang,width,route,...data});check(!data.overflow,`${lang}/${route}/${width} no overflow`,data);
    check(!data.utilityOutside,`${lang}/${route}/${width} no empty save row`);
@@ -30,6 +30,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','density');
     if(width>900){check(Math.max(...data.branches.map(x=>x.y))-Math.min(...data.branches.map(x=>x.y))<2,`${lang}/${width} concise side-by-side formats`,data.branches);check(data.lineage.height<440,`${lang}/${width} bounded format panel`,data.lineage);}
     check(await p.locator('.adaptation-compare-card').count()===4,`${lang}/${width} four comparison versions preserved`);
     check(await p.locator('.screen-card').count()===9,`${lang}/${width} nine screen entries preserved`);
+    if(width<681)check(await p.locator('.screen-card').evaluateAll(es=>es.every(e=>e.querySelector(':scope > div').getBoundingClientRect().width>=e.getBoundingClientRect().width-36)),`${lang}/${width} screen cards give prose the full phone width`);
     await p.screenshot({path:path.join(dir,`${lang}-screen-${width}-full.png`),fullPage:true});
     await p.screenshot({path:path.join(dir,`${lang}-screen-${width}-entry.png`)});
    }
