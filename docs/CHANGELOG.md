@@ -1,3 +1,7 @@
+## 2026-10-13 — Focused regression-test scoping
+- Scoped the new pre-show warning assertion to the five orientation stops; the separate practical-information source notice remains intact.
+- Scoped the mocked shared-player lifecycle registry to journey players, excluding unrelated performance previews elsewhere on the musical page.
+
 ## 2026-10-13 — Inline school-production players
 - Removed the blanket link-only restriction after all 36 original King’s Academy uploads returned eligible embed metadata. Both matching gallery entries now use normal inline players too.
 - Preserved school-production credits, direct YouTube links, no autoplay and the existing story-spoiler choice.
