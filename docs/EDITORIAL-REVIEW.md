@@ -29,3 +29,15 @@ A subsequent bounded pass enriches six existing fields rather than adding routes
 Eight exact public-domain chapter sources and one previously unused PRS interview support the additions. The PRS-derived material totals158 words across both languages. New Caird and Bouchet-derived expansions were removed after reviewing retained source usage. Original interpretation remains distinct through its concrete arguments rather than repeated process qualifications. Global source labels give neutral chapter coordinates; later-story paragraphs remain behind existing comparison/after-show choices.
 
 This is a review of these six replacements, not a new claim that every existing source attribution or every sentence on the site has been re-audited in this batch.
+
+## 13 October: conversational, scene-led revision
+
+This bounded pass read the seven song spotlights and their fourteen safe musical/listening blocks; all five dilemmas, ten profiles and their twenty novel-specific paragraphs; ten map character entries and eight story stops; the seven Hugo sections and five pre-show stops, plus the English introductions for five recording choices and ten coaches. It also reviewed the homepage entrance. It does not claim a fresh line-by-line review of all 365 chapter summaries.
+
+Thirteen bilingual prose pairs changed: three spotlight introductions, one pre-show paragraph, the quill-object reflection, five profile paragraphs, two dilemma paragraphs and the homepage invitation. Most existing copy was retained. Draft expansions that repeated adjacent listening exercises were rejected; the original forgiveness/trust/repair distinction was also retained because it was more precise than its proposed replacement.
+
+The revisions follow actual situations: Cosette’s bucket, Madeleine’s reasons to remain silent at the trial, Javert’s double obligation, and the political differences inside Enjolras’s café. A source check corrected the timing of Cosette’s upkeep payments: they had stopped by the night Valjean arrived. Hugo II.III.1 was added to her full-profile references. Grantaire’s newly revised Hebrew paragraph uses the established גרנטייר spelling.
+
+The tone is conversational without invented personal memories or claims of firsthand listening. The historical context, credits, chapter sources and spoiler boundaries remain explicit. Four repeated pre-show source warnings were removed; the one beside the programme and history links remains.
+
+Validation covers the revised paragraphs in HE/EN at desktop, 390px and 320px, including safe/full profile rendering, song panels, exact dilemma targets, the home cards and source-warning placement. Other existing regression suites still run.

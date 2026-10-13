@@ -1,3 +1,10 @@
+## 2026-10-13 — Scene-led editorial revision
+- Revised thirteen matched HE/EN prose pairs across song entrances, five character profiles, two dilemmas, the pre-show guide, Hugo’s quills and the home introduction.
+- Preserved strong existing passages and rejected expansions that duplicated neighboring analysis. No new plot details enter spoiler-safe or chapter-bounded views.
+- Corrected the payment chronology in Cosette’s new paragraph and added the exact Hugo II.III.1 reference.
+- Consolidated five repeated pre-show source warnings into one beside the relevant links.
+- Added responsive browser checks for the revised prose and retained all existing regression suites.
+
 ## 2026-10-12 — Novel context on character pages and a direct musical viewing entrance
 - Reorganized ten HE/EN profiles with a clearly titled “What the novel adds” section: one existing paragraph moved intact and one new, independently checked paragraph per character. The Thénardiers’ final-fate sentence was also relocated without losing its substance.
 - Added 47 exact reading-companion links covering 45 unique Hugo chapters, with the original text available in a compact source disclosure.

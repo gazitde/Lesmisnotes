@@ -23,6 +23,7 @@ try{
   await run(['scripts/browser-gallery-controls.cjs']);
   await run(['scripts/browser-gallery-expansion.cjs']);
   await run(['scripts/browser-editorial-entry.cjs']);
+  await run(['scripts/browser-voice-depth.cjs']);
   await run(['scripts/browser-context-depth.cjs']);
   await run(['scripts/browser-mobile-polish.cjs']);
   await run(['scripts/browser-search-polish.cjs']);
