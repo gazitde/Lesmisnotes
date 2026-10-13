@@ -1,3 +1,7 @@
+## 2026-10-13 — Comparison visual refinement
+- Kept role names as ordinary underlined profile links rather than dominant action buttons.
+- Folded comparison citations into the existing source disclosure and widened the desktop introductory measure.
+
 ## 2026-10-13 — Reading completion and clearer comparison views
 - Added an explicit chapter-read tracker with undo and progress out of 365, independent of reading position and spoilers; device persistence follows functional consent.
 - Added Map / Connections list controls inside the existing graph header, keeping the opening compact.

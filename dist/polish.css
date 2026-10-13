@@ -262,3 +262,5 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 .graph-focus-heading>.relationship-display-switch{display:flex;align-items:stretch;gap:0}
 #adaptation-comparison,#screen-grid,#screen-performances,.adaptation-compare-card{scroll-margin-top:140px}
 .relationship-display-switch button[aria-pressed=true]:focus-visible{outline-color:#fff}
+
+.adaptation-comparison .section-head p{max-width:75ch}.adaptation-role-link{color:#174884;text-decoration:underline;text-underline-offset:3px;font-size:1rem}.adaptation-compare-card .source-disclosure{margin-top:12px}.adaptation-compare-card .source-disclosure summary{min-height:44px;line-height:1.6}
