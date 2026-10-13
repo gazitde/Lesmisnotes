@@ -1,3 +1,9 @@
+## 2026-10-13 — Inline school-production players
+- Removed the blanket link-only restriction after all 36 original King’s Academy uploads returned eligible embed metadata. Both matching gallery entries now use normal inline players too.
+- Preserved school-production credits, direct YouTube links, no autoplay and the existing story-spoiler choice.
+- Kept the same iframe connected across adjacent stations sharing a longer recording; changed clips still tear down normally.
+- Expanded all-stop HE/EN responsive tests and retained per-video link-only fallback support.
+
 ## 2026-10-13 — Scene-led editorial revision
 - Revised thirteen matched HE/EN prose pairs across song entrances, five character profiles, two dilemmas, the pre-show guide, Hugo’s quills and the home introduction.
 - Preserved strong existing passages and rejected expansions that duplicated neighboring analysis. No new plot details enter spoiler-safe or chapter-bounded views.

@@ -1,0 +1,1637 @@
+{
+  "checkedAt": "2026-10-13T04:04:27.462488+00:00",
+  "production": "The King’s Academy, West Palm Beach, 2017",
+  "playlistUrl": "https://www.youtube.com/playlist?list=PLzvdeRjhZpVlmAR_rm_omD7vWC7m2PGRf",
+  "method": "Read-only direct HTTPS requests to official YouTube oEmbed endpoints and public watch pages; ytInitialPlayerResponse fields only; no video media downloaded; no playback tested.",
+  "scope": "All 36 school-production source records in dist/watch-path-data.js, including curtain call.",
+  "limitations": [
+    "Metadata is a point-in-time indication of platform embedding permission, not an end-to-end playback test.",
+    "Public upload and platform embed permission do not independently verify the production’s underlying music rights.",
+    "Per-viewer, per-region, authentication and later uploader restrictions can change playback."
+  ],
+  "sources": {
+    "embeddingHelp": "https://support.google.com/youtube/answer/171780?hl=en",
+    "youtubeTerms": "https://www.youtube.com/static?template=terms",
+    "iframeErrors": "https://developers.google.com/youtube/iframe_api_reference#onError"
+  },
+  "summary": {
+    "clipCount": 36,
+    "oembedHttp200": 36,
+    "oembedHtmlReturned": 36,
+    "playableInEmbedTrue": 36,
+    "watchStatusOk": 36,
+    "watchMetadataErrors": 0,
+    "uploaderNames": [
+      "The King's Academy, WPB, FL"
+    ]
+  },
+  "clips": [
+    {
+      "id": "0mCtlymydo4",
+      "watchUrl": "https://www.youtube.com/watch?v=0mCtlymydo4",
+      "checkedAt": "2026-10-13T04:03:47.171281+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Prologue",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D0mCtlymydo4&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "0mCtlymydo4",
+        "title": "Les Miserables Live- Prologue",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/0mCtlymydo4",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-26T08:52:13-07:00",
+        "uploadDate": "2017-06-26T08:52:13-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=0mCtlymydo4",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "MfVlDf6iFss",
+      "watchUrl": "https://www.youtube.com/watch?v=MfVlDf6iFss",
+      "checkedAt": "2026-10-13T04:03:47.171748+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- At the End of the Day",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DMfVlDf6iFss&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "MfVlDf6iFss",
+        "title": "Les Miserables Live- At the End of the Day",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/MfVlDf6iFss",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-26T10:11:44-07:00",
+        "uploadDate": "2017-06-26T10:11:44-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=MfVlDf6iFss",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "XaX-zeAgAuo",
+      "watchUrl": "https://www.youtube.com/watch?v=XaX-zeAgAuo",
+      "checkedAt": "2026-10-13T04:03:47.172155+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- I Dreamed a Dream",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DXaX-zeAgAuo&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "XaX-zeAgAuo",
+        "title": "Les Miserables Live- I Dreamed a Dream",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/XaX-zeAgAuo",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-26T10:36:21-07:00",
+        "uploadDate": "2017-06-26T10:36:21-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=XaX-zeAgAuo",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "sJSFC63qmyw",
+      "watchUrl": "https://www.youtube.com/watch?v=sJSFC63qmyw",
+      "checkedAt": "2026-10-13T04:03:47.172651+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Lovely Ladies and Fantine's Arrest",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DsJSFC63qmyw&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "sJSFC63qmyw",
+        "title": "Les Miserables Live- Lovely Ladies and Fantine's Arrest",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/sJSFC63qmyw",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-26T11:54:08-07:00",
+        "uploadDate": "2017-06-26T11:54:08-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=sJSFC63qmyw",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "y-Rhb1_B_Rc",
+      "watchUrl": "https://www.youtube.com/watch?v=y-Rhb1_B_Rc",
+      "checkedAt": "2026-10-13T04:03:54.873358+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- The Runaway Cart",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dy-Rhb1_B_Rc&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "y-Rhb1_B_Rc",
+        "title": "Les Miserables Live- The Runaway Cart",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/y-Rhb1_B_Rc",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-26T12:31:46-07:00",
+        "uploadDate": "2017-06-26T12:31:46-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=y-Rhb1_B_Rc",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "51bfumxxgE4",
+      "watchUrl": "https://www.youtube.com/watch?v=51bfumxxgE4",
+      "checkedAt": "2026-10-13T04:03:55.037480+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Fantine's Death and the Confrontation",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D51bfumxxgE4&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "51bfumxxgE4",
+        "title": "Les Miserables Live- Fantine's Death and the Confrontation",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/51bfumxxgE4",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-26T12:32:24-07:00",
+        "uploadDate": "2017-06-26T12:32:24-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=51bfumxxgE4",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "IXl69B2GklA",
+      "watchUrl": "https://www.youtube.com/watch?v=IXl69B2GklA",
+      "checkedAt": "2026-10-13T04:03:55.208362+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live - Castle on a Cloud",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DIXl69B2GklA&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "IXl69B2GklA",
+        "title": "Les Miserables Live - Castle on a Cloud",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/IXl69B2GklA",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-26T12:45:28-07:00",
+        "uploadDate": "2017-06-26T12:45:28-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=IXl69B2GklA",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "KwyHAvqVXiE",
+      "watchUrl": "https://www.youtube.com/watch?v=KwyHAvqVXiE",
+      "checkedAt": "2026-10-13T04:03:55.328283+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Master of the House",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DKwyHAvqVXiE&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "KwyHAvqVXiE",
+        "title": "Les Miserables Live- Master of the House",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/KwyHAvqVXiE",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-26T17:40:50-07:00",
+        "uploadDate": "2017-06-26T17:40:50-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=KwyHAvqVXiE",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "tNH09Ho-INY",
+      "watchUrl": "https://www.youtube.com/watch?v=tNH09Ho-INY",
+      "checkedAt": "2026-10-13T04:03:58.641877+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- The Bargain",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DtNH09Ho-INY&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "tNH09Ho-INY",
+        "title": "Les Miserables Live- The Bargain",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/tNH09Ho-INY",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-26T18:35:06-07:00",
+        "uploadDate": "2017-06-26T18:35:06-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=tNH09Ho-INY",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "oV3ZuB4Aybo",
+      "watchUrl": "https://www.youtube.com/watch?v=oV3ZuB4Aybo",
+      "checkedAt": "2026-10-13T04:03:58.719565+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Look Down",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DoV3ZuB4Aybo&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "oV3ZuB4Aybo",
+        "title": "Les Miserables Live- Look Down",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/oV3ZuB4Aybo",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-26T18:36:27-07:00",
+        "uploadDate": "2017-06-26T18:36:27-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=oV3ZuB4Aybo",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "JKy9vRSz358",
+      "watchUrl": "https://www.youtube.com/watch?v=JKy9vRSz358",
+      "checkedAt": "2026-10-13T04:03:58.826599+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Stars and Eponine's Errand",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DJKy9vRSz358&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "JKy9vRSz358",
+        "title": "Les Miserables Live- Stars and Eponine's Errand",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/JKy9vRSz358",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-27T05:09:29-07:00",
+        "uploadDate": "2017-06-27T05:09:29-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=JKy9vRSz358",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "I1GgqENKMJs",
+      "watchUrl": "https://www.youtube.com/watch?v=I1GgqENKMJs",
+      "checkedAt": "2026-10-13T04:03:58.901658+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- ABC Cafe",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DI1GgqENKMJs&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "I1GgqENKMJs",
+        "title": "Les Miserables Live- ABC Cafe",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/I1GgqENKMJs",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-27T05:11:02-07:00",
+        "uploadDate": "2017-06-27T05:11:02-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=I1GgqENKMJs",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "YL8gH0yELbk",
+      "watchUrl": "https://www.youtube.com/watch?v=YL8gH0yELbk",
+      "checkedAt": "2026-10-13T04:04:02.691735+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live - Do You Hear the People Sing",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DYL8gH0yELbk&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "YL8gH0yELbk",
+        "title": "Les Miserables Live - Do You Hear the People Sing",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/YL8gH0yELbk",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-27T05:22:53-07:00",
+        "uploadDate": "2017-06-27T05:22:53-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=YL8gH0yELbk",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "rImdoXZt8QA",
+      "watchUrl": "https://www.youtube.com/watch?v=rImdoXZt8QA",
+      "checkedAt": "2026-10-13T04:04:02.702274+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- In My Life",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DrImdoXZt8QA&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "rImdoXZt8QA",
+        "title": "Les Miserables Live- In My Life",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/rImdoXZt8QA",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-27T05:53:12-07:00",
+        "uploadDate": "2017-06-27T05:53:12-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=rImdoXZt8QA",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "2F1wuh_hG-c",
+      "watchUrl": "https://www.youtube.com/watch?v=2F1wuh_hG-c",
+      "checkedAt": "2026-10-13T04:04:02.830723+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- A Heart Full of Love",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D2F1wuh_hG-c&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "2F1wuh_hG-c",
+        "title": "Les Miserables Live- A Heart Full of Love",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/2F1wuh_hG-c",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-27T05:53:43-07:00",
+        "uploadDate": "2017-06-27T05:53:43-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=2F1wuh_hG-c",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "JgpJZSCma74",
+      "watchUrl": "https://www.youtube.com/watch?v=JgpJZSCma74",
+      "checkedAt": "2026-10-13T04:04:02.847485+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- The Attack on Rue Plumet",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DJgpJZSCma74&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "JgpJZSCma74",
+        "title": "Les Miserables Live- The Attack on Rue Plumet",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/JgpJZSCma74",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-27T07:47:09-07:00",
+        "uploadDate": "2017-06-27T07:47:09-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=JgpJZSCma74",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "dbkUZB_N46g",
+      "watchUrl": "https://www.youtube.com/watch?v=dbkUZB_N46g",
+      "checkedAt": "2026-10-13T04:04:06.776130+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- One Day More",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdbkUZB_N46g&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "dbkUZB_N46g",
+        "title": "Les Miserables Live- One Day More",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/dbkUZB_N46g",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-27T07:48:55-07:00",
+        "uploadDate": "2017-06-27T07:48:55-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=dbkUZB_N46g",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "enwSCKThXdo",
+      "watchUrl": "https://www.youtube.com/watch?v=enwSCKThXdo",
+      "checkedAt": "2026-10-13T04:04:06.947637+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- At the Barricade and a Letter",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DenwSCKThXdo&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "enwSCKThXdo",
+        "title": "Les Miserables Live- At the Barricade and a Letter",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/enwSCKThXdo",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T04:34:23-07:00",
+        "uploadDate": "2017-06-28T04:34:23-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=enwSCKThXdo",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "M0O2MSn1jM4",
+      "watchUrl": "https://www.youtube.com/watch?v=M0O2MSn1jM4",
+      "checkedAt": "2026-10-13T04:04:06.948122+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- On My Own",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DM0O2MSn1jM4&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "M0O2MSn1jM4",
+        "title": "Les Miserables Live- On My Own",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/M0O2MSn1jM4",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T04:38:20-07:00",
+        "uploadDate": "2017-06-28T04:38:20-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=M0O2MSn1jM4",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "APn7nzJ_EfA",
+      "watchUrl": "https://www.youtube.com/watch?v=APn7nzJ_EfA",
+      "checkedAt": "2026-10-13T04:04:07.100937+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Javert's Arrival and Little People",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DAPn7nzJ_EfA&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "APn7nzJ_EfA",
+        "title": "Les Miserables Live- Javert's Arrival and Little People",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/APn7nzJ_EfA",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T06:21:43-07:00",
+        "uploadDate": "2017-06-28T06:21:43-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=APn7nzJ_EfA",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "7xDqsixLkKw",
+      "watchUrl": "https://www.youtube.com/watch?v=7xDqsixLkKw",
+      "checkedAt": "2026-10-13T04:04:10.706687+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- A Little Fall of Rain",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D7xDqsixLkKw&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "7xDqsixLkKw",
+        "title": "Les Miserables Live- A Little Fall of Rain",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/7xDqsixLkKw",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T06:23:06-07:00",
+        "uploadDate": "2017-06-28T06:23:06-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=7xDqsixLkKw",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "OKJdWe4e2jU",
+      "watchUrl": "https://www.youtube.com/watch?v=OKJdWe4e2jU",
+      "checkedAt": "2026-10-13T04:04:10.730982+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- First Attack",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DOKJdWe4e2jU&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "OKJdWe4e2jU",
+        "title": "Les Miserables Live- First Attack",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/OKJdWe4e2jU",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T07:48:54-07:00",
+        "uploadDate": "2017-06-28T07:48:54-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=OKJdWe4e2jU",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "4-1X8uu9Skg",
+      "watchUrl": "https://www.youtube.com/watch?v=4-1X8uu9Skg",
+      "checkedAt": "2026-10-13T04:04:10.837772+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Drink with Me",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4-1X8uu9Skg&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "4-1X8uu9Skg",
+        "title": "Les Miserables Live- Drink with Me",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/4-1X8uu9Skg",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T07:50:32-07:00",
+        "uploadDate": "2017-06-28T07:50:32-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=4-1X8uu9Skg",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "am6wMw_0NZQ",
+      "watchUrl": "https://www.youtube.com/watch?v=am6wMw_0NZQ",
+      "checkedAt": "2026-10-13T04:04:10.946999+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Bring Him Home",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dam6wMw_0NZQ&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "am6wMw_0NZQ",
+        "title": "Les Miserables Live- Bring Him Home",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/am6wMw_0NZQ",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T07:53:23-07:00",
+        "uploadDate": "2017-06-28T07:53:23-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=am6wMw_0NZQ",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "nT0cpHTFxl8",
+      "watchUrl": "https://www.youtube.com/watch?v=nT0cpHTFxl8",
+      "checkedAt": "2026-10-13T04:04:14.655822+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- The Second Attack (Death of Gavroche)",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnT0cpHTFxl8&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "nT0cpHTFxl8",
+        "title": "Les Miserables Live- The Second Attack (Death of Gavroche)",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/nT0cpHTFxl8",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T19:18:09-07:00",
+        "uploadDate": "2017-06-28T19:18:09-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=nT0cpHTFxl8",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "fFw6T7mXIUg",
+      "watchUrl": "https://www.youtube.com/watch?v=fFw6T7mXIUg",
+      "checkedAt": "2026-10-13T04:04:14.690909+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- The Final Battle",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfFw6T7mXIUg&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "fFw6T7mXIUg",
+        "title": "Les Miserables Live- The Final Battle",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/fFw6T7mXIUg",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T19:26:58-07:00",
+        "uploadDate": "2017-06-28T19:26:58-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=fFw6T7mXIUg",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "iYI03YPDWXM",
+      "watchUrl": "https://www.youtube.com/watch?v=iYI03YPDWXM",
+      "checkedAt": "2026-10-13T04:04:14.725807+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- The Sewers",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DiYI03YPDWXM&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "iYI03YPDWXM",
+        "title": "Les Miserables Live- The Sewers",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/iYI03YPDWXM",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T19:29:21-07:00",
+        "uploadDate": "2017-06-28T19:29:21-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=iYI03YPDWXM",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "y_VkpOqCmrM",
+      "watchUrl": "https://www.youtube.com/watch?v=y_VkpOqCmrM",
+      "checkedAt": "2026-10-13T04:04:14.943944+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Javert's Suicide",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dy_VkpOqCmrM&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "y_VkpOqCmrM",
+        "title": "Les Miserables Live- Javert's Suicide",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/y_VkpOqCmrM",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T19:31:13-07:00",
+        "uploadDate": "2017-06-28T19:31:13-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=y_VkpOqCmrM",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "QwSjgsAObS4",
+      "watchUrl": "https://www.youtube.com/watch?v=QwSjgsAObS4",
+      "checkedAt": "2026-10-13T04:04:18.969419+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Turning",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DQwSjgsAObS4&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "QwSjgsAObS4",
+        "title": "Les Miserables Live- Turning",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/QwSjgsAObS4",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T19:33:27-07:00",
+        "uploadDate": "2017-06-28T19:33:27-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=QwSjgsAObS4",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "tRxVGHFO3Hc",
+      "watchUrl": "https://www.youtube.com/watch?v=tRxVGHFO3Hc",
+      "checkedAt": "2026-10-13T04:04:19.061584+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Empty Chairs at Empty Tables",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DtRxVGHFO3Hc&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "tRxVGHFO3Hc",
+        "title": "Les Miserables Live- Empty Chairs at Empty Tables",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/tRxVGHFO3Hc",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-28T19:35:18-07:00",
+        "uploadDate": "2017-06-28T19:35:18-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=tRxVGHFO3Hc",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "wkuMjvFjuKY",
+      "watchUrl": "https://www.youtube.com/watch?v=wkuMjvFjuKY",
+      "checkedAt": "2026-10-13T04:04:19.128912+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Every Day and A Heart Full of Love (Reprise)",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DwkuMjvFjuKY&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "wkuMjvFjuKY",
+        "title": "Les Miserables Live- Every Day and A Heart Full of Love (Reprise)",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/wkuMjvFjuKY",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-29T08:25:22-07:00",
+        "uploadDate": "2017-06-29T08:25:22-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=wkuMjvFjuKY",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "kXaUWUVuGGU",
+      "watchUrl": "https://www.youtube.com/watch?v=kXaUWUVuGGU",
+      "checkedAt": "2026-10-13T04:04:19.185568+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Valjean's Confession",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkXaUWUVuGGU&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "kXaUWUVuGGU",
+        "title": "Les Miserables Live- Valjean's Confession",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/kXaUWUVuGGU",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-29T08:27:32-07:00",
+        "uploadDate": "2017-06-29T08:27:32-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=kXaUWUVuGGU",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "TfpZBIgvH4U",
+      "watchUrl": "https://www.youtube.com/watch?v=TfpZBIgvH4U",
+      "checkedAt": "2026-10-13T04:04:23.157539+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- The Wedding and Beggars at the Feast",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DTfpZBIgvH4U&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "TfpZBIgvH4U",
+        "title": "Les Miserables Live- The Wedding and Beggars at the Feast",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/TfpZBIgvH4U",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-29T08:30:32-07:00",
+        "uploadDate": "2017-06-29T08:30:32-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=TfpZBIgvH4U",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "VMnd382Fu1M",
+      "watchUrl": "https://www.youtube.com/watch?v=VMnd382Fu1M",
+      "checkedAt": "2026-10-13T04:04:23.234299+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Epilogue (Valjean's Death)",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DVMnd382Fu1M&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "VMnd382Fu1M",
+        "title": "Les Miserables Live- Epilogue (Valjean's Death)",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/VMnd382Fu1M",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-29T08:36:26-07:00",
+        "uploadDate": "2017-06-29T08:36:26-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=VMnd382Fu1M",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "H8HDWeoa7Ag",
+      "watchUrl": "https://www.youtube.com/watch?v=H8HDWeoa7Ag",
+      "checkedAt": "2026-10-13T04:04:23.236103+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Finale (Do You Hear the People Sing (Reprise))",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DH8HDWeoa7Ag&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "H8HDWeoa7Ag",
+        "title": "Les Miserables Live- Finale (Do You Hear the People Sing (Reprise))",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/H8HDWeoa7Ag",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-29T08:37:36-07:00",
+        "uploadDate": "2017-06-29T08:37:36-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=H8HDWeoa7Ag",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    },
+    {
+      "id": "-jlbp-4CVNg",
+      "watchUrl": "https://www.youtube.com/watch?v=-jlbp-4CVNg",
+      "checkedAt": "2026-10-13T04:04:23.244193+00:00",
+      "oembed": {
+        "httpStatus": 200,
+        "title": "Les Miserables Live- Curtain Call and One Day More (Reprise)",
+        "uploader": "The King's Academy, WPB, FL",
+        "uploaderUrl": "https://www.youtube.com/@TKAWPB",
+        "embedHtmlReturned": true,
+        "sourceUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-jlbp-4CVNg&format=json"
+      },
+      "watchHttpStatus": 200,
+      "metadataBytesRead": 851968,
+      "playability": {
+        "status": "OK",
+        "playableInEmbed": true
+      },
+      "videoMetadata": {
+        "videoId": "-jlbp-4CVNg",
+        "title": "Les Miserables Live- Curtain Call and One Day More (Reprise)",
+        "author": "The King's Academy, WPB, FL",
+        "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+        "isPrivate": false,
+        "isCrawlable": true
+      },
+      "microformat": {
+        "embed": {
+          "iframeUrl": "https://www.youtube.com/embed/-jlbp-4CVNg",
+          "width": 1280,
+          "height": 720
+        },
+        "isFamilySafe": true,
+        "isUnlisted": false,
+        "publishDate": "2017-06-29T08:42:31-07:00",
+        "uploadDate": "2017-06-29T08:42:31-07:00",
+        "ownerProfileUrl": "http://www.youtube.com/@TKAWPB",
+        "ownerChannelName": "The King's Academy, WPB, FL",
+        "canonicalUrl": "https://www.youtube.com/watch?v=-jlbp-4CVNg",
+        "availableCountryCount": 249,
+        "availableInIsrael": true,
+        "availableInUS": true
+      }
+    }
+  ],
+  "originalUploaderVerification": {
+    "uploader": "The King's Academy, WPB, FL",
+    "handle": "@TKAWPB",
+    "channelId": "UCewAxhTvVV0hy9vU5O5MSbw",
+    "officialSchoolEvidence": {
+      "url": "https://static.tka.net/wp-content/uploads/2017/10/24180249/Presidents-Report-2016-2017.pdf#page=38",
+      "finding": "The school’s 2016–2017 President’s Report identifies YouTube.com/TKALionheart and describes this Les Misérables production in the Loveland Center."
+    },
+    "legacyChannelCheck": {
+      "url": "https://www.youtube.com/user/TKALionheart",
+      "checkedAt": "2026-10-13T04:05:28.470765+00:00",
+      "httpStatus": 200,
+      "canonicalUrl": "https://www.youtube.com/channel/UCewAxhTvVV0hy9vU5O5MSbw",
+      "finding": "The canonical channel matches the channelId reported for all 36 source videos."
+    }
+  },
+  "recommendation": {
+    "delivery": "Ordinary YouTube privacy-enhanced embeds with permanent original-source links and the existing error fallback.",
+    "exceptionsFound": [],
+    "caveat": "No per-clip metadata exception found in this check; a platform-permitted embed does not constitute an independent underlying-rights opinion or prove successful playback.",
+    "runtimeExceptions": "Handle missing/private videos (100), owner-disabled embeds (101/150), and host/referrer configuration failures (153) distinctly when shown; do not substitute mirrors or bypass restrictions.",
+    "referrerPolicy": "strict-origin-when-cross-origin"
+  }
+}

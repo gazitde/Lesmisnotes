@@ -2,8 +2,8 @@
 
 The existing 38-stop musical journey offers two modes after its existing story-spoiler choice:
 
-- **Our picks:** six stop positions use the guide’s existing publisher/professional recordings. The localized union is nine videos, including three Hebrew Habima alternatives. The other 32 positions use original school-production links.
-- **Same production:** original links from The King’s Academy’s 2017 production in West Palm Beach. These open on YouTube and are never passed to the embedded-player callback.
+- **Our picks:** six stop positions use the guide’s existing publisher/professional recordings. The localized union is nine videos, including three Hebrew Habima alternatives. The other 32 positions use original school-production clips, embedded in the same viewing area.
+- **Same production:** original uploads from The King’s Academy’s 2017 production in West Palm Beach. They use the same privacy-enhanced inline player as the other recordings, with an original YouTube link below.
 
 The 36 school source records include a curtain call, which is not displayed in the main sequence. Several stops share a source; the ending has separate Epilogue and Finale links. Every stop has a title-level source association. This does not establish complete coverage of every scene or connecting passage. Eight subsection-sensitive positions carry a specific related-larger-clip label. No unverified timestamps, continuous-show claim, edited compilation, downloaded recording or reupload is introduced.
 
@@ -21,12 +21,20 @@ Mode buttons are native controls with `aria-pressed`; scoped updates retain keyb
 
 ## Verification
 
-`test/watch-path.test.cjs` checks all 152 localized mode/stop renderings, source IDs, source-link-only school delivery, ending order and escaping. `scripts/browser-watch-path.cjs` is part of the full CI browser suite: HE/EN at 1365, 390 and 320 pixels, all stops/modes, exact links, focus, history, language, no-JS gates, teardown and consent-bound resume. Third-party requests are blocked in those browser tests; actual external playback is a separate limitation.
+`test/watch-path.test.cjs` checks all 152 localized mode/stop renderings, source IDs, inline school and professional delivery, per-clip disabled-embed fallback, ending order and escaping. `scripts/browser-watch-path.cjs` is part of the full CI browser suite: HE/EN at 1365, 390 and 320 pixels, all stops/modes, exact links, focus, history, language, no-JS gates, teardown and consent-bound resume. Third-party requests are blocked in those browser tests; actual external playback is a separate limitation.
 
 ## Consistent station transitions
 
-A compact sticky navigation bar shows the canonical song number out of 38 (the interval is separately named). Discrete Next, Previous and outline jumps focus and instantly align the new heading below the bar. Range and select changes preserve control focus for repeated keyboard operation. Both embedded performances and external school sources occupy the same viewing region; external cards explicitly say they open YouTube in a new tab. Shared-source notes identify longer recordings without inventing scene timestamps or restarting a player.
+A compact sticky navigation bar shows the canonical song number out of 38 (the interval is separately named). Discrete Next, Previous and outline jumps focus and instantly align the new heading below the bar. Range and select changes preserve control focus for repeated keyboard operation. All enabled recordings occupy the same 16:9 viewing region. Adjacent stops using the same video keep its existing iframe connected, preserving playback position. A changed clip or mode uses normal teardown. Shared-source notes identify longer recordings without inventing scene timestamps.
 
 The browser suite reproduces opening stops 1–4 in both modes, HE/EN at 1365/390/320 pixels, captures the first three, and asserts viewport landing, numbered state, bottom navigation and repeated range-key interaction.
 
-Screenshot follow-up: station changes no longer show a redundant overlay toast. The complete station header aligns below the navigation bar, and detailed shared/larger-source notes follow the viewing frame. Shared external cards identify the common recording within the frame.
+Screenshot follow-up: station changes no longer show a redundant overlay toast. The complete station header aligns below the navigation bar, and detailed shared/larger-source notes follow the viewing frame. Shared-source notes identify the common recording below the frame.
+
+## School embed eligibility, 13 October 2026
+
+The earlier blanket link-only decision was editorial, not a demonstrated YouTube restriction. A new check of all 36 originals returned HTTP 200 oEmbed HTML, watch status `OK`, and `playableInEmbed: true`; all identify the school’s original channel. Public metadata lists both Israel and the US as available countries. The two matching gallery entries now also use inline players.
+
+[YouTube’s embedding guide](https://support.google.com/youtube/answer/171780?hl=en) supports privacy-enhanced players and uploader-controlled embed restrictions. This site uses those ordinary players; it neither downloads nor republishes the recordings. Metadata is a point-in-time eligibility check, not proof of actual playback or an independent audit of underlying music rights. The existing API error message and direct YouTube link remain available for regional, owner or network restrictions. A record can still be set to `source-link` individually.
+
+The browser suite checks all 38 stops in both languages and modes, exact source URLs, no autoplay, shared-iframe identity, disconnection on changed clips, keyboard/history and mobile layout. External requests are mocked in CI; that establishes application behavior, not YouTube playback.

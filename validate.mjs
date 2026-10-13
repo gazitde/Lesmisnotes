@@ -276,7 +276,7 @@ for(const abandonment of ['none','navigate','cancel','erase']){
   for(const p of routes){const html=render(language,p,false).html;assert.equal((html.match(/data-video-shell=/g)||[]).length,baseCoachCount(p,false));assert.equal((html.match(/<iframe /g)||[]).length,baseCoachCount(p,false));tests+=2;}
  }
  for(const [id,v]of Object.entries(R.videoReach)){assert.ok(Number.isSafeInteger(v.views)&&v.views>0);assert.equal(v.liveCounter,false);assert.ok(v.sourceUrl.endsWith(id));tests+=3;}
- assert.equal(G.items.find(x=>x.id==='Cn8PiqIXEjQ').embeddable,false);assert.equal(G.items.find(x=>x.id==='YL8gH0yELbk').embeddable,false);tests+=2;
+ assert.equal(G.items.find(x=>x.id==='Cn8PiqIXEjQ').embeddable,false);assert.equal(G.items.find(x=>x.id==='YL8gH0yELbk').embeddable,true);tests+=2;
 }
 console.log(`PASS: ${tests+4} assertions; ${routes.filter(route=>!routeMetadata.window.SITE_METADATA.pages[route].canonicalRoute).length} primary routes + 2 aliases × 2 languages × 2 spoiler states, all ${R.gallery.items.length} curated versions, source references, privacy, quizzes and map regressions.`);
 console.log('This is source/render QA, not browser playback or mobile interaction QA.');

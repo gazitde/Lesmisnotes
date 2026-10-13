@@ -22,7 +22,7 @@ assert.equal(data.stops.length, 38);
 assert.equal(new Set(data.stops.map(s => s.songId)).size, 38);
 assert.equal(data.clips.length, 45);
 assert.equal(data.clips.filter(c => c.productionId === 'tka-loveland-2017').length, 36);
-assert.equal(data.clips.filter(c => c.delivery === 'embed-with-source-link').length, 9);
+assert.equal(data.clips.filter(c => c.delivery === 'embed-with-source-link').length, 45);
 assert.deepEqual(data.clips.filter(c => c.language === 'he').map(c => c.id).sort(), ['HKRzlaQcfUI', 'Mea49KwLiMg', 'u_eCLahh91s'].sort());
 assert.ok(data.clips.filter(c => c.productionId === 'tka-loveland-2017').every(c => c.language === 'en'));
 assert.equal(api.getSelection({ songId: 'stars', lang: 'xx', mode: 'xx' }).lang, 'en');
@@ -56,10 +56,13 @@ for (const lang of ['en', 'he']) {
       assert.ok(Object.isFrozen(selected.clips));
       assert.ok(selected.clips.every(c => Object.isFrozen(c)));
       for (const clip of selected.clips) assert.ok(html.includes(`https://www.youtube.com/watch?v=${clip.id}`));
-      if (selected.kind === 'curated') { curatedStops++; assert.equal(calls.length, before + 1); }
-      else { assert.equal(calls.length, before); assert.ok(html.includes('watch-path-media')); assert.ok(html.includes('watch-path-external-frame')); }
+      if (selected.kind === 'curated') curatedStops++;
+      assert.equal(calls.length, before + selected.clips.length);
+      assert.ok(html.includes('watch-path-media'));
+      assert.ok(!html.includes('watch-path-external-frame'));
+      if(selected.kind==='same-production')assert.ok(html.includes(lang==='en'?'School production':'הפקת בית ספר'));
       if (selected.relatedLargerClip) assert.ok(html.includes(lang === 'en' ? 'Related larger clip' : 'קטע רחב יותר הקשור לתחנה'));
-      if (selected.sharedWithPrevious) assert.ok(html.includes(lang === 'en' ? 'This stop uses the same original recording' : 'התחנה משתמשת באותה הקלטה'));
+      if (selected.sharedWithPrevious) assert.ok(html.includes(lang === 'en' ? 'This stop continues within the same recording' : 'התחנה ממשיכה בתוך אותה הקלטה'));
     }
     assert.equal(curatedStops, mode === 'ourPicks' ? 6 : 0);
   }
@@ -69,10 +72,9 @@ for (const call of calls) {
   assert.ok(!instanceIds.has(call.instance));
   instanceIds.add(call.instance);
   const clip = data.clips.find(c => c.id === call.id);
-  assert.notEqual(clip.productionId, 'tka-loveland-2017');
   assert.equal(clip.delivery, 'embed-with-source-link');
 }
-assert.equal(new Set(calls.map(c => c.id)).size, 9);
+assert.equal(new Set(calls.map(c => c.id)).size, 44);
 for (let i = 0; i < 3; i++) api.renderStop({ songId: 'stars', renderVideo: callback });
 assert.equal(new Set(calls.map(c => c.instance)).size, calls.length);
 assert.equal(api.getSelection({ songId: 'valjean-forgiven', mode: 'ourPicks' }).sharedWithPrevious, false);
@@ -101,8 +103,12 @@ assert.ok(!escaped.includes('<script>'));
 const unsafeURL = JSON.parse(JSON.stringify(data));
 unsafeURL.clips.find(c => c.id === 'MfVlDf6iFss').url = 'javascript:bad()';
 assert.ok(!load(unsafeURL).renderStop({ songId: 'end-of-day' }).includes('javascript:'));
+const disabled = JSON.parse(JSON.stringify(data));
+disabled.clips.find(c=>c.id==='MfVlDf6iFss').delivery='source-link';
+const disabledCalls=[];const disabledHtml=load(disabled).renderStop({songId:'end-of-day',renderVideo:id=>{disabledCalls.push(id);return 'player'}});
+assert.equal(disabledCalls.length,0);assert.ok(disabledHtml.includes('watch-path-external-frame'));assert.ok(disabledHtml.includes('https://www.youtube.com/watch?v=MfVlDf6iFss'));
 const publicJSON = JSON.stringify(data);
 assert.ok(!/checkedAt|verification|Verified|ReviewNeeded|reviewReasons|technicalEmbedEligibility|contextNote|guessedTimestamps|startSeconds|endSeconds|sourceIds|rights|legal|audit/i.test(publicJSON));
 assert.ok(!/fetch\(|localStorage|sessionStorage|XMLHttpRequest|history\.|location\.|addEventListener/.test(source));
 assert.ok(!source.includes('autoplay='));
-console.log(`PASS: ${renderedCases} localized mode/stop renderings; 38 stops, 45 clips, nine approved callback IDs; school links only; shared sources, epilogue order, defaults, escaping, immutability and unique player instances.`);
+console.log(`PASS: ${renderedCases} localized mode/stop renderings; 38 stops, 45 clips, 44 in-sequence callback IDs; school and professional embeds; shared sources, epilogue order, defaults, escaping, immutability and unique player instances.`);

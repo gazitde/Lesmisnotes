@@ -28,7 +28,7 @@
     const sharedWithPrevious = ids.length === previousIds.length && ids.every((id, i) => id === previousIds[i]);
     return freeze({
       songId: stop.songId, lang, mode, title: translate(stop.title, lang), order: stop.order, act: stop.act,
-      kind: selected.every(clip => clip.delivery === 'source-link') ? 'same-production' : 'curated',
+      kind: selected.every(clip => clip.productionId === 'tka-loveland-2017') ? 'same-production' : 'curated',
       clips: selected,
       sharedWithPrevious,
       relatedLargerClip: Boolean(stop.relatedClipNote),
@@ -61,20 +61,20 @@
     const { lang, mode, songId } = selection;
     const renderId = ++renderSequence;
     const label = selection.relatedLargerClip ? text(lang, 'Related larger clip', 'קטע רחב יותר הקשור לתחנה') : text(lang, 'Watch this stop', 'צפייה לצד התחנה');
-    const shared = selection.sharedWithPrevious ? `<p class="watch-path-shared">${text(lang, 'This stop uses the same original recording as the previous stop. If it is already open, continue in that YouTube tab.', 'התחנה משתמשת באותה הקלטה מקורית כמו התחנה הקודמת. אם היא כבר פתוחה, המשיכו באותה לשונית YouTube.')}</p>` : '';
+    const shared = selection.sharedWithPrevious ? `<p class="watch-path-shared">${text(lang, 'This stop continues within the same recording as the previous stop. The player stays in place so you can keep watching.', 'התחנה ממשיכה בתוך אותה הקלטה כמו התחנה הקודמת. הנגן נשאר במקומו כדי שאפשר יהיה להמשיך לצפות.')}</p>` : '';
     const notes = selection.note ? `<p class="watch-path-note">${escape(selection.note)}</p>` : '';
     const ending = selection.twoParts ? `<p class="watch-path-ending">${text(lang, 'Watch Epilogue first, then Finale.', 'צפו קודם באפילוג, ואחריו בפינאלה.')}</p>` : '';
     const cards = selection.clips.map((clip, index) => {
-      // School sources never reach the host’s embed callback, even in Our picks mode.
-      const canEmbed = clip.delivery === 'embed-with-source-link' && clip.productionId !== 'tka-loveland-2017';
+      const canEmbed = clip.delivery === 'embed-with-source-link';
+      const school = clip.productionId === 'tka-loveland-2017';
       const instance = `journey-${songId}-${mode}-${lang}-${clip.id}-${renderId}-${index}`;
       const player = canEmbed && typeof options.renderVideo === 'function' ? options.renderVideo(clip.id, instance) : '';
       if (player != null && typeof player !== 'string') throw new TypeError('renderVideo must return an HTML string.');
       const duration = durationLabel(clip.durationSeconds);
       const mediaLanguage = clip.language === 'he' ? text(lang, 'Hebrew', 'עברית') : text(lang, 'English', 'אנגלית');
       const heading = translate(clip.title, lang);
-      const credit = canEmbed ? translate(clip.sourceContext, lang) : translate(clip.production, lang);
-      return `<div class="watch-path-clip${player ? ' watch-path-clip--embedded' : ' watch-path-clip--external'}" data-watch-clip="${escape(clip.id)}"><div class="watch-path-clip-head">${selection.twoParts ? `<span class="watch-path-part" aria-label="${text(lang, 'Part', 'חלק')} ${index + 1}">${index + 1}</span>` : ''}<div class="watch-path-clip-heading"><div class="watch-path-meta"><span>${escape(canEmbed ? text(lang, 'Our pick', 'הבחירה שלנו') : text(lang, 'School production', 'הפקת בית ספר'))}</span><span>${mediaLanguage}</span>${duration ? `<bdi>${duration}</bdi>` : ''}</div><h4 dir="auto">${escape(heading)}</h4><p class="watch-path-credit" dir="auto">${escape(credit)}</p></div></div><div class="watch-path-media">${player || `<div class="watch-path-external-frame"><span class="watch-path-external-label">YouTube · ${selection.sharedWithPrevious ? text(lang, 'same recording', 'אותה הקלטה') : text(lang, 'original upload', 'ההעלאה המקורית')}</span>${sourceLink(clip, text(lang, 'Watch on YouTube', 'לצפייה ב־YouTube'), lang)}</div><span class="watch-path-external-hint">${text(lang, 'Opens in a new tab · return here for the next stop', 'נפתח בלשונית חדשה · חוזרים לכאן לתחנה הבאה')}</span>`}</div>${canEmbed && !player ? `<p class="watch-path-uploader">${text(lang, 'Published by ', 'פורסם בידי ')}<bdi>${escape(clip.uploader)}</bdi></p>` : ''}</div>`;
+      const credit = translate(school ? clip.production : clip.sourceContext, lang);
+      return `<div class="watch-path-clip${player ? ' watch-path-clip--embedded' : ' watch-path-clip--external'}" data-watch-clip="${escape(clip.id)}"><div class="watch-path-clip-head">${selection.twoParts ? `<span class="watch-path-part" aria-label="${text(lang, 'Part', 'חלק')} ${index + 1}">${index + 1}</span>` : ''}<div class="watch-path-clip-heading"><div class="watch-path-meta"><span>${escape(school ? text(lang, 'School production', 'הפקת בית ספר') : text(lang, 'Our pick', 'הבחירה שלנו'))}</span><span>${mediaLanguage}</span>${duration ? `<bdi>${duration}</bdi>` : ''}</div><h4 dir="auto">${escape(heading)}</h4><p class="watch-path-credit" dir="auto">${escape(credit)}</p></div></div><div class="watch-path-media">${player || `<div class="watch-path-external-frame"><span class="watch-path-external-label">YouTube · ${selection.sharedWithPrevious ? text(lang, 'same recording', 'אותה הקלטה') : text(lang, 'original upload', 'ההעלאה המקורית')}</span>${sourceLink(clip, text(lang, 'Watch on YouTube', 'לצפייה ב־YouTube'), lang)}</div><span class="watch-path-external-hint">${text(lang, 'Opens in a new tab · return here for the next stop', 'נפתח בלשונית חדשה · חוזרים לכאן לתחנה הבאה')}</span>`}</div>${canEmbed && !player ? `<p class="watch-path-uploader">${text(lang, 'Published by ', 'פורסם בידי ')}<bdi>${escape(clip.uploader)}</bdi></p>` : ''}</div>`;
     }).join('');
     const excerpt = selection.excerptNote ? `<p class="watch-path-note">${escape(selection.excerptNote)}</p>` : '';
     return `<section class="watch-path-stop" data-watch-stop="${escape(songId)}" data-watch-current-mode="${mode}" lang="${lang}" dir="${direction(lang)}" aria-label="${escape(label)}"><h3 class="watch-path-stop-label">${escape(label)}</h3>${ending}<div class="watch-path-clips${selection.twoParts ? ' watch-path-clips--two' : ''}">${cards}</div>${shared}${notes}${excerpt}</section>`;
