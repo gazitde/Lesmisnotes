@@ -1,3 +1,7 @@
+## Native-navigation test synchronization
+
+- The no-JavaScript recording-link check now polls layout from the test process. Page-script animation-frame polling cannot run reliably with JavaScript disabled. The same first-screen destination assertion remains, and the prior failure screenshot confirmed the correct edition was visible.
+
 ## Review verification follow-up
 
 - Reduced the character-map header rhythm so the selected node name remains in the first desktop viewport.
