@@ -1,3 +1,9 @@
+## Review verification follow-up
+
+- Reduced the character-map header rhythm so the selected node name remains in the first desktop viewport.
+- Synchronized the no-JavaScript recording-fragment check with the browser’s native navigation and font layout, retaining the landing assertion and adding a failure screenshot.
+- Updated the existing interest-path privacy allowlist for the separately approved chapter-completion storage key; consent and no-write-before-choice assertions remain.
+
 ## 2026-10-13 — Comparison visual refinement
 - Kept role names as ordinary underlined profile links rather than dominant action buttons.
 - Folded comparison citations into the existing source disclosure and widened the desktop introductory measure.

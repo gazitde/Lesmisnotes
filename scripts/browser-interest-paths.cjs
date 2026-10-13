@@ -19,7 +19,7 @@ const routes={
 };
 const optionalKeys=[
   'barricade-lang','barricade-listening','barricade-quiz-run',
-  'barricade-bookmarks','barricade-last-journey','barricade-last-reading'
+  'barricade-bookmarks','barricade-last-journey','barricade-last-reading','barricade-completed-chapters-v1'
 ];
 const consentKey='barricade-consent-v1';
 let checks=0,currentCase='startup';

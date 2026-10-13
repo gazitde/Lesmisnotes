@@ -34,7 +34,7 @@ const KEY='barricade-completed-chapters-v1',one='p1-b1-c1',two='p1-b1-c2',three=
   await p.locator('[data-action="language"]').click();await ready(p);same(await count(p),1,'Language keeps IDs and count');check(await undo(p,two).isVisible(),'Marked chapter stays marked after language change');same(new URL(p.url()).searchParams.get('focus'),'chapter:'+three,'Completion does not alter current chapter URL');
   same(await p.evaluate(()=>JSON.stringify({...sessionStorage})),initialSession,'Completion never changes any spoiler choice');same(await p.locator('.chapter-wide-links .insight-link').count(),0,'Completion does not unlock future-story links');
   check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Completion controls fit viewport including RTL');
-  if(width===390){await p.locator('.chapter-progress').screenshot({path:path.join(dir,`chapter-completion-progress-${lang}-390.png`)});await p.locator('#reader-chapter-'+two).screenshot({path:path.join(dir,`chapter-completion-marked-${lang}-390.png`)});}
+  if(width<=390){await p.locator('#toast.visible').waitFor({state:'hidden'});const displayedLanguage=await p.locator('html').getAttribute('lang');await p.locator('.chapter-progress').screenshot({path:path.join(dir,`chapter-completion-progress-${displayedLanguage}-${width}.png`)});await p.locator('#reader-chapter-'+two).screenshot({path:path.join(dir,`chapter-completion-marked-${displayedLanguage}-${width}.png`)});}
   await p.reload();await ready(p);same(await count(p),0,'Reload discards unconsented session-only completion');same(await saved(p),null,'Reload has no completion persistence');same(errors,[],'No runtime errors in completion and navigation');await c.close();
  }
  for(const lang of ['he','en']){

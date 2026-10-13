@@ -264,3 +264,7 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 .relationship-display-switch button[aria-pressed=true]:focus-visible{outline-color:#fff}
 
 .adaptation-comparison .section-head p{max-width:75ch}.adaptation-role-link{color:#174884;text-decoration:underline;text-underline-offset:3px;font-size:1rem}.adaptation-compare-card .source-disclosure{margin-top:12px}.adaptation-compare-card .source-disclosure summary{min-height:44px;line-height:1.6}
+
+/* Keep the selected graph node and its label in the initial screen after adding the view switch. */
+.page-top.characters-top p{margin:0;line-height:1.6}
+@media(min-width:681px){.relationship-explorer .graph-focus-heading{padding-block:6px}}
