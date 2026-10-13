@@ -268,3 +268,121 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 /* Keep the selected graph node and its label in the initial screen after adding the view switch. */
 .page-top.characters-top p{margin:0;line-height:1.6}
 @media(min-width:681px){.relationship-explorer .graph-focus-heading{padding-block:6px}}
+
+/* Content-led density pass: keep large spacing for media, not empty wrappers. */
+.section{padding-block:36px}
+.page-top{padding-block:18px 24px}
+.page-top-tools{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 20px;margin-bottom:8px}
+.page-top-tools:empty{display:none}
+.page-top-tools .breadcrumb{flex:1;min-width:0;margin:0}
+.page-top-tools>.page-utility{width:auto;max-width:none;margin:0;padding:0;flex:0 0 auto}
+.page-top .bookmark-control{color:#fff;border-color:#748eac;background:transparent;min-height:44px}
+.page-top .bookmark-control.saved{color:#fff;background:#274b76}
+.page-top .bookmark-control:hover{background:#274b76}
+.page-top .bookmark-control:focus-visible{outline-color:#fff}
+.page-top .eyebrow{margin-bottom:8px}
+.page-top h1{font-size:clamp(2rem,3.35vw,2.9rem);line-height:1.16;margin-bottom:12px}
+.page-top p{margin-top:0;max-width:76ch}
+.page-top .wrap:after{display:none}
+.page-utility+.wrap.section{padding-top:20px}
+.section-head{gap:20px;margin-bottom:18px}
+.section-head h2{margin-top:5px}
+.related-section{padding-block:24px}
+.related-section h2{margin-bottom:16px}
+.footer{padding-top:28px}
+.note,.ideas-disclaimer{padding:10px 14px;margin-block:0 18px;font-size:.95rem;line-height:1.7}
+.screen-page>.screen-section-jumps{margin-top:0;margin-bottom:20px}
+.screen-lineage{margin:0 0 24px;padding:18px 20px;background:#f7f9fc;border:1px solid var(--line)}
+.screen-lineage h2{font-size:1.45rem;margin-bottom:5px}
+.screen-lineage>div>p{margin:0;font-size:1rem}
+.screen-branches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:14px;align-items:start}
+.screen-branches article{display:block;min-width:0;padding:12px 0 0}
+.screen-branches .branch-number{font-size:1rem;display:block;margin-bottom:6px}
+.screen-branches h3{font-size:1.12rem;margin-bottom:8px}
+.screen-branches p{font-size:1rem;line-height:1.7;margin:0}
+.screen-family-question{margin-top:12px;font-size:.94rem;max-width:85ch}
+.screen-availability{font-size:.94rem;line-height:1.7;color:var(--muted);max-width:85ch;margin:0 0 18px}
+.adaptation-comparison{margin-block:22px 26px;padding-block:18px}
+.screen-grid,.three-inline,.about-context-grid,.about-choice-grid,.history-context,.myth-grid,.reader-part-grid,.reader-book-grid,.reading-grid{align-items:start}
+.screen-card{padding:20px;gap:16px;grid-template-columns:66px minmax(0,1fr)}
+.screen-card .lens{margin-top:12px;padding-top:10px}
+.screen-gallery-invitation{margin-block:28px;padding:22px;max-width:960px}
+.link-box{padding:20px;margin-top:24px;max-width:960px}
+.musical-section{margin-top:32px;padding-top:28px}
+.musical-facts{margin-block:22px}
+.spotlight-detail{padding-block:24px}
+.song-reading{margin-block:20px;padding-block:20px}
+.coach-analysis{padding:22px;margin-block:22px}
+.recording-card{padding:20px}
+.recording-grid{align-items:start}
+.creation-reception,.composition-notebook{margin-top:24px}
+.hugo-introduction,.curtain-intro{gap:32px;margin-bottom:32px}
+.hugo-sections{gap:26px;margin-bottom:32px;align-items:start}
+.hugo-dates{margin-block:30px;padding:26px}
+.hugo-themes{margin-block:28px}
+.hugo-clusters{margin-block:28px}
+.hugo-cluster{margin-bottom:28px}
+.before-practical,.director-lab{margin-top:32px;padding-top:28px}
+.seat-workshop{margin-top:28px;padding-top:24px}
+.moments-experience{padding:22px;margin:22px 0 28px}
+.moments-header p{margin-bottom:14px}
+.dilemma-context{margin-block:24px;max-width:78ch}
+.love-line,.people-power{margin-block:32px}
+.love-line-heading,.people-power-heading{padding:26px}
+.history-reading-key{margin-block:20px}
+.history-context-heading{margin-top:32px}
+.historical-outcome{margin-block:28px;padding:24px}
+.history-next{margin-top:28px;padding-top:24px}
+.reading-locator{padding:24px;margin-bottom:30px}
+.reading-locator>header{max-width:80ch}
+.reader-setup{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:18px;align-items:start}
+.reader-setup .chapter-progress,.reader-setup .reading-opening-note{margin:0;padding:12px 15px}
+.reader-setup .chapter-progress p{line-height:1.6}
+.reader-setup .chapter-progress progress{margin-block:8px}
+.reader-setup .chapter-progress-explanation{margin:0}
+.reader-setup .chapter-progress-storage{gap:0 12px;margin-top:4px}
+.reader-setup .chapter-progress-storage p{max-width:none}
+.reader-setup .reading-opening-note p{font-size:1rem;line-height:1.7}
+.reader-breadcrumbs ol{margin-block:14px}
+.reader-part-card,.reader-book-card{padding:18px}
+.reader-overview{flex:initial}
+.novel-gate{padding:26px;gap:32px;grid-template-columns:190px minmax(0,1fr)}
+.novel-memory-head{gap:28px;margin-bottom:28px}
+.about-section{padding-block:28px}
+.about-reading-nav{margin-block:24px}
+.credit-box{padding:20px}
+.characters-page .profile-directory{margin-block:24px;padding-block:20px;gap:24px}
+.character-profile .profile-next{margin-top:28px;padding-top:24px}
+.character-profile .profile-prose p{margin-bottom:20px}
+.char-detail{min-height:0;padding:26px}
+.inn-page{padding-top:26px}
+.inn-welcome{gap:30px;margin-bottom:24px}
+.inn-before-cooking{gap:28px;margin:24px 0 30px;align-items:start}
+.inn-recipe{padding:24px;margin-bottom:28px}
+.inn-checkout{margin-block:32px}
+.places-opening{gap:30px;margin-bottom:28px}
+.place-essay{gap:30px;padding-bottom:36px;margin-bottom:36px;align-items:start}
+.geo-explorer{margin-bottom:36px}
+.contact-page{padding-block:28px 36px}
+.contact-page .page-intro{margin-bottom:24px}
+.contact-layout{gap:32px}
+.contact-aside{padding-top:20px}
+.contact-panel{padding:24px}
+.interest-home>.hero{gap:30px;padding-block:22px 18px}
+.home-classic-paths{padding-block:26px}
+.interest-home .path-card{padding:20px}
+.feature-split{gap:36px}
+.map-invitation{margin-block:24px;padding:22px;gap:22px;grid-template-columns:100px minmax(0,1fr) auto}
+.map-invitation h2{margin-block:6px 10px}
+.musical-home-promo{padding:24px;gap:26px;margin-bottom:26px}
+.question-strip{padding:22px;gap:22px}
+.directory-intro{gap:24px}
+@media(min-width:901px){.page-top h1 br{display:none}.page-top h1{max-width:32ch}.screen-lineage>div:first-child{display:flex;align-items:baseline;justify-content:space-between;gap:24px}.screen-lineage>div:first-child>p{max-width:50ch}.place-essay{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+@media(max-width:900px){.screen-branches{grid-template-columns:1fr;gap:0}.screen-branches article{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;padding-block:12px}.reader-setup{grid-template-columns:1fr}.map-invitation{grid-template-columns:70px minmax(0,1fr)}.map-invitation .btn{grid-column:2}.novel-gate{grid-template-columns:150px minmax(0,1fr);gap:22px}}
+@media(max-width:680px){
+ .section{padding-block:26px}.page-top{padding-block:14px 20px}.page-top h1{font-size:2rem;line-height:1.2;margin-bottom:10px}.page-top-tools{flex-wrap:nowrap;gap:8px;margin-bottom:7px}.page-top-tools .breadcrumb{font-size:.8rem}.page-top-tools .bookmark-control{width:44px;padding:10px;min-width:44px}.page-top-tools .bookmark-control span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.page-top-tools .page-utility{align-self:flex-start}.page-top-tools .breadcrumb [aria-current]{overflow-wrap:anywhere}
+ .section-head{margin-bottom:14px;gap:10px}.screen-lineage{padding:15px;margin-bottom:20px}.screen-branches h3{margin-bottom:5px}.screen-family-question{padding-inline-start:12px}.screen-page>.screen-section-jumps{gap:8px;margin-bottom:18px}.screen-section-jumps .btn{padding:10px 12px}.screen-card{padding:16px;gap:12px;grid-template-columns:54px minmax(0,1fr)}.screen-gallery-invitation,.link-box{padding:18px;margin-block:22px}
+ .musical-section{margin-top:26px;padding-top:22px}.spotlight-detail{padding-block:18px}.coach-analysis{padding:18px}.recording-card{padding:16px}.hugo-introduction,.curtain-intro{gap:22px;margin-bottom:26px}.hugo-dates{padding:20px;margin-block:24px}.before-practical,.director-lab{margin-top:26px;padding-top:22px}.moments-experience{padding:16px;margin-block:20px}.moments-header h2{font-size:1.65rem}.love-line-heading,.people-power-heading{padding:20px}.love-line,.people-power{margin-block:26px}.historical-outcome{padding:20px;margin-block:24px}
+ .reading-locator{padding:14px}.reader-setup{gap:12px;margin-top:14px}.reader-setup .chapter-progress,.reader-setup .reading-opening-note{padding:12px}.reader-part-card,.reader-book-card{padding:14px}.novel-gate{grid-template-columns:1fr;padding:20px;gap:20px}.novel-gate .closed-book{justify-self:start}.about-section{padding-block:24px}.credit-box{padding:16px}.character-profile .profile-next{margin-top:24px;padding-top:20px}.inn-welcome{gap:24px}.inn-recipe{padding:18px;margin-bottom:24px}.inn-before-cooking{gap:22px;margin-block:22px}.places-opening{gap:22px;margin-bottom:24px}.place-essay{gap:22px;padding-bottom:26px;margin-bottom:26px}.geo-explorer{margin-bottom:28px}.contact-page{padding-block:24px 30px}.contact-layout{gap:24px}.contact-panel{padding:18px}
+ .feature-split{gap:22px}.map-invitation{grid-template-columns:minmax(0,1fr);padding:18px;gap:14px}.map-invitation-art{display:none}.map-invitation .btn{grid-column:auto}.musical-home-promo{padding:20px;gap:18px;margin-bottom:22px}.question-strip{padding:18px;gap:14px}.directory-intro{gap:18px}.related-section{padding-block:22px}.footer{padding-top:24px}
+}
