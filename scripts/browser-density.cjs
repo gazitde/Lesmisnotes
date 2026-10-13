@@ -26,6 +26,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','density');
    if(await save.count()){const b=await save.boundingBox();check(b.width>=44&&b.height>=44,`${lang}/${route}/${width} usable bookmark target`,b);check((await save.getAttribute('aria-pressed'))!==null,`${lang}/${route}/${width} bookmark retains state semantics`);}
    if(route==='screen'){
     check(data.branches.length===3,`${lang}/${width} all three adaptation formats retained`);
+    check(await p.locator('.page-top h1 br').evaluateAll(es=>es.every(e=>getComputedStyle(e).display!=='none')),`${lang}/${width} title words retain their separator`);
     if(width>900){check(Math.max(...data.branches.map(x=>x.y))-Math.min(...data.branches.map(x=>x.y))<2,`${lang}/${width} concise side-by-side formats`,data.branches);check(data.lineage.height<440,`${lang}/${width} bounded format panel`,data.lineage);}
     check(await p.locator('.adaptation-compare-card').count()===4,`${lang}/${width} four comparison versions preserved`);
     check(await p.locator('.screen-card').count()===9,`${lang}/${width} nine screen entries preserved`);

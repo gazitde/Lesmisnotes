@@ -278,6 +278,7 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 .page-top-tools>.page-utility{width:auto;max-width:none;margin:0;padding:0;flex:0 0 auto}
 .page-top .bookmark-control{color:#fff;border-color:#748eac;background:transparent;min-height:44px}
 .page-top .bookmark-control.saved{color:#fff;background:#274b76}
+.page-top .bookmark-control.saved svg{fill:currentColor}
 .page-top .bookmark-control:hover{background:#274b76}
 .page-top .bookmark-control:focus-visible{outline-color:#fff}
 .page-top .eyebrow{margin-bottom:8px}
@@ -377,7 +378,7 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 .musical-home-promo{padding:24px;gap:26px;margin-bottom:26px}
 .question-strip{padding:22px;gap:22px}
 .directory-intro{gap:24px}
-@media(min-width:901px){.page-top h1 br{display:none}.page-top h1{max-width:32ch}.screen-lineage>div:first-child{display:flex;align-items:baseline;justify-content:space-between;gap:24px}.screen-lineage>div:first-child>p{max-width:50ch}.place-essay{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+@media(min-width:901px){.page-top h1{max-width:32ch}.screen-lineage>div:first-child{display:flex;align-items:baseline;justify-content:space-between;gap:24px}.screen-lineage>div:first-child>p{max-width:50ch}.place-essay{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
 @media(max-width:900px){.screen-branches{grid-template-columns:1fr;gap:0}.screen-branches article{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;padding-block:12px}.reader-setup{grid-template-columns:1fr}.map-invitation{grid-template-columns:70px minmax(0,1fr)}.map-invitation .btn{grid-column:2}.novel-gate{grid-template-columns:150px minmax(0,1fr);gap:22px}}
 @media(max-width:680px){
  .section{padding-block:26px}.page-top{padding-block:14px 20px}.page-top h1{font-size:2rem;line-height:1.2;margin-bottom:10px}.page-top-tools{flex-wrap:nowrap;gap:8px;margin-bottom:7px}.page-top-tools .breadcrumb{font-size:.8rem}.page-top-tools .bookmark-control{width:44px;padding:10px;min-width:44px}.page-top-tools .bookmark-control span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.page-top-tools .page-utility{align-self:flex-start}.page-top-tools .breadcrumb [aria-current]{overflow-wrap:anywhere}
