@@ -1,0 +1,21 @@
+.chapter-progress{margin-block:1.6rem;padding:1.15rem 1.3rem;border:1px solid #c9d1df;border-inline-start:4px solid #234683;border-radius:.75rem;background:#f5f7fb;color:#1b2940}
+.chapter-progress-heading{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.4rem 1rem}
+.chapter-progress-heading h3,.chapter-progress-heading p{margin:0;font-size:1rem}
+.chapter-progress-heading p{font-weight:700}
+.chapter-progress progress{display:block;inline-size:100%;block-size:.75rem;accent-color:#234683;margin-block:.8rem}
+.chapter-progress progress::-webkit-progress-bar{background:#dce3ee;border-radius:1rem}
+.chapter-progress progress::-webkit-progress-value{background:#234683;border-radius:1rem}
+.chapter-progress progress::-moz-progress-bar{background:#234683;border-radius:1rem}
+.chapter-progress-explanation,.chapter-progress-storage{font-size:.94rem;line-height:1.65;margin:.4rem 0 0}
+.chapter-completion{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem 1rem;margin-block:1rem 0;padding-block-start:1rem;border-block-start:1px solid #dce3ee}
+.chapter-completion [hidden]{display:none!important}
+.chapter-completion .chapter-completion-mark{min-block-size:44px;white-space:normal;text-align:start}
+.chapter-completion [data-completion-undo]{min-block-size:44px;padding:.4rem .25rem}
+.chapter-completion-label{font-weight:700;color:#245440}
+.chapter-completion button:focus-visible{outline:3px solid #245b9b;outline-offset:3px}
+@media(max-width:440px){.chapter-progress{padding:.9rem}.chapter-progress-heading{display:block}.chapter-progress-heading p{margin-block-start:.4rem}}
+@media(forced-colors:active){.chapter-progress{border-color:CanvasText}.chapter-completion-label{color:CanvasText}}
+
+.chapter-progress-storage{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .65rem}
+.chapter-progress-storage p{margin:0}
+.chapter-progress-storage button{font-size:.94rem;min-block-size:44px;text-align:start;padding:.25rem 0}

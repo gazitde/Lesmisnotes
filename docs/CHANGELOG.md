@@ -1,3 +1,9 @@
+## 2026-10-13 — Reading completion and clearer comparison views
+- Added an explicit chapter-read tracker with undo and progress out of 365, independent of reading position and spoilers; device persistence follows functional consent.
+- Added Map / Connections list controls inside the existing graph header, keeping the opening compact.
+- Added a compact cast-and-format comparison for four familiar concert/screen editions, exact profile and recording links, and safe search results.
+- Repaired native screen-section jumps and recording fragments; retained the nine historical screen entries and five recording editions.
+
 ## 2026-10-13 — Focused regression-test scoping
 - Scoped the new pre-show warning assertion to the five orientation stops; the separate practical-information source notice remains intact.
 - Scoped the mocked shared-player lifecycle registry to journey players, excluding unrelated performance previews elsewhere on the musical page.

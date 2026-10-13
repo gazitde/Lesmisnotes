@@ -244,3 +244,21 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 .journey-options .text-button{gap:6px}.journey-current>bdi,.journey-current>span>bdi{direction:ltr;unicode-bidi:isolate}
 
 .interest-watch{display:flex;align-items:center;gap:1.25rem;margin-block:0 1.25rem;padding-block:1rem;border-block:1px solid #cbd4e6}.interest-watch p{margin:0;font-size:1rem;line-height:1.6}.interest-watch .btn{white-space:normal;text-align:start;line-height:1.5}.interest-watch-start{gap:.65rem}@media(max-width:650px){.interest-watch{display:block}.interest-watch .btn{width:100%;justify-content:space-between}.interest-watch p{margin-block-start:.65rem}}
+
+/* The visual map remains the default; text cards share the same source and state. */
+.relationship-display-switch{display:flex;flex-wrap:wrap;gap:0;margin:0;width:fit-content;border:1px solid #c3d1e6;border-radius:3px;overflow:hidden}
+.relationship-display-switch button{min-height:44px;padding:10px 18px;border:0;background:white;color:var(--navy);font:inherit;font-size:.94rem;font-weight:700;cursor:pointer}
+.relationship-display-switch button+button{border-inline-start:1px solid #879bb9}
+.relationship-display-switch button[aria-pressed=true]{background:#244779;color:white;box-shadow:inset 0 -3px 0 #f02d44}
+.relationship-display-switch button:focus-visible{outline:3px solid var(--red);outline-offset:-4px}
+.relationship-graph[data-relationship-layout=list] .graph-full,.relationship-graph[data-relationship-layout=list] .graph-focused,.relationship-graph[data-relationship-layout=list] .graph-legend{display:none}
+.relationship-graph[data-relationship-layout=list] .graph-connections{padding-top:22px}
+@media(max-width:680px){.relationship-explorer .graph-focus-heading{display:block;padding:8px 12px}.relationship-explorer .graph-focus-heading h3{margin:0 0 6px}.relationship-display-switch{width:100%}.relationship-display-switch button{flex:1;padding:8px 7px;font-size:.88rem}}
+
+/* Cast and format comparison: readable cards become a compact four-column matrix. */
+.adaptation-comparison{margin-block:28px 38px;padding-block:22px;border-block:1px solid #cbd5e5;scroll-margin-top:120px}.adaptation-comparison .section-head{margin-bottom:18px}.adaptation-comparison-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:start}.adaptation-compare-card{min-width:0;scroll-margin-top:120px}.adaptation-compare-card:focus{outline:3px solid var(--red);outline-offset:6px}.adaptation-compare-card header{border-block-start:4px solid var(--red);padding-block:12px 8px}.adaptation-compare-year{font-weight:800;font-size:1.3rem;color:var(--navy)}.adaptation-compare-card h3{font-size:1.15rem;line-height:1.5;margin:6px 0}.adaptation-compare-card header p{font-size:.94rem;line-height:1.6;margin:0}.adaptation-compare-card dl{margin:12px 0;padding:0;border-block:1px solid #d2dbe9}.adaptation-compare-card dl>div{padding-block:8px;display:grid;grid-template-columns:1fr;gap:2px}.adaptation-compare-card dt{font-size:.88rem}.adaptation-compare-card dt a{display:inline-flex;align-items:center;min-height:44px}.adaptation-compare-card dd{margin:0;font-weight:700;font-size:1rem;line-height:1.5}.adaptation-compare-difference{font-size:1rem;line-height:1.75;margin:14px 0}.adaptation-compare-card>a{display:inline-flex;align-items:center;min-height:44px;font-size:.94rem;line-height:1.6}.adaptation-role-note{font-size:.95rem;line-height:1.7;margin:20px 0 0;padding-inline-start:12px;border-inline-start:3px solid var(--red)}
+@media(max-width:1000px){.adaptation-comparison-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.adaptation-compare-card dl>div{grid-template-columns:1fr 1.1fr;align-items:center}}
+@media(max-width:600px){.adaptation-comparison-grid{grid-template-columns:1fr;gap:24px}.adaptation-comparison{padding-block:18px;margin-block:24px}.adaptation-compare-card dl>div{grid-template-columns:1fr 1fr}.adaptation-compare-card h3{font-size:1.15rem}}
+.graph-focus-heading>.relationship-display-switch{display:flex;align-items:stretch;gap:0}
+#adaptation-comparison,#screen-grid,#screen-performances,.adaptation-compare-card{scroll-margin-top:140px}
+.relationship-display-switch button[aria-pressed=true]:focus-visible{outline-color:#fff}

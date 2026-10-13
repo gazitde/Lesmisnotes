@@ -26,6 +26,7 @@ npm run test:browser
 
 - Complete bilingual content, Hebrew RTL, five guided journeys and optional spoilers
 - Novel and musical guides, characters, history, interpretation and two quiz tracks
+- Character map/list views, role-by-role screen comparisons, and an explicit chapter-read tracker with consent-controlled device saving
 - Substantive spoiler-safe story and character HTML, semantic introductory relationships and a sourced explanation of 24601, readable without JavaScript
 - Israeli productions, verified casts, Hebrew book translations and official performance links
 - A dated viewing guide distinguishing current productions, future announcements, completed tours and home-viewing editions

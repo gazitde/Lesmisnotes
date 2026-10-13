@@ -28,6 +28,7 @@ try{
   await run(['scripts/browser-mobile-polish.cjs']);
   await run(['scripts/browser-search-polish.cjs']);
   await run(['scripts/browser-chapter-companion.cjs']);
+  await run(['scripts/browser-chapter-completion.cjs']);
   await run(['scripts/browser-history-recordings.cjs']);
   await run(['scripts/browser-reading-companion.cjs']);
   await run(['scripts/browser-hugo-stories.cjs']);
@@ -38,6 +39,7 @@ try{
   await run(['scripts/browser-search.cjs']);
   await run(['scripts/browser-reading.cjs']);
   await run(['scripts/browser-relationships.cjs']);
+  await run(['scripts/browser-review-gaps.cjs']);
   await run(['scripts/browser-enriched-reading.cjs']);
   await run(['scripts/browser-home-entry.cjs']);
   await run(['scripts/browser-interest-paths.cjs']);
