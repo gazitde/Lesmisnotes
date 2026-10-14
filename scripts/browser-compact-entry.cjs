@@ -43,10 +43,22 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
   for(const route of ['screen','map']){await p.goto(`${base}/${lang}/${route}/`);await p.evaluate(()=>document.fonts.ready);check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Representative route fits viewport');await p.screenshot({path:path.join(dir,`${lang}-${route}-${width}.png`),fullPage:true});}
   check(errors.length===0,'No browser exceptions');await c.close();
  }
- for(const lang of ['he','en']){
-  const c=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),p=await c.newPage();
+ // Browser-side timers/RAF are unavailable when JS is disabled. Observe native scrolling from Node.
+ for(const lang of ['he','en'])for(const motion of ['no-preference','reduce']){
+  const c=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900},reducedMotion:motion}),p=await c.newPage();
   await p.goto(`${base}/${lang}/novel/`);check(await p.locator('[data-reader-part-shortcuts] a').count()===5,'No-JS direct Part links exist');
-  await p.locator('[data-reader-part-shortcuts] a').last().click();await p.waitForFunction(()=>{const e=document.getElementById('reader-part-overview-p5');return e&&e.getBoundingClientRect().top>=-2&&e.getBoundingClientRect().top<innerHeight});check(await p.locator('#reader-part-overview-p5').evaluate(e=>e.getBoundingClientRect().top>=-2&&e.getBoundingClientRect().top<innerHeight),'No-JS fragment reaches requested Part overview');check(new URL(p.url()).hash==='#reader-part-overview-p5','No-JS keeps the selected Part fragment');await p.screenshot({path:path.join(dir,`${lang}-novel-nojs-part5.png`)});
+  const link=p.locator('[data-reader-part-shortcuts] a').last();check(await link.getAttribute('href')===`/${lang}/novel/#reader-part-overview-p5`,'No-JS link uses the overview document, not a protected focus shell');await link.click();
+  let geometry;const deadline=Date.now()+5000;
+  do{
+   geometry=await p.locator('#reader-part-overview-p5').evaluate(e=>{const r=e.getBoundingClientRect(),h=e.querySelector('h3').getBoundingClientRect();return{top:r.top,bottom:r.bottom,headingTop:h.top,headingBottom:h.bottom,height:innerHeight,scrollY,hash:location.hash,targets:document.querySelectorAll('#reader-part-overview-p5').length}});
+   if(geometry.top>=-2&&geometry.top<geometry.height)break;
+   await new Promise(resolve=>setTimeout(resolve,100));
+  }while(Date.now()<deadline);
+  fs.writeFileSync(path.join(dir,`${lang}-novel-nojs-${motion}.json`),JSON.stringify(geometry,null,2));
+  await p.screenshot({path:path.join(dir,`${lang}-novel-nojs-${motion}.png`)});
+  check(geometry.top>=-2&&geometry.top<geometry.height,'No-JS fragment reaches requested Part overview');
+  check(geometry.headingTop>=0&&geometry.headingBottom<=geometry.height,'Requested Part heading is fully visible');
+  check(geometry.hash==='#reader-part-overview-p5'&&geometry.targets===1,'No-JS retains one exact Part target');
   await c.close();
  }
  await browser.close();fs.writeFileSync(path.join(dir,'metrics.json'),JSON.stringify({checks,report},null,2));console.log(`Compact entry: ${checks} HE/EN desktop/390/360/320 checks, circle geometry, early Part links, keyboard/history/language and no-JS.`);
