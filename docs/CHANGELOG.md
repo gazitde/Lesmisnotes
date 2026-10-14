@@ -1,3 +1,9 @@
+## 2026-10-14 — Compact listening art and direct reading entry
+
+- Keep the decorative record at 210px on phones, with readable centre-label type and unchanged desktop composition.
+- Add five direct Part links immediately after the reading-companion introduction; retain all Part/Book overviews, exact focus URLs, reading progress and spoiler boundaries.
+- Add HE/EN desktop/390/360/320 browser coverage for label geometry, navigation, history, language, no-JS entry and screenshots.
+
 ## Native-navigation test synchronization
 
 - The no-JavaScript recording-link check now polls layout from the test process. Page-script animation-frame polling cannot run reliably with JavaScript disabled. The same first-screen destination assertion remains, and the prior failure screenshot confirmed the correct edition was visible.
