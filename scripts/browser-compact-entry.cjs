@@ -48,15 +48,18 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
   const c=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900},reducedMotion:motion}),p=await c.newPage();
   await p.goto(`${base}/${lang}/novel/`);check(await p.locator('[data-reader-part-shortcuts] a').count()===5,'No-JS direct Part links exist');
   const link=p.locator('[data-reader-part-shortcuts] a').last();check(await link.getAttribute('href')===`/${lang}/novel/#reader-part-overview-p5`,'No-JS link uses the overview document, not a protected focus shell');await link.click();
-  let geometry;const deadline=Date.now()+5000;
+  let geometry,previous,settled=false;const deadline=Date.now()+5000;
   do{
    geometry=await p.locator('#reader-part-overview-p5').evaluate(e=>{const r=e.getBoundingClientRect(),h=e.querySelector('h3').getBoundingClientRect();return{top:r.top,bottom:r.bottom,headingTop:h.top,headingBottom:h.bottom,height:innerHeight,scrollY,hash:location.hash,targets:document.querySelectorAll('#reader-part-overview-p5').length}});
-   if(geometry.top>=-2&&geometry.top<geometry.height)break;
+   settled=geometry.top>=-2&&geometry.top<geometry.height&&geometry.headingTop>=0&&geometry.headingBottom<=geometry.height&&previous&&Math.abs(geometry.top-previous.top)<.5;
+   if(settled)break;
+   previous=geometry;
    await new Promise(resolve=>setTimeout(resolve,100));
   }while(Date.now()<deadline);
   fs.writeFileSync(path.join(dir,`${lang}-novel-nojs-${motion}.json`),JSON.stringify(geometry,null,2));
   await p.screenshot({path:path.join(dir,`${lang}-novel-nojs-${motion}.png`)});
   check(geometry.top>=-2&&geometry.top<geometry.height,'No-JS fragment reaches requested Part overview');
+  check(settled,'Native scrolling settles with the complete Part heading visible');
   check(geometry.headingTop>=0&&geometry.headingBottom<=geometry.height,'Requested Part heading is fully visible');
   check(geometry.hash==='#reader-part-overview-p5'&&geometry.targets===1,'No-JS retains one exact Part target');
   await c.close();

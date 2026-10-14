@@ -15,6 +15,13 @@ jobs:
       - run: npm test
       - run: npm run check:export
       - run: npx playwright install --with-deps chromium
+      - run: node scripts/browser-test.mjs --compact-only
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: compact-entry-checks
+          path: test-results/compact-entry/
+          retention-days: 7
       - run: npm run test:browser
       - uses: actions/upload-artifact@v4
         if: always()
