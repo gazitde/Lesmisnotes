@@ -46,7 +46,7 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
  for(const lang of ['he','en']){
   const c=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),p=await c.newPage();
   await p.goto(`${base}/${lang}/novel/`);check(await p.locator('[data-reader-part-shortcuts] a').count()===5,'No-JS direct Part links exist');
-  await p.locator('[data-reader-part-shortcuts] a').last().click();check(await p.locator('#reader-part-overview-p5').evaluate(e=>e.getBoundingClientRect().top>=-2&&e.getBoundingClientRect().top<innerHeight),'No-JS fragment reaches requested Part overview');
+  await p.locator('[data-reader-part-shortcuts] a').last().click();await p.waitForFunction(()=>{const e=document.getElementById('reader-part-overview-p5');return e&&e.getBoundingClientRect().top>=-2&&e.getBoundingClientRect().top<innerHeight});check(await p.locator('#reader-part-overview-p5').evaluate(e=>e.getBoundingClientRect().top>=-2&&e.getBoundingClientRect().top<innerHeight),'No-JS fragment reaches requested Part overview');check(new URL(p.url()).hash==='#reader-part-overview-p5','No-JS keeps the selected Part fragment');await p.screenshot({path:path.join(dir,`${lang}-novel-nojs-part5.png`)});
   await c.close();
  }
  await browser.close();fs.writeFileSync(path.join(dir,'metrics.json'),JSON.stringify({checks,report},null,2));console.log(`Compact entry: ${checks} HE/EN desktop/390/360/320 checks, circle geometry, early Part links, keyboard/history/language and no-JS.`);
