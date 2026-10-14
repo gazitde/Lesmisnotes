@@ -1,3 +1,12 @@
+## 2026-10-14 — Precise, spoiler-safe internal search
+
+- Resolve all five Parts, 48 Books and 365 Chapters from numeric, Roman and Hebrew coordinates to their existing exact reader destinations.
+- Keep global Book results neutral: before-reading prompts belong to their selected Book and no longer influence search snippets, counts or ranking.
+- Match complete numeric values so a search for 5 June does not match the 5 in 1815; retain normal accent, apostrophe and hyphen handling for character names.
+- Give author dates and historical context results precise focused destinations that survive language changes.
+- Add source-level protected-field invariance tests and focused HE/EN desktop/mobile browser checks for keyboard, history, language and reader focus.
+- Verify all 70 production canonical URLs, sitemap, robots, hreflang, unique metadata and intentional noindex on query-only reader shells.
+
 ## 2026-10-14 — Compact listening art and direct reading entry
 
 - Keep the decorative record at 210px on phones, with readable centre-label type and unchanged desktop composition.

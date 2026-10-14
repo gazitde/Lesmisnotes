@@ -90,29 +90,51 @@
     const names = song && Object.hasOwn(SAFE_SONG_NAMES, song.id) ? SAFE_SONG_NAMES[song.id] : null;
     return names ? { en: names[0], he: names[1] } : null;
   }
-  // Coordinates have a separate exact-match path. A malformed/out-of-range
-  // coordinate must never degrade into unrelated numeric substring results.
-  function chapterQuery(query) {
+  // Reader coordinates have a separate exact-match path. Only the canonical
+  // numeral spellings used by this 365-chapter edition are accepted (1–24).
+  // Existence is checked against the actual indexed Part, Book or Chapter.
+  const ROMAN_COORDINATES = ['', 'i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x', 'xi', 'xii', 'xiii', 'xiv', 'xv', 'xvi', 'xvii', 'xviii', 'xix', 'xx', 'xxi', 'xxii', 'xxiii', 'xxiv'];
+  const HEBREW_COORDINATES = ['', 'א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ז', 'ח', 'ט', 'י', 'יא', 'יב', 'יג', 'יד', 'טו', 'טז', 'יז', 'יח', 'יט', 'כ', 'כא', 'כב', 'כג', 'כד'];
+  function coordinateNumber(token) {
+    if (/^\d+$/.test(token)) { const n = Number(token); return Number.isSafeInteger(n) && n > 0 ? n : null; }
+    const roman = ROMAN_COORDINATES.indexOf(token);
+    if (roman > 0) return roman;
+    if (!/^(?:[א-ת]+|[א-ת]['׳]|[א-ת]+["״][א-ת])$/u.test(token)) return null;
+    const hebrew = HEBREW_COORDINATES.indexOf(token.replace(/['׳"״]/g, ''));
+    return hebrew > 0 ? hebrew : null;
+  }
+  function readerQuery(query) {
     const raw = String(query ?? '').normalize('NFKC').toLowerCase().replace(/[\u0591-\u05bd\u05bf-\u05c7\u200e\u200f\u202a-\u202e\u2066-\u2069]/g, '').trim();
     const patterns = [
-      /^p(\d+)\s*-\s*b(\d+)\s*-\s*c(\d+)$/,
-      /^part\s+(\d+)\s*[,·]?\s+book\s+(\d+)\s*[,·]?\s+chapter\s+(\d+)$/,
-      /^חלק\s+(\d+)\s*[,·]?\s+ספר\s+(\d+)\s*[,·]?\s+פרק\s+(\d+)$/,
-      /^(\d+)\s*\.\s*(\d+)\s*\.\s*(\d+)$/
+      ['chapter', /^p(\d+)\s*-\s*b(\d+)\s*-\s*c(\d+)$/],
+      ['chapter', /^part\s+([^\s,·]+)\s*[,·]?\s+book\s+([^\s,·]+)\s*[,·]?\s+chapter\s+([^\s,·]+)$/],
+      ['chapter', /^חלק\s+([^\s,·]+)\s*[,·]?\s+ספר\s+([^\s,·]+)\s*[,·]?\s+פרק\s+([^\s,·]+)$/],
+      ['chapter', /^(\d+)\s*\.\s*(\d+)\s*\.\s*(\d+)$/],
+      ['book', /^p(\d+)\s*-\s*b(\d+)$/],
+      ['book', /^part\s+([^\s,·]+)\s*[,·]?\s+book\s+([^\s,·]+)$/],
+      ['book', /^חלק\s+([^\s,·]+)\s*[,·]?\s+ספר\s+([^\s,·]+)$/],
+      ['book', /^(\d+)\s*\.\s*(\d+)$/],
+      ['part', /^p(\d+)$/],
+      ['part', /^(?:part|חלק)\s*(\d+)$/],
+      ['part', /^part\s+([ivxlcdm]+)$/],
+      ['part', /^חלק\s+([א-ת'׳"״]+)$/u]
     ];
-    for (const pattern of patterns) {
+    for (const [kind, pattern] of patterns) {
       const match = raw.length <= 180 && raw.match(pattern);
       if (match) {
-        const [part, book, chapter] = match.slice(1).map(Number);
-        return { key: [part, book, chapter].every(n => Number.isSafeInteger(n) && n > 0) ? `p${part}-b${book}-c${chapter}` : null };
+        const numbers = match.slice(1).map(coordinateNumber);
+        return { kind, key: numbers.every(n => n !== null) ? numbers.map((n, i) => ['p', 'b', 'c'][i] + n).join('-') : null };
       }
     }
-    const looksLikeCoordinate = /^p\s*[+-]?\d.*-\s*b/.test(raw)
-      || /^(?:part|חלק)(?:\s|:).*(?:book|ספר)(?:\s|:).*(?:chapter|פרק)(?:\s|:)/.test(raw)
-      || /^[+-]?\d[\d\s.+-]*\.[\d\s.+-]*\./.test(raw);
+    const looksLikeCoordinate = /^p\s*[+-]?\d/.test(raw)
+      || /^(?:part|חלק)\s*[:+-]?\d/.test(raw)
+      || /^(?:part|חלק)(?:\s|:).*(?:book|ספר)(?:\s|:)/.test(raw)
+      || /^[+-]?\d[\d\s.+-]*\./.test(raw)
+      || /^part\s+[ivxlcdm]+(?:\s|$)/.test(raw)
+      || /^חלק\s+[א-ת'׳"״]+(?:\s|$)/u.test(raw);
     return looksLikeCoordinate ? { key: null } : null;
   }
-  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', part: 'novel', book: 'novel', chapter:'novel', recording:'musical', adaptation:'screen', song: 'musical', atlas: 'map', history: 'history', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
+  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', part: 'novel', book: 'novel', chapter:'novel', recording:'musical', adaptation:'screen', song: 'musical', atlas: 'map', history: 'history', context: 'history', author: 'hugo', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
   function hrefFor(doc, lang) {
     if (doc.kind === 'characterdetail') return `/${lang}/characters/?focus=${encodeURIComponent('character:'+doc.key)}`;
     if (doc.kind === 'character' && doc.route === 'character-'+doc.key) return `/${lang}/character-${encodeURIComponent(doc.key)}/`;
@@ -146,7 +168,8 @@
       if(profile&&spoilers)add('characterdetail',c.id,'characters','characters',{en:local(c.name,'en')+' · Connections and context',he:local(c.name,'he')+' · קשרים והקשר'},details);
     }
     if (spoilers) for (const s of R.story || []) add('story', s.id, 'story', 'story', s.title, pair(s.period, s.summary, s.detail, s.songs));
-    for(const p of R.readingLocator?.parts||[])for(const b of p.books)add('book',b.id,'novel','story',b.label,b.prompt,['reading alongside','מלווה קריאה']);
+    for(const p of R.readingLocator?.parts||[])if(Number.isSafeInteger(p.part)&&p.part>=1&&p.part<=5)add('part','p'+p.part,'novel','story',p.label,{en:'Open this Part and choose one of its Books.',he:'עברו לחלק הזה ובחרו את הספר שתרצו לקרוא.'},['part '+p.part,'חלק '+p.part]);
+    for(const p of R.readingLocator?.parts||[])for(const b of p.books)add('book',b.id,'novel','story',b.label,{en:'Open this Book and choose a chapter.',he:'עברו לספר הזה ובחרו פרק לקריאה.'},['reading alongside','מלווה קריאה']);
     for (const c of R.chapterCompanion?.chapters || []) {
       if (![c.part, c.book, c.chapter].every(n => Number.isSafeInteger(n) && n > 0) || c.id !== `p${c.part}-b${c.book}-c${c.chapter}`) continue;
       add('chapter', c.id, 'novel', 'story', { en: `Part ${c.part} · Book ${c.book} · Chapter ${c.chapter}`, he: `חלק ${c.part} · ספר ${c.book} · פרק ${c.chapter}` },
@@ -197,11 +220,19 @@
     if(after)for(const s of R.hugoExtras?.stories||[])add('extra',s.id,'after','story',s.title,pair(s.kicker,s.paragraphs));
     return out;
   }
+  // A date's day or year must not match the middle of a different number.
+  // Keep ordinary text substring matching and ordinal forms such as 5th.
+  function termIndex(text, term, from = 0) {
+    let at = text.indexOf(term, from);
+    if (!/^\p{N}+$/u.test(term)) return at;
+    while (at >= 0 && (/\p{N}/u.test(text[at - 1] || '') || /\p{N}/u.test(text[at + term.length] || ''))) at = text.indexOf(term, at + term.length);
+    return at;
+  }
   function queryTerms(query) { return [...new Set(normalize(String(query).slice(0, 180)).split(' ').filter(Boolean))].slice(0, 16); }
   function search(index, query, { lang = 'he', category = 'all', limit = 12 } = {}) {
-    const coordinate = chapterQuery(query);
+    const coordinate = readerQuery(query);
     if (coordinate) {
-      const doc = coordinate.key && (category === 'all' || category === 'story') && index.find(d => d.kind === 'chapter' && d.key === coordinate.key);
+      const doc = coordinate.key && (category === 'all' || category === 'story') && index.find(d => d.kind === coordinate.kind && d.key === coordinate.key);
       return doc ? { results: limit > 0 ? [{ doc, score: 1000, href: hrefFor(doc, lang) }] : [], total: 1 } : { results: [], total: 0 };
     }
     const terms = queryTerms(query), phrase = normalize(query).slice(0, 180);
@@ -212,14 +243,14 @@
       const chosen = doc.search[lang], other = doc.search[lang === 'he' ? 'en' : 'he'];
       let score = 0, matched = true;
       for (const term of terms) {
-        const scores = [chosen.title.includes(term) ? 24 : 0, other.title.includes(term) ? 21 : 0,
-          doc.aliasSearch.split(' ').includes(term) ? 27 : doc.aliasSearch.includes(term) ? 16 : 0,
-          chosen.body.includes(term) ? 5 : 0, other.body.includes(term) ? 4 : 0];
+        const scores = [termIndex(chosen.title, term) >= 0 ? 24 : 0, termIndex(other.title, term) >= 0 ? 21 : 0,
+          doc.aliasSearch.split(' ').includes(term) ? 27 : termIndex(doc.aliasSearch, term) >= 0 ? 16 : 0,
+          termIndex(chosen.body, term) >= 0 ? 5 : 0, termIndex(other.body, term) >= 0 ? 4 : 0];
         const best = Math.max(...scores); if (!best) { matched = false; break; } score += best;
       }
       if (!matched) continue;
       if (chosen.title === phrase || other.title === phrase) score += 95;
-      else if (chosen.title.includes(phrase) || other.title.includes(phrase)) score += 40;
+      else if (termIndex(chosen.title, phrase) >= 0 || termIndex(other.title, phrase) >= 0) score += 40;
       if (doc.aliasSearch.split(' ').includes(phrase)) score += 70;
       // A bare song name leads to its guide before individual performance choices.
       if(doc.kind==='song'&&(SAFE_SONG_NAMES[doc.key]||[]).some(title=>title.split(/[·/]/).some(part=>normalize(part)===phrase)))score+=110;
@@ -232,11 +263,11 @@
   function matchRanges(text, query) {
     const value = folded(text, true), ranges = [];
     for (const term of queryTerms(query)) {
-      let at = value.text.indexOf(term), guard = 0;
+      let at = termIndex(value.text, term), guard = 0;
       while (at >= 0 && guard++ < 50) {
         const start = value.positions[at]?.[0], end = value.positions[at + term.length - 1]?.[1];
         if (start !== undefined && end !== undefined) ranges.push([start, end]);
-        at = value.text.indexOf(term, at + term.length);
+        at = termIndex(value.text, term, at + term.length);
       }
     }
     ranges.sort((a, b) => a[0] - b[0]);
@@ -360,7 +391,7 @@
   function focusTarget(target) {
     if (!target || !root.document?.querySelector) return;
     const featuredSong = (root.EXTRA_CONTENT?.musical || root.RESEARCH?.musical)?.spotlight?.songs?.some(s => s.id === target.key);
-    const key = target.key, selector = { part:'#reader-part-panel', chapter:'#reader-chapter-'+key, book: '#reading-book-panel', recording: '#recording-'+key, adaptation: '#adaptation-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : featuredSong ? '#spotlight-title' : '#musical-journey', atlas: '#place-detail', history: `[data-history-event="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
+    const key = target.key, selector = { part:'#reader-part-panel', chapter:'#reader-chapter-'+key, book: '#reading-book-panel', recording: '#recording-'+key, adaptation: '#adaptation-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : featuredSong ? '#spotlight-title' : '#musical-journey', atlas: '#place-detail', history: `[data-history-event="${key}"]`, context: `[data-history-context="${key}"]`, author: `[data-hugo-date="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
     const element = selector && (root.document.querySelector(selector)||(target.kind==='chapter'?root.document.querySelector('#reading-book-panel'):null)); if (!element) return;
     if (['story', 'novel', 'history','song','dilemma'].includes(target.kind)||(target.kind==='extra'&&key!=='collection')) {const readingRoot=target.kind==='song'?(element.closest?.('.show-slide,.spotlight-detail')||element):element;readingRoot.querySelectorAll?.('details').forEach(details => { if(!details.matches?.('.source-disclosure,.song-reading-sources,.coach-sources,.reading-sources,.added-media-credits'))details.open = true; });}
     if(target.kind==='craft'||target.kind==='israel'){const notebook=element.closest?.('details');if(notebook)notebook.open=true;}

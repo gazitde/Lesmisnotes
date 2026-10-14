@@ -20,7 +20,9 @@ jobs:
         if: always()
         with:
           name: compact-entry-checks
-          path: test-results/compact-entry/
+          path: |
+            test-results/compact-entry/
+            test-results/part-search/
           retention-days: 7
       - run: npm run test:browser
       - uses: actions/upload-artifact@v4
