@@ -7,7 +7,7 @@ for(const lang of ['en','he'])for(const width of [1365,390,320]){
  await p.goto(`${base}/${lang}/home/`);await p.locator('[data-action="privacy-reject"]').first().click();
  const fill=async q=>{await p.locator('#site-search-input').fill(q);await p.locator('#site-search-results[aria-busy="false"]').waitFor();};
  const q=lang==='he'?'חלק 5':'Part 5';await p.locator('[data-site-search-open]').click();await fill(q);
- const target=p.locator(`.site-search-list a[href="/${lang}/novel/?focus=part%3Ap5"]`);await target.waitFor();check(await p.locator('.site-search-list a').count()===1,'Numeric Part query has exactly one safe destination');
+ const target=p.locator(`.site-search-list a[href="/${lang}/novel/?focus=part%3Ap5"]`);await target.waitFor();check(await p.locator('.site-search-list a').count()===1,'Numeric Part query has exactly one safe destination');check(await p.locator('#site-search-status').innerText()===(lang==='he'?'1 תוצאה':'1 result'),'Single-result count uses correct localized singular');
  check(!(await p.locator('#site-search-results').innerText()).includes(lang==='he'?'המתרס':'barricade'),'No Part overview leaked into result');
  await p.locator('#site-search-dialog').screenshot({path:path.join(dir,`${lang}-${width}-result.png`)});
  await target.focus();await p.keyboard.press('Enter');check(new URL(p.url()).searchParams.get('focus')==='part:p5','Exact Part route opens');
