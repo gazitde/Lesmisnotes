@@ -958,8 +958,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "m_E_PI56xpc",
       "title": {
-        "en": "I Dreamed a Dream",
-        "he": "חלמתי חלום"
+        "en": "I Dreamed a Dream · Carrie Hope Fletcher",
+        "he": "חלמתי חלום · קארי הופ פלטשר"
       },
       "url": "https://www.youtube.com/watch?v=m_E_PI56xpc",
       "productionId": "staged-concert-2019",
@@ -979,8 +979,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "ulJXiB5i_q0",
       "title": {
-        "en": "I Dreamed a Dream",
-        "he": "חלמתי חלום"
+        "en": "I Dreamed a Dream · Anne Hathaway",
+        "he": "חלמתי חלום · אן האת׳וויי"
       },
       "url": "https://www.youtube.com/watch?v=ulJXiB5i_q0",
       "productionId": "film-2012",
@@ -1000,8 +1000,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "nXhofhspBd4",
       "title": {
-        "en": "Cart Crash · Who Am I?",
-        "he": "תאונת העגלה · מי אני?"
+        "en": "Who Am I? · Hugh Jackman",
+        "he": "מי אני? · יו ג׳קמן"
       },
       "url": "https://www.youtube.com/watch?v=nXhofhspBd4",
       "productionId": "film-2012",
@@ -1025,8 +1025,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "1q82twrdr0U",
       "title": {
-        "en": "The People’s Song · Do You Hear the People Sing?",
-        "he": "שיר העם · האם אתם שומעים את העם שר?"
+        "en": "Do You Hear the People Sing?",
+        "he": "האם אתם שומעים את העם שר?"
       },
       "url": "https://www.youtube.com/watch?v=1q82twrdr0U",
       "productionId": "film-2012",
@@ -1046,8 +1046,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "0qBKbINXhG8",
       "title": {
-        "en": "In My Life / A Heart Full of Love",
-        "he": "בחיי / לב מלא אהבה"
+        "en": "In My Life / A Heart Full of Love · Nick Jonas & Samantha Barks",
+        "he": "בחיי / לב מלא אהבה · ניק ג׳ונאס / סמנתה בארקס"
       },
       "url": "https://www.youtube.com/watch?v=0qBKbINXhG8",
       "productionId": "anniversary-2010",
@@ -1071,8 +1071,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "37BZsKcz6M8",
       "title": {
-        "en": "Bring Him Home",
-        "he": "השב אותו הביתה"
+        "en": "Bring Him Home · Alfie Boe",
+        "he": "השב אותו הביתה · אלפי בו"
       },
       "url": "https://www.youtube.com/watch?v=37BZsKcz6M8",
       "productionId": "anniversary-2010",
@@ -1092,8 +1092,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "IsZdfna1LKA",
       "title": {
-        "en": "Javert’s Soliloquy / Javert’s Suicide",
-        "he": "המונולוג של ז׳אבר והתאבדותו"
+        "en": "Javert’s Soliloquy / Javert’s Suicide · Russell Crowe",
+        "he": "המונולוג של ז׳אבר והתאבדותו · ראסל קרואו"
       },
       "url": "https://www.youtube.com/watch?v=IsZdfna1LKA",
       "productionId": "film-2012",
@@ -1113,8 +1113,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "Dp8sYTlLQRY",
       "title": {
-        "en": "Little Cosette · Castle on a Cloud",
-        "he": "קוזט הקטנה · טירה על ענן"
+        "en": "Castle on a Cloud",
+        "he": "טירה על ענן"
       },
       "url": "https://www.youtube.com/watch?v=Dp8sYTlLQRY",
       "productionId": "film-2012",
@@ -1134,8 +1134,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "je40MqKMD8U",
       "title": {
-        "en": "The Innkeeper’s Song · Master of the House",
-        "he": "שיר הפונדקאי · אדון הבית"
+        "en": "Master of the House · Matt Lucas",
+        "he": "אדון הבית · מאט לוקאס"
       },
       "url": "https://www.youtube.com/watch?v=je40MqKMD8U",
       "productionId": "anniversary-2010",
@@ -1155,8 +1155,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "SfZ2fVizB-c",
       "title": {
-        "en": "The ABC Café · Red and Black",
-        "he": "קפה ABC · אדום ושחור"
+        "en": "Red and Black",
+        "he": "אדום ושחור"
       },
       "url": "https://www.youtube.com/watch?v=SfZ2fVizB-c",
       "productionId": "film-2012",
@@ -1176,8 +1176,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "mp6Lhn_PbmQ",
       "title": {
-        "en": "At the End of the Day",
-        "he": "בסוף היום"
+        "en": "At the End of the Day · Anne Hathaway",
+        "he": "בסוף היום · אן האת׳וויי"
       },
       "url": "https://www.youtube.com/watch?v=mp6Lhn_PbmQ",
       "productionId": "film-2012",
@@ -1197,8 +1197,8 @@ window.WATCH_PATH_DATA = {
     {
       "id": "deUgUoJ4z5I",
       "title": {
-        "en": "On My Own",
-        "he": "לבדי"
+        "en": "On My Own · Samantha Barks",
+        "he": "לבדי · סמנתה בארקס"
       },
       "url": "https://www.youtube.com/watch?v=deUgUoJ4z5I",
       "productionId": "film-2012",
@@ -1214,6 +1214,300 @@ window.WATCH_PATH_DATA = {
       "language": "en",
       "delivery": "embed-with-source-link",
       "durationSeconds": 200
+    },
+    {
+      "id": "9jfRE_FljrE",
+      "title": {
+        "en": "The Confrontation · Hugh Jackman & Russell Crowe",
+        "he": "העימות · יו ג׳קמן / ראסל קרואו"
+      },
+      "url": "https://www.youtube.com/watch?v=9jfRE_FljrE",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "Hugh Jackman · Russell Crowe. A scene from Tom Hooper’s 2012 film.",
+        "he": "יו ג׳קמן · ראסל קרואו. קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "Movieclips",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 123
+    },
+    {
+      "id": "88T3elu2wfE",
+      "title": {
+        "en": "Epilogue · Hugh Jackman & Anne Hathaway",
+        "he": "אפילוג · יו ג׳קמן / אן האת׳וויי"
+      },
+      "url": "https://www.youtube.com/watch?v=88T3elu2wfE",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "Hugh Jackman · Anne Hathaway · Amanda Seyfried · Eddie Redmayne · Colm Wilkinson. A scene from Tom Hooper’s 2012 film.",
+        "he": "יו ג׳קמן · אן האת׳וויי · אמנדה סייפריד · אדי רדמיין · קולם וילקינסון. קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "Movieclips",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 231
+    },
+    {
+      "id": "iLN9GLRC5is",
+      "title": {
+        "en": "Master of the House · Helena Bonham Carter & Sacha Baron Cohen",
+        "he": "אדון הבית · הלנה בונהם קרטר / סשה ברון כהן"
+      },
+      "url": "https://www.youtube.com/watch?v=iLN9GLRC5is",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "Helena Bonham Carter · Sacha Baron Cohen. A scene from Tom Hooper’s 2012 film.",
+        "he": "הלנה בונהם קרטר · סשה ברון כהן. קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "Movieclips",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 241
+    },
+    {
+      "id": "I_h5FnO2Eds",
+      "title": {
+        "en": "Stars · Bradley Jaden",
+        "he": "כוכבים · בראדלי ג׳יידן"
+      },
+      "url": "https://www.youtube.com/watch?v=I_h5FnO2Eds",
+      "productionId": "alternative-I_h5FnO2Eds",
+      "production": {
+        "en": "Musical Awards: The Kick-Off · AVROTROS · 2024",
+        "he": "Musical Awards: The Kick-Off · AVROTROS · 2024"
+      },
+      "sourceContext": {
+        "en": "Bradley Jaden. A television performance promoting The Arena Spectacular.",
+        "he": "בראדלי ג׳יידן. ביצוע טלוויזיוני לקידום The Arena Spectacular."
+      },
+      "uploader": "AVROTROS",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 198
+    },
+    {
+      "id": "d4sPDLqMxDs",
+      "title": {
+        "en": "On My Own · Lucy Thomas",
+        "he": "לבדי · לוסי תומאס"
+      },
+      "url": "https://www.youtube.com/watch?v=d4sPDLqMxDs",
+      "productionId": "alternative-d4sPDLqMxDs",
+      "production": {
+        "en": "Official music video · published 2025",
+        "he": "קליפ רשמי · פורסם ב־2025"
+      },
+      "sourceContext": {
+        "en": "Lucy Thomas. An artist-published interpretation of Éponine’s song.",
+        "he": "לוסי תומאס. פרשנות לשירה של אפונין, בפרסום האמנית עצמה."
+      },
+      "uploader": "Lucy Thomas Music",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 194
+    },
+    {
+      "id": "6YF0XNMpyoM",
+      "title": {
+        "en": "Empty Chairs at Empty Tables · Jonathan Antoine",
+        "he": "כיסאות ריקים ליד שולחנות ריקים · ג׳ונתן אנטואן"
+      },
+      "url": "https://www.youtube.com/watch?v=6YF0XNMpyoM",
+      "productionId": "alternative-6YF0XNMpyoM",
+      "production": {
+        "en": "Going the Distance · artist video · published 2020",
+        "he": "Going the Distance · סרטון האמן · פורסם ב־2020"
+      },
+      "sourceContext": {
+        "en": "Jonathan Antoine. An artist-published performance of Marius’s solo, associated with Going the Distance.",
+        "he": "ג׳ונתן אנטואן. ביצוע לסולו של מריוס בפרסום האמן, בהקשר האלבום Going the Distance."
+      },
+      "uploader": "Jonathan Antoine",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 337
+    },
+    {
+      "id": "y-wgK8bKqoA",
+      "title": {
+        "en": "The Confrontation · Joshua Colley & John Rapson",
+        "he": "העימות · ג׳ושוע קולי / ג׳ון רפסון"
+      },
+      "url": "https://www.youtube.com/watch?v=y-wgK8bKqoA",
+      "productionId": "alternative-y-wgK8bKqoA",
+      "production": {
+        "en": "Easter Bonnet Competition · benefit performance · 2015",
+        "he": "Easter Bonnet Competition · מופע התרמה · 2015"
+      },
+      "sourceContext": {
+        "en": "Joshua Colley · John Rapson. A benefit skit in which Colley, then playing Gavroche, takes Valjean’s part opposite Rapson.",
+        "he": "ג׳ושוע קולי · ג׳ון רפסון. קטע ממופע התרמה שבו קולי, שגילם אז את גברוש, מקבל את תפקיד ולז׳אן מול רפסון."
+      },
+      "uploader": "Broadway Cares/Equity Fights AIDS",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 195
+    },
+    {
+      "id": "9IP6aDolzAo",
+      "title": {
+        "en": "Master of the House · Miki Kam & Avi Kushnir",
+        "he": "בעלי הפונדק · מיקי קם ואבי קושניר"
+      },
+      "production": {
+        "en": "Habima · 2017",
+        "he": "הבימה · 2017"
+      },
+      "sourceContext": {
+        "en": "Miki Kam and Avi Kushnir as the Thénardiers in Habima’s Hebrew production, shared by Miki Kam’s official channel.",
+        "he": "מיקי קם ואבי קושניר כבני הזוג תנרדייה בהפקה העברית של הבימה, בפרסום הערוץ הרשמי של מיקי קם."
+      },
+      "url": "https://www.youtube.com/watch?v=9IP6aDolzAo",
+      "productionId": "habima-2017",
+      "uploader": "מיקי קם הערוץ הרשמי - Miki Kam Official Channel",
+      "language": "he",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 476
+    },
+    {
+      "id": "4f1CpTXaPIY",
+      "title": {
+        "en": "The Bargain / Thénardier Waltz · Habima",
+        "he": "ואלס תנרדייה · הבימה"
+      },
+      "production": {
+        "en": "Habima · 2017",
+        "he": "הבימה · 2017"
+      },
+      "sourceContext": {
+        "en": "Miki Kam, Amir Dadon and Avi Kushnir in the bargaining scene. Shared by Miki Kam’s official channel.",
+        "he": "מיקי קם, אמיר דדון ואבי קושניר בסצנת המיקוח. בפרסום הערוץ הרשמי של מיקי קם."
+      },
+      "url": "https://www.youtube.com/watch?v=4f1CpTXaPIY",
+      "productionId": "habima-2017",
+      "uploader": "מיקי קם הערוץ הרשמי - Miki Kam Official Channel",
+      "language": "he",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 224
+    },
+    {
+      "id": "cJha5xHplr0",
+      "title": {
+        "en": "I Dreamed a Dream · Miri Mesika",
+        "he": "חלום חלמתי · מירי מסיקה"
+      },
+      "production": {
+        "en": "Habima · 2016",
+        "he": "הבימה · 2016"
+      },
+      "sourceContext": {
+        "en": "Miri Mesika sings Fantine’s solo in Habima’s 2016 production. The artist published this clip in 2023.",
+        "he": "מירי מסיקה שרה את הסולו של פנטין בהפקת הבימה מ־2016. הקטע פורסם בערוץ האמנית ב־2023."
+      },
+      "url": "https://www.youtube.com/watch?v=cJha5xHplr0",
+      "productionId": "habima-2016",
+      "uploader": "MiriMesikaPage",
+      "language": "he",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 217
+    },
+    {
+      "id": "1qwY7eMI5kQ",
+      "title": {
+        "en": "One Day More · Habima company",
+        "he": "רק עוד יום · אנסמבל הבימה"
+      },
+      "production": {
+        "en": "Habima · promotional performance · published 2016",
+        "he": "הבימה · ביצוע לקידום ההפקה · פורסם ב־2016"
+      },
+      "sourceContext": {
+        "en": "A company performance published by Habima before the production opened. This is a promotional clip rather than a stage-show recording.",
+        "he": "ביצוע האנסמבל שפרסמה הבימה לפני פתיחת ההפקה. זהו סרטון לקידום ההפקה, ולא צילום מן ההצגה."
+      },
+      "url": "https://www.youtube.com/watch?v=1qwY7eMI5kQ",
+      "productionId": "habima-promo",
+      "uploader": "הבימה - התיאטרון הלאומי",
+      "language": "he",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 171
+    },
+    {
+      "id": "xsV2iVtjMOU",
+      "title": {
+        "en": "On My Own / Mon Histoire · Océane Demontis",
+        "he": "לבדי / Mon Histoire · Océane Demontis"
+      },
+      "production": {
+        "en": "France Musique · Soirée 42e rue · 2024",
+        "he": "France Musique · Soirée 42e rue · 2024"
+      },
+      "sourceContext": {
+        "en": "Océane Demontis, with Charlotte Gauthier at the piano, in a filmed broadcaster concert with the Châtelet cast.",
+        "he": "Océane Demontis, בליווי Charlotte Gauthier בפסנתר, בקונצרט מצולם של השידור הצרפתי עם צוות שאטלה."
+      },
+      "url": "https://www.youtube.com/watch?v=xsV2iVtjMOU",
+      "productionId": "france-musique-2024",
+      "uploader": "France Musique concerts",
+      "language": "fr",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 242
+    },
+    {
+      "id": "jjRFina1-J8",
+      "title": {
+        "en": "Do You Hear the People Sing? / À la volonté du peuple",
+        "he": "שיר העם / À la volonté du peuple"
+      },
+      "production": {
+        "en": "France Musique · Châtelet cast concert · 2024",
+        "he": "France Musique · קונצרט צוות שאטלה · 2024"
+      },
+      "sourceContext": {
+        "en": "Benoît Rameau, Sébastien Duchange, David Alexis, Christine Bonnard, Juliette Artigala, Jacques Preiss, Océane Demontis and Stanley Kassa, with Charlotte Gauthier at the piano. A broadcaster concert, not a full stage-show capture.",
+        "he": "צוות שאטלה: Benoît Rameau, Sébastien Duchange, David Alexis, Christine Bonnard, Juliette Artigala, Jacques Preiss, Océane Demontis ו־Stanley Kassa, בליווי Charlotte Gauthier בפסנתר. קונצרט של השידור הצרפתי, ולא צילום ההצגה המלאה."
+      },
+      "url": "https://www.youtube.com/watch?v=jjRFina1-J8",
+      "productionId": "france-musique-2024",
+      "uploader": "France Musique concerts",
+      "language": "fr",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 131
+    },
+    {
+      "id": "tELsLEQg29I",
+      "title": {
+        "en": "On My Own / Mon histoire · Rachel Pignot",
+        "he": "לבדי / Mon histoire · Rachel Pignot"
+      },
+      "production": {
+        "en": "France Musique · 42e rue · recorded 2014",
+        "he": "France Musique · 42e rue · הוקלט ב־2014"
+      },
+      "sourceContext": {
+        "en": "Rachel Pignot sings Éponine’s solo in French at the 42e rue celebration of Claude-Michel Schönberg, recorded on 7 December 2014.",
+        "he": "Rachel Pignot שרה את הסולו של אפונין בצרפתית במופע 42e rue לכבוד קלוד־מישל שנברג, שהוקלט ב־7 בדצמבר 2014."
+      },
+      "url": "https://www.youtube.com/watch?v=tELsLEQg29I",
+      "productionId": "france-musique-2014",
+      "uploader": "France Musique concerts",
+      "language": "fr",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 224
     }
   ],
   "stops": [
@@ -1333,7 +1627,8 @@ window.WATCH_PATH_DATA = {
       ],
       "alternatives": [
         "m_E_PI56xpc",
-        "ulJXiB5i_q0"
+        "ulJXiB5i_q0",
+        "cJha5xHplr0"
       ]
     },
     {
@@ -1421,6 +1716,10 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "51bfumxxgE4"
+      ],
+      "alternatives": [
+        "9jfRE_FljrE",
+        "y-wgK8bKqoA"
       ]
     },
     {
@@ -1466,7 +1765,9 @@ window.WATCH_PATH_DATA = {
         "KwyHAvqVXiE"
       ],
       "alternatives": [
-        "je40MqKMD8U"
+        "je40MqKMD8U",
+        "iLN9GLRC5is",
+        "9IP6aDolzAo"
       ]
     },
     {
@@ -1487,6 +1788,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "tNH09Ho-INY"
+      ],
+      "alternatives": [
+        "4f1CpTXaPIY"
       ]
     },
     {
@@ -1535,7 +1839,10 @@ window.WATCH_PATH_DATA = {
       "selectedExcerptNote": {
         "en": "This selection is Javert’s solo. Éponine’s errand is discussed in the guide.",
         "he": "הביצוע הנבחר הוא הסולו של ז׳אבר. המדריך עוסק גם בשליחותה של אפונין."
-      }
+      },
+      "alternatives": [
+        "I_h5FnO2Eds"
+      ]
     },
     {
       "songId": "red-black",
@@ -1580,7 +1887,8 @@ window.WATCH_PATH_DATA = {
         "YL8gH0yELbk"
       ],
       "alternatives": [
-        "1q82twrdr0U"
+        "1q82twrdr0U",
+        "jjRFina1-J8"
       ]
     },
     {
@@ -1669,7 +1977,8 @@ window.WATCH_PATH_DATA = {
         "dbkUZB_N46g"
       ],
       "alternatives": [
-        "wNNBrg4u9d0"
+        "wNNBrg4u9d0",
+        "1qwY7eMI5kQ"
       ]
     },
     {
@@ -1712,7 +2021,10 @@ window.WATCH_PATH_DATA = {
         "M0O2MSn1jM4"
       ],
       "alternatives": [
-        "deUgUoJ4z5I"
+        "deUgUoJ4z5I",
+        "d4sPDLqMxDs",
+        "xsV2iVtjMOU",
+        "tELsLEQg29I"
       ]
     },
     {
@@ -1951,6 +2263,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "tRxVGHFO3Hc"
+      ],
+      "alternatives": [
+        "6YF0XNMpyoM"
       ]
     },
     {
@@ -2054,6 +2369,9 @@ window.WATCH_PATH_DATA = {
       "sameProduction": [
         "VMnd382Fu1M",
         "H8HDWeoa7Ag"
+      ],
+      "alternatives": [
+        "88T3elu2wfE"
       ]
     }
   ],

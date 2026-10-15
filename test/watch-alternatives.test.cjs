@@ -21,3 +21,9 @@ assert.ok(api.getSelection({songId:'one-day-more',lang:'en'}).alternatives.some(
 assert.ok(api.renderStop({songId:'stars',lang:'he'}).includes('צפה בביצועים נוספים'));
 assert.ok(api.renderStop({songId:'stars',lang:'en'}).includes('Watch more performances'));
 console.log('PASS: '+cases+' alternative selections: uniqueness, primary exclusion, collapsed rendering, bilingual controls, no eager players.');
+for(const [code,en,he] of [['fr','French','צרפתית'],['ja','Japanese','יפנית'],['de','German','גרמנית'],['es','Spanish','ספרדית'],['und','Language not verified','השפה לא אומתה']]){
+ const copy=JSON.parse(JSON.stringify(data));const star=copy.stops.find(s=>s.songId==='stars');const id=star.sameProduction[0];copy.clips.find(c=>c.id===id).language=code;
+ const c={window:{WATCH_PATH_DATA:copy}};vm.runInNewContext(fs.readFileSync('dist/watch-path.js','utf8'),c);
+ assert.ok(c.window.WatchPath.renderStop({songId:'stars',lang:'en'}).includes(en));
+ assert.ok(c.window.WatchPath.renderStop({songId:'stars',lang:'he'}).includes(he));
+}

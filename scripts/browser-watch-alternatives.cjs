@@ -1,5 +1,5 @@
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs');
-const base=process.env.SEARCH_TEST_URL||'http://127.0.0.1:8875',out=(process.env.SEARCH_ARTIFACT_DIR||'test-results')+'/alternatives';fs.mkdirSync(out,{recursive:true});
+const base=process.env.SEARCH_TEST_URL||'http://127.0.0.1:8875',out=(process.env.SEARCH_ARTIFACT_DIR||'test-results')+'/compact-entry/alternatives';fs.mkdirSync(out,{recursive:true});
 (async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH,args:['--no-sandbox']});let checks=0;const check=(v,m)=>{assert.ok(v,m);checks++};
 for(const lang of ['he','en'])for(const width of [1365,390,320]){
  const c=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});await c.route('**/*',r=>new URL(r.request().url()).origin===new URL(base).origin?r.continue():r.abort());const p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
@@ -21,7 +21,11 @@ for(const lang of ['he','en'])for(const width of [1365,390,320]){
  await summary.click();check(await panel.locator('iframe').count()===0,'Reopening does not start a player');await buttons.first().click();await buttons.first().click();check(await panel.locator('iframe').count()===0,'Repeated click closes player');
  await buttons.first().click();await p.locator('.show-station-nav [data-show-move="next"]').click();check(await p.locator('[data-watch-alternatives] iframe').count()===0,'Next tears down alternatives');
  await p.locator('.show-station-nav [data-show-move="prev"]').click();check(!(await p.locator('[data-watch-alternatives]').evaluate(e=>e.open)),'Returning starts collapsed');
- await p.locator('[data-watch-mode="sameProduction"]').click();check(!(await p.locator('[data-watch-alternatives]').evaluate(e=>e.open)),'Mode changes collapse alternatives');
- await p.evaluate(()=>scrollTo(0,0));await p.locator('[data-action="spoilers"]').click();check(await p.locator('[data-watch-alternatives]').count()===0,'Spoiler withdrawal removes alternatives');check(errors.length===0,'No page errors: '+errors.join(';'));await c.close();
+ await p.locator('[data-watch-alternatives] summary').click();await p.locator('[data-watch-alternative]').first().click();const modeFrame=await p.locator('[data-watch-alternatives] iframe').elementHandle();
+ await p.locator('[data-watch-mode="sameProduction"]').click();check(await modeFrame.evaluate(e=>!e.isConnected),'Mode change removes active secondary player');check(!(await p.locator('[data-watch-alternatives]').evaluate(e=>e.open)),'Mode changes collapse alternatives');
+ await p.locator('[data-watch-alternatives] summary').click();await p.locator('[data-watch-alternative]').first().click();const spoilerFrame=await p.locator('[data-watch-alternatives] iframe').elementHandle();
+ await p.evaluate(()=>scrollTo(0,0));await p.locator('[data-action="spoilers"]').click();check(await p.locator('[data-watch-alternatives]').count()===0,'Spoiler withdrawal removes alternatives');check(await spoilerFrame.evaluate(e=>!e.isConnected),'Spoiler withdrawal removes active secondary player');await p.locator('[data-action="show-open"]').click();
+ for(let index=0;index<39;index++){await p.locator('[data-show-select]').selectOption(String(index));const details=p.locator('[data-watch-alternatives]');if(await details.count()){await details.locator('summary').click();check(await details.locator('iframe').count()===0,'Every stop stays lazy');check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Expanded alternatives fit '+lang+' '+width+' stop '+index);check(await details.locator('.watch-path-meta').count()===await details.locator('[data-watch-alternative-card]').count(),'Every alternative has language/production metadata')}}
+ check(errors.length===0,'No page errors: '+errors.join(';'));await c.close();
 }
 await browser.close();console.log('PASS: '+checks+' alternative browser assertions, HE/EN at desktop/390/320.');})().catch(e=>{console.error(e);process.exit(1)});

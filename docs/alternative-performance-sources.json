@@ -339,6 +339,502 @@
       "verifiedOn": "2026-10-15",
       "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
       "context": "Film excerpt; scene coverage inferred from publisher title/description, not watched."
+    },
+    {
+      "id": "9jfRE_FljrE",
+      "title": "Les Misérables (2012) - The Confrontation Scene (2/10) | Movieclips",
+      "uploader": "Movieclips",
+      "uploadDate": "2019-12-16T10:02:11-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "confrontation"
+      ],
+      "performers": [
+        "Hugh Jackman",
+        "Russell Crowe"
+      ],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "yearBasis": "Production year verified in title and publisher credits.",
+      "context": "Production year verified in title and publisher credits.",
+      "mediaKind": "video",
+      "durationSeconds": 123,
+      "sourceUrl": "https://www.youtube.com/watch?v=9jfRE_FljrE",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=9jfRE_FljrE"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct YouTube watch-page title, uploader, description, credits and player metadata checked. Actual audiovisual playback not tested."
+    },
+    {
+      "id": "88T3elu2wfE",
+      "title": "Les Misérables (2012) - Epilogue Scene (10/10) | Movieclips",
+      "uploader": "Movieclips",
+      "uploadDate": "2019-12-16T10:10:55-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "epilogue"
+      ],
+      "performers": [
+        "Hugh Jackman",
+        "Anne Hathaway",
+        "Amanda Seyfried",
+        "Eddie Redmayne",
+        "Colm Wilkinson"
+      ],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "yearBasis": "Cast named in publisher scene credits; production year verified.",
+      "context": "Cast named in publisher scene credits; production year verified.",
+      "mediaKind": "video",
+      "durationSeconds": 231,
+      "sourceUrl": "https://www.youtube.com/watch?v=88T3elu2wfE",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=88T3elu2wfE"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct YouTube watch-page title, uploader, description, credits and player metadata checked. Actual audiovisual playback not tested."
+    },
+    {
+      "id": "iLN9GLRC5is",
+      "title": "Les Misérables (2012) - Master of the House Scene (3/10) | Movieclips",
+      "uploader": "Movieclips",
+      "uploadDate": "2019-12-16T10:02:44-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "master-house"
+      ],
+      "performers": [
+        "Helena Bonham Carter",
+        "Sacha Baron Cohen"
+      ],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "yearBasis": "Production year and performers verified in publisher credits.",
+      "context": "Production year and performers verified in publisher credits.",
+      "mediaKind": "video",
+      "durationSeconds": 241,
+      "sourceUrl": "https://www.youtube.com/watch?v=iLN9GLRC5is",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=iLN9GLRC5is"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct YouTube watch-page title, uploader, description, credits and player metadata checked. Actual audiovisual playback not tested."
+    },
+    {
+      "id": "I_h5FnO2Eds",
+      "title": "Les Misérables The Arena Spectacular - Bradley Jaden - Stars | Musical Awards: The Kick-Off 2024",
+      "uploader": "AVROTROS",
+      "uploadDate": "2024-08-25T14:14:30-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "stars"
+      ],
+      "performers": [
+        "Bradley Jaden"
+      ],
+      "production": "Musical Awards: The Kick-Off",
+      "year": 2024,
+      "yearBasis": "Promotional television performance for The Arena Spectacular, not footage of a full Arena production. Event/year verified in publisher title.",
+      "context": "Promotional television performance for The Arena Spectacular, not footage of a full Arena production. Event/year verified in publisher title.",
+      "mediaKind": "video",
+      "durationSeconds": 198,
+      "sourceUrl": "https://www.youtube.com/watch?v=I_h5FnO2Eds",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=I_h5FnO2Eds"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct YouTube watch-page title, uploader, description, credits and player metadata checked. Actual audiovisual playback not tested."
+    },
+    {
+      "id": "d4sPDLqMxDs",
+      "title": "\"On My Own\" - Lucy Thomas - (From \"Les Misérables\") - Official Music Video",
+      "uploader": "Lucy Thomas Music",
+      "uploadDate": "2025-07-31T07:00:03-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "on-my-own"
+      ],
+      "performers": [
+        "Lucy Thomas"
+      ],
+      "production": "Official music video",
+      "year": null,
+      "yearBasis": "Cover recording/music video; exact performance year not stated in description. Use upload year only if explicitly labeled published.",
+      "context": "Cover recording/music video; exact performance year not stated in description. Use upload year only if explicitly labeled published.",
+      "mediaKind": "video",
+      "durationSeconds": 194,
+      "sourceUrl": "https://www.youtube.com/watch?v=d4sPDLqMxDs",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=d4sPDLqMxDs"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct YouTube watch-page title, uploader, description, credits and player metadata checked. Actual audiovisual playback not tested."
+    },
+    {
+      "id": "6YF0XNMpyoM",
+      "title": "Jonathan Antoine | Empty Chairs at Empty Tables",
+      "uploader": "Jonathan Antoine",
+      "uploadDate": "2020-04-07T07:54:47-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "empty-chairs"
+      ],
+      "performers": [
+        "Jonathan Antoine"
+      ],
+      "production": "Going the Distance",
+      "year": null,
+      "yearBasis": "Artist-published video for the album; description does not specify performance year or venue. Use upload year only if explicitly labeled published.",
+      "context": "Artist-published video for the album; description does not specify performance year or venue. Use upload year only if explicitly labeled published.",
+      "mediaKind": "video",
+      "durationSeconds": 337,
+      "sourceUrl": "https://www.youtube.com/watch?v=6YF0XNMpyoM",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=6YF0XNMpyoM"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct YouTube watch-page title, uploader, description, credits and player metadata checked. Actual audiovisual playback not tested."
+    },
+    {
+      "id": "y-wgK8bKqoA",
+      "title": "Youngest Jean Valjean Ever in Broadway's Les Miserables - Easter Bonnet 2015",
+      "uploader": "Broadway Cares/Equity Fights AIDS",
+      "uploadDate": "2015-04-30T14:06:16-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "confrontation"
+      ],
+      "performers": [
+        "Joshua Colley",
+        "John Rapson"
+      ],
+      "production": "Easter Bonnet Competition",
+      "year": 2015,
+      "yearBasis": "Benefit performance/skit, not ordinary Broadway casting; year and participants explicitly verified in title and description.",
+      "context": "Benefit performance/skit, not ordinary Broadway casting; year and participants explicitly verified in title and description.",
+      "mediaKind": "video",
+      "durationSeconds": 195,
+      "sourceUrl": "https://www.youtube.com/watch?v=y-wgK8bKqoA",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=y-wgK8bKqoA"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct YouTube watch-page title, uploader, description, credits and player metadata checked. Actual audiovisual playback not tested."
+    },
+    {
+      "id": "HKRzlaQcfUI",
+      "title": "התיאטרון הלאומי הבימה - עלובי החיים - רק עוד יום",
+      "uploader": "הבימה - התיאטרון הלאומי",
+      "durationSeconds": 216,
+      "uploadDate": "2020-03-19T03:00:10-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "one-day-more"
+      ],
+      "performers": [],
+      "production": "Habima, Les Misérables",
+      "year": null,
+      "language": "he",
+      "languageLabel": "עברית",
+      "context": "Existing primary clip; Habima company performance. Metadata does not establish recording year.",
+      "mediaKind": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=HKRzlaQcfUI",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=HKRzlaQcfUI"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct publisher YouTube title, description, uploader, and player metadata checked. Actual audiovisual playback not tested.",
+      "languageEvidence": "Publisher identifies the translated song and production. Language identification is based on publisher/production metadata, not an audiovisual listening test."
+    },
+    {
+      "id": "Mea49KwLiMg",
+      "title": "לבדי - עלובי החיים",
+      "uploader": "הבימה - התיאטרון הלאומי",
+      "durationSeconds": 247,
+      "uploadDate": "2020-03-30T08:00:11-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "on-my-own"
+      ],
+      "performers": [
+        "Roni Dalumi"
+      ],
+      "production": "Habima, Les Misérables",
+      "year": null,
+      "language": "he",
+      "languageLabel": "עברית",
+      "context": "Existing primary clip. Publisher explicitly credits Roni Dalumi and director Moshe Kepten. Recording year not stated.",
+      "mediaKind": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=Mea49KwLiMg",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=Mea49KwLiMg"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct publisher YouTube title, description, uploader, and player metadata checked. Actual audiovisual playback not tested.",
+      "languageEvidence": "Publisher identifies the translated song and production. Language identification is based on publisher/production metadata, not an audiovisual listening test."
+    },
+    {
+      "id": "u_eCLahh91s",
+      "title": "אלוהיי - עלובי החיים",
+      "uploader": "הבימה - התיאטרון הלאומי",
+      "durationSeconds": 327,
+      "uploadDate": "2020-04-12T08:00:22-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "bring-him-home"
+      ],
+      "performers": [
+        "Amir Dadon"
+      ],
+      "production": "Habima, Les Misérables",
+      "year": null,
+      "language": "he",
+      "languageLabel": "עברית",
+      "context": "Existing primary clip. Publisher explicitly credits Amir Dadon and Hebrew translation by Ehud Manor. Recording year not stated.",
+      "mediaKind": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=u_eCLahh91s",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=u_eCLahh91s"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct publisher YouTube title, description, uploader, and player metadata checked. Actual audiovisual playback not tested.",
+      "languageEvidence": "Publisher identifies the translated song and production. Language identification is based on publisher/production metadata, not an audiovisual listening test."
+    },
+    {
+      "id": "9IP6aDolzAo",
+      "title": "בעלי הפונדק | מיקי קם ואבי קושניר | מתוך \"עלובי החיים\" של תיאטרון הבימה 2017",
+      "uploader": "מיקי קם הערוץ הרשמי - Miki Kam Official Channel",
+      "durationSeconds": 476,
+      "uploadDate": "2017-11-27T03:35:05-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "master-house"
+      ],
+      "performers": [
+        "Miki Kam",
+        "Avi Kushnir"
+      ],
+      "production": "Habima, Les Misérables",
+      "year": 2017,
+      "language": "he",
+      "languageLabel": "עברית",
+      "context": "Official performer upload; title identifies Habima 2017. Description credits Habima rights, Moshe Kepten direction, Yossi Ben Nun musical direction.",
+      "mediaKind": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=9IP6aDolzAo",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=9IP6aDolzAo"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct publisher YouTube title, description, uploader, and player metadata checked. Actual audiovisual playback not tested.",
+      "languageEvidence": "Publisher identifies the translated song and production. Language identification is based on publisher/production metadata, not an audiovisual listening test."
+    },
+    {
+      "id": "4f1CpTXaPIY",
+      "title": "ואלס תרנדייה | מיקי קם, אמיר דדון ואבי קושניר | מתוך \"עלובי החיים\" של תיאטרון הבימה, 2017",
+      "uploader": "מיקי קם הערוץ הרשמי - Miki Kam Official Channel",
+      "durationSeconds": 224,
+      "uploadDate": "2017-11-27T04:01:36-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "bargain"
+      ],
+      "performers": [
+        "Miki Kam",
+        "Amir Dadon",
+        "Avi Kushnir"
+      ],
+      "production": "Habima, Les Misérables",
+      "year": 2017,
+      "language": "he",
+      "languageLabel": "עברית",
+      "context": "Thénardier Waltz, corresponding to the Bargain scene. Official performer upload; title identifies Habima 2017 and all three performers.",
+      "mediaKind": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=4f1CpTXaPIY",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=4f1CpTXaPIY"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct publisher YouTube title, description, uploader, and player metadata checked. Actual audiovisual playback not tested.",
+      "languageEvidence": "Publisher identifies the translated song and production. Language identification is based on publisher/production metadata, not an audiovisual listening test."
+    },
+    {
+      "id": "cJha5xHplr0",
+      "title": "מירי מסיקה - חלום חלמתי (מתוך המחזמר ״עלובי החיים״)",
+      "uploader": "MiriMesikaPage",
+      "durationSeconds": 217,
+      "uploadDate": "2023-10-25T08:01:40-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "dreamed-dream"
+      ],
+      "performers": [
+        "Miri Mesika"
+      ],
+      "production": "Habima, Les Misérables",
+      "year": 2016,
+      "language": "he",
+      "languageLabel": "עברית",
+      "context": "Artist-page upload. Description explicitly identifies Miri Mesika performing the song in Habima 2016. Uploaded in 2023; do not label the performance 2023.",
+      "mediaKind": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=cJha5xHplr0",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=cJha5xHplr0"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct publisher YouTube title, description, uploader, and player metadata checked. Actual audiovisual playback not tested.",
+      "languageEvidence": "Publisher identifies the translated song and production. Language identification is based on publisher/production metadata, not an audiovisual listening test."
+    },
+    {
+      "id": "1qwY7eMI5kQ",
+      "title": "עלובי החיים - רק עוד יום",
+      "uploader": "הבימה - התיאטרון הלאומי",
+      "durationSeconds": 171,
+      "uploadDate": "2016-09-08T03:50:06-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "one-day-more"
+      ],
+      "performers": [],
+      "production": "Habima cast promotional performance",
+      "year": null,
+      "language": "he",
+      "languageLabel": "עברית",
+      "context": "Official Habima promotional cast performance before opening in September. Published September 2016. Do not represent as a verified stage-show capture or infer exact recording date.",
+      "mediaKind": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=1qwY7eMI5kQ",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=1qwY7eMI5kQ"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct publisher YouTube title, description, uploader, and player metadata checked. Actual audiovisual playback not tested.",
+      "languageEvidence": "Publisher identifies the translated song and production. Language identification is based on publisher/production metadata, not an audiovisual listening test."
+    },
+    {
+      "id": "xsV2iVtjMOU",
+      "title": "Claude-Michel Schönberg : Les Misérables (Mon Histoire)",
+      "uploader": "France Musique concerts",
+      "durationSeconds": 242,
+      "uploadDate": "2024-11-20T04:11:06-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "on-my-own"
+      ],
+      "performers": [
+        "Océane Demontis",
+        "Charlotte Gauthier (piano)"
+      ],
+      "production": "France Musique, Soirée 42e rue / Théâtre du Châtelet cast",
+      "year": 2024,
+      "language": "fr",
+      "languageLabel": "Français",
+      "context": "Mon Histoire, filmed broadcaster concert performance with piano, recorded November 17 in the context of the 2024 Châtelet production; not a stage-show capture.",
+      "mediaKind": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=xsV2iVtjMOU",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=xsV2iVtjMOU",
+        "https://www.chatelet.com/en/programmation/24-25/les-miserables/"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct publisher YouTube title, description, uploader, and player metadata checked. Actual audiovisual playback not tested.",
+      "languageEvidence": "Publisher identifies the translated song and production. Language identification is based on publisher/production metadata, not an audiovisual listening test."
+    },
+    {
+      "id": "jjRFina1-J8",
+      "title": "Claude-Michel Schönberg : Les Misérables (À la volonté du peuple)",
+      "uploader": "France Musique concerts",
+      "durationSeconds": 131,
+      "uploadDate": "2024-11-20T04:15:49-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "people-sing"
+      ],
+      "performers": [
+        "Benoît Rameau",
+        "Sébastien Duchange",
+        "David Alexis",
+        "Christine Bonnard",
+        "Juliette Artigala",
+        "Jacques Preiss",
+        "Océane Demontis",
+        "Stanley Kassa",
+        "Charlotte Gauthier (piano)"
+      ],
+      "production": "France Musique, Soirée 42e rue / Théâtre du Châtelet cast",
+      "year": 2024,
+      "language": "fr",
+      "languageLabel": "Français",
+      "context": "À la volonté du peuple. All listed performers credited by publisher. Filmed broadcaster concert with piano; recorded November 17 in context of 2024 Châtelet production.",
+      "mediaKind": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=jjRFina1-J8",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=jjRFina1-J8",
+        "https://www.chatelet.com/en/programmation/24-25/les-miserables/"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct publisher YouTube title, description, uploader, and player metadata checked. Actual audiovisual playback not tested.",
+      "languageEvidence": "Publisher identifies the translated song and production. Language identification is based on publisher/production metadata, not an audiovisual listening test."
+    },
+    {
+      "id": "tELsLEQg29I",
+      "title": "Les Misérables \"Mon histoire\" par Rachel Pignot - 42e rue",
+      "uploader": "France Musique concerts",
+      "durationSeconds": 224,
+      "uploadDate": "2015-10-23T07:39:26-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "on-my-own"
+      ],
+      "performers": [
+        "Rachel Pignot"
+      ],
+      "production": "France Musique, 42e rue: La fête à Claude-Michel Schönberg",
+      "year": 2014,
+      "language": "fr",
+      "languageLabel": "Français",
+      "context": "Mon histoire. Publisher explicitly states recording date December 7, 2014. Uploaded October 2015; performance year is 2014.",
+      "mediaKind": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=tELsLEQg29I",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=tELsLEQg29I"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Direct publisher YouTube title, description, uploader, and player metadata checked. Actual audiovisual playback not tested.",
+      "languageEvidence": "Publisher identifies the translated song and production. Language identification is based on publisher/production metadata, not an audiovisual listening test."
     }
   ]
 }

@@ -130,11 +130,13 @@ for(const item of [...(R.videoLibrary?.items||[]),...(R.humor?.items||[])]){if(i
 for(const item of R.coachVideos||[])if(item.embeddable&&!videos.some(v=>v.id===item.id))videos.push({id:item.id,title:item.originalTitle||item.title.en,channel:item.channel});
 for(const item of window.WATCH_PATH_DATA?.clips||[])if(item.delivery==='embed-with-source-link'&&!videos.some(v=>v.id===item.id))videos.push({id:item.id,title:item.title.en,channel:item.uploader});
 const players = new Map();
+const destroyedPlayers = new WeakSet();
+function destroyPlayer(p){if(!p||destroyedPlayers.has(p))return;destroyedPlayers.add(p);try{p.destroy()}catch{}}
 const playerFrames = new Map();
 const initializedFrames = new WeakSet();
 let videoGeneration = 0;
 let youtubeApiPromise = null;
-function clearPlayers(){videoGeneration++;for(const p of players.values()){try{p.destroy()}catch{}}players.clear();playerFrames.clear()}
+function clearPlayers(){videoGeneration++;for(const p of players.values()){destroyPlayer(p)}players.clear();playerFrames.clear()}
 function getYouTubeAPI(){
  if(window.YT?.Player)return Promise.resolve(window.YT);
  if(youtubeApiPromise)return youtubeApiPromise;
@@ -155,15 +157,17 @@ async function loadPlayer(id,instance=id){
  const status=document.getElementById('video-status-'+instance);if(status)status.textContent='';
  try{
   const YT=await getYouTubeAPI();if(generation!==videoGeneration||!f.isConnected)return;
-  new YT.Player(f,{events:{
-   onReady:e=>{if(generation===videoGeneration&&f.isConnected){const previous=players.get(instance);if(previous&&previous!==e.target){try{previous.destroy()}catch{}}players.set(instance,e.target);playerFrames.set(instance,f)}else e.target.destroy()},
+  const pendingPlayer=new YT.Player(f,{events:{
+   onReady:e=>{if(generation===videoGeneration&&f.isConnected){const previous=players.get(instance);if(previous&&previous!==e.target){destroyPlayer(previous)}players.set(instance,e.target);playerFrames.set(instance,f)}else destroyPlayer(e.target)},
    onStateChange:e=>{if(generation!==videoGeneration||!f.isConnected)return;if(e.data===YT.PlayerState.PLAYING){if(!measuredPlay){measuredPlay=A.track('video_play',{video_id:id})}for(const [otherId,p]of players)if(otherId!==instance){try{p.pauseVideo()}catch{}}}},
    onError:()=>{if(generation!==videoGeneration||!f.isConnected)return;if(status)status.textContent=t('הנגן לא הצליח לטעון כאן. נסו את הקישור הישיר ל־YouTube שמופיע מתחתיו.','The player could not load here. Try the direct YouTube link below.')}
   }});
+  // Track the API object before onReady so closing a still-loading alternative tears it down.
+  if(generation===videoGeneration&&f.isConnected){players.set(instance,pendingPlayer);playerFrames.set(instance,f)}else{destroyPlayer(pendingPlayer)}
  }catch{initializedFrames.delete(f);if(generation===videoGeneration&&f.isConnected&&status)status.textContent=t('תיאום הנגנים לא נטען. הפעילו נגן אחד בכל פעם, או פתחו את המקור ב־YouTube.','Player coordination did not load. Play one video at a time, or open the original on YouTube.')}
 }
 
-function mountPlayers(){for(const [key,p]of players)if(!playerFrames.get(key)?.isConnected){try{p.destroy()}catch{}players.delete(key);playerFrames.delete(key)}return Promise.all([...document.querySelectorAll('[data-video-shell]')].map(shell=>loadPlayer(shell.dataset.videoShell,shell.dataset.videoInstance||shell.dataset.videoShell)))}
+function mountPlayers(){for(const [key,p]of players)if(!playerFrames.get(key)?.isConnected){destroyPlayer(p);players.delete(key);playerFrames.delete(key)}return Promise.all([...document.querySelectorAll('[data-video-shell]')].map(shell=>loadPlayer(shell.dataset.videoShell,shell.dataset.videoInstance||shell.dataset.videoShell)))}
 function playerFrame(v,instance=v.id){const origin=window.location.origin||window.SITE_METADATA?.origin||'';return `<iframe id="yt-${esc(instance)}" src="https://www.youtube-nocookie.com/embed/${esc(v.id)}?autoplay=0&amp;controls=1&amp;playsinline=1&amp;enablejsapi=1&amp;origin=${encodeURIComponent(origin)}" title="${esc(v.title+' — '+v.channel)}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`}
 
 function performerCredits(id,compact=false,secondary=false){const c=R.performerCredits?.[id];if(!c)return '';const people=c.performers||[];if(secondary)return secondaryPerformerCredits(c,people);const bio=p=>`<div class="performer-bio"><h4>${esc(t(p.nameHe,p.nameEn))}</h4><div class="performer-role">${profileMentions(t(p.roleHe,p.roleEn),{ids:['valjean','javert','fantine','cosette','marius','eponine','enjolras','gavroche','thenardiers','bishop']})}</div><p>${esc(t(p.bioHe,p.bioEn))}</p>${p.bioUrl?external(p.bioUrl,t(p.bioLinkHe,p.bioLinkEn)):''}</div>`;return `<div class="performer-credits ${compact?'compact':''}"><div class="credit-kicker">${c.creditHeadingHe?esc(t(c.creditHeadingHe,c.creditHeadingEn)):t('על המבצעים','ABOUT THE PERFORMERS')}</div>${c.contextHe?`<p class="credit-context">${esc(t(c.contextHe,c.contextEn))}</p>`:''}${people.slice(0,2).map(bio).join('')}${people.length>2?`<details class="more-credits"><summary>${t('לעוד '+(people.length-2)+' אנשי צוות הסרט','Meet '+(people.length-2)+' more members of the film cast')}</summary>${people.slice(2).map(bio).join('')}</details>`:''}</div>`}
