@@ -428,3 +428,40 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 .show-swipe-hint{margin:.6rem 0;text-align:center}
 @media(max-width:480px){.chapter-slide-nav{gap:.2rem}.slide-hint{flex-basis:100%;order:3;text-align:center}.chapter-slide-nav a,.chapter-slide-nav>span[aria-disabled]{padding-inline:.15rem}}
 .chapter-slide-nav .arrow{display:none}
+
+/* Long-page reading: choose a destination first; open background deliberately. */
+.reader-overview-disclosure{align-self:stretch;width:100%;margin-top:1rem;border-top:1px solid var(--line)}
+.reader-overview-disclosure>summary{cursor:pointer;min-height:48px;padding:14px 0;color:var(--navy);font-size:.9rem;font-weight:700;line-height:1.6}
+.reader-overview-disclosure>summary::marker{color:var(--red)}
+.reader-overview-disclosure .reader-overview{padding-bottom:4px}
+.reader-overview-disclosure .reader-overview-sources{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem}
+.reader-overview-disclosure .reader-overview-sources p{margin:8px 0}
+.reader-overview-disclosure .reader-overview-sources a{display:inline-flex;align-items:center;min-height:44px}
+.musical-index{grid-template-columns:repeat(4,minmax(0,1fr));scroll-margin-top:120px}
+.musical-index a{display:flex;align-items:center;gap:12px;min-width:0;min-height:64px;padding:16px;background:#fff;border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--navy);font-size:.9rem;line-height:1.5;text-decoration:none}
+.musical-index a:hover{background:#f0f5ff}
+.musical-index a span{overflow-wrap:anywhere}
+.musical-index a b{flex-shrink:0}
+.musical-background{padding-top:0;margin-top:20px;border:1px solid #bfccdf;background:#f7f9fd;border-radius:8px;scroll-margin-top:120px}
+.musical-background>summary{display:flex;justify-content:space-between;align-items:center;gap:20px;list-style:none;cursor:pointer;padding:24px}
+.musical-background>summary::-webkit-details-marker{display:none}
+.musical-background>summary h2{font-size:clamp(1.45rem,2.3vw,2rem);line-height:1.3;margin:0 0 8px}
+.background-copy>span{display:block;margin-top:8px;font-family:Arial,LesMisHebrew,sans-serif;font-weight:400;letter-spacing:normal;font-size:1rem;line-height:1.7;max-width:72ch;color:var(--muted)}
+.background-toggle{display:grid;place-items:center;border:1px solid #a8b9d2;border-radius:50%;width:36px;height:36px;flex-shrink:0;font-size:1.5rem;line-height:1;color:var(--navy)}
+.musical-background[open]>summary{border-bottom:1px solid var(--line)}
+.musical-background[open] .background-toggle{transform:rotate(45deg)}
+.musical-background-body{padding:28px 24px;background:#fff;border-radius:0 0 8px 8px}
+.musical-background-body .section-return{margin-top:28px;min-height:44px}
+.musical-background:focus,.musical-index:focus{outline:3px solid var(--red);outline-offset:4px}
+#musical-spotlight,#recording-chooser,#musical-journey,[id^="craft-"]{scroll-margin-top:120px}
+@media(max-width:680px){
+ .musical-index{grid-template-columns:repeat(2,minmax(0,1fr));scroll-margin-top:90px}
+ .musical-index a{padding:12px;min-height:68px;font-size:.88rem;gap:9px}
+ .musical-index a:last-child{grid-column:1/-1}
+ .musical-background{margin-top:14px;scroll-margin-top:90px;padding-top:0}
+ .musical-background>summary{padding:18px 14px;gap:12px;align-items:flex-start}
+ .musical-background-body{padding:22px 14px}
+ .background-copy>span{font-size:.95rem}
+ .background-toggle{width:30px;height:30px;font-size:1.3rem}
+ #musical-spotlight,#recording-chooser,#musical-journey,[id^="craft-"]{scroll-margin-top:90px}
+}

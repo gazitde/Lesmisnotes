@@ -60,7 +60,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
    await page.goto(base+'/'+lang+'/'+route+'/');
    for(const action of ['novel-open','after-open','show-open','director-open']){const e=page.locator(`[data-action="${action}"]`);if(await e.count())await e.first().click();}
    await page.evaluate(()=>document.fonts.ready);
-   if(route==='musical')await page.locator('.composition-notebook > summary').click();
+   if(route==='musical'){await page.locator('#musical-genesis > summary').click();await page.locator('.composition-notebook > summary').click();}
    if(route==='israel'){for(const d of await page.locator('.israel-cast > summary').all())await d.click();check(await page.locator('.reading-cast dt:visible').count()===15,`All selective Israeli cast credits visible ${lang} ${width}`);}
    if(route==='story')check(await page.locator('.story-foot .btn.secondary').evaluate(el=>{
      const linear=c=>{c/=255;return c<=.04045?c/12.92:((c+.055)/1.055)**2.4};
