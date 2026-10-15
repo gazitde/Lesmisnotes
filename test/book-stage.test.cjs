@@ -11,3 +11,5 @@ for(const s of data.scenes){assert.ok(songs.has(s.songId),s.songId);for(const r 
 for(const chapter of chapters)for(const lang of ['en','he'])for(const spoiler of [false,true]){const html=api.renderChapter({chapterId:chapter.id,lang,spoiler,sceneHref:id=>'/'+lang+'/musical/?focus=song%3A'+id+'&view=journey',sceneTitle:id=>'SCENE-TITLE-'+id});assert.ok(html.includes('data-chapter-stage="'+chapter.id+'"'));assert.ok(!/<details[^>]*\bopen(?:\s|>)/.test(html));if(!spoiler)assert.ok(!html.includes('SCENE-TITLE-'),'Gate hides titles');else for(const s of data.scenes.filter(s=>s.relations.some(r=>r.chapterIds.includes(chapter.id))))assert.ok(html.includes('song%3A'+s.songId),'Every relation is reciprocal');}
 assert.equal(api.renderScene({songId:'not-a-song'}),'');assert.ok(api.reference('p5-b9-c6','en').includes('Part V · Book 9 · Chapter 6'));
 console.log('PASS: 365 chapter statuses, 38 scenes, '+edges+' reciprocal chapter references; EN/HE, spoiler gate, collapsed/no-media rendering.');
+
+assert.ok(fs.readFileSync('dist/search.js','utf8').includes('.watch-alternatives,.book-stage'), 'Search landing preserves collapsed reference panels');
