@@ -26,6 +26,7 @@ npm run test:browser
 
 - Complete bilingual content, Hebrew RTL, five guided journeys and optional spoilers
 - Collapsed alternative performances beside supported musical scenes, with original-source credits and players loaded only on request
+- Reciprocal novel-chapter and musical-scene references, with exact Part / Book / Chapter locations, adaptation distinctions and spoiler-protected stage connections
 - Novel and musical guides, characters, history, interpretation and two quiz tracks
 - Character map/list views, role-by-role screen comparisons, and an explicit chapter-read tracker with consent-controlled device saving
 - Substantive spoiler-safe story and character HTML, semantic introductory relationships and a sourced explanation of 24601, readable without JavaScript
