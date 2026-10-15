@@ -6,7 +6,7 @@ for(const lang of ['he','en'])for(const width of [1365,390,320]){
  await p.goto(base+'/'+lang+'/musical/?focus=song%3Aone-day-more&view=journey');
  check(await p.locator('[data-watch-alternatives]').count()===0,'Spoiler gate hides alternatives');
  await p.locator('[data-action="show-open"]').click();
- const panel=p.locator('[data-watch-alternatives]'),summary=panel.locator('summary');
+ const panel=p.locator('[data-watch-alternatives]'),summary=panel.locator(':scope > summary');
  check(!(await panel.evaluate(e=>e.open)),'Initially collapsed');check(await panel.locator('iframe').count()===0,'No lazy frames before expansion');
  const primary=await p.locator('.watch-path-clips iframe').elementHandle();
  await summary.focus();await p.keyboard.press('Enter');check(await panel.evaluate(e=>e.open),'Keyboard expands');check(await panel.locator('iframe').count()===0,'Expansion alone does not load media');
@@ -16,8 +16,8 @@ for(const lang of ['he','en'])for(const width of [1365,390,320]){
  const first=await panel.locator('iframe').elementHandle();await buttons.nth(1).click();check(await first.evaluate(e=>!e.isConnected),'Switch tears down previous alternative');check(await panel.locator('iframe').count()===1,'Only one secondary player');
  check(await primary.evaluate(e=>e.isConnected),'Primary stays connected');
  check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'No horizontal overflow');
- await panel.scrollIntoViewIfNeeded();await p.screenshot({path:out+'/'+lang+'-'+width+'-open.png'});
- await summary.click();await p.waitForTimeout(100);console.log('Disclosure close diagnostic',await panel.evaluate(e=>({open:e.open,frames:e.querySelectorAll('iframe').length,connected:e.isConnected,summary:e.querySelector('summary').outerHTML})),errors);await p.waitForFunction(()=>!document.querySelector('[data-watch-alternatives] iframe'));check(await panel.locator('iframe').count()===0,'Closing disclosure stops and removes player');
+ await summary.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await p.screenshot({path:out+'/'+lang+'-'+width+'-open.png'});
+ await summary.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await summary.click();check(!(await panel.evaluate(e=>e.open)),'Pointer closes disclosure: '+errors.join(';'));await p.waitForFunction(()=>!document.querySelector('[data-watch-alternatives] iframe'));check(await panel.locator('iframe').count()===0,'Closing disclosure stops and removes player');
  await summary.click();check(await panel.locator('iframe').count()===0,'Reopening does not start a player');await buttons.first().click();await buttons.first().click();check(await panel.locator('iframe').count()===0,'Repeated click closes player');
  await buttons.first().click();await p.locator('.show-station-nav [data-show-move="next"]').click();check(await p.locator('[data-watch-alternatives] iframe').count()===0,'Next tears down alternatives');
  await p.locator('.show-station-nav [data-show-move="prev"]').click();check(!(await p.locator('[data-watch-alternatives]').evaluate(e=>e.open)),'Returning starts collapsed');
