@@ -14,6 +14,7 @@ try{
   for(let i=0;i<40;i++){try{const r=await fetch(base+'/en/home/');if(r.ok){ready=true;break;}}catch{}await new Promise(r=>setTimeout(r,100));}
   if(!ready)throw new Error('Local browser-test server did not start');
   await run(['scripts/browser-book-stage.cjs']);
+  await run(['scripts/browser-slide-navigation.cjs']);
   // Repeat interaction regression early to expose scroll/lifecycle flakes before the long suite.
   for(let pass=0;pass<(process.argv.includes('--compact-only')?3:1);pass++)await run(['scripts/browser-watch-alternatives.cjs']);
   await run(['scripts/browser-editorial-entry.cjs']);

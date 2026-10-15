@@ -25,6 +25,7 @@ npm run test:browser
 ## What is included
 
 - Complete bilingual content, Hebrew RTL, five guided journeys and optional spoilers
+- RTL-aware sideways swipes between musical scenes and all 365 novel chapters, with visible previous/next controls, browser history, native vertical scrolling and reduced-motion support
 - Collapsed alternative performances beside supported musical scenes, with original-source credits and players loaded only on request
 - Reciprocal novel-chapter and musical-scene references, with exact Part / Book / Chapter locations, adaptation distinctions and spoiler-protected stage connections
 - Novel and musical guides, characters, history, interpretation and two quiz tracks
