@@ -17,7 +17,7 @@ for(const lang of ['he','en'])for(const width of [1365,390,320]){
  check(await primary.evaluate(e=>e.isConnected),'Primary stays connected');
  check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'No horizontal overflow');
  await panel.scrollIntoViewIfNeeded();await p.screenshot({path:out+'/'+lang+'-'+width+'-open.png'});
- await summary.click();await p.waitForFunction(()=>!document.querySelector('[data-watch-alternatives] iframe'));check(await panel.locator('iframe').count()===0,'Closing disclosure stops and removes player');
+ await summary.click();await p.waitForTimeout(100);console.log('Disclosure close diagnostic',await panel.evaluate(e=>({open:e.open,frames:e.querySelectorAll('iframe').length,connected:e.isConnected,summary:e.querySelector('summary').outerHTML})),errors);await p.waitForFunction(()=>!document.querySelector('[data-watch-alternatives] iframe'));check(await panel.locator('iframe').count()===0,'Closing disclosure stops and removes player');
  await summary.click();check(await panel.locator('iframe').count()===0,'Reopening does not start a player');await buttons.first().click();await buttons.first().click();check(await panel.locator('iframe').count()===0,'Repeated click closes player');
  await buttons.first().click();await p.locator('.show-station-nav [data-show-move="next"]').click();check(await p.locator('[data-watch-alternatives] iframe').count()===0,'Next tears down alternatives');
  await p.locator('.show-station-nav [data-show-move="prev"]').click();check(!(await p.locator('[data-watch-alternatives]').evaluate(e=>e.open)),'Returning starts collapsed');
