@@ -685,6 +685,23 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){pendingBookmark=nul
 app.addEventListener('input',e=>{if(e.target.matches('[data-source-search]')){sourceLimit=sourcePageSize;sourceSearch=e.target.value;document.getElementById('source-results').innerHTML=sourceResults()}});
 app.addEventListener('cancel',()=>{pendingBookmark=null},true);
 app.addEventListener('toggle',e=>{if(e.target.open){const chapter=e.target.closest('.story-chapter');if(chapter)A.track('content_open',{content_type:'story_chapter',content_id:chapter.id.replace('story-','')})}},true);
+// Alternative players are created only after an explicit choice, never in hidden disclosures.
+app.addEventListener('click',e=>{
+ const button=e.target.closest?.('[data-watch-alternative]');if(!button)return;
+ const details=button.closest('[data-watch-alternatives]');if(!details?.open||!spoiler)return;
+ const selection=window.WatchPath.getSelection({songId:currentShowStop()?.id,lang,mode:watchMode});
+ const clip=selection?.alternatives.find(x=>x.id===button.dataset.watchAlternative),v=videos.find(x=>x.id===clip?.id);if(!v)return;
+ const opening=button.getAttribute('aria-expanded')!=='true';
+ details.querySelectorAll('.watch-alternative-player').forEach(host=>{host.replaceChildren();host.hidden=true});
+ details.querySelectorAll('[data-watch-alternative]').forEach(b=>{b.setAttribute('aria-expanded','false');b.textContent=t('צפייה כאן','Watch here')});
+ if(opening){const host=document.getElementById(button.getAttribute('aria-controls'));host.hidden=false;host.innerHTML=video(v,'alternative-'+selection.songId+'-'+clip.id);button.setAttribute('aria-expanded','true');button.textContent=t('סגירת הנגן','Close player')}
+ mountPlayers();
+});
+app.addEventListener('toggle',e=>{
+ if(!e.target.matches?.('[data-watch-alternatives]')||e.target.open)return;
+ e.target.querySelectorAll('.watch-alternative-player').forEach(host=>{host.replaceChildren();host.hidden=true});
+ e.target.querySelectorAll('[data-watch-alternative]').forEach(b=>{b.setAttribute('aria-expanded','false');b.textContent=t('צפייה כאן','Watch here')});mountPlayers();
+},true);
 app.addEventListener('click',handleClick);app.addEventListener('change',handleChange);
 window.addEventListener('hashchange',()=>{if(!/^#\/(he|en)\//.test(location.hash||''))return;focusAfterRender=true;render();window.scrollTo({top:0,behavior:'instant'})});
 app.addEventListener('toggle',e=>{const id=e.target?.dataset?.hugoStory;if(id){if(e.target.open)hugoStoryOpen.add(id);else hugoStoryOpen.delete(id)}},true);

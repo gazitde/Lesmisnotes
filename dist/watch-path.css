@@ -58,3 +58,22 @@
 @media(max-width:560px){.show-station-nav{gap:9px;padding:8px}.show-station-nav button{font-size:.83rem;padding:8px;overflow-wrap:anywhere}.show-navigator.show-selector{padding:14px 16px}.watch-path-external-frame{padding:16px;gap:10px}.watch-path-external-frame .watch-path-source-link{padding:10px 13px;font-size:.95rem}.show-slide--watch .show-slide-copy{padding:22px 18px}#show-current-title{scroll-margin-top:110px}}
 
 #show-slide{scroll-margin-top:90px}.watch-path-clips + .watch-path-shared,.watch-path-clips + .watch-path-note{margin-top:14px}
+
+/* Secondary performances stay compact and create no player until requested. */
+.watch-alternatives{margin-top:24px;border:1px solid var(--line,#d7e0f0);background:#f6f8fd}
+.watch-alternatives>summary{min-height:48px;box-sizing:border-box;padding:14px 18px;font-weight:700;color:var(--navy,#00265e);cursor:pointer;line-height:1.5}
+.watch-alternatives>summary:focus-visible,.watch-alternative button:focus-visible{outline:3px solid var(--red,#d91e36);outline-offset:3px}
+.watch-alternatives-count{font-size:.85em;font-weight:400;white-space:nowrap}
+.watch-alternatives-body{padding:0 18px 18px}
+.watch-alternatives-intro,.watch-alternative p{font-size:.94rem;line-height:1.7;margin:0 0 12px;max-width:76ch;color:var(--muted,#4d5c76)}
+.watch-alternative{padding-block:18px;border-top:1px solid var(--line,#d7e0f0);min-width:0;overflow-wrap:anywhere}
+.watch-alternative:last-child{padding-bottom:0}
+.watch-alternative h4{font-size:1.05rem;line-height:1.5;letter-spacing:0;margin:0 0 8px;color:var(--navy,#00265e)}
+.watch-alternative-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-block:10px}
+.watch-alternative-actions button{min-height:44px;padding:10px 16px;background:var(--navy,#00265e);color:#fff;font-size:.9rem;line-height:1.5;font-weight:700}
+.watch-alternative-actions .watch-path-source-link{margin:0}
+.watch-alternative-player:not([hidden]){margin-top:16px;max-width:800px}
+.watch-alternative-player .video-wrap{margin:0}
+.watch-alternative-player .video-shell{aspect-ratio:16/9;min-height:0;padding:0}
+.watch-alternative-player[hidden]{display:none}
+@media(max-width:560px){.watch-alternatives>summary{padding:13px}.watch-alternatives-body{padding:0 13px 13px}.watch-alternative-actions{gap:8px 14px}}

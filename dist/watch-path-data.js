@@ -954,6 +954,266 @@ window.WATCH_PATH_DATA = {
       "language": "en",
       "delivery": "embed-with-source-link",
       "durationSeconds": 196
+    },
+    {
+      "id": "m_E_PI56xpc",
+      "title": {
+        "en": "I Dreamed a Dream",
+        "he": "חלמתי חלום"
+      },
+      "url": "https://www.youtube.com/watch?v=m_E_PI56xpc",
+      "productionId": "staged-concert-2019",
+      "production": {
+        "en": "The Staged Concert · London · 2019",
+        "he": "הקונצרט המבוים · לונדון · 2019"
+      },
+      "sourceContext": {
+        "en": "Carrie Hope Fletcher. An excerpt from the 2019 concert.",
+        "he": "קארי הופ פלטשר. קטע מתוך הקונצרט מ־2019."
+      },
+      "uploader": "TUNE - Musical Moments",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 268
+    },
+    {
+      "id": "ulJXiB5i_q0",
+      "title": {
+        "en": "I Dreamed a Dream",
+        "he": "חלמתי חלום"
+      },
+      "url": "https://www.youtube.com/watch?v=ulJXiB5i_q0",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "Anne Hathaway. A scene from Tom Hooper’s 2012 film.",
+        "he": "אן האת׳וויי. קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "Movieclips",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 284
+    },
+    {
+      "id": "nXhofhspBd4",
+      "title": {
+        "en": "Cart Crash · Who Am I?",
+        "he": "תאונת העגלה · מי אני?"
+      },
+      "url": "https://www.youtube.com/watch?v=nXhofhspBd4",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "Hugh Jackman. A scene from Tom Hooper’s 2012 film.",
+        "he": "יו ג׳קמן. קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "Screen Bites",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 173,
+      "alternativeNote": {
+        "en": "This excerpt covers the song, not every connecting passage in this stop.",
+        "he": "הקטע מציג את השיר, ולא את כל קטעי המעבר שבתחנה."
+      }
+    },
+    {
+      "id": "1q82twrdr0U",
+      "title": {
+        "en": "The People’s Song · Do You Hear the People Sing?",
+        "he": "שיר העם · האם אתם שומעים את העם שר?"
+      },
+      "url": "https://www.youtube.com/watch?v=1q82twrdr0U",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "A scene from Tom Hooper’s 2012 film.",
+        "he": "קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "Universal Pictures",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 142
+    },
+    {
+      "id": "0qBKbINXhG8",
+      "title": {
+        "en": "In My Life / A Heart Full of Love",
+        "he": "בחיי / לב מלא אהבה"
+      },
+      "url": "https://www.youtube.com/watch?v=0qBKbINXhG8",
+      "productionId": "anniversary-2010",
+      "production": {
+        "en": "25th-anniversary concert · London · 2010",
+        "he": "קונצרט 25 השנה · לונדון · 2010"
+      },
+      "sourceContext": {
+        "en": "Nick Jonas · Samantha Barks · Katie Hall. An excerpt from the 2010 concert.",
+        "he": "ניק ג׳ונאס · סמנתה בארקס · קייטי הול. קטע מתוך הקונצרט מ־2010."
+      },
+      "uploader": "TUNE - Musical Moments",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 232,
+      "alternativeNote": {
+        "en": "One shared clip includes both songs; no scene start time is supplied.",
+        "he": "קטע משותף לשני השירים; לא צוין זמן התחלה נפרד לכל סצנה."
+      }
+    },
+    {
+      "id": "37BZsKcz6M8",
+      "title": {
+        "en": "Bring Him Home",
+        "he": "השב אותו הביתה"
+      },
+      "url": "https://www.youtube.com/watch?v=37BZsKcz6M8",
+      "productionId": "anniversary-2010",
+      "production": {
+        "en": "25th-anniversary concert · London · 2010",
+        "he": "קונצרט 25 השנה · לונדון · 2010"
+      },
+      "sourceContext": {
+        "en": "Alfie Boe. An excerpt from the 2010 concert.",
+        "he": "אלפי בו. קטע מתוך הקונצרט מ־2010."
+      },
+      "uploader": "TUNE - Musical Moments",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 226
+    },
+    {
+      "id": "IsZdfna1LKA",
+      "title": {
+        "en": "Javert’s Soliloquy / Javert’s Suicide",
+        "he": "המונולוג של ז׳אבר והתאבדותו"
+      },
+      "url": "https://www.youtube.com/watch?v=IsZdfna1LKA",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "Russell Crowe. A scene from Tom Hooper’s 2012 film.",
+        "he": "ראסל קרואו. קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "Movieclips",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 186
+    },
+    {
+      "id": "Dp8sYTlLQRY",
+      "title": {
+        "en": "Little Cosette · Castle on a Cloud",
+        "he": "קוזט הקטנה · טירה על ענן"
+      },
+      "url": "https://www.youtube.com/watch?v=Dp8sYTlLQRY",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "A scene from Tom Hooper’s 2012 film.",
+        "he": "קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "Screen Bites",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 155
+    },
+    {
+      "id": "je40MqKMD8U",
+      "title": {
+        "en": "The Innkeeper’s Song · Master of the House",
+        "he": "שיר הפונדקאי · אדון הבית"
+      },
+      "url": "https://www.youtube.com/watch?v=je40MqKMD8U",
+      "productionId": "anniversary-2010",
+      "production": {
+        "en": "25th-anniversary concert · London · 2010",
+        "he": "קונצרט 25 השנה · לונדון · 2010"
+      },
+      "sourceContext": {
+        "en": "Matt Lucas. An excerpt from the 2010 concert.",
+        "he": "מאט לוקאס. קטע מתוך הקונצרט מ־2010."
+      },
+      "uploader": "TUNE - Musical Moments",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 327
+    },
+    {
+      "id": "SfZ2fVizB-c",
+      "title": {
+        "en": "The ABC Café · Red and Black",
+        "he": "קפה ABC · אדום ושחור"
+      },
+      "url": "https://www.youtube.com/watch?v=SfZ2fVizB-c",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "A scene from Tom Hooper’s 2012 film.",
+        "he": "קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "Screen Bites",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 267
+    },
+    {
+      "id": "mp6Lhn_PbmQ",
+      "title": {
+        "en": "At the End of the Day",
+        "he": "בסוף היום"
+      },
+      "url": "https://www.youtube.com/watch?v=mp6Lhn_PbmQ",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "Anne Hathaway. A scene from Tom Hooper’s 2012 film.",
+        "he": "אן האת׳וויי. קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "TUNE - Musical Moments",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 313
+    },
+    {
+      "id": "deUgUoJ4z5I",
+      "title": {
+        "en": "On My Own",
+        "he": "לבדי"
+      },
+      "url": "https://www.youtube.com/watch?v=deUgUoJ4z5I",
+      "productionId": "film-2012",
+      "production": {
+        "en": "Les Misérables · film · 2012",
+        "he": "עלובי החיים · הסרט · 2012"
+      },
+      "sourceContext": {
+        "en": "Samantha Barks. A scene from Tom Hooper’s 2012 film.",
+        "he": "סמנתה בארקס. קטע מסרטו של טום הופר מ־2012."
+      },
+      "uploader": "Movieclips",
+      "language": "en",
+      "delivery": "embed-with-source-link",
+      "durationSeconds": 200
     }
   ],
   "stops": [
@@ -1047,6 +1307,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "MfVlDf6iFss"
+      ],
+      "alternatives": [
+        "mp6Lhn_PbmQ"
       ]
     },
     {
@@ -1067,6 +1330,10 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "XaX-zeAgAuo"
+      ],
+      "alternatives": [
+        "m_E_PI56xpc",
+        "ulJXiB5i_q0"
       ]
     },
     {
@@ -1111,7 +1378,10 @@ window.WATCH_PATH_DATA = {
       "relatedClipNote": {
         "en": "The related upload is titled The Runaway Cart; this link does not isolate Who Am I?",
         "he": "כותרת הסרטון הקשור היא The Runaway Cart; הקישור אינו מוביל בנפרד לשיר Who Am I?."
-      }
+      },
+      "alternatives": [
+        "nXhofhspBd4"
+      ]
     },
     {
       "songId": "come-to-me",
@@ -1171,6 +1441,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "IXl69B2GklA"
+      ],
+      "alternatives": [
+        "Dp8sYTlLQRY"
       ]
     },
     {
@@ -1191,6 +1464,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "KwyHAvqVXiE"
+      ],
+      "alternatives": [
+        "je40MqKMD8U"
       ]
     },
     {
@@ -1279,6 +1555,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "I1GgqENKMJs"
+      ],
+      "alternatives": [
+        "SfZ2fVizB-c"
       ]
     },
     {
@@ -1299,6 +1578,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "YL8gH0yELbk"
+      ],
+      "alternatives": [
+        "1q82twrdr0U"
       ]
     },
     {
@@ -1319,6 +1601,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "rImdoXZt8QA"
+      ],
+      "alternatives": [
+        "0qBKbINXhG8"
       ]
     },
     {
@@ -1339,6 +1624,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "2F1wuh_hG-c"
+      ],
+      "alternatives": [
+        "0qBKbINXhG8"
       ]
     },
     {
@@ -1379,6 +1667,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "dbkUZB_N46g"
+      ],
+      "alternatives": [
+        "wNNBrg4u9d0"
       ]
     },
     {
@@ -1419,6 +1710,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "M0O2MSn1jM4"
+      ],
+      "alternatives": [
+        "deUgUoJ4z5I"
       ]
     },
     {
@@ -1523,6 +1817,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "am6wMw_0NZQ"
+      ],
+      "alternatives": [
+        "37BZsKcz6M8"
       ]
     },
     {
@@ -1611,6 +1908,9 @@ window.WATCH_PATH_DATA = {
       },
       "sameProduction": [
         "y_VkpOqCmrM"
+      ],
+      "alternatives": [
+        "IsZdfna1LKA"
       ]
     },
     {

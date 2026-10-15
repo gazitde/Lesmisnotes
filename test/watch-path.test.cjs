@@ -20,9 +20,10 @@ const callback = (id, instance) => {
 };
 assert.equal(data.stops.length, 38);
 assert.equal(new Set(data.stops.map(s => s.songId)).size, 38);
-assert.equal(data.clips.length, 45);
+assert.ok(data.clips.length >= 45);
+assert.equal(new Set(data.clips.map(c=>c.id)).size, data.clips.length);
 assert.equal(data.clips.filter(c => c.productionId === 'tka-loveland-2017').length, 36);
-assert.equal(data.clips.filter(c => c.delivery === 'embed-with-source-link').length, 45);
+assert.equal(data.clips.filter(c => c.delivery === 'embed-with-source-link').length, data.clips.length);
 assert.deepEqual(data.clips.filter(c => c.language === 'he').map(c => c.id).sort(), ['HKRzlaQcfUI', 'Mea49KwLiMg', 'u_eCLahh91s'].sort());
 assert.ok(data.clips.filter(c => c.productionId === 'tka-loveland-2017').every(c => c.language === 'en'));
 assert.equal(api.getSelection({ songId: 'stars', lang: 'xx', mode: 'xx' }).lang, 'en');

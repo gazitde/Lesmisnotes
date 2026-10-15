@@ -1,0 +1,344 @@
+{
+  "checkedOn": "2026-10-15",
+  "scope": "Publisher metadata and embed eligibility; actual playback not established.",
+  "records": [
+    {
+      "id": "m_E_PI56xpc",
+      "title": "'I Dreamed a Dream' Carrie Hope Fletcher | Les Miserables: The Staged Concert (2019) | TUNE",
+      "uploader": "TUNE - Musical Moments",
+      "uploadDate": "2023-05-26T09:30:08-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "dreamed-dream"
+      ],
+      "performers": [
+        "Carrie Hope Fletcher"
+      ],
+      "production": "Les Misérables: The Staged Concert",
+      "year": 2019,
+      "mediaKind": "video",
+      "durationSeconds": 268,
+      "sourceUrl": "https://www.youtube.com/watch?v=m_E_PI56xpc",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=m_E_PI56xpc"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Filmed concert excerpt; coverage inferred from publisher title/description, not watched."
+    },
+    {
+      "id": "ulJXiB5i_q0",
+      "title": "Les Misérables (2012) - I Dreamed A Dream Scene (1/10) | Movieclips",
+      "uploader": "Movieclips",
+      "uploadDate": "2019-12-16T10:01:18-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "dreamed-dream"
+      ],
+      "performers": [
+        "Anne Hathaway"
+      ],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "mediaKind": "video",
+      "durationSeconds": 284,
+      "sourceUrl": "https://www.youtube.com/watch?v=ulJXiB5i_q0",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=ulJXiB5i_q0"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Film excerpt; scene coverage inferred from publisher title/description, not watched."
+    },
+    {
+      "id": "nXhofhspBd4",
+      "title": "Who Am I?' Hugh Jackman | Les Misérables | Screen Bites",
+      "uploader": "Screen Bites",
+      "uploadDate": "2020-06-04T02:00:15-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "who-am-i"
+      ],
+      "performers": [
+        "Hugh Jackman"
+      ],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "mediaKind": "video",
+      "durationSeconds": 173,
+      "sourceUrl": "https://www.youtube.com/watch?v=nXhofhspBd4",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=nXhofhspBd4"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Film excerpt; scene coverage inferred from publisher title/description, not watched."
+    },
+    {
+      "id": "1q82twrdr0U",
+      "title": "Les Misérables | Do You Hear the People Sing?",
+      "uploader": "Universal Pictures",
+      "uploadDate": "2019-12-27T09:00:00-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "people-sing"
+      ],
+      "performers": [],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "mediaKind": "video",
+      "durationSeconds": 142,
+      "sourceUrl": "https://www.youtube.com/watch?v=1q82twrdr0U",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=1q82twrdr0U"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Film excerpt; scene coverage inferred from publisher title/description, not watched.",
+      "creditNote": "Individual scene performer omitted because upload description did not independently establish the relevant individual credit."
+    },
+    {
+      "id": "0qBKbINXhG8",
+      "title": "In My Life / A Heart Full of Love | Les Misérables in Concert: The 25th Anniversary | TUNE",
+      "uploader": "TUNE - Musical Moments",
+      "uploadDate": "2023-01-12T10:00:00-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "in-my-life",
+        "heart-love"
+      ],
+      "performers": [
+        "Nick Jonas",
+        "Samantha Barks",
+        "Katie Hall"
+      ],
+      "production": "Les Misérables in Concert: The 25th Anniversary",
+      "year": 2010,
+      "mediaKind": "video",
+      "durationSeconds": 232,
+      "sourceUrl": "https://www.youtube.com/watch?v=0qBKbINXhG8",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=0qBKbINXhG8"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "One 232-second clip labeled In My Life / A Heart Full of Love, shared by two stops. Do not imply two independent performances or fabricate a start timestamp."
+    },
+    {
+      "id": "wNNBrg4u9d0",
+      "title": "One Day More | Les Misérables in Concert: The 25th Anniversary | TUNE",
+      "uploader": "TUNE - Musical Moments",
+      "uploadDate": "2023-01-13T10:00:32-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "one-day-more"
+      ],
+      "performers": [
+        "25th Anniversary Concert company"
+      ],
+      "production": "Les Misérables in Concert: The 25th Anniversary",
+      "year": 2010,
+      "mediaKind": "video",
+      "durationSeconds": 230,
+      "sourceUrl": "https://www.youtube.com/watch?v=wNNBrg4u9d0",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=wNNBrg4u9d0"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Filmed concert excerpt; coverage inferred from publisher title/description, not watched."
+    },
+    {
+      "id": "37BZsKcz6M8",
+      "title": "Bring Him Home (Alfie Boe) | Les Misérables in Concert: The 25th Anniversary | TUNE",
+      "uploader": "TUNE - Musical Moments",
+      "uploadDate": "2023-01-18T10:00:02-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "bring-him-home"
+      ],
+      "performers": [
+        "Alfie Boe"
+      ],
+      "production": "Les Misérables in Concert: The 25th Anniversary",
+      "year": 2010,
+      "mediaKind": "video",
+      "durationSeconds": 226,
+      "sourceUrl": "https://www.youtube.com/watch?v=37BZsKcz6M8",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=37BZsKcz6M8"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Filmed concert excerpt; coverage inferred from publisher title/description, not watched."
+    },
+    {
+      "id": "IsZdfna1LKA",
+      "title": "Les Misérables (2012) - Javert's Suicide Scene (8/10) | Movieclips",
+      "uploader": "Movieclips",
+      "uploadDate": "2019-12-16T10:10:00-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "javert-soliloquy"
+      ],
+      "performers": [
+        "Russell Crowe"
+      ],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "mediaKind": "video",
+      "durationSeconds": 186,
+      "sourceUrl": "https://www.youtube.com/watch?v=IsZdfna1LKA",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=IsZdfna1LKA"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Film excerpt; scene coverage inferred from publisher title/description, not watched."
+    },
+    {
+      "id": "Dp8sYTlLQRY",
+      "title": "There Is A Castle On A Cloud | Les Misérables | Screen Bites",
+      "uploader": "Screen Bites",
+      "uploadDate": "2013-12-18T02:49:05-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "castle-cloud"
+      ],
+      "performers": [],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "mediaKind": "video",
+      "durationSeconds": 155,
+      "sourceUrl": "https://www.youtube.com/watch?v=Dp8sYTlLQRY",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=Dp8sYTlLQRY"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Film excerpt; scene coverage inferred from publisher title/description, not watched.",
+      "creditNote": "Individual scene performer omitted because upload description did not independently establish the relevant individual credit."
+    },
+    {
+      "id": "je40MqKMD8U",
+      "title": "Master Of The House  (Matt Lucas) | Les Misérables in Concert: The 25th Anniversary | TUNE",
+      "uploader": "TUNE - Musical Moments",
+      "uploadDate": "2023-01-11T10:00:15-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "master-house"
+      ],
+      "performers": [
+        "Matt Lucas"
+      ],
+      "production": "Les Misérables in Concert: The 25th Anniversary",
+      "year": 2010,
+      "mediaKind": "video",
+      "durationSeconds": 327,
+      "sourceUrl": "https://www.youtube.com/watch?v=je40MqKMD8U",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=je40MqKMD8U"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Filmed concert excerpt; coverage inferred from publisher title/description, not watched."
+    },
+    {
+      "id": "SfZ2fVizB-c",
+      "title": "Red and Black Song | The Conflict Between Love and Revolution | Les Miserables | Screen Bites",
+      "uploader": "Screen Bites",
+      "uploadDate": "2020-06-18T08:00:07-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "red-black"
+      ],
+      "performers": [],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "mediaKind": "video",
+      "durationSeconds": 267,
+      "sourceUrl": "https://www.youtube.com/watch?v=SfZ2fVizB-c",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=SfZ2fVizB-c"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Film excerpt; scene coverage inferred from publisher title/description, not watched.",
+      "creditNote": "Individual scene performer omitted because upload description did not independently establish the relevant individual credit."
+    },
+    {
+      "id": "mp6Lhn_PbmQ",
+      "title": "At the End of the Day (Anne Hathaway) | Les Misérables (2012) | TUNE",
+      "uploader": "TUNE - Musical Moments",
+      "uploadDate": "2022-03-21T11:00:13-07:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "end-of-day"
+      ],
+      "performers": [
+        "Anne Hathaway"
+      ],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "mediaKind": "video",
+      "durationSeconds": 313,
+      "sourceUrl": "https://www.youtube.com/watch?v=mp6Lhn_PbmQ",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=mp6Lhn_PbmQ"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Film excerpt; scene coverage inferred from publisher title/description, not watched."
+    },
+    {
+      "id": "deUgUoJ4z5I",
+      "title": "Les Misérables (2012) - On My Own Scene (5/10) | Movieclips",
+      "uploader": "Movieclips",
+      "uploadDate": "2019-12-16T10:03:55-08:00",
+      "metadataPlayability": "OK",
+      "metadataEmbed": true,
+      "actualPlaybackTested": false,
+      "songIds": [
+        "on-my-own"
+      ],
+      "performers": [
+        "Samantha Barks"
+      ],
+      "production": "Les Misérables film",
+      "year": 2012,
+      "mediaKind": "video",
+      "durationSeconds": 200,
+      "sourceUrl": "https://www.youtube.com/watch?v=deUgUoJ4z5I",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=deUgUoJ4z5I"
+      ],
+      "verifiedOn": "2026-10-15",
+      "verification": "Title, uploader and descriptive credits read directly from YouTube watch-page player metadata. No playback or audiovisual coverage test performed.",
+      "context": "Film excerpt; scene coverage inferred from publisher title/description, not watched."
+    }
+  ]
+}

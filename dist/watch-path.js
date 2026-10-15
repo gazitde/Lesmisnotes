@@ -30,6 +30,7 @@
       songId: stop.songId, lang, mode, title: translate(stop.title, lang), order: stop.order, act: stop.act,
       kind: selected.every(clip => clip.productionId === 'tka-loveland-2017') ? 'same-production' : 'curated',
       clips: selected,
+      alternatives: [...new Set([...(stop.alternatives || []), ...stop.ourPicks[lang], ...stop.ourPicks[lang === "he" ? "en" : "he"], ...stop.sameProduction])].filter(id => !ids.includes(id)).map(id => { if (!clips.has(id)) throw new Error("Alternative source missing: " + id); return clips.get(id); }),
       sharedWithPrevious,
       relatedLargerClip: Boolean(stop.relatedClipNote),
       note: translate(stop.relatedClipNote, lang),
@@ -55,6 +56,12 @@
     return Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2, '0');
   }
 
+  function renderAlternatives(selection) {
+    const {lang, songId, alternatives} = selection;
+    if (!alternatives.length) return '';
+    return `<details class="watch-alternatives" data-watch-alternatives><summary>${text(lang, 'Watch more performances', 'צפה בביצועים נוספים')} <span class="watch-alternatives-count">(${alternatives.length})</span></summary><div class="watch-alternatives-body"><p class="watch-alternatives-intro">${text(lang, 'Compare another cast or interpretation. Choose a performance to load its player; the main recording stays above.', 'השוו צוות אחר או פרשנות אחרת. בחרו ביצוע כדי לטעון את הנגן שלו; ההקלטה הראשית נשארת למעלה.')}</p><div class="watch-alternatives-list">${alternatives.map(clip => `<article class="watch-alternative" data-watch-alternative-card="${escape(clip.id)}"><div class="watch-path-meta"><span>${clip.language === 'he' ? text(lang, 'Hebrew', 'עברית') : text(lang, 'English', 'אנגלית')}</span><span dir="auto">${escape(translate(clip.production, lang))}</span></div><h4 dir="auto">${escape(translate(clip.title, lang))}</h4><p dir="auto">${escape(translate(clip.sourceContext, lang))}</p>${clip.alternativeNote ? `<p class="watch-alternative-note">${escape(translate(clip.alternativeNote, lang))}</p>` : ''}<div class="watch-alternative-actions">${clip.delivery === 'embed-with-source-link' ? `<button type="button" data-watch-alternative="${escape(clip.id)}" aria-expanded="false" aria-controls="alternative-${escape(songId)}-${escape(clip.id)}">${text(lang, 'Watch here', 'צפייה כאן')}</button>` : ''}${sourceLink(clip, text(lang, 'Watch on YouTube', 'לצפייה ב־YouTube'), lang)}</div><small class="watch-path-uploader">${text(lang, 'Published by ', 'פורסם בידי ')}<bdi>${escape(clip.uploader)}</bdi></small><div class="watch-alternative-player" id="alternative-${escape(songId)}-${escape(clip.id)}" hidden></div></article>`).join('')}</div></div></details>`;
+  }
+
   function renderStop(options = {}) {
     const selection = getSelection(options);
     if (!selection) return '';
@@ -77,7 +84,7 @@
       return `<div class="watch-path-clip${player ? ' watch-path-clip--embedded' : ' watch-path-clip--external'}" data-watch-clip="${escape(clip.id)}"><div class="watch-path-clip-head">${selection.twoParts ? `<span class="watch-path-part" aria-label="${text(lang, 'Part', 'חלק')} ${index + 1}">${index + 1}</span>` : ''}<div class="watch-path-clip-heading"><div class="watch-path-meta"><span>${escape(school ? text(lang, 'School production', 'הפקת בית ספר') : text(lang, 'Our pick', 'הבחירה שלנו'))}</span><span>${mediaLanguage}</span>${duration ? `<bdi>${duration}</bdi>` : ''}</div><h4 dir="auto">${escape(heading)}</h4><p class="watch-path-credit" dir="auto">${escape(credit)}</p></div></div><div class="watch-path-media">${player || `<div class="watch-path-external-frame"><span class="watch-path-external-label">YouTube · ${selection.sharedWithPrevious ? text(lang, 'same recording', 'אותה הקלטה') : text(lang, 'original upload', 'ההעלאה המקורית')}</span>${sourceLink(clip, text(lang, 'Watch on YouTube', 'לצפייה ב־YouTube'), lang)}</div><span class="watch-path-external-hint">${text(lang, 'Opens in a new tab · return here for the next stop', 'נפתח בלשונית חדשה · חוזרים לכאן לתחנה הבאה')}</span>`}</div>${canEmbed && !player ? `<p class="watch-path-uploader">${text(lang, 'Published by ', 'פורסם בידי ')}<bdi>${escape(clip.uploader)}</bdi></p>` : ''}</div>`;
     }).join('');
     const excerpt = selection.excerptNote ? `<p class="watch-path-note">${escape(selection.excerptNote)}</p>` : '';
-    return `<section class="watch-path-stop" data-watch-stop="${escape(songId)}" data-watch-current-mode="${mode}" lang="${lang}" dir="${direction(lang)}" aria-label="${escape(label)}"><h3 class="watch-path-stop-label">${escape(label)}</h3>${ending}<div class="watch-path-clips${selection.twoParts ? ' watch-path-clips--two' : ''}">${cards}</div>${shared}${notes}${excerpt}</section>`;
+    return `<section class="watch-path-stop" data-watch-stop="${escape(songId)}" data-watch-current-mode="${mode}" lang="${lang}" dir="${direction(lang)}" aria-label="${escape(label)}"><h3 class="watch-path-stop-label">${escape(label)}</h3>${ending}<div class="watch-path-clips${selection.twoParts ? ' watch-path-clips--two' : ''}">${cards}</div>${shared}${notes}${excerpt}${renderAlternatives(selection)}</section>`;
   }
 
   window.WatchPath = Object.freeze({ renderIntro, renderStop, getSelection, normalizeMode, defaultMode: data.defaultMode });
