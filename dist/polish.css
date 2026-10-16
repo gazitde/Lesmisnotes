@@ -477,3 +477,8 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 [dir=rtl] .chapter-slide-nav .slide-prev:before,[dir=rtl] .show-station-nav [data-show-move="prev"]:before{content:'';transform:rotate(-45deg)}
 [dir=rtl] .chapter-slide-nav .slide-next:after,[dir=rtl] .show-station-nav [data-show-move="next"]:after{content:'';transform:rotate(135deg)}
 .show-station-nav button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;min-width:44px}
+
+/* Keep editions easy to scan; open the unchanged depth when needed. */
+.recording-card .recording-reason{line-height:1.8;margin:.7rem 0 1rem}.recording-card>details{margin:.6rem 0}.recording-card>details>summary{min-height:44px;cursor:pointer;line-height:1.6;padding:.6rem 0}.recording-card>details>summary:focus-visible{outline:3px solid #b71934;outline-offset:3px}.recording-notes h4{font-size:1rem;margin:1rem 0 .5rem}.recording-grid{align-items:start}
+
+.recording-available-format{font-size:.9rem;line-height:1.65;color:#50617a}
