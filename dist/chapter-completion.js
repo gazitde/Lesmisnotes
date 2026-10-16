@@ -57,7 +57,7 @@
       if (functional && pending.size) save();
       return changed;
     }
-    function countText() { return words(`${completed.size} מתוך ${ordered.length} פרקים סומנו כנקראו`, `${completed.size} of ${ordered.length} chapters marked read`); }
+    function countText() { return words(`${completed.size} מתוך ${ordered.length} פרקי הרומן המלא סומנו כנקראו`, `${completed.size} of ${ordered.length} chapters in the full novel marked read`); }
     function storageText() {
       return functional
         ? words('הסימונים נשמרים במכשיר הזה באישור זכירת העדפות, אם הדפדפן מאפשר שמירה.', 'Marks are saved on this device with remembering permission, if browser storage is available.')
