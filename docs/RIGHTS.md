@@ -16,3 +16,11 @@ Noto Sans Hebrew (regular and bold), © Google, is locally bundled under SIL OFL
 ## Victor Hugo: Le burg à l’ange
 
 `dist/assets/hugo-castle-with-angel.jpg` is the full-frame 3448×2160 image of Victor Hugo’s drawing, c. 1863, supplied by Paris Musées / Maisons de Victor Hugo Paris-Guernesey under CC0 1.0. The official IIIF manifest identifies the exact image and license; see `docs/hugo-art-license.json`. The page preserves credit, collection link and license link. The drawing illustrates Hugo’s visual vocabulary; the site does not identify it as a drawing used in the stage projections. The observation paragraph is original commentary.
+
+## Character sharing cards
+
+`dist/assets/characters/` reuses the site’s original red-flag/Paris vector illustration with character names and a guide label. These are typographic guide covers, not portraits, performer photographs or depictions authenticated by Hugo. The editable SVG sources and `scripts/generate-character-cards.cjs` accompany the PNG exports; the optional authoring script uses an independently installed Inkscape CLI and adds no application or build dependency.
+
+## Victor Hugo: two further drawings
+
+`dist/assets/hugo-ma-destinee.jpg` is the museum-provided 585×397 full-frame JPEG of Hugo’s original 1857 drawing, inventory 927, rather than a later engraving after it. `dist/assets/hugo-eddystone.jpg` is the museum-provided 520×975 full-frame JPEG of his 1866 Eddystone Lighthouse drawing, inventory 181. Both carry CC0 1.0 credits and exact collection links. `docs/hugo-art-gallery-licenses.json` records sources, dimensions, checksums and visual review. The three thumbnail files are proportional reductions without cropping. The existing castle drawing is unchanged. The general connection between Hugo’s art and the production is sourced to the designers; no claim is made that these particular drawings appeared in the projections.

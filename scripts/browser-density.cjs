@@ -29,7 +29,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','density');
     check(await p.locator('.page-top h1 br').evaluateAll(es=>es.every(e=>getComputedStyle(e).display!=='none')),`${lang}/${width} title words retain their separator`);
     if(width>900){check(Math.max(...data.branches.map(x=>x.y))-Math.min(...data.branches.map(x=>x.y))<2,`${lang}/${width} concise side-by-side formats`,data.branches);check(data.lineage.height<440,`${lang}/${width} bounded format panel`,data.lineage);}
     check(await p.locator('.adaptation-compare-card').count()===4,`${lang}/${width} four comparison versions preserved`);
-    check(await p.locator('.screen-card').count()===9,`${lang}/${width} nine screen entries preserved`);
+    check(await p.locator('.screen-card').count()===10,`${lang}/${width} ten screen entries present`);
     if(width<681)check(await p.locator('.screen-card').evaluateAll(es=>es.every(e=>e.querySelector(':scope > div').getBoundingClientRect().width>=e.getBoundingClientRect().width-36)),`${lang}/${width} screen cards give prose the full phone width`);
     await p.screenshot({path:path.join(dir,`${lang}-screen-${width}-full.png`),fullPage:true});
     await p.screenshot({path:path.join(dir,`${lang}-screen-${width}-entry.png`)});

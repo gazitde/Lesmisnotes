@@ -310,7 +310,29 @@
             "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0145"
           }
         ]
-      }
+      },
+      "safeFacts": [
+        {
+          "title": {
+            "en": "Why 24601?",
+            "he": "למה 24601?"
+          },
+          "text": {
+            "en": "24601 is Valjean’s prisoner number at Toulon. Before prison he worked as a tree-pruner and helped support his widowed sister and her seven children. A stolen loaf brings an initial five-year sentence; attempted escapes extend his imprisonment to nineteen years. Hugo gives the number a particular force: an institution replaces a person’s name with a label.",
+            "he": "24601 הוא מספר האסיר של ולז׳אן בטולון. לפני המאסר עבד בגיזום עצים ועזר לפרנס את אחותו האלמנה ואת שבעת ילדיה. גנבת כיכר לחם מביאה לעונש ראשוני של חמש שנים; ניסיונות בריחה מאריכים את המאסר לתשע־עשרה שנה. אצל הוגו יש למספר משמעות מיוחדת: המוסד מחליף את שמו של אדם בתווית."
+          },
+          "source": {
+            "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0020",
+            "label": {
+              "he": "הוגו · חלק 1, ספר 2, פרק 6: הלחם, המאסר וניסיונות הבריחה",
+              "en": "Hugo · Part 1, Book 2, Chapter 6: bread, imprisonment and escape attempts"
+            }
+          }
+        }
+      ],
+      "safeSongIds": [
+        "what-have-i-done"
+      ]
     },
     {
       "id": "javert",
@@ -496,7 +518,29 @@
             "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0341"
           }
         ]
-      }
+      },
+      "safeFacts": [
+        {
+          "title": {
+            "en": "How Hugo introduces the inspector",
+            "he": "איך הוגו מציג את המפקח"
+          },
+          "text": {
+            "en": "Hugo describes Javert through the habits of a watchdog: watchfulness, suspicion and an unwavering sense of duty. Notice how little room this portrait leaves for doubt.",
+            "he": "הוגו מתאר את ז׳אבר באמצעות תכונות של כלב שמירה: דריכות, חשדנות ותחושת חובה שאינה מתערערת. כדאי לשים לב כמה מעט מקום נשאר בדיוקן הזה לספק."
+          },
+          "source": {
+            "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0044",
+            "label": {
+              "he": "הוגו · חלק 1, ספר 5, פרק 5: מוצא וסמכות משטרתית",
+              "en": "Hugo · Part 1, Book 5, Chapter 5: origins and police authority"
+            }
+          }
+        }
+      ],
+      "safeSongIds": [
+        "work-song"
+      ]
     },
     {
       "id": "fantine",
@@ -691,7 +735,29 @@
             "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0049"
           }
         ]
-      }
+      },
+      "safeFacts": [
+        {
+          "title": {
+            "en": "A name without a family history",
+            "he": "שם בלי סיפור משפחתי"
+          },
+          "text": {
+            "en": "Fantine has no recorded family name and does not know her parents. Hugo explains that someone gave her a name as casually as a passer-by might give a child a name in the street. Her introduction sets affection and social belonging beside material insecurity.",
+            "he": "לפנטין אין שם משפחה ידוע והיא אינה מכירה את הוריה. הוגו מספר ששמה ניתן לה כמעט באקראי, כפי שעובר אורח עשוי לתת שם לילדה ברחוב. ההיכרות עמה מציבה חיבה ושייכות חברתית לצד חוסר ביטחון חומרי."
+          },
+          "source": {
+            "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0029",
+            "label": {
+              "he": "הוגו · חלק 1, ספר 3, פרק 2: פנטין ותולומייס",
+              "en": "Hugo · Part 1, Book 3, Chapter 2: Fantine and Tholomyès"
+            }
+          }
+        }
+      ],
+      "safeSongIds": [
+        "dreamed-dream"
+      ]
     },
     {
       "id": "cosette",
@@ -915,7 +981,29 @@
             "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0354"
           }
         ]
-      }
+      },
+      "safeFacts": [
+        {
+          "title": {
+            "en": "Euphrasie and Cosette",
+            "he": "אפרזי וקוזט"
+          },
+          "text": {
+            "en": "Euphrasie is the child’s formal name; Cosette is her mother’s affectionate name for her. Hugo explains where this familiar name comes from before continuing the child’s story.",
+            "he": "אפרזי הוא שמה הרשמי של הילדה; קוזט הוא שם החיבה שאמה נתנה לה. הוגו מסביר מאין בא שם החיבה עוד לפני שהוא ממשיך בסיפורה."
+          },
+          "source": {
+            "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0037",
+            "label": {
+              "he": "הוגו · חלק 1, ספר 4, פרק 1: שמה של קוזט ואמה",
+              "en": "Hugo · Part 1, Book 4, Chapter 1: Cosette’s name and mother"
+            }
+          }
+        }
+      ],
+      "safeSongIds": [
+        "castle-cloud"
+      ]
     },
     {
       "id": "marius",
@@ -1182,7 +1270,29 @@
             "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0221"
           }
         ]
-      }
+      },
+      "safeFacts": [
+        {
+          "title": {
+            "en": "Introduced through a place",
+            "he": "היכרות דרך מקום"
+          },
+          "text": {
+            "en": "Marius is first named as another poor resident of the Gorbeau house, in a chapter whose title belongs to Gavroche. Hugo then moves back to explain his family history. This order matters: the reader encounters shared poverty and a Paris address before learning the political loyalties and family disagreements that shaped the young man.",
+            "he": "מריוס מוזכר לראשונה בשמו כדייר עני נוסף בבית גורבו, בפרק הנושא את שמו של גברוש. אחר כך הוגו חוזר לאחור כדי להסביר את תולדות משפחתו. לסדר הזה יש משמעות: הקורא פוגש עוני משותף וכתובת פריזאית לפני שהוא לומד על הנאמנויות הפוליטיות ועל המחלוקות המשפחתיות שעיצבו את הצעיר."
+          },
+          "source": {
+            "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0159",
+            "label": {
+              "he": "הוגו · חלק 3, ספר 1, פרק 13: ההצגה הראשונה בשמו",
+              "en": "Hugo · Part 3, Book 1, Chapter 13: the first named introduction"
+            }
+          }
+        }
+      ],
+      "safeSongIds": [
+        "red-black"
+      ]
     },
     {
       "id": "eponine",
@@ -1378,7 +1488,29 @@
             "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0231"
           }
         ]
-      }
+      },
+      "safeFacts": [
+        {
+          "title": {
+            "en": "Éponine and Azelma",
+            "he": "אפונין ואזלמה"
+          },
+          "text": {
+            "en": "Éponine and her sister Azelma are introduced as the innkeepers’ young daughters. Hugo uses their elaborate names to comment on Madame Thénardier’s taste for sentimental romances.",
+            "he": "אפונין ואחותה אזלמה מוצגות כבנותיהם הצעירות של בעלי הפונדק. הוגו משתמש בשמותיהן המהודרים כדי להעיר על טעמה של מאדאם תנרדייה ברומנים רגשניים."
+          },
+          "source": {
+            "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0038",
+            "label": {
+              "he": "הוגו · חלק 1, ספר 4, פרק 2: שמותיהן של אפונין ואזלמה",
+              "en": "Hugo · Part 1, Book 4, Chapter 2: Éponine and Azelma named"
+            }
+          }
+        }
+      ],
+      "safeSongIds": [
+        "on-my-own"
+      ]
     },
     {
       "id": "enjolras",
@@ -1579,7 +1711,29 @@
             "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0304"
           }
         ]
-      }
+      },
+      "safeFacts": [
+        {
+          "title": {
+            "en": "What does ABC mean?",
+            "he": "מה פירוש ABC?"
+          },
+          "text": {
+            "en": "The Friends of the ABC present themselves as a society for education. Their name also makes a French pun: ABC sounds like abaissé, meaning brought low. Hugo connects the wordplay with the people the group wants to raise up.",
+            "he": "ידידי ה־ABC מציגים את עצמם כחברה למען החינוך. בשמם מסתתר גם משחק מילים בצרפתית: ABC נשמע כמו abaissé, כלומר מושפל או מונמך. הוגו קושר את המשחק לאנשים שהחבורה מבקשת לרומם."
+          },
+          "source": {
+            "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0176",
+            "label": {
+              "he": "הוגו · חלק 3, ספר 4, פרק 1: ידידי האב״ג וגרנטֵר",
+              "en": "Hugo · Part 3, Book 4, Chapter 1: the Friends of the ABC and Grantaire"
+            }
+          }
+        }
+      ],
+      "safeSongIds": [
+        "red-black"
+      ]
     },
     {
       "id": "gavroche",
@@ -1777,7 +1931,29 @@
             "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0251"
           }
         ]
-      }
+      },
+      "safeFacts": [
+        {
+          "title": {
+            "en": "The Parisian gamin",
+            "he": "ילד הרחוב הפריזאי"
+          },
+          "text": {
+            "en": "The French word gamin describes the street child whose wit, freedom and precarious life Hugo explores before naming Gavroche. His first portrait keeps play and hardship together: the boy sings and jokes, but lacks dependable food, warmth and affection.",
+            "he": "המילה הצרפתית gamin מתארת את ילד הרחוב שאת שנינותו, חירותו וחייו הלא בטוחים הוגו בוחן עוד לפני שהוא נוקב בשמו של גברוש. דיוקנו הראשון מחבר משחק ומצוקה: הילד שר ומתבדח, אך חסרים לו מזון קבוע, חום וחיבה."
+          },
+          "source": {
+            "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0159",
+            "label": {
+              "he": "הוגו · חלק 3, ספר 1, פרק 13: דיוקנו הראשון של גברוש",
+              "en": "Hugo · Part 3, Book 1, Chapter 13: Gavroche’s first portrait"
+            }
+          }
+        }
+      ],
+      "safeSongIds": [
+        "beggars"
+      ]
     },
     {
       "id": "thenardiers",
@@ -2018,7 +2194,29 @@
             "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0363"
           }
         ]
-      }
+      },
+      "safeFacts": [
+        {
+          "title": {
+            "en": "A household seen from outside",
+            "he": "בית כפי שהוא נראה מבחוץ"
+          },
+          "text": {
+            "en": "The first encounter with the innkeepers turns on what a passer-by can see: a mother watching her own children at play. Hugo lets this apparently reassuring scene sit beside the household’s money worries. The introduction invites a careful distinction between a convincing appearance of kindness and the practical terms on which someone is willing to care for another person.",
+            "he": "המפגש הראשון עם בעלי הפונדק נשען על מה שעוברת אורח יכולה לראות: אם המשגיחה על ילדיה המשחקים. הוגו מציב את המראה המרגיע לכאורה לצד הדאגות הכספיות של הבית. ההיכרות מזמינה להבחין בין מראית עין משכנעת של טוב לב ובין התנאים המעשיים שבהם אדם מוכן לדאוג לזולתו."
+          },
+          "source": {
+            "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0037",
+            "label": {
+              "he": "הוגו · חלק 1, ספר 4, פרק 1: משק הבית של הפונדקאים",
+              "en": "Hugo · Part 1, Book 4, Chapter 1: the innkeeping household"
+            }
+          }
+        }
+      ],
+      "safeSongIds": [
+        "master-house"
+      ]
     },
     {
       "id": "bishop",
@@ -2219,7 +2417,27 @@
             "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0004"
           }
         ]
-      }
+      },
+      "safeFacts": [
+        {
+          "title": {
+            "en": "A bishop’s budget",
+            "he": "תקציבו של בישוף"
+          },
+          "text": {
+            "en": "Early in the novel, Myriel exchanges his spacious episcopal residence for the cramped hospital beside it, giving the patients more room. Hugo then sets out his budget in detail, with most of his salary assigned to other people’s needs. The account makes generosity measurable in rooms and money.",
+            "he": "בראשית הרומן מיריאל מחליף את משכנו המרווח בבית החולים הצפוף שלצדו ומעניק לחולים מקום נוסף. הוגו מפרט אחר כך את תקציבו, שרובו מוקדש לצורכיהם של אחרים. כך הנדיבות מקבלת מידה מעשית בחדרים ובכסף."
+          },
+          "source": {
+            "url": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0002",
+            "label": {
+              "he": "הוגו · חלק 1, ספר 1, פרק 2: הארמון, בית החולים והתקציב",
+              "en": "Hugo · Part 1, Book 1, Chapter 2: the palace, hospital and budget"
+            }
+          }
+        }
+      ],
+      "safeSongIds": []
     }
   ],
   "chapterMentions": {
@@ -5439,6 +5657,136 @@
         "name": {
           "he": "מריוס",
           "en": "Marius"
+        }
+      }
+    ]
+  },
+  "discovery": {
+    "title": {
+      "en": "More people in the novel",
+      "he": "עוד דמויות ברומן"
+    },
+    "intro": {
+      "en": "Three people and one group, with a short introduction and a path to their chapters.",
+      "he": "שלוש דמויות וקבוצה אחת, עם היכרות קצרה וקישור לפרקים שלהן."
+    },
+    "items": [
+      {
+        "id": "grantaire",
+        "kind": "person",
+        "name": {
+          "en": "Grantaire",
+          "he": "גרנטֵר"
+        },
+        "chapterId": "p3-b4-c1",
+        "intro": {
+          "en": "A sceptic among revolutionaries, Grantaire doubts the group’s ideals but admires Enjolras. Hugo introduces him through the distance between what he believes and the person he follows.",
+          "he": "ספקן בקרב מהפכנים, גרנטֵר מפקפק ברעיונות החבורה אך מעריץ את אנז׳ולרא. הוגו מציג אותו דרך המרחק בין אמונותיו ובין האדם שאליו הוא נמשך."
+        },
+        "source": {
+          "url": "https://fr.wikisource.org/wiki/Les_Mis%C3%A9rables/Tome_3/Livre_4/01",
+          "label": {
+            "en": "Original chapter · French",
+            "he": "הפרק המקורי · צרפתית"
+          }
+        }
+      },
+      {
+        "id": "gillenormand",
+        "kind": "person",
+        "name": {
+          "en": "Gillenormand",
+          "he": "ז׳ילנורמן"
+        },
+        "chapterId": "p3-b2-c1",
+        "intro": {
+          "en": "Over ninety, Gillenormand has a forceful temper and the manners of an earlier age. His introduction lets that old world speak before the story explores his household.",
+          "he": "ז׳ילנורמן כבר עבר את גיל תשעים. יש לו מזג תקיף וגינונים של תקופה קודמת. בהיכרות הראשונה איתו, הוגו נותן לעולם הישן הזה להשמיע את קולו."
+        },
+        "source": {
+          "url": "https://fr.wikisource.org/wiki/Les_Mis%C3%A9rables/Tome_3/Livre_2/01",
+          "label": {
+            "en": "Original chapter · French",
+            "he": "הפרק המקורי · צרפתית"
+          }
+        }
+      },
+      {
+        "id": "fauchelevent",
+        "kind": "person",
+        "name": {
+          "en": "Fauchelevent",
+          "he": "פושלוון"
+        },
+        "chapterId": "p1-b5-c6",
+        "intro": {
+          "en": "A former businessman left with a cart and a horse after bankruptcy, Fauchelevent now earns his living as a carter. We meet him trapped beneath his cart after an accident.",
+          "he": "פושלוון היה בעל עסק, ואחרי שפשט את הרגל נותרו לו עגלה וסוס. כעת הוא מתפרנס כעגלון. אנו פוגשים אותו כשהוא לכוד מתחת לעגלתו אחרי תאונה."
+        },
+        "source": {
+          "url": "https://fr.wikisource.org/wiki/Les_Mis%C3%A9rables/Tome_1/Livre_5/06",
+          "label": {
+            "en": "Original chapter · French",
+            "he": "הפרק המקורי · צרפתית"
+          }
+        }
+      },
+      {
+        "id": "friends-abc",
+        "kind": "group",
+        "name": {
+          "en": "Friends of the ABC",
+          "he": "ידידי האב״ג"
+        },
+        "chapterId": "p3-b4-c1",
+        "intro": {
+          "en": "A small republican circle whose usual meeting place is the back room of the Café Musain. In French, ABC sounds like l’abaissé, “the downtrodden”: the people they hope to uplift.",
+          "he": "חוג רפובליקני קטן הנפגש בדרך כלל בחדר האחורי של קפה מוסן. בצרפתית, ABC נשמע כמו l’abaissé, ״המושפל״: העם שהם מבקשים לרומם."
+        },
+        "members": [
+          {
+            "en": "Enjolras",
+            "he": "אנז׳ולרא"
+          },
+          {
+            "en": "Combeferre",
+            "he": "קומבפר"
+          },
+          {
+            "en": "Jean Prouvaire",
+            "he": "ז׳אן פרובר"
+          },
+          {
+            "en": "Feuilly",
+            "he": "פֵיי"
+          },
+          {
+            "en": "Courfeyrac",
+            "he": "קורפראק"
+          },
+          {
+            "en": "Bahorel",
+            "he": "באהורל"
+          },
+          {
+            "en": "Lesgle / Laigle (Bossuet)",
+            "he": "בוסואה (Lesgle / Laigle)"
+          },
+          {
+            "en": "Joly",
+            "he": "ז׳ולי"
+          },
+          {
+            "en": "Grantaire",
+            "he": "גרנטֵר"
+          }
+        ],
+        "source": {
+          "url": "https://fr.wikisource.org/wiki/Les_Mis%C3%A9rables/Tome_3/Livre_4/01",
+          "label": {
+            "en": "Original chapter · French",
+            "he": "הפרק המקורי · צרפתית"
+          }
         }
       }
     ]

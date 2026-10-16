@@ -13,6 +13,7 @@ if (isPublic && !origin) throw new Error('Public builds require an explicitly co
 const metadata = {...JSON.parse(fs.readFileSync('config/metadata.json','utf8')), origin, private:!isPublic};
 const profiles = JSON.parse(fs.readFileSync('config/character-profiles.json','utf8'));
 for (const p of profiles.profiles) metadata.pages['character-'+p.id] = {
+  socialImage: {path:'/assets/characters/'+p.id+'.png',alt:{en:p.name.en+' character guide · LesMisNotes original illustration',he:'מדריך לדמות '+p.name.he+' · איור מקורי של LesMisNotes'}},
   title: {he:p.name.he+' בעלובי החיים: דמות מקרוב | LesMisNotes',en:p.name.en+' in Les Misérables: a character profile | LesMisNotes'},
   description: {he:p.name.he+': '+p.role.he+'. היכרות עם הדמות ברומן ובמחזמר, מקורות ומפת קשרים. פרטי העלילה והסיום נפתחים לבחירה.',en:p.name.en+': '+p.role.en+'. Explore the character in the novel and musical, with sources and a relationship map. Plot details and the ending open by choice.'}
 };

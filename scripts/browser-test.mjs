@@ -33,8 +33,10 @@ try{
   await run(['scripts/browser-reading-query-shell.cjs']);
   await run(['scripts/browser-character-profiles.cjs']);
   await run(['scripts/browser-profile-novel-additions.cjs']);
+  await run(['scripts/browser-discovery-recording-titles.cjs']);
   await run(['scripts/browser-coach-gallery.cjs']);
   await run(['scripts/browser-gallery-controls.cjs']);
+  await run(['scripts/browser-art-gallery-enrichment.cjs']);
   await run(['scripts/browser-gallery-expansion.cjs']);
   await run(['scripts/browser-voice-depth.cjs']);
   await run(['scripts/browser-context-depth.cjs']);
