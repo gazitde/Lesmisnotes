@@ -41,6 +41,7 @@ for(const language of ['he','en'])test(`multilingual notes retain sources, nativ
  assert.ok(api.hugoClusters().includes('data-multilingual-note="manuscript-name"'));
  api.setConsent(true,false);
  assert.ok(api.comparisonJourney().includes('data-multilingual-note="arabic-conscience"'));
+ assert.match(api.multilingualNote('arabic-conscience'),/<details class="source-disclosure"><summary>/);
  assert.equal(api.multilingualNote('catherine-return'),'','General plot consent is insufficient for finale');
  assert.equal(api.hugoStories(),'');
  api.setConsent(false,true);
@@ -49,7 +50,12 @@ for(const language of ['he','en'])test(`multilingual notes retain sources, nativ
  const finale=api.multilingualNote('catherine-return');
  assert.ok(finale.includes(notes['catherine-return'].lead[language]));
  for(const target of ['p2-b3-c8','p5-b9-c5','epilogue'])assert.ok(finale.includes(target));
- assert.ok(api.hugoStories().includes('data-multilingual-note="catherine-return"'));
+ const stories=api.hugoStories();
+ assert.ok(stories.includes('data-multilingual-note="catherine-return"'));
+ const doll=stories.split('id="extra-story-cosette-catherine"')[1].split('</article>')[0];
+ assert.equal((doll.match(/<details/g)||[]).length,1,'Callback reuses the existing story disclosure');
+ assert.ok(!api.multilingualNote('catherine-return',true).includes('<details'),'No nested disclosure');
+ assert.ok(api.multilingualNote('catherine-return',true).includes(notes['catherine-return'].body[language].split(String.fromCharCode(10,10))[0]));
  for(const [id,note] of Object.entries(notes))for(const ref of note.references){
   const rendered=api.multilingualNote(id).includes(ref.url.replaceAll('&','&amp;'));
   const technical=/^https?:\/\/(?:www\.)?mtishows\.(?:com|co\.uk)(?:\/|$)/i.test(ref.url);
