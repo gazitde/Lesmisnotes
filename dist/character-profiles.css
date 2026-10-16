@@ -29,7 +29,7 @@
 @media(max-width:650px){.profile-chapter-links ul{grid-template-columns:1fr}.profile-novel-adds{margin-block-start:1.5rem;padding-block-start:1.25rem}}
 
 /* Sourced introductory context remains visible before the full-story choice. */
-.profile-safe-context{margin-block:2rem}.profile-safe-fact h2,.profile-safe-music h2{font-size:clamp(1.35rem,3vw,1.7rem);line-height:1.4;margin-block:0 1rem}.profile-safe-citation,.profile-source-warning,.profile-safe-music p{font-size:.95rem;line-height:1.7}.profile-safe-citation a{overflow-wrap:anywhere}.profile-source-warning{color:#536177}.profile-safe-music{padding-block-start:1.25rem;border-top:1px solid #cbd4e6}.profile-safe-music ul{padding-inline-start:1.3rem;margin-block:0 .75rem}.profile-safe-music a{display:inline-flex;align-items:center;min-height:44px}
+.profile-safe-context{margin-block:2rem}.profile-safe-fact h2,.profile-safe-music h2{font-size:clamp(1.35rem,3vw,1.7rem);line-height:1.4;margin-block:0 1rem}.profile-safe-citation,.profile-source-warning,.profile-safe-music p{font-size:1rem;line-height:1.7}.profile-safe-citation a{overflow-wrap:anywhere}.profile-source-warning{color:#536177}.profile-safe-music{padding-block-start:1.25rem;border-top:1px solid #cbd4e6}.profile-safe-music ul{padding-inline-start:1.3rem;margin-block:0 .75rem}.profile-safe-music a{display:inline-flex;align-items:center;min-height:44px}
 
 /* Compact introductions supplement the ten full profiles without adding routes. */
 .character-discovery{margin-block:2rem 3rem}.character-discovery-heading{max-width:46rem;margin-block-end:1rem}.character-discovery-heading h2{font-size:1.4rem;line-height:1.4;margin:0 0 .5rem}.character-discovery-heading p{font-size:.98rem;line-height:1.7;margin:0}
