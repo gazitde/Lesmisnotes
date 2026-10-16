@@ -55,6 +55,7 @@ try{
   await run(['scripts/browser-quiz-achievement.cjs']);
   await run(['scripts/browser-quiz-site.cjs']);
   await run(['scripts/browser-listening-reading.cjs']);
+  await run(['scripts/browser-media-priority.cjs']);
   await run(['scripts/browser-visual.cjs']);
   await run(['--test','test/contact-browser.test.cjs']);
   }
