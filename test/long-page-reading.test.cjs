@@ -21,6 +21,7 @@ for(const language of ['he','en'])test(`long-page choices preserve content and s
  const rootHtml=api.readingHierarchyBody();
  assert.equal((rootHtml.match(/class="reader-overview-disclosure" data-overview-spoilers>/g)||[]).length,5);
  assert.ok(!rootHtml.includes('data-overview-spoilers open'));
+ api.navigateReader(`/${language}/novel/?essays=all`);
  for(const part of parts){
   const html=api.readerOverview(part,'part');assert.equal((html.match(/<details/g)||[]).length,1,'Overview sources do not add a nested disclosure');
   assert.ok(html.includes(part.sourceRefs[0].from));
