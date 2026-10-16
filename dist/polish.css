@@ -465,3 +465,15 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
  .background-toggle{width:30px;height:30px;font-size:1.3rem}
  #musical-spotlight,#recording-chooser,#musical-journey,[id^="craft-"]{scroll-margin-top:90px}
 }
+
+/* Quiet directional cues stay in the navigation row, clear of text and players. */
+.chapter-slide-nav .slide-prev:before,.chapter-slide-nav .slide-next:after,
+.show-station-nav [data-show-move="prev"]:before,.show-station-nav [data-show-move="next"]:after{
+ content:'';display:inline-block;flex:0 0 7px;width:7px;height:7px;
+ border:solid currentColor;border-width:0 1px 1px 0;opacity:.7;
+}
+.chapter-slide-nav .slide-prev:before,.show-station-nav [data-show-move="prev"]:before{transform:rotate(135deg)}
+.chapter-slide-nav .slide-next:after,.show-station-nav [data-show-move="next"]:after{transform:rotate(-45deg)}
+[dir=rtl] .chapter-slide-nav .slide-prev:before,[dir=rtl] .show-station-nav [data-show-move="prev"]:before{content:'';transform:rotate(-45deg)}
+[dir=rtl] .chapter-slide-nav .slide-next:after,[dir=rtl] .show-station-nav [data-show-move="next"]:after{content:'';transform:rotate(135deg)}
+.show-station-nav button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;min-width:44px}
