@@ -16,6 +16,7 @@ try{
   await run(['scripts/browser-long-page-reading.cjs']);
   await run(['scripts/browser-book-stage.cjs']);
   await run(['scripts/browser-slide-navigation.cjs']);
+  await run(['scripts/browser-optional-essay-groups.cjs']);
   // Repeat interaction regression early to expose scroll/lifecycle flakes before the long suite.
   for(let pass=0;pass<(process.argv.includes('--compact-only')?3:1);pass++)await run(['scripts/browser-watch-alternatives.cjs']);
   await run(['scripts/browser-editorial-entry.cjs']);

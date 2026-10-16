@@ -482,3 +482,13 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 .recording-card .recording-reason{line-height:1.8;margin:.7rem 0 1rem}.recording-card>details{margin:.6rem 0}.recording-card>details>summary{min-height:44px;cursor:pointer;line-height:1.6;padding:.6rem 0}.recording-card>details>summary:focus-visible{outline:3px solid #b71934;outline-offset:3px}.recording-notes h4{font-size:1rem;margin:1rem 0 .5rem}.recording-grid{align-items:start}
 
 .recording-available-format{font-size:.9rem;line-height:1.65;color:#50617a}
+
+/* Optional complete-novel essays: intact text, explicit entry, canonical chapter order. */
+.reader-essay-badge{font-size:.9rem;line-height:1.65;color:#50617a;margin:.7rem 0}
+.reader-essay-chapters{border:1px solid #c4d1df;border-radius:10px;padding:0 1.2rem;margin:1.3rem 0;background:#f7f9fc}
+.reader-essay-chapters>summary{cursor:pointer;min-height:44px;padding:1.1rem 0;line-height:1.7}
+.reader-essay-chapters>summary b{font-size:1.05rem}.reader-essay-chapters>summary span{display:block;font-size:.95rem;margin-top:.3rem}
+.reader-essay-chapters>summary:focus-visible{outline:3px solid #b71934;outline-offset:3px}
+.reader-essay-context{font-size:.95rem;line-height:1.85;max-width:76ch}.reader-essay-sources{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;margin:.6rem 0 1.2rem}.reader-essay-sources a{min-height:44px;padding:.6rem 0;font-size:.9rem}
+@media(max-width:650px){.reader-essay-chapters{padding:0 .9rem}.reader-essay-chapters .reader-chapter-card{padding-inline:.7rem}}
+.reader-essay-mode{margin:1rem 0 1.4rem;padding:.8rem 0;border-block:1px solid #d8dfe8;font-size:.9rem;line-height:1.7}.reader-essay-mode p{margin:0;color:#50617a}.reader-essay-mode a{display:inline-block;min-height:44px;padding:.6rem 0;font-weight:600}.reader-essay-mode a:focus-visible{outline:3px solid #b71934;outline-offset:3px}

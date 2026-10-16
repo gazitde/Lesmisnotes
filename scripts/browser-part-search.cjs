@@ -11,11 +11,11 @@ for(const lang of ['en','he'])for(const width of [1365,390,320]){
  check(!(await p.locator('#site-search-results').innerText()).includes(lang==='he'?'המתרס':'barricade'),'No Part overview leaked into result');
  await p.locator('#site-search-dialog').screenshot({path:path.join(dir,`${lang}-${width}-result.png`)});
  await target.focus();await p.keyboard.press('Enter');check(new URL(p.url()).searchParams.get('focus')==='part:p5','Exact Part route opens');
- check(await p.locator('#reader-part-panel').evaluate(e=>e===document.activeElement),'Part panel receives focus');check(await p.locator('.reader-book-card').count()===9,'Fifth Part exposes its nine Books');
+ check(await p.locator('#reader-part-panel').evaluate(e=>e===document.activeElement),'Part panel receives focus');check(await p.locator('.reader-book-card').count()===8,'Fifth Part shows eight main-route Books; essay Book remains optional');
  check(await p.locator('[data-novel-event]').count()===0,'Whole-novel recap remains gated');check(await p.locator('.reader-part-shortcuts a[aria-current="location"]').getAttribute('href').then(x=>x.includes('part%3Ap5')),'Quick links reflect searched Part');
  await p.locator('[data-reader-book="p5-b1"] [data-reader-link]').click();await p.locator('#reading-book-panel[data-reader-ready="true"]').waitFor();check(await p.locator('#reading-book-panel').getAttribute('data-book-id')==='p5-b1','Part result leads into selected Book');
  await p.goBack();check(new URL(p.url()).searchParams.get('focus')==='part:p5','Back returns to searched Part');
- await p.locator('[data-action="language"]').click();check(new URL(p.url()).searchParams.get('focus')==='part:p5','Language preserves searched Part');check(await p.locator('.reader-book-card').count()===9,'Translated Part has same Books');
+ await p.locator('[data-action="language"]').click();check(new URL(p.url()).searchParams.get('focus')==='part:p5','Language preserves searched Part');check(await p.locator('.reader-book-card').count()===8,'Translated Part keeps the same main-route Books');
  await p.reload();check(new URL(p.url()).searchParams.get('focus')==='part:p5','Reload preserves Part');
  await p.locator('[data-site-search-open]').click();await fill('Part 6');await p.locator('.site-search-empty').waitFor();check(await p.locator('.site-search-list a').count()===0,'Invalid Part gives an honest empty state');
  // All searches here remain in spoiler-off mode, including after reader navigation.
