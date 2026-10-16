@@ -29,6 +29,8 @@ const dir=(process.env.SEARCH_ARTIFACT_DIR||'test-results')+'/media-priority';
   check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${lang} ${width}: open journey fits`);
   await p.locator('#show-slide').screenshot({path:`${dir}/${lang}-${width}-scene.png`});
   const sceneCue=await p.locator('.show-station-nav [data-show-move="next"]').evaluate(e=>({content:getComputedStyle(e,'::after').content,width:getComputedStyle(e,'::after').width,transform:getComputedStyle(e,'::after').transform}));
+  const expectedTransform=lang==='he'?'matrix(-0.707107, 0.707107, -0.707107, -0.707107, 0, 0)':'matrix(0.707107, -0.707107, 0.707107, 0.707107, 0, 0)';
+  check(sceneCue.transform===expectedTransform,`${lang} ${width}: next chevron points in the reading direction`);
   check(sceneCue.content==='""'&&sceneCue.width==='7px',`${lang} ${width}: subtle visible scene chevron`);
   await p.goto(base+'/'+lang+'/novel/?focus=chapter%3Ap1-b1-c2');
   await p.locator('#reading-book-panel[data-reader-ready="true"]').waitFor();
