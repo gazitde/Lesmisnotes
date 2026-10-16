@@ -163,7 +163,7 @@
     for (const c of R.characters || []) {
       const profile=characterProfile(c.id), details=pair(c.role,c.summary,c.question,c.context?.sentences,(c.canonNotes||[]).map(n=>pair(n.title,n.paragraphs)),(c.connections||[]).map(x=>x.label),(R.relationships||[]).filter(e=>e.from===c.id||e.to===c.id).map(e=>pair(e.label,e.context,e.canonNote)));
       add('character',c.id,profile?'character-'+c.id:'characters','characters',c.name,
-        profile ? pair(profile.safeIntro,spoilers?pair(profile.paragraphs,profile.novelAdds?.title,(profile.novelAdds?.paragraphs||[]).map(x=>x.text)):[]) : spoilers ? details : pair(c.safeIntro,c.id==='valjean'?R.safe24601?.body:'',(R.relationships||[]).filter(e=>e.spoilerLevel===0&&(e.from===c.id||e.to===c.id)).map(e=>pair(e.safeLabel,e.safeContext))),
+        profile ? pair(profile.safeIntro,(profile.safeFacts||[]).map(f=>pair(f.title,f.text)),spoilers?pair(profile.paragraphs,profile.novelAdds?.title,(profile.novelAdds?.paragraphs||[]).map(x=>x.text)):[]) : spoilers ? details : pair(c.safeIntro,c.id==='valjean'?R.safe24601?.body:'',(R.relationships||[]).filter(e=>e.spoilerLevel===0&&(e.from===c.id||e.to===c.id)).map(e=>pair(e.safeLabel,e.safeContext))),
         [c.id,...(CHARACTER_ALIASES[c.id]||[]),...(profile?.nameTokens?.en||[]),...(profile?.nameTokens?.he||[])],false);
       if(profile&&spoilers)add('characterdetail',c.id,'characters','characters',{en:local(c.name,'en')+' · Connections and context',he:local(c.name,'he')+' · קשרים והקשר'},details);
     }

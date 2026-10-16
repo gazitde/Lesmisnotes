@@ -16,7 +16,9 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
   check(!geometry.overflow,`${lang}/${width} label box fits`);
   for(const r of geometry.children){const x=Math.max(Math.abs(r.left-geometry.radius),Math.abs(r.left+r.width-geometry.radius)),y=Math.max(Math.abs(r.top-geometry.radius),Math.abs(r.top+r.height-geometry.radius));check(Math.hypot(x,y)<=geometry.radius-2,`${lang}/${width} label inside circle: ${r.text}`);if(r.text)check(r.font>=12,`${lang}/${width} readable decorative label`)}
   check(await p.locator('.vinyl').getAttribute('aria-hidden')==='true','Decorative record adds no keyboard stop');
-  await p.locator('.feature-copy a[data-gallery-link]').focus();check(await p.locator('.feature-copy a[data-gallery-link]').evaluate(e=>e===document.activeElement),'Listening action remains keyboard reachable');
+  const listeningActions=p.locator('.feature-copy a[data-gallery-link]');check(await listeningActions.count()===2,'Both featured listening actions are present');
+  check(JSON.stringify(await listeningActions.evaluateAll(links=>links.map(a=>a.dataset.galleryLink).sort()))===JSON.stringify(['JMGMSgPHJoI','_6nTyXcmgLc'].sort()),'Distinct Alfie and Stars clips retain their exact destinations');
+  for(const action of await listeningActions.all()){await action.focus();check(await action.evaluate(e=>e===document.activeElement),'Each listening action remains keyboard reachable')}
   await p.locator('.feature-split').screenshot({path:path.join(dir,`${lang}-listening-${width}.png`)});
   await p.evaluate(()=>scrollTo(0,0));await p.screenshot({path:path.join(dir,`${lang}-home-${width}.png`),fullPage:true});
   await p.goto(`${base}/${lang}/novel/`);await p.evaluate(()=>document.fonts.ready);

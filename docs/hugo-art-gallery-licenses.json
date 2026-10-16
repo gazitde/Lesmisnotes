@@ -1,0 +1,72 @@
+{
+  "checkedOn": "2026-10-16",
+  "scope": "Original museum drawings for the existing art section. These exact images are not identified as stage-projection assets.",
+  "images": [
+    {
+      "id": "ma-destinee",
+      "file": "hugo-ma-destinee.jpg",
+      "title": "Ma destinée",
+      "date": 1857,
+      "inventory": "927",
+      "width": 585,
+      "height": 397,
+      "medium": "Pen, ink wash and gouache on wove paper",
+      "record": "https://www.parismuseescollections.paris.fr/en/node/210051",
+      "image": "https://www.parismuseescollections.paris.fr/sites/default/files/styles/pm_diaporama/public/atoms/images/MVH/aze_mvhpd0927_001.jpg?itok=DJhe8cFb",
+      "artist": "Victor Hugo",
+      "credit": "CC0 Paris Musées / Maisons de Victor Hugo Paris-Guernesey",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "localPath": "dist/assets/hugo-ma-destinee.jpg",
+      "sha256": "c5fe0cd0976956e5f1c4269fba71a811f0bd174f13e67523bcebec74317e2e6f",
+      "modifications": "Museum-provided full-frame JPEG copied without alteration; separate thumbnail proportionally resized to fit within 320×220, no cropping.",
+      "visuallyReviewed": true
+    },
+    {
+      "id": "eddystone",
+      "file": "hugo-eddystone.jpg",
+      "title": "Le phare d’Eddystone",
+      "date": 1866,
+      "inventory": "181",
+      "width": 520,
+      "height": 975,
+      "medium": "Ink on wove paper, applied with a brush and feather barbs",
+      "record": "https://parismuseescollections.paris.fr/fr/maison-de-victor-hugo/oeuvres/le-phare-d-eddystone",
+      "image": "https://www.maisonsvictorhugo.paris.fr/sites/default/files/styles/520x/public/collectionmvhpd00181_2.jpg?itok=Rfzb4wad",
+      "artist": "Victor Hugo",
+      "credit": "CC0 Paris Musées / Maisons de Victor Hugo Paris-Guernesey",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "localPath": "dist/assets/hugo-eddystone.jpg",
+      "sha256": "a194a6dc3cd16882e58b6f8172cd865fcc023d97a70cfe7a641b846f4dd49d65",
+      "modifications": "Museum-provided full-frame JPEG copied without alteration; separate thumbnail proportionally resized to fit within 320×220, no cropping.",
+      "visuallyReviewed": true
+    }
+  ],
+  "thumbnails": [
+    {
+      "localPath": "dist/assets/hugo-castle-with-angel-thumb.jpg",
+      "sourceLocalPath": "dist/assets/hugo-castle-with-angel.jpg",
+      "width": 320,
+      "height": 200,
+      "sha256": "b38276559e3ddf761710695adcd7c7cd002ed96a5506b713c2260e95b88a84f6",
+      "modifications": "Proportional downscale and JPEG optimization only; no crop, retouching, or generative changes."
+    },
+    {
+      "localPath": "dist/assets/hugo-ma-destinee-thumb.jpg",
+      "sourceLocalPath": "dist/assets/hugo-ma-destinee.jpg",
+      "width": 320,
+      "height": 217,
+      "sha256": "af85686fffbaf5b6fe869c516a352f09b685ac38158f9af5683cbed1ac0f23d0",
+      "modifications": "Proportional downscale and JPEG optimization only; no crop, retouching, or generative changes."
+    },
+    {
+      "localPath": "dist/assets/hugo-eddystone-thumb.jpg",
+      "sourceLocalPath": "dist/assets/hugo-eddystone.jpg",
+      "width": 117,
+      "height": 220,
+      "sha256": "f37365e63430a6e9ac372abfee44e6439885c2787c27e216bc96cf9bea3094d7",
+      "modifications": "Proportional downscale and JPEG optimization only; no crop, retouching, or generative changes."
+    }
+  ]
+}
