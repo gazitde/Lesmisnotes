@@ -82,6 +82,9 @@ for(const language of ['he','en']){
   for(const full of [false,true]){
    api.navigateReader(`/${language}/novel/`+(full?'?essays=all':''));
    const expected=full?Array.from(catalog):streamlined;
+   assert.match(app.innerHTML,new RegExp('<h1>[^]*?'+(full?'365':'347')+'[^]*?</h1>'),'First screen names the current route size');
+   assert.match(app.innerHTML,new RegExp('id="reading-along-title">[^<]*'+(full?'365':'347')),'Reader heading matches mode');
+   assert.ok(app.innerHTML.includes(language==='he'?'פרקי הרומן המלא':'chapters in the full novel'),'Progress clearly measures the complete novel');
    assert.deepEqual(Array.from(api.readerNavigationChapters(catalog[0]),c=>c.id),expected.map(c=>c.id));
    for(let i=0;i<expected.length;i++){
     const html=api.chapterSlideNav(expected[i]);

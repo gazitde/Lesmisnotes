@@ -23,6 +23,8 @@ const groups={'p2-b7':8,'p4-b7':4,'p5-b2':6},linked=['p5-b3-c1','p5-b3-c4','p5-b
    for(let part=1;part<=5;part++){
     await p.goto(`${base}/${lang}/novel/?focus=part%3Ap${part}${full?'&essays=all':''}`);
     await p.locator('#reader-part-panel').waitFor();
+    check((await p.locator('h1').textContent()).includes(full?'365':'347'),'Opening heading names the current route');
+    check((await p.locator('#reading-along-title').textContent()).includes(full?'365':'347'),'Reader heading stays mode-aware');
     const reject=p.locator('[data-action="privacy-reject"]').first();if(await reject.isVisible())await reject.click();
     books+=await p.locator('.reader-book-card').count();
     same(await p.locator('.reader-book-card .reader-essay-badge').count(),full&&[2,4,5].includes(part)?1:0,'Essay cards exist only in full mode');
