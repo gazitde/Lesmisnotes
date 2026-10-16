@@ -32,6 +32,7 @@ for(const language of ['he','en'])test(`multilingual notes retain sources, nativ
  assert.ok(!api.hugoStories().includes('catherine-return'));
  for(const id of ['german-translation','manuscript-name']){
   const html=api.multilingualNote(id);assert.ok(html.includes(notes[id].lead[language]));
+  assert.match(html,/<aside class="comparison-example multilingual-note"/);
   assert.match(html,/<details class="source-disclosure"><summary>/);
   assert.ok(!html.includes('<iframe')&&!html.includes('<img'),'No new media is loaded');
   assert.ok(!html.includes(' open'),'Depth starts closed');
@@ -50,6 +51,8 @@ for(const language of ['he','en'])test(`multilingual notes retain sources, nativ
  for(const target of ['p2-b3-c8','p5-b9-c5','epilogue'])assert.ok(finale.includes(target));
  assert.ok(api.hugoStories().includes('data-multilingual-note="catherine-return"'));
  for(const [id,note] of Object.entries(notes))for(const ref of note.references){
-  assert.ok(api.multilingualNote(id).includes(ref.url.replaceAll('&','&amp;')));
+  const rendered=api.multilingualNote(id).includes(ref.url.replaceAll('&','&amp;'));
+  const technical=/^https?:\/\/(?:www\.)?mtishows\.(?:com|co\.uk)(?:\/|$)/i.test(ref.url);
+  assert.equal(rendered,!technical,'Existing technical-source filtering: '+ref.url);
  }
 });
