@@ -6,7 +6,7 @@
  const T=(he,en)=>context.lang==='he'?he:en, H=v=>E(typeof v==='object'&&v?v[context.lang]||v.en||'':v);
  const data=()=>{const all=window.PLACE_CONTENT?.places||[];return context.readerPlace?all.filter(p=>p.id===context.readerPlace):all};
  const find=id=>data().find(p=>p.id===id);
- const href=(page,id)=>`/${context.lang}/${page}/${id?'?place='+encodeURIComponent(id):''}${page==='map'&&id&&context.readerChapter?'&reader='+encodeURIComponent(context.readerChapter):''}`;
+ const href=(page,id)=>`/${context.lang}/${page}/${id?'?place='+encodeURIComponent(id):''}${page==='map'&&id&&context.readerChapter?'&reader='+encodeURIComponent(context.readerChapter)+(context.readerAllEssays?'&essays=all':''):''}`;
  const xlink=(u,label)=>`<a href="${E(u)}" target="_blank" rel="noopener noreferrer">${H(label)}<span class="sr-only">${T(' (נפתח בלשונית חדשה)',' (opens in a new tab)')}</span> ↗</a>`;
  function setup(opts){context={...context,...opts};const q=new URLSearchParams(location.search||'').get('place');if(find(q))selected=q;if(!find(selected))selected=data()[0]?.id;}
  function credit(p){const f=p.photo;if(!f)return '';return `<figcaption>${H(f.caption)} <span>${xlink(f.sourceUrl,f.author)} · ${xlink(f.licenseUrl,f.license)}${f.modified?T(' · התאמת גודל והמרה ל־WebP',' · resized and converted to WebP'):''}</span><details><summary>${T('פרטי התמונה והרישיון','Image and licence details')}</summary>${xlink(f.sourceUrl,f.title||p.name)}<br>${T('יוצר: ','Creator: ')}${E(f.author)}<br>${H(f.transformations)}<br>${T('הרישיון המוצג חל על התמונה.','The displayed licence applies to this image.')}</details></figcaption>`;}
