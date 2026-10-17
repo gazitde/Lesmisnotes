@@ -18,17 +18,17 @@
     const first=chapters().find(c=>c.id===profile?.firstAppearance?.chapterId);
     return Boolean(first&&chapter&&Number.isSafeInteger(chapter.ordinal)&&chapter.ordinal>=first.ordinal);
   }
-  function href(id,{lang='en',reader=null,full=false}={}){
+  function href(id,{lang='en',reader=null,full=false,allEssays=false}={}){
     if(!get(id))return null;
     if(reader!==null){const c=chapters().find(c=>c.id===reader);if(!reached(get(id),c))return null;}
-    return `/${lang==='he'?'he':'en'}/character-${id}/`+(reader!==null?'?reader='+encodeURIComponent(reader):full?'?view=full':'');
+    return `/${lang==='he'?'he':'en'}/character-${id}/`+(reader!==null?'?reader='+encodeURIComponent(reader)+(allEssays?'&essays=all':''):full?'?view=full':'');
   }
   function link(id,text,options={}){
     const u=href(id,options);return u?`<a class="${esc(options.className||'character-name-link')}" data-profile-link href="${esc(u)}">${esc(text||local(get(id).name,options.lang||'en'))}</a>`:esc(text||'');
   }
   // Only explicit reviewed name tokens are eligible. Never scan arbitrary people,
   // sources, actors, aliases or translated prose for guessed identities.
-  function inlineNames(text,{lang='en',reader=null,mentions=[]}={}){
+  function inlineNames(text,{lang='en',reader=null,mentions=[],allEssays=false}={}){
     const value=String(text??''),segments=[];const used=new Set();
     for(const item of mentions){
       if(!item||used.has(item.id)||typeof item.name!=='string'||!item.name||!get(item.id))continue;
@@ -52,26 +52,26 @@
       segments.push({start,end:start+item.name.length,id:item.id,name:item.name});used.add(item.id);
     }
     segments.sort((a,b)=>a.start-b.start);let cursor=0,out='';
-    for(const s of segments){out+=esc(value.slice(cursor,s.start))+link(s.id,s.name,{lang,reader});cursor=s.end;}
+    for(const s of segments){out+=esc(value.slice(cursor,s.start))+link(s.id,s.name,{lang,reader,allEssays});cursor=s.end;}
     return out+esc(value.slice(cursor));
   }
-  function chapterNames(text,{lang='en',reader}={}){
-    return inlineNames(local(text,lang),{lang,reader,mentions:(data().chapterMentions?.[reader]||[]).map(m=>({id:m.id,name:local(m.name,lang)}))});
+  function chapterNames(text,{lang='en',reader,allEssays=false}={}){
+    return inlineNames(local(text,lang),{lang,reader,allEssays,mentions:(data().chapterMentions?.[reader]||[]).map(m=>({id:m.id,name:local(m.name,lang)}))});
   }
   function retainedHref(route,search,lang){
     const id=routeId(route);if(!id)return null;
     const q=new URLSearchParams(search||''),base=`/${lang}/character-${id}/`;
-    if(q.has('reader'))return base+'?'+q.getAll('reader').map(value=>'reader='+encodeURIComponent(value)).join('&');
+    if(q.has('reader'))return base+'?'+q.getAll('reader').map(value=>'reader='+encodeURIComponent(value)).join('&')+(q.get('essays')==='all'?'&essays=all':'');
     return base+(q.get('view')==='full'?'?view=full':'');
   }
   function readerTrail(route,{search='',lang='en'}={}){
     const ctx=readerContext(route,search);if(!ctx)return null;
-    const p=get(routeId(route)),c=ctx.chapter,he=lang==='he';
-    const trail=[{label:he?'בית':'Home',href:`/${lang}/home/`},{label:he?'הספר המקורי':'Novel',href:`/${lang}/novel/`}];
+    const p=get(routeId(route)),c=ctx.chapter,he=lang==='he',essays=new URLSearchParams(search).get('essays')==='all'?'&essays=all':'';
+    const trail=[{label:he?'בית':'Home',href:`/${lang}/home/`},{label:he?'הספר המקורי':'Novel',href:`/${lang}/novel/${essays?'?essays=all':''}`}];
     if(c)trail.push(
-      {label:he?'חלק '+c.part:'Part '+c.part,href:`/${lang}/novel/?focus=${encodeURIComponent('part:p'+c.part)}`},
-      {label:he?'ספר '+c.book:'Book '+c.book,href:`/${lang}/novel/?focus=${encodeURIComponent('book:'+c.bookId)}`},
-      {label:he?'פרק '+c.chapter:'Chapter '+c.chapter,href:`/${lang}/novel/?focus=${encodeURIComponent('chapter:'+c.id)}`}
+      {label:he?'חלק '+c.part:'Part '+c.part,href:`/${lang}/novel/?focus=${encodeURIComponent('part:p'+c.part)}${essays}`},
+      {label:he?'ספר '+c.book:'Book '+c.book,href:`/${lang}/novel/?focus=${encodeURIComponent('book:'+c.bookId)}${essays}`},
+      {label:he?'פרק '+c.chapter:'Chapter '+c.chapter,href:`/${lang}/novel/?focus=${encodeURIComponent('chapter:'+c.id)}${essays}`}
     );
     trail.push({label:reached(p,c)?local(p.name,lang):(he?'דמות':'Character'),href:retainedHref(route,search,lang),current:true});
     return trail;
@@ -110,7 +110,8 @@
     const he=lang==='he',t=(h,e)=>he?h:e,L=v=>esc(local(v,lang)),ctx=readerContext('character-'+id,search);
     if(ctx){
       const known=reached(p,ctx.chapter),chapter=ctx.chapter;
-      const back=chapter?`/${lang}/novel/?focus=${encodeURIComponent('chapter:'+chapter.id)}`:`/${lang}/novel/`;
+      const essays=new URLSearchParams(search).get('essays')==='all';
+      const back=chapter?`/${lang}/novel/?focus=${encodeURIComponent('chapter:'+chapter.id)}${essays?'&essays=all':''}`:`/${lang}/novel/${essays?'?essays=all':''}`;
       const label=chapter?t(`חלק ${chapter.part} · ספר ${chapter.book} · פרק ${chapter.chapter}`,`Part ${chapter.part} · Book ${chapter.book} · Chapter ${chapter.chapter}`):t('מלווה הקריאה','the reading companion');
       return `<section class="page-top character-profile-reader-top"><div class="wrap">${readerBreadcrumbs('character-'+id,lang,search)}<div class="eyebrow">${t('לצד הפרק שקוראים','BESIDE YOUR CURRENT CHAPTER')}</div><h1>${known?L(p.name):chapter?t('עוד לא פגשנו את הדמות כאן','We have not met this person here yet'):t('היכרות לפי נקודת הקריאה','An introduction for your reading point')}</h1></div></section><div class="wrap section character-profile reader-character-profile" data-profile-reader="${esc(chapter?.id||'invalid')}">${known?`<p class="reader-character-identity">${L(p.readerIdentity)}</p>`:`<p>${chapter?t('פרטי הדמות נשארים סגורים לפי נקודת הקריאה הזאת.','This character’s details stay closed at this reading point.'):t('כדי להציג את הזהות הבטוחה לפרק, פתחו קישור תקין מן הפרק כשה־JavaScript פעיל. פרטי הדמות נשארים סגורים עד אז.','To show the identity that is safe for your chapter, open a valid chapter link with JavaScript enabled. Character details stay closed until then.')}</p>`}<p class="profile-scope-note">${t('רק הזהות והתפקיד בנקודת הקריאה הזאת. פרטים מאוחרים נשארים סגורים.','Only the identity and role known at this chapter. Later details stay hidden.')}</p><div class="button-row"><a class="btn" data-profile-link href="${back}">${t('חזרה אל ','Return to ')}${esc(label)}</a></div>${known?`<aside class="profile-reader-exit">${link(id,t('לפתוח את הדף המלא · כולל הסיום','Open the full profile · includes the ending'),{lang,full:true,className:'text-link'})}</aside>`:''}</div>`;
     }
