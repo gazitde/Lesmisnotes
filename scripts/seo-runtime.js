@@ -7,7 +7,7 @@ window.SiteSEO = {
     const m = window.SITE_METADATA, p = window.CharacterProfiles?.metadata(route,window.location?.search||'') || m.pages[route];
     const r = p.canonicalRoute || route;
     const origin = m.origin, canonical = origin ? `${origin}/${lang}/${r}/` : '';
-    const type = route === 'about' ? 'AboutPage' : route === 'contact' ? 'ContactPage' : ['watch', 'listening', 'places', 'recipes', 'resources', 'screen', 'sitemap'].includes(route) ? 'CollectionPage' : 'WebPage';
+    const type = route === 'about' ? 'AboutPage' : route === 'contact' ? 'ContactPage' : ['watch', 'listening', 'places', 'recipes', 'resources', 'screen', 'special-events', 'sitemap'].includes(route) ? 'CollectionPage' : 'WebPage';
     const page = {'@type':type, name:p.title[lang], description:p.description[lang], inLanguage:lang};
     if (origin) Object.assign(page, {'@id':canonical+'#page', url:canonical, isPartOf:{'@id':origin+'/#website'}, primaryImageOfPage:{'@type':'ImageObject', url:origin+this.image(p,lang).path, width:1200, height:630}});
     const graph = [page];

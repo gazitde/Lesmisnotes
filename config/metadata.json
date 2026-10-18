@@ -271,6 +271,23 @@
         "he": "בחרו בין הפקות בימתיות פעילות, הופעות שהוכרזו והקלטות. מידע מתוארך וקישורים למפיקים ולתיאטראות, בעברית ובאנגלית.",
         "en": "Find current stage productions, announced returns and recorded performances. Dated guidance with direct links to producers and theatres in English and Hebrew."
       }
+    },
+    "special-events": {
+      "title": {
+        "en": "Les Misérables anniversary concerts & special events | LesMisNotes",
+        "he": "מופעי יום השנה ואירועים מיוחדים של עלובי החיים | LesMisNotes"
+      },
+      "description": {
+        "en": "The stories, casts and official links behind the 1995 tenth anniversary, 2010 twenty-fifth, 2019 Staged Concert, 2025 charity gala and 2026 fortieth-anniversary album.",
+        "he": "הסיפורים, המשתתפים והקישורים הרשמיים: קונצרטי העשור ו־25 השנים, הקונצרט המבוים מ־2019, גאלת 2025 ואלבום 40 השנים מ־2026."
+      },
+      "socialImage": {
+        "path": "/assets/special-events-card.png",
+        "alt": {
+          "en": "LesMisNotes: anniversary timeline from 1995 to 2026",
+          "he": "LesMisNotes: ציר מופעי יום השנה מ־1995 עד 2026"
+        }
+      }
     }
   }
 }

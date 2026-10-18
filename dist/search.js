@@ -157,7 +157,7 @@
     }
     for (const [route, page] of Object.entries(input.metadata?.pages || {})) {
       if (page.canonicalRoute || route.startsWith('character-')) continue;
-      add('page', route, route, 'pages', input.labels?.[route] || page.title, input.pageHints?.[route] || page.description);
+      add('page', route, route, 'pages', input.labels?.[route] || page.title, route === 'special-events' ? pair(page.description, (R.specialEvents || []).map(e => pair(e.title, e.date, e.format, e.paragraphs, e.cast)), '10th 25th 40th anniversary concert album') : input.pageHints?.[route] || page.description);
     }
     const characterProfile=id=>R.characterProfiles?.profiles?.find(p=>p.id===id);
     for (const c of R.characters || []) {
