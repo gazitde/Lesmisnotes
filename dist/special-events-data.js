@@ -245,3 +245,35 @@ window.EXTRA_CONTENT.specialEvents = [
     ]
   }
 ];
+
+// Keep the practical recording chooser connected to the anniversary guide.
+// Reuse the album story and cast so the two entrances cannot drift apart.
+{
+  const E = window.EXTRA_CONTENT, album = E.specialEvents.find(e => e.id === 'album-2026');
+  const D = E.recordingChooser;
+  if (D && album && !D.cards.some(c => c.id === album.id)) {
+    D.intro = {
+      en: 'Meet the performers, compare editions, then choose an audio album, a filmed concert or the movie. The new fortieth-anniversary album is included below.',
+      he: 'הכירו את המבצעים, השוו בין המהדורות ובחרו אלבום שמע, קונצרט מצולם או סרט. גם אלבום 40 השנים החדש נמצא כאן.'
+    };
+    D.cards.push({
+      id: album.id, year: '2026', category: 'audio',
+      title: {en: '40th Anniversary · All-Star Cast', he: '40 השנים · אלבום צוות הכוכבים'},
+      format: {en: 'Audio album · English · 43 tracks', he: 'אלבום שמע · אנגלית · 43 רצועות'},
+      cast: {en: 'Killian Donnelly · Bradley Jaden · Katie Hall · Shan Ako', he: 'קיליאן דונלי · בראדלי ג׳יידן · קייטי הול · שאן אקו'},
+      reason: {en: 'A new recording bringing together voices from the London production and the Arena Spectacular, released on 29 May 2026.', he: 'הקלטה חדשה המפגישה קולות מן ההפקה הלונדונית וממופע הארנות, שיצאה ב־29 במאי 2026.'},
+      paragraphs: album.paragraphs,
+      prompt: {en: 'How do Donnelly and Jaden change your sense of Valjean and Javert beside the earlier anniversary casts?', he: 'איך דונלי וג׳יידן משנים את התחושה של ולז׳אן וז׳אבר לעומת צוותי יום השנה הקודמים?'},
+      sourceIds: ['recording-2026-warner'],
+      options: [{id: '2026-official-album', url: 'https://w.lnk.to/lesmis40PR',
+        label: {en: 'Choose an official listening service', he: 'לבחירת שירות האזנה רשמי'},
+        format: {en: 'Audio album · streaming / download / 2 CDs', he: 'אלבום שמע · סטרימינג / הורדה / שני תקליטורים'},
+        access: {en: 'Subscription or purchase, depending on provider', he: 'מינוי או רכישה, לפי הספק'},
+        storefront: {en: 'Official provider selector · availability varies by country', he: 'בחירת ספק רשמי · הזמינות משתנה לפי מדינה'},
+        checkedAt: '2026-10-18', sourceIds: ['recording-2026-warner']}]
+    });
+    D.footer = {en: 'Earlier options checked 12 October 2026; the 2026 album added and checked 18 October. Each option identifies its format and provider; availability depends on your country.', he: 'האפשרויות הוותיקות נבדקו ב־12 באוקטובר 2026; אלבום 2026 נוסף ונבדק ב־18 באוקטובר. לצד כל אפשרות מצוינים הפורמט והספק; הזמינות תלויה במדינה שלכם.'};
+    E.sourceGroups.find(g=>g.id==='stage').sourceIds.push('recording-2026-warner');
+    E.extraSources.push({id:'recording-2026-warner',url:'https://www.warnerclassics.com/release/les-miserables-40th-anniversary-all-star-cast',label:{en:'Warner Classics · 40th Anniversary All-Star Cast album',he:'וורנר קלאסיקס · אלבום צוות הכוכבים של 40 השנים'}});
+  }
+}
