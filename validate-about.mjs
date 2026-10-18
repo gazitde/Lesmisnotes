@@ -43,7 +43,7 @@ for(const lang of ['he','en']){
  for(const g of state.ctx.RESEARCH.sourceGroups){tap({sourceTopic:g.id});const h=state.ctx.document.getElementById('source-results').innerHTML;assert.ok(count(h)>0&&count(h)<=24);checks++;}
  assert.ok(!state.html.includes('<</section>'));checks++;
  const fallback=state.html.match(/<noscript><div class="source-static-fallback">([\s\S]*?)<\/noscript>/)?.[1];assert.ok(fallback);assert.equal((fallback.match(/<li>/g)||[]).length,total);checks+=2;
- const h=render(lang,'home',false).html;assert.ok(h.includes('data-action="privacy-accept"')); assert.ok(h.includes('data-action="privacy-open"'));assert.ok(h.includes('stats-review-note'));checks+=3;
+ const h=render(lang,'home',false).html;assert.ok(h.includes('data-action="privacy-accept"')); assert.ok(h.includes('data-action="privacy-open"'));assert.ok(!h.includes('stats-review-note'));checks+=3;
  const recipes=render(lang,'recipes',false).html;assert.equal((recipes.match(/class="recipe-test-note"/g)||[]).length,5);assert.equal((recipes.match(/class="recipe-source-rating"/g)||[]).length,5);assert.ok(recipes.includes('recipe-tahini-walnut-loaf'));assert.ok(recipes.includes('recipe-bishops-bread-soup'));checks+=4;
  const chars=render(lang,'characters',true).html;assert.ok(chars.includes('24601'));checks++;
  const policy=render(lang,'privacy',false).html;assert.ok(policy.includes(lang==='he'?'פועל רק לאחר אישור מפורש למדידה':'runs only after an explicit analytics opt-in'));checks++;

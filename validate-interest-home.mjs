@@ -5,7 +5,7 @@ const research=fs.readFileSync('dist/research.js','utf8');
 const extras=fs.readFileSync('dist/extras.js','utf8');
 const engine=fs.readFileSync('dist/quiz-engine.js','utf8');
 const seo=fs.readFileSync('dist/seo.js','utf8');
-const appCode=fs.readFileSync('dist/app.js','utf8').replace('function render(){',`window.__interestAudit={song(id){featuredSong=id;return spotlightDetail()},gallery(id){galleryClip=id;return galleryDetail()},slide(i){showAct='all';showIndex=i;return showSlide()},dilemma(i){selectedDilemma=i;return dilemmaDetail()},pathCount(){return journeyPaths.length},stopCount(){return showStops().length}};function render(){`);
+const appCode=fs.readFileSync('dist/app.js','utf8').replace('function render(){',`window.__interestAudit={plan(id){return interestPlan(interestPaths.find(d=>d.id===id))},song(id){featuredSong=id;return spotlightDetail()},gallery(id){galleryClip=id;return galleryDetail()},slide(i){showAct='all';showIndex=i;return showSlide()},dilemma(i){selectedDilemma=i;return dilemmaDetail()},pathCount(){return journeyPaths.length},stopCount(){return showStops().length}};function render(){`);
 const privacyCode=fs.readFileSync('dist/privacy.js','utf8');
 const configCode=fs.readFileSync('dist/site-config.js','utf8');
 const analyticsCode=fs.readFileSync('dist/analytics.js','utf8');
@@ -36,6 +36,7 @@ for(const lang of ['he','en']){
  for(const song of R.musical.spotlight.songs)clean(st.ctx.__interestAudit.song(song.id),lang+song.id);
  for(const item of R.gallery.items)clean(st.ctx.__interestAudit.gallery(item.id),lang+item.id);for(let i=0;i<st.ctx.__interestAudit.stopCount();i++)clean(st.ctx.__interestAudit.slide(i),lang+'stop'+i);
  for(let i=0;i<R.philosophy.dilemmas.length;i++)clean(st.ctx.__interestAudit.dilemma(i),lang+'dilemma'+i);
- const home=render(lang,'home',false);for(const id of ['novel','musical','both'])check(home.html.includes('data-interest="'+id+'"'),'Static interest fallback '+id);check((home.html.match(/class="path-card"/g)||[]).length===3,'Exactly three main cards');check(!home.html.includes('home-entry-choices'),'Old competing entry cards removed');
+ for(const interest of ['musical','novel']){const plan=st.ctx.__interestAudit.plan(interest);check((plan.match(/class="btn interest-start/g)||[]).length===1,'One audience primary '+interest);const options=plan.match(/<div class="audience-option-grid">([\s\S]*?)<\/div>/)?.[1]||'';check((options.match(/<a href=/g)||[]).length===3,'Exactly three supporting links '+interest);for(const route of interest==='musical'?['before','listening','screen']:['characters','map','hugo'])check(options.includes('/'+lang+'/'+route+'/'),'Supporting destination '+route);check(plan.includes(interest==='musical'?'/'+lang+'/musical/?focus=song%3Awork-song&view=journey':'/'+lang+'/novel/'),'Audience primary destination '+interest);}
+ const home=render(lang,'home',false);for(const id of ['novel','musical'])check(home.html.includes('data-interest="'+id+'"'),'Static interest fallback '+id);check((home.html.match(/class="path-card"/g)||[]).length===2,'Exactly two main cards');check(!home.html.includes('home-entry-choices'),'Old competing entry cards removed');for(const token of ['data-interest="both"','data-home-journey=','class="vinyl"','home-more-paths'])check(!home.html.includes(token),'Removed home clutter '+token);
 }
 console.log(`Interest home and technical-source cleanup: ${tests} source/render checks passed.`);

@@ -15,7 +15,6 @@ const dir=process.env.SEARCH_ARTIFACT_DIR||'test-results';
 const routes={
   novel:['novel','characters','map','hugo'],
   musical:['before','musical','listening','screen'],
-  both:['hugo','story','compare','musical']
 };
 const optionalKeys=[
   'barricade-lang','barricade-listening','barricade-quiz-run',
@@ -105,30 +104,18 @@ async function storageCheck(page,consented=false){
   }
 }
 
+const primaryHref=(lang,interest)=>interest==='musical'?routePath(lang,'musical')+'?focus=song%3Awork-song&view=journey':routePath(lang,'novel');
 async function plan(page,lang,interest){
-  await page.waitForFunction(({lang,interest})=>
-    location.pathname===`/${lang}/home/`&&
-    new URLSearchParams(location.search).get('interest')===interest&&
-    document.querySelector(`.path-card[data-interest="${interest}"]`)?.getAttribute('aria-current')==='true',
-  {lang,interest});
-  equal(await page.locator('.path-card[aria-current="true"]').count(),1,'exactly one interest is current');
-  equal(await card(page,interest).getAttribute('aria-current'),'true','chosen card exposes its selected state');
-  check(await page.locator('#interest-plan').isVisible(),'selected plan is visible');
-  check((await page.locator('#interest-plan-title').innerText()).trim().length>0,'selected plan has a meaningful heading');
-  const start=page.locator('#interest-plan .interest-start');
-  equal(await start.count(),1,'plan has one Start action');
-  equal(await start.evaluate(element=>element.tagName),'A','Start is a real link');
-  equal(await start.getAttribute('href'),routePath(lang,routes[interest][0]),'Start links to the first route');
-  equal(await start.getAttribute('data-enter-journey'),journeyId(interest),'Start enters the selected guided journey');
-  const stops=page.locator('#interest-plan .interest-stops > li a');
-  equal(await stops.evaluateAll(links=>links.map(link=>link.getAttribute('href'))),
-    routes[interest].map(route=>routePath(lang,route)),'plan presents exactly the four promised stops in order');
-  equal(await stops.evaluateAll(links=>links.map(link=>link.getAttribute('data-enter-journey'))),
-    routes[interest].map(()=>journeyId(interest)),'each direct stop link joins the same selected path');
-  equal(await stateId(page),null,'choosing a plan does not start the journey');
-  equal(await page.locator('.journey-continuation').count(),0,'home selection has no active journey banner');
-  await noOverflow(page,'selected plan');
-  await spoilersStayClosed(page,'plan selection');
+  await page.waitForFunction(({lang,interest})=>location.pathname===`/${lang}/home/`&&new URLSearchParams(location.search).get('interest')===interest&&document.querySelector(`.path-card[data-interest="${interest}"]`)?.getAttribute('aria-current')==='true',{lang,interest});
+  equal(await page.locator('.path-card[aria-current="true"]').count(),1,'exactly one audience selected');
+  equal(await page.locator('#interest-plan').count(),1,'exactly one audience plan');
+  check(await page.locator('#interest-plan-title').isVisible(),'plan heading visible');
+  equal(await page.locator('#interest-plan .interest-start').count(),1,'one primary action');
+  equal(await page.locator('#interest-plan .interest-start').getAttribute('href'),primaryHref(lang,interest),'primary destination');
+  const supporting=interest==='musical'?['before','listening','screen']:['characters','map','hugo'];
+  equal(await page.locator('.audience-option-grid a').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('href'))),supporting.map(route=>routePath(lang,route)),'three supporting destinations');
+  equal(await stateId(page),null,'selection does not begin guided journey');
+  await noOverflow(page,'audience plan');await spoilersStayClosed(page,'audience plan');
 }
 
 async function stop(page,lang,interest,index,{screenshot=false,width}={}){
@@ -174,99 +161,58 @@ async function chooseAndStart(page,lang,interest){
 
 async function initialHome(page,lang,width){
   await page.goto(base+routePath(lang,'home'));
-  equal(await page.locator('.path-card[data-interest]').count(),3,'three interest entrances');
-  equal(await page.locator('.path-card[aria-current="true"]').count(),0,'fresh home does not silently choose an interest');
-  for(const interest of Object.keys(routes)){
-    equal(await card(page,interest).evaluate(element=>element.tagName),'A','interest choice is anchor-backed');
-    equal(await card(page,interest).getAttribute('href'),routePath(lang,routes[interest][0]),'card has the correct no-JS destination');
-  }
-  const more=page.locator('details.home-more-paths');
-  equal(await more.count(),1,'older journeys live in one native disclosure');
-  equal(await more.getAttribute('open'),null,'older journeys are collapsed initially');
-  equal(await page.locator('[data-home-journey]').count(),5,'all five older journeys remain');
-  equal(await more.locator('[data-home-journey]').count(),5,'all older journey controls are inside the disclosure');
+  equal(await page.locator('.path-card[data-interest]').count(),2,'exactly two audience entrances');
+  equal(await page.locator('.path-card[aria-current="true"]').count(),0,'fresh home makes no silent selection');
+  for(const interest of Object.keys(routes))equal(await card(page,interest).getAttribute('href'),primaryHref(lang,interest),'useful no-JS destination');
+  equal(await page.locator('[data-interest="both"], [data-home-journey], .home-more-paths, .vinyl, .hero-band, [data-moment-entry]').count(),0,'no old chooser or promotional clutter');
   await noOverflow(page,'fresh home');
-  await page.evaluate(()=>scrollTo(0,0));
   await page.screenshot({path:path.join(dir,`interest-home-first-${lang}-${width}.png`)});
-  await page.locator('.home-classic-paths').screenshot({path:path.join(dir,`interest-home-cards-${lang}-${width}.png`)});
-  await touchTargets(page,'.path-card[data-interest], details.home-more-paths > summary','home choices');
-  await more.locator(':scope > summary').click();
-  check(await more.evaluate(element=>element.open),'native disclosure opens');
-  await touchTargets(page,'details.home-more-paths [data-home-journey]','older journeys');
-  await more.locator(':scope > summary').click();
-  check(!await more.evaluate(element=>element.open),'native disclosure closes again');
+  await touchTargets(page,'.path-card[data-interest]','audience choices');
   await storageCheck(page);
 }
 
 async function exerciseInterest(page,lang,width,interest){
   currentCase=`${lang}/${width}/${interest}`;
   const otherLang=lang==='he'?'en':'he';
-  await page.goto(base+routePath(lang,'home'));
-  await card(page,interest).click();
-  await plan(page,lang,interest);
-  await touchTargets(page,'#interest-plan a','selected plan');
+  await page.goto(base+routePath(lang,'home'));await card(page,interest).click();await plan(page,lang,interest);
+  await touchTargets(page,'#interest-plan .interest-start, .audience-option-grid a','primary and supporting actions');
   await page.locator('#interest-plan').screenshot({path:path.join(dir,`interest-plan-${interest}-${lang}-${width}.png`)});
-  await page.reload();
-  await plan(page,lang,interest);
-  await page.locator('[data-action="language"]').click();
-  await plan(page,otherLang,interest);
-  await page.goBack();
-  await plan(page,lang,interest);
-
+  await page.reload();await plan(page,lang,interest);
+  await page.locator('[data-action="language"]').click();await plan(page,otherLang,interest);
+  await page.goBack();await plan(page,lang,interest);
+  const alternative=interest==='musical'?'novel':'musical';
+  await card(page,alternative).click();await plan(page,lang,alternative);
+  await page.goBack();await plan(page,lang,interest);
+  await page.goForward();await plan(page,lang,alternative);
+  await card(page,interest).click();await plan(page,lang,interest);
   await page.locator('#interest-plan .interest-start').click();
-  await stop(page,lang,interest,0);
-  await page.reload();
-  await stop(page,lang,interest,0);
-  await page.locator('[data-action="language"]').click();
-  await stop(page,otherLang,interest,0);
-  await page.goBack();
-  await stop(page,lang,interest,0);
-  await page.goForward();
-  await stop(page,otherLang,interest,0);
-  await page.locator('[data-action="language"]').click();
-  await stop(page,lang,interest,0);
-  await page.locator('.journey-next').click();
-  await stop(page,lang,interest,1);
-  await page.goBack();
-  await stop(page,lang,interest,0);
-  await page.goForward();
-  await stop(page,lang,interest,1);
-  await page.reload();
-  await stop(page,lang,interest,1);
-
-  await page.locator('.journey-switch').click();
-  await plan(page,lang,interest);
-  equal(new URL(page.url()).hash,'#home-classic-heading','switch lands at the interest chooser');
-  // Change the selection in-place, then switch back before restarting this path.
-  const alternative=Object.keys(routes).find(value=>value!==interest);
-  await card(page,alternative).click();
-  await plan(page,lang,alternative);
-  await card(page,interest).click();
-  await plan(page,lang,interest);
-  await page.locator('#interest-plan .interest-start').click();
-  for(let index=0;index<routes[interest].length;index++){
-    await stop(page,lang,interest,index,{screenshot:true,width});
-    await storageCheck(page);
-    if(index<routes[interest].length-1)await page.locator('.journey-next').click();
+  equal(new URL(page.url()).pathname,routePath(lang,interest==='musical'?'musical':'novel'),'primary opens correct route');
+  if(interest==='musical'){
+    equal(new URL(page.url()).searchParams.get('focus'),'song:work-song','watch journey begins at Work Song');
+    equal(new URL(page.url()).searchParams.get('view'),'journey','primary selects viewing journey');
+    equal(await page.locator('iframe[src*="autoplay=1"]').count(),0,'no autoplay');
+  }else{
+    await stop(page,lang,interest,0);
+    await page.reload();await stop(page,lang,interest,0);
+    await page.locator('[data-action="language"]').click();await stop(page,otherLang,interest,0);
+    await page.goBack();await stop(page,lang,interest,0);
+    await page.locator('.journey-next').click();await stop(page,lang,interest,1);
+    await page.goBack();await stop(page,lang,interest,0);
+    await page.goForward();await stop(page,lang,interest,1);
+    await page.locator('.journey-switch').click();await plan(page,lang,interest);
+    await page.locator('#interest-plan .interest-start').click();
+    for(let index=0;index<4;index++){
+      await stop(page,lang,interest,index);
+      if(index<3)await page.locator('.journey-next').click();
+    }
+    await page.reload();await stop(page,lang,interest,3);
+    const beforeExit=await page.evaluate(()=>{history.replaceState(history.state,'',location.pathname+'?interest-test=preserved#main');return location.href;});
+    await page.locator('[data-action="journey-exit"]').click();
+    equal(page.url(),beforeExit,'Browse freely preserves URL');
+    equal(await stateId(page),null,'Browse freely clears journey state');
+    await page.reload();equal(await page.locator('.journey-continuation').count(),0,'exit survives reload');
   }
-  await page.reload();
-  await stop(page,lang,interest,3);
-
-  // A deliberate query/hash fixture isolates Browse freely's URL-preservation
-  // contract without opening story content or depending on route-specific UI.
-  const beforeExit=await page.evaluate(()=>{
-    history.replaceState(history.state,'',location.pathname+'?interest-test=preserved#main');
-    return location.href;
-  });
-  await page.locator('[data-action="journey-exit"]').click();
-  await page.waitForFunction(()=>!document.querySelector('.journey-continuation'));
-  equal(page.url(),beforeExit,'Browse freely preserves the current route, query and fragment');
-  equal(await stateId(page),null,'Browse freely clears active journey state');
-  await page.reload();
-  equal(await page.locator('.journey-continuation').count(),0,'reload does not revive an exited journey');
-  equal(page.url(),beforeExit,'exited URL survives reload');
-  await spoilersStayClosed(page,'completed path and exit');
-  await storageCheck(page);
+  await spoilersStayClosed(page,'primary destination');await storageCheck(page);
 }
 
 async function optedInResume(page,lang,width){
@@ -277,7 +223,7 @@ async function optedInResume(page,lang,width){
   await page.locator('#privacy-analytics').uncheck();
   await page.locator('[data-action="privacy-save"]').click();
   await storageCheck(page,true);
-  for(const interest of Object.keys(routes)){
+  for(const interest of ['novel']){
     currentCase=`${lang}/${width}/${interest}/resume`;
     await chooseAndStart(page,lang,interest);
     await page.locator('.journey-next').click();
@@ -297,6 +243,15 @@ async function optedInResume(page,lang,width){
     await stop(page,lang,interest,1);
     await storageCheck(page,true);
   }
+  await page.goto(base+routePath(lang,'novel')+'?focus=part%3Ap2');
+  await page.goto(base+routePath(lang,'home')+'?interest=novel');
+  const readingStart=page.locator('#interest-plan .interest-start');
+  equal(await readingStart.getAttribute('href'),routePath(lang,'novel')+'?focus=part%3Ap2','story primary resumes the saved reading location');
+  await readingStart.click();
+  equal(new URL(page.url()).searchParams.get('focus'),'part:p2','saved reading primary opens the actual Part');
+  await spoilersStayClosed(page,'saved reading primary');
+  await storageCheck(page,true);
+
 }
 
 async function withoutJavaScript(browser,lang,width){
@@ -305,11 +260,11 @@ async function withoutJavaScript(browser,lang,width){
   try{
     for(const interest of Object.keys(routes)){
       await page.goto(base+routePath(lang,'home'));
-      equal(await page.locator('.path-card[data-interest]').count(),3,'static HTML retains all three interest anchors');
-      equal(await card(page,interest).getAttribute('href'),routePath(lang,routes[interest][0]),'static anchor has a useful first-route fallback');
-      equal(await page.locator('details.home-more-paths [data-home-journey]').count(),5,'static HTML retains all older journeys');
+      equal(await page.locator('.path-card[data-interest]').count(),2,'static HTML retains both interest anchors');
+      equal(await card(page,interest).getAttribute('href'),primaryHref(lang,interest),'static anchor has a useful first-route fallback');
+      equal(await page.locator('details.home-more-paths [data-home-journey]').count(),0,'static HTML omits the older chooser');
       await card(page,interest).click();
-      equal(new URL(page.url()).pathname,routePath(lang,routes[interest][0]),'card works without JavaScript');
+      equal(new URL(page.url()).pathname,routePath(lang,interest==='musical'?'musical':'novel'),'card works without JavaScript');
       equal(await page.locator('h1').count(),1,'fallback destination has its page heading');
       equal(await page.locator('.story-chapter, #show-slide, .novel-event').count(),0,'no-JS fallback does not expose protected plot content');
       await noOverflow(page,'no-JS fallback');
@@ -344,5 +299,5 @@ async function withoutJavaScript(browser,lang,width){
   }finally{
     await browser.close();
   }
-  console.log(`Interest paths: ${checks} browser checks passed; HE/EN at 1365/390/320, all three four-stop paths, selection, Start, Next, Back/Forward, language, reload, switch, completion, URL-safe exit, spoiler boundaries, no-consent storage, opted-in resume and no-JS anchors.`);
+  console.log(`Interest paths: ${checks} browser checks passed; HE/EN at 1365/390/320, two audience plans, musical viewing primary, novel continuation, Back/Forward, language, reload, switch, completion, URL-safe exit, spoiler boundaries, no-consent storage, opted-in resume and no-JS anchors.`);
 })().catch(error=>{console.error(error);process.exitCode=1;});

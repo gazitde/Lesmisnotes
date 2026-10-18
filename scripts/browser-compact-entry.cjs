@@ -10,16 +10,9 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
   const p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
   await p.goto(`${base}/${lang}/home/`);await p.evaluate(()=>document.fonts.ready);
   await p.locator('[data-action="privacy-reject"]').first().click();
-  const record=await p.locator('.vinyl').boundingBox();
-  check(width>680?record.width>300:record.width>=180&&record.width<=210,`${lang}/${width} proportional record`);
-  const geometry=await p.locator('.vinyl-label').evaluate(el=>({radius:el.clientWidth/2,overflow:el.scrollWidth>el.clientWidth+1||el.scrollHeight>el.clientHeight+1,children:[...el.children].map(e=>({left:e.offsetLeft,top:e.offsetTop,width:e.offsetWidth,height:e.offsetHeight,text:e.textContent,font:parseFloat(getComputedStyle(e).fontSize)}))}));
-  check(!geometry.overflow,`${lang}/${width} label box fits`);
-  for(const r of geometry.children){const x=Math.max(Math.abs(r.left-geometry.radius),Math.abs(r.left+r.width-geometry.radius)),y=Math.max(Math.abs(r.top-geometry.radius),Math.abs(r.top+r.height-geometry.radius));check(Math.hypot(x,y)<=geometry.radius-2,`${lang}/${width} label inside circle: ${r.text}`);if(r.text)check(r.font>=12,`${lang}/${width} readable decorative label`)}
-  check(await p.locator('.vinyl').getAttribute('aria-hidden')==='true','Decorative record adds no keyboard stop');
-  const listeningActions=p.locator('.feature-copy a[data-gallery-link]');check(await listeningActions.count()===2,'Both featured listening actions are present');
-  check(JSON.stringify(await listeningActions.evaluateAll(links=>links.map(a=>a.dataset.galleryLink).sort()))===JSON.stringify(['JMGMSgPHJoI','_6nTyXcmgLc'].sort()),'Distinct Alfie and Stars clips retain their exact destinations');
-  for(const action of await listeningActions.all()){await action.focus();check(await action.evaluate(e=>e===document.activeElement),'Each listening action remains keyboard reachable')}
-  await p.locator('.feature-split').screenshot({path:path.join(dir,`${lang}-listening-${width}.png`)});
+  check(await p.locator('.vinyl, .feature-split, .feature-copy a[data-gallery-link]').count()===0,'Removed promotional clutter stays absent');
+  check(await p.locator('.path-card').count()===2,'Two focused audience entrances');
+  for(const action of await p.locator('.path-card').all()){await action.focus();check(await action.evaluate(e=>e===document.activeElement),'Audience entrances remain keyboard reachable')}
   await p.evaluate(()=>scrollTo(0,0));await p.screenshot({path:path.join(dir,`${lang}-home-${width}.png`),fullPage:true});
   await p.goto(`${base}/${lang}/novel/`);await p.evaluate(()=>document.fonts.ready);
   const nav=p.locator('[data-reader-part-shortcuts]');check(await nav.locator('a').count()===5,'All five Parts have early direct entry');
@@ -66,5 +59,5 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
   check(geometry.hash==='#reader-part-overview-p5'&&geometry.targets===1,'No-JS retains one exact Part target');
   await c.close();
  }
- await browser.close();fs.writeFileSync(path.join(dir,'metrics.json'),JSON.stringify({checks,report},null,2));console.log(`Compact entry: ${checks} HE/EN desktop/390/360/320 checks, circle geometry, early Part links, keyboard/history/language and no-JS.`);
+ await browser.close();fs.writeFileSync(path.join(dir,'metrics.json'),JSON.stringify({checks,report},null,2));console.log(`Compact entry: ${checks} HE/EN desktop/390/360/320 checks, focused audience entry, early Part links, keyboard/history/language and no-JS.`);
 })().catch(e=>{console.error(e);process.exit(1)});
