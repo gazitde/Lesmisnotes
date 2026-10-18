@@ -22,7 +22,7 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
   check(await p.locator('.reader-part-card').count()===5,'All substantial Part overviews remain');
   await p.screenshot({path:path.join(dir,`${lang}-novel-${width}-entry.png`)});
   await p.screenshot({path:path.join(dir,`${lang}-novel-${width}.png`),fullPage:true});
-  report.push({lang,width,record,nav:pos});
+  report.push({lang,width,nav:pos});
   for(let part=1;part<=5;part++){
    await nav.locator(`a[href*="part%3Ap${part}"]`).focus();await p.keyboard.press('Enter');
    check(new URL(p.url()).searchParams.get('focus')===`part:p${part}`,'Exact Part focus URL');
