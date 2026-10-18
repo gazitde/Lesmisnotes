@@ -39,7 +39,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
     await page.screenshot({path:path.join(dir,`${lang}-${route}-${width}.png`),fullPage:true});
    }
    if(route==='home'||route==='contact'){
-    for(const selector of route==='home'?['.poster-stamp','.vinyl-label']:['.contact-postmark']){
+    for(const selector of route==='home'?[]:['.contact-postmark']){
      const circle=await page.locator(selector).evaluate(el=>{
       const radius=el.clientWidth/2,border=parseFloat(getComputedStyle(el).borderLeftWidth)||0;
       const children=[...el.children].filter(e=>e.offsetWidth&&e.offsetHeight).map(e=>({text:e.textContent,left:e.offsetLeft,top:e.offsetTop,width:e.offsetWidth,height:e.offsetHeight}));

@@ -45,6 +45,6 @@ for(const locale of ['he','en']){
  tap(hidden,{action:'hide-spoilers'});assert.ok(!hidden.app.innerHTML.includes('class="moment-reading"'));assert.ok(!hidden.app.innerHTML.includes('data-moment-view='));checks+=2;
  tap(hidden,{moment:'1'});tap(hidden,{momentView:'1'});assert.ok(!hidden.app.innerHTML.includes('class="moment-reading"'));checks++;
  const fresh=render(locale,'ideas',false);assert.ok(!fresh.html.includes('class="moment-reading"'));checks++;
- const home=render(locale,'home',false);assert.ok(home.html.includes('data-moment-entry'));assert.equal((home.html.match(/class="path-card/g)||[]).length,3);tap(home,{momentEntry:''});assert.equal(home.ctx.location.pathname,'/'+locale+'/ideas/');assert.ok(!home.app.innerHTML.includes('class="moment-reading"'));checks+=4;
+ const home=render(locale,'home',false);assert.ok(!home.html.includes('data-moment-entry'));assert.equal((home.html.match(/class="path-card/g)||[]).length,2);tap(home,{momentEntry:''});assert.equal(home.ctx.location.pathname,'/'+locale+'/ideas/');assert.ok(!home.app.innerHTML.includes('class="moment-reading"'));checks+=4;
 }
 console.log(`PASS: ${checks} editorial-moment checks: sources, six perspectives, HE/EN, opt-in spoilers, session reset, language continuity and contextual entry.`);

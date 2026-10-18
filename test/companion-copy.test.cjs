@@ -1,13 +1,14 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const root=process.env.LESMIS_SOURCE||path.resolve(__dirname,'..');
-test('home has clear routes and a performer-led feature without losing Stars',()=>{
+test('home has two focused audience routes while featured performances remain in the catalogue',()=>{
  for(const lang of ['en','he']){
   const page=fs.readFileSync(path.join(root,`dist/${lang}/home/index.html`),'utf8');
-  assert.equal((page.match(/class="path-card"/g)||[]).length,3);
-  assert.ok(page.includes('333')&&page.includes('365'));
-  const boe=page.indexOf('data-gallery-link="JMGMSgPHJoI"'),stars=page.indexOf('data-gallery-link="_6nTyXcmgLc"');
-  assert.ok(boe>0&&stars>boe);
+  assert.equal((page.match(/class="path-card"/g)||[]).length,2);
+  assert.ok(page.includes('data-interest="musical"')&&page.includes('data-interest="novel"'));
+  for(const token of ['data-interest="both"','data-home-journey=','class="vinyl"','stats-review-note','data-gallery-link="JMGMSgPHJoI"','data-gallery-link="_6nTyXcmgLc"'])assert.ok(!page.includes(token));
+  const ctx={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'dist/extras.js'),'utf8'),ctx);
+  for(const id of ['JMGMSgPHJoI','_6nTyXcmgLc'])assert.ok(ctx.window.EXTRA_CONTENT.gallery.items.some(item=>item.id===id),'Featured recording remains in catalogue '+id);
  }
 });
 test('Israel prose separates performer and translator and offers one optional listening prompt',()=>{

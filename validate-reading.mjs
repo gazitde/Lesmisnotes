@@ -21,7 +21,7 @@ for(const lang of ['he','en']){
  check(israel.includes('benyehuda.org/read/43076')&&israel.includes('benyehuda.org/read/43194'),'Actual Hebrew reading links');check(!israel.includes('<iframe'),'Israel intro does not bypass video spoiler choice');
  for(const c of E.watch.cards)check(watch.includes(`id="watch-${c.id}"`),'Watch anchor '+c.id);
  const banner=home.match(/<section class="privacy-banner"[\s\S]*?<\/section>/)?.[0]||'';check((banner.match(/<button/g)||[]).length===3,'Three initial privacy buttons');for(const action of ['accept','reject','open'])check(banner.includes('data-action="privacy-'+action+'"'),'Initial '+action+' choice');
- check(!home.includes('Cumulative producer figure'),'No producer-process clutter');check(home.includes('about-provenance'),'Detailed provenance remains reachable');if(lang==='he'){check(!home.includes('PAGE → STAGE')&&!home.includes('STAGE → SCREEN'),'Hebrew format labels translated');}
+ check(!home.includes('Cumulative producer figure'),'No producer-process clutter');check(home.includes(`href="/${lang}/about/"`),'Sources and provenance remain reachable through the footer');if(lang==='he'){check(!home.includes('PAGE → STAGE')&&!home.includes('STAGE → SCREEN'),'Hebrew format labels translated');}
 }
 const index=S.buildIndex({research:R,extra:E,metadata:M},{spoiler:false});for(const q of ['Harel Skaat','דודו פישר','Yaakov Steinberg','Madrid'])check(S.search(index,q,{lang:'en',limit:100}).total>0,'New safe searchable content '+q);
 check(index.find(x=>x.id==='character:valjean').body.en.includes('24601'),'Number explanation indexed before spoilers');check(!JSON.stringify(index).includes('9430'),'Search remains protected');
