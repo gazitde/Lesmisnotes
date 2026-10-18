@@ -32,7 +32,7 @@ for(const language of ['he','en'])test(`long-page choices preserve content and s
  assert.equal(api.spoiler(),false);assert.ok(!app.innerHTML.includes('data-novel-event'));
  api.navigate('musical');const musical=api.musicalPage();
  assert.equal((musical.match(/class="musical-section musical-background"/g)||[]).length,3);
- assert.equal((musical.match(/data-page-section="/g)||[]).length,10,'Seven real section anchors and three return links');
+ assert.equal((musical.match(/data-page-section="/g)||[]).length,11,'Eight real section anchors and three return links');
  for(const id of ['musical-genesis','musical-creators','musical-stages'])assert.match(musical,new RegExp('<details class="musical-section musical-background" id="'+id+'">'));
  assert.equal(api.focusMusicalSection('novel-room'),false,'Unknown fragment cannot open other material');
  assert.equal(api.focusMusicalSection('musical-journey'),true);assert.equal(api.spoiler(),false);

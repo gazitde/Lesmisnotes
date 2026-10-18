@@ -453,17 +453,17 @@ html[lang=he] .interest-home .hero-copy h1{font-size:clamp(2.7rem,4.5vw,4.1rem)}
 .musical-background-body{padding:28px 24px;background:#fff;border-radius:0 0 8px 8px}
 .musical-background-body .section-return{margin-top:28px;min-height:44px}
 .musical-background:focus,.musical-index:focus{outline:3px solid var(--red);outline-offset:4px}
-#musical-spotlight,#recording-chooser,#musical-journey,[id^="craft-"]{scroll-margin-top:120px}
+#musical-beginnings,#musical-spotlight,#recording-chooser,#musical-journey,[id^="craft-"]{scroll-margin-top:120px}
 @media(max-width:680px){
  .musical-index{grid-template-columns:repeat(2,minmax(0,1fr));scroll-margin-top:90px}
  .musical-index a{padding:12px;min-height:68px;font-size:.88rem;gap:9px}
- .musical-index a:last-child{grid-column:1/-1}
+ .musical-index a:last-child:nth-child(odd){grid-column:1/-1}
  .musical-background{margin-top:14px;scroll-margin-top:90px;padding-top:0}
  .musical-background>summary{padding:18px 14px;gap:12px;align-items:flex-start}
  .musical-background-body{padding:22px 14px}
  .background-copy>span{font-size:.95rem}
  .background-toggle{width:30px;height:30px;font-size:1.3rem}
- #musical-spotlight,#recording-chooser,#musical-journey,[id^="craft-"]{scroll-margin-top:90px}
+ #musical-beginnings,#musical-spotlight,#recording-chooser,#musical-journey,[id^="craft-"]{scroll-margin-top:90px}
 }
 
 /* Quiet directional cues stay in the navigation row, clear of text and players. */
