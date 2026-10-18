@@ -12,7 +12,7 @@ const analyticsCode=fs.readFileSync('dist/analytics.js','utf8');
 const policiesCode=fs.readFileSync('dist/policies.js','utf8');
 let tests=0;
 const routeMetadata={window:{}};vm.runInNewContext(seo,routeMetadata);const routes=Object.keys(routeMetadata.window.SITE_METADATA.pages);
-const renderScripts=[research,extras,...['character-profiles-data','character-profiles'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),engine,seo,policiesCode,privacyCode,configCode,analyticsCode,...['places-data','places','recipes-data','recipes','watch-path-data','watch-path'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),appCode].map(code=>new vm.Script(code));
+const renderScripts=[research,extras,...['special-events-data','character-profiles-data','character-profiles'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),engine,seo,policiesCode,privacyCode,configCode,analyticsCode,...['places-data','places','recipes-data','recipes','watch-path-data','watch-path'].map(name=>fs.readFileSync('dist/'+name+'.js','utf8')),appCode].map(code=>new vm.Script(code));
 function render(lang,route,spoilers){
  global.gc?.();
  const map=new Map([['barricade-spoilers',spoilers?'on':'off']]);
