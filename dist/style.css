@@ -231,3 +231,6 @@
 .musical-beginnings{color:var(--navy)}
 .musical-beginnings .creation-reception-heading p{color:var(--navy)}
 .musical-beginnings .creation-reception-heading .eyebrow{color:var(--red)}
+
+/* Concrete contemporary criticism, separated by place and date. */
+.beginnings-reviews{margin-block:30px}.beginnings-reviews h3{font-size:1.5rem;margin-block:0 12px}.beginnings-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-block:22px}.beginnings-review{border:1px solid var(--line);border-radius:9px;padding:20px;min-width:0;background:#f8f9fc}.beginnings-review h4{font-size:1.2rem;margin-block:8px 10px}.beginnings-review p{margin-block:0 12px}.beginnings-review .review-meta{font-size:.8rem;font-weight:700;color:var(--red)}.beginnings-review .review-byline{font-size:.9rem;font-weight:700}.beginnings-review a{display:inline-block;overflow-wrap:anywhere;font-size:.88rem;min-height:44px;padding-block:8px}.beginnings-review a:focus-visible{outline:3px solid var(--red);outline-offset:3px}@media(max-width:680px){.beginnings-review-grid{grid-template-columns:1fr}.beginnings-review{padding:17px}}
