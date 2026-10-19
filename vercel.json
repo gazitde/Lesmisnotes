@@ -75,6 +75,16 @@
   ],
   "redirects": [
     {
+      "source": "/:lang(en|he)",
+      "destination": "/:lang/home/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|he)/",
+      "destination": "/:lang/home/",
+      "permanent": true
+    },
+    {
       "source": "/he/tribute",
       "destination": "/he/listening/?category=together",
       "permanent": true
