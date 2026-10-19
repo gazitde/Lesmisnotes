@@ -9,6 +9,11 @@ for(const lang of ['he','en'])test(`difficult beginnings is visible, sourced and
  assert.ok(story.includes(lang==='he'?'שיחת הטלפון לקופה':'telephone call to the box office'));
  assert.ok(story.includes(lang==='he'?'4 בדצמבר 1985':'4 December 1985'));
  assert.ok(story.includes('1980'));
+ assert.equal((story.match(/data-review=/g)||[]).length,4);
+ for(const domain of ['all-allam.com/les-miserables-reviews/','timeout.com/london/theatre/does-les-mis-still-matter','latimes.com/archives/la-xpm-1987-03-14-ca-9500-story.html','newyorker.com/magazine/1987/03/23/tous-les-miserables'])assert.ok(story.includes(domain));
+ assert.ok(story.includes('1987'));
+ assert.ok(story.indexOf('beginnings-phone')<story.indexOf('beginnings-reviews'));
+ assert.ok(story.includes(lang==='he'?'ברודוויי':'Broadway')); 
  assert.equal(story.includes('<details'),false);
  assert.equal((html.match(/id="musical-beginnings"/g)||[]).length,1);
  assert.ok(html.indexOf('id="musical-genesis"')>start);
