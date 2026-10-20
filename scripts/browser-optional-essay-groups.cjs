@@ -1,3 +1,5 @@
+async function openReaderSettings(page){const d=page.locator('.reader-settings');if(await d.count()&&!(await d.evaluate(e=>e.open)))await d.locator(':scope > summary').click();}
+async function openReaderPosition(page){const d=page.locator('.reader-location-tools');if(await d.count()&&!(await d.evaluate(e=>e.open)))await d.locator(':scope > summary').click();}
 'use strict';
 // CI runs actual native <details>, focus, history, and RTL/LTR layout behavior.
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
@@ -22,20 +24,20 @@ const groups={...wholeBooks,'p3-b1':12,'p3-b7':2},linked=['p5-b3-c1','p5-b3-c4',
   for(const full of [false,true]){
    let books=0;
    for(let part=1;part<=5;part++){
-    await p.goto(`${base}/${lang}/novel/?focus=part%3Ap${part}${full?'&essays=all':''}`);
+    await p.goto(`${base}/${lang}/novel-journey/?focus=part%3Ap${part}${full?'&essays=all':''}`);
     await p.locator('#reader-part-panel').waitFor();
-    check((await p.locator('h1').textContent()).includes(full?'365':'333'),'Opening heading names the current route');
-    check((await p.locator('#reading-along-title').textContent()).includes(full?'365':'333'),'Reader heading stays mode-aware');
+    check((await p.locator('h1').textContent()).includes(lang==='he'?'פרק אחד':'One chapter'),'Opening heading identifies the focused reading companion');
+    check((await p.locator('.reader-essay-mode').textContent()).includes(full?'365':(lang==='he'?'32':'32')),'Secondary route settings retain the current scope');
     const reject=p.locator('[data-action="privacy-reject"]').first();if(await reject.isVisible())await reject.click();
     books+=await p.locator('.reader-book-card').count();
     same(await p.locator('.reader-book-card .reader-essay-badge').count(),full&&[2,4,5].includes(part)?1:0,'Essay cards exist only in full mode');
-    check(await p.locator('.reader-essay-mode a[data-reader-link]').isVisible(),'Global view link is visible in each Part');
+    check(await p.locator('.reader-settings > summary').isVisible(),'Scope settings are discoverable in each Part');await openReaderSettings(p);check(await p.locator('.reader-essay-mode a[data-reader-link]').isVisible(),'Expanded scope settings expose the mode link');
     check(await noOverflow(p),'Mode selection and Part cards fit viewport');
    }
    same(books,full?48:45,'Global mode restores the complete Book inventory');
   }
   for(const [book,count] of Object.entries(wholeBooks)){
-   await p.goto(`${base}/${lang}/novel/?focus=book%3A${book}`);await ready(p);
+   await p.goto(`${base}/${lang}/novel-journey/?focus=book%3A${book}`);await ready(p);
    const reject=p.locator('[data-action="privacy-reject"]').first();if(await reject.isVisible())await reject.click();await ready(p);
    const g=group(p,book),ids=Array.from({length:count},(_,i)=>`${book}-c${i+1}`),first=p.locator('#reader-chapter-'+ids[0]);
    same(await g.count(),1,'Exactly one native essay group in the Book view');same(await opened(g),false,'Generic Book URL starts closed');
@@ -49,16 +51,16 @@ const groups={...wholeBooks,'p3-b1':12,'p3-b7':2},linked=['p5-b3-c1','p5-b3-c4',
    check(await noOverflow(p),`Open ${book} fits ${lang} ${width}`);
    await summary.focus();await p.keyboard.press('Space');same(await opened(g),false,'Space closes native disclosure');
    // A real application navigation, followed by Back/Forward, exercises popstate.
-   const target=ids.at(-1);await p.locator('#reading-chapter').selectOption(target);await ready(p);
-   same(new URL(p.url()).searchParams.get('focus'),'chapter:'+target,'Chapter selector keeps the original exact URL');same(await opened(group(p,book)),true,'Exact target automatically opens its own group');
-   check(await p.locator('#reader-chapter-'+target).isVisible(),'Requested chapter is visible');same(await p.locator('.reader-essay-chapters[open]').count(),1,'Only target essay group opens');
+   const target=ids.at(-1);await openReaderPosition(p);await p.locator('#reading-chapter').selectOption(target);await ready(p);
+   same(new URL(p.url()).searchParams.get('focus'),'chapter:'+target,'Chapter selector keeps the original exact URL');same(await p.locator('[data-chapter-id]').count(),1,'Exact chapter opens only its own companion');
+   check(await p.locator('#reader-chapter-'+target).isVisible(),'Requested chapter is visible');same(await p.locator('.reader-essay-chapters').count(),0,'Focused chapter is not buried in a Book-wide disclosure');
    same(await storage(p),before,'Chapter deep link does not change spoiler state');same(await p.locator('[data-novel-event]').count(),0,'Chapter jump does not unlock full recap');same(await p.locator('.chapter-wide-links .insight-link').count(),0,'Chapter jump does not unlock wider-story links');
    await p.goBack();await ready(p);same(new URL(p.url()).searchParams.get('focus'),'book:'+book,'Back restores Book coordinate');same(await opened(group(p,book)),false,'Back to generic Book restores closed state');
-   await p.goForward();await ready(p);same(await opened(group(p,book)),true,'Forward restores exact chapter opening');
-   await p.reload();await ready(p);same(await opened(group(p,book)),true,'Cold direct exact chapter URL opens the group');check(await noOverflow(p),'Direct chapter view fits viewport');
+   await p.goForward();await ready(p);same(await p.locator('#reader-chapter-'+target).count(),1,'Forward restores exact chapter opening');
+   await p.reload();await ready(p);same(await p.locator('[data-chapter-id]').count(),1,'Cold exact chapter URL restores one focused chapter');check(await noOverflow(p),'Direct chapter view fits viewport');
    await p.locator('.reader-breadcrumbs a[href*="part%3A"]').click();
    const card=p.locator(`[data-reader-book="${book}"]`);same(await card.count(),wholeBooks[book]?0:1,'Default Part view omits only whole essay Books');
-   const mode=p.locator('.reader-essay-mode a[data-reader-link]');check(await mode.isVisible(),'One global mode link is discoverable');
+   await openReaderSettings(p);const mode=p.locator('.reader-essay-mode a[data-reader-link]');check(await mode.isVisible(),'One global mode link is discoverable');
    await mode.click();same(new URL(p.url()).searchParams.get('essays'),'all','Global mode is expressed in URL');
    same(await card.locator('.reader-essay-badge').count(),wholeBooks[book]?1:0,'Whole essay Book badge remains precise');
    await p.goBack();same(new URL(p.url()).searchParams.get('essays'),null,'Back restores streamlined mode');same(await card.count(),wholeBooks[book]?0:1,'Back restores exact default Book visibility');
@@ -67,11 +69,11 @@ const groups={...wholeBooks,'p3-b1':12,'p3-b7':2},linked=['p5-b3-c1','p5-b3-c4',
    same(new URL(p.url()).searchParams.get('essays'),'all','Book navigation retains full mode');
    same(await storage(p),before,'Global mode is independent of spoiler storage');
    check(await noOverflow(p),'Full mode fits viewport');
-   await p.locator('.reader-essay-mode a[data-reader-link]').click();
+   await openReaderSettings(p);await p.locator('.reader-essay-mode a[data-reader-link]').click();
    same(new URL(p.url()).searchParams.get('essays'),null,'Returning to streamlined mode clears URL preference');if(wholeBooks[book])same(await card.count(),0,'Leaving a whole essay Book returns to Part without it');else{await ready(p);same(await opened(group(p,book)),false,'Returning to streamlined partial Book closes only essay content')};
   }
   for(const [book,kept] of [['p3-b1',['p3-b1-c13']],['p3-b7',['p3-b7-c3','p3-b7-c4']]]){
-   await p.goto(`${base}/${lang}/novel/?focus=part%3Ap3`);
+   await p.goto(`${base}/${lang}/novel-journey/?focus=part%3Ap3`);
    const card=p.locator(`[data-reader-book="${book}"]`);same(await card.count(),1,'Partial Book stays in the default Part index');
    await card.locator('a[data-reader-link]').first().click();await ready(p);
    const before=await storage(p),ids=()=>p.locator('[data-chapter-id]').evaluateAll(es=>es.map(e=>e.dataset.chapterId));
@@ -82,20 +84,20 @@ const groups={...wholeBooks,'p3-b1':12,'p3-b7':2},linked=['p5-b3-c1','p5-b3-c4',
    for(const id of kept){const c=p.locator('#reader-chapter-'+id);check(await c.isVisible(),'Narrative chapter remains visible');same(await c.evaluate(e=>!!e.closest('.reader-essay-chapters')),false,'Narrative chapter is outside essay wrapper');}
    check(await noOverflow(p),'Partial default route fits viewport');
    await p.locator('#reading-book-panel').screenshot({path:path.join(dir,`essay-partial-${book}-${lang}-${width}-default.png`)});
-   await p.locator('.reader-essay-mode a[data-reader-link]').click();await ready(p);
+   await openReaderSettings(p);await p.locator('.reader-essay-mode a[data-reader-link]').click();await ready(p);
    const expected=Array.from({length:groups[book]+kept.length},(_,i)=>book+'-c'+(i+1));
    same(await ids(),expected,'Full mode restores every original chapter in order');same(await opened(group(p,book)),true,'Full mode expands optional partial group');same(await p.locator('.reader-essay-bridge').count(),0,'Full mode does not add skipped-section bridge');
    await p.goBack();await ready(p);same(await ids(),kept,'Back restores partial default scope');await p.goForward();await ready(p);same(await ids(),expected,'Forward restores full partial Book');
-   const target=book+'-c'+groups[book];await p.goto(`${base}/${lang}/novel/?focus=chapter%3A${target}`);await ready(p);
-   same(await p.locator('.reader-essay-chapters[open]').count(),1,'Direct partial essay opens only its target group');same(await opened(group(p,book)),true,'Target partial group opens without global full mode');check(await p.locator('#reader-chapter-'+target).isVisible(),'Direct optional chapter is visible');same(await ids(),expected,'Direct target preserves its Book chapter IDs');
-   await p.reload();await ready(p);same(await opened(group(p,book)),true,'Reload preserves direct target exception');
-   await p.locator('.reader-essay-mode a[data-reader-link]').click();await ready(p);await p.locator('.reader-essay-mode a[data-reader-link]').click();await ready(p);
+   const target=book+'-c'+groups[book];await p.goto(`${base}/${lang}/novel-journey/?focus=chapter%3A${target}`);await ready(p);
+   same(await p.locator('[data-chapter-id]').count(),1,'Direct partial essay opens only its requested chapter');same(await p.locator('.reader-essay-chapters').count(),0,'Focused chapter needs no Book-wide disclosure');check(await p.locator('#reader-chapter-'+target).isVisible(),'Direct optional chapter is visible');same(await ids(),[target],'Direct target excludes other Book chapter cards');
+   await p.reload();await ready(p);same(await ids(),[target],'Reload preserves the focused optional chapter');
+   await openReaderSettings(p);await p.locator('.reader-essay-mode a[data-reader-link]').click();await ready(p);await openReaderSettings(p);await p.locator('.reader-essay-mode a[data-reader-link]').click();await ready(p);
    same(new URL(p.url()).searchParams.get('focus'),'book:'+book,'Mode-off leaves an optional direct target for its narrative Book');same(await ids(),kept,'Mode-off removes partial optional chapters again');
    same(await storage(p),before,'Partial essay choices leave spoiler settings unchanged');same(await p.locator('[data-novel-event]').count(),0,'Partial choice never opens full recap');check(await noOverflow(p),'Partial narrative return fits viewport');
   }
   // The adjacent escape chapters and the Waterloo thematic connection are never collapsed as essays.
   for(const id of linked){
-   await p.goto(`${base}/${lang}/novel/?focus=chapter%3A${id}`);await ready(p);
+   await p.goto(`${base}/${lang}/novel-journey/?focus=chapter%3A${id}`);await ready(p);
    const target=p.locator('#reader-chapter-'+id);check(await target.isVisible(),`Linked narrative chapter remains visible: ${id}`);
    same(await target.evaluate(e=>!!e.closest('.reader-essay-chapters')),false,'Musical-linked narrative chapter is outside essay groups');same(await p.locator('.reader-essay-chapters').count(),0,'Narrative Book has no essay wrapper');
    same(await p.locator(`[data-chapter-stage="${id}"]`).count(),1,'Musical comparison panel retained');check(await noOverflow(p),'Linked narrative chapter fits viewport');
@@ -125,7 +127,7 @@ const groups={...wholeBooks,'p3-b1':12,'p3-b7':2},linked=['p5-b3-c1','p5-b3-c4',
   try{
    for(const full of [false,true])for(const edge of boundaries)for(const step of ['next','prev']){
     const from=step==='next'?edge.before:edge.after,to=full?(step==='next'?edge.first:edge.last):(step==='next'?edge.after:edge.before);
-    await p.goto(`${base}/${lang}/novel/?focus=chapter%3A${from}${full?'&essays=all':''}`);await ready(p);
+    await p.goto(`${base}/${lang}/novel-journey/?focus=chapter%3A${from}${full?'&essays=all':''}`);await ready(p);
     const reject=p.locator('[data-action="privacy-reject"]').first();if(await reject.isVisible())await reject.click();await ready(p);
     const before=await storage(p),link=p.locator(`#reader-chapter-${from} .slide-${step}`),query=new URL(await link.getAttribute('href'),base).searchParams;
     same(query.get('focus'),'chapter:'+to,'Previous/next link follows the selected chapter route');same(query.get('essays'),full?'all':null,'Boundary link retains selected mode');
@@ -152,7 +154,7 @@ const groups={...wholeBooks,'p3-b1':12,'p3-b7':2},linked=['p5-b3-c1','p5-b3-c4',
   const p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
   try{
    // DOMContentLoaded does not wait for the deliberately held chapter-data response.
-   await p.goto(`${base}/${lang}/novel/?focus=book%3Ap2-b7`,{waitUntil:'domcontentloaded'});
+   await p.goto(`${base}/${lang}/novel-journey/?focus=book%3Ap2-b7`,{waitUntil:'domcontentloaded'});
    await requestSeen;
    const reject=p.locator('[data-action="privacy-reject"]').first();if(await reject.isVisible())await reject.click();
    const g=group(p,'p2-b7');same(await opened(g),false,'Deferred generic Book is initially closed');
@@ -176,7 +178,7 @@ const groups={...wholeBooks,'p3-b1':12,'p3-b7':2},linked=['p5-b3-c1','p5-b3-c4',
   await context.route('**/reading/part-3.json',async route=>{requested();await gate;await route.continue()});
   const p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
   try{
-   await p.goto(`${base}/${lang}/novel/?focus=book%3A${book}`,{waitUntil:'domcontentloaded'});await requestSeen;
+   await p.goto(`${base}/${lang}/novel-journey/?focus=book%3A${book}`,{waitUntil:'domcontentloaded'});await requestSeen;
    const reject=p.locator('[data-action="privacy-reject"]').first();if(await reject.isVisible())await reject.click();
    same(await p.locator('#reading-book-panel').getAttribute('data-reader-ready'),'false','Partial Book is tested before its response arrives');
    const expectedURLs=await p.evaluate(ids=>ids.map(id=>window.EXTRA_CONTENT.chapterCompanion.chapters.find(c=>c.id===id).url),kept);

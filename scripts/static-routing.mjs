@@ -9,7 +9,7 @@ export function fileAtPath(root,pathname){
   return fs.existsSync(file)&&fs.statSync(file).isFile()?file:null;
 }
 function captures(source,pathname){
-  const novel=source==='/:lang(he|en)/novel/'?pathname.match(/^\/(he|en)\/novel\/?$/):null;
+  const novel=['/:lang(he|en)/novel/','/:lang(he|en)/novel-journey/'].includes(source)?pathname.match(new RegExp('^/(he|en)/'+(source.includes('novel-journey')?'novel-journey':'novel')+'/?$')):null;
   if(novel)return {lang:novel[1]};
   const profile=source==='/:lang(he|en)/character-:id/'?pathname.match(/^\/(he|en)\/character-([a-z]+)\/?$/):null;
   return profile?{lang:profile[1],id:profile[2]}:null;

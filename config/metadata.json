@@ -42,12 +42,12 @@
     },
     "novel": {
       "title": {
-        "en": "Les Misérables chapter summaries: a novel reading companion",
-        "he": "עלובי החיים: תקצירי פרקים ומלווה לקריאת הרומן"
+        "he": "הרומן עלובי החיים: מלווה קריאה ורענון העלילה",
+        "en": "The Les Misérables novel: reading companion and full recap"
       },
       "description": {
-        "he": "מלווה קריאה לכל 365 הפרקים של עלובי החיים: תקצירי פרקים, תזכורות מאירועים קודמים, פרטים מן הרומן וקישורים למפה ולמקורות.",
-        "en": "A companion to all 365 chapters of Les Misérables: chapter summaries, earlier-event reminders, details from the novel and links to maps and primary sources."
+        "he": "בחרו במלווה הקריאה הממוקד, או פתחו בנפרד רענון של הרומן המלא. מסלול הקריאה הראשי כולל 333 פרקים וכל 365 הפרקים זמינים עם ההרחבות.",
+        "en": "Enter the focused chapter companion, or separately open a recap of the complete novel. The main reading route has 333 chapters; all 365 are available with optional essays."
       }
     },
     "musical": {
@@ -56,8 +56,8 @@
         "en": "The Les Misérables musical: creators and a song-by-song guide"
       },
       "description": {
-        "en": "Follow all 38 song entries, explore the musical’s creation and compare five major recordings and films, with cast details and listening or viewing options.",
-        "he": "עקבו אחר 38 קטעי המחזמר, קראו על יצירתו והשוו חמש הקלטות וגרסאות מצולמות, עם פרטי מבצעים ואפשרויות האזנה וצפייה."
+        "he": "גלו כיצד נוצר המחזמר, הכירו את היוצרים והשוו הקלטות. מסע עצמאי משיר לשיר מחכה בדף ייעודי, עם פרטי עלילה שנפתחים רק בבחירה.",
+        "en": "Explore how the musical was made, meet its creators and compare recordings. A dedicated song-by-song journey keeps plot details behind your spoiler choice."
       }
     },
     "story": {
@@ -287,6 +287,26 @@
           "en": "LesMisNotes: anniversary timeline from 1995 to 2026",
           "he": "LesMisNotes: ציר מופעי יום השנה מ־1995 עד 2026"
         }
+      }
+    },
+    "novel-journey": {
+      "title": {
+        "he": "מסע הקריאה בעלובי החיים: מלווה פרק אחר פרק",
+        "en": "Les Misérables reading journey: a chapter-by-chapter companion"
+      },
+      "description": {
+        "he": "מלווה ממוקד לפרק שבו אתם קוראים: תקצירים, הקשרים, מעבר בין פרקים ושמירת התקדמות לפי בחירה. 333 פרקים במסלול הראשי וכל 365 הפרקים עם ההרחבות.",
+        "en": "A focused companion to your current chapter: summaries, context, chapter navigation and optional saved progress. 333 chapters on the main path, all 365 with optional essays."
+      }
+    },
+    "musical-journey": {
+      "title": {
+        "he": "מסע משיר לשיר במחזמר עלובי החיים",
+        "en": "Les Misérables musical journey: song by song"
+      },
+      "description": {
+        "he": "היכרות ללא ספוילרים, ואחריה מסע בין סצנות, ביצועים ושאלות להקשבה. העלילה המלאה, כולל הסיום, נפתחת רק באישור.",
+        "en": "A spoiler-safe introduction, followed by scenes, performances and listening questions. The full plot, including the ending, opens only with consent."
       }
     }
   }

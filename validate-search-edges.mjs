@@ -13,7 +13,7 @@ const ids=(q,lang='en',index=safe)=>result(q,lang,index).results.map(x=>x.doc.id
 const romans=['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI','XXII','XXIII','XXIV'];
 const hebrew=['','א','ב','ג','ד','ה','ו','ז','ח','ט','י','יא','יב','יג','יד','טו','טז','יז','יח','יט','כ','כא','כב','כג','כד'];
 const marked=n=>hebrew[n].length===1?hebrew[n]+'׳':hebrew[n].slice(0,-1)+'״'+hebrew[n].slice(-1);
-function exact(q,kind,key){for(const lang of ['en','he'])for(const index of [safe,general,full]){const r=result(q,lang,index);check(r.total===1&&r.results[0].doc.id===kind+':'+key,'One exact coordinate '+q+' '+lang);check(r.results[0].href===`/${lang}/novel/?focus=${encodeURIComponent(kind+':'+key)}`,'Localized exact reader route '+q);check(S.readTarget(new URL(r.results[0].href,'https://example.test').search,'novel')?.key===key,'Existing route contract '+q);}}
+function exact(q,kind,key){for(const lang of ['en','he'])for(const index of [safe,general,full]){const r=result(q,lang,index);check(r.total===1&&r.results[0].doc.id===kind+':'+key,'One exact coordinate '+q+' '+lang);check(r.results[0].href===`/${lang}/novel-journey/?focus=${encodeURIComponent(kind+':'+key)}`,'Localized exact reader route '+q);check(S.readTarget(new URL(r.results[0].href,'https://example.test').search,'novel')?.key===key,'Existing route contract '+q);}}
 for(const p of W.EXTRA_CONTENT.readingLocator.parts){
  for(const q of ['p'+p.part,'Part '+p.part,'Part '+romans[p.part],'חלק '+marked(p.part)])exact(q,'part','p'+p.part);
  for(const b of p.books){

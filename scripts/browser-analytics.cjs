@@ -50,14 +50,14 @@ const equal=(actual,expected,message)=>{assert.deepEqual(actual,expected,message
     const starts=await count('journey_start'),steps=await count('journey_step'),complete=await count('journey_complete');
     await enterLegacy(id,path[0]);
     for(let i=0;i<path.length;i++){ok((await page.url()).includes('/'+path[i]+'/'),'Journey '+id+' step '+(i+1));if(i<3)await page.locator('.journey-next').click()}
-    equal(await count('journey_start'),starts+1,id+' start');equal(await count('journey_step'),steps+4,id+' four steps');equal(await count('journey_complete'),complete+1,id+' final-stop completion');
+    equal(await count('journey_start'),starts+1,id+' start');equal(await count('journey_step'),steps+4,id+' four steps');equal(await count('journey_complete'),complete+1,id+' final-stop completion');equal((await named('journey_start')).slice(starts).map(e=>e.step_index),[1],id+' starts at step one');equal((await named('journey_step')).slice(steps).map(e=>e.step_index),[1,2,3,4],id+' exact ordered steps');equal((await named('journey_complete')).slice(complete).map(e=>e.step_index),[4],id+' completes at step four');
   }
   for(const [interest,pages] of Object.entries({novel:['novel','characters','map','hugo'],musical:['before','musical','listening','screen'],both:['hugo','story','compare','musical']})){
     await go('home');
     const starts=await count('journey_start'),steps=await count('journey_step'),complete=await count('journey_complete');
     await enterLegacy('interest-'+interest,pages[0]);
     for(let i=0;i<4;i++){ok(page.url().endsWith('/'+pages[i]+'/'),'Interest '+interest+' step '+(i+1));if(i<3)await page.locator('.journey-next').click()}
-    equal(await count('journey_start'),starts+1,interest+' start');equal(await count('journey_step'),steps+4,interest+' steps');equal(await count('journey_complete'),complete+1,interest+' completion');
+    equal(await count('journey_start'),starts+1,interest+' start');equal(await count('journey_step'),steps+4,interest+' steps');equal(await count('journey_complete'),complete+1,interest+' completion');equal((await named('journey_start')).slice(starts).map(e=>e.step_index),[1],interest+' starts at step one');equal((await named('journey_step')).slice(steps).map(e=>e.step_index),[1,2,3,4],interest+' exact ordered steps');equal((await named('journey_complete')).slice(complete).map(e=>e.step_index),[4],interest+' completes at step four');
     ok((await named('journey_start')).some(e=>e.journey_id==='interest-'+interest),'Fixed interest identifier');
   }
   // Query/fragment-only state changes are content selections, not additional pages.

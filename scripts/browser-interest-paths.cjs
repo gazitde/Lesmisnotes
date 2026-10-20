@@ -104,17 +104,20 @@ async function storageCheck(page,consented=false){
   }
 }
 
-const primaryHref=(lang,interest)=>interest==='musical'?routePath(lang,'musical')+'?focus=song%3Awork-song&view=journey':routePath(lang,'novel');
+const primaryHref=(lang,interest)=>interest==='musical'?routePath(lang,'musical-journey'):routePath(lang,'novel-journey')+'?focus=chapter%3Ap1-b1-c1';
+const entranceHref=(lang,interest)=>routePath(lang,interest==='musical'?'musical-journey':'novel-journey');
 async function plan(page,lang,interest){
-  await page.waitForFunction(({lang,interest})=>location.pathname===`/${lang}/home/`&&new URLSearchParams(location.search).get('interest')===interest&&document.querySelector(`.path-card[data-interest="${interest}"]`)?.getAttribute('aria-current')==='true',{lang,interest});
-  equal(await page.locator('.path-card[aria-current="true"]').count(),1,'exactly one audience selected');
+  await page.waitForFunction(({lang,interest})=>location.pathname===`/${lang}/home/`&&new URLSearchParams(location.search).get('interest')===interest&&document.querySelector('.home-selected #interest-plan'),{lang,interest});
+  equal(await page.locator('.path-card,.home-opening .hero').count(),0,'selected home removes the previous chooser and promotional hero');
+  equal(await page.locator('h1').count(),1,'selected home has one heading');
   equal(await page.locator('#interest-plan').count(),1,'exactly one audience plan');
   check(await page.locator('#interest-plan-title').isVisible(),'plan heading visible');
   equal(await page.locator('#interest-plan .interest-start').count(),1,'one primary action');
-  equal(await page.locator('#interest-plan .interest-start').getAttribute('href'),primaryHref(lang,interest),'primary destination');
+  equal(await page.locator('#interest-plan .interest-start').getAttribute('href'),primaryHref(lang,interest),'primary dedicated journey destination');
   const supporting=interest==='musical'?['before','listening','screen']:['characters','map','hugo'];
-  equal(await page.locator('.audience-option-grid a').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('href'))),supporting.map(route=>routePath(lang,route)),'three supporting destinations');
-  equal(await stateId(page),null,'selection does not begin guided journey');
+  equal(await page.locator('.audience-option-grid a').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('href'))),supporting.map(route=>routePath(lang,route)),'three supporting destinations remain available');
+  equal(await page.locator('.interest-selection .journey-switch').count(),1,'one clear switch action');
+  equal(await stateId(page),null,'selection does not begin an unrelated guided tour');
   await noOverflow(page,'audience plan');await spoilersStayClosed(page,'audience plan');
 }
 
@@ -128,9 +131,9 @@ async function stop(page,lang,interest,index,{screenshot=false,width}={}){
   equal(await page.locator('.journey-continuation').count(),1,'one continuation is rendered');
   const continuation=page.locator('.journey-continuation');
   equal(await continuation.locator('.journey-current > span > bdi').getAttribute('dir'),'ltr','progress fraction keeps its canonical visual order in RTL');
-  equal(await continuation.locator('.journey-current > span > bdi').innerText(),`${index+1} / 4`,'isolated progress identifies the actual stop');
-  check(new RegExp(`\\b${index+1}\\s*/\\s*4\\b`).test(await continuation.innerText()),
-    `continuation identifies stop ${index+1} of 4`);
+  equal(await continuation.locator('.journey-current > span > bdi').innerText(),`${index+1} / ${routes[interest].length}`,'isolated progress identifies the actual stop');
+  check(new RegExp(`\\b${index+1}\\s*/\\s*${routes[interest].length}\\b`).test(await continuation.innerText()),
+    `continuation identifies stop ${index+1} of ${routes[interest].length}`);
   equal(await continuation.locator('.journey-switch').getAttribute('href'),
     routePath(lang,'home')+`?interest=${interest}#home-classic-heading`,
     'switch link returns to this interest on home');
@@ -151,19 +154,12 @@ async function stop(page,lang,interest,index,{screenshot=false,width}={}){
   }
 }
 
-async function chooseAndStart(page,lang,interest){
-  await page.goto(base+routePath(lang,'home'));
-  await card(page,interest).click();
-  await plan(page,lang,interest);
-  await page.locator('#interest-plan .interest-start').click();
-  await stop(page,lang,interest,0);
-}
 
 async function initialHome(page,lang,width){
   await page.goto(base+routePath(lang,'home'));
   equal(await page.locator('.path-card[data-interest]').count(),2,'exactly two audience entrances');
   equal(await page.locator('.path-card[aria-current="true"]').count(),0,'fresh home makes no silent selection');
-  for(const interest of Object.keys(routes))equal(await card(page,interest).getAttribute('href'),primaryHref(lang,interest),'useful no-JS destination');
+  for(const interest of Object.keys(routes))equal(await card(page,interest).getAttribute('href'),entranceHref(lang,interest),'useful no-JS destination');
   equal(await page.locator('[data-interest="both"], [data-home-journey], .home-more-paths, .vinyl, .hero-band, [data-moment-entry]').count(),0,'no old chooser or promotional clutter');
   await noOverflow(page,'fresh home');
   await page.screenshot({path:path.join(dir,`interest-home-first-${lang}-${width}.png`)});
@@ -175,83 +171,68 @@ async function exerciseInterest(page,lang,width,interest){
   currentCase=`${lang}/${width}/${interest}`;
   const otherLang=lang==='he'?'en':'he';
   await page.goto(base+routePath(lang,'home'));await card(page,interest).click();await plan(page,lang,interest);
-  await touchTargets(page,'#interest-plan .interest-start, .audience-option-grid a','primary and supporting actions');
+  await touchTargets(page,'#interest-plan .interest-start','primary action');
+  await page.locator('.audience-more > summary').click();await touchTargets(page,'.audience-option-grid a','supporting actions');
   await page.locator('#interest-plan').screenshot({path:path.join(dir,`interest-plan-${interest}-${lang}-${width}.png`)});
   await page.reload();await plan(page,lang,interest);
   await page.locator('[data-action="language"]').click();await plan(page,otherLang,interest);
   await page.goBack();await plan(page,lang,interest);
   const alternative=interest==='musical'?'novel':'musical';
+  await page.locator('.interest-selection .journey-switch').click();
+  equal(await page.locator('.path-card').count(),2,'Switch returns to both choices');
   await card(page,alternative).click();await plan(page,lang,alternative);
+  await page.goBack();equal(await page.locator('.path-card').count(),2,'Back restores chooser');
   await page.goBack();await plan(page,lang,interest);
-  await page.goForward();await plan(page,lang,alternative);
+  await page.goForward();equal(await page.locator('.path-card').count(),2,'Forward restores chooser');
   await card(page,interest).click();await plan(page,lang,interest);
   await page.locator('#interest-plan .interest-start').click();
-  equal(new URL(page.url()).pathname,routePath(lang,interest==='musical'?'musical':'novel'),'primary opens correct route');
+  equal(new URL(page.url()).pathname,entranceHref(lang,interest),'primary opens the dedicated journey');
+  equal(await page.locator('.journey-continuation').count(),0,'No competing guided-tour bar above dedicated journey');
   if(interest==='musical'){
-    equal(new URL(page.url()).searchParams.get('focus'),'song:work-song','watch journey begins at Work Song');
-    equal(new URL(page.url()).searchParams.get('view'),'journey','primary selects viewing journey');
+    equal(await page.locator('.musical-journey-orientation').count(),1,'Musical starts with safe listening orientation');
+    equal(await page.locator('#show-slide').count(),0,'Full musical stays gated');
     equal(await page.locator('iframe[src*="autoplay=1"]').count(),0,'no autoplay');
   }else{
-    await stop(page,lang,interest,0);
-    await page.reload();await stop(page,lang,interest,0);
-    await page.locator('[data-action="language"]').click();await stop(page,otherLang,interest,0);
-    await page.goBack();await stop(page,lang,interest,0);
-    await page.locator('.journey-next').click();await stop(page,lang,interest,1);
-    await page.goBack();await stop(page,lang,interest,0);
-    await page.goForward();await stop(page,lang,interest,1);
-    await page.locator('.journey-switch').click();await plan(page,lang,interest);
-    await page.locator('#interest-plan .interest-start').click();
-    for(let index=0;index<4;index++){
-      await stop(page,lang,interest,index);
-      if(index<3)await page.locator('.journey-next').click();
-    }
-    await page.reload();await stop(page,lang,interest,3);
-    const beforeExit=await page.evaluate(()=>{history.replaceState(history.state,'',location.pathname+'?interest-test=preserved#main');return location.href;});
-    await page.locator('[data-action="journey-exit"]').click();
-    equal(page.url(),beforeExit,'Browse freely preserves URL');
-    equal(await stateId(page),null,'Browse freely clears journey state');
-    await page.reload();equal(await page.locator('.journey-continuation').count(),0,'exit survives reload');
+    await page.locator('#reading-book-panel[data-reader-ready="true"]').waitFor();
+    equal(new URL(page.url()).searchParams.get('focus'),'chapter:p1-b1-c1','Novel primary opens the first chapter');
+    equal(await page.locator('.chapter-summary-text').count(),1,'Novel primary presents one chapter');
+    await page.locator('.chapter-slide-nav .slide-next').click();await page.locator('#reader-chapter-p1-b1-c2').waitFor();
+    await page.goBack();await page.locator('#reader-chapter-p1-b1-c1').waitFor();
+    await page.goForward();await page.locator('#reader-chapter-p1-b1-c2').waitFor();
+    await page.locator('[data-action="language"]').click();await page.locator('#reader-chapter-p1-b1-c2').waitFor();
+    equal(new URL(page.url()).searchParams.get('focus'),'chapter:p1-b1-c2','Language keeps actual chapter');
+    await page.reload();await page.locator('#reader-chapter-p1-b1-c2').waitFor();
+    equal(await page.locator('.chapter-summary-text').count(),1,'Reload remains focused');
   }
   await spoilersStayClosed(page,'primary destination');await storageCheck(page);
 }
 
 async function optedInResume(page,lang,width){
   currentCase=`${lang}/${width}/functional-opt-in`;
-  await page.goto(base+routePath(lang,'home'));
+  await page.goto(base+routePath(lang,'home')+'?interest=choose');
   await page.locator('.privacy-banner [data-action="privacy-open"]').click();
-  await page.locator('#privacy-functional').check();
-  await page.locator('#privacy-analytics').uncheck();
-  await page.locator('[data-action="privacy-save"]').click();
-  await storageCheck(page,true);
-  for(const interest of ['novel']){
-    currentCase=`${lang}/${width}/${interest}/resume`;
-    await chooseAndStart(page,lang,interest);
-    await page.locator('.journey-next').click();
-    await stop(page,lang,interest,1);
-    const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('barricade-last-journey')));
-    equal({id:saved?.id,route:saved?.route},{id:journeyId(interest),route:routes[interest][1]},
-      'existing last-journey record saves the actual interest stop');
-    await page.locator('.header .brand').click();
-    await page.reload();
-    const resume=page.locator(`.home-memory [data-resume-journey="${journeyId(interest)}"]`);
-    equal(await resume.count(),1,'opted-in journey is resumable after a home reload');
-    equal(await resume.getAttribute('href'),routePath(lang,routes[interest][1]),'resume href is the actual saved stop');
-    await page.locator('.home-memory').screenshot({path:path.join(dir,`interest-resume-${interest}-${lang}-${width}.png`)});
-    await resume.click();
-    await stop(page,lang,interest,1);
-    await page.reload();
-    await stop(page,lang,interest,1);
-    await storageCheck(page,true);
-  }
-  await page.goto(base+routePath(lang,'novel')+'?focus=part%3Ap2');
+  await page.locator('#privacy-functional').check();await page.locator('#privacy-analytics').uncheck();
+  await page.locator('[data-action="privacy-save"]').click();await storageCheck(page,true);
+  // Existing guided-tour records stay supported, independently of the new chapter-first entry.
+  const interest='novel';
+  await page.evaluate(()=>localStorage.setItem('barricade-last-journey',JSON.stringify({id:'interest-novel',route:'characters',updatedAt:Date.now()})));
+  await page.goto(base+routePath(lang,'home')+'?interest=choose');
+  const resume=page.locator('.home-memory [data-resume-journey="interest-novel"]');
+  equal(await resume.count(),1,'Existing opted-in guided-tour record remains resumable');
+  equal(await resume.getAttribute('href'),routePath(lang,'characters'),'Legacy resume points to its actual stop');
+  await resume.click();await stop(page,lang,interest,1);await page.reload();await stop(page,lang,interest,1);
+  await page.locator('.journey-next').click();await stop(page,lang,interest,2);
+  await page.locator('.journey-next').click();await stop(page,lang,interest,3);
+  const beforeExit=await page.evaluate(()=>{history.replaceState(history.state,'',location.pathname+'?interest-test=preserved#main');return location.href;});
+  await page.locator('[data-action="journey-exit"]').click();equal(page.url(),beforeExit,'Browse freely preserves URL');
+  equal(await stateId(page),null,'Browse freely clears legacy journey state');
+  await page.reload();equal(await page.locator('.journey-continuation').count(),0,'Exit survives reload');
+  await page.goto(base+routePath(lang,'novel-journey')+'?focus=part%3Ap2');
   await page.goto(base+routePath(lang,'home')+'?interest=novel');
   const readingStart=page.locator('#interest-plan .interest-start');
-  equal(await readingStart.getAttribute('href'),routePath(lang,'novel')+'?focus=part%3Ap2','story primary resumes the saved reading location');
-  await readingStart.click();
-  equal(new URL(page.url()).searchParams.get('focus'),'part:p2','saved reading primary opens the actual Part');
-  await spoilersStayClosed(page,'saved reading primary');
-  await storageCheck(page,true);
-
+  equal(await readingStart.getAttribute('href'),routePath(lang,'novel-journey')+'?focus=part%3Ap2','Novel primary resumes the saved reading location');
+  await readingStart.click();equal(new URL(page.url()).searchParams.get('focus'),'part:p2','Saved reading opens actual Part');
+  await spoilersStayClosed(page,'saved reading primary');await storageCheck(page,true);
 }
 
 async function withoutJavaScript(browser,lang,width){
@@ -261,10 +242,10 @@ async function withoutJavaScript(browser,lang,width){
     for(const interest of Object.keys(routes)){
       await page.goto(base+routePath(lang,'home'));
       equal(await page.locator('.path-card[data-interest]').count(),2,'static HTML retains both interest anchors');
-      equal(await card(page,interest).getAttribute('href'),primaryHref(lang,interest),'static anchor has a useful first-route fallback');
+      equal(await card(page,interest).getAttribute('href'),entranceHref(lang,interest),'static anchor has a useful dedicated-journey fallback');
       equal(await page.locator('details.home-more-paths [data-home-journey]').count(),0,'static HTML omits the older chooser');
       await card(page,interest).click();
-      equal(new URL(page.url()).pathname,routePath(lang,interest==='musical'?'musical':'novel'),'card works without JavaScript');
+      equal(new URL(page.url()).pathname,entranceHref(lang,interest),'card works without JavaScript');
       equal(await page.locator('h1').count(),1,'fallback destination has its page heading');
       equal(await page.locator('.story-chapter, #show-slide, .novel-event').count(),0,'no-JS fallback does not expose protected plot content');
       await noOverflow(page,'no-JS fallback');

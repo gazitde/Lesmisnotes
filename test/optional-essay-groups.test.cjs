@@ -7,7 +7,7 @@ function boot(language){
  const disk=new Map(),session=new Map(),listeners={},nodes=new Map();let focused='';
  const node=id=>{if(!nodes.has(id))nodes.set(id,{classList:{add(){},remove(){}},focus(){focused=id},setAttribute(){},scrollIntoView(){},querySelectorAll(){return[]},style:{}});return nodes.get(id)};
  const app={innerHTML:'',addEventListener(){}},storage=data=>({getItem:key=>data.get(key)||null,setItem:(key,value)=>data.set(key,value),removeItem:key=>data.delete(key)});
- const ctx={console,URLSearchParams,localStorage:storage(disk),sessionStorage:storage(session),setTimeout:()=>1,clearTimeout(){},document:{documentElement:{},title:'',addEventListener(){},querySelectorAll:()=>[],getElementById:id=>id==='app'?app:node(id),querySelector:selector=>selector.startsWith('#')?node(selector.slice(1)):{...node(selector),addEventListener(){}}},location:{pathname:`/${language}/novel/`,search:'',hash:'',origin:'https://example.test'},history:{state:null}};
+ const ctx={console,URLSearchParams,localStorage:storage(disk),sessionStorage:storage(session),setTimeout:()=>1,clearTimeout(){},document:{documentElement:{},title:'',addEventListener(){},querySelectorAll:()=>[],getElementById:id=>id==='app'?app:node(id),querySelector:selector=>selector.startsWith('#')?node(selector.slice(1)):{...node(selector),addEventListener(){}}},location:{pathname:`/${language}/novel-journey/`,search:'',hash:'',origin:'https://example.test'},history:{state:null}};
  ctx.history.replaceState=ctx.history.pushState=(state,_,href)=>{const url=new URL(href,ctx.location.origin);Object.assign(ctx.location,{pathname:url.pathname,search:url.search,hash:url.hash});ctx.history.state=state};ctx.window=ctx;ctx.scrollTo=()=>{};ctx.addEventListener=(name,fn)=>listeners[name]=fn;vm.createContext(ctx);
  for(const name of ['research','extras','character-profiles-data','character-profiles','quiz-engine','seo','policies','privacy','site-config','analytics','places-data','places','recipes-data','recipes','search','chapter-completion','book-stage-data','book-stage'])vm.runInContext(code(name),ctx);
  vm.runInContext(code('app').replace(/\}\)\(\);\s*$/,expose),ctx);
@@ -31,7 +31,7 @@ for(const language of ['he','en']){
   assert.equal(catalog.length,365);assert.equal(new Set(catalog.map(c=>c.id)).size,365);
   assert.equal(signature(catalog.map(({id,ordinal,url})=>({id,ordinal,url}))),'c749c5f13d91b6ad1fdf12640e047c786f6126fec9826bee1c899c89fd974ca2');
   assert.equal(signature(ctx.BOOK_STAGE_DATA.scenes.map(({songId,relations})=>({songId,relations}))),'82386476d712452d31569318437f471c7ec68af864d858f05eda201976411cf6');
-  api.navigateReader(`/${language}/novel/?essays=all`);
+  api.navigateReader(`/${language}/novel-journey/?essays=all`);
   const allRendered=[];
   for(const book of ctx.EXTRA_CONTENT.readingLocator.parts.flatMap(p=>p.books)){
    api.navigateReader(api.readingHref('book',book.id));const html=api.readingHierarchyBody(),tags=groupTags(html);
@@ -62,11 +62,11 @@ for(const language of ['he','en']){
   assert.deepEqual(allRendered,Array.from(catalog,c=>c.id));
   let defaultBooks=0,fullBooks=0;
   for(const part of [1,2,3,4,5]){
-   api.navigateReader(`/${language}/novel/?focus=part%3Ap${part}`);
+   api.navigateReader(`/${language}/novel-journey/?focus=part%3Ap${part}`);
    const defaultHtml=api.readingHierarchyBody();
    defaultBooks+=(defaultHtml.match(/class="reader-book-card"/g)||[]).length;
    assert.equal(defaultHtml.includes('reader-essay-badge'),false,'Default Part view omits the essay Books');
-   api.navigateReader(`/${language}/novel/?focus=part%3Ap${part}&essays=all`);
+   api.navigateReader(`/${language}/novel-journey/?focus=part%3Ap${part}&essays=all`);
    api.navigateReader(api.readingHref('part','p'+part));const html=api.readingHierarchyBody();
    const cards=[...html.matchAll(/<article class="reader-book-card"[\s\S]*?<\/article>/g)].map(m=>m[0]);
    fullBooks+=cards.length;
@@ -83,18 +83,18 @@ for(const language of ['he','en']){
    if(wholeBooks[book])assert.equal(hasOpen(groupTags(api.readingHierarchyBody())[0]),false);else assert.equal(groupTags(api.readingHierarchyBody()).length,0,'Default partial Book has no optional chapter group');
    for(let n=1;n<=count;n++){
     const id=book+'-c'+n;api.navigateReader(api.readingHref('chapter',id));const html=api.readingHierarchyBody(),tags=groupTags(html);
-    assert.equal(tags.length,1);assert.ok(hasOpen(tags[0]),'Exact chapter opens its containing essay group');assert.equal(focused(),'reader-chapter-'+id);
+    assert.equal(tags.length,0);assert.ok(html.includes('reader-focused-essay'),'Exact chapter labels its essay context without exposing other chapters');assert.deepEqual(chapterIds(html),[id]);assert.equal(focused(),'reader-chapter-'+id);
     assert.equal(api.selectedReading().key,id);assert.equal(api.spoiler(),false);assert.equal(JSON.stringify([...session]),before);
     assert.equal(/data-novel-event/.test(html),false);assert.equal(/class="chapter-wide-links"/.test(html),false);
    }
    api.setSpoilers(true);api.navigateReader(api.readingHref('book',book));if(wholeBooks[book])assert.equal(hasOpen(groupTags(api.readingHierarchyBody())[0]),false,'Spoilers on does not expand a generic Book');else assert.equal(groupTags(api.readingHierarchyBody()).length,0,'Spoilers do not reinsert omitted partial chapters');
-   api.navigateReader(api.readingHref('chapter',book+'-c1'));assert.ok(hasOpen(groupTags(api.readingHierarchyBody())[0]));api.setSpoilers(false);assert.ok(hasOpen(groupTags(api.readingHierarchyBody())[0]),'Hiding wider spoilers preserves the exact chapter request');
+   api.navigateReader(api.readingHref('chapter',book+'-c1'));assert.ok(api.readingHierarchyBody().includes('reader-focused-essay'));api.setSpoilers(false);assert.deepEqual(chapterIds(api.readingHierarchyBody()),[book+'-c1'],'Hiding wider spoilers preserves the exact chapter request');
   }
  });
  test(`partial essay Books retain narrative chapters and spoiler-safe bridge (${language})`,()=>{
   const {ctx,api,session}=boot(language),catalog=ctx.EXTRA_CONTENT.chapterCompanion.chapters;
   for(const [book,kept] of [['p3-b1',['p3-b1-c13']],['p3-b7',['p3-b7-c3','p3-b7-c4']]]){
-   api.navigateReader(`/${language}/novel/?focus=book%3A${book}`);let html=api.readingHierarchyBody();
+   api.navigateReader(`/${language}/novel-journey/?focus=book%3A${book}`);let html=api.readingHierarchyBody();
    assert.deepEqual(chapterIds(html),kept);assert.equal(groupTags(html).length,0);
    const select=html.match(/<select id="reading-chapter"[^]*?<\/select>/)[0];
    assert.deepEqual([...select.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]),kept,'Default dropdown excludes optional chapters too');
@@ -102,10 +102,10 @@ for(const language of ['he','en']){
    assert.ok(bridge);assert.match(bridge,new RegExp(`data-before-chapter="${kept[0]}"`));
    assert.ok(html.indexOf(bridge)<html.indexOf(`id="reader-chapter-${kept[0]}"`),'Brief bridge precedes retained narrative');
    assert.ok(bridge.length<600,'Bridge remains a short orientation');assert.equal(/<a |data-insight-link|data-novel-event/.test(bridge),false);
-   for(const id of kept){api.navigateReader(api.readingHref('chapter',id));assert.deepEqual(chapterIds(api.readingHierarchyBody()),kept);assert.equal(groupTags(api.readingHierarchyBody()).length,0);}
-   const target=book+'-c'+groups[book];api.navigateReader(`/${language}/novel/?focus=chapter%3A${target}`);
-   html=api.readingHierarchyBody();assert.equal(groupTags(html).length,1);assert.ok(hasOpen(groupTags(html)[0]));
-   assert.deepEqual(chapterIds(html),Array.from(catalog.filter(c=>c.bookId===book),c=>c.id),'Direct optional target restores only its own Book');
+   for(const id of kept){api.navigateReader(api.readingHref('chapter',id));assert.deepEqual(chapterIds(api.readingHierarchyBody()),[id]);assert.equal(groupTags(api.readingHierarchyBody()).length,0);}
+   const target=book+'-c'+groups[book];api.navigateReader(`/${language}/novel-journey/?focus=chapter%3A${target}`);
+   html=api.readingHierarchyBody();assert.equal(groupTags(html).length,0);assert.ok(html.includes('reader-focused-essay'));
+   assert.deepEqual(chapterIds(html),[target],'Direct optional target shows only the requested chapter');
    api.navigateReader(api.readerEssayModeHref(true));assert.equal(new URLSearchParams(ctx.location.search).get('essays'),'all');
    assert.equal(api.readingHierarchyBody().includes('reader-essay-bridge'),false,'Full text needs no skipped-section bridge');
    api.navigateReader(api.readerEssayModeHref(false));assert.equal(api.selectedReading().kind,'book');assert.equal(api.selectedReading().key,book);assert.deepEqual(chapterIds(api.readingHierarchyBody()),kept);
@@ -120,10 +120,10 @@ for(const language of ['he','en']){
   assert.match(app.innerHTML,/class="reader-essay-mode"/);
   assert.ok(api.readerEssayModeHref(true).includes('essays=all'));
   for(const full of [false,true]){
-   api.navigateReader(`/${language}/novel/`+(full?'?essays=all':''));
+   api.navigateReader(`/${language}/novel-journey/`+(full?'?essays=all':''));
    const expected=full?Array.from(catalog):streamlined;
-   assert.match(app.innerHTML,new RegExp('<h1>[^]*?'+(full?'365':'333')+'[^]*?</h1>'),'First screen names the current route size');
-   assert.match(app.innerHTML,new RegExp('id="reading-along-title">[^<]*'+(full?'365':'333')),'Reader heading matches mode');
+   assert.match(app.innerHTML,language==='he'?/מלווה קריאה/:/reading companion/i,'Dedicated page identifies itself as a companion');
+   assert.match(app.innerHTML,/id="reading-along-title"/,'Reader heading remains accessible');
    assert.ok(app.innerHTML.includes(language==='he'?'פרקי הרומן המלא':'chapters in the full novel'),'Progress clearly measures the complete novel');
    assert.deepEqual(Array.from(api.readerNavigationChapters(catalog[0]),c=>c.id),expected.map(c=>c.id));
    for(let i=0;i<expected.length;i++){
@@ -139,13 +139,13 @@ for(const language of ['he','en']){
    for(const book of Object.keys(groups)){
     const first=catalog.findIndex(c=>c.bookId===book),last=first+groups[book]-1,before=catalog[first-1],after=catalog[last+1];
     for(const [from,step,to] of [[before,'next',full?catalog[first]:after],[after,'prev',full?catalog[last]:before]]){
-     api.navigateReader(`/${language}/novel/?focus=chapter%3A${from.id}`+(full?'&essays=all':''));
+     api.navigateReader(`/${language}/novel-journey/?focus=chapter%3A${from.id}`+(full?'&essays=all':''));
      api.moveSlide({dataset:{slideSurface:'chapter',chapterId:from.id}},step);
      assert.equal(api.selectedReading().key,to.id);assert.equal(new URLSearchParams(ctx.location.search).get('essays'),full?'all':null);
     }
    }
   }
-  api.navigateReader(`/${language}/novel/?focus=chapter%3Ap2-b7-c1`);
+  api.navigateReader(`/${language}/novel-journey/?focus=chapter%3Ap2-b7-c1`);
   assert.equal(api.readerNavigationChapters(catalog.find(c=>c.id==='p2-b7-c1')).length,365,'Explicit essay chapter remains readable in canonical sequence');
   api.moveSlide({dataset:{slideSurface:'chapter',chapterId:'p2-b7-c1'}},'next');assert.equal(api.selectedReading().key,'p2-b7-c2');
   assert.equal(api.spoiler(),false);assert.equal(session.get('barricade-spoilers'),undefined);assert.equal(disk.size,0,'Mode preference is URL-only');

@@ -51,7 +51,7 @@ const dir = process.env.SEARCH_ARTIFACT_DIR || 'test-results';
       page.on('pageerror', error => errors.push(error.message));
       const next = lang === 'he' ? 100 : -100;
       const one = 'p1-b1-c1', two = 'p1-b1-c2';
-      await page.goto(`${base}/${lang}/novel/?focus=chapter%3A${one}`);
+      await page.goto(`${base}/${lang}/novel-journey/?focus=chapter%3A${one}`);
       await chapterReady(page);
       await page.locator('[data-action="privacy-reject"]').first().click();
       await chapterReady(page);
@@ -90,12 +90,12 @@ const dir = process.env.SEARCH_ARTIFACT_DIR || 'test-results';
         const index = chapters.findIndex((chapter, i) => chapters[i + 1]?.bookId !== chapter.bookId);
         return { from: chapters[index].id, to: chapters[index + 1].id, book: chapters[index + 1].bookId };
       });
-      await page.goto(`${base}/${lang}/novel/?focus=chapter%3A${crossing.from}`); await chapterReady(page);
+      await page.goto(`${base}/${lang}/novel-journey/?focus=chapter%3A${crossing.from}`); await chapterReady(page);
       await swipe(page, cdp, page.locator(`#reader-chapter-${crossing.from} .chapter-reading-head`), next);
       await page.waitForURL(url => url.searchParams.get('focus') === 'chapter:' + crossing.to); await chapterReady(page);
       equal(await page.locator('#reading-book-panel').getAttribute('data-book-id'), crossing.book, 'Next chapter crosses the Book boundary');
 
-      await page.goto(`${base}/${lang}/musical/?focus=song%3Awork-song&view=journey&watch=sameProduction`);
+      await page.goto(`${base}/${lang}/musical-journey/?focus=song%3Awork-song&view=journey&watch=sameProduction`);
       await page.locator('[data-action="show-open"]').click();
       equal(await page.locator('[data-show-select]').inputValue(), '0', 'Journey begins at its first stop');
       const frame = await page.locator('#show-watch-stop iframe').elementHandle();
@@ -130,7 +130,7 @@ const dir = process.env.SEARCH_ARTIFACT_DIR || 'test-results';
 
     // Desktop text dragging must never turn into a navigation gesture.
     const c = await context(1365, false), page = await c.newPage();
-    await page.goto(base + '/en/novel/?focus=chapter%3Ap1-b1-c1'); await chapterReady(page);
+    await page.goto(base + '/en/novel-journey/?focus=chapter%3Ap1-b1-c1'); await chapterReady(page);
     const title = page.locator('#reader-title-p1-b1-c1');
     await title.scrollIntoViewIfNeeded();
     const box = await title.boundingBox();

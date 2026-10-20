@@ -14,7 +14,7 @@ for(const lang of ['he','en'])for(const width of [1365,390,320]){
  for(const [id,target]of Object.entries(targets)){
   const card=page.locator(`[data-discovery-id="${id}"]`),summary=card.locator('summary');await summary.focus();await page.keyboard.press('Enter');check(await card.evaluate(el=>el.open),'Keyboard expands '+id);
   check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'No discovery overflow '+lang+width+id);
-  check(await card.locator('.character-discovery-chapter').getAttribute('href')===`/${lang}/novel/?focus=chapter%3A${target}`,'Exact chapter link');
+  check(await card.locator('.character-discovery-chapter').getAttribute('href')===`/${lang}/novel-journey/?focus=chapter%3A${target}`,'Exact chapter link');
   check(await card.locator('a').evaluateAll(es=>es.every(e=>e.getBoundingClientRect().height>=44)),'Touchable links');
   if(id==='friends-abc'&&width!==1365)await page.locator('.character-discovery').screenshot({path:path.join(dir,`discovery-${lang}-${width}.png`)});
   await card.locator('.character-discovery-chapter').focus();await page.keyboard.press('Enter');await page.locator('#reader-chapter-'+target).waitFor();
@@ -23,13 +23,13 @@ for(const lang of ['he','en'])for(const width of [1365,390,320]){
  }
  for(const query of ['reader=p1-b1-c1','reader=p5-b9-c6','reader=bogus&view=full']){await page.goto(`${base}/${lang}/character-valjean/?${query}`);await page.locator('.reader-character-profile').waitFor();check(await page.locator('.character-discovery').count()===0,'Bounded profile excludes discovery');}
  for(const id of aliases){
-  await page.goto(`${base}/${lang}/musical/?focus=song%3A${id}&view=journey`);const reveal=page.locator('#musical-journey [data-action="show-open"]');if(await reveal.count()){check(await page.locator('#show-slide').count()===0,'Journey stays closed before explicit spoiler choice');await reveal.click();}await page.locator('#show-current-title').waitFor();
+  await page.goto(`${base}/${lang}/musical-journey/?focus=song%3A${id}&view=journey`);const reveal=page.locator('#musical-journey [data-action="show-open"]');if(await reveal.count()){check(await page.locator('#show-slide').count()===0,'Journey stays closed before explicit spoiler choice');await reveal.click();}await page.locator('#show-current-title').waitFor();
   const label=page.locator('#show-slide [data-recording-title]');check(await label.count()===(lang==='he'?1:0),'HE-only alias '+id);if(lang==='he'){check((await label.textContent()).includes('באלבום הקאמרי (1987):'),'Album-specific label');check(await label.locator('a').getAttribute('href')==='https://www.nli.org.il/en/items/NNL_MUSIC_AL997013219803805171/NLI','Exact source link');check((await page.locator('#show-slide .show-original-title').textContent()).length>0,'English primary reference remains');}
   check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'No song overflow '+lang+width+id);
   if(id==='who-am-i'&&lang==='he'&&width===320)await page.locator('#show-slide').screenshot({path:path.join(dir,`recording-title-${lang}-${width}.png`)});
  }
- for(const id of ['bring-him-home','epilogue']){await page.goto(`${base}/${lang}/musical/?focus=song%3A${id}&view=journey`);await page.locator('#show-current-title').waitFor();check(await page.locator('#show-slide [data-recording-title]').count()===0,'No unsupported alias '+id);}
- await page.goto(`${base}/${lang}/musical/?focus=song%3Aon-my-own&view=journey`);await page.locator('#show-current-title').waitFor();await page.locator('[data-action="language"]').click();check(new URL(page.url()).searchParams.get('focus')==='song:on-my-own','Language keeps song target');check(await page.locator('#show-slide [data-recording-title]').count()===(lang==='en'?1:0),'Language switches alias visibility');
+ for(const id of ['bring-him-home','epilogue']){await page.goto(`${base}/${lang}/musical-journey/?focus=song%3A${id}&view=journey`);await page.locator('#show-current-title').waitFor();check(await page.locator('#show-slide [data-recording-title]').count()===0,'No unsupported alias '+id);}
+ await page.goto(`${base}/${lang}/musical-journey/?focus=song%3Aon-my-own&view=journey`);await page.locator('#show-current-title').waitFor();await page.locator('[data-action="language"]').click();check(new URL(page.url()).searchParams.get('focus')==='song:on-my-own','Language keeps song target');check(await page.locator('#show-slide [data-recording-title]').count()===(lang==='en'?1:0),'Language switches alias visibility');
  check(errors.length===0,'No page errors '+JSON.stringify(errors));await context.close();
 }
 await browser.close();console.log(`Discovery and recording titles: ${checks} browser checks passed across HE/EN, desktop/390/320, keyboard, history, chapter boundaries, source links and language.`);

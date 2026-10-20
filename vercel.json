@@ -43,6 +43,26 @@
       "destination": "/profile-readers/:lang/:id.html"
     },
     {
+      "source": "/:lang(he|en)/novel-journey/",
+      "has": [
+        {
+          "type": "query",
+          "key": "focus"
+        }
+      ],
+      "destination": "/reading-shells/:lang.html"
+    },
+    {
+      "source": "/:lang(he|en)/novel-journey/",
+      "missing": [
+        {
+          "type": "query",
+          "key": "focus"
+        }
+      ],
+      "destination": "/route-pages/:lang/novel-journey.html"
+    },
+    {
       "source": "/:lang(he|en)/novel/",
       "has": [
         {

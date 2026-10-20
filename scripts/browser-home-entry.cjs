@@ -21,7 +21,7 @@ for(const lang of ['he','en'])for(const width of [1365,390,320]){
  await page.locator('.home-memory [data-resume-journey="first"]').click();check(page.url().endsWith('/'+lang+'/story/'),'Resume action returns to stop '+lang+width);check(await page.locator('.story-chapter').count()===0,'Resume never auto-opens spoilers '+lang+width);check(await page.locator('.journey-next').getAttribute('href')==='/'+lang+'/map/','Legacy continuation retains its next stop '+lang+width);
  for(const [id,route] of [['after','listening'],['book','hugo'],['voices','listening'],['play','quiz'],['interest-both','hugo'],['interest-musical','before']]){
   await page.evaluate(({id,route})=>localStorage.setItem('barricade-last-journey',JSON.stringify({id,route,updatedAt:1})),{id,route});
-  await page.goto(base+'/'+lang+'/home/');const resume=page.locator('.home-memory [data-resume-journey="'+id+'"]');check(await resume.count()===1,'Saved '+id+' remains resumable '+lang+width);await resume.click();check(await page.evaluate(()=>history.state?.lesmisJourney)===id,'Saved '+id+' resumes actual path '+lang+width);
+  await page.goto(base+'/'+lang+'/home/?interest=choose');const resume=page.locator('.home-memory [data-resume-journey="'+id+'"]');check(await resume.count()===1,'Saved '+id+' remains resumable '+lang+width);await resume.click();check(await page.evaluate(()=>history.state?.lesmisJourney)===id,'Saved '+id+' resumes actual path '+lang+width);
  }
  await context.close();
 }
