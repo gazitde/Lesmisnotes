@@ -193,6 +193,8 @@
  .novel-journey-page .reader-location-tools,.novel-journey-page .reader-settings,.novel-journey-page .journey-further,.novel-journey-page .reading-method{padding-inline:15px}
 }
 
+/* The loading panel is replaced in place; do not let its old descendants anchor the viewport. */
+.novel-journey-page #reading-current{overflow-anchor:none}
 /* Keep location visible while the single chapter is in focus. */
 .novel-journey-page .reader-breadcrumbs{position:sticky;top:8px;z-index:3;box-shadow:0 3px 12px #0929560d}
 .novel-journey-page .reader-chapter-card{scroll-margin-top:100px}
