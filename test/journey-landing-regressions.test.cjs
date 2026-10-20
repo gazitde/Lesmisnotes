@@ -4,13 +4,13 @@ const source=fs.readFileSync('dist/app.js','utf8');
 function fn(name){const start=source.indexOf('function '+name+'(');assert.ok(start>=0);const end=source.indexOf('\nfunction ',start+1);return source.slice(start,end)}
 function reader(){
  const calls=[],c={window:{scrollX:0,scrollY:200},location:{pathname:'/he/novel-journey/',search:'?focus=chapter%3Ap1-b1-c1'},readerFocusLanding:null,readerSelection:()=>({chapter:'p1-b1-c1',level:'book'}),Math};
- let card={id:'reader-chapter-p1-b1-c1',getBoundingClientRect(){calls.push('layout');return {top:100}},focus(options){assert.equal(options.preventScroll,true);calls.push('focus');c.document.activeElement=card},scrollIntoView(options){assert.equal(options.behavior,'instant');calls.push('scroll');c.window.scrollY=200}};
- const panel={contains:element=>element===card};c.document={activeElement:card,getElementById:id=>id==='reading-current'?panel:card};c.refreshReadingPanel=()=>calls.push('refresh');vm.createContext(c);
+ let card={id:'reader-chapter-p1-b1-c1',style:{},getBoundingClientRect(){calls.push('layout');return {top:100}},focus(options){assert.equal(options.preventScroll,true);calls.push('focus');c.document.activeElement=card},scrollIntoView(options){assert.equal(options.behavior,'instant');calls.push('scroll');c.window.scrollY=200}};
+ const panel={contains:element=>element===card};c.document={activeElement:card,querySelector:()=>({getBoundingClientRect:()=>({height:114})}),getElementById:id=>id==='reading-current'?panel:card};c.refreshReadingPanel=()=>calls.push('refresh');vm.createContext(c);
  for(const name of ['readerLandingPosition','focusReaderSelection','refreshLoadedReadingPanel'])vm.runInContext(fn(name),c);
  return {c,calls,card};
 }
 test('lazy refresh flushes layout and preserves an untouched explicit reader landing',()=>{
- const {c,calls}=reader();c.focusReaderSelection();assert.deepEqual(calls,['layout','focus','scroll']);calls.length=0;c.refreshLoadedReadingPanel();assert.deepEqual(calls,['refresh','layout','focus','scroll']);
+ const {c,calls}=reader();c.focusReaderSelection();assert.equal(c.document.activeElement.style.scrollMarginTop,'138px');assert.deepEqual(calls,['layout','focus','scroll']);calls.length=0;c.refreshLoadedReadingPanel();assert.deepEqual(calls,['refresh','layout','focus','scroll']);
 });
 test('lazy refresh restores keyboard focus without dragging a reader who scrolled away',()=>{
  const {c,calls}=reader();c.focusReaderSelection();calls.length=0;c.window.scrollY=0;c.refreshLoadedReadingPanel();assert.deepEqual(calls,['refresh','layout','focus']);assert.equal(c.window.scrollY,0);

@@ -54,6 +54,8 @@
 .musical-journey-page .show-act-ribbon{margin:0 0 12px}
 .musical-journey-page .show-act-ribbon li{padding:9px;font-size:.8rem}
 .musical-journey-page .show-station-nav{top:0;border-color:#9fb2d0;border-radius:3px;box-shadow:0 4px 14px #09295610}
+.musical-journey-page .show-station-nav [data-show-move="prev"]{background:transparent;color:var(--muted);font-weight:600}
+.musical-journey-page .show-station-nav [data-show-move="prev"]:hover:not(:disabled){background:#eef3fa;color:var(--navy)}
 .musical-journey-page .show-swipe-hint{font-size:.8rem;line-height:1.55;margin:9px 0 13px}
 .musical-journey-page .show-slide-copy{padding:28px;max-width:none}
 .musical-journey-page .show-scene-location{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid var(--line);font-size:.82rem;color:var(--muted)}
