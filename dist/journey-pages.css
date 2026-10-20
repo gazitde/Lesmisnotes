@@ -202,3 +202,96 @@
 .novel-journey-page .reader-chapter-card{scroll-margin-top:100px}
 .novel-journey-page .reader-focused-essay{max-width:860px;margin:0 auto 16px;padding:16px 18px;border-inline-start:3px solid var(--gold);background:#f7f8fb;box-sizing:border-box;font-size:.9rem}
 @media(prefers-reduced-motion:reduce){.home-selected,.novel-journey-page,.musical-journey-page{scroll-behavior:auto}}
+
+/* A theatre programme and a reader's frontispiece. Original, local artwork;
+   no new requests, scripts, consent, motion or changes to journey behavior. */
+.dual-home{--programme-ink:#101e36;--programme-paper:#fbf5e9}
+.dual-home>.hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:0;padding:0;margin-top:28px;background:#101e36;color:#fbf5e9;border:1px solid #263951;min-height:480px;overflow:hidden}
+.dual-home .hero-copy{padding:clamp(28px,4.2vw,66px);position:relative;z-index:1}
+.dual-home .hero-copy .eyebrow{color:#efb8a2;font-size:.72rem;max-width:40ch;line-height:1.7;margin-bottom:28px}
+.dual-home .hero h1{font-size:clamp(3.1rem,5.4vw,5.3rem);line-height:1.02;max-width:11ch;letter-spacing:-.055em;margin-bottom:28px;color:#fbf5e9}
+.dual-home .hero h1 span{color:#ff7887}
+html[lang=he] .dual-home .hero h1{font-size:clamp(3rem,5.1vw,5rem);line-height:1.2;letter-spacing:-.04em;max-width:12ch}
+.dual-home .hero .lede{font-size:1.05rem;line-height:1.8;color:#e0e3e8;max-width:43ch}
+.dual-home .hero-art{aspect-ratio:auto;display:block;width:100%;height:100%;max-width:none;align-self:stretch;justify-self:stretch;margin:0;position:relative;overflow:hidden;background:#031b4b;box-shadow:none;border:0;border-radius:0}
+.dual-home .hero-art:before{display:none}
+.dual-home .hero-art img{aspect-ratio:auto;height:100%;width:100%;object-fit:cover;object-position:58% center;border:0;border-radius:0;box-shadow:none}
+.dual-home>.home-classic-paths{border-top:0;padding-block:42px 44px}
+.dual-home .home-classic-paths .section-head{align-items:end;margin-bottom:24px}
+.dual-home .section-head h2{font-size:clamp(2rem,3.4vw,3.1rem)}
+.dual-home .section-head .eyebrow{font-size:.7rem}
+.dual-home .path-grid{gap:26px}
+.dual-home .path-card{display:flex;flex-direction:column;padding:0 30px 24px;border:1px solid #d1c8b9;border-radius:0;background:#fbf5e9;color:#182940;overflow:hidden;box-shadow:0 8px 0 -5px #e0d8cc;transition:box-shadow .18s ease,border-color .18s ease}
+.dual-home .path-card[data-interest=musical]{background:#111f36;color:#fbf5e9;border-color:#2d405b;box-shadow:0 8px 0 -5px #a72b3e}
+.dual-home .path-card:hover{transform:none;border-color:#b82e45;box-shadow:0 10px 22px #101e3615}
+.dual-home .path-frontispiece{height:190px;margin:0 -30px 25px;background-position:center;background-repeat:no-repeat;background-size:cover;border-bottom:1px solid #d1c8b9}
+.dual-home .path-frontispiece-novel{background-image:url('/assets/novel-frontispiece.svg')}
+.dual-home .path-frontispiece-musical{background-image:linear-gradient(90deg,#101e3630,#101e3600),url('/scene.svg');background-position:center,center 67%;background-size:cover,cover;border-color:#40516d}
+.dual-home .path-meta{min-height:30px;margin-bottom:12px}
+.dual-home .path-kind{font-size:.7rem;letter-spacing:.08em}
+.dual-home .interest-icon{width:38px;height:34px;position:static}
+.dual-home .path-card h3{font-size:clamp(1.6rem,2.8vw,2.25rem);line-height:1.2;margin-bottom:14px;color:inherit}
+.dual-home .path-card p{font-size:1rem;line-height:1.75;max-width:48ch;color:inherit;opacity:.88;margin-bottom:24px}
+.dual-home .card-end{margin-top:auto;border-top:1px solid #9eacbd66;padding-top:16px;min-height:48px;font-size:.9rem}
+.dual-home .card-end>svg{width:32px;height:24px}
+.dual-home .audience-shared{margin-top:30px}
+/* Each dedicated journey has its own visual register. Keep tools outside art. */
+.musical-journey-page .musical-journey-header{position:relative;margin-top:24px;padding:24px clamp(24px,4vw,48px) 38px;border:1px solid #30415b;background:#111f36;color:#fbf5e9;overflow:hidden}
+.musical-journey-page .musical-journey-header:after{content:'♫';position:absolute;inset-inline-end:4%;bottom:-28px;font-family:Georgia,serif;font-size:230px;line-height:1;color:#ddba8030;pointer-events:none}
+.musical-journey-page .musical-journey-header>.eyebrow{color:#efb8a2;margin-top:24px}
+.musical-journey-page .musical-journey-header>h1{font-size:clamp(2.4rem,4.8vw,4.1rem);color:#fbf5e9;max-width:22ch;position:relative;z-index:1}
+.musical-journey-page .musical-journey-header>p{color:#dbe0e8;max-width:67ch;position:relative;z-index:1}
+.musical-journey-page .musical-journey-breadcrumb{background:#fbf5e9;color:#17283f}
+.musical-journey-page .musical-journey-header .bookmark-control{color:#fbf5e9;border-color:#8594a9;background:transparent}
+.musical-journey-page .musical-journey-orientation{background:#faf6ee;border-color:#dbd0be;border-top:3px solid #ad8b55}
+.musical-journey-page .musical-journey-opening{background:#f6f0e6;color:#182940;border:1px solid #c9b899;border-inline-start:4px solid #a62d42}
+.musical-journey-page .musical-journey-opening .eyebrow{color:#8c2535}
+.musical-journey-page .musical-opening-credit{color:#4b5667}
+.musical-journey-page .musical-journey-opening>.btn{background:#172a47;color:#fff}
+.musical-journey-page .show-gate{background:#faf8f3;border-color:#c7bba9;border-top-color:#a62d42}
+.novel-journey-page .journey-page-heading{position:relative;isolation:isolate;padding:38px 40px;min-height:220px;background:#f5eddd;border:1px solid #d7c9b2;border-bottom:4px solid #a72b35;overflow:hidden}
+.novel-journey-page .journey-page-heading:after{content:'';position:absolute;inset-block:0;inset-inline-end:0;width:36%;background:url('/assets/novel-frontispiece.svg') center/cover no-repeat;z-index:-1}
+.novel-journey-page .journey-page-heading>h1{max-width:17ch;font-size:clamp(2.4rem,4.6vw,3.8rem);line-height:1.14}
+.novel-journey-page .journey-page-heading>p{max-width:58%;color:#4d4b43}
+.novel-journey-page .journey-page-heading>.eyebrow{max-width:60%;color:#8c2535}
+.novel-journey-page .reader-start{background:#fffcf6;border-color:#d2c4ad;border-inline-start-color:#a72b35}
+.novel-journey-page .focused-chapter-panel .reader-chapter-card{background:#fffdf8;border-color:#d5c9b6;box-shadow:0 10px 30px #5743270a;border-top:4px solid #aa8a56}
+.novel-journey-page .reader-settings,.novel-journey-page .journey-further,.novel-journey-page .reading-method{background:#faf7f0;border-color:#d9d1c3}
+@media(max-width:960px){
+ .dual-home>.hero{min-height:440px;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+ .dual-home .hero-copy{padding:32px}
+ .dual-home .hero h1{font-size:3.3rem}
+ .novel-journey-page .journey-page-heading{padding:30px}
+ .novel-journey-page .journey-page-heading>h1{max-width:15ch}
+}
+@media(max-width:680px){
+ .dual-home>.hero{display:flex;flex-direction:column;min-height:0;margin-top:18px;padding:0}
+ .dual-home .hero-copy{padding:28px 24px 30px}
+ .dual-home .hero-copy .eyebrow{display:flex;font-size:.66rem;margin-bottom:19px;max-width:35ch}
+ .dual-home .hero h1,html[lang=he] .dual-home .hero h1{font-size:clamp(2.7rem,10vw,3.7rem);line-height:1.1;max-width:13ch;margin-bottom:20px}
+ html[lang=he] .dual-home .hero h1{line-height:1.23}
+ .dual-home .hero .lede{font-size:1rem;line-height:1.75}
+ .dual-home .hero-art{aspect-ratio:auto;display:block;height:200px;width:100%;max-width:none}
+ .dual-home .hero-art img{object-position:center 56%}
+ .dual-home>.home-classic-paths{padding-top:32px}
+ .dual-home .section-head .eyebrow{display:flex;font-size:.66rem}
+ .dual-home .section-head h2{font-size:2rem}
+ .dual-home .path-grid{grid-template-columns:1fr;gap:24px}
+ .dual-home .path-card{display:flex;padding:0 23px 21px;gap:0}
+ .dual-home .path-frontispiece{height:154px;margin:0 -23px 21px}
+ .dual-home .path-card h3{font-size:1.8rem}
+ .dual-home .path-card p{font-size:1rem;margin-bottom:20px}
+ .dual-home .interest-icon{position:static;width:34px;height:30px}
+ .dual-home .path-meta{margin-bottom:12px}
+ .musical-journey-page .musical-journey-header{padding:18px 20px 28px;margin-top:18px}
+ .musical-journey-page .musical-journey-header>h1{font-size:2.4rem}
+ .musical-journey-page .musical-journey-header:after{font-size:150px;opacity:.6}
+ .novel-journey-page .journey-page-heading{padding:27px 23px 155px;min-height:0}
+ .novel-journey-page .journey-page-heading>h1{font-size:2.5rem;max-width:18ch}
+ .novel-journey-page .journey-page-heading>p,.novel-journey-page .journey-page-heading>.eyebrow{max-width:100%}
+ .novel-journey-page .journey-page-heading:after{inset-block:auto 0;inset-inline:0;width:100%;height:130px;background-position:center 65%}
+}
+@media(prefers-reduced-motion:reduce){.dual-home .path-card{transition:none}}
+@media(forced-colors:active){.dual-home>.hero,.dual-home .path-card,.musical-journey-page .musical-journey-header{border:1px solid CanvasText}.dual-home .hero h1,.dual-home .hero h1 span,.dual-home .hero .lede,.musical-journey-page .musical-journey-header>h1,.musical-journey-page .musical-journey-header>p{color:CanvasText}}
+
+.musical-journey-page .musical-journey-header .bookmark-control.saved svg{fill:currentColor}
