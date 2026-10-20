@@ -14,7 +14,7 @@ The targeted weaknesses were repeated introductory/navigation explanations and e
 - Five paired interface-copy edits: gallery opening and instruction, historical timeline key, and the two novel-recap orientation explanations.
 - Eight scene-detail blocks gain pauses at narrative turns. Every word remains unchanged in both languages. Longest paragraph: English 144 → 66 words; Hebrew 110 → 51 words.
 - The 1,858 source URL strings in the two edited data bundles remain identical and in the same order.
-- No changes to artwork, styles, routes, links, scene order, reading progress, spoiler consent, permissions, media loading or storage.
+- A scoped 1em paragraph gap makes scene pauses visible after the global CSS reset. No changes to artwork, broader styling, routes, links, scene order, reading progress, spoiler consent, permissions, media loading or storage.
 
 The complete reviewed before/after values are in `editorial-changes-20261020.json`. Word-preserving paragraph changes are labelled separately there.
 

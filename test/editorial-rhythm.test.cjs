@@ -21,7 +21,9 @@ test('reader-facing introductions are bilingual and compact without hiding core 
  for(const value of [e.history.intro,e.hugo.lead,e.curtain.before.intro,e.curtain.after.intro,e.musical.spotlight.intro])for(const lang of ['he','en']){
   assert.ok(value[lang].trim());assert.ok(value[lang].split(/\s+/).length<=50);
  }
- assert.match(e.history.intro.en,/1832/);assert.match(e.history.intro.he,/1832/);
+ for(const lang of ['en','he'])for(const year of ['1789','1815','1832'])assert.ok(e.history.intro[lang].includes(year),'History opening retains '+year);
  assert.match(e.hugo.lead.en,/without revealing the ending/);
  assert.match(e.hugo.lead.he,/בלי לחשוף את הסוף/);
 });
+
+test('scene paragraph rhythm survives the shared CSS reset',()=>{assert.match(fs.readFileSync('dist/polish.css','utf8'),/\.story-chapter \.detail-body>p\+p\{margin-block-start:1em\}/)});

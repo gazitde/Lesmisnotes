@@ -18,6 +18,7 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
     const details=page.locator('.story-chapter details').first();await details.locator('summary').focus();await page.keyboard.press('Enter');
     check(await details.locator('.detail-body>p').count()===3,'Scene detail has three paragraphs');
     check(await details.locator('.detail-body>p').first().isVisible(),'Native disclosure opens by keyboard');
+    check(await details.locator('.detail-body>p').nth(1).evaluate(e=>parseFloat(getComputedStyle(e).marginBlockStart)>=12),'Paragraph pause is visually present after CSS reset');
     await details.locator('summary').press('Enter');check(!(await details.locator('.detail-body>p').first().isVisible()),'Detail closes again');
     await details.locator('summary').press('Enter');
    }
