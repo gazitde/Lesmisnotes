@@ -33,7 +33,7 @@ for(const language of ['he','en']){
    assert.ok(html.includes(item.name[language]));assert.ok(item.intro.he&&item.intro.en);
    assert.ok(item.intro[language].split(/\s+/).length<50,'Compact introduction');
    assert.equal(item.chapterId,targets[item.id]);
-   assert.ok(html.includes(`/${language}/novel/?focus=chapter%3A${item.chapterId}`));
+   assert.ok(html.includes(`/${language}/novel-journey/?focus=chapter%3A${item.chapterId}`));
    assert.match(item.source.url,/^https:\/\/fr\.wikisource\.org\/wiki\/Les_Mis%C3%A9rables\/Tome_[13]\/Livre_[245]\/(?:01|06)$/);
    assert.equal(P.get(item.id),undefined);assert.equal(P.href(item.id),null);
   }
@@ -42,7 +42,7 @@ for(const language of ['he','en']){
   assert.equal(P.discovery(language,{readerContext:{chapter:{id:'p1-b1-c1'}}}),'');
   for(const reader of ['p1-b1-c1','p5-b9-c6','bogus'])assert.equal(P.page({id:'valjean',lang:language,search:'?reader='+reader,spoiler:true}).includes('character-discovery'),false);
   api.navigate('characters');assert.ok(api.charactersPage().includes('class="character-discovery"'));
-  for(const item of D.items){api.navigateReader(`/${language}/novel/?focus=chapter%3A${item.chapterId}`);assert.equal(new URLSearchParams(ctx.location.search).get('focus'),'chapter:'+item.chapterId);assert.equal(ctx.document.getElementById('app').innerHTML.includes('class="character-discovery"'),false);}
+  for(const item of D.items){api.navigateReader(`/${language}/novel-journey/?focus=chapter%3A${item.chapterId}`);assert.equal(new URLSearchParams(ctx.location.search).get('focus'),'chapter:'+item.chapterId);assert.equal(ctx.document.getElementById('app').innerHTML.includes('class="character-discovery"'),false);}
   assert.equal(JSON.stringify(api.consent()),before);assert.equal(session.get('barricade-spoilers'),undefined);assert.equal(disk.size,0);
  });
  test(`recording labels preserve primary titles and explicit scope (${language})`,()=>{

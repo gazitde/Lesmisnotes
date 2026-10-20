@@ -8,7 +8,7 @@ for(const lang of ['he','en'])for(const p of W.CHARACTER_PROFILES.profiles){
   check(trail.length===6,'Six-level valid chapter ancestry');check(trail.filter(x=>x.current).length===1&&trail[5].current,'One current item');
   check(trail[2].label===(lang==='he'?'חלק ':'Part ')+chapter.part&&trail[3].label===(lang==='he'?'ספר ':'Book ')+chapter.book&&trail[4].label===(lang==='he'?'פרק ':'Chapter ')+chapter.chapter,'Numeric labels only, no later Part/Book titles');
   check(trail[5].label===(known?p.name[lang]:lang==='he'?'דמות':'Character'),'Current identity obeys reading boundary');
-  for(const [i,kind,key]of [[2,'part','p'+chapter.part],[3,'book',chapter.bookId],[4,'chapter',chapter.id]])check(trail[i].href===`/${lang}/novel/?focus=${encodeURIComponent(kind+':'+key)}`,'Real bounded reader ancestor');
+  for(const [i,kind,key]of [[2,'part','p'+chapter.part],[3,'book',chapter.bookId],[4,'chapter',chapter.id]])check(trail[i].href===`/${lang}/novel-journey/?focus=${encodeURIComponent(kind+':'+key)}`,'Real bounded reader ancestor');
  }
  for(const search of ['?reader='+p.firstAppearance.chapterId,'?reader=p1-b1-c1','?reader=invalid','?reader=','?reader=p1-b1-c1&reader=p5-b9-c6']){
   W.location.search=search;const trail=P.readerTrail(route,{lang,search}),html=P.page({id:p.id,lang,search,spoiler:true}),nav=html.match(/<nav class="breadcrumb"[\s\S]*?<\/nav>/)?.[0]||'',schema=W.SiteSEO.structured(lang,route)['@graph'].find(x=>x['@type']==='BreadcrumbList');

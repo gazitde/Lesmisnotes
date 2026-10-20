@@ -17,7 +17,7 @@ for (const c of chapters) for (const lang of ['en', 'he']) {
   for (const query of queries) {
     const found = results(query, lang);
     check(found.total === 1 && found.results[0].doc.id === 'chapter:' + c.id, `Exact coordinate ${lang} ${query}`);
-    check(found.results[0].href === `/${lang}/novel/?focus=chapter%3A${c.id}`, `Localized exact coordinate link ${query}`);
+    check(found.results[0].href === `/${lang}/novel-journey/?focus=chapter%3A${c.id}`, `Localized exact coordinate link ${query}`);
     check(S.readTarget(new URL(found.results[0].href, 'https://example.test').search, 'novel')?.key === c.id, 'Chapter links retain current route contract');
   }
 }
@@ -32,7 +32,7 @@ check(!results('book').results.some(h => h.doc.kind === 'chapter'), 'Generic tex
 for (const [query, id] of [['Master of the House', 'master-house'], ['אדון הבית', 'master-house'], ['Who Am I?', 'who-am-i'], ['מי אני', 'who-am-i'], ['Come to Me', 'come-to-me'], ['Javert’s Soliloquy', 'javert-soliloquy'], ['Little People', 'javert-barricade'], ['Drink With Me', 'drink-with-me'], ['The Docks', 'docks']]) for (const lang of ['he', 'en']) {
   const hit = results(query, lang).results[0];
   check(hit?.doc.id === 'song:' + id, 'Reviewed song title ranks first ' + query);
-  check(hit.href === `/${lang}/musical/?focus=song%3A${id}`, 'Reviewed song keeps localized current-entry link');
+  check(hit.href === `/${lang}/${W.EXTRA_CONTENT.musical.spotlight.songs.some(s=>s.id===id)?'musical':'musical-journey'}/?focus=song%3A${id}`, 'Reviewed song keeps localized current-entry link');
   check(hit.doc.locked && hit.doc.titleOnly && hit.doc.body.en === '' && hit.doc.body.he === '', 'New song is title-only and consent-labelled');
 }
 for (const song of W.EXTRA_CONTENT.musical.songentries) {

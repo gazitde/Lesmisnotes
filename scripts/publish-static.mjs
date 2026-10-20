@@ -6,7 +6,7 @@ export function publishStatic(routes){
   const source=path.resolve('dist'),output=path.resolve('public-dist');
   fs.rmSync(output,{recursive:true,force:true});
   fs.cpSync(source,output,{recursive:true});
-  for(const route of routes.filter(r=>r==='novel'||/^character-[a-z]+$/.test(r)))for(const lang of ['he','en']){
+  for(const route of routes.filter(r=>['novel','novel-journey'].includes(r)||/^character-[a-z]+$/.test(r)))for(const lang of ['he','en']){
     const original=path.join(source,lang,route,'index.html'),internal=path.join(output,'route-pages',lang,route+'.html');
     if(!fs.existsSync(original))throw Error('Missing canonical page '+lang+'/'+route);
     fs.mkdirSync(path.dirname(internal),{recursive:true});fs.copyFileSync(original,internal);

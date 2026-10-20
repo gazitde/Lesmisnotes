@@ -21,9 +21,9 @@ for(const language of ['he','en'])test(`book-stage app navigation and spoiler bo
  assert.match(app.innerHTML,new RegExp('data-chapter-stage="'+id+'"'));
  const chapter=ctx.EXTRA_CONTENT.chapterCompanion.chapters.find(c=>c.id===id);
  const safe=api.chapterStageLinks(chapter);assert.ok(!safe.includes('data-insight-link'));assert.equal(api.spoiler(),false);
- api.setSpoilers(true);const full=api.chapterStageLinks(chapter);assert.ok(full.includes('/'+language+'/musical/?focus=song%3A'));assert.ok(full.includes('&amp;view=journey'));assert.ok(!full.includes('/journey/'));
+ api.setSpoilers(true);const full=api.chapterStageLinks(chapter);assert.ok(full.includes('/'+language+'/musical-journey/?focus=song%3A'));assert.ok(full.includes('&amp;view=journey'));assert.ok(!full.includes('/journey/'));
  const scene=ctx.BOOK_STAGE_DATA.scenes.find(s=>s.relations.some(r=>r.chapterIds.includes(id)));
- assert.ok(api.sceneBookLinks(scene.songId).includes('/'+language+'/novel/?focus=chapter%3A'+id));
- api.navigate('novel',language==='he'?'en':'he');assert.equal(api.selectedReading().key,id);assert.ok(api.chapterStageLinks(chapter).includes('/'+(language==='he'?'en':'he')+'/musical/'));
+ assert.ok(api.sceneBookLinks(scene.songId).includes('/'+language+'/novel-journey/?focus=chapter%3A'+id));
+ api.navigate('novel-journey',language==='he'?'en':'he');assert.equal(api.selectedReading().key,id);assert.ok(api.chapterStageLinks(chapter).includes('/'+(language==='he'?'en':'he')+'/musical-journey/'));
  api.setSpoilers(false);assert.ok(!api.chapterStageLinks(chapter).includes('data-insight-link'));assert.equal(session.get('barricade-spoilers'),'off');
 });

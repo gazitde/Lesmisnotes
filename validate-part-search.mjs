@@ -7,7 +7,7 @@ const safe=S.buildIndex(input),full=S.buildIndex(input,{spoiler:true,novelConsen
 const roman=['I','II','III','IV','V'],he=['א','ב','ג','ד','ה'];
 check(safe.filter(x=>x.kind==='part').length===5,'Five safe Part metadata records');
 for(let n=1;n<=5;n++)for(const lang of ['he','en'])for(const query of [`Part ${n}`,`part${n}`,`Part 0${n}`,`Part ${roman[n-1]}`,`חלק ${n}`,`חלק${n}`,`חלק ${he[n-1]}׳`,`חֵלֶק ${he[n-1]}`,'p'+n]){
- for(const index of [safe,full]){const r=S.search(index,query,{lang,limit:12});check(r.total===1&&r.results[0].doc.id===`part:p${n}`,'One exact result '+query);check(r.results[0].href===`/${lang}/novel/?focus=part%3Ap${n}`,'Exact localized existing route');check(S.readTarget(new URL(r.results[0].href,'https://example.test').search,'novel').key==='p'+n,'Existing reader target contract');}
+ for(const index of [safe,full]){const r=S.search(index,query,{lang,limit:12});check(r.total===1&&r.results[0].doc.id===`part:p${n}`,'One exact result '+query);check(r.results[0].href===`/${lang}/novel-journey/?focus=part%3Ap${n}`,'Exact localized existing route');check(S.readTarget(new URL(r.results[0].href,'https://example.test').search,'novel').key==='p'+n,'Existing reader target contract');}
 }
 for(const query of ['Part 0','Part 6','Part VI','Part 999999999999999999','חלק 0','חלק 6','חלק ו׳','p0','p6','part -1','Part 5 extra','p5<script>'])check(S.search(safe,query).total===0,'Malformed or out-of-range Part fails closed: '+query);
 check(S.search(safe,'Part 5',{category:'songs'}).total===0,'Part respects topic filter');check(S.search(safe,'Part V',{category:'story'}).total===1,'Part is in story category');check(S.search(safe,'Part 5',{limit:0}).results.length===0,'Part respects zero result limit');

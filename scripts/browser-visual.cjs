@@ -56,7 +56,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
  for(const lang of ['en','he'])for(const width of [1365,390]){
   await page.setViewportSize({width,height:900});await page.goto(base+'/'+lang+'/story/');
   if(!await page.locator('[data-action="spoilers"]').evaluate(e=>e.classList.contains('on'))){await page.locator('[data-action="spoilers"]').click();if(await page.locator('[data-action="confirm-spoilers"]').isVisible())await page.locator('[data-action="confirm-spoilers"]').click();}
-  for(const route of ['story','characters','compare','ideas','musical','novel','after','quiz','israel']){
+  for(const route of ['story','characters','compare','ideas','musical','musical-journey','novel','novel-journey','after','quiz','israel']){
    await page.goto(base+'/'+lang+'/'+route+'/');
    for(const action of ['novel-open','after-open','show-open','director-open']){const e=page.locator(`[data-action="${action}"]`);if(await e.count())await e.first().click();}
    await page.evaluate(()=>document.fonts.ready);
@@ -68,7 +68,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','visual');
      const f=luminance(getComputedStyle(el).color),b=luminance(getComputedStyle(el.closest('.story-foot')).backgroundColor);return (Math.max(f,b)+.05)/(Math.min(f,b)+.05)>=4.5;
     }),`Story closing button contrast ${lang} ${width}`);
    if(route==='novel')check(await page.locator('.novel-event-actions').count()===await page.locator('.novel-event-card').count(),`Every recap milestone has compact adjacent actions ${lang} ${width}`);
-   if(route==='musical'){check(await page.locator('.show-art').count()===0,`Journey no longer has an empty decorative column ${lang} ${width}`);check(await page.locator('.show-slide--watch').evaluate(el=>{const outer=el.getBoundingClientRect(),copy=el.querySelector('.show-slide-copy').getBoundingClientRect(),watch=el.querySelector('.watch-path-stop').getBoundingClientRect();return copy.width>0&&copy.left>=outer.left&&copy.right<=outer.right&&watch.left>=copy.left&&watch.right<=copy.right}),`Journey reading and media fit their compact article ${lang} ${width}`);check(await page.locator('[data-watch-mode][aria-pressed="true"]').count()===1,`One visible watch mode selected ${lang} ${width}`);}
+   if(route==='musical-journey'){check(await page.locator('.show-art').count()===0,`Journey no longer has an empty decorative column ${lang} ${width}`);check(await page.locator('.show-slide--watch').evaluate(el=>{const outer=el.getBoundingClientRect(),copy=el.querySelector('.show-slide-copy').getBoundingClientRect(),watch=el.querySelector('.watch-path-stop').getBoundingClientRect();return copy.width>0&&copy.left>=outer.left&&copy.right<=outer.right&&watch.left>=copy.left&&watch.right<=copy.right}),`Journey reading and media fit their compact article ${lang} ${width}`);check(await page.locator('[data-watch-mode][aria-pressed="true"]').count()===1,`One visible watch mode selected ${lang} ${width}`);}
    const markers={story:'.story-chapter',characters:'.relationship-graph',novel:'.novel-event',after:'.curtain-stop'};
    if(markers[route])check(await page.locator(markers[route]).count()>0,`Open ${lang}/${route} actually contains rich content`);
    check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),`Open ${lang}/${route} ${width} fit`);

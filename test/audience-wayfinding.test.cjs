@@ -20,9 +20,10 @@ for(const lang of ['en','he'])test(`direct arrivals distinguish novel and musica
 });
 test('route groups put the musical plot in the musical section, with book-only entry unchanged',()=>{
  const app=fs.readFileSync('dist/app.js','utf8');
- assert.match(app,/learn:\{title:.*?pages:\['novel','characters','hugo','compare','history'\]/);
- assert.match(app,/watch:\{title:.*?pages:\['musical','before','story'/);
+ assert.match(app,/learn:\{title:.*?pages:\['novel-journey','novel','characters','hugo','compare','history'\]/);
+ assert.match(app,/watch:\{title:.*?pages:\['musical-journey','musical','before','story'/);
  const meta=JSON.parse(fs.readFileSync('config/metadata.json','utf8')).pages;
- assert.match(meta.novel.title.en,/chapter summaries.*novel/);
+ assert.match(meta['novel-journey'].title.en,/reading journey/);
+ assert.match(meta.novel.title.en,/novel.*recap/);
  assert.match(meta.story.title.en,/musical plot summary/);
 });

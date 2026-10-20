@@ -34,7 +34,7 @@ for(const p of D.profiles){
    const html=P.page({...base,search:'?reader='+chapter.id,spoiler:true});
    check(html.includes('reader-character-profile')&&!html.includes('profile-full-prose')&&!html.includes('profile-intro')&&!html.includes('profile-role')&&!html.includes('profile-next')&&!html.includes('profile-references'),'Reader always bounded '+p.id+chapter.id+lang);
    check(html.includes('reader-character-identity')===(chapter.ordinal>=first.ordinal),'Exact known-identity boundary '+p.id+chapter.id+lang);
-   check(html.includes(`/${lang}/novel/?focus=chapter%3A${chapter.id}`),'Return to exact reading chapter');
+   check(html.includes(`/${lang}/novel-journey/?focus=chapter%3A${chapter.id}`),'Return to exact reading chapter');
   }
   for(const invalid of ['','bogus','p99-b1-c1','p1-b1-c1&reader=p5-b9-c6']){
    const html=P.page({...base,search:'?reader='+invalid,spoiler:true});

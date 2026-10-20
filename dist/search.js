@@ -140,7 +140,8 @@
     if (doc.kind === 'character' && doc.route === 'character-'+doc.key) return `/${lang}/character-${encodeURIComponent(doc.key)}/`;
     if (doc.kind === 'place') return `/${lang}/places/?place=${encodeURIComponent(doc.key)}`;
     if (doc.kind === 'performance') return `/${lang}/listening/?clip=${encodeURIComponent(doc.key)}`;
-    return `/${lang}/${doc.route}/` + (routeKinds[doc.kind] ? `?focus=${encodeURIComponent(doc.kind + ':' + doc.key)}` : '');
+    const destination=['part','book','chapter'].includes(doc.kind)?'novel-journey':doc.kind==='song'&&!((root.EXTRA_CONTENT?.musical||root.RESEARCH?.musical)?.spotlight?.songs||[]).some(s=>s.id===doc.key)?'musical-journey':doc.route;
+    return `/${lang}/${destination}/` + (routeKinds[doc.kind] ? `?focus=${encodeURIComponent(doc.kind + ':' + doc.key)}` : '');
   }
   function sourceBundle() { return { research: root.RESEARCH, extra: root.EXTRA_CONTENT, places: root.PLACE_CONTENT, recipes: root.RECIPE_CONTENT, metadata: root.SITE_METADATA }; }
   // Explicit field selection is intentional. Never recursively index source records:
@@ -385,6 +386,7 @@
     if (panel.open) close(false); // App rerenders/navigation must remove stale spoiler text immediately.
   }
   function readTarget(searchString, route) {
+    route=route==='novel-journey'?'novel':route==='musical-journey'?'musical':route;
     const match = new URLSearchParams(searchString || '').get('focus')?.match(/^([a-z]+):([A-Za-z0-9_-]{1,80})$/);
     return match && routeKinds[match[1]] === route ? { kind: match[1], key: match[2] } : null;
   }
