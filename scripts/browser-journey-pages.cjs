@@ -3,7 +3,7 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8891';
 (async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH,args:['--no-sandbox']});let n=0;const check=(v,m)=>{assert.ok(v,m);n++};
 for(const width of [390,500,1280])for(const lang of ['en','he']){
  const c=await browser.newContext({viewport:{width,height:844},reducedMotion:'reduce'}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await c.route('**/*',r=>new URL(r.request().url()).origin===new URL(base).origin?r.continue():r.abort());
- await p.goto(`${base}/${lang}/home/`);await p.locator('[data-action="privacy-reject"]').click();await p.locator('[data-interest="novel"]').click();
+ await p.goto(`${base}/${lang}/home/`);await p.locator('.privacy-banner [data-action="privacy-reject"]').click();await p.locator('[data-interest="novel"]').click();
  check(await p.locator('.path-card').count()===0,'Chosen cards collapse');check(await p.locator('h1').count()===1,'One H1');
  check((await p.locator('.interest-start').boundingBox()).y<844,'Primary first action in view');await p.locator('.interest-start').click();
  await p.locator('#reading-book-panel[data-reader-ready="true"]').waitFor();check(new URL(p.url()).pathname===`/${lang}/novel-journey/`,'Dedicated chapter route');check(await p.locator('.chapter-summary-text').count()===1,'One chapter summary');check(await p.locator('.reader-breadcrumbs li').count()===6,'Complete breadcrumb context');
