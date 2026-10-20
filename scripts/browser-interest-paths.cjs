@@ -13,7 +13,7 @@ const base=(process.env.SEARCH_TEST_URL||'http://localhost:8873').replace(/\/$/,
 const origin=new URL(base).origin;
 const dir=process.env.SEARCH_ARTIFACT_DIR||'test-results';
 const routes={
-  novel:['novel-journey','novel','characters','map','hugo'],
+  novel:['novel','characters','map','hugo'],
   musical:['before','musical','listening','screen'],
 };
 const optionalKeys=[
@@ -220,9 +220,9 @@ async function optedInResume(page,lang,width){
   const resume=page.locator('.home-memory [data-resume-journey="interest-novel"]');
   equal(await resume.count(),1,'Existing opted-in guided-tour record remains resumable');
   equal(await resume.getAttribute('href'),routePath(lang,'characters'),'Legacy resume points to its actual stop');
-  await resume.click();await stop(page,lang,interest,2);await page.reload();await stop(page,lang,interest,2);
+  await resume.click();await stop(page,lang,interest,1);await page.reload();await stop(page,lang,interest,1);
+  await page.locator('.journey-next').click();await stop(page,lang,interest,2);
   await page.locator('.journey-next').click();await stop(page,lang,interest,3);
-  await page.locator('.journey-next').click();await stop(page,lang,interest,4);
   const beforeExit=await page.evaluate(()=>{history.replaceState(history.state,'',location.pathname+'?interest-test=preserved#main');return location.href;});
   await page.locator('[data-action="journey-exit"]').click();equal(page.url(),beforeExit,'Browse freely preserves URL');
   equal(await stateId(page),null,'Browse freely clears legacy journey state');
