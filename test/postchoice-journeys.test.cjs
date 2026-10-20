@@ -76,5 +76,10 @@ for(const lang of ['en','he'])test(`legacy anchors and spotlight URLs retain the
  const id=ctx.RESEARCH.musical.spotlight.songs[0].id;
  ctx.history.replaceState(null,'',`/${lang}/musical/?focus=song%3A${id}&view=spotlight`);api.render();
  assert.equal(ctx.location.pathname,`/${lang}/musical/`);assert.equal(api.selectedReading().view,'spotlight');
+ ctx.history.replaceState(null,'',`/${lang}/musical/?focus=song%3A${id}`);api.render();
+ assert.equal(api.selectedReading().view,'spotlight','Legacy no-view reference links retain spotlight meaning');
+ api.navigate('musical',lang==='he'?'en':'he');
+ assert.equal(ctx.location.pathname,`/${lang==='he'?'en':'he'}/musical/`);assert.equal(api.selectedReading().view,'spotlight');
+ assert.deepEqual(Array.from(api.interestPaths.find(p=>p.id==='novel').pages),['novel','characters','map','hugo'],'Saved legacy four-step routes remain compatible with existing analytics');
  const intro=boot(lang,'musical-journey/');assert.ok(intro.app.innerHTML.includes('https://www.youtube.com/watch?v=5vnlCwsoKCs'));assert.equal((intro.app.innerHTML.match(/<iframe /g)||[]).length,0);
 });

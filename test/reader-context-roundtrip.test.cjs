@@ -56,7 +56,8 @@ for(const lang of ['en','he'])for(const mode of ['main','all'])test(`chapter pro
  assert.equal(new URLSearchParams(ctx.location.search).get('essays'),mode==='all'?'all':null);
  changeLanguage();assert.ok(!app.innerHTML.includes('profile-full-prose'));
  const trail=ctx.CharacterProfiles.readerTrail('character-bishop',{lang:other,search:ctx.location.search});
- for(const step of trail.filter(x=>x.href.includes('/novel/')))assert.equal(new URLSearchParams(new URL(step.href,ctx.location.origin).search).get('essays'),mode==='all'?'all':null);
+ const readerAncestors=trail.filter(x=>x.href.includes('/novel-journey/'));assert.equal(readerAncestors.length,4,'Every exact reader ancestor is checked');
+ for(const step of readerAncestors)assert.equal(new URLSearchParams(new URL(step.href,ctx.location.origin).search).get('essays'),mode==='all'?'all':null);
  click(app.innerHTML.match(/class="btn" data-profile-link href="([^"]+)"/)[1],'data-profile-link');
  assert.equal(api.selectedReading().key,chapter);assert.equal(api.selectedReading().essays,mode);assert.equal(api.spoiler(),true);
 });
