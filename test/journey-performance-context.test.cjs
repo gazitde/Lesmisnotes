@@ -11,7 +11,7 @@ function boot(lang='en',spoiler=false){
  c.external=(url,label)=>'<a href="'+url+'" target="_blank" rel="noopener noreferrer">'+label+'</a>';
  c.bookmarkControl=()=>'';c.top=()=>'';c.selectedReading=()=>null;c.musicFormPrimer=()=>'';c.sourceDisclosure=()=>'';c.banner=()=>'<p>spoilers on</p>';
  c.showJourney=()=>c.musicalJourneyHebrewPick('one-day-more')+['bring-him-home','dreamed-dream','empty-chairs'].map(id=>c.musicalJourneyPerformanceComparison(id)).join('');
- for(const name of ['musicalJourneyHebrewPick','musicalJourneyPerformanceComparison','musicalJourneyOrientation','musicalJourneyOpening','musicalJourneyPage'])vm.runInContext(functionSource(name),c);
+ for(const name of ['hebrewRadioPerformance','musicalJourneyHebrewPick','musicalJourneyPerformanceComparison','musicalJourneyOrientation','musicalJourneyOpening','musicalJourneyPage'])vm.runInContext(functionSource(name),c);
  return c;
 }
 for(const lang of ['he','en']){
@@ -49,5 +49,19 @@ test('Habima prompt reuses the existing source, only at its Hebrew gated scene',
  assert.equal(c.window.WATCH_PATH_DATA.clips.filter(x=>x.id==='1qwY7eMI5kQ').length,1);
  assert.equal(c.musicalJourneyHebrewPick('stars'),'');c.lang='en';assert.equal(c.musicalJourneyHebrewPick('one-day-more'),'');
  const slide=functionSource('showSlide');assert.ok(slide.includes('${musicalJourneyHebrewPick(s.id)}'));assert.ok(slide.includes('${musicalJourneyPerformanceComparison(s.id)}'));
- assert.ok(!app.includes('85arWfDjWyY'));
+ assert.ok(app.includes('85arWfDjWyY'));
+});
+
+test('requested Hebrew radio link is contextual, external-only and gated in the journey',()=>{
+ const c=boot('he');
+ assert.equal(c.musicalJourneyHebrewPick('bring-him-home'),'');
+ c.spoiler=true;const html=c.musicalJourneyHebrewPick('bring-him-home');
+ assert.ok(html.includes('https://www.youtube.com/watch?v=85arWfDjWyY'));
+ assert.ok(html.includes('Rom Finckelshtein'));
+ assert.ok(html.includes('קישור חיצוני'));
+ assert.ok(html.includes('שאלה להקשבה'));
+ assert.ok(!/<iframe|<img|data-video-shell/.test(html));
+ c.lang='en';assert.equal(c.musicalJourneyHebrewPick('bring-him-home'),'');
+ assert.ok(c.hebrewRadioPerformance().includes('External link to the upload by Rom Finckelshtein'));
+ assert.ok(functionSource('israelPage').includes('${hebrewRadioPerformance()}'));
 });
