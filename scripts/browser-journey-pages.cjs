@@ -26,10 +26,12 @@ for(const {width,height} of [{width:390,height:844},{width:500,height:844},{widt
  const entryBounds=await p.evaluate(()=>{const gate=document.querySelector('.show-gate').getBoundingClientRect(),section=document.getElementById('musical-journey').getBoundingClientRect();return {left:gate.left,right:gate.right,parentLeft:section.left,parentRight:section.right}});
  check(Math.abs(entryBounds.left-entryBounds.parentLeft)<=1&&Math.abs(entryBounds.right-entryBounds.parentRight)<=1,'Closed entry aligns with both section edges '+JSON.stringify(entryBounds));
  check(await p.locator('[data-opening-preview] iframe').count()===0,'No opening iframe before choice');
- await p.locator('[data-opening-preview]>summary').click();check(await p.locator('[data-opening-preview] iframe').count()===1,'Optional opening mounts inline');
+ await p.locator('[data-opening-preview]>summary').click();
+ // Native details toggle is queued asynchronously; wait for its observable result, not click completion.
+ await p.locator('[data-opening-preview] iframe').waitFor({state:'attached'});check(await p.locator('[data-opening-preview] iframe').count()===1,'Optional opening mounts inline');
  check((await p.locator('[data-opening-preview] iframe').getAttribute('src')).includes('autoplay=0'),'Opening never autoplays');
  check(await p.locator('#show-slide').count()===0,'Opening viewing does not grant plot consent');
- await p.locator('[data-opening-preview]>summary').click();check(await p.locator('[data-opening-preview] iframe').count()===0,'Closing removes opening iframe');
+ await p.locator('[data-opening-preview]>summary').click();await p.locator('[data-opening-preview] iframe').waitFor({state:'detached'});check(await p.locator('[data-opening-preview] iframe').count()===0,'Closing removes opening iframe');
  await p.locator('.show-gate').scrollIntoViewIfNeeded();fs.mkdirSync('test-results',{recursive:true});await p.screenshot({path:`test-results/journey-entry-${lang}-${width}.png`});
  check(!new URL(p.url()).searchParams.has('focus'),'Journey consent begins at the no-focus root');const beforeOpenHistory=await p.evaluate(()=>history.length);
  await p.locator('[data-action="show-open"]').click();await p.locator('#show-slide').waitFor();check(await p.locator('[data-slide-surface="show"]').count()===1,'Designated slide surface');
