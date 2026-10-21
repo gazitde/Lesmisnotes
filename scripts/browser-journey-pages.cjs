@@ -22,6 +22,15 @@ for(const {width,height} of [{width:390,height:844},{width:500,height:844},{widt
  await p.locator('[data-action="language"]').click();await p.locator('#reader-chapter-p1-b1-c1').waitFor();check(new URL(p.url()).searchParams.get('focus')==='chapter:p1-b1-c1','Language retains chapter');
  check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Chapter no horizontal overflow');
  await p.goto(`${base}/${lang}/musical-journey/`);check(await p.locator('.musical-journey-orientation').count()===1,'Safe orientation');check(await p.locator('#show-slide').count()===0,'Full scene hidden before consent');check(await p.locator('a[href="https://www.youtube.com/watch?v=5vnlCwsoKCs"]').count()===1,'Approved official opening excerpt');
+ await settleLayout(p);
+ const entryBounds=await p.evaluate(()=>{const gate=document.querySelector('.show-gate').getBoundingClientRect(),section=document.getElementById('musical-journey').getBoundingClientRect();return {left:gate.left,right:gate.right,parentLeft:section.left,parentRight:section.right}});
+ check(Math.abs(entryBounds.left-entryBounds.parentLeft)<=1&&Math.abs(entryBounds.right-entryBounds.parentRight)<=1,'Closed entry aligns with both section edges '+JSON.stringify(entryBounds));
+ check(await p.locator('[data-opening-preview] iframe').count()===0,'No opening iframe before choice');
+ await p.locator('[data-opening-preview]>summary').click();check(await p.locator('[data-opening-preview] iframe').count()===1,'Optional opening mounts inline');
+ check((await p.locator('[data-opening-preview] iframe').getAttribute('src')).includes('autoplay=0'),'Opening never autoplays');
+ check(await p.locator('#show-slide').count()===0,'Opening viewing does not grant plot consent');
+ await p.locator('[data-opening-preview]>summary').click();check(await p.locator('[data-opening-preview] iframe').count()===0,'Closing removes opening iframe');
+ await p.locator('.show-gate').scrollIntoViewIfNeeded();fs.mkdirSync('test-results',{recursive:true});await p.screenshot({path:`test-results/journey-entry-${lang}-${width}.png`});
  check(!new URL(p.url()).searchParams.has('focus'),'Journey consent begins at the no-focus root');const beforeOpenHistory=await p.evaluate(()=>history.length);
  await p.locator('[data-action="show-open"]').click();await p.locator('#show-slide').waitFor();check(await p.locator('[data-slide-surface="show"]').count()===1,'Designated slide surface');
  const firstSceneURL=p.url(),firstSceneTitle=await p.locator('#show-current-title').textContent();check(new URL(firstSceneURL).searchParams.get('focus')==='song:work-song','Consent canonicalizes the actual first scene');check(await p.evaluate(()=>history.length)===beforeOpenHistory,'Consent replaces root without adding a Back step');
