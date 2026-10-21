@@ -16,7 +16,7 @@
 .musical-journey-page .musical-journey-orientation dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:0}
 .musical-journey-page .musical-journey-orientation dt{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:7px}
 .musical-journey-page .musical-journey-orientation dd{font-size:.88rem;line-height:1.7;margin:0;color:var(--muted)}
-.musical-journey-page .show-gate{margin:0;padding:28px 24px;border:1px solid #bdcbe1;border-top:3px solid var(--red);background:#fff}
+.musical-journey-page .show-gate{max-width:none;width:100%;margin:0 auto;padding:28px 24px;border:1px solid #bdcbe1;border-top:3px solid var(--red);background:#fff}
 .musical-journey-page .show-gate .gate-icon{font-size:2rem;margin-bottom:10px}
 .musical-journey-page .show-gate .eyebrow{margin-bottom:10px;line-height:1.6}
 .musical-journey-page .show-gate h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:14px}
@@ -295,3 +295,40 @@ html[lang=he] .dual-home .hero h1{font-size:clamp(3rem,5.1vw,5rem);line-height:1
 @media(forced-colors:active){.dual-home>.hero,.dual-home .path-card,.musical-journey-page .musical-journey-header{border:1px solid CanvasText}.dual-home .hero h1,.dual-home .hero h1 span,.dual-home .hero .lede,.musical-journey-page .musical-journey-header>h1,.musical-journey-page .musical-journey-header>p{color:CanvasText}}
 
 .musical-journey-page .musical-journey-header .bookmark-control.saved svg{fill:currentColor}
+
+/* A single, aligned value-and-choice entrance; optional viewing stays secondary. */
+.musical-journey-page .show-gate{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;align-items:center;text-align:start;box-sizing:border-box}
+.musical-journey-page .show-gate>div{min-width:0}
+.musical-journey-page .show-gate h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.25}
+.musical-journey-page .show-gate p{margin:0 0 18px;max-width:65ch}
+.musical-journey-page .journey-value-taste{padding-inline-end:28px;border-inline-end:1px solid var(--line)}
+.musical-journey-page .journey-value-taste .eyebrow{font-size:.72rem}
+.musical-journey-page .journey-value-promise{font-weight:700;color:var(--navy);margin-bottom:0!important}
+.musical-journey-page .journey-entry-choice>.text-link{display:flex;width:fit-content;margin-top:16px;min-height:36px;align-items:center;font-size:.85rem}
+.musical-journey-page .journey-entry-choice>.btn{max-width:100%;white-space:normal;line-height:1.5}
+.musical-journey-page .musical-opening-preview,.musical-journey-page .journey-orientation-details{margin-top:18px;border:1px solid var(--line);background:#fafbfd}
+.musical-journey-page .musical-opening-preview>summary,.musical-journey-page .journey-orientation-details>summary{padding:16px 22px;font-size:.93rem;font-weight:700;cursor:pointer;min-height:48px;box-sizing:border-box}
+.musical-journey-page .musical-opening-preview .musical-journey-opening{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;margin:0;border:0;border-radius:0;background:#f6f0e6;color:#182940}
+.musical-journey-page .musical-opening-player{min-width:0}
+.musical-journey-page .musical-opening-preview .musical-opening-credit{color:#46566b}
+.musical-journey-page .journey-orientation-details .musical-journey-orientation{margin:0;border:0}
+.musical-journey-page .journey-orientation-details summary:focus-visible,.musical-journey-page .musical-opening-preview summary:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+@media(max-width:760px){
+ .musical-journey-page .show-gate{grid-template-columns:minmax(0,1fr);gap:20px}
+ .musical-journey-page .journey-value-taste{padding-inline-end:0;padding-bottom:18px;border-inline-end:0;border-bottom:1px solid var(--line)}
+ .musical-journey-page .show-gate h2{font-size:1.5rem}
+ .musical-journey-page .show-gate p{font-size:.93rem;line-height:1.65}
+ .musical-journey-page .show-gate .eyebrow{font-size:.68rem}
+ .musical-journey-page .musical-opening-preview .musical-journey-opening{grid-template-columns:minmax(0,1fr);padding:18px}
+ .musical-journey-page .musical-opening-preview>summary,.musical-journey-page .journey-orientation-details>summary{padding:15px 18px}
+}
+
+/* Keep the mobile entrance compact without reducing reading type. */
+@media(max-width:760px){
+ .musical-journey-page .musical-journey-header{padding:16px 18px 20px}
+ .musical-journey-page .musical-journey-header>.eyebrow{margin-top:12px}
+ .musical-journey-page .musical-journey-header>h1{font-size:2rem}
+ .musical-journey-page .page-top-tools{margin-bottom:10px}
+ .musical-journey-page .journey-entry-choice h2{font-size:1.25rem;margin-bottom:10px}
+}
+.musical-opening-preview [hidden]{display:none!important}
