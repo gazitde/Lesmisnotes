@@ -68,3 +68,39 @@ test('a consent refresh that replaces the DOM focuses the new current control, n
  const detached={hidden:false,dataset:{completionMark:first},hasAttribute:()=>true,closest(){throw Error('detached group must not be used')}};
  h.tracker.handleClick({target:{closest:()=>detached},preventDefault(){}});assert.equal(focused,true);assert.equal(h.plain().count,1);assert.equal(undo.hidden,false);
 });
+
+test('temporary storage warning is adjacent to every chapter and remembering remains an explicit post-completion choice',()=>{
+ for(const language of ['he','en']){
+  const h=harness({functional:false,language});
+  let html=h.tracker.chapterHTML(first);
+  assert.match(html,/data-completion-temporary>/);
+  assert.match(html,/data-completion-remember hidden/);
+  h.tracker.mark(first);html=h.tracker.chapterHTML(first);
+  assert.match(html,/data-completion-remember>/);
+  assert.match(html,/data-action="privacy-remember-progress"/);
+  assert.match(html,language==='he'?/בלי להפעיל מדידה/:/without enabling analytics/);
+  assert.equal(h.p.allowed('functional'),false);
+  assert.equal(h.p.allowed('analytics'),false);
+  assert.equal(h.disk.has(KEY),false);
+  h.tracker.undo(first);assert.match(h.tracker.chapterHTML(first),/data-completion-remember hidden/);
+  h.choose(true);html=h.tracker.chapterHTML(first);
+  assert.match(html,/data-completion-temporary hidden/);
+  assert.match(html,/data-completion-remember hidden/);
+ }
+});
+test('contextual remembering copy never claims analytics is off when previously allowed',()=>{
+ const h=harness();h.p.choose({functional:false,analytics:true,media:false});h.tracker.mark(first);
+ assert.match(h.tracker.chapterHTML(first),/Your analytics choice stays unchanged/);
+ assert.equal(h.p.allowed('functional'),false);
+ assert.equal(h.p.allowed('analytics'),true);
+});
+
+test('persistence-required remembering fails safely without losing session completion when storage is blocked',()=>{
+ const h=harness({blocked:true});h.tracker.mark(first);
+ const result=h.p.choose({functional:true,analytics:false,media:false},{requirePersistence:true});
+ assert.equal(result.persisted,false);assert.equal(h.p.allowed('functional'),false);
+ h.tracker.syncPrivacy();h.tracker.mark(second);
+ assert.deepEqual(h.plain().completed,[first,second]);
+ assert.match(h.tracker.chapterHTML(first),/data-completion-temporary>/);
+ assert.equal(h.disk.has(KEY),false);
+});
