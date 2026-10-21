@@ -250,3 +250,43 @@
 .footer-directory-groups a{display:inline-block;padding-block:.3rem;text-underline-offset:.2em}
 .footer-directory-groups a[aria-current=page]{font-weight:700}
 @media(max-width:650px){.footer-directory-groups{grid-template-columns:1fr;gap:1rem}}
+
+/* Secondary discoveries keep the two main journeys in front. Existing local art only. */
+.home-discovery{padding-block:20px 42px;border-top:1px solid var(--line)}
+.home-discovery-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px 24px;margin-bottom:18px}
+.home-discovery-heading h2{font-size:1.5rem;line-height:1.35}
+.home-discovery-heading p{font-size:.95rem;color:var(--muted)}
+.home-discovery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.home-discovery-card{display:grid;grid-template-columns:140px minmax(0,1fr);align-items:center;gap:20px;padding:18px;border:1px solid var(--line);background:#fbfcfe;min-width:0}
+.home-discovery-art{min-width:0;background:#f3f0e9}
+.home-discovery-art img{width:100%;height:auto}
+.home-discovery-food svg{width:100%;height:auto}
+.home-discovery-door{display:block;text-decoration:none;min-width:0}
+.home-discovery-door h3{font-size:1.2rem;line-height:1.4;margin:0 0 8px}
+.home-discovery-door p{font-size:.94rem;line-height:1.75;color:var(--muted);margin:0 0 8px}
+.home-discovery-door>span{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:.9rem;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.home-discovery-door:hover>span{color:var(--red)}
+.home-discovery-credit{display:flex;flex-wrap:wrap;align-items:center;gap:3px 6px;margin-top:10px;font-size:.8rem;color:var(--muted);line-height:1.6;max-width:none}
+.home-discovery-credit a{display:inline-flex;align-items:center;gap:4px;min-height:44px;overflow-wrap:anywhere}
+.home-discovery-credit .external-icon{width:13px;height:13px;flex-shrink:0}
+/* Scoped specificity keeps these adjustments after the existing presentation layers. */
+.header .header-inner{min-height:78px}
+.header .lang-btn{background:transparent;color:var(--navy);border:1px solid #bcc8da;box-shadow:none;font-size:.875rem;font-weight:600;padding:8px 11px;min-width:68px;min-height:44px}
+.header .lang-btn:hover{background:#eef3fa;color:var(--navy)}
+.main .home-memory{padding:16px 20px;margin-block:18px 24px;border-top-width:2px}
+.home-memory .home-memory-heading{align-items:center;margin-bottom:10px;gap:10px 20px}
+.home-memory .home-memory-heading .eyebrow{font-size:.75rem;margin-bottom:3px}
+.home-memory .home-memory-heading h2{font-size:1.25rem;line-height:1.4}
+.home-memory .memory-resume-grid{gap:12px}
+.home-memory .memory-resume-grid>a{padding:12px 15px;gap:3px 12px}
+.home-memory .memory-resume-grid>a>span,.home-memory .memory-resume-grid>a>small{font-size:.85rem;line-height:1.6}
+.home-memory .memory-resume-grid>a>b{font-size:1rem;line-height:1.5}
+.chapter-completion .chapter-completion-storage-note{flex-basis:100%;margin:0;font-size:.9rem;line-height:1.65;color:var(--muted)}
+.chapter-completion .chapter-completion-remember{flex-basis:100%;display:flex;align-items:center;flex-wrap:wrap;gap:4px 16px;font-size:.9rem;line-height:1.65}
+.chapter-completion .chapter-completion-remember p{margin:0}
+.chapter-completion .chapter-completion-remember .text-button{font-size:.9rem;padding-block:6px;text-align:start}
+.chapter-completion .chapter-completion-remember[hidden],.chapter-completion .chapter-completion-storage-note[hidden]{display:none!important}
+@media(max-width:980px){.home-discovery-card{grid-template-columns:112px minmax(0,1fr);gap:15px;padding:15px}}
+@media(max-width:680px){.header .header-inner{min-height:0;padding-block:8px;row-gap:5px}.home-discovery{padding-block:20px 30px}.home-discovery-heading{display:block}.home-discovery-heading p{margin-top:6px}.home-discovery-grid{grid-template-columns:1fr;gap:16px}.home-discovery-card{grid-template-columns:105px minmax(0,1fr);gap:15px}.home-discovery-door h3{font-size:1.12rem}.main .home-memory{padding:14px 16px;margin-block:16px 20px}.home-memory .home-memory-heading{align-items:start;flex-wrap:wrap}.home-memory .home-memory-heading>.text-button{padding-block:4px}.home-memory .memory-resume-grid>a{padding:12px}.chapter-completion .chapter-completion-remember{display:block}}
+@media(max-width:380px){.home-discovery-card{grid-template-columns:80px minmax(0,1fr);gap:12px;padding:12px}}
+@media(forced-colors:active){.home-discovery-card,.header .lang-btn{border-color:CanvasText}}
