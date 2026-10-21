@@ -67,11 +67,16 @@
       syncPrivacy();
       return `<section class="chapter-progress" aria-labelledby="chapter-progress-title"><div class="chapter-progress-heading"><h3 id="chapter-progress-title">${words('ההתקדמות שלי בקריאה','My reading progress')}</h3><p data-completion-count>${escape(countText())}</p></div><progress data-completion-progress max="${ordered.length}" value="${completed.size}" aria-labelledby="chapter-progress-title" aria-valuetext="${escape(countText())}">${completed.size} / ${ordered.length}</progress><p class="chapter-progress-explanation">${words('נספרים רק פרקים שסימנתם כנקראו.','Only chapters you mark read count.')}</p><div class="chapter-progress-storage"><p id="chapter-completion-storage">${storageText()}</p><button type="button" class="text-button" data-action="privacy-open">${words('הגדרות פרטיות','Privacy settings')}</button></div><div class="sr-only" data-completion-status role="status" aria-live="polite" aria-atomic="true"></div></section>`;
     }
+    function rememberingText() {
+      return privacy.allowed('analytics')
+        ? words('שמירת התקדמות והעדפות במכשיר הזה. בחירת המדידה שלכם לא תשתנה.', 'Save progress and preferences on this device. Your analytics choice stays unchanged.')
+        : words('שמירת התקדמות והעדפות במכשיר הזה, בלי להפעיל מדידה.', 'Save progress and preferences on this device, without enabling analytics.');
+    }
     function chapterHTML(id) {
       syncPrivacy();
       if (!valid.has(id)) return '';
       const done = completed.has(id), safe = escape(id);
-      return `<div class="chapter-completion" data-chapter-completion="${safe}"><button type="button" class="btn secondary chapter-completion-mark" data-completion-mark="${safe}"${done?' hidden':''}>${words('סיימתי את הפרק','Mark chapter read')}</button><span class="chapter-completion-label" data-completion-label${done?'':' hidden'}>${words('הפרק סומן כנקרא','Chapter marked read')}</span><button type="button" class="text-button" data-completion-undo="${safe}"${done?'':' hidden'}>${words('ביטול הסימון','Undo')}</button></div>`;
+      return `<div class="chapter-completion" data-chapter-completion="${safe}"><button type="button" class="btn secondary chapter-completion-mark" data-completion-mark="${safe}"${done?' hidden':''}>${words('סיימתי את הפרק','Mark chapter read')}</button><span class="chapter-completion-label" data-completion-label${done?'':' hidden'}>${words('הפרק סומן כנקרא','Chapter marked read')}</span><button type="button" class="text-button" data-completion-undo="${safe}"${done?'':' hidden'}>${words('ביטול הסימון','Undo')}</button><p class="chapter-completion-storage-note" data-completion-temporary${functional?' hidden':''}>${words('הסימונים זמניים בלבד ונעלמים ברענון או בסגירת העמוד.','Marks are temporary and disappear on reload or close.')}</p><div class="chapter-completion-remember" data-completion-remember${!functional&&done?'':' hidden'}><p data-completion-remember-text>${rememberingText()}</p><button type="button" class="text-button" data-action="privacy-remember-progress">${words('לזכור במכשיר הזה','Remember on this device')}</button></div></div>`;
     }
     function updateDOM(message = '') {
       syncPrivacy();
@@ -81,6 +86,10 @@
         if (mark) mark.hidden = done;
         if (undo) undo.hidden = !done;
         if (label) label.hidden = !done;
+        const temporary = group.querySelector('[data-completion-temporary]'), remember = group.querySelector('[data-completion-remember]'), rememberText = group.querySelector('[data-completion-remember-text]');
+        if (temporary) temporary.hidden = functional;
+        if (remember) remember.hidden = functional || !done;
+        if (rememberText) rememberText.textContent = rememberingText();
       }
       for (const node of document?.querySelectorAll?.('[data-completion-count]') || []) node.textContent = countText();
       for (const node of document?.querySelectorAll?.('[data-completion-progress]') || []) { node.value = completed.size; node.textContent = `${completed.size} / ${ordered.length}`; node.setAttribute('aria-valuetext', countText()); }
