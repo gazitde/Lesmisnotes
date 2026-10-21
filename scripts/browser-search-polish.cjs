@@ -30,7 +30,7 @@ const check = (value, message) => { assert.ok(value, message); checks++; };
     await page.locator('.site-search-list a').first().click();
     check(new URL(page.url()).searchParams.get('focus') === 'song:master-house', 'Song search retains requested ID');
     check(await page.locator('#musical-journey').evaluate(el => document.activeElement === el), 'Non-spotlight safe song focuses the journey gate');
-    check((await page.locator('.show-gate h2').innerText()).includes(lang === 'he' ? 'אדון הבית' : 'Master of the House'), 'Gate names requested safe song');
+    check((await page.locator('.show-gate .journey-entry-choice h2').innerText()).includes(lang === 'he' ? 'אדון הבית' : 'Master of the House'), 'Gate names requested safe song');
     check(await page.locator('#show-current-title').count() === 0 && await page.locator('.show-slide').count() === 0, 'Search cannot reveal scene text or journey');
     await page.locator('[data-action="language"]').click();
     check(new URL(page.url()).searchParams.get('focus') === 'song:master-house', 'Language change retains requested song');
