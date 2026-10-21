@@ -50,6 +50,32 @@ const KEY='barricade-completed-chapters-v1',one='p1-b1-c1',two='p1-b1-c2',three=
   await p.locator('.footer [data-action="privacy-open"]').click();await p.locator('[data-action="privacy-erase-open"]').click();await p.locator('[data-action="privacy-erase-cancel"]').click();await p.locator('[data-action="privacy-close"]').click();same(await count(p),3,'Cancel erase preserves completion');
   await p.locator('.footer [data-action="privacy-open"]').click();await p.locator('[data-action="privacy-erase-open"]').click();await p.locator('[data-action="privacy-erase-confirm"]').click();same(await count(p),0,'Existing erase confirmation clears completion state');same(await saved(p),null,'Existing erase also removes completion key');await p.reload();await ready(p);same(await count(p),0,'Erasure survives reload');await c.close();
  }
+ // Contextual remembering is a deliberate grant, not a side effect of marking after Reject all.
+ for(const lang of ['he','en']) {
+  const c=await context(390),p=await c.newPage();
+  await p.goto(`${base}/${lang}/novel-journey/?focus=chapter%3A${one}`);await ready(p);
+  await p.locator('[data-action="privacy-reject"]').first().click();await ready(p);
+  check(await p.locator('[data-completion-temporary]').isVisible(),'Temporary-only warning is visible beside the mark action');
+  check(!await p.locator('[data-completion-remember]').isVisible(),'No remembering prompt before completion');
+  await mark(p,one).click();
+  check(await p.locator('[data-completion-remember]').isVisible(),'Explicit completion offers remembering in context');
+  same(await saved(p),null,'Marking after Reject all still writes no progress');
+  const before=p.url(),session=await p.evaluate(()=>['barricade-spoilers','barricade-novel-consent','barricade-after-consent'].map(k=>sessionStorage.getItem(k)));
+  await p.locator('[data-action="privacy-remember-progress"]').click();await ready(p);
+  const choices=await p.evaluate(()=>window.SitePrivacy.choice());
+  same(choices.functional,true,'Contextual button explicitly enables remembering');
+  same(choices.analytics,false,'Contextual remembering never enables analytics');
+  same(p.url(),before,'Contextual choice preserves exact chapter');
+  same(await p.evaluate(()=>['barricade-spoilers','barricade-novel-consent','barricade-after-consent'].map(k=>sessionStorage.getItem(k))),session,'Contextual choice preserves reader spoiler decisions');
+  check(!await p.locator('[data-completion-temporary]').isVisible(),'Temporary warning removed after deliberate grant');
+  check(await undo(p,one).evaluate(e=>e===document.activeElement),'Focus returns to the current completion action');
+  await p.reload();await ready(p);check(await undo(p,one).isVisible(),'Contextually saved mark survives reload');
+  await p.goto(`${base}/${lang}/home/`);
+  await p.locator('.home-memory a[href*="chapter%3A"]').click();await ready(p);
+  same(new URL(p.url()).searchParams.get('focus'),'chapter:'+one,'Homepage resume keeps exact chapter');
+  check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Contextual controls fit narrow viewport');
+  await c.close();
+ }
  for(const raw of ['broken',JSON.stringify({version:7,completed:[one]}),JSON.stringify({version:1,completed:[one,one,'unknown',42,null]})]){
   const c=await context(),p=await c.newPage();await c.addInitScript(({key,raw})=>{const now=Date.now();localStorage.setItem('barricade-consent-v1',JSON.stringify({version:3,savedAt:now,expiresAt:now+180*86400000,functional:true,analytics:false,media:false}));localStorage.setItem(key,raw)},{key:KEY,raw});await p.goto(base+'/en/novel-journey/?focus=chapter%3A'+one);await ready(p);same(await count(p),raw.includes('"version":1')?1:0,'Malformed, unknown and duplicate storage is safely normalized');await selectCompletionChapter(p,two);await mark(p,two).click();same(JSON.parse(await saved(p)).completed,raw.includes('"version":1')?[one,two]:[two],'Next explicit write contains only canonical IDs');await c.close();
  }
