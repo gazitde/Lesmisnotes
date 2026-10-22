@@ -72,12 +72,12 @@
     },
     "characters": {
       "title": {
-        "he": "דמויות עלובי החיים: מפת קשרים אינטראקטיבית",
-        "en": "Les Misérables characters: an interactive relationship map"
+        "he": "דמויות עלובי החיים: מדריך ומפת קשרים",
+        "en": "Les Misérables characters: a guide and relationship map"
       },
       "description": {
-        "he": "בחרו דמות ועקבו אחרי משפחה, אהבה, חוק וחמלה. מפת קשרים דו־לשונית עם חלופה טקסטואלית ושליטה בספוילרים.",
-        "en": "Choose a character and trace family, love, law and mercy. A bilingual relationship explorer with text alternatives and spoiler controls."
+        "he": "מי הם ז׳אן ולז׳אן, ז׳אבר, פנטין, קוזט, אפונין וגברוש? הכירו את דמויות עלובי החיים בספר ובמחזמר, עם דפים אישיים, מפת קשרים ושליטה בספוילרים.",
+        "en": "Who are Jean Valjean, Javert, Fantine, Cosette, Éponine and Gavroche? Meet the Les Misérables characters through individual guides and a spoiler-aware relationship map."
       }
     },
     "map": {
@@ -96,8 +96,8 @@
         "en": "Les Misérables history: Paris and the June 1832 uprising"
       },
       "description": {
-        "he": "לא אותה מהפכה: 1789, נפוליאון, הרסטורציה, 1830 ומרד יוני 1832. ציר זמן חזותי שמפריד בין אירועים היסטוריים לבין העולם של הוגו.",
-        "en": "Different events, different dates: 1789, Napoleon, the Restoration, 1830 and the June 1832 uprising. A visual timeline connects real history with Hugo’s world."
+        "he": "המתרס בעלובי החיים קשור למרד יוני 1832 בפריז, לא למהפכה הצרפתית של 1789. ציר זמן עם מקורות מסביר את נפוליאון, הרסטורציה והאירועים שמאחורי הרומן.",
+        "en": "The Les Misérables barricade belongs to Paris’s June 1832 uprising, not the French Revolution of 1789. Explore a sourced timeline of the history behind the novel."
       }
     },
     "ideas": {

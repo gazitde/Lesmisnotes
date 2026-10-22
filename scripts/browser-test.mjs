@@ -13,6 +13,7 @@ try{
   let ready=false;
   for(let i=0;i<40;i++){try{const r=await fetch(base+'/en/home/');if(r.ok){ready=true;break;}}catch{}await new Promise(r=>setTimeout(r,100));}
   if(!ready)throw new Error('Local browser-test server did not start');
+  await run(['scripts/browser-search-intent.cjs']);
   await run(['scripts/browser-editorial-rhythm.cjs']);
   await run(['scripts/browser-visual-programme.cjs']);
   await run(['scripts/browser-journey-pages.cjs']);

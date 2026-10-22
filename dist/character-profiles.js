@@ -86,7 +86,7 @@
     return {title:{he:(known?p.name.he:'דמות במלווה הקריאה')+' · LesMisNotes',en:(known?p.name.en:'Reading companion character')+' · LesMisNotes'},description:known?p.readerIdentity:{he:'זהות הדמות נשארת סגורה עד למקום שבו היא מופיעה ברומן.',en:'This character’s identity stays closed until their place in the novel.'}};
   }
   function directory(lang='en'){
-    const he=lang==='he';return `<section class="profile-directory" aria-labelledby="profile-directory-title"><div><h2 id="profile-directory-title">${he?'דף אישי לכל דמות':'A page for each character'}</h2><p>${he?'מהמפה אל הסיפור האישי, עם עומק לבחירה.':'From the map to each person’s story, with optional deeper reading.'}</p></div><ul>${all().map(p=>`<li>${link(p.id,local(p.name,lang),{lang})}</li>`).join('')}</ul></section>`;
+    const he=lang==='he';return `<section class="profile-directory" aria-labelledby="profile-directory-title"><div><h2 id="profile-directory-title">${he?'דף אישי לכל דמות':'A page for each character'}</h2><p>${he?'מהמפה אל הסיפור האישי, עם עומק לבחירה.':'From the map to each person’s story, with optional deeper reading.'}</p></div><ul>${all().map(p=>`<li><a class="character-name-link" data-profile-link href="${href(p.id,{lang})}"><span>${esc(local(p.name,lang))}</span> <span class="profile-directory-role">${esc(local(p.role,lang))}</span></a></li>`).join('')}</ul></section>`;
   }
   // Discovery stays in the general directory, never in a chapter-bounded profile.
   function discovery(lang='en',{readerContext=null}={}){
