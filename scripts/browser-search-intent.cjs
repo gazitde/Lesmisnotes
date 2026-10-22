@@ -11,10 +11,17 @@ const profiles=JSON.parse(fs.readFileSync('config/character-profiles.json','utf8
  for(let attempt=0;attempt<80;attempt++){try{if((await fetch(base+'/en/characters/')).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
  for(const lang of ['en','he'])for(const width of [320,1365]){
-  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});
+  const height=width>680?900:844;
+  const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'});
   await context.route('**/*',route=>new URL(route.request().url()).origin===new URL(base).origin?route.continue():route.abort());
   const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base+`/${lang}/characters/`);
+  const graph=await page.locator(width>680?'.graph-full':'.graph-focused').boundingBox();
+  check(graph&&graph.y<height-250,'Actual map stays in the first viewport: '+lang+width);
+  const selectedName=await page.locator('.graph-node.selected:visible strong').boundingBox();
+  check(selectedName&&selectedName.y+selectedName.height<height,'Selected name remains visible on entry: '+lang+width);
+  fs.mkdirSync('test-results/search-intent',{recursive:true});
+  await page.screenshot({path:`test-results/search-intent/characters-entry-${lang}-${width}.png`});
   await page.locator('[data-action="privacy-reject"]').first().click();
   check(await page.locator('h1').innerText()===(lang==='he'?'הדמויות של עלובי החיים':'Les Misérables characters'),'Hub H1 names its subject');
   const directory=page.locator('.profile-directory');
