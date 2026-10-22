@@ -65,3 +65,22 @@ test('requested Hebrew radio link is contextual, external-only and gated in the 
  assert.ok(c.hebrewRadioPerformance().includes('External link to the upload by Rom Finckelshtein'));
  assert.ok(functionSource('israelPage').includes('${hebrewRadioPerformance()}'));
 });
+
+test('six-Javert fan edit is a bilingual contextual link, never a replacement player',()=>{
+ for(const lang of ['he','en']){
+  const c=boot(lang);assert.equal(c.musicalJourneyPerformanceComparison('stars'),'');
+  c.spoiler=true;const html=c.musicalJourneyPerformanceComparison('stars');
+  assert.ok(html.startsWith('<details '));assert.ok(!/<details[^>]*\bopen/.test(html));
+  assert.ok(html.includes('data-journey-performance="QBEGzbdKwo8"'));
+  assert.equal((html.match(/<a /g)||[]).length,1);
+  assert.ok(html.includes('https://www.youtube.com/watch?v=QBEGzbdKwo8'));
+  assert.ok(html.includes('Thomas H. Smith'));assert.ok(html.includes('2023'));assert.ok(html.includes('3:26'));
+  assert.ok(html.includes(lang==='en'?'separate performances':'ביצועים נפרדים'));
+  assert.ok(html.includes(lang==='en'?'not an official joint-cast recording':'ולא הקלטה רשמית'));
+  for(const name of (lang==='en'?['Philip Quast','Earl Carpenter','Norm Lewis','Jeremy Secomb','Michael Ball','Bradley Jaden']:['פיליפ קוואסט','ארל קרפנטר','נורם לואיס','ג׳רמי סקומב','מייקל בול','בראדלי ג׳יידן']))assert.ok(html.includes(name));
+  assert.ok(!/<iframe|<img|data-video-shell|autoplay=/.test(html));
+  assert.ok(html.includes('rel="noopener noreferrer"'));
+  assert.equal(c.window.WATCH_PATH_DATA.clips.filter(x=>x.id==='QBEGzbdKwo8').length,0);
+  c.spoiler=false;assert.equal(c.musicalJourneyPerformanceComparison('stars'),'');
+ }
+});
