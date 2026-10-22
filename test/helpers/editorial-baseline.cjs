@@ -4,7 +4,7 @@
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const changes=JSON.parse(fs.readFileSync('docs/editorial-changes-20261020.json','utf8'));
 exports.beforeEditorial=(input,kind)=>{
- const x=JSON.parse(JSON.stringify(input));
+ const x=require('./content-audit-baseline.cjs').beforeContentAudit(input,kind);
  for(const change of changes){
   if(change.path==='app.copy'||change.path.startsWith('story.')!==(kind==='research'))continue;
   const keys=change.path.split('.');let owner=x;
