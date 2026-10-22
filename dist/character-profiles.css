@@ -10,7 +10,7 @@
 .character-name-link:focus-visible,.character-profile a:focus-visible,.profile-directory a:focus-visible{outline:3px solid #ed2939;outline-offset:4px;border-radius:2px}
 .profile-directory{margin-block:2rem;padding:1.5rem 0;border-block:1px solid #cbd4e6;display:grid;grid-template-columns:minmax(12rem,1fr) 2fr;gap:2rem;align-items:start}
 .profile-directory h2{font-size:1.25rem;margin:0 0 .45rem}.profile-directory p{margin:0;font-size:.95rem;max-width:32rem}
-.profile-directory ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem 1rem;margin:0;padding:0;list-style:none}.profile-directory a{display:inline-flex;align-items:center;min-height:44px;line-height:1.55}
+.profile-directory ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem 1rem;margin:0;padding:0;list-style:none}.profile-directory a{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:44px;line-height:1.55}.profile-directory-role{font-size:.85rem;color:#536177;overflow-wrap:anywhere}
 .profile-heading{display:flex;justify-content:space-between;align-items:center;gap:2rem;max-width:64rem}.profile-heading h1{overflow-wrap:anywhere}
 .profile-role{font-size:1.25rem!important;margin-block:.75rem 0!important}.profile-emblem{display:block;flex:0 0 6rem;width:6rem;height:6rem;color:var(--blue,#002395)}.profile-emblem svg{width:100%;height:100%}
 .character-profile{max-width:76rem}.profile-map-return{margin-block-end:1.25rem;display:inline-flex;align-items:center;min-height:44px}.profile-prose{max-width:50rem;margin-inline:auto;font-size:1.15rem;line-height:1.9}.profile-prose p{margin-block:0 1.5rem}.profile-intro{font-size:1.2rem;font-weight:500}

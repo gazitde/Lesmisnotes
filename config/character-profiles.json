@@ -345,8 +345,8 @@
         "he": "מפקח משטרה"
       },
       "safeIntro": {
-        "he": "ז׳אבר הוא מפקח משטרה שזהותו נשענת על שירות, ציות וסמכות החוק. ברומן הוא נכנס לעלילה במונטריי־סור־מר, שם ראש העיר המשגשג מעורר את חשדו. הוא ממושמע ואינו מושחת, אך בשיפוטיו כמעט אין מקום לספק: בעיניו, מכובדות חברתית ופשע הם מצבים מנוגדים, ולא נסיבות העשויות להשתנות.",
-        "en": "Javert is a police inspector whose sense of identity rests on service, obedience and the authority of the law. In the novel he enters the action in Montreuil-sur-Mer, where the prosperous mayor attracts his scrutiny. He is disciplined and personally incorruptible, but his judgments allow little uncertainty: social respectability and criminality appear to him as opposing conditions rather than circumstances that can change."
+        "he": "ז׳אבר (Javert) הוא מפקח המשטרה בעלובי החיים. זהותו נשענת על שירות, ציות וסמכות החוק. ברומן הוא נכנס לעלילה במונטריי־סור־מר, שם ראש העיר המשגשג מעורר את חשדו. הוא ממושמע ואינו מושחת, אך בשיפוטיו כמעט אין מקום לספק: בעיניו, מכובדות חברתית ופשע הם מצבים מנוגדים, ולא נסיבות העשויות להשתנות.",
+        "en": "Javert is the police inspector in Les Misérables. His sense of identity rests on service, obedience and the authority of the law. In the novel he enters the action in Montreuil-sur-Mer, where the prosperous mayor attracts his scrutiny. He is disciplined and personally incorruptible, but his judgments allow little uncertainty: social respectability and criminality appear to him as opposing conditions rather than circumstances that can change."
       },
       "paragraphs": [
         {
@@ -540,7 +540,17 @@
       ],
       "safeSongIds": [
         "work-song"
-      ]
+      ],
+      "seo": {
+        "title": {
+          "he": "ז׳אבר: מפקח המשטרה בעלובי החיים | LesMisNotes",
+          "en": "Javert: the police inspector in Les Misérables | LesMisNotes"
+        },
+        "description": {
+          "he": "ז׳אבר (Javert) הוא מפקח המשטרה בעלובי החיים. הכירו את אמונתו בחוק ובסדר ואת דיוקנו אצל ויקטור הוגו, עם מקורות ומפת קשרים. הסיום נשאר סגור עד שתבחרו לפתוח אותו.",
+          "en": "Javert is the police inspector in Les Misérables. Explore his belief in law and order, Hugo’s portrait and character connections, with the ending kept optional."
+        }
+      }
     },
     {
       "id": "fantine",
@@ -1510,7 +1520,17 @@
       ],
       "safeSongIds": [
         "on-my-own"
-      ]
+      ],
+      "seo": {
+        "title": {
+          "he": "אפונין בעלובי החיים: הדמות ו־On My Own | LesMisNotes",
+          "en": "Éponine in Les Misérables: her character and On My Own"
+        },
+        "description": {
+          "he": "הכירו את אפונין, בתם הבכורה של בני הזוג תנרדייה: ילדותה לצד אזלמה ברומן והקישור לשיר On My Own במחזמר. מקורות, קשרי דמויות והמשך עלילה לבחירה.",
+          "en": "Meet Éponine, the Thénardiers’ elder daughter: her childhood with Azelma in Hugo’s novel and a guide to On My Own in the musical. Later plot details are optional."
+        }
+      }
     },
     {
       "id": "enjolras",
@@ -1953,7 +1973,17 @@
       ],
       "safeSongIds": [
         "beggars"
-      ]
+      ],
+      "seo": {
+        "title": {
+          "he": "גברוש בעלובי החיים: ילד הרחוב הפריזאי | LesMisNotes",
+          "en": "Gavroche in Les Misérables: the Paris street child | LesMisNotes"
+        },
+        "description": {
+          "he": "מיהו גברוש בעלובי החיים? הכירו את ילד הרחוב הפריזאי, את שנינותו ואת המושג gamin אצל הוגו. מדריך לדמות בספר ובמחזמר, עם פרטי עלילה שנפתחים רק בבחירה.",
+          "en": "Who is Gavroche in Les Misérables? Meet Hugo’s witty Paris street child and explore the meaning of gamin, with source links and optional plot details."
+        }
+      }
     },
     {
       "id": "thenardiers",
