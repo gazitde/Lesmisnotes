@@ -1049,8 +1049,8 @@
     {
       "id": "p4-b11-c1",
       "summary": {
-        "he": "גברוש חוטף אקדח ישן ופונה לעבר הלחימה, ורק אז מגלה שאין בו הדק. שיריו המאולתרים מערבבים את חיי הרחוב הפריזאיים עם שברי ניסיון ספרותי. המספר גם משלים פרט בסיפורו: שני הילדים לא שבו למקום המפגש שקבע להם. רעב, שובבות וכעס על מכובדים שבעים מלווים את צעדתו העליזה ברחובות, ומעמידים מאחורי קלילותו מחסור ממשי ודאגה שלא נפתרה.",
-        "en": "Gavroche seizes an old pistol and heads toward the fighting, only to discover that it lacks a trigger. His improvised songs combine Parisian street life with scraps of literary experience. The narrator also closes a gap in his story: the two boys never returned to the meeting place he gave them. Hunger, mischief and anger at well-fed respectability accompany his jaunty progress through the city."
+        "he": "גברוש חוטף אקדח ישן ופונה לעבר הלחימה, ורק אז מגלה שחסר בו הפטיש של מנגנון הירי. שיריו המאולתרים מערבבים את חיי הרחוב הפריזאיים עם שברי ניסיון ספרותי. המספר גם משלים פרט בסיפורו: שני הילדים לא שבו למקום המפגש שקבע להם. רעב, שובבות וכעס על מכובדים שבעים מלווים את צעדתו העליזה ברחובות, ומעמידים מאחורי קלילותו מחסור ממשי ודאגה שלא נפתרה.",
+        "en": "Gavroche seizes an old pistol and heads toward the fighting, only to discover that its hammer is missing. His improvised songs combine Parisian street life with scraps of literary experience. The narrator also closes a gap in his story: the two boys never returned to the meeting place he gave them. Hunger, mischief and anger at well-fed respectability accompany his jaunty progress through the city."
       },
       "before": {
         "he": "מה יכולים שיריו של גברוש לספר שהופעתו העליזה לבדה עשויה להסתיר?",
@@ -1066,7 +1066,17 @@
           "en": "Gavroche sheltered two children and then left before dawn to help free Thénardier."
         }
       },
-      "fact": null,
+      "fact": {
+        "text": {
+          "he": "במקור הצרפתי חסר באקדח ה־chien, הפטיש של מנגנון הירי. תרגום הפגוד משתמש כאן במילה trigger (הדק); התקציר נצמד לפרט שבמקור הצרפתי.",
+          "en": "Hugo’s French says the pistol has no chien: the hammer or cock of its firing mechanism. Hapgood renders this as “trigger”; this summary follows the detail in the French original."
+        },
+        "sourceUrl": "https://fr.wikisource.org/wiki/Les_Mis%C3%A9rables/Tome_4/Livre_11/01",
+        "sourceLabel": {
+          "he": "למקור הצרפתי",
+          "en": "Read the French original"
+        }
+      },
       "links": []
     },
     {
