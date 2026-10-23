@@ -350,3 +350,12 @@ html[lang=he] .dual-home .hero h1{font-size:clamp(3rem,5.1vw,5rem);line-height:1
 .safe-opening-card>span{float:inline-end;color:var(--muted);font-size:.8rem;font-variant-numeric:tabular-nums}
 .safe-opening-card h3{font-size:1.05rem;margin:0 0 8px;padding-inline-end:28px}
 .musical-journey-page .safe-opening-card p{font-size:.9rem;line-height:1.6;margin:0}
+
+/* Direct Hebrew reading choices use verified volume links, never guessed chapter matches. */
+.novel-journey-page .reader-hebrew-edition{margin-block:20px 0;padding-block:16px 0;border-top:1px solid var(--line);font-size:.9rem}
+.novel-journey-page .reader-hebrew-edition h3{margin:0 0 8px;font-size:1rem;line-height:1.5}
+.novel-journey-page .reader-hebrew-edition p{max-width:78ch;margin:8px 0;line-height:1.75;color:var(--muted)}
+.novel-journey-page .reader-hebrew-links{display:flex;flex-wrap:wrap;gap:2px 22px;align-items:center}
+.novel-journey-page .reader-hebrew-links a{display:inline-flex;align-items:center;gap:6px;min-height:44px;max-width:100%;line-height:1.5;font-weight:650;text-underline-offset:4px}
+.novel-journey-page .reader-hebrew-compact{margin-block:12px 0;padding-block:0}
+.novel-journey-page .reader-hebrew-compact summary{padding-block:12px;min-height:44px;box-sizing:border-box;line-height:1.55;cursor:pointer;font-weight:650;color:var(--navy)}
