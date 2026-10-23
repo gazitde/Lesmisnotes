@@ -38,7 +38,7 @@ npm run test:browser
 - Two original vocal-coach analyses alongside On My Own and Bring Him Home, with bilingual context, professional credits and normal no-autoplay players
 - Nine real named places, geographic OpenStreetMap exploration, an illustrated story atlas and a locally hosted licensed photo essay
 - Five literary food cards, including bread soup, optional tahini loaf and their reciprocal variation links
-- A searchable catalogue with more than 200 distinct source URLs
+- A searchable catalogue with more than 200 distinct source URLs, shareable topic filters and contextual history/screen links. Topic and reveal state survive reload; Back/Forward and language switches also preserve the current visit’s search. Free-text searches stay only in page memory and clear on reload, never entering URLs, browser history state, analytics or application storage.
 - Local bilingual site search and a server-side private-recipient feedback endpoint
 - Prerendered localized routes, metadata, social image, structured data, sitemap generation and automated validation
 
@@ -58,7 +58,7 @@ Read [the launch checklist](docs/LAUNCH_CHECKLIST.md) before enabling public ind
 
 ## Privacy and external services
 
-Functional remembering remains optional. Search runs locally and does not transmit queries. Analytics are inactive until separately configured and verified. YouTube privacy-enhanced players load directly for selected performances without autoplay; plot-sensitive clips retain spoiler protection. OpenStreetMap tiles load only on the map route, without requesting device location. These external connections can disclose technical request data; privacy-enhanced embedding is not a no-data-collection guarantee.
+Functional remembering remains optional. The quiz-only reset is available during setup, play and results, asks for confirmation, and removes only quiz state even when remembering is off. Reading progress, bookmarks, listening checkmarks, privacy preferences and other spoiler choices are preserved. Search runs locally and does not transmit queries. Analytics are inactive until separately configured and verified. YouTube privacy-enhanced players load directly for selected performances without autoplay; plot-sensitive clips retain spoiler protection. OpenStreetMap tiles load only on the map route, without requesting device location. These external connections can disclose technical request data; privacy-enhanced embedding is not a no-data-collection guarantee. Unavailable videos offer an explicit YouTube title/uploader search link; embed restrictions and identification failures have distinct guidance. The direct source link remains available, and recovery never searches or starts playback automatically.
 
 FormSubmit uses the existing opaque public routing identifier in a server-only module; the recipient email never appears in the repository or browser. Sending is enabled for the approved www/apex origins in `server/contact-route.cjs`, with optional environment overrides. No new mail API key is needed. If the optional Resend adapter is selected later, its recipient and credentials belong only in secure server environment variables. Visitor submissions are private correspondence, not public comments. Do not enter sensitive information into a public feedback form.
 

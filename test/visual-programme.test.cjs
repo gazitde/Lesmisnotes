@@ -5,8 +5,12 @@ const css=fs.readFileSync('dist/journey-pages.css','utf8');
 const app=fs.readFileSync('dist/app.js','utf8');
 test('programme artwork stays local, decorative and bounded',()=>{
  assert.match(app,/class="path-frontispiece path-frontispiece-\$\{d.id\}" aria-hidden="true"/);
- assert.match(app,/img fetchpriority="high" src="\/scene.svg" width="920" height="920" alt=/);
+ assert.match(app,/img fetchpriority="high" src="\/assets\/paris-frontispiece.svg" width="600" height="660" alt=/);
  assert.match(css,/path-frontispiece-novel\{background-image:url\('\/assets\/novel-frontispiece.svg'\)\}/);
+ const frontispiece=fs.readFileSync('dist/assets/paris-frontispiece.svg','utf8');
+ assert.ok(Buffer.byteLength(frontispiece)<10000);
+ assert.doesNotMatch(frontispiece,/<script|<foreignObject|href=|<text/i);
+ assert.match(frontispiece,/viewBox="0 0 600 660"/);
  const svg=fs.readFileSync('dist/assets/novel-frontispiece.svg','utf8');
  assert.ok(Buffer.byteLength(svg)<5000);
  assert.doesNotMatch(svg,/<script|<foreignObject|href=|<text/i);

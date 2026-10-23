@@ -1,0 +1,252 @@
+/* A literary field guide, not a dashboard.
+   This presentation layer preserves all journey, privacy and spoiler controls. */
+:root {
+  --editorial-paper: #f8f5ee;
+  --editorial-surface: #fffdf8;
+  --editorial-ink: #172b3b;
+  --editorial-muted: #596166;
+  --editorial-rule: #d8d3c7;
+  --editorial-accent: #a33443;
+}
+body { background: var(--editorial-paper); }
+::selection { background: #ead8bb; color: #172b3b; }
+.header { background: var(--editorial-paper); box-shadow: none; border-top: 0; border-bottom: 1px solid var(--editorial-rule); }
+.header::before, .header::after { display: none; }
+.header .header-inner { min-height: 86px; }
+.topline { background: var(--editorial-ink); color: #e8e2d6; font-size: .67rem; padding-block: 6px; }
+.brand .brand-name { color: var(--editorial-ink); letter-spacing: -.065em; }
+.brand-name span { color: var(--editorial-accent); }
+.header .lang-btn, .header .site-search-trigger { background: transparent; border-color: #c7c9c6; border-radius: 2px; box-shadow: none; }
+.header .lang-btn { color: var(--editorial-ink); }
+.header .lang-btn:hover, .header .site-search-trigger:hover { background: #eae6dc; }
+.eyebrow { color: var(--editorial-accent); }
+.btn { transition: background-color .18s ease, border-color .18s ease; }
+.btn:hover { transform: none; }
+.footer { background: #ede9df; border-top: 1px solid #b6b7ad; }
+.footer-bottom { border-color: #c8c6bc; }
+.footer-hubs { padding-block: 20px; border-color: #c8c6bc; }
+
+/* Opening spread: generous type, one original frontispiece, no nested panels. */
+.dual-home > .hero {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(26px, 4.5vw, 68px);
+  align-items: center;
+  margin-top: 0;
+  min-height: 0;
+  padding-block: 46px 50px;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  color: var(--editorial-ink);
+}
+.dual-home .hero-copy { padding: 0; }
+.dual-home .hero-copy .eyebrow { color: #7d5147; font-size: .71rem; margin-bottom: 26px; max-width: 44ch; }
+.dual-home .hero h1 {
+  color: var(--editorial-ink);
+  font-size: clamp(3.4rem, 5.9vw, 5.7rem);
+  line-height: 1.025;
+  letter-spacing: -.055em;
+  max-width: 12ch;
+  margin-bottom: 27px;
+}
+.dual-home .hero h1 span { color: var(--editorial-accent); }
+html[lang=he] .dual-home .hero h1 { font-size: clamp(3rem, 5.2vw, 4.9rem); line-height: 1.2; letter-spacing: -.045em; max-width: 12ch; }
+.dual-home .hero .lede { color: var(--editorial-muted); max-width: 40ch; font-size: 1.05rem; line-height: 1.9; }
+.dual-home .hero-art { width: 100%; height: auto; aspect-ratio: 10 / 11; background: #172b3b; align-self: center; box-shadow: 10px 10px 0 #e5dfd1; }
+.dual-home .hero-art img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.dual-home > .home-classic-paths { padding-block: 34px 44px; border-top: 1px solid #9a9f99; }
+.dual-home .section-head { gap: 30px; }
+.dual-home .section-head .eyebrow { margin-bottom: 12px; font-size: .68rem; }
+.dual-home .section-head h2 { font-size: clamp(1.9rem, 3.1vw, 2.7rem); letter-spacing: -.035em; }
+.dual-home .section-head > p { font-size: .94rem; max-width: 29ch; }
+
+/* Two equal, unambiguous routes, presented as companion volumes. */
+.dual-home .path-grid { gap: 24px; }
+.dual-home .path-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 90px;
+  gap: 0 22px;
+  padding: 27px 30px 22px;
+  border: 1px solid #c9c1b0;
+  border-inline-start: 5px solid #a7987f;
+  background: #eee7d8;
+  color: var(--editorial-ink);
+  box-shadow: none;
+  transition: border-color .18s ease, background-color .18s ease;
+}
+.dual-home .path-card[data-interest=musical] { background: #172b3b; color: #faf5e9; border-color: #172b3b; border-inline-start-color: #b65b58; box-shadow: none; }
+.dual-home .path-frontispiece { display: none; }
+.dual-home .path-meta { display: contents; }
+.dual-home .path-kind { grid-column: 1; grid-row: 1; margin-bottom: 20px; font-size: .68rem; letter-spacing: .09em; align-self: start; }
+.dual-home .interest-icon { grid-column: 2; grid-row: 1 / 4; width: 80px; height: 72px; align-self: center; opacity: .6; }
+.dual-home .path-card h3 { grid-column: 1; grid-row: 2; font-family: Georgia, serif; font-size: clamp(1.7rem, 2.4vw, 2.15rem); line-height: 1.18; margin-bottom: 16px; }
+html[lang=he] .dual-home .path-card h3 { font-family: LesMisHebrew, Arial, sans-serif; font-size: clamp(1.5rem, 2.1vw, 1.9rem); line-height: 1.35; }
+.dual-home .path-card p { grid-column: 1; grid-row: 3; margin-bottom: 23px; font-size: 1rem; line-height: 1.8; opacity: .88; }
+.dual-home .card-end { grid-column: 1 / -1; grid-row: 4; margin: 0; border-color: #8a948866; padding-top: 14px; font-size: .86rem; }
+.dual-home .path-card:hover { background: #e8dfcd; border-color: #a33443; box-shadow: none; }
+.dual-home .path-card[data-interest=musical]:hover { background: #223d4d; }
+.dual-home .path-card:focus-visible { outline: 3px solid var(--editorial-accent); outline-offset: 5px; }
+.dual-home .audience-shared { margin-top: 23px; font-size: .83rem; }
+
+/* The second spread is a small magazine: photograph, illustration, then play. */
+.home-discovery { padding-block: 33px 55px; border-top-color: #9a9f99; }
+.home-discovery-heading { margin-bottom: 27px; }
+.home-discovery-heading h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); letter-spacing: -.035em; }
+.home-discovery-grid { gap: 30px 38px; }
+.home-discovery-card { padding: 0; border: 0; background: transparent; grid-template-columns: 125px minmax(0, 1fr); gap: 22px; align-items: start; }
+.home-discovery-card:nth-child(-n+2) { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.home-discovery-card:nth-child(-n+2) .home-discovery-art { height: 238px; overflow: hidden; background: #e8e0cf; }
+.home-discovery-card:first-child .home-discovery-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+.home-discovery-card:nth-child(2) .home-discovery-art { background: #eee6d7; display: grid; place-items: center; }
+.home-discovery-food svg { width: auto; max-width: 100%; height: 218px; }
+.home-discovery-door h3 { font-family: Georgia, serif; font-size: 1.6rem; line-height: 1.2; color: var(--editorial-ink); margin-bottom: 11px; }
+html[lang=he] .home-discovery-door h3 { font-family: LesMisHebrew, Arial, sans-serif; font-size: 1.4rem; line-height: 1.4; }
+.home-discovery-door p { font-size: .96rem; color: var(--editorial-muted); line-height: 1.8; max-width: 52ch; }
+.home-discovery-door > span { font-size: .86rem; text-underline-offset: 5px; }
+.home-discovery-card:nth-child(n+3) { padding-top: 26px; border-top: 1px solid var(--editorial-rule); }
+.home-discovery-card:nth-child(n+3) .home-discovery-art { background: transparent; }
+.home-discovery-card:nth-child(n+3) h3 { font-size: 1.4rem; }
+.home-discovery-credit { margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--editorial-rule); font-size: .73rem; }
+
+/* Musical: a programme cover followed by an editorial listening column. */
+.musical-journey-page .musical-journey-header { background: #172b3b; border: 0; padding: 22px 40px 34px; margin-top: 30px; }
+.musical-journey-page .musical-journey-header:after { content: ''; width: 220px; height: 230px; bottom: -33px; inset-inline-end: 28px; border: 1px solid #c7b38b66; border-radius: 120px 120px 0 0; background: repeating-linear-gradient(90deg, transparent 0 15px, #c7b38b16 16px, transparent 17px 31px); opacity: .7; }
+.musical-journey-page .page-top-tools { position: relative; z-index: 1; }
+.musical-journey-page .musical-journey-breadcrumb { background: transparent; color: #e5ddcc; border: 0; padding-inline: 0; border-radius: 0; }
+.musical-journey-page .musical-journey-breadcrumb [aria-current=page] { color: #fff9ed; }
+.musical-journey-page .musical-journey-header > .eyebrow { color: #dab48e; font-size: .68rem; margin-top: 16px; }
+.musical-journey-page .musical-journey-header > h1 { font-size: clamp(2.4rem, 4.7vw, 4rem); letter-spacing: -.035em; }
+.musical-journey-page .musical-journey-header > p { max-width: 62ch; }
+.musical-journey-page .musical-journey-body { padding-top: 32px; }
+.musical-journey-page .show-gate { border: 0; border-bottom: 1px solid var(--editorial-rule); padding: 0 0 30px; gap: 42px; background: transparent; }
+.musical-journey-page .journey-value-taste { border-color: #c8c7bb; padding-inline-end: 36px; }
+.musical-journey-page .show-gate .eyebrow { justify-content: flex-start; color: #854645; }
+.safe-opening-cards { gap: 0; }
+.safe-opening-card { background: transparent; padding: 15px 0; border: 0; border-top: 1px solid var(--editorial-rule); border-radius: 0; }
+.safe-opening-card > span { color: #955c49; font-family: Georgia, serif; font-size: 1.2rem; line-height: 1.3; }
+.musical-journey-page .journey-entry-choice { padding: 28px; background: #ede7da; border-inline-start: 3px solid #9d6b4d; }
+.musical-journey-page .journey-entry-choice > .eyebrow { font-size: .65rem; line-height: 1.8; }
+.musical-journey-page .journey-entry-choice h2 { font-size: 1.75rem; }
+.musical-journey-page .show-journey-tools { background: #eee9dd; border-color: #d3ccbc; border-top: 3px solid #8b7454; }
+.musical-journey-page .show-slide-copy { background: var(--editorial-surface); }
+.musical-journey-page .show-listen { background: #f2eddf; }
+.musical-journey-page .musical-opening-preview,
+.musical-journey-page .journey-orientation-details,
+.musical-journey-page .musical-journey-primer,
+.musical-journey-page .show-version-notes { background: transparent; border: 0; border-bottom: 1px solid var(--editorial-rule); margin-top: 10px; border-radius: 0; }
+.musical-journey-page .musical-opening-preview > summary,
+.musical-journey-page .journey-orientation-details > summary { padding-inline: 0; }
+
+/* Novel: quiet paper, typographic chapter furniture and an unobtrusive bookmark. */
+.novel-journey-page { padding-top: 30px; }
+.novel-journey-page .journey-page-heading { background: #ede7d7; border: 0; border-bottom: 1px solid #a9987c; padding: 35px 40px; min-height: 205px; }
+.novel-journey-page .journey-page-heading:after { opacity: .76; mix-blend-mode: multiply; width: 35%; }
+.novel-journey-page .journey-page-heading h1 { color: var(--editorial-ink); letter-spacing: -.035em; }
+.novel-journey-page .reader-start { border: 0; border-block: 1px solid #c8c3b6; background: transparent; padding: 26px 0; margin-block: 25px; }
+.novel-journey-page .reader-start h2 { font-size: 1.9rem; }
+.novel-journey-page .reader-breadcrumbs { background: #f3f0e7; border-color: #d1cbbb; box-shadow: 0 3px 10px #4037250a; }
+.novel-journey-page .reader-part-grid, .novel-journey-page .reader-book-grid { gap: 16px; }
+.novel-journey-page .reader-part-card, .novel-journey-page .reader-book-card { background: var(--editorial-surface); border-color: #d2c9b6; border-radius: 0; border-top: 3px solid #ab9776; padding: 23px; }
+.novel-journey-page .reader-part-card h3 { font-size: 1.7rem; }
+.novel-journey-page .focused-chapter-panel .reader-chapter-card { border: 1px solid #cec4b0; border-top: 4px solid #9b7651; box-shadow: 5px 5px 0 #ece5d8; }
+.novel-journey-page .reader-location-tools,
+.novel-journey-page .reader-settings,
+.novel-journey-page .journey-further,
+.novel-journey-page .reading-method { background: transparent; border-inline: 0; border-top: 0; border-radius: 0; }
+
+/* Characters: a cast sheet on paper, with the original ten portraits intact. */
+.page-top.characters-top { background: transparent; color: var(--editorial-ink); border-bottom: 1px solid #b8b9af; padding-block: 28px; }
+.page-top.characters-top h1 { color: var(--editorial-ink); font-size: clamp(2.2rem, 4vw, 3.6rem); letter-spacing: -.035em; }
+.page-top.characters-top p, .page-top.characters-top .breadcrumb { color: var(--editorial-muted); }
+.page-top.characters-top:after { display: none; }
+.characters-page .relationship-explorer .graph-focus-heading { background: #172b3b; border-color: #aa6357; }
+.characters-page .graph-full, .characters-page .graph-focused { background: #fffdf7; }
+.characters-page .graph-zone { border-radius: 42% 42% 12% 12%; }
+.characters-page .graph-zone span { color: #5b625f; }
+.characters-page .graph-node strong { background: #fffdf7; border-color: #d3cebf; box-shadow: none; }
+.characters-page .graph-node.selected strong { background: #172b3b; color: #fffdf7; border-color: #172b3b; }
+.characters-page .graph-dot { border-color: #718078; }
+.characters-page .graph-person-context { background: #ede7d9; border-color: #d6cbb8; }
+.characters-page .safe-character-grid { gap: 0 40px; }
+.characters-page .safe-character-card { background: transparent; border: 0; border-top: 1px solid #c6c7bc; padding: 28px 0; gap: 22px; }
+.characters-page .character-portrait { border-color: #b4ab97; box-shadow: 0 0 0 5px #eae2d1; }
+.characters-page .safe-character-card h3 { font-size: 1.6rem; line-height: 1.35; }
+.characters-page .safe-character-card p { font-size: .98rem; line-height: 1.9; }
+.characters-page .safe-character-number { background: #eee8da; }
+.characters-page .profile-directory { border-color: #aaa995; padding-block: 28px; }
+.characters-page .profile-directory li { padding-block: 8px; border-bottom: 1px solid #d7d2c7; }
+
+@media (max-width: 1000px) {
+  .dual-home > .hero { gap: 30px; }
+  .dual-home .hero h1 { font-size: 3.6rem; }
+  .dual-home .path-card { grid-template-columns: minmax(0, 1fr) 52px; gap: 0 14px; padding: 24px; }
+  .dual-home .interest-icon { width: 50px; height: 48px; }
+  .musical-journey-page .show-gate { gap: 25px; }
+  .musical-journey-page .journey-value-taste { padding-inline-end: 24px; }
+  .musical-journey-page .journey-entry-choice { padding: 22px; }
+}
+@media (max-width: 760px) {
+  .musical-journey-page .musical-journey-header { margin-top: 20px; padding: 15px 20px 24px; }
+  .musical-journey-page .musical-journey-header > h1 { font-size: 2.1rem; }
+  .musical-journey-page .musical-journey-header:after { width: 120px; height: 170px; opacity: .3; }
+  .musical-journey-page .show-gate { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-bottom: 20px; }
+  .musical-journey-page .journey-value-taste { padding-inline-end: 0; padding-bottom: 0; border: 0; }
+  .musical-journey-page .journey-entry-choice { padding: 22px; }
+  .musical-journey-page .journey-entry-choice h2 { font-size: 1.5rem; }
+  .musical-journey-page .musical-journey-body { padding-top: 24px; }
+  .novel-journey-page .journey-page-heading { padding: 26px 24px 144px; min-height: 0; }
+  .novel-journey-page .journey-page-heading:after { inset-block: auto 0; inset-inline: 0; width: 100%; height: 125px; background-position: center 65%; opacity: .65; }
+  .novel-journey-page .journey-page-heading > p,
+  .novel-journey-page .journey-page-heading > .eyebrow { max-width: 100%; }
+  .novel-journey-page .reader-start { padding-block: 22px; }
+  .novel-journey-page .reader-start h2 { font-size: 1.6rem; }
+}
+@media (max-width: 680px) {
+  .header .header-inner { min-height: 0; }
+  .dual-home > .hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 25px; padding-block: 30px 32px; margin: 0; }
+  .dual-home .hero-copy { padding: 0; }
+  .dual-home .hero-copy .eyebrow { margin-bottom: 18px; font-size: .65rem; }
+  .dual-home .hero h1 { font-size: clamp(2.85rem, 11.8vw, 4rem); max-width: 13ch; margin-bottom: 20px; }
+  html[lang=he] .dual-home .hero h1 { font-size: clamp(2.7rem, 10.5vw, 3.8rem); max-width: 13ch; line-height: 1.23; }
+  .dual-home .hero .lede { font-size: 1rem; line-height: 1.85; }
+  .dual-home .hero-art { width: 100%; height: 220px; aspect-ratio: auto; box-shadow: 5px 5px 0 #e5dfd1; }
+  .dual-home .hero-art img { object-fit: cover; object-position: center 44%; }
+  .dual-home > .home-classic-paths { padding-top: 26px; padding-bottom: 30px; }
+  .dual-home .section-head { gap: 12px; }
+  .dual-home .section-head h2 { font-size: 1.95rem; }
+  .dual-home .section-head > p { max-width: none; }
+  .dual-home .path-grid { gap: 17px; }
+  .dual-home .path-card { display: grid; grid-template-columns: minmax(0, 1fr) 52px; padding: 22px; }
+  .dual-home .path-card h3 { font-size: 1.8rem; }
+  html[lang=he] .dual-home .path-card h3 { font-size: 1.55rem; }
+  .dual-home .path-kind { margin-bottom: 14px; }
+  .dual-home .path-card p { font-size: 1rem; margin-bottom: 20px; }
+  .home-discovery { padding-block: 27px 34px; }
+  .home-discovery-heading h2 { font-size: 1.9rem; }
+  .home-discovery-grid { gap: 28px; grid-template-columns: minmax(0, 1fr); }
+  .home-discovery-card:nth-child(-n+2) .home-discovery-art { height: 195px; }
+  .home-discovery-food svg { height: 180px; }
+  .home-discovery-card:nth-child(n+3) { grid-template-columns: 74px minmax(0, 1fr); gap: 18px; padding-top: 22px; }
+  .home-discovery-door h3 { font-size: 1.5rem; }
+  .home-discovery-card:nth-child(n+3) h3 { font-size: 1.25rem; }
+  .home-discovery-credit { margin-top: 20px; }
+  .page-top.characters-top { padding-block: 14px 16px; }
+  .page-top.characters-top h1 { font-size: 1.9rem; line-height: 1.2; }
+  .characters-page .safe-character-card { padding-block: 24px; gap: 18px; }
+  .characters-page .safe-character-card h3 { font-size: 1.4rem; }
+  .novel-journey-page { padding-top: 20px; }
+  .novel-journey-page .reader-part-card, .novel-journey-page .reader-book-card { padding: 19px; }
+  .novel-journey-page .reader-part-card h3 { font-size: 1.4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, .dual-home .path-card { transition: none; }
+}
+@media (forced-colors: active) {
+  .dual-home .hero h1, .dual-home .hero h1 span, .dual-home .hero .lede,
+  .page-top.characters-top h1, .page-top.characters-top p { color: CanvasText; }
+  .dual-home .path-card, .musical-journey-page .journey-entry-choice,
+  .safe-opening-card, .characters-page .safe-character-card { border: 1px solid CanvasText; }
+  .dual-home .path-card:focus-visible { outline-color: Highlight; }
+  .musical-journey-page .musical-journey-header:after { display: none; }
+}
