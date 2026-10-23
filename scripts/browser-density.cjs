@@ -16,7 +16,7 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','density');
    await p.goto(`${base}/${lang}/${route}/`,{waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);
    const data=await p.evaluate(()=>{
     const box=s=>{const e=document.querySelector(s);if(!e)return null;const r=e.getBoundingClientRect(),cs=getComputedStyle(e);return{x:r.x,y:r.y,width:r.width,height:r.height,bottom:r.bottom,paddingTop:parseFloat(cs.paddingTop),paddingBottom:parseFloat(cs.paddingBottom)}};
-    return {height:document.documentElement.scrollHeight,overflow:document.documentElement.scrollWidth>innerWidth,top:box('.page-top'),section:box('.page-top + .wrap.section'),lineage:box('.screen-lineage'),branches:[...document.querySelectorAll('.screen-branches article')].map(e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height}}),progress:box('.reader-settings .chapter-progress'),opening:box('.reader-settings .reading-opening-note'),utilityOutside:!!document.querySelector('.page-top + .page-utility'),text:[...document.querySelectorAll('.screen-branches p,.path-card p,.reader-overview>p,.profile-prose p')].map(e=>parseFloat(getComputedStyle(e).fontSize))};
+    return {height:document.documentElement.scrollHeight,overflow:document.documentElement.scrollWidth>innerWidth,top:box('.page-top'),section:box('.page-top + .wrap.section'),lineage:box('.screen-lineage'),branches:[...document.querySelectorAll('.screen-branches article')].map(e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height}}),progress:box('.reading-locator > .chapter-progress'),opening:box('.reader-settings .reading-opening-note'),utilityOutside:!!document.querySelector('.page-top + .page-utility'),text:[...document.querySelectorAll('.screen-branches p,.path-card p,.reader-overview>p,.profile-prose p')].map(e=>parseFloat(getComputedStyle(e).fontSize))};
    });
    report.push({lang,width,route,...data});check(!data.overflow,`${lang}/${route}/${width} no overflow`,data);
    check(!data.utilityOutside,`${lang}/${route}/${width} no empty save row`);
@@ -36,7 +36,10 @@ const dir=path.join(process.env.SEARCH_ARTIFACT_DIR||'test-results','density');
    }
    if(route==='novel-journey'){
     check(Boolean(data.progress&&data.opening),`${lang}/${width} reader orientation and explicit progress both present`);
-    check(await p.locator('.reader-settings:not([open]) > summary').isVisible(),`${lang}/${width} progress and orientation remain discoverable without preceding the reading task`);
+    check(await p.locator('.reading-locator > .chapter-progress').isVisible(),`${lang}/${width} explicit progress is visible without opening settings`);
+    check(await p.locator('.chapter-progress').count()===1,`${lang}/${width} progress is not duplicated`);
+    check(await p.locator('.chapter-progress').evaluate(e=>Boolean(e.compareDocumentPosition(document.querySelector('#reading-current'))&Node.DOCUMENT_POSITION_FOLLOWING)),`${lang}/${width} visible progress precedes the current reading view`);
+    check(await p.locator('.reader-settings:not([open]) > summary').isVisible(),`${lang}/${width} optional route settings and orientation remain discoverable below the reading task`);
     check(await p.locator('.reader-part-card').count()===5,`${lang}/${width} five novel Parts preserved`);
    }
    if(['home','novel','characters','ideas'].includes(route))await p.screenshot({path:path.join(dir,`${lang}-${route}-${width}-entry.png`)});
