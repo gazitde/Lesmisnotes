@@ -71,7 +71,8 @@
       "before": {
         "he": "מה עשוי סימן קטן בבניין לגלות, בשעה שהנוף היפה מסתיר אותו?",
         "en": "What can a small mark on a building reveal that a beautiful landscape conceals?"
-      }
+      },
+      "sourceTitle": "CHAPTER I—WHAT IS MET WITH ON THE WAY FROM NIVELLES"
     },
     {
       "fact": null,
@@ -85,7 +86,8 @@
       "before": {
         "he": "בקריאת מקום חרב, כדאי להבחין בין מה שעוד נראה לעין לבין מה שמוסיפים עדים וסיפורים מקומיים.",
         "en": "As you read a ruined place, distinguish what remains visible from what witnesses or local stories supply."
-      }
+      },
+      "sourceTitle": "CHAPTER II—HOUGOMONT"
     },
     {
       "fact": null,
@@ -99,7 +101,8 @@
       "before": {
         "he": "איזה משקל הייתם מעניקים למזג האוויר כששופטים את החלטותיו של מפקד?",
         "en": "How much explanatory weight would you give weather when judging a commander’s decisions?"
-      }
+      },
+      "sourceTitle": "CHAPTER III—THE EIGHTEENTH OF JUNE, 1815"
     },
     {
       "fact": null,
@@ -123,7 +126,8 @@
       "before": {
         "he": "נסו להבחין בין הדרכים, המדרונות והנקודות הגבוהות לבין תנועות הצבאות שעליהם.",
         "en": "Try keeping the roads, slopes, and high ground separate from the movements of the armies."
-      }
+      },
+      "sourceTitle": "CHAPTER IV—A"
     },
     {
       "fact": null,
@@ -137,7 +141,8 @@
       "before": {
         "he": "אילו חלקים של הלחימה יכול הוגו למקם במפה, ואילו מוסיפים לחמוק מן התוכנית?",
         "en": "Which parts of the fighting can Hugo locate on a map, and which keep escaping the plan?"
-      }
+      },
+      "sourceTitle": "CHAPTER V—THE QUID OBSCURUM OF BATTLES"
     },
     {
       "fact": null,
@@ -151,7 +156,8 @@
       "before": {
         "he": "תנועה הרחק מן האויב יכולה להעיד על דברים שונים; כדאי להפריד בין מראית העין למטרה.",
         "en": "A movement away from the enemy may mean several things; keep appearance and purpose apart."
-      }
+      },
+      "sourceTitle": "CHAPTER VI—FOUR O’CLOCK IN THE AFTERNOON"
     },
     {
       "fact": null,
@@ -165,7 +171,8 @@
       "before": {
         "he": "מה יכול נפוליאון לראות ממקומו, ומה הוא מניח בגלל ביטחונו העצמי?",
         "en": "What can Napoleon see from where he stands, and what does his confidence make him assume?"
-      }
+      },
+      "sourceTitle": "CHAPTER VII—NAPOLEON IN A GOOD HUMOR"
     },
     {
       "fact": null,
@@ -179,7 +186,8 @@
       "before": {
         "he": "על אילו ראיות מסתמך נפוליאון כשהוא מחליט שוולינגטון נסוג?",
         "en": "What evidence does Napoleon use to decide that Wellington is retreating?"
-      }
+      },
+      "sourceTitle": "CHAPTER VIII—THE EMPEROR PUTS A QUESTION TO THE GUIDE LACOSTE"
     },
     {
       "fact": null,
@@ -193,7 +201,8 @@
       "before": {
         "he": "חשבו כיצד תנופה עשויה להפוך ממקור כוח לדבר שאיש כבר אינו יכול לשלוט בו.",
         "en": "Consider how momentum can change from a source of strength into something no one can control."
-      }
+      },
+      "sourceTitle": "CHAPTER IX—THE UNEXPECTED"
     },
     {
       "fact": null,
@@ -207,7 +216,8 @@
       "before": {
         "he": "לאיזו תמיכה זקוקים הפרשים שאומץ לבדו אינו יכול לספק?",
         "en": "What support do the cavalry need that courage alone cannot supply?"
-      }
+      },
+      "sourceTitle": "CHAPTER X—THE PLATEAU OF MONT-SAINT-JEAN"
     },
     {
       "fact": null,
@@ -221,7 +231,8 @@
       "before": {
         "he": "זכרו כמה כבר היה תלוי בהיכרות מקומית עם פני השטח.",
         "en": "Recall how much has already depended on local knowledge of the ground."
-      }
+      },
+      "sourceTitle": "CHAPTER XI—A BAD GUIDE TO NAPOLEON; A GOOD GUIDE TO BÜLOW"
     },
     {
       "fact": null,
@@ -235,7 +246,8 @@
       "before": {
         "he": "כיצד עשויה משמעת להיראות אחרת כאשר החיילים כבר אינם מצפים לניצחון?",
         "en": "How might discipline look different when soldiers no longer expect victory?"
-      }
+      },
+      "sourceTitle": "CHAPTER XII—THE GUARD"
     },
     {
       "fact": null,
@@ -249,7 +261,8 @@
       "before": {
         "he": "מה נותר מסמכות כאשר האנשים שצייתו לה מוצפים בפחד?",
         "en": "What remains of authority when the people who once obeyed it are overwhelmed by fear?"
-      }
+      },
+      "sourceTitle": "CHAPTER XIII—THE CATASTROPHE"
     },
     {
       "fact": {
@@ -269,7 +282,8 @@
       "before": {
         "he": "אילו אפשרויות נותרו לחיילים שעוד עומדים אחרי שהצבא סביבם נמלט?",
         "en": "What choices remain to the soldiers still standing after the army around them has fled?"
-      }
+      },
+      "sourceTitle": "CHAPTER XIV—THE LAST SQUARE"
     },
     {
       "fact": null,
@@ -283,7 +297,8 @@
       "before": {
         "he": "האם מילה מעליבה יכולה לשמור על דבר שהנשק כבר איבד?",
         "en": "Can an insulting word preserve something that weapons have already lost?"
-      }
+      },
+      "sourceTitle": "CHAPTER XV—CAMBRONNE"
     },
     {
       "fact": null,
@@ -297,7 +312,8 @@
       "before": {
         "he": "כשהוגו משבח את התנהגותה של אומה בווטרלו, האם הוא מעניק את השבח למצביא או לחיילים?",
         "en": "When Hugo praises a nation’s conduct at Waterloo, does he give the credit to its general or its soldiers?"
-      }
+      },
+      "sourceTitle": "CHAPTER XVI—QUOT LIBRAS IN DUCE?"
     },
     {
       "fact": null,
@@ -311,7 +327,8 @@
       "before": {
         "he": "הבחינו בין המטרה הפוליטית של אירוע לבין שינויים המתרחשים דווקא בניגוד למטרה הזאת.",
         "en": "Distinguish an event’s intended political purpose from changes that follow despite that purpose."
-      }
+      },
+      "sourceTitle": "CHAPTER XVII—IS WATERLOO TO BE CONSIDERED GOOD?"
     },
     {
       "fact": null,
@@ -335,7 +352,8 @@
       "before": {
         "he": "כיצד געגוע לשליט רב־עוצמה יכול להתקיים לצד שאיפה לחירות?",
         "en": "How can nostalgia for a powerful ruler coexist with a desire for freedom?"
-      }
+      },
+      "sourceTitle": "CHAPTER XVIII—A RECRUDESCENCE OF DIVINE RIGHT"
     },
     {
       "fact": null,
@@ -349,7 +367,8 @@
       "before": {
         "he": "כיצד עשויה הכרת תודה לצמוח מטובה ממשית אך מהבנה מוטעית של מי שעשה אותה?",
         "en": "How might gratitude begin with a true benefit but a mistaken understanding of the benefactor?"
-      }
+      },
+      "sourceTitle": "CHAPTER XIX—THE BATTLE-FIELD AT NIGHT"
     },
     {
       "fact": {
@@ -369,7 +388,8 @@
       "before": {
         "he": "אילו חלקים בדיווחי העיתונים סותרים את האירועים שכבר קראנו?",
         "en": "Which parts of the newspaper reports contradict the events we have already read?"
-      }
+      },
+      "sourceTitle": "CHAPTER I—NUMBER 24,601 BECOMES NUMBER 9,430"
     },
     {
       "fact": null,
@@ -383,7 +403,8 @@
       "before": {
         "he": "אילו חלקים בסיפורו של בולטרואל ראה במו עיניו, ואילו הסיק בעצמו?",
         "en": "Which parts of Boulatruelle’s story did he see, and which has he inferred?"
-      }
+      },
+      "sourceTitle": "CHAPTER II—IN WHICH THE READER WILL PERUSE TWO VERSES, WHICH ARE OF THE DEVIL’S COMPOSITION, POSSIBLY"
     },
     {
       "fact": null,
@@ -415,7 +436,8 @@
       "before": {
         "he": "שימו לב אילו מעשים גורמים לקהל לבחון מחדש את התווית שהוצמדה לאדם.",
         "en": "Notice which actions make a crowd reconsider the label attached to a person."
-      }
+      },
+      "sourceTitle": "CHAPTER III—THE ANKLE-CHAIN MUST HAVE UNDERGONE A CERTAIN PREPARATORY MANIPULATION TO BE THUS BROKEN WITH A BLOW FROM A HAMMER"
     },
     {
       "fact": {
@@ -443,7 +465,8 @@
       "before": {
         "he": "איזו עבודה עושה קוזט בזמן שהאורחים שותים והילדות האחרות משחקות?",
         "en": "What work is Cosette doing while the guests drink and the other girls play?"
-      }
+      },
+      "sourceTitle": "CHAPTER I—THE WATER QUESTION AT MONTFERMEIL"
     },
     {
       "fact": null,
@@ -465,7 +488,8 @@
       "before": {
         "he": "הביטו מעבר לאדם הקולני ביותר בבית ובדקו מי קובע למעשה את ההחלטות.",
         "en": "Look beyond the loudest person in a household to see who actually determines its decisions."
-      }
+      },
+      "sourceTitle": "CHAPTER II—TWO COMPLETE PORTRAITS"
     },
     {
       "fact": null,
@@ -479,7 +503,8 @@
       "before": {
         "he": "מה מצפה קוזט שיקרה אם יאזלו המים בפונדק?",
         "en": "What does Cosette expect to happen if the inn runs out of water?"
-      }
+      },
+      "sourceTitle": "CHAPTER III—MEN MUST HAVE WINE, AND HORSES MUST HAVE WATER"
     },
     {
       "fact": null,
@@ -493,7 +518,8 @@
       "before": {
         "he": "מה ילדה עשויה לראות בחפץ שמבוגרים היו מתארים בעיקר באמצעות מחירו?",
         "en": "What does a child see in an object that adults might describe only by its price?"
-      }
+      },
+      "sourceTitle": "CHAPTER IV—ENTRANCE ON THE SCENE OF A DOLL"
     },
     {
       "fact": null,
@@ -507,7 +533,8 @@
       "before": {
         "he": "זכרו את שני הפחדים של קוזט: מה שממתין בחוץ ומה שממתין בבית.",
         "en": "Recall the two fears facing Cosette: what waits outside and what waits at home."
-      }
+      },
+      "sourceTitle": "CHAPTER V—THE LITTLE ONE ALL ALONE"
     },
     {
       "fact": null,
@@ -529,7 +556,8 @@
       "before": {
         "he": "מה עשה הזר לפני שהגיע למקום שבו פגש את קוזט?",
         "en": "What did the stranger do before reaching the place where he met Cosette?"
-      }
+      },
+      "sourceTitle": "CHAPTER VI—WHICH POSSIBLY PROVES BOULATRUELLE’S INTELLIGENCE"
     },
     {
       "fact": null,
@@ -543,7 +571,8 @@
       "before": {
         "he": "הקשיבו לדברים שקוזט רואה כמובנים מאליהם, ושמאזין אחר עשוי למצוא בלתי נסבלים.",
         "en": "Listen for the things Cosette treats as normal that another listener may find intolerable."
-      }
+      },
+      "sourceTitle": "CHAPTER VII—COSETTE SIDE BY SIDE WITH THE STRANGER IN THE DARK"
     },
     {
       "fact": {
@@ -581,7 +610,8 @@
       "before": {
         "he": "כיצד מגיבה קוזט כשמישהו קוטע את היחס שאליו למדה לצפות?",
         "en": "How does Cosette react when someone interrupts the treatment she has learned to expect?"
-      }
+      },
+      "sourceTitle": "CHAPTER VIII—THE UNPLEASANTNESS OF RECEIVING INTO ONE’S HOUSE A POOR MAN WHO MAY BE A RICH MAN"
     },
     {
       "fact": null,
@@ -595,7 +625,8 @@
       "before": {
         "he": "השוו בין דברי תנרדייה על קוזט לבין היחס שהקורא כבר ראה שהיא מקבלת.",
         "en": "Compare what Thénardier says about Cosette with the treatment the reader has already seen."
-      }
+      },
+      "sourceTitle": "CHAPTER IX— THÉNARDIER AND HIS MANŒUVRES"
     },
     {
       "fact": null,
@@ -617,7 +648,8 @@
       "before": {
         "he": "השוו בין טענה לאחריות לבין התנהגותו הקודמת של מי שמעלה אותה.",
         "en": "Compare a claim of responsibility with the claimant’s earlier conduct."
-      }
+      },
+      "sourceTitle": "CHAPTER X—HE WHO SEEKS TO BETTER HIMSELF MAY RENDER HIS SITUATION WORSE"
     },
     {
       "fact": null,
@@ -642,7 +674,8 @@
       "before": {
         "he": "אילו פרטים בהכנות הנוסע כבר רמזו למטרה שמעבר לביקור מקרי?",
         "en": "Which details in the traveller’s preparations have already suggested a purpose beyond an accidental visit?"
-      }
+      },
+      "sourceTitle": "CHAPTER XI—NUMBER 9,430 REAPPEARS, AND COSETTE WINS IT IN THE LOTTERY"
     },
     {
       "fact": null,
@@ -656,7 +689,8 @@
       "before": {
         "he": "חפשו פרטים שגורמים לשכונה להרגיש מחוץ לחייה הרגילים של העיר.",
         "en": "Look for details that make a neighbourhood feel outside the ordinary life of a city."
-      }
+      },
+      "sourceTitle": "CHAPTER I—MASTER GORBEAU"
     },
     {
       "fact": null,
@@ -670,7 +704,8 @@
       "before": {
         "he": "זכרו עד כמה מהר צליל מוכר יכול להשיב הרגל ישן, גם כשהנסיבות כבר השתנו.",
         "en": "Remember how quickly a familiar sound can recall an old routine, even after circumstances change."
-      }
+      },
+      "sourceTitle": "CHAPTER II—A NEST FOR OWL AND A WARBLER"
     },
     {
       "fact": null,
@@ -702,7 +737,8 @@
       "before": {
         "he": "כיצד משנה הדאגה לקוזט את שגרת חייו של ולז׳אן ואת יחסו לעברו?",
         "en": "How does caring for Cosette change Valjean’s daily life and his response to his own past?"
-      }
+      },
+      "sourceTitle": "CHAPTER III—TWO MISFORTUNES MAKE ONE PIECE OF GOOD FORTUNE"
     },
     {
       "fact": null,
@@ -716,7 +752,8 @@
       "before": {
         "he": "אילו מהרגליו של ולז׳אן מעוררים את סקרנות שכניו?",
         "en": "Which of Valjean’s habits make his neighbours curious about him?"
-      }
+      },
+      "sourceTitle": "CHAPTER IV—THE REMARKS OF THE PRINCIPAL TENANT"
     },
     {
       "fact": null,
@@ -738,7 +775,8 @@
       "before": {
         "he": "כאשר העדויות חלקיות, מה הופך זהירות לסבירה ולא רק לביטוי של פחד?",
         "en": "When evidence is incomplete, what makes caution reasonable rather than merely fearful?"
-      }
+      },
+      "sourceTitle": "CHAPTER V—A FIVE-FRANC PIECE FALLS ON THE GROUND AND PRODUCES A TUMULT"
     },
     {
       "fact": {
@@ -758,7 +796,8 @@
       "before": {
         "he": "קראו את הרחובות גם כדרכי מעבר ממשיות וגם כמקומות שנשמרו בזיכרונו של גולה.",
         "en": "Read the streets both as physical routes and as places preserved in an exile’s memory."
-      }
+      },
+      "sourceTitle": "CHAPTER I—THE ZIGZAGS OF STRATEGY"
     },
     {
       "fact": null,
@@ -783,7 +822,8 @@
       "before": {
         "he": "אילו מרכיבים רגילים בעיר עלולים לתעד במפתיע את מעברו של נמלט?",
         "en": "What ordinary features of a city might unexpectedly record a fugitive’s passage?"
-      }
+      },
+      "sourceTitle": "CHAPTER II—IT IS LUCKY THAT THE PONT D’AUSTERLITZ BEARS CARRIAGES"
     },
     {
       "fact": null,
@@ -797,7 +837,8 @@
       "before": {
         "he": "דרך שקטה אינה בהכרח דרך פתוחה; עקבו אחר מקומות היציאה האפשריים.",
         "en": "A quiet route is not necessarily an open route; keep track of possible exits."
-      }
+      },
+      "sourceTitle": "CHAPTER III—TO WIT, THE PLAN OF PARIS IN 1727"
     },
     {
       "fact": null,
@@ -811,7 +852,8 @@
       "before": {
         "he": "באילו דרכי בריחה יכול ולז׳אן להשתמש לבדו, ואילו יוכלו להביא גם את קוזט למקום בטוח?",
         "en": "Which escape routes could Valjean use alone, and which could also get Cosette to safety?"
-      }
+      },
+      "sourceTitle": "CHAPTER IV—THE GROPINGS OF FLIGHT"
     },
     {
       "fact": {
@@ -839,7 +881,8 @@
       "before": {
         "he": "אילו מיומנויות משנותיו של ולז׳אן בכלא יכולות לעזור לו כעת, כשגם קוזט צריכה להימלט איתו?",
         "en": "Which skills from Valjean’s years in prison can help him now that Cosette must escape with him?"
-      }
+      },
+      "sourceTitle": "CHAPTER V—WHICH WOULD BE IMPOSSIBLE WITH GAS LANTERNS"
     },
     {
       "fact": null,
@@ -853,7 +896,8 @@
       "before": {
         "he": "מה יכולים הנמלטים ללמוד על המקום שמעבר לחומה מתוך הקולות הנשמעים בו?",
         "en": "What can the fugitives learn about the place beyond the wall from its sounds?"
-      }
+      },
+      "sourceTitle": "CHAPTER VI—THE BEGINNING OF AN ENIGMA"
     },
     {
       "fact": null,
@@ -867,7 +911,8 @@
       "before": {
         "he": "הפרידו בין ידיעתו המוגבלת של המתבונן לבין ההסבר שאתם מתפתים להשלים בעצמכם.",
         "en": "Keep the observer’s limited knowledge separate from whatever explanation you are tempted to supply."
-      }
+      },
+      "sourceTitle": "CHAPTER VII—CONTINUATION OF THE ENIGMA"
     },
     {
       "fact": null,
@@ -881,7 +926,8 @@
       "before": {
         "he": "מתי ההגנה על אדם מחייבת לוותר על ההסתתרות ולבקש עזרה?",
         "en": "When does protecting someone require giving up concealment and asking for help?"
-      }
+      },
+      "sourceTitle": "CHAPTER VIII—THE ENIGMA BECOMES DOUBLY MYSTERIOUS"
     },
     {
       "fact": null,
@@ -895,7 +941,8 @@
       "before": {
         "he": "מה כבר יודע האיש בגן על ולז׳אן, ועל מה הוא נמנע מלשאול?",
         "en": "What does the man in the garden already know about Valjean, and what does he leave unasked?"
-      }
+      },
+      "sourceTitle": "CHAPTER IX—THE MAN WITH THE BELL"
     },
     {
       "fact": null,
@@ -918,7 +965,8 @@
       "before": {
         "he": "בחנו מחדש את המרדף כרצף החלטות שהתקבלו בשני הצדדים על סמך מידע חלקי.",
         "en": "Reconsider the chase as a sequence of decisions made with incomplete information on both sides."
-      }
+      },
+      "sourceTitle": "CHAPTER X—WHICH EXPLAINS HOW JAVERT GOT ON THE SCENT"
     },
     {
       "fact": null,
@@ -932,7 +980,8 @@
       "before": {
         "he": "מה יכולים המבקרים לשמוע מבעד למחיצות חדר הקבלה, ומה נמנע מהם לראות?",
         "en": "What can visitors hear through the parlour’s barriers, and what are they prevented from seeing?"
-      }
+      },
+      "sourceTitle": "CHAPTER I—NUMBER 62 RUE PETIT-PICPUS"
     },
     {
       "fact": {
@@ -960,7 +1009,8 @@
       "before": {
         "he": "זכרו את הדמות הדוממת שראה ולז'אן: כיצד עשוי אותו מנהג להיראות מתוך אמונתו של המשתתף בו ומחוצה לה?",
         "en": "Recall the motionless figure Valjean saw; how might a practice look different from inside and outside its beliefs?"
-      }
+      },
+      "sourceTitle": "CHAPTER II—THE OBEDIENCE OF MARTIN VERGA"
     },
     {
       "fact": null,
@@ -974,7 +1024,8 @@
       "before": {
         "he": "מה משתנה כאשר משמעת שמבוגרים בוחרים בה מעצבת גם את חייהם של ילדים?",
         "en": "What changes when a discipline freely chosen by adults also shapes the lives of children?"
-      }
+      },
+      "sourceTitle": "CHAPTER III—AUSTERITIES"
     },
     {
       "fact": null,
@@ -988,7 +1039,8 @@
       "before": {
         "he": "הקשיבו לאופן שבו ילדים מפרשים מילולית את דברי המבוגרים: מה הפירושים האלה חושפים?",
         "en": "Listen to children’s literal readings of adult words; what do those readings expose?"
-      }
+      },
+      "sourceTitle": "CHAPTER IV—GAYETIES"
     },
     {
       "fact": null,
@@ -1002,7 +1054,8 @@
       "before": {
         "he": "אילו סיפורים משגשגים כששומעים רסיסים מן העולם שבחוץ אך אי אפשר לבדוק אותם?",
         "en": "What kinds of stories flourish when people hear fragments of the outside world but cannot check them?"
-      }
+      },
+      "sourceTitle": "CHAPTER V—DISTRACTIONS"
     },
     {
       "fact": null,
@@ -1016,7 +1069,8 @@
       "before": {
         "he": "חפשו הבדלים בתוך מקום שמבקר מבחוץ עלול להניח שהוא אחיד לחלוטין.",
         "en": "Look for differences inside a place that outsiders might assume is entirely uniform."
-      }
+      },
+      "sourceTitle": "CHAPTER VI—THE LITTLE CONVENT"
     },
     {
       "fact": {
@@ -1036,7 +1090,8 @@
       "before": {
         "he": "כיצד מזמנות הנזירות זו את זו ומארגנות את עבודת היומיום כשהשיחה הרגילה מוגבלת?",
         "en": "How do the nuns summon one another and arrange daily work when ordinary conversation is restricted?"
-      }
+      },
+      "sourceTitle": "CHAPTER VII—SOME SILHOUETTES OF THIS DARKNESS"
     },
     {
       "fact": null,
@@ -1050,7 +1105,8 @@
       "before": {
         "he": "השוו בין המטען הרגשי של תוכנית בניין לבין השימושים המעשיים שלה.",
         "en": "Compare the emotional associations of a floor plan with its practical uses."
-      }
+      },
+      "sourceTitle": "CHAPTER VIII—POST CORDA LAPIDES"
     },
     {
       "fact": null,
@@ -1064,7 +1120,8 @@
       "before": {
         "he": "מה מצפות הנשים האחרות למצוא בין חפציה הפרטיים של נזירה?",
         "en": "What do the other women expect to find among a nun’s private possessions?"
-      }
+      },
+      "sourceTitle": "CHAPTER IX—A CENTURY UNDER A GUIMPE"
     },
     {
       "fact": null,
@@ -1078,7 +1135,8 @@
       "before": {
         "he": "טקס משותף אינו בהכרח מעיד על מוסד משותף; שימו לב להבחנות שהמספר מקפיד עליהן.",
         "en": "A shared ritual does not necessarily mean a shared institution; watch how the narrator makes distinctions."
-      }
+      },
+      "sourceTitle": "CHAPTER X—ORIGIN OF THE PERPETUAL ADORATION"
     },
     {
       "fact": null,
@@ -1092,7 +1150,8 @@
       "before": {
         "he": "כיצד אפשר לבקר מוסד ובו בזמן להגן על חירותם של אנשים לבחור בו?",
         "en": "How can someone criticize an institution while defending the freedom of people to choose it?"
-      }
+      },
+      "sourceTitle": "CHAPTER XI—END OF THE PETIT-PICPUS"
     },
     {
       "fact": null,
@@ -1106,7 +1165,8 @@
       "before": {
         "he": "האם אפשר להבחין בין כבוד לשאיפה אנושית לבין אישור המוסד שנבנה סביבה?",
         "en": "Can you distinguish respect for a human aspiration from approval of the institution built around it?"
-      }
+      },
+      "sourceTitle": "CHAPTER I—THE CONVENT AS AN ABSTRACT IDEA"
     },
     {
       "fact": null,
@@ -1120,7 +1180,8 @@
       "before": {
         "he": "אילו עדויות יכולות להשיב לטענה שהאשמה אינה אלא לשון מופרזת?",
         "en": "What evidence can answer the claim that an accusation is merely exaggerated language?"
-      }
+      },
+      "sourceTitle": "CHAPTER II—THE CONVENT AS AN HISTORICAL FACT"
     },
     {
       "fact": null,
@@ -1134,7 +1195,8 @@
       "before": {
         "he": "מתי הכרת תודה לעבר הופכת לחובה שההווה צריך לסרב לה?",
         "en": "When does gratitude to the past become an obligation that the present should refuse?"
-      }
+      },
+      "sourceTitle": "CHAPTER III—ON WHAT CONDITIONS ONE CAN RESPECT THE PAST"
     },
     {
       "fact": null,
@@ -1156,7 +1218,8 @@
       "before": {
         "he": "האם חירות כוללת את הזכות לבחור בחיים ממושמעים שאחרים אינם מעוניינים בהם?",
         "en": "Does freedom include the right to choose a disciplined life that others find unattractive?"
-      }
+      },
+      "sourceTitle": "CHAPTER IV—THE CONVENT FROM THE POINT OF VIEW OF PRINCIPLES"
     },
     {
       "fact": null,
@@ -1170,7 +1233,8 @@
       "before": {
         "he": "מה עשוי להבדיל בין שמירה על המסתורין לבין קבלת כל טענה שמושמעת בשמו?",
         "en": "What difference might there be between preserving mystery and accepting every claim made in its name?"
-      }
+      },
+      "sourceTitle": "CHAPTER V—PRAYER"
     },
     {
       "fact": null,
@@ -1184,7 +1248,8 @@
       "before": {
         "he": "שאלו מה פילוסופיה צריכה לאפשר לאנשים לעשות, מעבר לניצחון בוויכוח.",
         "en": "Ask what a philosophy should enable people to do, beyond winning an argument."
-      }
+      },
+      "sourceTitle": "CHAPTER VI—THE ABSOLUTE GOODNESS OF PRAYER"
     },
     {
       "fact": null,
@@ -1198,7 +1263,8 @@
       "before": {
         "he": "מה ההבדל בין כעס על פגיעה לבין הנאה מבוז כלפי המעורבים בה?",
         "en": "What is the difference between being angry at harm and enjoying contempt for those involved?"
-      }
+      },
+      "sourceTitle": "CHAPTER VII—PRECAUTIONS TO BE OBSERVED IN BLAME"
     },
     {
       "fact": null,
@@ -1212,7 +1278,8 @@
       "before": {
         "he": "האם עבודה שאינה משאירה תוצר נראה יכולה בכל זאת לתרום לחיי האדם?",
         "en": "Can work that leaves no visible product still contribute to human life?"
-      }
+      },
+      "sourceTitle": "CHAPTER VIII—FAITH, LAW"
     },
     {
       "fact": null,
@@ -1235,7 +1302,8 @@
       "before": {
         "he": "זכרו שהגעה למקלט וקבלת רשות להישאר בו הן שתי בעיות שונות.",
         "en": "Recall that reaching a refuge and being allowed to remain there are two different problems."
-      }
+      },
+      "sourceTitle": "CHAPTER I—WHICH TREATS OF THE MANNER OF ENTERING A CONVENT"
     },
     {
       "fact": null,
@@ -1249,7 +1317,8 @@
       "before": {
         "he": "כיצד משתמש פושלוון בהיכרותו עם המנזר כשהוא מבקש עזרה מאם המנזר?",
         "en": "How does Fauchelevent use his knowledge of the convent when asking the prioress for help?"
-      }
+      },
+      "sourceTitle": "CHAPTER II—FAUCHELEVENT IN THE PRESENCE OF A DIFFICULTY"
     },
     {
       "fact": null,
@@ -1281,7 +1350,8 @@
       "before": {
         "he": "שימו לב כיצד ויכוח על סמכות נעשה גם משא ומתן על עזרה מעשית.",
         "en": "Watch how an argument about authority also becomes a negotiation over practical help."
-      }
+      },
+      "sourceTitle": "CHAPTER III—MOTHER INNOCENTE"
     },
     {
       "fact": null,
@@ -1295,7 +1365,8 @@
       "before": {
         "he": "על אילו הנחות נשענת תוכנית חכמה, ואילו מהן נבדקו בפועל?",
         "en": "Which assumptions does a clever plan rely on, and which of them have actually been checked?"
-      }
+      },
+      "sourceTitle": "CHAPTER IV—IN WHICH JEAN VALJEAN HAS QUITE THE AIR OF HAVING READ AUSTIN CASTILLEJO"
     },
     {
       "fact": null,
@@ -1317,7 +1388,8 @@
       "before": {
         "he": "זכרו כמה מביטחונו של פושלוואן נשען על היכרותו עם אדם מסוים אחד.",
         "en": "Remember how much of Fauchelevent’s confidence rests on knowing one particular person."
-      }
+      },
+      "sourceTitle": "CHAPTER V—IT IS NOT NECESSARY TO BE DRUNK IN ORDER TO BE IMMORTAL"
     },
     {
       "fact": null,
@@ -1331,7 +1403,8 @@
       "before": {
         "he": "מה אפשר להסיק מקולות בלבד, ואיזה מידע מכריע נשאר בלתי נגיש?",
         "en": "What can someone infer from sound alone, and what decisive information remains unavailable?"
-      }
+      },
+      "sourceTitle": "CHAPTER VI—BETWEEN FOUR PLANKS"
     },
     {
       "fact": null,
@@ -1353,7 +1426,8 @@
       "before": {
         "he": "במה יכול פושלוון להיעזר כדי לגרום לקברן לעזוב קבורה שלא הושלמה?",
         "en": "What can Fauchelevent use to make a gravedigger leave an unfinished burial?"
-      }
+      },
+      "sourceTitle": "CHAPTER VII—IN WHICH WILL BE FOUND THE ORIGIN OF THE SAYING: DON’T LOSE THE CARD"
     },
     {
       "fact": null,
@@ -1367,7 +1441,8 @@
       "before": {
         "he": "שימו לב כיצד ריאיון שנראה קפדני עשוי להישען על הנחות במקום על תשובות עצמאיות.",
         "en": "Notice how an apparently thorough interview may depend on assumptions rather than independent answers."
-      }
+      },
+      "sourceTitle": "CHAPTER VIII—A SUCCESSFUL INTERROGATORY"
     },
     {
       "fact": null,
@@ -1400,7 +1475,8 @@
       "before": {
         "he": "הפרידו בין פירושו של ולז'אן למנזר לבין הטענות שהמספר העלה עליו קודם לכן.",
         "en": "Keep Valjean’s interpretation of the convent distinct from the narrator’s earlier arguments about it."
-      }
+      },
+      "sourceTitle": "CHAPTER IX—CLOISTERED"
     }
   ]
 }

@@ -343,3 +343,10 @@ html[lang=he] .dual-home .hero h1{font-size:clamp(3rem,5.1vw,5rem);line-height:1
 .show-journey-ending a span{font-size:.875rem;line-height:1.6;color:var(--muted)}
 .show-journey-ending a .arrow{grid-column:2;grid-row:1 / 3;align-self:center}
 @media(max-width:760px){.show-journey-ending{padding:20px 12px}}
+
+/* A first visit has useful listening prompts without consenting to later plot. */
+.safe-opening-cards{display:grid;gap:12px;margin-block:18px;text-align:start}
+.safe-opening-card{position:relative;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--paper)}
+.safe-opening-card>span{float:inline-end;color:var(--muted);font-size:.8rem;font-variant-numeric:tabular-nums}
+.safe-opening-card h3{font-size:1.05rem;margin:0 0 8px;padding-inline-end:28px}
+.musical-journey-page .safe-opening-card p{font-size:.9rem;line-height:1.6;margin:0}

@@ -44,7 +44,7 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
   let geometry,previous,settled=false;const deadline=Date.now()+5000;
   do{geometry=await p.locator('#reader-parts-panel').evaluate(e=>{const r=e.getBoundingClientRect();return{top:r.top,bottom:r.bottom,height:innerHeight,scrollY,hash:location.hash,targets:document.querySelectorAll('#reader-parts-panel').length}});settled=geometry.top>=-2&&geometry.top<geometry.height&&previous&&Math.abs(geometry.top-previous.top)<.5;if(settled)break;previous=geometry;await new Promise(resolve=>setTimeout(resolve,100));}while(Date.now()<deadline);
   check(settled,'Native choose-place fragment settles at the Part chooser');check(geometry.hash==='#reader-parts-panel'&&geometry.targets===1,'No-JS retains one exact chooser target');
-  const overview=p.locator('[data-reader-part="p5"] [data-overview-spoilers]');await overview.locator(':scope > summary').click();check(await overview.locator('.reader-overview>p').first().isVisible(),'No-JS optional Part overview opens natively');
+  const overview=p.locator('[data-reader-part="p5"] [data-overview-spoilers]');await overview.locator(':scope > summary').click();check(await overview.locator('.reader-overview>p').count()===0,'No-JS retains spoiler-safe overview');check(await overview.locator('noscript').isVisible(),'No-JS explains optional overview');
   check(await p.locator('.reading-locator noscript article details a').count()===365,'All exact original-text chapter destinations remain available');
   fs.writeFileSync(path.join(dir,`${lang}-novel-nojs-${motion}.json`),JSON.stringify(geometry,null,2));await p.screenshot({path:path.join(dir,`${lang}-novel-nojs-${motion}.png`)});await c.close();
  }

@@ -84,7 +84,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0299"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—THE CHARYBDIS OF THE FAUBOURG SAINT ANTOINE AND THE SCYLLA OF THE FAUBOURG DU TEMPLE"
     },
     {
       "id": "p5-b1-c2",
@@ -107,7 +108,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—WHAT IS TO BE DONE IN THE ABYSS IF ONE DOES NOT CONVERSE"
     },
     {
       "id": "p5-b1-c3",
@@ -121,7 +123,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—LIGHT AND SHADOW"
     },
     {
       "id": "p5-b1-c4",
@@ -145,7 +148,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER IV—MINUS FIVE, PLUS ONE"
     },
     {
       "id": "p5-b1-c5",
@@ -159,7 +163,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—THE HORIZON WHICH ONE BEHOLDS FROM THE SUMMIT OF A BARRICADE"
     },
     {
       "id": "p5-b1-c6",
@@ -173,7 +178,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—MARIUS HAGGARD, JAVERT LACONIC"
     },
     {
       "id": "p5-b1-c7",
@@ -187,7 +193,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VII—THE SITUATION BECOMES AGGRAVATED"
     },
     {
       "id": "p5-b1-c8",
@@ -209,7 +216,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VIII—THE ARTILLERY-MEN COMPEL PEOPLE TO TAKE THEM SERIOUSLY"
     },
     {
       "id": "p5-b1-c9",
@@ -223,7 +231,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IX—EMPLOYMENT OF THE OLD TALENTS OF A POACHER AND THAT INFALLIBLE MARKSMANSHIP WHICH INFLUENCED THE CONDEMNATION OF 1796"
     },
     {
       "id": "p5-b1-c10",
@@ -237,7 +246,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER X—DAWN"
     },
     {
       "id": "p5-b1-c11",
@@ -251,7 +261,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XI—THE SHOT WHICH MISSES NOTHING AND KILLS NO ONE"
     },
     {
       "id": "p5-b1-c12",
@@ -265,7 +276,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XII—DISORDER A PARTISAN OF ORDER"
     },
     {
       "id": "p5-b1-c13",
@@ -279,7 +291,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XIII—PASSING GLEAMS"
     },
     {
       "id": "p5-b1-c14",
@@ -293,7 +306,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XIV—WHEREIN WILL APPEAR THE NAME OF ENJOLRAS’ MISTRESS"
     },
     {
       "id": "p5-b1-c15",
@@ -317,7 +331,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER XV—GAVROCHE OUTSIDE"
     },
     {
       "id": "p5-b1-c16",
@@ -349,7 +364,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER XVI—HOW FROM A BROTHER ONE BECOMES A FATHER"
     },
     {
       "id": "p5-b1-c17",
@@ -363,7 +379,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XVII—MORTUUS PATER FILIUM MORITURUM EXPECTAT"
     },
     {
       "id": "p5-b1-c18",
@@ -377,7 +394,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XVIII—THE VULTURE BECOME PREY"
     },
     {
       "id": "p5-b1-c19",
@@ -401,7 +419,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER XIX—JEAN VALJEAN TAKES HIS REVENGE"
     },
     {
       "id": "p5-b1-c20",
@@ -415,7 +434,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XX—THE DEAD ARE IN THE RIGHT AND THE LIVING ARE NOT IN THE WRONG"
     },
     {
       "id": "p5-b1-c21",
@@ -429,7 +449,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XXI—THE HEROES"
     },
     {
       "id": "p5-b1-c22",
@@ -443,7 +464,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XXII—FOOT TO FOOT"
     },
     {
       "id": "p5-b1-c23",
@@ -466,7 +488,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XXIII—ORESTES FASTING AND PYLADES DRUNK"
     },
     {
       "id": "p5-b1-c24",
@@ -489,7 +512,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XXIV—PRISONER"
     },
     {
       "id": "p5-b2-c1",
@@ -513,7 +537,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER I—THE LAND IMPOVERISHED BY THE SEA"
     },
     {
       "id": "p5-b2-c2",
@@ -527,7 +552,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—ANCIENT HISTORY OF THE SEWER"
     },
     {
       "id": "p5-b2-c3",
@@ -541,7 +567,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—BRUNESEAU"
     },
     {
       "id": "p5-b2-c4",
@@ -555,7 +582,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV"
     },
     {
       "id": "p5-b2-c5",
@@ -569,7 +597,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—PRESENT PROGRESS"
     },
     {
       "id": "p5-b2-c6",
@@ -589,7 +618,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0328"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—FUTURE PROGRESS"
     },
     {
       "id": "p5-b3-c1",
@@ -603,7 +633,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—THE SEWER AND ITS SURPRISES"
     },
     {
       "id": "p5-b3-c2",
@@ -617,7 +648,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—EXPLANATION"
     },
     {
       "id": "p5-b3-c3",
@@ -631,7 +663,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—THE “SPUN” MAN"
     },
     {
       "id": "p5-b3-c4",
@@ -653,7 +686,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—HE ALSO BEARS HIS CROSS"
     },
     {
       "id": "p5-b3-c5",
@@ -673,7 +707,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0333"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—IN THE CASE OF SAND AS IN THAT OF WOMAN, THERE IS A FINENESS WHICH IS TREACHEROUS"
     },
     {
       "id": "p5-b3-c6",
@@ -687,7 +722,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—THE FONTIS"
     },
     {
       "id": "p5-b3-c7",
@@ -701,7 +737,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VII—ONE SOMETIMES RUNS AGROUND WHEN ONE FANCIES THAT ONE IS DISEMBARKING"
     },
     {
       "id": "p5-b3-c8",
@@ -715,7 +752,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VIII—THE TORN COAT-TAIL"
     },
     {
       "id": "p5-b3-c9",
@@ -729,7 +767,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IX—MARIUS PRODUCES ON SOME ONE WHO IS A JUDGE OF THE MATTER, THE EFFECT OF BEING DEAD"
     },
     {
       "id": "p5-b3-c10",
@@ -743,7 +782,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER X—RETURN OF THE SON WHO WAS PRODIGAL OF HIS LIFE"
     },
     {
       "id": "p5-b3-c11",
@@ -757,7 +797,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XI—CONCUSSION IN THE ABSOLUTE"
     },
     {
       "id": "p5-b3-c12",
@@ -771,7 +812,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER XII—THE GRANDFATHER"
     },
     {
       "id": "p5-b4-c1",
@@ -804,7 +846,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER I"
     },
     {
       "id": "p5-b5-c1",
@@ -828,7 +871,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER I—IN WHICH THE TREE WITH THE ZINC PLASTER APPEARS AGAIN"
     },
     {
       "id": "p5-b5-c2",
@@ -842,7 +886,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—MARIUS, EMERGING FROM CIVIL WAR, MAKES READY FOR DOMESTIC WAR"
     },
     {
       "id": "p5-b5-c3",
@@ -856,7 +901,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—MARIUS ATTACKED"
     },
     {
       "id": "p5-b5-c4",
@@ -870,7 +916,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—MADEMOISELLE GILLENORMAND ENDS BY NO LONGER THINKING IT A BAD THING THAT M. FAUCHELEVENT SHOULD HAVE ENTERED WITH SOMETHING UNDER HIS ARM"
     },
     {
       "id": "p5-b5-c5",
@@ -884,7 +931,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—DEPOSIT YOUR MONEY IN A FOREST RATHER THAN WITH A NOTARY"
     },
     {
       "id": "p5-b5-c6",
@@ -898,7 +946,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—THE TWO OLD MEN DO EVERYTHING, EACH ONE AFTER HIS OWN FASHION, TO RENDER COSETTE HAPPY"
     },
     {
       "id": "p5-b5-c7",
@@ -912,7 +961,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VII—THE EFFECTS OF DREAMS MINGLED WITH HAPPINESS"
     },
     {
       "id": "p5-b5-c8",
@@ -934,7 +984,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VIII—TWO MEN IMPOSSIBLE TO FIND"
     },
     {
       "id": "p5-b6-c1",
@@ -958,7 +1009,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER I—THE 16TH OF FEBRUARY, 1833"
     },
     {
       "id": "p5-b6-c2",
@@ -972,7 +1024,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—JEAN VALJEAN STILL WEARS HIS ARM IN A SLING"
     },
     {
       "id": "p5-b6-c3",
@@ -995,7 +1048,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—THE INSEPARABLE"
     },
     {
       "id": "p5-b6-c4",
@@ -1009,7 +1063,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—THE IMMORTAL LIVER"
     },
     {
       "id": "p5-b7-c1",
@@ -1023,7 +1078,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—THE SEVENTH CIRCLE AND THE EIGHTH HEAVEN"
     },
     {
       "id": "p5-b7-c2",
@@ -1045,7 +1101,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—THE OBSCURITIES WHICH A REVELATION CAN CONTAIN"
     },
     {
       "id": "p5-b8-c1",
@@ -1059,7 +1116,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—THE LOWER CHAMBER"
     },
     {
       "id": "p5-b8-c2",
@@ -1073,7 +1131,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—ANOTHER STEP BACKWARDS"
     },
     {
       "id": "p5-b8-c3",
@@ -1097,7 +1156,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER III—THEY RECALL THE GARDEN OF THE RUE PLUMET"
     },
     {
       "id": "p5-b8-c4",
@@ -1111,7 +1171,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—ATTRACTION AND EXTINCTION"
     },
     {
       "id": "p5-b9-c1",
@@ -1125,7 +1186,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—PITY FOR THE UNHAPPY, BUT INDULGENCE FOR THE HAPPY"
     },
     {
       "id": "p5-b9-c2",
@@ -1139,7 +1201,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—LAST FLICKERINGS OF A LAMP WITHOUT OIL"
     },
     {
       "id": "p5-b9-c3",
@@ -1161,7 +1224,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—A PEN IS HEAVY TO THE MAN WHO LIFTED THE FAUCHELEVENT’S CART"
     },
     {
       "id": "p5-b9-c4",
@@ -1184,7 +1248,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—A BOTTLE OF INK WHICH ONLY SUCCEEDED IN WHITENING"
     },
     {
       "id": "p5-b9-c5",
@@ -1208,7 +1273,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER V—A NIGHT BEHIND WHICH THERE IS DAY"
     },
     {
       "id": "p5-b9-c6",
@@ -1222,7 +1288,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—THE GRASS COVERS AND THE RAIN EFFACES"
     }
   ]
 }
