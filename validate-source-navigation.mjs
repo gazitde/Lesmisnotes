@@ -22,16 +22,16 @@ function boot(language = 'en', route = 'about', query = '', state = null) {
   const localValues = new Map(), sessionValues = new Map(), transitions = [], analytics = [], callbacks = {};
   const storage = values => ({ getItem: key => values.get(key) || null,
     setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key) });
-  let activeId = null;
+  let activeId = null,scrolledId=null,timerIndex=0;const timers=new Map();
   const nodes = new Map(), app = { innerHTML: '', addEventListener() {} };
   const node = id => {
     if (!nodes.has(id)) nodes.set(id, { style: {}, classList: { add() {}, remove() {} },
-      focus() { activeId = id; }, scrollIntoView() {}, setAttribute() {},
+      focus() { activeId = id; }, scrollIntoView() {scrolledId=id;}, setAttribute() {},
       querySelectorAll() { return []; }, addEventListener() {} });
     return nodes.get(id);
   };
   const ctx = { console, URLSearchParams, localStorage: storage(localValues),
-    sessionStorage: storage(sessionValues), setTimeout: () => 1, clearTimeout() {},
+    sessionStorage: storage(sessionValues), setTimeout(fn){const id=++timerIndex;timers.set(id,fn);return id;}, clearTimeout(id){timers.delete(id);},
     document: { documentElement: {}, title: '', addEventListener() {},
       querySelectorAll: () => [], getElementById: id => id === 'app' ? app : node(id),
       querySelector: selector => node(selector.startsWith('#') ? selector.slice(1) : selector) },
@@ -57,7 +57,7 @@ function boot(language = 'en', route = 'about', query = '', state = null) {
   vm.runInContext(instrumented, ctx);
   transitions.length = 0; analytics.length = 0;
   return { callbacks, ctx, api: ctx.__review, app, transitions, analytics, localValues,
-    activeId: () => activeId };
+    activeId: () => activeId,scrolledId:()=>scrolledId,restoreBrowserScroll(){scrolledId='browser-saved-position'},flushTimers(){const pending=[...timers.values()];timers.clear();pending.forEach(fn=>fn())} };
 }
 
 function click(x, href, options = {}) {
@@ -105,6 +105,17 @@ for(const lang of ['he','en']){
  const searched=x.transitions.at(-1);press(x,{sourceTopic:'screen-video'});const second=x.transitions.at(-1);
  restore(x,searched);equal(plain(x.api.sources()),{topic:'history-ideas',search:'Gutenberg',limit:24},'Back restores filter and search');
  restore(x,second);equal(plain(x.api.sources()),{topic:'screen-video',search:'Gutenberg',limit:24},'Forward restores filter and search');
+ // Native history restoration runs after popstate, before the next timer task.
+ restore(x,searched);equal(x.activeId(),'main','History arrival does not prematurely focus an off-screen catalogue');
+ x.restoreBrowserScroll();equal(x.scrolledId(),'browser-saved-position','Simulated browser scroll overrides synchronous handlers');
+ x.flushTimers();equal(x.scrolledId(),'about-sources','Deferred arrival wins after native scroll restoration');
+ equal(x.activeId(),'about-sources','History focus lands together with visible catalogue');
+ restore(x,second);x.restoreBrowserScroll();x.api.navigate('history');x.flushTimers();
+ equal(x.activeId(),'main','Newer route navigation cancels stale catalogue focus');
+ equal(x.scrolledId(),'browser-saved-position','Stale timer cannot scroll a newer route');
+ restore(x,searched);restore(x,second);x.restoreBrowserScroll();x.flushTimers();
+ equal(x.api.sources().topic,'screen-video','Rapid history traversal keeps only newest filter');
+ equal(x.activeId(),'about-sources','Newest history entry receives catalogue focus');
  const reloaded=boot(lang,'about',x.ctx.location.search,plain(x.ctx.history.state));
  equal(plain(reloaded.api.sources()),{topic:'screen-video',search:'',limit:24},'Reload retains topic but clears private search');
  x.api.navigate('about',lang==='he'?'en':'he');

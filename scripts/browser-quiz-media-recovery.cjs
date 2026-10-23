@@ -2,6 +2,7 @@
 // Runs only against the local test server, in fresh isolated contexts. No real user data or live media requests.
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const base=process.env.SEARCH_TEST_URL||'http://127.0.0.1:8873',dir=process.env.SEARCH_ARTIFACT_DIR||'test-results';
+const installQuizMediaFixtures=require('./helpers/quiz-media-init.cjs');
 const RUN='barricade-quiz-run',CONSENT='barricade-consent-v1',QUIZ_CONSENT='barricade-quiz-consent';
 (async()=>{
  const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH,args:['--no-sandbox']});fs.mkdirSync(dir,{recursive:true});let checks=0;
@@ -13,14 +14,7 @@ const RUN='barricade-quiz-run',CONSENT='barricade-consent-v1',QUIZ_CONSENT='barr
   for(const lang of ['he','en'])for(const width of [1280,390,320])for(const functional of [true,false]){
    const ctx=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'}),external=[];
    await ctx.route('**/*',r=>{if(new URL(r.request().url()).origin===new URL(base).origin)return r.continue();external.push(r.request().url());return r.abort()});
-   await ctx.addInitScript(({functional})=>{
-    if(!sessionStorage.getItem('quiz-test-seeded')){
-     const now=Date.now();localStorage.setItem('barricade-consent-v1',JSON.stringify({version:3,savedAt:now,expiresAt:now+180*86400000,functional,analytics:false,media:false}));
-     for(const [key,value]of [['barricade-last-reading','{"kind":"chapter","key":"p1-b1-c3"}'],['barricade-completed-chapters-v1','{"completed":["p1-b1-c1"]}'],['barricade-bookmarks','["novel"]'],['barricade-listening','["stars"]']])localStorage.setItem(key,value);
-     sessionStorage.setItem('barricade-after-consent','on');sessionStorage.setItem('barricade-novel-consent','on');sessionStorage.setItem('quiz-test-seeded','1');
-    }
-    window.__ytPlayers=[];window.YT={PlayerState:{PLAYING:1},Player:function(frame,options){this.frame=frame;this.options=options;this.destroy=()=>{};this.pauseVideo=()=>{};window.__ytPlayers.push(this)}};
-   },{functional});
+   await ctx.addInitScript(installQuizMediaFixtures,{functional,origin:new URL(base).origin});
    const page=await ctx.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
    await page.goto(`${base}/${lang}/quiz/`);check(await page.locator('[data-action="quiz-delete"]').isVisible(),'Reset visible in setup');
    await click(page,'quiz-start');await answer(page);const before=await snapshot(page);
