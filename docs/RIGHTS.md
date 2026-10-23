@@ -24,3 +24,7 @@ Noto Sans Hebrew (regular and bold), © Google, is locally bundled under SIL OFL
 ## Victor Hugo: two further drawings
 
 `dist/assets/hugo-ma-destinee.jpg` is the museum-provided 585×397 full-frame JPEG of Hugo’s original 1857 drawing, inventory 927, rather than a later engraving after it. `dist/assets/hugo-eddystone.jpg` is the museum-provided 520×975 full-frame JPEG of his 1866 Eddystone Lighthouse drawing, inventory 181. Both carry CC0 1.0 credits and exact collection links. `docs/hugo-art-gallery-licenses.json` records sources, dimensions, checksums and visual review. The three thumbnail files are proportional reductions without cropping. The existing castle drawing is unchanged. The general connection between Hugo’s art and the production is sourced to the designers; no claim is made that these particular drawings appeared in the projections.
+
+## Original character portraits (23 October 2026)
+
+`dist/assets/portraits/` contains ten new, locally authored vector interpretations of fictional characters. They are not performer likenesses, historical images or illustrations attributed to Hugo. See `CHARACTER_PORTRAITS.md` for provenance. The existing named social-sharing covers remain separate and unchanged.

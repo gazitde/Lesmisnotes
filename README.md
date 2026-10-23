@@ -73,3 +73,7 @@ Automated rendering/data/security tests do not replace physical-device, screen-r
 ## Optional analytics
 
 GA4 measurement ID `G-FWWTDG9CHN` is configured. Enhanced Measurement was verified disabled in GA Admin on 11 October 2026. Analytics requires a separate visitor opt-in. See [the activation checklist, privacy controls, tests and event taxonomy](docs/ANALYTICS.md). Never paste an unconditional tag into the page.
+
+## October 2026 clarity and visual pass
+
+Six clearly named navigation hubs lead to the existing pages without removing deep links. The footer provides those hubs and the complete sitemap rather than repeating the full directory. Home discovery surfaces quizzes and dilemmas beside the places and recipes. Original lightweight vector portraits enrich the existing relationship graph, safe introductions and character profiles; their provenance is recorded in `docs/CHARACTER_PORTRAITS.md`.

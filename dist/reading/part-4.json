@@ -135,7 +135,8 @@
           },
           "requiresFullSpoilers": true
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER I—WELL CUT"
     },
     {
       "id": "p4-b1-c2",
@@ -157,7 +158,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—BADLY SEWED"
     },
     {
       "id": "p4-b1-c3",
@@ -177,7 +179,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0225"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—LOUIS PHILIPPE"
     },
     {
       "id": "p4-b1-c4",
@@ -191,7 +194,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—CRACKS BENEATH THE FOUNDATION"
     },
     {
       "id": "p4-b1-c5",
@@ -211,7 +215,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0227"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—FACTS WHENCE HISTORY SPRINGS AND WHICH HISTORY IGNORES"
     },
     {
       "id": "p4-b1-c6",
@@ -225,7 +230,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—ENJOLRAS AND HIS LIEUTENANTS"
     },
     {
       "id": "p4-b2-c1",
@@ -239,7 +245,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—THE LARK’S MEADOW"
     },
     {
       "id": "p4-b2-c2",
@@ -259,7 +266,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0230"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—EMBRYONIC FORMATION OF CRIMES IN THE INCUBATION OF PRISONS"
     },
     {
       "id": "p4-b2-c3",
@@ -281,7 +289,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—APPARITION TO FATHER MABEUF"
     },
     {
       "id": "p4-b2-c4",
@@ -304,7 +313,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—AN APPARITION TO MARIUS"
     },
     {
       "id": "p4-b3-c1",
@@ -334,7 +344,8 @@
           "requiresFullSpoilers": true,
           "place": "rue-plumet"
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER I—THE HOUSE WITH A SECRET"
     },
     {
       "id": "p4-b3-c2",
@@ -356,7 +367,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—JEAN VALJEAN AS A NATIONAL GUARD"
     },
     {
       "id": "p4-b3-c3",
@@ -370,7 +382,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—FOLIIS AC FRONDIBUS"
     },
     {
       "id": "p4-b3-c4",
@@ -384,7 +397,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—CHANGE OF GATE"
     },
     {
       "id": "p4-b3-c5",
@@ -398,7 +412,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—THE ROSE PERCEIVES THAT IT IS AN ENGINE OF WAR"
     },
     {
       "id": "p4-b3-c6",
@@ -422,7 +437,8 @@
           "requiresFullSpoilers": true,
           "place": "luxembourg"
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER VI—THE BATTLE BEGUN"
     },
     {
       "id": "p4-b3-c7",
@@ -444,7 +460,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VII—TO ONE SADNESS OPPOSE A SADNESS AND A HALF"
     },
     {
       "id": "p4-b3-c8",
@@ -464,7 +481,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0240"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VIII—THE CHAIN-GANG"
     },
     {
       "id": "p4-b4-c1",
@@ -486,7 +504,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—A WOUND WITHOUT, HEALING WITHIN"
     },
     {
       "id": "p4-b4-c2",
@@ -508,7 +527,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—MOTHER PLUTARQUE FINDS NO DIFFICULTY IN EXPLAINING A PHENOMENON"
     },
     {
       "id": "p4-b5-c1",
@@ -522,7 +542,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—SOLITUDE AND THE BARRACKS COMBINED"
     },
     {
       "id": "p4-b5-c2",
@@ -536,7 +557,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—COSETTE’S APPREHENSIONS"
     },
     {
       "id": "p4-b5-c3",
@@ -556,7 +578,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0245"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—ENRICHED WITH COMMENTARIES BY TOUSSAINT"
     },
     {
       "id": "p4-b5-c4",
@@ -570,7 +593,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—A HEART BENEATH A STONE"
     },
     {
       "id": "p4-b5-c5",
@@ -593,7 +617,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—COSETTE AFTER THE LETTER"
     },
     {
       "id": "p4-b5-c6",
@@ -616,7 +641,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—OLD PEOPLE ARE MADE TO GO OUT OPPORTUNELY"
     },
     {
       "id": "p4-b6-c1",
@@ -636,7 +662,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0249"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—THE MALICIOUS PLAYFULNESS OF THE WIND"
     },
     {
       "id": "p4-b6-c2",
@@ -674,7 +701,8 @@
           "requiresFullSpoilers": true,
           "place": "bastille"
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER II—IN WHICH LITTLE GAVROCHE EXTRACTS PROFIT FROM NAPOLEON THE GREAT"
     },
     {
       "id": "p4-b6-c3",
@@ -696,7 +724,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—THE VICISSITUDES OF FLIGHT"
     },
     {
       "id": "p4-b7-c1",
@@ -718,7 +747,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—ORIGIN"
     },
     {
       "id": "p4-b7-c2",
@@ -738,7 +768,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0253"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—ROOTS"
     },
     {
       "id": "p4-b7-c3",
@@ -752,7 +783,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—SLANG WHICH WEEPS AND SLANG WHICH LAUGHS"
     },
     {
       "id": "p4-b7-c4",
@@ -766,7 +798,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—THE TWO DUTIES: TO WATCH AND TO HOPE"
     },
     {
       "id": "p4-b8-c1",
@@ -786,7 +819,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0256"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—FULL LIGHT"
     },
     {
       "id": "p4-b8-c2",
@@ -800,7 +834,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—THE BEWILDERMENT OF PERFECT HAPPINESS"
     },
     {
       "id": "p4-b8-c3",
@@ -822,7 +857,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—THE BEGINNING OF SHADOW"
     },
     {
       "id": "p4-b8-c4",
@@ -844,7 +880,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—A CAB RUNS IN ENGLISH AND BARKS IN SLANG"
     },
     {
       "id": "p4-b8-c5",
@@ -858,7 +895,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—THINGS OF THE NIGHT"
     },
     {
       "id": "p4-b8-c6",
@@ -872,7 +910,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—MARIUS BECOMES PRACTICAL ONCE MORE TO THE EXTENT OF GIVING COSETTE HIS ADDRESS"
     },
     {
       "id": "p4-b8-c7",
@@ -886,7 +925,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VII—THE OLD HEART AND THE YOUNG HEART IN THE PRESENCE OF EACH OTHER"
     },
     {
       "id": "p4-b9-c1",
@@ -908,7 +948,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—JEAN VALJEAN"
     },
     {
       "id": "p4-b9-c2",
@@ -930,7 +971,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—MARIUS"
     },
     {
       "id": "p4-b9-c3",
@@ -952,7 +994,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—M. MABEUF"
     },
     {
       "id": "p4-b10-c1",
@@ -966,7 +1009,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—THE SURFACE OF THE QUESTION"
     },
     {
       "id": "p4-b10-c2",
@@ -980,7 +1024,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—THE ROOT OF THE MATTER"
     },
     {
       "id": "p4-b10-c3",
@@ -1010,7 +1055,8 @@
           "requiresFullSpoilers": true,
           "place": "pont-austerlitz"
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER III—A BURIAL; AN OCCASION TO BE BORN AGAIN"
     },
     {
       "id": "p4-b10-c4",
@@ -1030,7 +1076,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0269"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—THE EBULLITIONS OF FORMER DAYS"
     },
     {
       "id": "p4-b10-c5",
@@ -1044,7 +1091,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—ORIGINALITY OF PARIS"
     },
     {
       "id": "p4-b11-c1",
@@ -1077,7 +1125,8 @@
           "en": "Read the French original"
         }
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—SOME EXPLANATIONS WITH REGARD TO THE ORIGIN OF GAVROCHE’S POETRY. THE INFLUENCE OF AN ACADEMICIAN ON THIS POETRY"
     },
     {
       "id": "p4-b11-c2",
@@ -1091,7 +1140,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—GAVROCHE ON THE MARCH"
     },
     {
       "id": "p4-b11-c3",
@@ -1113,7 +1163,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—JUST INDIGNATION OF A HAIR-DRESSER"
     },
     {
       "id": "p4-b11-c4",
@@ -1127,7 +1178,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—THE CHILD IS AMAZED AT THE OLD MAN"
     },
     {
       "id": "p4-b11-c5",
@@ -1149,7 +1201,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—THE OLD MAN"
     },
     {
       "id": "p4-b11-c6",
@@ -1163,7 +1216,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—RECRUITS"
     },
     {
       "id": "p4-b12-c1",
@@ -1193,7 +1247,8 @@
           "requiresFullSpoilers": true,
           "place": "chanvrerie"
         }
-      ]
+      ],
+      "sourceTitle": "CHAPTER I—HISTORY OF CORINTHE FROM ITS FOUNDATION"
     },
     {
       "id": "p4-b12-c2",
@@ -1215,7 +1270,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—PRELIMINARY GAYETIES"
     },
     {
       "id": "p4-b12-c3",
@@ -1229,7 +1285,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—NIGHT BEGINS TO DESCEND UPON GRANTAIRE"
     },
     {
       "id": "p4-b12-c4",
@@ -1243,7 +1300,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—AN ATTEMPT TO CONSOLE THE WIDOW HUCHELOUP"
     },
     {
       "id": "p4-b12-c5",
@@ -1265,7 +1323,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—PREPARATIONS"
     },
     {
       "id": "p4-b12-c6",
@@ -1279,7 +1338,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—WAITING"
     },
     {
       "id": "p4-b12-c7",
@@ -1301,7 +1361,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VII—THE MAN RECRUITED IN THE RUE DES BILLETTES"
     },
     {
       "id": "p4-b12-c8",
@@ -1321,7 +1382,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0284"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VIII—MANY INTERROGATION POINTS WITH REGARD TO A CERTAIN LE CABUC WHOSE NAME MAY NOT HAVE BEEN LE CABUC"
     },
     {
       "id": "p4-b13-c1",
@@ -1343,7 +1405,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—FROM THE RUE PLUMET TO THE QUARTIER SAINT-DENIS"
     },
     {
       "id": "p4-b13-c2",
@@ -1357,7 +1420,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—AN OWL’S VIEW OF PARIS"
     },
     {
       "id": "p4-b13-c3",
@@ -1379,7 +1443,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—THE EXTREME EDGE"
     },
     {
       "id": "p4-b14-c1",
@@ -1401,7 +1466,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—THE FLAG: ACT FIRST"
     },
     {
       "id": "p4-b14-c2",
@@ -1423,7 +1489,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—THE FLAG: ACT SECOND"
     },
     {
       "id": "p4-b14-c3",
@@ -1437,7 +1504,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—GAVROCHE WOULD HAVE DONE BETTER TO ACCEPT ENJOLRAS’ CARBINE"
     },
     {
       "id": "p4-b14-c4",
@@ -1459,7 +1527,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—THE BARREL OF POWDER"
     },
     {
       "id": "p4-b14-c5",
@@ -1482,7 +1551,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER V—END OF THE VERSES OF JEAN PROUVAIRE"
     },
     {
       "id": "p4-b14-c6",
@@ -1504,7 +1574,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VI—THE AGONY OF DEATH AFTER THE AGONY OF LIFE"
     },
     {
       "id": "p4-b14-c7",
@@ -1527,7 +1598,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER VII—GAVROCHE AS A PROFOUND CALCULATOR OF DISTANCES"
     },
     {
       "id": "p4-b15-c1",
@@ -1555,7 +1627,8 @@
         },
         "sourceUrl": "https://www.gutenberg.org/cache/epub/135/pg135-images.html#link2HCH0295"
       },
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER I—A DRINKER IS A BABBLER"
     },
     {
       "id": "p4-b15-c2",
@@ -1577,7 +1650,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER II—THE STREET URCHIN AN ENEMY OF LIGHT"
     },
     {
       "id": "p4-b15-c3",
@@ -1599,7 +1673,8 @@
         }
       },
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER III—WHILE COSETTE AND TOUSSAINT ARE ASLEEP"
     },
     {
       "id": "p4-b15-c4",
@@ -1613,7 +1688,8 @@
       },
       "reminder": null,
       "fact": null,
-      "links": []
+      "links": [],
+      "sourceTitle": "CHAPTER IV—GAVROCHE’S EXCESS OF ZEAL"
     }
   ]
 }

@@ -11,7 +11,7 @@ function boot(lang='en',spoiler=false){
  c.external=(url,label)=>'<a href="'+url+'" target="_blank" rel="noopener noreferrer">'+label+'</a>';
  c.bookmarkControl=()=>'';c.top=()=>'';c.selectedReading=()=>null;c.musicFormPrimer=()=>'';c.sourceDisclosure=()=>'';c.banner=()=>'<p>spoilers on</p>';
  c.showJourney=()=>c.musicalJourneyHebrewPick('one-day-more')+['bring-him-home','dreamed-dream','empty-chairs'].map(id=>c.musicalJourneyPerformanceComparison(id)).join('');
- for(const name of ['hebrewRadioPerformance','musicalJourneyHebrewPick','musicalJourneyPerformanceComparison','musicalJourneyOrientation','musicalJourneyOpening','musicalJourneyPage'])vm.runInContext(functionSource(name),c);
+ for(const name of ['safeMusicalPreview','hebrewRadioPerformance','musicalJourneyHebrewPick','musicalJourneyPerformanceComparison','musicalJourneyOrientation','musicalJourneyOpening','musicalJourneyPage'])vm.runInContext(functionSource(name),c);
  return c;
 }
 for(const lang of ['he','en']){

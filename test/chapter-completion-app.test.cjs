@@ -76,3 +76,34 @@ test('ordinary rejection still applies in-memory privacy cleanup when consent pe
  assert.equal(api.chapterCompletion.snapshot().count,0);
  assert.match(app.innerHTML,/data-completion-progress max="365" value="0"/);
 });
+
+for(const language of ['he','en'])test(`reader counts distinguish the selected route from Hugo's complete structure (${language})`,()=>{
+ const {api,app}=boot(language);
+ for(const [part,selected,total] of [[2,7,8],[4,14,15],[5,8,9]]){
+  api.navigateReader(`/${language}/novel-journey/?focus=part%3Ap${part}`);
+  assert.match(app.innerHTML,new RegExp(language==='he'?`${selected} מתוך ${total} ספרים`:`${selected} OF ${total} BOOKS`));
+  api.navigateReader(`/${language}/novel-journey/?focus=part%3Ap${part}&essays=all`);
+  assert.match(app.innerHTML,new RegExp(language==='he'?`${total} ספרים ברומן המלא`:`${total} BOOKS IN THE COMPLETE NOVEL`));
+ }
+});
+
+for(const language of ['he','en'])test(`reading progress is visible before chapter selection, without duplicate controls (${language})`,()=>{
+ const {api,app}=boot(language);
+ for(const href of [`/${language}/novel-journey/`,`/${language}/novel-journey/?focus=chapter%3Ap1-b1-c1`]){
+  api.navigateReader(href);
+  const html=app.innerHTML;
+  assert.equal((html.match(/id="chapter-progress-title"/g)||[]).length,1);
+  assert.ok(html.indexOf('class="chapter-progress"') < html.indexOf('id="reading-current"'));
+  assert.ok(html.indexOf('data-completion-progress') < html.indexOf('class="reader-settings"'));
+ }
+});
+
+for(const language of ['he','en'])test(`exact English source heading enriches only the selected chapter (${language})`,()=>{
+ const {api,app}=boot(language);
+ api.navigateReader(api.readingHref('chapter','p1-b1-c1'));
+ assert.match(app.innerHTML,/<span lang="en" dir="ltr">CHAPTER I—M\. MYRIEL<\/span>/);
+ assert.ok(app.innerHTML.includes(language==='he'?'שם הפרק בתרגום האנגלי':'Chapter heading in Isabel Hapgood'));
+ assert.equal((app.innerHTML.match(/class="chapter-source-title"/g)||[]).length,1);
+ api.navigateReader(api.readingHref('book','p1-b1'));
+ assert.ok(!app.innerHTML.includes('class="chapter-source-title"'),'Opening a Book does not silently expose future source headings');
+});
