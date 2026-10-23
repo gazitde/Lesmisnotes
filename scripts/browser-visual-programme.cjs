@@ -21,6 +21,10 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
     check(await page.locator('.path-card').count()===2,'Two audience doors remain');
     check(await page.locator('.hero-art img').getAttribute('src')==='/assets/paris-frontispiece.svg','Original local frontispiece loads');
     check(await page.locator('.home-discovery-door').count()===4,'All four discovery features remain');
+    const discoveryPhoto=page.locator('.home-discovery-card:first-child img');
+    await discoveryPhoto.scrollIntoViewIfNeeded();
+    await discoveryPhoto.evaluate(e=>e.decode());
+    check(await discoveryPhoto.evaluate(e=>e.complete&&e.naturalWidth>0),'Discovery photo loads when reached');
     for(const selector of ['.hero-copy h1','.path-card h3','.home-discovery-door h3']){
      for(const item of await page.locator(selector).all())check(await item.evaluate(e=>e.scrollWidth<=e.clientWidth+1),'Editorial headings fit their columns');
     }
@@ -39,6 +43,7 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=path.join(pr
     check(selectedColors.text==='rgb(255, 253, 247)'&&selectedColors.background==='rgb(23, 43, 59)','Selected character retains readable contrast');
     check(await page.locator('.graph-zone').first().evaluate(e=>getComputedStyle(e).opacity)==='1','Category opacity does not fade its text');
    }
+   await page.locator('#toast.visible').waitFor({state:'hidden'});
    await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(dir,`${lang}-${route}-${width}.png`),fullPage:route==='home'});
   }
   check(errors.length===0,'No JavaScript exceptions');await context.close();
