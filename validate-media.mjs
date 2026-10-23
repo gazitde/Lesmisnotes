@@ -53,7 +53,7 @@ function mediaHarness(source = mediaSource, { apiReady = true, autoReady = true 
         destroy() { this.destroyed++; iframe.isConnected = false; },
         ready() { config.events.onReady({ target: this }); },
         playEvent() { config.events.onStateChange({ data: 1, target: this }); },
-        errorEvent() { config.events.onError({ data: 100, target: this }); },
+        errorEvent(code = 100) { config.events.onError({ data: code, target: this }); },
       };
       instances.push(player);
       if (autoReady) player.ready();
@@ -99,7 +99,7 @@ await staleStateCase(); checks++;
   state.instances[0].errorEvent();
   assert.equal(status.textContent, 'unchanged', 'A stale error must not write a status message');
   state.instances[1].errorEvent();
-  assert.match(state.nodes.get('video-status-new').textContent, /could not load/, 'A current error must still provide its fallback');
+  assert.match(state.nodes.get('video-status-new').textContent, /unavailable on YouTube/, 'A current error must still provide its fallback');
   checks++;
 }
 {
@@ -181,7 +181,7 @@ await staleStateCase(); checks++;
  assert.equal(state.instances.length,2);assert.notEqual(state.instances[0].iframe.id,state.instances[1].iframe.id);
  state.instances[1].playEvent();assert.equal(state.instances[0].paused,1);assert.equal(state.instances[1].paused,0);
  assert.equal(state.tracks[0][1].video_id,'old');state.instances[1].errorEvent();
- assert.match(state.nodes.get('video-status-old-copy').textContent,/could not load/);assert.equal(state.nodes.get('video-status-old').textContent,'');
+ assert.match(state.nodes.get('video-status-old-copy').textContent,/unavailable on YouTube/);assert.equal(state.nodes.get('video-status-old').textContent,'');
  state.clearPlayers();assert.ok(state.instances.every(p=>p.destroyed===1));checks+=8;
 }
 // Partial song replacement releases detached players before the same slot is reused.

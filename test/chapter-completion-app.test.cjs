@@ -107,3 +107,26 @@ for(const language of ['he','en'])test(`exact English source heading enriches on
  api.navigateReader(api.readingHref('book','p1-b1'));
  assert.ok(!app.innerHTML.includes('class="chapter-source-title"'),'Opening a Book does not silently expose future source headings');
 });
+
+for(const language of ['he','en'])test(`Hebrew reading links are discoverable, accurately scoped and do not replace exact English chapters (${language})`,()=>{
+ const {api,app,disk,session}=boot(language);
+ const volumes=['https://benyehuda.org/read/43076','https://benyehuda.org/read/43194'];
+ for(const href of [`/${language}/novel-journey/`,api.readingHref('chapter','p1-b1-c1')]){
+  api.navigateReader(href);
+  const html=app.innerHTML;
+  for(const url of [...volumes,'https://benyehuda.org/read/43193']){
+   assert.ok(html.includes(`href="${url}" target="_blank" rel="noopener noreferrer"`));
+   assert.ok(!html.includes(url+'#'),'No guessed chapter anchors');
+  }
+  assert.ok(html.includes(language==='he'?'מקוצר, וחלוקת הפרקים ומספורם שונים':'abridged, with chapter divisions and numbering that differ'));
+  assert.ok(html.includes(`href="/${language}/israel/#israel-read-in-hebrew"`));
+  assert.equal((html.match(/class="reader-hebrew-edition(?: reader-hebrew-compact)?"/g)||[]).length,1);
+  assert.equal(api.spoiler(),false);
+  assert.equal(disk.has('barricade-last-reading'),false);
+  assert.notEqual(session.get('barricade-spoilers'),'on');
+ }
+ assert.match(app.innerHTML,/<details class="reader-hebrew-edition reader-hebrew-compact">/,'A focused chapter keeps the edition choice compact');
+ assert.match(app.innerHTML,/href="https:\/\/www\.gutenberg\.org\/cache\/epub\/135\/pg135-images\.html#link2HCH0001"/);
+ api.navigateReader(api.readingHref('book','p1-b1'));
+ assert.equal((app.innerHTML.match(/reader-hebrew-compact/g)||[]).length,0,'Do not repeat an edition panel for every chapter in a Book');
+});

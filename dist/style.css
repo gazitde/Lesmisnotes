@@ -302,3 +302,12 @@
 @media(max-width:680px){.safe-character-card{grid-template-columns:76px minmax(0,1fr);gap:14px}.character-portrait{width:76px;height:76px}.profile-emblem:has(.profile-portrait){width:100px;height:100px;flex-basis:100px}.footer-hubs{gap:6px 18px}.graph-node .graph-dot{width:48px;height:48px}}
 @media(forced-colors:active){.graph-node.selected .graph-dot{outline-color:Highlight}.character-portrait{border-color:CanvasText}}
 @media(max-width:960px){.header .nav-group-button{white-space:normal}}
+
+/* Quiz reset is deliberately separate from progression and global privacy controls. */
+@layer components{
+.quiz-reset-tools{margin-top:24px;padding-top:18px;border-top:1px solid #cbd7f1}
+.quiz-reset-tools>button{min-height:44px}
+.quiz-reset-tools>p:empty{display:none}
+.quiz-reset-tools>p{margin-top:8px;max-width:72ch;line-height:1.7}
+.video-recovery{margin-block:10px;font-size:.9rem;line-height:1.6}
+}
