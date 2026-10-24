@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title"><title id="title">LesMisNotes · Read the novel. Find your way. / קוראים את הרומן. מוצאים את הדרך.</title>
+<rect width="1200" height="630" fill="#f8f5ee"/><path d="M0 0h1200v7H0z" fill="#172b3b"/>
+<text x="64" y="92" font-family="Georgia, serif" font-size="43" font-weight="bold" letter-spacing="-2" fill="#172b3b">LesMis<tspan fill="#a33443">Notes</tspan></text>
+<text x="65" y="155" font-family="DejaVu Sans, sans-serif" font-size="17" letter-spacing="2" fill="#7d5147">LES MISÉRABLES · עלובי החיים</text>
+<g font-family="Georgia, serif" font-size="56" fill="#172b3b"><text x="63" y="235">Read the novel.</text><text x="63" y="301">Find your way.</text></g>
+<g font-family="Noto Sans Hebrew, DejaVu Sans, sans-serif" font-size="36" fill="#a33443" direction="rtl" text-anchor="start"><text x="688" y="366">קוראים את הרומן.</text><text x="688" y="414">מוצאים את הדרך.</text></g>
+<path d="M64 466h628" stroke="#c5beae"/><text x="64" y="510" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#596166">An independent guide · English &amp; Hebrew</text>
+<text x="64" y="559" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#172b3b">lesmisnotes.com</text><rect x="770" y="45" width="365" height="490" fill="#eae2d1"/><rect x="786" y="61" width="333" height="458" fill="none" stroke="#b8a789"/><text x="952" y="153" text-anchor="middle" font-family="Georgia, serif" font-size="23" letter-spacing="5" fill="#665744">I · II · III · IV · V</text><svg x="783" y="200" width="339" height="210" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" fill="none">
+<defs><pattern id="paper" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M1 1h1M5 5h1" stroke="#786346" stroke-opacity=".15"/></pattern><linearGradient id="light"><stop stop-color="#e9dcc0"/><stop offset="1" stop-color="#faf3e5"/></linearGradient></defs>
+<path fill="url(#light)" d="M0 0h760v360H0z"/><circle cx="572" cy="91" r="49" fill="#f9f3e7"/>
+<g stroke="#9c8b6f" opacity=".48"><path d="M0 265h760M0 275h760M0 285h760M0 295h760M0 305h760M0 315h760M0 325h760M0 335h760"/><path d="M34 265V150h65v115m-50-115v-25h34v25m30 115V191h61v74m25 0V133l38-33 38 33v132m18 0V161h68v104m172 0V165h54v100m19 0V129l34-29 34 29v136m26 0V187h58v78m22 0V147h46v118"/></g>
+<path d="M125 281c86-25 170-16 255 22 84-38 168-47 255-22l-21 38c-79-14-156-7-234 23-78-30-155-37-234-23z" fill="#584737"/>
+<path d="M147 139c83-19 161-5 233 40 72-45 150-59 233-40l22 142c-86-24-171-9-255 34-84-43-169-58-255-34z" fill="#fff9ed" stroke="#68543e" stroke-width="3"/>
+<path d="M380 179v136M158 155c70-14 139 0 207 39m30 0c68-39 137-53 207-39" stroke="#ab9679" stroke-width="2"/>
+<g stroke="#b5a082" stroke-width="2"><path d="M160 180c66-11 130 2 192 35m-195-17c66-11 130 2 195 35m-197-17c66-11 130 2 197 35m-199-17c66-11 130 2 199 35m56-54c62-33 126-46 192-35m-192 53c65-33 129-46 195-35m-195 53c67-33 131-46 197-35m-197 53c69-33 133-46 199-35"/></g>
+<path d="M377 180h6v137l-3 25-3-25z" fill="#a72b35"/>
+<path d="M528 61c-18 21-28 44-30 70 25-16 42-40 45-76-16 5-28 16-36 31" fill="#29384b"/><path d="m534 68-43 80" stroke="#29384b" stroke-width="3"/>
+<path d="M0 0h760v360H0z" fill="url(#paper)"/>
+</svg>
+<path d="M876 447h153" stroke="#a33443"/><path d="m952 438 9 9-9 9-9-9z" fill="#a33443"/>
+<path d="M64 597h1071" stroke="#d8d3c7"/>
+</svg>

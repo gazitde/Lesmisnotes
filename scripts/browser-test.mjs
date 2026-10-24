@@ -4,7 +4,7 @@ import fs from 'node:fs';
 const require=createRequire(import.meta.url);
 const {chromium}=require('playwright');
 const port='8873',base='http://127.0.0.1:'+port;
-const env={...process.env,PORT:port,SEARCH_TEST_URL:base,SEARCH_ARTIFACT_DIR:'test-results',CHROMIUM_PATH:chromium.executablePath(),RUN_CONTACT_BROWSER_TEST:'1',CONTACT_ENABLED:'false'};
+const env={...process.env,PORT:port,SEARCH_TEST_URL:base,SEARCH_ARTIFACT_DIR:'test-results',CHROMIUM_PATH:process.env.CHROMIUM_PATH||chromium.executablePath(),RUN_CONTACT_BROWSER_TEST:'1',CONTACT_ENABLED:'false'};
 fs.mkdirSync('test-results',{recursive:true});
 const failures=[];
 const server=spawn(process.execPath,['scripts/serve.mjs'],{env,stdio:'inherit'});
@@ -19,6 +19,8 @@ try{
   await run(['scripts/browser-stars-comparison.cjs']);
   await run(['scripts/browser-journey-ending.cjs']);
   await run(['scripts/browser-search-intent.cjs']);
+  await run(['scripts/browser-search-discovery.cjs']);
+  await run(['scripts/browser-sharing-metadata.cjs']);
   await run(['scripts/browser-editorial-rhythm.cjs']);
   await run(['scripts/browser-visual-programme.cjs']);
   await run(['scripts/browser-journey-pages.cjs']);

@@ -8,6 +8,19 @@
       "description": {
         "en": "Read Hugo chapter by chapter, explore character relationships and compare musical performances, concerts and films. An independent English and Hebrew guide.",
         "he": "קראו את הוגו פרק אחר פרק, הכירו את קשרי הדמויות והשוו ביצועי מחזמר, קונצרטים וסרטים. מדריך עצמאי בעברית ובאנגלית."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "A great story.",
+            "A world to explore."
+          ],
+          "he": [
+            "סיפור גדול.",
+            "עולם שלם לגלות."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "before": {
@@ -18,6 +31,18 @@
       "description": {
         "he": "היכרות חמה עם הסיפור והדמויות, טיפים להקשבה, משך ההצגה ושיקולים לילדים ולמושבים. מידע לונדון מסומן עם מקורות.",
         "en": "A welcoming introduction to the story, listening tips, family content guidance and seat considerations. London-specific visitor information is clearly sourced."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Before the",
+            "curtain rises."
+          ],
+          "he": [
+            "לפני שהמסך עולה."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "after": {
@@ -28,6 +53,18 @@
       "description": {
         "he": "מסלול אישי לחזור לרגעים, להקשיב שוב ולבחון דילמות. פרטי העלילה והסיום נפתחים רק לאחר אישור ספוילרים.",
         "en": "Revisit moments, listen again and explore dilemmas after watching. Plot details and endings open only after explicit spoiler consent."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "After the",
+            "final note."
+          ],
+          "he": [
+            "אחרי הצליל האחרון."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "hugo": {
@@ -38,6 +75,19 @@
       "description": {
         "he": "הכירו את ויקטור הוגו, שנות כתיבת עלובי החיים, הגלות, הפרסום והרעיונות שמאחורי הספר. סקירה מקורית עם מקורות.",
         "en": "Meet Victor Hugo through the writing, exile, publication and ideas behind Les Misérables. Original introductory writing with source links."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Inside the world",
+            "of Victor Hugo."
+          ],
+          "he": [
+            "בעולמו של",
+            "ויקטור הוגו."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "novel": {
@@ -48,6 +98,19 @@
       "description": {
         "he": "בחרו במלווה הקריאה הממוקד, או פתחו בנפרד רענון של הרומן המלא. מסלול הקריאה הראשי כולל 333 פרקים וכל 365 הפרקים זמינים עם ההרחבות.",
         "en": "Enter the focused chapter companion, or separately open a recap of the complete novel. The main reading route has 333 chapters; all 365 are available with optional essays."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Read the novel.",
+            "Find your way."
+          ],
+          "he": [
+            "קוראים את הרומן.",
+            "מוצאים את הדרך."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "musical": {
@@ -58,6 +121,19 @@
       "description": {
         "he": "גלו כיצד נוצר המחזמר, הכירו את היוצרים והשוו הקלטות. מסע עצמאי משיר לשיר מחכה בדף ייעודי, עם פרטי עלילה שנפתחים רק בבחירה.",
         "en": "Explore how the musical was made, meet its creators and compare recordings. A dedicated song-by-song journey keeps plot details behind your spoiler choice."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "From page",
+            "to stage."
+          ],
+          "he": [
+            "מהספר",
+            "אל הבמה."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "story": {
@@ -68,6 +144,19 @@
       "description": {
         "he": "מסלול ברור בשמונה תחנות של עלילת המחזמר, עם דמויות, שאלות וקישורי מקורות. פרטי העלילה מוסתרים עד לבחירתכם.",
         "en": "Follow the stage musical in eight story chapters with characters, questions and sources. Detailed plot content remains hidden until you choose to reveal it."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "The story,",
+            "at your pace."
+          ],
+          "he": [
+            "הסיפור,",
+            "בקצב שלכם."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "characters": {
@@ -78,6 +167,19 @@
       "description": {
         "he": "מי הם ז׳אן ולז׳אן, ז׳אבר, פנטין, קוזט, אפונין וגברוש? הכירו את דמויות עלובי החיים בספר ובמחזמר, עם דפים אישיים, מפת קשרים ושליטה בספוילרים.",
         "en": "Who are Jean Valjean, Javert, Fantine, Cosette, Éponine and Gavroche? Meet the Les Misérables characters through individual guides and a spoiler-aware relationship map."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Meet the",
+            "characters."
+          ],
+          "he": [
+            "מכירים את",
+            "הדמויות."
+          ]
+        },
+        "artwork": "portraits"
       }
     },
     "map": {
@@ -88,6 +190,19 @@
       "description": {
         "he": "מפה גאוגרפית של תשעה מקומות אמיתיים מן הרומן, לצד אטלס סיפור מאויר של צרפת ופריז. תצלומים, הקשר היסטורי וספוילרים לבחירה.",
         "en": "Explore nine real places named in the novel on a geographic map, alongside an illustrated France and Paris story atlas. Photographs, historical context and optional spoilers."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Follow the story",
+            "through France."
+          ],
+          "he": [
+            "בעקבות הסיפור",
+            "ברחבי צרפת."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "history": {
@@ -98,6 +213,19 @@
       "description": {
         "he": "המתרס בעלובי החיים קשור למרד יוני 1832 בפריז, לא למהפכה הצרפתית של 1789. ציר זמן עם מקורות מסביר את נפוליאון, הרסטורציה והאירועים שמאחורי הרומן.",
         "en": "The Les Misérables barricade belongs to Paris’s June 1832 uprising, not the French Revolution of 1789. Explore a sourced timeline of the history behind the novel."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Paris. 1832.",
+            "The real history."
+          ],
+          "he": [
+            "פריז. 1832.",
+            "ההיסטוריה האמיתית."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "ideas": {
@@ -108,6 +236,19 @@
       "description": {
         "he": "חמש דילמות, עמדות שונות ומעבדת בימוי אינטראקטיבית. שאלות מקוריות לחשיבה על הספר והמחזמר, ללא תשובה מוכתבת.",
         "en": "Explore five dilemmas, contrasting perspectives and an interactive directing lab. Original questions about the novel and musical, without prescribed answers."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Law. Mercy.",
+            "A choice to make."
+          ],
+          "he": [
+            "חוק. חמלה.",
+            "בחירה לעשות."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "quiz": {
@@ -118,6 +259,19 @@
       "description": {
         "he": "שני מסלולים של 25 שאלות, וגם מקצים של 5 או 10. הסברים, מקורות ותגים אישיים, עם שמירה מקומית ושליטה בספוילרים.",
         "en": "Two 25-question tracks, plus rounds of five or ten. Explanations, sources and achievement badges with local progress and spoiler consent."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "How well do you",
+            "know the story?"
+          ],
+          "he": [
+            "עד כמה אתם",
+            "מכירים את הסיפור?"
+          ]
+        },
+        "artwork": "book"
       }
     },
     "listening": {
@@ -128,6 +282,19 @@
       "description": {
         "en": "Explore Les Misérables stage performances, vocal-coach analyses, ensembles, surprises and comedy, with bilingual context, performer credits and original-source links.",
         "he": "גלו ביצועי במה של עלובי החיים, ניתוחים של מורי פיתוח קול, הרכבים, הפתעות והומור, עם רקע דו־לשוני, קרדיטים למבצעים וקישורים למקורות."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "One musical.",
+            "So many voices."
+          ],
+          "he": [
+            "מחזמר אחד.",
+            "כל כך הרבה קולות."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "compare": {
@@ -138,6 +305,19 @@
       "description": {
         "he": "שש בחירות עיבוד מוצגות זו לצד זו: מה השתנה, דוגמאות ופרשנות. השוואה לרומן ולמחזמר הבימתי, באישור ספוילרים.",
         "en": "Six adaptation choices shown side by side, with examples and interpretation. Compare Hugo’s novel with the stage musical after spoiler consent."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "The novel.",
+            "The musical."
+          ],
+          "he": [
+            "הרומן.",
+            "המחזמר."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "screen": {
@@ -148,6 +328,19 @@
       "description": {
         "he": "ציר זמן של עיבודים נבחרים, סרטונים רשמיים והקשר לכל גרסה. הבדלה ברורה בין המחזמר לבין עיבודים דרמטיים של הרומן.",
         "en": "A curated timeline of film and television versions, official videos and context. Clearly distinguishes the musical from dramatic adaptations of the novel."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "A story made",
+            "for the screen."
+          ],
+          "he": [
+            "סיפור שמגיע",
+            "אל המסך."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "tribute": {
@@ -169,6 +362,19 @@
       "description": {
         "he": "אתרי הפקות, הספר המקורי, מוזיאונים וקהילות, וגם מופע מחווה ועיבודים מפתיעים. לכל קישור הסבר ואיפה להתחיל.",
         "en": "Production sites, the original novel, museums and communities, plus a concert tribute and unusual adaptations. Every link explains why to visit and where to start."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Good sources.",
+            "New discoveries."
+          ],
+          "he": [
+            "מקורות טובים.",
+            "גילויים חדשים."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "about": {
@@ -179,6 +385,19 @@
       "description": {
         "he": "הקרדיטים, המקורות והבחירות העריכתיות של מדריך מעריצים עצמאי לעלובי החיים. פרטי פרטיות, זכויות ונגישות.",
         "en": "Credits, sources and editorial choices behind an independent Les Misérables fan guide, with privacy, rights and accessibility information."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "An independent",
+            "field guide."
+          ],
+          "he": [
+            "מדריך עצמאי",
+            "למסע שלכם."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "sitemap": {
@@ -189,6 +408,19 @@
       "description": {
         "he": "כל חלקי המדריך במקום אחד: הספר, המחזמר, הדמויות, המפה, ההיסטוריה והחידונים. ניווט לפי עניין וסימוני ספוילרים.",
         "en": "Find every part of the guide: novel, musical, characters, map, history and quizzes. Browse by interest with clear spoiler labels."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Your next",
+            "chapter starts here."
+          ],
+          "he": [
+            "הפרק הבא שלכם",
+            "מתחיל כאן."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "privacy": {
@@ -199,6 +431,19 @@
       "description": {
         "he": "מה נשמר בדפדפן, איך מדיה חיצונית וטופס הפנייה פועלים, וכיצד בוחרים מדידה ומשנים העדפות פרטיות.",
         "en": "What stays in your browser, how external media and the feedback form work, and how to manage optional measurement and privacy choices."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Your privacy.",
+            "Your choices."
+          ],
+          "he": [
+            "הפרטיות שלכם.",
+            "הבחירות שלכם."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "terms": {
@@ -209,6 +454,19 @@
       "description": {
         "he": "תנאי השימוש במדריך מעריצים עצמאי: תוכן, זכויות, קישורים, ספוילרים ומגבלות השירות.",
         "en": "Terms for an independent fan guide: content, rights, links, spoilers and service limitations."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "A clear guide",
+            "to using this site."
+          ],
+          "he": [
+            "מדריך ברור",
+            "לשימוש באתר."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "humor": {
@@ -230,6 +488,19 @@
       "description": {
         "he": "תשעה מקומות ששמם מופיע ברומן של הוגו, עם תצלומים, היסטוריה, הפניות מדויקות לפרקים ומפה גאוגרפית. פרטי העלילה לבחירה.",
         "en": "Nine places named in Hugo’s novel, with photographs, historical context, exact chapter references and a geographic map. Plot details are optional."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Real places.",
+            "A literary journey."
+          ],
+          "he": [
+            "מקומות אמיתיים.",
+            "מסע ספרותי."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "recipes": {
@@ -240,6 +511,19 @@
       "description": {
         "he": "תפריט דמיוני בהשראת הוגו: מרק לחם, ברי, דג, מאפה תפוחים וכיכר טחינה לבחירה. פרקים מדויקים, מקורות והוראות מקוריות בעברית ובאנגלית.",
         "en": "An imagined Hugo-inspired menu: bread soup, Brie, fish, apple pastry and an optional tahini loaf. Exact chapters, sources and original bilingual instructions."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Dinner at the",
+            "Thénardiers’ Inn."
+          ],
+          "he": [
+            "ארוחת ערב",
+            "אצל טנארדייה."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "contact": {
@@ -250,6 +534,19 @@
       "description": {
         "he": "יש תיקון, רעיון או משהו שהייתם רוצים לספר? אפשר לשלוח משוב על המדריך בעברית או באנגלית, בלי לפרסם את ההודעה.",
         "en": "Have a correction, idea or something to share? Send private feedback about the guide in Hebrew or English without publishing your message."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "A correction?",
+            "An idea? Let’s talk."
+          ],
+          "he": [
+            "תיקון? רעיון?",
+            "בואו נדבר."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "israel": {
@@ -260,6 +557,19 @@
       "description": {
         "he": "הפקות עלובי החיים בישראל, מדודו פישר לקאסט הבימה, תרגומי הספר לעברית וביצועים ישראליים עם מקורות וקישורים.",
         "en": "Explore Les Misérables in Israel, from Dudu Fisher and the Cameri to Habima, Hebrew book translations and Israeli performances with source links."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Les Misérables,",
+            "in Hebrew."
+          ],
+          "he": [
+            "עלובי החיים,",
+            "בעברית."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "watch": {
@@ -270,6 +580,19 @@
       "description": {
         "he": "בחרו בין הפקות בימתיות פעילות, הופעות שהוכרזו והקלטות. מידע מתוארך וקישורים למפיקים ולתיאטראות, בעברית ובאנגלית.",
         "en": "Find current stage productions, announced returns and recorded performances. Dated guidance with direct links to producers and theatres in English and Hebrew."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "Find your way",
+            "to the stage."
+          ],
+          "he": [
+            "מוצאים את הדרך",
+            "אל הבמה."
+          ]
+        },
+        "artwork": "paris"
       }
     },
     "special-events": {
@@ -297,6 +620,19 @@
       "description": {
         "he": "מלווה ממוקד לפרק שבו אתם קוראים: תקצירים, הקשרים, מעבר בין פרקים ושמירת התקדמות לפי בחירה. 333 פרקים במסלול הראשי וכל 365 הפרקים עם ההרחבות.",
         "en": "A focused companion to your current chapter: summaries, context, chapter navigation and optional saved progress. 333 chapters on the main path, all 365 with optional essays."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "A companion.",
+            "Chapter by chapter."
+          ],
+          "he": [
+            "מלווה לקריאה.",
+            "פרק אחר פרק."
+          ]
+        },
+        "artwork": "book"
       }
     },
     "musical-journey": {
@@ -307,6 +643,19 @@
       "description": {
         "he": "היכרות ללא ספוילרים, ואחריה מסע בין סצנות, ביצועים ושאלות להקשבה. העלילה המלאה, כולל הסיום, נפתחת רק באישור.",
         "en": "A spoiler-safe introduction, followed by scenes, performances and listening questions. The full plot, including the ending, opens only with consent."
+      },
+      "shareCard": {
+        "heading": {
+          "en": [
+            "A journey,",
+            "song by song."
+          ],
+          "he": [
+            "מסע,",
+            "משיר לשיר."
+          ]
+        },
+        "artwork": "paris"
       }
     }
   }
