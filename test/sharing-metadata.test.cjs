@@ -69,6 +69,19 @@ test('reader-mode metadata stays anonymous, including secure image URL after nav
  }
 });
 
+test('focused novel and musical views stay noindex while canonical guide pages remain indexable',()=>{
+ const update=fs.readFileSync('dist/app.js','utf8').split('\n').find(line=>line.startsWith('function updatePageMetadata()'));
+ for(const lang of ['he','en'])for(const route of ['novel','novel-journey','musical','musical-journey']){
+  const attrs=new Map(),location={search:''},scope={window:{...W,SITE_METADATA:{...M,private:false},location},location,lang,route,URLSearchParams,url:route=>`/${lang}/${route}/`,document:{querySelector:selector=>({setAttribute:(name,value)=>attrs.set(selector+'|'+name,value)}),getElementById:()=>null}};
+  vm.createContext(scope);vm.runInContext(update,scope);
+  for(const search of ['', '?focus=song%3Astars&view=journey', '?focus=', '']){
+   location.search=search;scope.updatePageMetadata();
+   assert.equal(attrs.get('meta[name=robots]|content'),search?'noindex, follow':'index, follow, max-image-preview:large');
+   if(M.origin)assert.equal(attrs.get('link[rel=canonical]|href'),`${M.origin}/${lang}/${route}/`);
+  }
+ }
+});
+
 test('preview, unconfigured and invalid-origin builds stay separated from production indexing',()=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'lesmis-seo-'));
  try{

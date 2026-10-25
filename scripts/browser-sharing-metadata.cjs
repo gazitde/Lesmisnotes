@@ -29,6 +29,14 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=process.env.
    check(!/Valjean|ולז/.test(await page.title()),'Reader context keeps title anonymous');
    check((await page.locator('meta[property="og:image:secure_url"]').getAttribute('content')).endsWith('/assets/social-card.png'),'Reader secure image stays anonymous');
    check(await page.locator('meta[name=robots]').getAttribute('content')==='noindex, follow','Reader route noindex');
+   await page.goto(`${base}/${lang}/musical/`);
+   const guideRobots=await page.locator('meta[name=robots]').getAttribute('content');
+   await page.locator('[data-featured-song]').first().click();
+   check(new URL(page.url()).searchParams.has('focus'),'Song control adds exact focus');
+   check(await page.locator('meta[name=robots]').getAttribute('content')==='noindex, follow','SPA song selection is noindex');
+   await page.locator('.musical-index a[data-page-section]').first().click();
+   check(!new URL(page.url()).searchParams.has('focus'),'Guide section clears song focus');
+   check(await page.locator('meta[name=robots]').getAttribute('content')===guideRobots,'SPA base guide restores original indexing policy');
   }
   for(const [asset,type] of [['/favicon.ico','image/x-icon'],['/favicon.svg','image/svg+xml'],['/favicon-96x96.png','image/png'],['/apple-touch-icon.png','image/png'],['/icon-192.png','image/png'],['/icon-512.png','image/png'],['/site.webmanifest','application/manifest+json']]){
    const response=await context.request.get(base+asset);check(response.ok(),'Asset 200 '+asset);check(response.headers()['content-type']?.startsWith(type),'Asset MIME '+asset);
