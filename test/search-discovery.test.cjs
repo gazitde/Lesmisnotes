@@ -39,3 +39,41 @@ test('Safe search still excludes concealed character details and full chapter su
 test('Unknown query remains honest with sitemap fallback, no invented approximate match',()=>{const result=find('xyzcossetxyz');assert.equal(result.total,0);const html=S.resultsHTML(result,'xyzcossetxyz','en');assert(html.includes('No results'));assert(html.includes('/en/sitemap/'));});
 
 test('Ambiguous fortieth-anniversary query keeps gala and album distinct',()=>{for(const lang of ['en','he']){const ids=find('40th anniversary',lang).results.slice(0,2).map(x=>x.doc.id);assert(ids.includes('event:gala-2025'));assert(ids.includes('event:album-2026'));}});
+
+// Search restores useful reading context, but optional listening help is a
+// separate reader choice, including after consent or a focused language change.
+for(const lang of ['he','en'])for(const mode of ['journey','spotlight','gated'])test(`${lang}/${mode}: song focus preserves optional pointer state`,()=>{
+ const spoiler=mode==='journey',key=mode==='gated'?'bargain':'stars';
+ const selector=spoiler?'#show-current-title':mode==='spotlight'?'#spotlight-title':'#musical-journey';
+ const makeDetails=(className,initial=false)=>{
+  let open=initial,writes=0;
+  return {get open(){return open},set open(value){open=value;writes++},get writes(){return writes},matches:selectors=>selectors.split(',').some(s=>s===`.${className}`)};
+ };
+ const hints=makeDetails('listening-pointers'),nestedHints=makeDetails('listening-pointers'),chosenHints=makeDetails('listening-pointers',true);
+ const sourceNotes=makeDetails('reading-sources'),bookStage=makeDetails('book-stage'),ordinaryReading=makeDetails('song-reading');
+ const details=[hints,nestedHints,chosenHints,sourceNotes,bookStage,ordinaryReading];
+ const readingRoot={querySelectorAll:s=>{assert.equal(s,'details');return details}};
+ let focusCalls=0,scrollCalls=0;
+ const attributes={};
+ const element={
+  ...readingRoot,
+  closest:s=>{assert.equal(s,'.show-slide,.spotlight-detail');return mode==='gated'?null:readingRoot},
+  setAttribute:(name,value)=>{attributes[name]=value},
+  focus:options=>{assert.equal(options.preventScroll,true);focusCalls++},
+  scrollIntoView:options=>{assert.equal(options.block,'start');scrollCalls++}
+ };
+ const c={window:{EXTRA_CONTENT:{musical:{spotlight:{songs:[{id:'stars'}]}}},document:{querySelector:s=>{assert.equal(s,selector);return element}}},URLSearchParams};
+ vm.createContext(c);vm.runInContext(fs.readFileSync('dist/search.js','utf8'),c);
+ const api=c.window.SiteSearch;
+ api.mount({lang,spoiler});api.focusTarget({kind:'song',key});
+ // A retained song focus is applied again when changing the selected language.
+ api.mount({lang:lang==='he'?'en':'he',spoiler});api.focusTarget({kind:'song',key});
+ assert.equal(hints.open,false,'Closed song/spotlight hints stay closed');
+ assert.equal(nestedHints.open,false,'Nested performance hints stay closed');
+ assert.equal(chosenHints.open,true,'Hints explicitly opened by the reader are not closed');
+ for(const hint of [hints,nestedHints,chosenHints])assert.equal(hint.writes,0,'Focus must not write optional hint state');
+ assert.equal(sourceNotes.open,false,'Existing source disclosure stays optional');
+ assert.equal(bookStage.open,false,'Existing book/stage disclosure stays optional');
+ assert.equal(ordinaryReading.open,true,'Ordinary reading context still opens');
+ assert.equal(attributes.tabindex,'-1');assert.equal(focusCalls,2);assert.equal(scrollCalls,2);
+});
