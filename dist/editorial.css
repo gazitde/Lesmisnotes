@@ -250,3 +250,10 @@ html[lang=he] .home-discovery-door h3 { font-family: LesMisHebrew, Arial, sans-s
   .dual-home .path-card:focus-visible { outline-color: Highlight; }
   .musical-journey-page .musical-journey-header:after { display: none; }
 }
+/* Optional listening support stays quiet until the reader asks for it. */
+.listening-pointers{margin-block:1rem;padding:.75rem 1rem;border:1px solid var(--line,#c9c1b3);border-radius:6px;background:var(--paper,#faf7ef);color:var(--ink,#172b3b);text-align:start;min-width:0}
+.listening-pointers>summary{cursor:pointer;font-size:.94rem;font-weight:700;line-height:1.6;min-height:28px;overflow-wrap:anywhere}
+.listening-pointers>summary:focus-visible{outline:3px solid var(--gold,#a47a35);outline-offset:4px;border-radius:2px}
+.listening-pointers .listening-pointers-note{font-size:.86rem;line-height:1.6;margin-block:.75rem .5rem;color:inherit}
+.listening-pointers ul{display:block;margin:.5rem 0 .25rem;padding-inline-start:1.3rem;list-style:disc}
+.listening-pointers li{display:list-item;margin-block:.65rem;font-size:.96rem;font-weight:400;line-height:1.8;overflow-wrap:anywhere;color:inherit}
