@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title"><title id="title">LesMisNotes · After the final note. / אחרי הצליל האחרון.</title>
+<rect width="1200" height="630" fill="#f8f5ee"/><path d="M0 0h1200v7H0z" fill="#172b3b"/>
+<text x="64" y="92" font-family="Georgia, serif" font-size="43" font-weight="bold" letter-spacing="-2" fill="#172b3b">LesMis<tspan fill="#a33443">Notes</tspan></text>
+<text x="65" y="155" font-family="DejaVu Sans, sans-serif" font-size="17" letter-spacing="2" fill="#7d5147">LES MISÉRABLES · עלובי החיים</text>
+<g font-family="Georgia, serif" font-size="56" fill="#172b3b"><text x="63" y="235">After the</text><text x="63" y="301">final note.</text></g>
+<g font-family="Noto Sans Hebrew, DejaVu Sans, sans-serif" font-size="36" fill="#a33443" direction="rtl" text-anchor="start"><text x="688" y="366">אחרי הצליל האחרון.</text></g>
+<path d="M64 466h628" stroke="#c5beae"/><text x="64" y="510" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#596166">An independent guide · English &amp; Hebrew</text>
+<text x="64" y="559" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#172b3b">lesmisnotes.com</text><svg x="770" y="45" width="365" height="490" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 660" fill="none">
+<defs>
+ <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M0 7L7 0" stroke="#d5c5a5" stroke-opacity=".13" stroke-width=".65"/></pattern>
+ <pattern id="stars" width="64" height="64" patternUnits="userSpaceOnUse"><circle cx="13" cy="21" r=".8" fill="#d5c5a5" opacity=".55"/><circle cx="48" cy="52" r=".6" fill="#d5c5a5" opacity=".35"/></pattern>
+ <clipPath id="arch"><path d="M58 590V270C58 137 166 54 300 54S542 137 542 270V590Z"/></clipPath>
+</defs>
+<path fill="#172b3b" d="M0 0h600v660H0z"/>
+<path fill="url(#hatch)" d="M0 0h600v660H0z"/>
+<g stroke="#c7b38b"><path d="M31 622V270C31 121 152 28 300 28s269 93 269 242v352Z" opacity=".45"/><path d="M45 608V270C45 129 159 42 300 42s255 87 255 228v338Z" opacity=".25"/></g>
+<g clip-path="url(#arch)">
+ <path fill="#1c3444" d="M58 54h484v536H58z"/><path fill="url(#stars)" d="M58 54h484v330H58z"/>
+ <circle cx="377" cy="184" r="70" fill="#d8c9a7"/><circle cx="377" cy="184" r="61" stroke="#bcae90" stroke-width=".6"/><path d="M318 163h118m-126 12h134m-137 12h139m-137 12h137m-130 12h123m-110 12h97" stroke="#b3a78e" stroke-width=".7" opacity=".5"/>
+ <path d="M58 361V265l30-18 39 13v-44l35-25 41 30v61l26-16 39 11v-50l30-23 31 23v32l26-15 39 17v-46l29-21 28 22v48l31-14 35 25 42-11v-33l26-16v400H58Z" fill="#2e4651"/>
+ <path d="M56 394V285l27-30h109l24 30v-8h39v111h77V265l20-20h101l28 28v26h72v126Z" fill="#233a47" stroke="#a2a58f" stroke-width="1"/>
+ <path d="M84 255h108m-101-8h93m-81-8h72m174 6h99m-94-8h86" stroke="#a2a58f" stroke-width="1"/>
+ <path d="M130 255v-31h13v31m227-10v-32h13v32m53 0v-26h12v26" fill="#233a47" stroke="#a2a58f"/>
+ <g fill="#b8b29b" opacity=".6"><rect x="105" y="282" width="7" height="13"/><rect x="105" y="313" width="7" height="13"/><rect x="105" y="344" width="7" height="13"/><rect x="130" y="282" width="7" height="13"/><rect x="130" y="313" width="7" height="13"/><rect x="130" y="344" width="7" height="13"/><rect x="155" y="282" width="7" height="13"/><rect x="155" y="313" width="7" height="13"/><rect x="155" y="344" width="7" height="13"/><rect x="180" y="282" width="7" height="13"/><rect x="180" y="313" width="7" height="13"/><rect x="180" y="344" width="7" height="13"/><rect x="205" y="282" width="7" height="13"/><rect x="205" y="313" width="7" height="13"/><rect x="205" y="344" width="7" height="13"/><rect x="230" y="282" width="7" height="13"/><rect x="230" y="313" width="7" height="13"/><rect x="230" y="344" width="7" height="13"/><rect x="356" y="275" width="7" height="13"/><rect x="356" y="306" width="7" height="13"/><rect x="356" y="337" width="7" height="13"/><rect x="381" y="275" width="7" height="13"/><rect x="381" y="306" width="7" height="13"/><rect x="381" y="337" width="7" height="13"/><rect x="406" y="275" width="7" height="13"/><rect x="406" y="306" width="7" height="13"/><rect x="406" y="337" width="7" height="13"/><rect x="431" y="275" width="7" height="13"/><rect x="431" y="306" width="7" height="13"/><rect x="431" y="337" width="7" height="13"/><rect x="456" y="275" width="7" height="13"/><rect x="456" y="306" width="7" height="13"/><rect x="456" y="337" width="7" height="13"/><rect x="481" y="275" width="7" height="13"/><rect x="481" y="306" width="7" height="13"/><rect x="481" y="337" width="7" height="13"/></g>
+ <path d="M262 385V300q38-53 76 0v85" stroke="#b8b29b" stroke-width="1.5"/><path d="M270 385V304q30-44 60 0v81" stroke="#b8b29b" opacity=".45"/>
+ <path d="M58 406l210-23h65l209 23v200H58Z" fill="#1a2c38"/>
+ <g stroke="#8a9488" stroke-width=".8" opacity=".4"><path d="M35 420H525"/><path d="M15 439H545"/><path d="M-5 458H565"/><path d="M-25 477H585"/><path d="M-45 496H605"/><path d="M-65 515H625"/><path d="M-85 534H645"/><path d="M300 387L50 610m250-223L145 610m155-223L240 610m60-223 35 223m-35-223 130 223m-130-223 225 223"/></g>
+ <path d="M58 465l71-18 72 21 49-13 63 34 85-29 81 23 63-15v130H58Z" fill="#142633"/>
+ <g stroke="#8a9488" stroke-width="1"><path d="M70 482l61-19 65 20-19 23-66-2Z"/><path d="M193 507l75-27 36 21-54 35Z"/><path d="M313 501l66-25 83 21-22 22-75 3Z"/><path d="M97 538l60-21 66 26-26 24-89-7Z"/><path d="M372 548l54-20 61 21-14 24-80 2Z"/></g>
+ <circle cx="324" cy="550" r="47" fill="#172b3b" stroke="#b9b69e" stroke-width="3"/><circle cx="324" cy="550" r="40" stroke="#b9b69e" opacity=".55"/><g stroke="#b9b69e" stroke-width="1.5"><path d="M324 503v94m-47-47h94m-80-33 66 66m0-66-66 66"/></g>
+ <path d="M203 512L234 169" stroke="#e5d6b9" stroke-width="3"/>
+ <path d="M234 173C296 151 334 206 411 178l-10 109c-78 28-112-29-178-6Z" fill="#b34849"/><path d="M237 186c63-15 97 35 170 7M226 267c69-12 104 37 176 7" stroke="#d77f69" stroke-width="1.2" opacity=".7"/><path d="M319 187l-10 96" stroke="#873340" opacity=".45"/>
+ <path d="M110 450V337m-12 0h25l-4-34h-17Zm-3-36h25m-13-10v10" stroke="#d6c6a3" stroke-width="2"/><path d="M104 307h13v25h-13z" fill="#e4c98c"/>
+</g>
+<path d="M82 618h158m120 0h158" stroke="#c7b38b" opacity=".5"/><path d="M300 610l8 8-8 8-8-8Z" fill="#b34849"/>
+</svg>
+<path d="M64 597h1071" stroke="#d8d3c7"/>
+</svg>

@@ -2,7 +2,8 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 const base={...process.env,SITE_ORIGIN:'',PUBLIC_SITE:'false',VERCEL_ENV:''};
-const run=(env={})=>spawnSync(process.execPath,['--max-old-space-size=512','prerender.mjs'],{env:{...base,...env},encoding:'utf8'});
+const build=env=>spawnSync(process.execPath,['--max-old-space-size=512','prerender.mjs'],{env,encoding:'utf8'});
+const run=(env={})=>build({...base,...env});
 let checks=0;
 try{
   for(const [env,publicMode,hasOrigin] of [
@@ -29,5 +30,9 @@ try{
   }
   for(const origin of ['http://example.org','https://example.org/path','https://user:pass@example.org','https://example.org/?a=1','https://localhost']){assert.notEqual(run({SITE_ORIGIN:origin,PUBLIC_SITE:'true'}).status,0);checks++;}
   assert.notEqual(run({PUBLIC_SITE:'true'}).status,0);checks++;
-}finally{const r=run();assert.equal(r.status,0,JSON.stringify({stderr:r.stderr,signal:r.signal,error:r.error?.message}));}
-console.log(`PASS: ${checks} build-mode checks, including public origin validation and preview noindex protection; restored safe default output.`);
+}finally{
+  // Mode fixtures must not leak an originless build into later tests or artifacts.
+  // Restore the caller's real configuration, including Vercel preview protection.
+  const r=build(process.env);assert.equal(r.status,0,JSON.stringify({stderr:r.stderr,signal:r.signal,error:r.error?.message}));
+}
+console.log(`PASS: ${checks} build-mode checks, including public origin validation and preview noindex protection; restored caller-configured output.`);

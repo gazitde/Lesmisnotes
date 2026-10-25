@@ -42,7 +42,9 @@ check(!(await page.evaluate(()=>JSON.stringify({...localStorage,...sessionStorag
 await page.keyboard.press('Escape');await page.goto(base+'/he/home/');await page.setViewportSize({width:390,height:844});
 check(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth),'Mobile header no horizontal overflow');
 await page.locator('[data-site-search-open]').click();await search('כּוֹלֵרָה');check((await page.locator('.site-search-list').innerText()).includes('1832'),'Niqqud query matches Hebrew historical body');
-check(await page.locator('.site-search-list a').first().getAttribute('href')==='/he/history/?focus=history%3A1832','Explicit Hebrew choice retained');
+const hebrewHistoryLinks=await page.locator('.site-search-list a').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
+check(hebrewHistoryLinks.length>0&&hebrewHistoryLinks.every(href=>href.startsWith('/he/')),'Explicit Hebrew choice retained for every result');
+check(hebrewHistoryLinks.includes('/he/history/?focus=history%3A1832'),'Niqqud query retains the precise 1832 timeline destination');
 check(await page.locator('#site-search-dialog').evaluate(e=>e.scrollWidth<=e.clientWidth),'Mobile panel no horizontal overflow');
 check(await page.locator('#site-search-dialog').evaluate(e=>e.getBoundingClientRect().width<=window.innerWidth),'Panel fits viewport');
 await page.screenshot({path:path.join(artifactDir,'search-he-mobile.png'),fullPage:false});

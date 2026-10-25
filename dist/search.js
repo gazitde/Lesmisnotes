@@ -10,8 +10,8 @@
     ideas: { he: 'דילמות', en: 'Dilemmas' }
   };
   const COPY = {
-    he: { open: 'חיפוש באתר', title: 'מה מסקרן אתכם?', label: 'חיפוש במדריך', placeholder: 'דמות, שיר, מקום או שאלה…', close: 'סגירת החיפוש', clear: 'ניקוי החיפוש', filters: 'סינון לפי נושא', local: 'החיפוש פועל כאן בדפדפן. השאילתות אינן נשמרות או נשלחות.', safe: 'ספוילרים מוסתרים. החיפוש אינו משתמש בפרטי עלילה נעולים.', spoilers: 'ספוילרים פתוחים. אזורי הקריאה הנפרדים נפתחים לפי הבחירות שלכם.', start: 'חפשו גם בתוך ההסברים, ההיסטוריה והמתכונים.', examples: 'אפשר להתחיל כאן', empty: 'לא נמצאו תוצאות בבחירה הזאת.', help: 'נסו פחות מילים, איות אחר או נושא אחר. אפשר לחפש בעברית ובאנגלית.', unavailable: 'החיפוש המקומי לא נטען. אפשר להמשיך דרך מפת האתר.', retry: 'לנסות שוב', sitemap: 'למפת האתר', count: n => n === 1 ? '1 תוצאה' : `${n} תוצאות`, showing: (n, total) => `מוצגות ${n} מתוך ${total} תוצאות`, more: 'עוד תוצאות', locked: 'פרטי העלילה נפתחים רק לפי בחירת הספוילרים שלכם.', titleOnly: 'התאמה בשם. המשיכו לעמוד כדי לקרוא לפי בחירת הספוילרים שלכם.', keyboard: 'Tab למעבר בין האפשרויות. חץ למטה לתוצאות. Escape לסגירה.', otherLanguage: 'התאמה גם בשפה השנייה', noneAvailable: 'אין כרגע תוכן לחיפוש בנושא הזה.', prompt: 'הקלידו מילה או שתיים כדי להתחיל.' },
-    en: { open: 'Search the guide', title: 'What are you curious about?', label: 'Search this guide', placeholder: 'A character, song, place or question…', close: 'Close search', clear: 'Clear search', filters: 'Filter by topic', local: 'Search runs in your browser. Queries are never stored or sent.', safe: 'Spoilers are hidden. Search does not use locked plot details.', spoilers: 'Spoilers are on. Separate reading areas still follow your choices.', start: 'Search inside the explanations, history and recipes, too.', examples: 'Try a starting point', empty: 'No results in this selection.', help: 'Try fewer words, a different spelling or another topic. Hebrew and English both work.', unavailable: 'Local search could not load. You can still use the site map.', retry: 'Try again', sitemap: 'Open the site map', count: n => n === 1 ? '1 result' : `${n} results`, showing: (n, total) => `Showing ${n} of ${total} results`, more: 'More results', locked: 'Plot details open only according to your spoiler choice.', titleOnly: 'Name match. Continue to the page to read according to your spoiler choice.', keyboard: 'Tab through the controls. Down arrow moves to results. Escape closes.', otherLanguage: 'Also matched in the other language', noneAvailable: 'There is no searchable content in this topic yet.', prompt: 'Type a word or two to start.' }
+    he: { open: 'חיפוש באתר', title: 'מה מסקרן אתכם?', label: 'חיפוש במדריך', placeholder: 'דמות, שיר, מקום או שאלה…', close: 'סגירת החיפוש', clear: 'ניקוי החיפוש', filters: 'סינון לפי נושא', local: 'החיפוש פועל כאן בדפדפן. השאילתות אינן נשמרות או נשלחות.', safe: 'ספוילרים מוסתרים. החיפוש אינו משתמש בפרטי עלילה נעולים.', spoilers: 'ספוילרים פתוחים. אזורי הקריאה הנפרדים נפתחים לפי הבחירות שלכם.', start: 'חפשו גם בתוך ההסברים, ההיסטוריה והמתכונים.', examples: 'אפשר להתחיל כאן', empty: 'לא נמצאו תוצאות בבחירה הזאת.', help: 'נסו פחות מילים, איות אחר או נושא אחר. אפשר לחפש בעברית ובאנגלית.', unavailable: 'החיפוש המקומי לא נטען. אפשר להמשיך דרך מפת האתר.', retry: 'לנסות שוב', sitemap: 'למפת האתר', count: n => n === 1 ? '1 תוצאה' : `${n} תוצאות`, showing: (n, total) => `מוצגות ${n} מתוך ${total} תוצאות`, more: 'עוד תוצאות', locked: 'פרטי העלילה נפתחים רק לפי בחירת הספוילרים שלכם.', titleOnly: 'התאמה בשם. המשיכו לעמוד כדי לקרוא לפי בחירת הספוילרים שלכם.', keyboard: 'Tab למעבר בין האפשרויות. חץ למטה לתוצאות. Escape לסגירה.', otherLanguage: 'התאמה בשפה השנייה', aliasMatch: 'שם חלופי', destinations: 'יעדים מרכזיים', allTopics: n => `חיפוש בכל הנושאים (${n})`, noneAvailable: 'אין כרגע תוכן לחיפוש בנושא הזה.', prompt: 'הקלידו מילה או שתיים כדי להתחיל.' },
+    en: { open: 'Search the guide', title: 'What are you curious about?', label: 'Search this guide', placeholder: 'A character, song, place or question…', close: 'Close search', clear: 'Clear search', filters: 'Filter by topic', local: 'Search runs in your browser. Queries are never stored or sent.', safe: 'Spoilers are hidden. Search does not use locked plot details.', spoilers: 'Spoilers are on. Separate reading areas still follow your choices.', start: 'Search inside the explanations, history and recipes, too.', examples: 'Try a starting point', empty: 'No results in this selection.', help: 'Try fewer words, a different spelling or another topic. Hebrew and English both work.', unavailable: 'Local search could not load. You can still use the site map.', retry: 'Try again', sitemap: 'Open the site map', count: n => n === 1 ? '1 result' : `${n} results`, showing: (n, total) => `Showing ${n} of ${total} results`, more: 'More results', locked: 'Plot details open only according to your spoiler choice.', titleOnly: 'Name match. Continue to the page to read according to your spoiler choice.', keyboard: 'Tab through the controls. Down arrow moves to results. Escape closes.', otherLanguage: 'Matched in the other language', aliasMatch: 'Also known as', destinations: 'Explore the guide', allTopics: n => `Search all topics (${n})`, noneAvailable: 'There is no searchable content in this topic yet.', prompt: 'Type a word or two to start.' }
   };
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   // Geresh/apostrophes join transliterated names; other punctuation separates words.
@@ -20,7 +20,9 @@
     for (const char of original) {
       const start = offset; offset += char.length;
       let fragment = char.normalize('NFKD').toLowerCase().replace(/[\p{M}]/gu, '').replace(/[\u05f3\u05f4'’‘"`]/gu, '');
-      fragment = fragment.replace(/[^\p{L}\p{N}]/gu, ' ');
+      fragment = fragment.replace(/œ/g, 'oe').replace(/æ/g, 'ae').replace(/[^\p{L}\p{N}]/gu, ' ');
+      // Keep trailing combining marks inside the highlighted original character.
+      if (offsets && !fragment && /\p{M}/u.test(char) && positions.length) positions[positions.length - 1][1] = offset;
       for (const part of fragment) {
         if (part === ' ' && (!text || text.endsWith(' '))) continue;
         text += part;
@@ -134,7 +136,23 @@
       || /^חלק\s+[א-ת'׳"״]+(?:\s|$)/u.test(raw);
     return looksLikeCoordinate ? { key: null } : null;
   }
-  const routeKinds = { character: 'characters', story: 'story', novel: 'novel', part: 'novel', book: 'novel', chapter:'novel', recording:'musical', adaptation:'screen', song: 'musical', atlas: 'map', history: 'history', context: 'history', author: 'hugo', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
+  // Alternate catalogue names for the existing, sourced events, not new productions.
+  const EVENT_ALIASES = {
+    'concert-1995': ['10th anniversary', '10th anniversary concert', 'tenth anniversary concert', 'קונצרט העשור'],
+    'concert-2010': ['25th anniversary', '25th anniversary concert', 'twenty fifth anniversary concert', 'קונצרט 25 השנים'],
+    'concert-2019': ['The Staged Concert', 'הקונצרט המבויים'],
+    'gala-2025': ['40th anniversary', '40th anniversary gala', 'גאלת 40 השנים'],
+    'album-2026': ['40th anniversary', '40th anniversary album', 'fortieth anniversary album', 'אלבום 40 השנים']
+  };
+  const DESTINATIONS = {
+    'novel-journey': { he: 'מסע הקריאה', en: 'Reading journey' },
+    'musical-journey': { he: 'המסע דרך השירים', en: 'Song-by-song journey' },
+    characters: { he: 'דמויות וקשרים', en: 'Characters & connections' },
+    listening: { he: 'ביצועים לצפייה', en: 'Performances to watch' },
+    history: { he: 'ההיסטוריה האמיתית', en: 'Real history' },
+    'special-events': { he: 'קונצרטים וימי שנה', en: 'Anniversary concerts' }
+  };
+  const routeKinds = { event: 'special-events', character: 'characters', story: 'story', novel: 'novel', part: 'novel', book: 'novel', chapter:'novel', recording:'musical', adaptation:'screen', song: 'musical', atlas: 'map', history: 'history', context: 'history', author: 'hugo', recipe: 'recipes', dilemma: 'ideas', hugo: 'hugo', craft: 'musical', israel: 'israel', watch: 'watch', extra: 'after' };
   function hrefFor(doc, lang) {
     if (doc.kind === 'characterdetail') return `/${lang}/characters/?focus=${encodeURIComponent('character:'+doc.key)}`;
     if (doc.kind === 'character' && doc.route === 'character-'+doc.key) return `/${lang}/character-${encodeURIComponent(doc.key)}/`;
@@ -151,15 +169,23 @@
     const spoilers = permissions.spoiler === true, novel = spoilers && permissions.novelConsent === true, after = spoilers && permissions.afterConsent === true;
     function add(kind, key, route, category, title, body, aliases = [], locked = false, titleOnly = false) {
       if (!title || !local(title, 'en')) return;
-      const doc = { id: `${kind}:${key}`, kind, key: String(key), route, category, title: pair(title), body: pair(body), aliases: aliases.map(v => local(v, 'en')).join(' '), locked, titleOnly };
+      const aliasList = [...new Set(aliases.flatMap(value => LANGS.map(lang => local(value, lang))).filter(Boolean))];
+      const page = input.metadata?.pages?.[route];
+      const doc = { id: `${kind}:${key}`, kind, key: String(key), route, category, title: pair(title), body: pair(body), aliases: aliasList.join(' '), aliasList, locked, titleOnly,
+        destination: pair(DESTINATIONS[route] || input.labels?.[route] || page?.title || CATEGORIES[category]) };
       doc.search = Object.fromEntries(LANGS.map(lang => [lang, { title: normalize(doc.title[lang]), body: normalize(doc.body[lang]) }]));
       doc.aliasSearch = normalize(doc.aliases);
+      doc.aliasPhrases = [...new Set(aliasList.map(normalize))];
+      doc.aliasTokens = new Set(doc.aliasSearch.split(' '));
       out.push(doc);
     }
     for (const [route, page] of Object.entries(input.metadata?.pages || {})) {
       if (page.canonicalRoute || route.startsWith('character-')) continue;
       add('page', route, route, 'pages', input.labels?.[route] || page.title, route === 'special-events' ? pair(page.description, (R.specialEvents || []).map(e => pair(e.title, e.date, e.format, e.paragraphs, e.cast)), '10th 25th 40th anniversary concert album') : input.pageHints?.[route] || page.description);
     }
+    for (const event of R.specialEvents || []) add('event', event.id, 'special-events', 'songs', event.title,
+      pair(event.year, event.date, event.format, event.paragraphs, event.cast),
+      [event.id, event.year, ...(EVENT_ALIASES[event.id] || []), ...(event.links || []).map(link => link.label)]);
     const characterProfile=id=>R.characterProfiles?.profiles?.find(p=>p.id===id);
     for (const c of R.characters || []) {
       const profile=characterProfile(c.id), details=pair(c.role,c.summary,c.question,c.context?.sentences,(c.canonNotes||[]).map(n=>pair(n.title,n.paragraphs)),(c.connections||[]).map(x=>x.label),(R.relationships||[]).filter(e=>e.from===c.id||e.to===c.id).map(e=>pair(e.label,e.context,e.canonNote)));
@@ -225,9 +251,20 @@
   // Keep ordinary text substring matching and ordinal forms such as 5th.
   function termIndex(text, term, from = 0) {
     let at = text.indexOf(term, from);
-    if (!/^\p{N}+$/u.test(term)) return at;
-    while (at >= 0 && (/\p{N}/u.test(text[at - 1] || '') || /\p{N}/u.test(text[at + term.length] || ''))) at = text.indexOf(term, at + term.length);
+    const startsNumber = /^\p{N}/u.test(term), endsNumber = /\p{N}$/u.test(term);
+    if (!startsNumber && !endsNumber) return at;
+    while (at >= 0 && (startsNumber && /\p{N}/u.test(text[at - 1] || '') || endsNumber && /\p{N}/u.test(text[at + term.length] || ''))) at = text.indexOf(term, at + term.length);
     return at;
+  }
+  function fieldScore(text, term, exact, prefix, partial) {
+    let at = termIndex(text, term), best = 0;
+    while (at >= 0) {
+      const starts = at === 0 || text[at - 1] === ' ', ends = at + term.length === text.length || text[at + term.length] === ' ';
+      best = Math.max(best, starts && ends ? exact : starts ? prefix : partial);
+      if (best === exact) break;
+      at = termIndex(text, term, at + term.length);
+    }
+    return best;
   }
   function queryTerms(query) { return [...new Set(normalize(String(query).slice(0, 180)).split(' ').filter(Boolean))].slice(0, 16); }
   function search(index, query, { lang = 'he', category = 'all', limit = 12 } = {}) {
@@ -244,17 +281,19 @@
       const chosen = doc.search[lang], other = doc.search[lang === 'he' ? 'en' : 'he'];
       let score = 0, matched = true;
       for (const term of terms) {
-        const scores = [termIndex(chosen.title, term) >= 0 ? 24 : 0, termIndex(other.title, term) >= 0 ? 21 : 0,
-          doc.aliasSearch.split(' ').includes(term) ? 27 : termIndex(doc.aliasSearch, term) >= 0 ? 16 : 0,
-          termIndex(chosen.body, term) >= 0 ? 5 : 0, termIndex(other.body, term) >= 0 ? 4 : 0];
+        const scores = [fieldScore(chosen.title, term, 30, 24, 16), fieldScore(other.title, term, 27, 21, 14),
+          doc.aliasTokens?.has(term) ? 31 : termIndex(doc.aliasSearch, term) >= 0 ? 14 : 0,
+          fieldScore(chosen.body, term, 7, 5, 2), fieldScore(other.body, term, 6, 4, 1)];
         const best = Math.max(...scores); if (!best) { matched = false; break; } score += best;
       }
       if (!matched) continue;
       if (chosen.title === phrase || other.title === phrase) score += 95;
       else if (termIndex(chosen.title, phrase) >= 0 || termIndex(other.title, phrase) >= 0) score += 40;
-      if (doc.aliasSearch.split(' ').includes(phrase)) score += 70;
+      if (doc.aliasPhrases?.includes(phrase)) score += 100;
+      // Tight multi-word phrases beat incidental matches scattered through an essay.
+      if (terms.length > 1 && (termIndex(chosen.body, phrase) >= 0 || termIndex(other.body, phrase) >= 0)) score += 16;
       // A bare song name leads to its guide before individual performance choices.
-      if(doc.kind==='song'&&(SAFE_SONG_NAMES[doc.key]||[]).some(title=>title.split(/[·/]/).some(part=>normalize(part)===phrase)))score+=110;
+      if(doc.kind==='song'&&(SAFE_SONG_NAMES[doc.key]||[]).some(title=>title.split(/[·/]/).some(part=>normalize(part)===phrase)))score+=210;
       if (doc.category === 'pages') score -= 10;
       hits.push({ doc, score, href: hrefFor(doc, lang) });
     }
@@ -281,16 +320,40 @@
   }
   function snippet(text, query, length = 190) {
     text = String(text || '').replace(/\s+/g, ' ').trim();
-    const first = matchRanges(text, query)[0]?.[0] ?? 0;
+    const ranges = matchRanges(text, query), terms = queryTerms(query);
+    let first = ranges[0]?.[0] ?? 0, best = -1;
+    // Prefer a compact passage covering the question, not just the first word.
+    for (const [at] of ranges.slice(0, 80)) {
+      const from = Math.max(0, at - 55), candidate = normalize(text.slice(from, from + length));
+      const score = terms.filter(term => termIndex(candidate, term) >= 0).length;
+      if (score > best) { first = at; best = score; }
+    }
     let start = Math.max(0, first - 55), end = Math.min(text.length, start + length);
     if (start) { const boundary = text.indexOf(' ', start); if (boundary >= 0 && boundary < first) start = boundary + 1; }
     if (end < text.length) { const boundary = text.lastIndexOf(' ', end); if (boundary > first) end = boundary; }
     return (start ? '…' : '') + highlight(text.slice(start, end), query) + (end < text.length ? '…' : '');
   }
+  function resultPreview(doc, query, lang) {
+    const other = lang === 'he' ? 'en' : 'he', terms = queryTerms(query), coverage = text => terms.filter(term => termIndex(normalize(text), term) >= 0).length;
+    // Coordinates show neutral navigation help, not a quoted matching passage.
+    // Keep that help in the chosen UI language even for a bilingual coordinate.
+    const coordinate = ['part', 'book', 'chapter'].includes(doc.kind);
+    const previewLang = !coordinate && coverage(doc.body[other]) > coverage(doc.body[lang]) ? other : lang;
+    const alternateTitle = !coordinate && coverage(doc.title[other]) > coverage(doc.title[lang]) ? doc.title[other] : '';
+    const alias = !coverage(doc.title[lang]) && !coverage(doc.body[lang]) && !alternateTitle && !coverage(doc.body[other])
+      ? (doc.aliasList || []).find(value => normalize(value) === normalize(query)) || '' : '';
+    return { lang: previewLang, text: doc.body[previewLang] || (doc.titleOnly ? COPY[lang].titleOnly : COPY[lang].locked), alternateTitle, alias };
+  }
   function resultsHTML(result, query, lang) {
     const c = COPY[lang];
-    if (!result.total) return `<div class="site-search-empty"><h3>${c.empty}</h3><p>${c.help}</p></div>`;
-    return `<ul class="site-search-list">${result.results.map(({ doc, href }) => `<li><a data-site-search-result href="${esc(hrefFor(doc, lang))}" data-result-category="${esc(doc.category)}"><span class="site-search-category">${esc(CATEGORIES[doc.category][lang])}${doc.locked ? ` · ${lang === 'he' ? 'פרטי עלילה באישור' : 'Plot details by consent'}` : ''}</span><h3 dir="auto">${highlight(doc.title[lang], query)}</h3><p dir="auto">${snippet(doc.body[lang] || (doc.titleOnly ? c.titleOnly : c.locked), query)}</p><span class="site-search-arrow" aria-hidden="true">${lang === 'he' ? '←' : '→'}</span></a></li>`).join('')}</ul>${result.results.length < result.total ? `<button class="btn secondary site-search-more" data-site-search-more>${c.more}</button>` : ''}`;
+    if (!result.total) return `<div class="site-search-empty"><h3>${c.empty}</h3><p>${c.help}</p><a href="/${lang}/sitemap/" data-site-search-result>${c.sitemap}</a></div>`;
+    return `<ul class="site-search-list">${result.results.map(({ doc }) => {
+      const preview = resultPreview(doc, query, lang), destination = doc.destination?.[lang] || '', categoryLabel = CATEGORIES[doc.category][lang];
+      return `<li><a data-site-search-result href="${esc(hrefFor(doc, lang))}" data-result-category="${esc(doc.category)}"><span class="site-search-category">${esc(categoryLabel)}${doc.locked ? ` · ${lang === 'he' ? 'פרטי עלילה באישור' : 'Plot details by consent'}` : ''}</span><h3 dir="auto">${highlight(doc.title[lang], query)}</h3>${destination && destination !== doc.title[lang] && destination !== categoryLabel ? `<span class="site-search-breadcrumb" dir="auto">${esc(destination.replace(/\s*[|·]\s*LesMisNotes.*$/, ''))}</span>` : ''}${preview.alternateTitle ? `<span class="site-search-match" lang="${lang === 'he' ? 'en' : 'he'}" dir="auto">${highlight(preview.alternateTitle, query)}</span>` : ''}${preview.alias ? `<span class="site-search-match">${esc(c.aliasMatch)}: <bdi>${highlight(preview.alias, query)}</bdi></span>` : ''}${preview.lang !== lang ? `<span class="site-search-language">${esc(c.otherLanguage)}</span>` : ''}<p lang="${preview.lang}" dir="auto">${snippet(preview.text, query)}</p><span class="site-search-arrow" aria-hidden="true">${lang === 'he' ? '←' : '→'}</span></a></li>`;
+    }).join('')}</ul>${result.results.length < result.total ? `<button class="btn secondary site-search-more" data-site-search-more>${c.more}</button>` : ''}`;
+  }
+  function destinationsHTML(lang) {
+    return `<nav class="site-search-destinations" aria-label="${COPY[lang].destinations}"><h3>${COPY[lang].destinations}</h3><div>${Object.entries(DESTINATIONS).map(([route, label]) => `<a href="/${lang}/${route}/" data-site-search-result>${esc(label[lang])}</a>`).join('')}</div></nav>`;
   }
   function button(lang = 'he') { return `<button type="button" class="site-search-trigger" data-site-search-open aria-haspopup="dialog" aria-controls="site-search-dialog" aria-label="${COPY[lang].open}"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.8"/></svg><span>${lang === 'he' ? 'חיפוש' : 'Search'}</span></button>`; }
   let context = { lang: 'he', spoiler: false, novelConsent: false, afterConsent: false }, panel = null, installed = false;
@@ -302,7 +365,7 @@
   }
   function panelHTML() {
     const lang = context.lang, c = COPY[lang];
-    return `<div class="site-search-head"><div><span class="eyebrow">${lang === 'he' ? 'מילה אחת יכולה לפתוח דלת' : 'ONE WORD CAN OPEN A DOOR'}</span><h2 id="site-search-title">${c.title}</h2></div><button type="button" data-site-search-close aria-label="${c.close}">×</button></div><form role="search" aria-label="${c.label}" autocomplete="off"><label for="site-search-input">${c.label}</label><div class="site-search-field"><input id="site-search-input" type="search" maxlength="180" placeholder="${c.placeholder}" value="${esc(query)}" dir="auto" autocomplete="off" spellcheck="false" aria-controls="site-search-results" aria-describedby="site-search-privacy site-search-spoilers"><button type="button" data-site-search-clear>${c.clear}</button></div></form><p id="site-search-privacy" class="site-search-privacy">${c.local}</p><details class="site-search-filter-disclosure" ${root.matchMedia?.('(max-width:600px)').matches?'':'open'}><summary>${c.filters}<span data-site-search-filter-label>${CATEGORIES[category][lang]}</span></summary><div class="site-search-filters" role="group" aria-label="${c.filters}">${Object.entries(CATEGORIES).map(([id, label]) => `<button type="button" data-site-search-category="${id}" aria-pressed="${category === id}">${label[lang]}</button>`).join('')}</div></details><p id="site-search-spoilers" class="site-search-spoilers">${context.spoiler ? c.spoilers : c.safe}</p><p class="site-search-status" id="site-search-status" role="status" aria-live="polite" aria-atomic="true"></p><div id="site-search-results" aria-busy="false"></div><p class="site-search-keyboard">${c.keyboard}</p>`;
+    return `<div class="site-search-head"><div><span class="eyebrow">${lang === 'he' ? 'מילה אחת יכולה לפתוח דלת' : 'ONE WORD CAN OPEN A DOOR'}</span><h2 id="site-search-title">${c.title}</h2></div><button type="button" data-site-search-close aria-label="${c.close}">×</button></div><form role="search" aria-label="${c.label}" autocomplete="off"><label for="site-search-input">${c.label}</label><div class="site-search-field"><input id="site-search-input" type="search" enterkeyhint="search" maxlength="180" placeholder="${c.placeholder}" value="${esc(query)}" dir="auto" autocomplete="off" spellcheck="false" aria-controls="site-search-results" aria-describedby="site-search-privacy site-search-spoilers"><button type="button" data-site-search-clear>${c.clear}</button></div></form><p id="site-search-privacy" class="site-search-privacy">${c.local}</p><details class="site-search-filter-disclosure" ${root.matchMedia?.('(max-width:600px)').matches?'':'open'}><summary>${c.filters}<span data-site-search-filter-label>${CATEGORIES[category][lang]}</span></summary><div class="site-search-filters" role="group" aria-label="${c.filters}">${Object.entries(CATEGORIES).map(([id, label]) => `<button type="button" data-site-search-category="${id}" aria-pressed="${category === id}">${label[lang]}</button>`).join('')}</div></details><p id="site-search-spoilers" class="site-search-spoilers">${context.spoiler ? c.spoilers : c.safe}</p><p class="site-search-status" id="site-search-status" role="status" aria-live="polite" aria-atomic="true"></p><div id="site-search-results" aria-busy="false"></div><p class="site-search-keyboard">${c.keyboard}</p>`;
   }
   function input() { return panel?.querySelector('#site-search-input'); }
   let searchRevision = 0, measuredRevision = -1;
@@ -314,12 +377,16 @@
       const index = getIndex();
       if (!index.length) throw new Error('empty-index');
       if (!normalize(query)) {
-        target.innerHTML = `<div class="site-search-start"><h3>${c.start}</h3><p>${c.prompt}</p><div class="site-search-examples" role="group" aria-label="${c.examples}">${(lang === 'he' ? ['ולז׳אן', '24601', 'On My Own', '1832', 'טחינה'] : ['Valjean', '24601', 'On My Own', '1832', 'tahini']).map(q => `<button type="button" data-site-search-example="${esc(q)}" dir="auto">${esc(q)}</button>`).join('')}</div><a href="/${lang}/sitemap/" data-site-search-result>${c.sitemap}</a></div>`;
+        target.innerHTML = `<div class="site-search-start"><h3>${c.start}</h3><p>${c.prompt}</p><div class="site-search-examples" role="group" aria-label="${c.examples}">${(lang === 'he' ? ['ולז׳אן', '24601', 'On My Own', '1832', 'טחינה'] : ['Valjean', '24601', 'On My Own', '1832', 'tahini']).map(q => `<button type="button" data-site-search-example="${esc(q)}" dir="auto">${esc(q)}</button>`).join('')}</div><a href="/${lang}/sitemap/" data-site-search-result>${c.sitemap}</a>${destinationsHTML(lang)}</div>`;
         status.textContent = ''; return;
       }
       const result = search(index, query, { lang, category, limit });
       if (measuredRevision !== searchRevision && measure('search_results', { search_category: category, result_count: Math.min(1000, result.total) })) measuredRevision = searchRevision;
       target.innerHTML = resultsHTML(result, query, lang);
+      if (!result.total && category !== 'all') {
+        const all = search(index, query, { lang, category: 'all', limit: 0 });
+        if (all.total) target.querySelector('.site-search-empty')?.insertAdjacentHTML('beforeend', `<button type="button" class="btn secondary" data-site-search-category="all">${esc(c.allTopics(all.total))}</button>`);
+      }
       status.textContent = result.results.length === result.total ? c.count(result.total) : c.showing(result.results.length, result.total);
     } catch (_) {
       target.innerHTML = `<div class="site-search-empty"><h3>${c.unavailable}</h3><a href="/${lang}/sitemap/" data-site-search-result>${c.sitemap}</a><button type="button" class="text-button" data-site-search-retry>${c.retry}</button></div>`;
@@ -377,7 +444,12 @@
         if (!button) return;
         if (button.hasAttribute('data-site-search-close')) close();
         else if (button.hasAttribute('data-site-search-clear')) { query = ''; searchRevision++; limit = 12; input().value = ''; renderResults(); input().focus(); }
-        else if (button.hasAttribute('data-site-search-category')) { category = button.dataset.siteSearchCategory; const filterLabel=panel.querySelector('[data-site-search-filter-label]');if(filterLabel)filterLabel.textContent=CATEGORIES[category][context.lang];searchRevision++; limit = 12; panel.querySelectorAll('[data-site-search-category]').forEach(b => b.setAttribute('aria-pressed', b.dataset.siteSearchCategory === category)); renderResults(); }
+        else if (button.hasAttribute('data-site-search-category')) {
+          const recoverFocus = button.dataset.siteSearchCategory === 'all' && panel.querySelector('#site-search-results')?.contains(button);
+          category = button.dataset.siteSearchCategory; const filterLabel=panel.querySelector('[data-site-search-filter-label]');if(filterLabel)filterLabel.textContent=CATEGORIES[category][context.lang];searchRevision++; limit = 12; panel.querySelectorAll('[data-site-search-category]').forEach(b => b.setAttribute('aria-pressed', b.dataset.siteSearchCategory === category)); renderResults();
+          // The recovery action is removed with the old results; toolbar filters stay in place.
+          if (recoverFocus) (panel.querySelector('.site-search-list a') || input())?.focus();
+        }
         else if (button.hasAttribute('data-site-search-example')) { query = button.dataset.siteSearchExample; searchRevision++; input().value = query; limit = 12; renderResults(); input().focus(); }
         else if (button.hasAttribute('data-site-search-more')) { const oldCount = panel.querySelectorAll('.site-search-list a').length; limit += 12; renderResults(); panel.querySelectorAll('.site-search-list a')[oldCount]?.focus(); }
         else if (button.hasAttribute('data-site-search-retry')) { cached = null; renderResults(); }
@@ -393,11 +465,11 @@
   function focusTarget(target) {
     if (!target || !root.document?.querySelector) return;
     const featuredSong = (root.EXTRA_CONTENT?.musical || root.RESEARCH?.musical)?.spotlight?.songs?.some(s => s.id === target.key);
-    const key = target.key, selector = { part:'#reader-part-panel', chapter:'#reader-chapter-'+key, book: '#reading-book-panel', recording: '#recording-'+key, adaptation: '#adaptation-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : featuredSong ? '#spotlight-title' : '#musical-journey', atlas: '#place-detail', history: `[data-history-event="${key}"]`, context: `[data-history-context="${key}"]`, author: `[data-hugo-date="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
+    const key = target.key, selector = { event: '#' + key, part:'#reader-part-panel', chapter:'#reader-chapter-'+key, book: '#reading-book-panel', recording: '#recording-'+key, adaptation: '#adaptation-'+key, character: context.spoiler ? '#character-detail' : '#character-intro-' + key, story: '#story-' + key, novel: `[data-novel-event="${key}"]`, song: context.spoiler ? '#show-current-title' : featuredSong ? '#spotlight-title' : '#musical-journey', atlas: '#place-detail', history: `[data-history-event="${key}"]`, context: `[data-history-context="${key}"]`, author: `[data-hugo-date="${key}"]`, recipe: '#recipe-' + key, dilemma: '#dilemma-content', hugo: `[data-hugo-section="${key}"]`, craft: `[data-craft-id="${key}"]`, israel: `[data-israel-id="${key}"]`, watch: `[data-watch-id="${key}"]`, extra: key==='collection'?'#hugo-extra-stories':'#extra-story-'+key }[target.kind];
     const element = selector && (root.document.querySelector(selector)||(target.kind==='chapter'?root.document.querySelector('#reading-book-panel'):null)); if (!element) return;
     if (['story', 'novel', 'history','song','dilemma'].includes(target.kind)||(target.kind==='extra'&&key!=='collection')) {const readingRoot=target.kind==='song'?(element.closest?.('.show-slide,.spotlight-detail')||element):element;readingRoot.querySelectorAll?.('details').forEach(details => { if(!details.matches?.('.source-disclosure,.song-reading-sources,.coach-sources,.reading-sources,.added-media-credits,.watch-alternatives,.book-stage,.musical-opening-preview,.journey-orientation-details'))details.open = true; });}
     if(target.kind==='craft'||target.kind==='israel'){let notebook=element.closest?.('details');while(notebook){notebook.open=true;notebook=notebook.parentElement?.closest?.('details');}}
     element.setAttribute?.('tabindex', '-1'); element.focus?.({ preventScroll: true }); element.scrollIntoView?.({ block: 'start' });
   }
-  root.SiteSearch = { normalize, safeSongTitle, buildIndex, search, highlight, snippet, resultsHTML, hrefFor, button, mount, open, close, readTarget, focusTarget, categories: CATEGORIES };
+  root.SiteSearch = { normalize, safeSongTitle, buildIndex, search, highlight, snippet, resultPreview, resultsHTML, hrefFor, button, mount, open, close, readTarget, focusTarget, categories: CATEGORIES };
 })(typeof window !== 'undefined' ? window : globalThis);

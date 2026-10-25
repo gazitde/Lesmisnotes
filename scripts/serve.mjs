@@ -5,7 +5,7 @@ import {resolvePublishedRequest} from './static-routing.mjs';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
 const root=path.resolve('public-dist');
-const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8'};
+const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.ico':'image/x-icon','.webmanifest':'application/manifest+json','.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8'};
 http.createServer(async(req,res)=>{
   try {
     const url=new URL(req.url,'http://localhost');
