@@ -12,6 +12,11 @@ test('Bilingual preview shows and highlights the safe language that actually mat
  const doc=index.find(d=>d.id==='history:1832');const preview=S.resultPreview(doc,'cholera','he');assert.equal(preview.lang,'en');assert(preview.text.toLowerCase().includes('cholera'));
  const html=S.resultsHTML(find('cholera','he'),'cholera','he');assert(html.includes('התאמה בשפה השנייה'));assert(html.includes('lang="en"'));assert(html.includes('<mark>cholera</mark>'));assert(html.includes('/he/history/'));
 });
+test('Hebrew niqqud preserves historical results and localized destinations without pinning body-match order',()=>{
+ const plain=find('כולרה','he').results.map(({doc})=>doc.id),pointed=find('כּוֹלֵרָה','he').results.map(({doc})=>doc.id);
+ assert.deepEqual(pointed,plain);assert(pointed.includes('history:1832'));assert(pointed.includes('context:1'));
+ for(const {doc} of find('כּוֹלֵרָה','he').results)assert(S.hrefFor(doc,'he').startsWith('/he/'));
+});
 test('Part, Book and Chapter coordinate previews keep neutral help in the selected language',()=>{
  for(const lang of ['he','en'])for(const query of ['Part 1','חלק א׳','p1-b1','1.1','Part I Book I','חלק א׳ ספר א׳','Part I Book I Chapter II','חלק א׳ ספר א׳ פרק ב׳']){
   const result=find(query,lang);assert.equal(result.total,1);const doc=result.results[0].doc,preview=S.resultPreview(doc,query,lang);
