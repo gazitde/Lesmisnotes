@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'..'),read=name=>fs.readFileSync(path.join(roo
 const app=read('app');
 function functionSource(name){const start=app.indexOf('function '+name+'(');assert.ok(start>=0,name+' exists');const next=app.slice(start+1).search(/\n(?:function |const Q =)/);return next<0?app.slice(start):app.slice(start,start+1+next)}
 function boot(lang='en',spoiler=false){
- const c={lang,spoiler,window:{},Math,String};vm.createContext(c);
+ const c={lang,spoiler,window:{},Math,String};vm.createContext(c);vm.runInContext(app.slice(app.indexOf('const labels ='),app.indexOf('// Dedicated profile routes')),c);
  vm.runInContext(read('extras'),c);vm.runInContext(read('watch-path-data'),c);
  c.R=c.window.EXTRA_CONTENT;c.esc=String;c.tr=x=>typeof x==='object'?x[c.lang]:x;c.h=c.tr;c.t=(he,en)=>c.lang==='he'?he:en;c.arrow='';c.url=route=>'/'+c.lang+'/'+route+'/';
  c.galleryHref=(id,category,locale)=>'/'+locale+'/listening/?clip='+id+'&category='+category;

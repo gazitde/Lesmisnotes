@@ -13,7 +13,9 @@ const base=process.env.SEARCH_TEST_URL||'http://localhost:8873',dir=process.env.
     await page.goto(`${base}/${lang}/${route}/`);
     const privacy=page.locator('[data-action="privacy-reject"]').first();if(await privacy.isVisible())await privacy.click();
     const m=await page.evaluate(({lang,route})=>{const metadata=window.SITE_METADATA,p=metadata.pages[route],meta=key=>document.querySelector(`meta[property="${key}"],meta[name="${key}"]`)?.content;return {title:document.title,expectedTitle:p.title[lang],canonical:document.querySelector('link[rel=canonical]')?.href,expectedCanonical:metadata.origin+'/'+lang+'/'+(p.canonicalRoute||route)+'/',image:meta('og:image'),secureImage:meta('og:image:secure_url'),twitterImage:meta('twitter:image'),expectedImage:metadata.origin+window.SiteSEO.image(p,lang).path,type:meta('og:image:type'),width:meta('og:image:width'),height:meta('og:image:height'),alts:['he','en','x-default'].map(key=>document.querySelector(`link[hreflang="${key}"]`)?.href)};},{lang,route});
-    check(m.title===m.expectedTitle,'Localized title '+lang+'/'+route);check(m.canonical===m.expectedCanonical,'Absolute canonical '+lang+'/'+route);
+    check(m.title===m.expectedTitle,'Localized title '+lang+'/'+route);
+    assert.match(m.expectedCanonical,/^https:\/\//,'Sharing checks require a configured HTTPS origin; build with the intended SITE_ORIGIN before running this suite.');
+    assert.equal(m.canonical,m.expectedCanonical,'Absolute canonical '+lang+'/'+route);checks++;
     check([m.image,m.secureImage,m.twitterImage].every(image=>image===m.expectedImage),'Consistent image '+lang+'/'+route);check(m.type==='image/png'&&m.width==='1200'&&m.height==='630','Image dimensions/type '+route);
     check(m.alts.every(href=>href?.startsWith('https://www.lesmisnotes.com/')),'Absolute language alternates');
    }

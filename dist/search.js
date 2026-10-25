@@ -335,8 +335,11 @@
   }
   function resultPreview(doc, query, lang) {
     const other = lang === 'he' ? 'en' : 'he', terms = queryTerms(query), coverage = text => terms.filter(term => termIndex(normalize(text), term) >= 0).length;
-    const previewLang = coverage(doc.body[other]) > coverage(doc.body[lang]) ? other : lang;
-    const alternateTitle = coverage(doc.title[other]) > coverage(doc.title[lang]) ? doc.title[other] : '';
+    // Coordinates show neutral navigation help, not a quoted matching passage.
+    // Keep that help in the chosen UI language even for a bilingual coordinate.
+    const coordinate = ['part', 'book', 'chapter'].includes(doc.kind);
+    const previewLang = !coordinate && coverage(doc.body[other]) > coverage(doc.body[lang]) ? other : lang;
+    const alternateTitle = !coordinate && coverage(doc.title[other]) > coverage(doc.title[lang]) ? doc.title[other] : '';
     const alias = !coverage(doc.title[lang]) && !coverage(doc.body[lang]) && !alternateTitle && !coverage(doc.body[other])
       ? (doc.aliasList || []).find(value => normalize(value) === normalize(query)) || '' : '';
     return { lang: previewLang, text: doc.body[previewLang] || (doc.titleOnly ? COPY[lang].titleOnly : COPY[lang].locked), alternateTitle, alias };
@@ -441,7 +444,12 @@
         if (!button) return;
         if (button.hasAttribute('data-site-search-close')) close();
         else if (button.hasAttribute('data-site-search-clear')) { query = ''; searchRevision++; limit = 12; input().value = ''; renderResults(); input().focus(); }
-        else if (button.hasAttribute('data-site-search-category')) { category = button.dataset.siteSearchCategory; const filterLabel=panel.querySelector('[data-site-search-filter-label]');if(filterLabel)filterLabel.textContent=CATEGORIES[category][context.lang];searchRevision++; limit = 12; panel.querySelectorAll('[data-site-search-category]').forEach(b => b.setAttribute('aria-pressed', b.dataset.siteSearchCategory === category)); renderResults(); }
+        else if (button.hasAttribute('data-site-search-category')) {
+          const recoverFocus = button.dataset.siteSearchCategory === 'all' && panel.querySelector('#site-search-results')?.contains(button);
+          category = button.dataset.siteSearchCategory; const filterLabel=panel.querySelector('[data-site-search-filter-label]');if(filterLabel)filterLabel.textContent=CATEGORIES[category][context.lang];searchRevision++; limit = 12; panel.querySelectorAll('[data-site-search-category]').forEach(b => b.setAttribute('aria-pressed', b.dataset.siteSearchCategory === category)); renderResults();
+          // The recovery action is removed with the old results; toolbar filters stay in place.
+          if (recoverFocus) (panel.querySelector('.site-search-list a') || input())?.focus();
+        }
         else if (button.hasAttribute('data-site-search-example')) { query = button.dataset.siteSearchExample; searchRevision++; input().value = query; limit = 12; renderResults(); input().focus(); }
         else if (button.hasAttribute('data-site-search-more')) { const oldCount = panel.querySelectorAll('.site-search-list a').length; limit += 12; renderResults(); panel.querySelectorAll('.site-search-list a')[oldCount]?.focus(); }
         else if (button.hasAttribute('data-site-search-retry')) { cached = null; renderResults(); }

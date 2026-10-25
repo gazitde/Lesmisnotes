@@ -12,6 +12,13 @@ test('Bilingual preview shows and highlights the safe language that actually mat
  const doc=index.find(d=>d.id==='history:1832');const preview=S.resultPreview(doc,'cholera','he');assert.equal(preview.lang,'en');assert(preview.text.toLowerCase().includes('cholera'));
  const html=S.resultsHTML(find('cholera','he'),'cholera','he');assert(html.includes('התאמה בשפה השנייה'));assert(html.includes('lang="en"'));assert(html.includes('<mark>cholera</mark>'));assert(html.includes('/he/history/'));
 });
+test('Part, Book and Chapter coordinate previews keep neutral help in the selected language',()=>{
+ for(const lang of ['he','en'])for(const query of ['Part 1','חלק א׳','p1-b1','1.1','Part I Book I','חלק א׳ ספר א׳','Part I Book I Chapter II','חלק א׳ ספר א׳ פרק ב׳']){
+  const result=find(query,lang);assert.equal(result.total,1);const doc=result.results[0].doc,preview=S.resultPreview(doc,query,lang);
+  assert(['part','book','chapter'].includes(doc.kind));assert.equal(preview.lang,lang);assert.equal(preview.text,doc.body[lang]);assert.equal(preview.alternateTitle,'');
+  if(doc.kind==='book')assert(preview.text.includes(lang==='he'?'בחרו פרק לקריאה':'choose a chapter'));
+ }
+});
 test('Alias-only results explain why they matched without inventing a passage',()=>{const html=S.resultsHTML(find('Cossette'),'Cossette','en');assert(html.includes('Also known as'));assert(html.includes('<mark>Cossette</mark>'));assert(html.includes('site-search-breadcrumb'));});
 test('Snippets choose a coherent multi-term passage and remain escaped',()=>{
  const html=S.snippet('Paris. '+('An unrelated paragraph. '.repeat(20))+'Paris and mercy meet here. <script>alert(1)</script>', 'Paris mercy');assert(html.includes('<mark>Paris</mark> and <mark>mercy</mark>'));assert(!html.includes('<script>'));assert(html.includes('&lt;script&gt;'));

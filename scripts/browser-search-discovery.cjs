@@ -35,9 +35,13 @@ let browser,checks=0;const check=(value,message)=>{assert.ok(value,message);chec
   await query('24601');
   if(width===320)await page.locator('.site-search-filter-disclosure>summary').click();
   await page.locator('.site-search-filters [data-site-search-category="recipes"]').click();
+  check(await page.locator('.site-search-filters [data-site-search-category="recipes"]').evaluate(e=>document.activeElement===e),'Toolbar filter keeps keyboard focus');
   check(await page.locator('.site-search-list').count()===0,'Wrong topic remains honest instead of silently removing filter');
-  const recover=page.locator('.site-search-empty [data-site-search-category="all"]');check(await recover.count()===1,'Offers explicit all-topic recovery');await recover.click();
+  const recover=page.locator('.site-search-empty [data-site-search-category="all"]');check(await recover.count()===1,'Offers explicit all-topic recovery');await recover.focus();await page.keyboard.press('Enter');
   check(await page.locator('.site-search-list a').first().getAttribute('href')===`/${lang}/character-valjean/`,'Recovery keeps query and restores exact result');
+  check(await page.locator('.site-search-list a').first().evaluate(e=>document.activeElement===e),'Keyboard recovery focuses the first restored result');
+  await page.locator('.site-search-filters [data-site-search-category="all"]').click();
+  check(await page.locator('.site-search-filters [data-site-search-category="all"]').evaluate(e=>document.activeElement===e),'Toolbar all-topics filter keeps focus instead of moving into results');
   await query('9430');check(await page.locator('.site-search-list').count()===0,'Concealed character outcome still absent');
   await query('<img src=x onerror=alert(1)>');check(await page.locator('#site-search-results img').count()===0,'Untrusted query cannot become markup');
   await page.keyboard.press('Escape');check(await page.locator('[data-site-search-open]').evaluate(e=>document.activeElement===e),'Escape returns focus');
