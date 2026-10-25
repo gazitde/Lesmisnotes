@@ -1,0 +1,158 @@
+[
+  {
+    "kind": "research",
+    "path": "characters.0.safeIntro",
+    "reason": "Begin with the person’s concrete circumstances; preserve the existing safe introduction’s facts and spoiler boundary.",
+    "before": {
+      "en": "Jean Valjean leaves prison hoping to find work, shelter and a place in society. His papers identify him as a former prisoner, and people who learn his record refuse him food and lodging even when he can pay.",
+      "he": "ז׳אן ולז׳אן יוצא מהכלא ומחפש עבודה, מקום לישון ואפשרות להשתייך לחברה. תעודותיו מזהות אותו כאסיר משוחרר, ואנשים שמגלים את עברו מסרבים לתת לו אוכל ולינה גם כשהוא יכול לשלם."
+    },
+    "after": {
+      "en": "Jean Valjean leaves prison needing work and a bed for the night. He has money to pay, but his papers identify him as a former prisoner. Again and again, people refuse him food and lodging. Before he can build a new life, he needs someone willing to open a door.",
+      "he": "ז׳אן ולז׳אן יוצא מהכלא וצריך למצוא עבודה ומיטה ללילה. יש לו כסף לשלם, אבל המסמכים שלו מזהים אותו כאסיר לשעבר. שוב ושוב מסרבים לתת לו אוכל ולינה. עוד לפני שיוכל לבנות חיים חדשים, הוא צריך למצוא מישהו שיסכים לפתוח לו את הדלת."
+    }
+  },
+  {
+    "kind": "research",
+    "path": "characters.1.safeIntro",
+    "reason": "Begin with the person’s concrete circumstances; preserve the existing safe introduction’s facts and spoiler boundary.",
+    "before": {
+      "en": "Javert is a police inspector who puts his faith in duty, law and order. He distrusts people with criminal records and expects obedience from those he has authority over. His own conduct is governed by the same strict rules.",
+      "he": "ז׳אבר הוא מפקח משטרה שמאמין בחובה, בחוק ובסדר. הוא חושד באנשים בעלי עבר פלילי ומצפה לציות ממי שנמצאים תחת סמכותו. אותם כללים נוקשים מכתיבים גם את התנהגותו שלו."
+    },
+    "after": {
+      "en": "Javert is a police inspector who trusts the law to keep the world in order. When he meets a former prisoner, the criminal record determines how he treats him. He demands obedience from people under his authority and applies strict rules to himself too. That sense of duty helps explain his stubbornness.",
+      "he": "ז׳אבר הוא מפקח משטרה שסומך על החוק שיעשה סדר בעולם. כשהוא פוגש אסיר לשעבר, העבר הפלילי קובע כיצד יתייחס אליו. הוא דורש ציות מאנשים שבסמכותו, ומחיל כללים נוקשים גם על עצמו. כדאי להכיר את תחושת החובה הזאת כדי להבין את העקשנות שלו."
+    }
+  },
+  {
+    "kind": "research",
+    "path": "characters.2.safeIntro",
+    "reason": "Begin with the person’s concrete circumstances; preserve the existing safe introduction’s facts and spoiler boundary.",
+    "before": {
+      "en": "Fantine is a working mother trying to earn enough to support her daughter, Cosette. Mother and child live apart, so wages must cover both Fantine’s own needs and payments for the child’s care. Her position at work is insecure.",
+      "he": "פנטין היא אם עובדת שמנסה להרוויח מספיק כדי לפרנס את בתה, קוזט. האם והילדה חיות בנפרד, ולכן השכר צריך להספיק גם לצרכיה של פנטין וגם לתשלומים בעבור הטיפול בילדה. מעמדה בעבודה אינו בטוח."
+    },
+    "after": {
+      "en": "Fantine works away from her daughter, Cosette. She needs to pay her own living costs and send money to the people caring for her child. Her job is insecure, and losing that income could threaten both her own livelihood and Cosette’s care.",
+      "he": "פנטין עובדת רחוק מבתה, קוזט. היא צריכה לשלם על המחיה שלה וגם לשלוח כסף לאנשים שמטפלים בילדה. המשרה שלה אינה בטוחה, ואובדן ההכנסה עלול לפגוע גם בה וגם בטיפול בקוזט."
+    }
+  },
+  {
+    "kind": "research",
+    "path": "characters.3.safeIntro",
+    "reason": "Begin with the person’s concrete circumstances; preserve the existing safe introduction’s facts and spoiler boundary.",
+    "before": {
+      "en": "Cosette is Fantine’s daughter, living as a child at the Thénardiers’ inn. Her mother sends money for her care, but the innkeepers make her work while their own daughters play. Much of her early life is governed by fear of the adults who control her food, clothes and time.",
+      "he": "קוזט היא בתה של פנטין, ילדה המתגוררת בפונדק של בני הזוג תנרדייה. אמה שולחת כסף בעבור הטיפול בה, אך הפונדקאים מכריחים אותה לעבוד בזמן שבנותיהם משחקות. חלק גדול מחייה המוקדמים מוכתב בידי הפחד מן המבוגרים השולטים במזון, בבגדים ובזמן שלה."
+    },
+    "after": {
+      "en": "At the Thénardiers’ inn, their daughters play while Cosette works. Her mother, Fantine, sends money for her care, but the child depends on adults who frighten her. They decide what she eats, what she wears and how she spends her day. This is her life before she has much chance to choose for herself.",
+      "he": "בפונדק של בני הזוג תנרדייה, הבנות שלהם משחקות וקוזט עובדת. אמה, פנטין, שולחת כסף כדי שיטפלו בה, אבל הילדה תלויה באנשים שמפחידים אותה. הם מחליטים מה תאכל, מה תלבש ומה תעשה במשך היום. כך נראים חייה לפני שיש לה אפשרות לבחור לעצמה."
+    }
+  },
+  {
+    "kind": "research",
+    "path": "characters.7.safeIntro",
+    "reason": "Begin with the person’s concrete circumstances; preserve the existing safe introduction’s facts and spoiler boundary.",
+    "before": {
+      "en": "Gavroche is a resourceful Parisian child with sharp wit and little protection. He moves through the streets with confidence, finding food and shelter as he can. His jokes often make the adults around him seem less knowledgeable than he is.",
+      "he": "גברוש הוא ילד פריזאי בעל תושייה, לשון חדה ומעט מאוד הגנה. הוא נע בביטחון ברחובות ומוצא אוכל ומחסה ככל יכולתו. בדיחותיו מציגות לא פעם את המבוגרים סביבו כמי שמבינים פחות ממנו."
+    },
+    "after": {
+      "en": "Gavroche has to find food and shelter on the streets of Paris, with very little protection. He gets by on resourcefulness and sharp wit, often making the adults around him seem less knowledgeable than he is. His jokes are easy to enjoy; keep in mind how much work it takes this child to get through another day.",
+      "he": "גברוש צריך למצוא אוכל ומחסה ברחובות פריז, ויש מעט מאוד מי שיגן עליו. הוא מסתדר בתושייה ובלשון חדה, ולעיתים קרובות נראה שהמבוגרים סביבו מבינים פחות ממנו. קל ליהנות מהבדיחות שלו; כדאי לזכור כמה עבודה נדרשת מהילד הזה כדי לעבור עוד יום."
+    }
+  },
+  {
+    "kind": "research",
+    "path": "characters.8.safeIntro",
+    "reason": "Begin with the person’s concrete circumstances; preserve the existing safe introduction’s facts and spoiler boundary.",
+    "before": {
+      "en": "The Thénardiers run an inn in Montfermeil and have young daughters of their own. They are quick to calculate what a guest or a childcare arrangement might bring them. On stage, the apparent welcome they offer customers becomes part of the joke about how they cheat them.",
+      "he": "בני הזוג תנרדייה מנהלים פונדק במונפרמיי ולהם בנות קטנות משלהם. הם ממהרים לחשב כמה אפשר להרוויח מאורח או מהסדר לטיפול בילדה. על הבמה, קבלת הפנים שהם מציגים ללקוחות נעשית חלק מן הבדיחה על הדרך שבה הם מרמים אותם."
+    },
+    "after": {
+      "en": "The Thénardiers run an inn in Montfermeil and raise their young daughters there. A guest needing a room or a child entrusted to their care sets them calculating the profit. On stage, they offer customers a showy welcome; the joke emerges as we notice the ways they cheat them.",
+      "he": "בני הזוג תנרדייה מנהלים פונדק במונפרמיי ומגדלים בו את בנותיהם הקטנות. אורח שמגיע ללון או ילדה שנמסרת לטיפולם מעוררים אצלם מיד חישוב של רווח. על הבמה הם מקבלים את הלקוחות בחום ראוותני, והבדיחה מתגלה כשמבחינים בדרכים שבהן הם מרמים אותם."
+    }
+  },
+  {
+    "kind": "research",
+    "path": "characters.9.safeIntro",
+    "reason": "Begin with the person’s concrete circumstances; preserve the existing safe introduction’s facts and spoiler boundary.",
+    "before": {
+      "en": "Bishop Myriel of Digne lives simply with his sister and their housekeeper. He gives much of his income to people in need and keeps his door open to visitors. Hugo introduces his household before bringing Valjean into the story.",
+      "he": "הבישוף מיריאל מדיניה חי בפשטות עם אחותו ועם מנהלת משק הבית שלהם. הוא מעניק חלק גדול מהכנסתו לנזקקים ומשאיר את דלתו פתוחה למבקרים. הוגו מציג את ביתו לפני שהוא מכניס את ולז׳אן לסיפור."
+    },
+    "after": {
+      "en": "At Bishop Myriel’s home in Digne, the door stays open to visitors. He lives simply with his sister and their housekeeper, giving much of his income to people in need. Hugo introduces this household before Valjean enters the story: we learn how hospitality works here before we meet the guest.",
+      "he": "בביתו של הבישוף מיריאל בדיניה, הדלת נשארת פתוחה למבקרים. הוא חי בפשטות עם אחותו ועם מנהלת משק הבית, ונותן חלק גדול מהכנסתו לנזקקים. הוגו מכיר לנו את הבית הזה לפני שוולז׳אן נכנס לסיפור: קודם לומדים איך מארחים כאן, ורק אחר כך פוגשים את האורח."
+    }
+  },
+  {
+    "kind": "extras",
+    "path": "musical.songAnalysis.first-attack.blocks.0.body",
+    "reason": "Make the warning, choice and people explicit instead of using ambiguous pronouns.",
+    "before": {
+      "he": "אחרי שעזר להגן על המתרס, ולז׳אן מקבל רשות לטפל בז׳אבר השבוי. הוא משחרר אותו. ז׳אבר מזהיר שימשיך לרדוף אותו, כאילו הדבר חייב לשנות את ההצעה. היא אינה משנה אותה. הסצנה מזכירה את יחסו של הבישוף לוולז׳אן: אדם שבידו הכוח להרשיע בוחר לתת לאדם אחר ללכת. כעת ז׳אבר צריך להסביר לעצמו כיצד האסיר שהוא בז לו נוהג בנדיבות שכלליו שלו מעולם לא דרשו.",
+      "en": "After helping defend the barricade, Valjean is allowed to deal with the captured Javert. He releases him. Javert warns he will keep pursuing him, as though this must change the offer. It does not. The scene recalls the bishop’s treatment of Valjean: someone with the power to condemn chooses to let a man go. Javert now has to account for the prisoner he despises behaving with a generosity his own rules have never required."
+    },
+    "after": {
+      "he": "אחרי שעזר להגן על המתרס, ולז׳אן מקבל רשות לטפל בז׳אבר השבוי. הוא משחרר אותו. ז׳אבר מזהיר שימשיך לרדוף אותו, אבל גם האזהרה הזאת אינה גורמת לוולז׳אן לחזור בו. הסצנה מזכירה את יחסו של הבישוף לוולז׳אן: אדם שבידו הכוח להרשיע בוחר לתת לאדם אחר ללכת. כעת ז׳אבר צריך להסביר לעצמו כיצד האסיר שהוא בז לו נוהג בנדיבות שכלליו שלו מעולם לא דרשו.",
+      "en": "After helping defend the barricade, Valjean is allowed to deal with the captured Javert. He releases him. Javert warns that he will keep pursuing him, but even that warning does not make Valjean withdraw his offer. The scene recalls the bishop’s treatment of Valjean: someone with the power to condemn chooses to let a man go. Javert now has to account for the prisoner he despises behaving with a generosity his own rules have never required."
+    }
+  },
+  {
+    "kind": "extras",
+    "path": "musical.songAnalysis.second-attack.blocks.0.body",
+    "reason": "Name the street explicitly; keep the distinction between resourcefulness and protection.",
+    "before": {
+      "he": "המגינים זקוקים לתחמושת. גברוש יוצא אל מעבר למתרס לאסוף אותה ונהרג. הזריזות שהועילה כל כך כשחשף את ז׳אבר מביאה אותו עכשיו למקום שבו שום מבוגר אינו יכול להגן עליו. הסצנה דורשת מהקהל הכרה לא נוחה: התושייה שנהנינו ממנה שייכת לילד, והיכולת להסתדר ברחוב מעולם לא הפכה אותו למקום בטוח עבורו.",
+      "en": "The defenders need ammunition. Gavroche goes beyond the barricade to collect it and is killed. His quickness, so useful when he exposed Javert, now takes him where no adult can protect him. The scene makes an uncomfortable demand on the audience: the resourcefulness we have enjoyed belongs to a child, and being good at surviving the street has never made him safe from it."
+    },
+    "after": {
+      "he": "המגינים זקוקים לתחמושת. גברוש יוצא אל מעבר למתרס לאסוף אותה ונהרג. הזריזות שהועילה כל כך כשחשף את ז׳אבר מביאה אותו עכשיו למקום שבו שום מבוגר אינו יכול להגן עליו. הסצנה דורשת מהקהל הכרה לא נוחה: התושייה שנהנינו ממנה שייכת לילד, והיכולת להסתדר ברחוב מעולם לא הפכה את הרחוב לבטוח עבורו.",
+      "en": "The defenders need ammunition. Gavroche goes beyond the barricade to collect it and is killed. His quickness, so useful when he exposed Javert, now takes him where no adult can protect him. The scene makes an uncomfortable demand on the audience: the resourcefulness we have enjoyed belongs to a child, and knowing how to survive on the street has never made the street safe for him."
+    }
+  },
+  {
+    "kind": "extras",
+    "path": "musical.songAnalysis.who-am-i.blocks.0.body",
+    "reason": "Let the reader weigh both costs without calling one answer obvious.",
+    "before": {
+      "he": "אדם אחר זוהה כז׳אן ולז׳אן. שתיקה תגן על המפעל של ראש העיר ועל הפועלים התלויים בו, וגם על חירותו שלו. אלה שיקולים ממשיים, ולכן ההתלבטות נמשכת מעבר לתשובה המתבקשת. לבסוף ולז׳אן מסרב להטיל על הנאשם את המחיר של כל הטוב שהוא מקווה להמשיך לעשות. הוא מופיע בבית המשפט ומזדהה.",
+      "en": "Another man has been identified as Jean Valjean. Remaining silent would protect the mayor's factory and the workers who depend on it, as well as his own freedom. These are substantial reasons, which is why the dilemma lasts beyond its obvious answer. Valjean finally refuses to make the accused man pay for all the good he hopes to keep doing. He appears in court and gives his name."
+    },
+    "after": {
+      "he": "אדם אחר זוהה כז׳אן ולז׳אן. שתיקה תגן על המפעל של ראש העיר ועל הפועלים התלויים בו, וגם על חירותו שלו. הוא יודע שאדם חף מפשע עלול להישלח לכלא, אבל חושש גם לגורלם של האנשים שתלויים בו. לבסוף ולז׳אן מסרב להטיל על הנאשם את המחיר של כל הטוב שהוא מקווה להמשיך לעשות. הוא מופיע בבית המשפט ומזדהה.",
+      "en": "Another man has been identified as Jean Valjean. Remaining silent would protect the mayor's factory and the workers who depend on it, as well as his own freedom. He knows an innocent man could be sent to prison, but he also fears for the people who depend on him. Valjean finally refuses to make the accused man pay for all the good he hopes to keep doing. He appears in court and gives his name."
+    }
+  },
+  {
+    "kind": "extras",
+    "path": "hugo.sections.0.body",
+    "reason": "Name the novel so the reader does not have to resolve an ambiguous reference after the play’s title.",
+    "before": {
+      "en": "Before Valjean, there were poems, plays and Notre-Dame de Paris. Hernani stirred the theatre in 1830; the novel followed in 1831. When Hugo began Les Misérables in 1845, he already knew how to write for both the page and the stage.",
+      "he": "לפני ולז׳אן היו שירים, מחזות והגיבן מנוטרדאם. הרנני הסעיר את התיאטרון ב־1830; הרומן הופיע ב־1831. כשניגש לעלובי החיים ב־1845, הוגו כבר ידע לכתוב גם לדף וגם לבמה."
+    },
+    "after": {
+      "en": "Before Valjean, there were poems and plays. Hernani stirred the theatre in 1830; the novel Notre-Dame de Paris followed in 1831. When Hugo began Les Misérables in 1845, he already knew how to write for both the page and the stage.",
+      "he": "לפני ולז׳אן היו שירים ומחזות. הרנני הסעיר את התיאטרון ב־1830; הרומן הגיבן מנוטרדאם הופיע ב־1831. כשניגש לעלובי החיים ב־1845, הוגו כבר ידע לכתוב גם לדף וגם לבמה."
+    }
+  },
+  {
+    "kind": "extras",
+    "path": "musical.creationStory.craft.0.body",
+    "reason": "Explain the theatre meaning of book/libretto, simplify the adaptation process and retain the concrete rhyme anecdote in two readable paragraphs.",
+    "before": {
+      "en": "Claude-Michel Schönberg composed the music and co-wrote the book with Alain Boublil. The original French text is credited to Boublil and Jean-Marc Natel; Herbert Kretzmer wrote the English lyrics, with additional material credited to James Fenton.\n\nIn a 2015 interview for PRS for Music, Kretzmer described beginning with a song’s theme and creating its English wording afresh. The expanded show also needed words for new numbers, including Stars and Bring Him Home. Growing from roughly two hours in French to three in English meant adding dramatic material as well as reshaping existing songs. His exacting ear remained restless long afterward: he still thought one rhyme in On My Own too familiar, despite its fit with the thought he wanted to express.",
+      "he": "קלוד־מישל שנברג הלחין את המוזיקה וכתב את הליברית יחד עם אלן בובליל. הטקסט הצרפתי המקורי מיוחס לבובליל ולז׳אן־מארק נאטל; הרברט קרצמר כתב את מילות השירים באנגלית, וג׳יימס פנטון קיבל קרדיט על חומר נוסף.\n\nבריאיון ל־PRS for Music ב־2015 תיאר קרצמר עבודה שמתחילה בנושא של שיר ויוצרת לו ניסוח חדש באנגלית. המופע המורחב נזקק גם למילים עבור קטעים חדשים, ובהם Stars ו־Bring Him Home. המעבר מכשעתיים בצרפתית לשלוש שעות באנגלית כלל תוספת של חומר דרמטי לצד עיצוב מחדש של שירים קיימים. גם שנים אחר כך המשיך לבחון בחירות מילוליות: הוא עדיין הסתייג מאחד החרוזים ב־On My Own, מפני שכבר השתמשו בו בעבר, אף שהתאים למחשבה שרצה לבטא."
+    },
+    "after": {
+      "en": "Claude-Michel Schönberg composed the music and co-wrote the book, the musical’s dramatic text, with Alain Boublil. The original French text is credited to Boublil and Jean-Marc Natel; Herbert Kretzmer wrote the English lyrics, with additional material credited to James Fenton.\n\nIn a 2015 interview for PRS for Music, Kretzmer described starting from each song’s idea and finding fresh English words for it. Expanding from roughly two hours in French to three in English also required new dramatic material, including songs such as Stars and Bring Him Home. Years later, he was still arguing with one of his rhymes in On My Own. It fitted the thought he wanted to express, but other writers had used it before.",
+      "he": "קלוד־מישל שנברג הלחין את המוזיקה וכתב עם אלן בובליל את הליברית, הטקסט הדרמטי של המחזמר. הטקסט הצרפתי המקורי מיוחס לבובליל ולז׳אן־מארק נאטל; הרברט קרצמר כתב את מילות השירים באנגלית, וג׳יימס פנטון קיבל קרדיט על חומר נוסף.\n\nבריאיון ל־PRS for Music ב־2015 תיאר קרצמר איך התחיל מן הרעיון של כל שיר וחיפש לו מילים חדשות באנגלית. ההרחבה מכשעתיים בצרפתית לשלוש שעות באנגלית הצריכה גם חומר דרמטי חדש, ובכלל זה שירים כמו Stars ו־Bring Him Home. גם שנים אחר כך הוא עוד התווכח עם אחד החרוזים שלו ב־On My Own. החרוז התאים למחשבה שרצה לבטא, אבל כבר השתמשו בו לפניו."
+    }
+  }
+]
