@@ -1,0 +1,48 @@
+{
+  "title": {
+    "before": {
+      "he": "צפון אמריקה · הפקות מקומיות",
+      "en": "North America · Local productions"
+    },
+    "after": {
+      "he": "צפון אמריקה · הפקות מקומיות שהסתיימו",
+      "en": "North America · Completed local runs"
+    }
+  },
+  "paragraphs": {
+    "before": {
+      "en": [
+        "Local productions in the US and Canada have their own staging and schedules. The Phoenix Theatre Company lists 15 July–18 October 2026; Tuacahn Amphitheatre in Ivins, Utah, lists 15 May–23 October 2026. These two listings were checked on 16 October 2026. Confirm dates and ticket availability with the venue."
+      ],
+      "he": [
+        "לכל הפקה מקומית בארצות הברית ובקנדה בימוי ולוח משלה. תאריכי הפקת Phoenix Theatre Company: מ־15 ביולי עד 18 באוקטובר 2026; תאריכי הפקת אמפיתיאטרון Tuacahn באיווינס, יוטה: מ־15 במאי עד 23 באוקטובר 2026. שתי הרשומות נבדקו ב־16 באוקטובר 2026. בדקו את המועדים ואת זמינות הכרטיסים באתר האולם."
+      ]
+    },
+    "after": {
+      "he": [
+        "שתי ההפקות המקומיות שצוינו כאן הסתיימו: Phoenix Theatre Company הציגה מ־15 ביולי עד 18 באוקטובר 2026; אמפיתיאטרון Tuacahn באיווינס, יוטה, הציג מ־15 במאי עד 23 באוקטובר 2026. מועדי הסיום נבדקו ב־25 באוקטובר 2026. הקישורים נשמרו לפרטי ההפקות, לא לרכישת כרטיסים להצגות שעדיין מתקיימות."
+      ],
+      "en": [
+        "Both local runs listed here have ended: The Phoenix Theatre Company ran 15 July–18 October 2026; Tuacahn Amphitheatre in Ivins, Utah, ran 15 May–23 October 2026. End dates checked on 25 October 2026. The links are retained for production details, not as current ticket listings."
+      ]
+    }
+  },
+  "status": {
+    "before": "local-productions",
+    "after": "ended"
+  },
+  "statusLabel": {
+    "before": {
+      "he": "הפקות מורשות מקומיות",
+      "en": "Licensed local productions"
+    },
+    "after": {
+      "he": "ההצגות הסתיימו",
+      "en": "Runs ended"
+    }
+  },
+  "checkedDate": {
+    "before": "2026-10-16",
+    "after": "2026-10-25"
+  }
+}

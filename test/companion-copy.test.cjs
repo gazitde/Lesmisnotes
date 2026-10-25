@@ -25,7 +25,10 @@ test('Israel prose separates performer and translator and offers one optional li
 });
 test('watch copy uses bounded verification dates and relevant production sources',()=>{
  const ctx={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'dist/extras.js'),'utf8'),ctx);const o=ctx.window.EXTRA_CONTENT,w=o.watch,n=w.cards.find(x=>x.id==='north-america');
- assert.equal(w.checkedDate,'2026-10-11');assert.equal(n.checkedDate,'2026-10-16');
+ assert.equal(w.checkedDate,'2026-10-11');assert.equal(n.checkedDate,'2026-10-25');
+ assert.equal(n.status,'ended');assert.equal(n.statusLabel.en,'Runs ended');
+ assert.match(n.paragraphs.en.join(' '),/Both local runs listed here have ended/);
+ assert.match(n.paragraphs.he.join(' '),/שתי ההפקות המקומיות שצוינו כאן הסתיימו/);
  assert.match(n.paragraphs.en.join(' '),/15 July–18 October 2026/);assert.match(n.paragraphs.en.join(' '),/15 May–23 October 2026/);
  assert.equal(n.additionalLinks[1].url,'https://www.tuacahn.org/show/les-miserables-2026/');
  assert.ok(!w.cards.find(x=>x.id==='madrid').sourceIds.includes('watch-london-extension'));
