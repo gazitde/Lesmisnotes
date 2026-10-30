@@ -19,6 +19,7 @@ try{
   await run(['scripts/browser-stars-comparison.cjs']);
   await run(['scripts/browser-journey-ending.cjs']);
   await run(['scripts/browser-search-intent.cjs']);
+  await run(['scripts/browser-acquisition-entry.cjs']);
   await run(['scripts/browser-search-discovery.cjs']);
   await run(['scripts/browser-sharing-metadata.cjs']);
   await run(['scripts/browser-editorial-rhythm.cjs']);

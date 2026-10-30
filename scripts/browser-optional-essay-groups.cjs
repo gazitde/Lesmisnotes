@@ -26,7 +26,8 @@ const groups={...wholeBooks,'p3-b1':12,'p3-b7':2},linked=['p5-b3-c1','p5-b3-c4',
    for(let part=1;part<=5;part++){
     await p.goto(`${base}/${lang}/novel-journey/?focus=part%3Ap${part}${full?'&essays=all':''}`);
     await p.locator('#reader-part-panel').waitFor();
-    check((await p.locator('h1').textContent()).includes(lang==='he'?'פרק אחד':'One chapter'),'Opening heading identifies the focused reading companion');
+    const heading=await p.locator('h1').textContent();
+    check(heading.includes(lang==='he'?'עלובי החיים':'Les Misérables')&&heading.includes(lang==='he'?'פרק אחר פרק':'chapter by chapter'),'Opening heading identifies the novel and chapter reading companion');
     check((await p.locator('.reader-essay-mode').textContent()).includes(full?'365':(lang==='he'?'32':'32')),'Secondary route settings retain the current scope');
     const reject=p.locator('[data-action="privacy-reject"]').first();if(await reject.isVisible())await reject.click();
     books+=await p.locator('.reader-book-card').count();
