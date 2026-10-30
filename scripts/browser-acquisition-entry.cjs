@@ -13,7 +13,7 @@ let browser,checks=0;const check=(v,m)=>{assert.ok(v,m);checks++;};
   for(const route of ['before','novel-journey','compare','screen']){
    await page.goto(`${base}/${lang}/${route}/`);
    await page.locator('.acquisition-next').waitFor();
-   const reject=page.locator('[data-action="privacy-reject"]');if(await reject.isVisible())await reject.click();
+   const reject=page.locator('.privacy-banner [data-action="privacy-reject"]');if(await reject.isVisible())await reject.click();
    check((await page.locator('h1').innerText()).includes(lang==='he'?'עלובי החיים':'Les Misérables'),`${lang}/${route} H1`);
    check(await page.locator('.acquisition-next a').count()===2,'Two next-step choices');
    check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`No overflow ${lang}/${route}/${width}`);
@@ -23,7 +23,7 @@ let browser,checks=0;const check=(v,m)=>{assert.ok(v,m);checks++;};
    await link.focus();await page.keyboard.press('Enter');await page.waitForURL(base+href);
    check((await page.locator('html').getAttribute('lang'))===lang,'Keyboard navigation retains language');
    await page.goBack();await page.waitForURL(`${base}/${lang}/${route}/`);await page.locator('.acquisition-next').waitFor();
-   check(await page.locator('meta[name="robots"]').getAttribute('content')==='index, follow','Base guide remains indexable');
+   check(await page.locator('meta[name="robots"]').getAttribute('content')==='index, follow, max-image-preview:large','Base guide retains production indexing and image-preview policy');
    if(route==='compare'){
     check(await page.locator('.adaptation-card').count()===0,'Protected comparison absent');
     await page.locator('[data-action="enable-spoilers"]').click();check(await page.locator('.adaptation-card').count()===6,'Consent opens six comparisons');
