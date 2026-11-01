@@ -41,8 +41,10 @@ const equal=(actual,expected,message)=>{assert.deepEqual(actual,expected,message
   const enterLegacy=async(id,route)=>page.evaluate(({id,route})=>{const a=document.createElement('a');a.href='/'+document.documentElement.lang+'/'+route+'/';a.dataset.enterJourney=id;document.getElementById('app').append(a);a.click();a.remove()},{id,route});
   await page.goto(base+'/en/home/?q=reader%40example.com#private-message');await page.waitForFunction(()=>window.SiteAnalytics);
   equal(tagRequests,0,'No Google tag before choice');ok(await page.evaluate(()=>!window.dataLayer),'No pre-consent queue');
+  equal(await page.evaluate(()=>SiteAnalytics.diagnostics().state),'consent_required','Local diagnosis distinguishes missing consent without loading a tag');
   await enterLegacy('first','before');equal(tagRequests,0,'Navigation without consent remains silent');
   await consent(true);await page.waitForFunction(()=>window.SiteAnalytics.active());equal(tagRequests,1,'Exactly one post-consent tag');equal(await count('page_view'),1,'One pageview on initial consent');equal(await count('journey_start'),0,'No replay of pre-consent journey');
+  equal(await page.evaluate(()=>SiteAnalytics.diagnostics()),{state:'tag_ready',delivery:'not_verified',attribution:'not_collected'},'A loaded mock tag never claims GA delivery or channel attribution');
   let before=await count('page_view');await page.evaluate(()=>SiteAnalytics.context('before','en','first'));equal(await count('page_view'),before,'Rerender same route does not duplicate pageview');
   const paths={first:['before','story','map','musical'],after:['after','listening','compare','ideas'],book:['hugo','novel','compare','musical'],voices:['listening','musical','screen','after'],play:['quiz','characters','map','history']};
   for(const [id,path]of Object.entries(paths)){

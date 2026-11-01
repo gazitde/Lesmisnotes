@@ -88,3 +88,40 @@ Local VM/source tests were run during implementation. The restricted local execu
 ### Interest-led paths and legacy renewal
 
 The three fixed journey identifiers `interest-novel`, `interest-musical`, and `interest-both` use the same four-stop event schema. No free-text interests or URL query values are sent. Valid version-2 analytics grants require one renewed choice for the expanded version-3 scope; prior refusals remain refused, and saved functional preferences are retained. The renewal marker is in memory until a new explicit choice replaces the consent record.
+
+## Measurement diagnosis, 1 November 2026
+
+The signed-in report supplied by the project owner maps property `558480580` and
+stream `16107062940` to the existing public ID `G-FWWTDG9CHN`; Enhanced Measurement
+remains off. The reported October 4–31 totals were 7 active users, 92 views and
+40 sessions, all Unassigned, with no data reported during the last 48 hours.
+These observations alone do not establish a broken tag. Basic consent mode,
+visitor choices, blockers and low traffic must be distinguished from a load failure.
+No account settings or visitor consent defaults were changed in this investigation.
+
+Channel attribution is deliberately suppressed: `ignore_referrer:true`, an empty
+`page_referrer`, canonical URLs without query strings, and all six campaign fields
+fixed to `not_collected`. Google documents that campaign fields override incoming
+UTM values and that unmatched source/medium combinations are Unassigned. This
+configuration is consistent with the report, not evidence that every visit had
+an unknown technical origin. Do not relabel these visits Direct or invent a source.
+Use Search Console for organic-search impressions/clicks; its totals are not
+comparable one-for-one with visits measured only after analytics consent.
+
+For a local, read-only diagnosis, inspect `SiteAnalytics.diagnostics()` in the
+browser console. It exposes only fixed values, makes no requests and writes no
+storage. `consent_required` means analytics is correctly silent; `not_configured`
+means the ID or verified-settings guard is missing; `loading` means a post-consent
+loader is pending; `load_failed` means its error callback ran; `tag_ready` means
+only that the script load completed. `inactive` can follow an explicit shutdown
+while a consent record still exists. Delivery always remains `not_verified`:
+a script load or passing mock does not prove a GA collection response or dashboard
+receipt. The readout does not grant consent, retry a request or alter attribution.
+
+Check first without consent, then use isolated mocked tests for opt-in, slow load,
+load error, withdrawal and reconsent. An actual GA receipt check still needs an
+explicitly authorized live test session and dashboard readback. Absence of data
+must not be "fixed" by loading before consent or enabling automatic measurement.
+
+References: Google [configuration fields](https://developers.google.com/analytics/devguides/collection/ga4/reference/config)
+and [default channel grouping](https://support.google.com/analytics/answer/9756891).
