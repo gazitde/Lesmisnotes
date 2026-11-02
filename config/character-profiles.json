@@ -332,7 +332,17 @@
       ],
       "safeSongIds": [
         "what-have-i-done"
-      ]
+      ],
+      "seo": {
+        "title": {
+          "he": "ז׳אן ולז׳אן בעלובי החיים: מיהו אסיר 24601? | LesMisNotes",
+          "en": "Jean Valjean in Les Misérables: prisoner 24601 | LesMisNotes"
+        },
+        "description": {
+          "he": "מיהו ז׳אן ולז׳אן? הכירו את גיבור עלובי החיים, את שחרורו מהכלא ואת המפגש עם הבישוף. מדריך לספר ולמחזמר, עם מקורות ושליטה בפרטי העלילה.",
+          "en": "Who is Jean Valjean? Meet the central character of Les Misérables, his release from prison and encounter with the bishop. Sources and optional plot details."
+        }
+      }
     },
     {
       "id": "javert",
@@ -2246,7 +2256,17 @@
       ],
       "safeSongIds": [
         "master-house"
-      ]
+      ],
+      "seo": {
+        "title": {
+          "he": "בני הזוג תנרדייה בעלובי החיים: הפונדקאים | LesMisNotes",
+          "en": "The Thénardiers in Les Misérables: the innkeepers | LesMisNotes"
+        },
+        "description": {
+          "he": "מי הם מר וגברת תנרדייה? הכירו את הפונדקאים ממונפרמיי ברומן של הוגו ובמחזמר, עם מקורות, מפת קשרים ופרטי עלילה שנפתחים רק בבחירה.",
+          "en": "Who are Monsieur and Madame Thénardier? Explore the Montfermeil innkeepers in Hugo’s novel and the musical, with sources, connections and optional spoilers."
+        }
+      }
     },
     {
       "id": "bishop",

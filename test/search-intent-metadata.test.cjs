@@ -7,7 +7,7 @@ const escape=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':
 const read=(lang,route)=>fs.readFileSync(`dist/${lang}/${route}/index.html`,'utf8');
 const schema=html=>JSON.parse(html.match(/<script id="page-structured-data" type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
 
-for(const id of ['javert','gavroche','eponine'])for(const lang of ['en','he'])test(`${id}/${lang}: distinct snippets agree across static and client surfaces`,()=>{
+for(const id of ['javert','gavroche','eponine','valjean','thenardiers'])for(const lang of ['en','he'])test(`${id}/${lang}: distinct snippets agree across static and client surfaces`,()=>{
  const p=profiles.find(p=>p.id===id),route='character-'+id,meta=metadata.pages[route],html=read(lang,route);
  assert.equal(meta.title[lang],p.seo.title[lang]);assert.equal(meta.description[lang],p.seo.description[lang]);
  assert(html.includes(`<title>${escape(meta.title[lang])}</title>`));

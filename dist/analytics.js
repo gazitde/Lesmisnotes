@@ -33,7 +33,7 @@
     bookmark_change: { content_id: routes, bookmark_action: ['add', 'remove'] },
     content_open: { content_type: ['story_chapter', 'character', 'map_place', 'novel_part', 'musical_stop'], content_id: [] }
   };
-  let active = false, ready = false, loaded = false, script = null, generation = 0, lastPage = '';
+  let active = false, ready = false, loaded = false, loadFailed = false, script = null, generation = 0, lastPage = '';
   let page = { route: 'home', lang: 'en', journey: 'none' }, pending = [], videoIds = [], contentIds = {}, placeIds = {};
   // The origin comes only from build-validated static metadata, never location, query, hash or referrer.
   const origin = /^https:\/\/[a-z0-9.-]+(?::[0-9]+)?$/i.test(M.origin || '') ? M.origin : 'https://lesmis-guide.invalid';
@@ -98,7 +98,7 @@
   function start() {
     if (!allowed()) { withdraw(active || ready); return; }
     if (active) return;
-    active = true; const version = ++generation;
+    active = true; loadFailed = false; const version = ++generation;
     window['ga-disable-' + id] = false;
     // Keep the same array after withdrawal so a loaded Google tag retains its queue integration.
     window.dataLayer = window.dataLayer || [];
@@ -113,12 +113,17 @@
     script = document.createElement('script'); script.id = 'lesmis-analytics-tag'; script.async = true;
     script.referrerPolicy = 'no-referrer'; script.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
     script.onload = () => finish(version);
-    script.onerror = () => { if (version === generation) withdraw(false); };
+    script.onerror = () => { if (version === generation) { withdraw(false); loadFailed = true; } };
     document.head.appendChild(script);
   }
   if (id) window['ga-disable-' + id] = true;
   window.SiteAnalytics = Object.freeze({
     configured, active: () => active && ready && allowed(),
+    // Local, read-only troubleshooting. A loaded tag does not prove GA receipt.
+    diagnostics: () => Object.freeze({
+      state: !configured ? 'not_configured' : !allowed() ? 'consent_required' : loadFailed ? 'load_failed' : !active ? 'inactive' : ready ? 'tag_ready' : 'loading',
+      delivery: 'not_verified', attribution: 'not_collected'
+    }),
     initialize(catalogue) { videoIds = catalogue.videos || []; contentIds = catalogue.content || {}; placeIds = catalogue.places || { story: contentIds.map_place || [], geographic: [] }; },
     context(route, lang, journey = null) {
       if (active && !allowed()) withdraw(true);

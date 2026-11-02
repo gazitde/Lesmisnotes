@@ -65,6 +65,22 @@ test('analytics: schema rejects arbitrary text, unknown IDs, inconsistent counts
 });
 test('analytics: load failure is fail-closed and a later explicit consent call can retry',()=>{const h=harness();h.choose(true);h.scripts[0].onerror();assert.equal(h.A.active(),false);assert.equal(h.c['ga-disable-G-TEST123'],true);h.choose(true);assert.equal(h.scripts.length,2);h.load();assert.equal(h.events().length,1)});
 
+test('analytics diagnostics distinguish consent, loading and failure without collecting or claiming receipt',()=>{
+  const h=harness();
+  assert.equal(h.A.diagnostics().state,'consent_required');
+  assert.equal(h.scripts.length,0);assert.equal(h.c.dataLayer,undefined);
+  assert.equal(harness({verified:false}).A.diagnostics().state,'not_configured');
+  h.choose(true);assert.equal(h.A.diagnostics().state,'loading');
+  const stale=h.scripts[0].onload;h.scripts[0].onerror();
+  assert.equal(h.A.diagnostics().state,'load_failed');assert.equal(h.A.active(),false);
+  stale();assert.equal(h.A.diagnostics().state,'load_failed');
+  h.choose(true);assert.equal(h.A.diagnostics().state,'loading');h.load();
+  const snapshot=h.A.diagnostics(),before=JSON.stringify(h.c.dataLayer);
+  assert.deepEqual(JSON.parse(JSON.stringify(snapshot)),{state:'tag_ready',delivery:'not_verified',attribution:'not_collected'});
+  assert.ok(Object.isFrozen(snapshot));h.A.diagnostics();assert.equal(JSON.stringify(h.c.dataLayer),before);
+  h.choose(false);assert.equal(h.A.diagnostics().state,'consent_required');assert.equal(h.events().length,0);
+});
+
 test('privacy upgrade: valid v2 remembering/language/bookmarks survive while analytics requires a new choice',()=>{
   const h=harness({realPrivacy:true}), now=Date.now();
   const prior={version:2,savedAt:now-86400000,expiresAt:now+179*86400000,functional:true,analytics:true,media:true};
